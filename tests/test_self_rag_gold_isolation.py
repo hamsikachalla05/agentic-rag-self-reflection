@@ -11,6 +11,7 @@ from self_rag.prompts import (
     retrieval_relevance_prompt,
     revision_prompt,
 )
+from self_rag.windows import EvidenceWindowTracker
 
 
 FORBIDDEN = (
@@ -52,6 +53,8 @@ def test_reflection_prompts_do_not_include_gold_fields():
         revision_prompt(question, [chunk], "10.0", CONFIG),
         build_prompt(question, [chunk], CONFIG),
     ]
+    tracker = EvidenceWindowTracker([chunk], window_chars=CONFIG.max_chars_per_chunk_in_prompt)
+    prompts.extend(str(tracker.snapshot("initial")) for _ in [0])
     for prompt in prompts:
         lowered = prompt.lower()
         for marker in FORBIDDEN:

@@ -1,5 +1,3 @@
-from dataclasses import replace
-
 from config import CONFIG
 from generation.answer_generator import AnswerGenerator
 from generation.llm_client import LLMOutput
@@ -18,7 +16,7 @@ class _Chunk:
         self.year = year
         self.filing_type = "10-K"
         self.source_filename = "page.pdf"
-        self.text = "Revenue was 10.0 in 2015."
+        self.text = "Revenue was 10.0 in 2015. " + ("body " * 400)
 
     def matches_filters(self, filters):
         return True
@@ -38,10 +36,12 @@ class _ScriptedLLM:
 class _Retr:
     def __init__(self, n_calls_holder):
         self.n_calls_holder = n_calls_holder
+        self.queries = []
         self.chunks_by_id = {"c0": _Chunk()}
 
     def retrieve(self, query, filters=None, dense_top_k=None, bm25_top_k=None, final_top_k=None):
         self.n_calls_holder["n"] += 1
+        self.queries.append(query)
         chunk = self.chunks_by_id["c0"]
         return [
             RetrievedChunk(
@@ -68,68 +68,62 @@ def _agent(replies, rag_cfg, n_calls_holder=None):
     generator = AnswerGenerator(cfg=CONFIG, llm=llm)
     retriever = _Retr(n_calls_holder)
     agent = SelfRAGAgent(retriever, generator, CONFIG, rag_cfg)
-    return agent, llm, n_calls_holder
+    return agent, llm, n_calls_holder, retriever
 
 
-def test_max_retrieval_iterations_are_enforced():
+def test_max_hybrid_retrieves_is_one_when_unsupported():
     rag = SelfRAGConfig(
-        retrieval_decision=True,
-        retrieval_relevance=True,
-        evidence_support=True,
-        answer_usefulness=True,
-        max_retrieval_iterations=2,
+        max_retrieval_iterations=1,
+        max_evidence_refinements=2,
         max_answer_attempts=1,
         max_llm_calls=20,
     )
-    # Always IRRELEVANT / UNSUPPORTED would otherwise loop.
     replies = [
         "NEED_RETRIEVAL",
-        "IRRELEVANT\nQUERY: more table values",
-        "UNSUPPORTED",
         "IRRELEVANT",
         "UNSUPPORTED",
-        "10.0",  # generation
-        "USEFUL",
-    ]
-    holder = {"n": 0}
-    agent, llm, holder = _agent(replies, rag, holder)
-    record = agent.answer("What was Acme revenue in 2015?", "q1")
-    assert holder["n"] <= rag.max_retrieval_iterations
-    assert record.number_of_retrieval_iterations <= rag.max_retrieval_iterations
-    assert record.number_of_llm_calls <= rag.max_llm_calls
-
-
-def test_not_useful_with_no_chunks_triggers_retrieval():
-    rag = SelfRAGConfig(
-        max_retrieval_iterations=2,
-        max_answer_attempts=2,
-        max_llm_calls=12,
-    )
-    replies = [
-        "NO_RETRIEVAL",
-        "The retrieved evidence is insufficient to answer this question",
-        "NOT_USEFUL",
+        "UNSUPPORTED",
+        "UNSUPPORTED",
         "10.0",
         "USEFUL",
     ]
     holder = {"n": 0}
-    agent, llm, holder = _agent(replies, rag, holder)
+    agent, llm, holder, retriever = _agent(replies, rag, holder)
+    record = agent.answer("What was Acme revenue in 2015?", "q1")
+    assert holder["n"] == 1
+    assert retriever.queries == ["What was Acme revenue in 2015?"]
+    assert record.number_of_retrieval_iterations == 1
+    assert record.number_of_evidence_refinements <= rag.max_evidence_refinements
+    assert record.retrieved_chunks[0]["rank"] == 1
+
+
+def test_no_retrieval_decision_does_not_drop_rank1():
+    rag = SelfRAGConfig(max_llm_calls=12, max_answer_attempts=1)
+    replies = [
+        "NO_RETRIEVAL",
+        "RELEVANT",
+        "SUPPORTED",
+        "10.0",
+        "USEFUL",
+    ]
+    holder = {"n": 0}
+    agent, llm, holder, retriever = _agent(replies, rag, holder)
     record = agent.answer("What was Acme revenue in 2015?", "q1")
     assert holder["n"] >= 1
-    assert record.number_of_retrieval_iterations >= 1
     assert record.retrieved_chunks
+    assert record.retrieved_chunks[0]["rank"] == 1
     assert record.answer == "10.0"
 
 
 def test_max_llm_calls_cap_skips_further_reflection():
     rag = SelfRAGConfig(
-        max_retrieval_iterations=2,
+        max_retrieval_iterations=1,
         max_answer_attempts=2,
         max_llm_calls=2,
     )
-    replies = ["NEED_RETRIEVAL", "10.0"]  # reserve the second call for generation
+    replies = ["NEED_RETRIEVAL", "10.0"]
     holder = {"n": 0}
-    agent, llm, holder = _agent(replies, rag, holder)
+    agent, llm, holder, retriever = _agent(replies, rag, holder)
     record = agent.answer("What was Acme revenue in 2015?", "q1")
     assert record.number_of_llm_calls <= rag.max_llm_calls
     assert len(llm.prompts) <= rag.max_llm_calls

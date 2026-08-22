@@ -12,6 +12,7 @@ from generation.answer_generator import AnswerGenerator, GenerationResult
 from retrieval.hybrid_retriever import HybridRetriever, RetrievedChunk
 from self_rag.config import SelfRAGConfig
 from self_rag.reflector import Reflector
+from self_rag.windows import EvidenceWindowTracker
 
 
 @dataclass
@@ -29,6 +30,7 @@ class SelfRAGRecord:
     number_of_retrieval_calls: int
     number_of_llm_calls: int
     number_of_retrieval_iterations: int
+    number_of_evidence_refinements: int
     retrieval_decision: str
     retrieval_relevance_decision: str
     evidence_support_decision: str
@@ -42,6 +44,8 @@ class SelfRAGRecord:
     self_rag_config: dict[str, Any] = field(default_factory=dict)
     reflection_trace: list[dict[str, Any]] = field(default_factory=list)
     retrieval_history: list[dict[str, Any]] = field(default_factory=list)
+    evidence_windows: list[dict[str, Any]] = field(default_factory=list)
+    extra_llm_call_reasons: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -91,21 +95,54 @@ class SelfRAGAgent:
             self_rag_cfg=self.self_rag_cfg,
         )
 
+    def _baseline_retrieve(
+        self,
+        query: str,
+        filters: dict[str, Any] | None,
+    ) -> tuple[list[RetrievedChunk], dict[str, Any] | None, int, float, list[dict[str, Any]]]:
+        """Same retrieve path as the frozen agent: query as-is, empty-filter retry."""
+        retrieval_calls = 0
+        retrieval_latency = 0.0
+        history: list[dict[str, Any]] = []
+        current_filters = filters
+        chunks: list[RetrievedChunk] = []
+        remaining = max(self.cfg.max_retrieval_calls, 1)
+        while remaining > 0:
+            remaining -= 1
+            retrieval_calls += 1
+            t_ret = time.perf_counter()
+            chunks = self.retriever.retrieve(query, filters=current_filters)
+            retrieval_latency += time.perf_counter() - t_ret
+            history.append(
+                {
+                    "iteration": retrieval_calls,
+                    "query": query,
+                    "filters": dict(current_filters or {}),
+                    "chunk_ids": [c.chunk_id for c in chunks],
+                    "reason": "baseline_retrieve",
+                }
+            )
+            if chunks:
+                break
+            if (
+                current_filters
+                and self.cfg.retry_without_filters_if_empty
+                and remaining > 0
+            ):
+                current_filters = None
+                continue
+            break
+        return chunks, current_filters, retrieval_calls, retrieval_latency, history
+
     def answer(self, question: str, question_id: str) -> SelfRAGRecord:
         t0 = time.perf_counter()
         self.reflector.reset_counters()
         rag = self.self_rag_cfg
+        extra_reasons: list[str] = []
 
         retrieval_query = self.baseline.formulate_query(question)
         filters = self.baseline.extract_metadata_filters(question)
-        current_filters: dict[str, Any] | None = filters or None
-        current_query = retrieval_query
 
-        retrieval_calls = 0
-        retrieval_iterations = 0
-        retrieval_latency = 0.0
-        chunks: list[RetrievedChunk] = []
-        retrieval_history: list[dict[str, Any]] = []
         gen_input_tokens = 0
         gen_output_tokens = 0
         gen_latency = 0.0
@@ -118,73 +155,75 @@ class SelfRAGAgent:
             return gen_llm_calls + self.reflector.llm_calls
 
         def reflection_budget_used() -> int:
-            # Keep one call for the first answer so reflection cannot starve generation.
             reserve = 0 if gen_llm_calls else 1
             return llm_used() + reserve
 
+        # Always retrieve first with the frozen retriever so rank-1 is preserved.
+        (
+            original_chunks,
+            applied_filters,
+            retrieval_calls,
+            retrieval_latency,
+            retrieval_history,
+        ) = self._baseline_retrieve(retrieval_query, filters or None)
+        retrieval_iterations = 1 if retrieval_calls else 0
+
+        tracker = EvidenceWindowTracker(
+            original_chunks,
+            window_chars=self.cfg.max_chars_per_chunk_in_prompt,
+            chunks_by_id=getattr(self.retriever, "chunks_by_id", None) or {},
+            max_evidence_chunks=self.cfg.max_evidence_chunks,
+        )
+        view = tracker.current_view()
+
         decision = self.reflector.retrieval_decision(question, reflection_budget_used())
-        need_retrieval = decision.decision != "NO_RETRIEVAL"
+        extra_reasons.append("retrieval_decision")
 
         last_relevance = "SKIPPED"
         last_support = "SKIPPED"
         last_usefulness = "SKIPPED"
-        seen_ids: set[tuple[str, ...]] = set()
+        refinements = 0
 
-        if need_retrieval:
-            while retrieval_iterations < rag.max_retrieval_iterations:
-                if reflection_budget_used() >= rag.max_llm_calls and retrieval_iterations > 0:
+        if original_chunks:
+            relevance = self.reflector.retrieval_relevance(
+                question, view, reflection_budget_used()
+            )
+            last_relevance = relevance.decision
+            extra_reasons.append("retrieval_relevance")
+            support = self.reflector.evidence_support(
+                question, view, reflection_budget_used()
+            )
+            last_support = support.decision
+            extra_reasons.append("evidence_support")
+
+            needs_window = last_support == "UNSUPPORTED" or last_relevance == "IRRELEVANT"
+            while (
+                needs_window
+                and refinements < rag.max_evidence_refinements
+                and reflection_budget_used() < rag.max_llm_calls
+            ):
+                before = tracker.view_fingerprint()
+                if not tracker.advance():
+                    extra_reasons.append("evidence_refinement_exhausted")
                     break
-                retrieval_iterations += 1
-                retrieval_calls += 1
-                t_ret = time.perf_counter()
-                chunks = self.retriever.retrieve(current_query, filters=current_filters)
-                retrieval_latency += time.perf_counter() - t_ret
-                chunk_key = tuple(c.chunk_id for c in chunks)
-                retrieval_history.append(
-                    {
-                        "iteration": retrieval_iterations,
-                        "query": current_query,
-                        "filters": dict(current_filters or {}),
-                        "chunk_ids": list(chunk_key),
-                    }
-                )
-
-                if (
-                    not chunks
-                    and current_filters
-                    and self.cfg.retry_without_filters_if_empty
-                    and retrieval_iterations < rag.max_retrieval_iterations
-                ):
-                    current_filters = None
-                    continue
-
-                relevance = self.reflector.retrieval_relevance(
-                    question, chunks, reflection_budget_used()
-                )
-                last_relevance = relevance.decision
+                if tracker.view_fingerprint() == before:
+                    break
+                refinements += 1
+                view = tracker.current_view()
+                extra_reasons.append(f"evidence_window_refinement_{refinements}")
                 support = self.reflector.evidence_support(
-                    question, chunks, reflection_budget_used()
+                    question, view, reflection_budget_used()
                 )
                 last_support = support.decision
-
-                inadequate = last_relevance == "IRRELEVANT" or last_support == "UNSUPPORTED"
-                duplicate = chunk_key in seen_ids
-                seen_ids.add(chunk_key)
-                if not inadequate or retrieval_iterations >= rag.max_retrieval_iterations:
+                extra_reasons.append(f"evidence_support_after_refinement_{refinements}")
+                if last_support == "SUPPORTED":
+                    last_relevance = "RELEVANT"
+                    needs_window = False
                     break
-                if duplicate and not (relevance.followup_query or support.followup_query):
-                    if current_filters:
-                        current_filters = None
-                        continue
-                    break
+                needs_window = last_support == "UNSUPPORTED"
 
-                followup = relevance.followup_query or support.followup_query
-                if followup:
-                    current_query = followup
-                if current_filters:
-                    current_filters = None
-
-        generation = self._generate(question, chunks)
+        generation = self._generate(question, view)
+        extra_reasons.append("answer_generation")
         gen_llm_calls += generation.llm_calls
         gen_input_tokens += generation.input_tokens
         gen_output_tokens += generation.output_tokens
@@ -195,48 +234,39 @@ class SelfRAGAgent:
         answer = generation.answer
         answer_attempts = 1
 
-        usefulness = self.reflector.answer_usefulness(question, chunks, answer, llm_used())
+        usefulness = self.reflector.answer_usefulness(
+            question, view, answer, llm_used()
+        )
         last_usefulness = usefulness.decision
+        extra_reasons.append("answer_usefulness")
 
         while (
             last_usefulness == "NOT_USEFUL"
             and answer_attempts < rag.max_answer_attempts
             and llm_used() < rag.max_llm_calls
         ):
-            missing_evidence = not chunks
-            can_retrieve_again = retrieval_iterations < rag.max_retrieval_iterations and (
-                need_retrieval or missing_evidence
-            )
-            if can_retrieve_again:
-                retrieval_iterations += 1
-                retrieval_calls += 1
-                if missing_evidence:
-                    current_query = retrieval_query
-                    current_filters = filters or None
-                elif current_filters:
-                    current_filters = None
-                t_ret = time.perf_counter()
-                new_chunks = self.retriever.retrieve(current_query, filters=current_filters)
-                retrieval_latency += time.perf_counter() - t_ret
-                if new_chunks:
-                    chunks = new_chunks
-                retrieval_history.append(
-                    {
-                        "iteration": retrieval_iterations,
-                        "query": current_query,
-                        "filters": dict(current_filters or {}),
-                        "chunk_ids": [c.chunk_id for c in chunks],
-                        "reason": "not_useful_retry",
-                    }
+            if (
+                refinements < rag.max_evidence_refinements
+                and tracker.advance()
+            ):
+                refinements += 1
+                view = tracker.current_view()
+                extra_reasons.append(f"evidence_window_refinement_after_not_useful_{refinements}")
+                support = self.reflector.evidence_support(
+                    question, view, reflection_budget_used()
                 )
-                generation = self._generate(question, chunks)
+                last_support = support.decision
+                extra_reasons.append("evidence_support_after_not_useful")
+                generation = self._generate(question, view)
+                extra_reasons.append("answer_generation_after_refinement")
                 gen_llm_calls += generation.llm_calls
                 gen_input_tokens += generation.input_tokens
                 gen_output_tokens += generation.output_tokens
                 gen_latency += generation.latency_seconds
                 answer = generation.answer
             else:
-                revised = self.reflector.revise_answer(question, chunks, answer, llm_used())
+                revised = self.reflector.revise_answer(question, view, answer, llm_used())
+                extra_reasons.append("answer_revision")
                 if revised is None:
                     break
                 answer = revised.text
@@ -244,8 +274,11 @@ class SelfRAGAgent:
                 gen_output_tokens += revised.output_tokens
                 gen_latency += revised.latency_seconds
             answer_attempts += 1
-            usefulness = self.reflector.answer_usefulness(question, chunks, answer, llm_used())
+            usefulness = self.reflector.answer_usefulness(
+                question, view, answer, llm_used()
+            )
             last_usefulness = usefulness.decision
+            extra_reasons.append("answer_usefulness_after_revision")
 
         latency = time.perf_counter() - t0
         input_tokens = gen_input_tokens + self.reflector.input_tokens
@@ -254,8 +287,8 @@ class SelfRAGAgent:
             question_id=question_id,
             question=question,
             retrieval_query=retrieval_query,
-            metadata_filters=current_filters or {},
-            retrieved_chunks=[c.to_log_dict() for c in chunks],
+            metadata_filters=applied_filters or {},
+            retrieved_chunks=[c.to_log_dict() for c in original_chunks],
             answer=answer,
             latency_seconds=round(latency, 4),
             input_tokens=input_tokens,
@@ -264,6 +297,7 @@ class SelfRAGAgent:
             number_of_retrieval_calls=retrieval_calls,
             number_of_llm_calls=llm_used(),
             number_of_retrieval_iterations=retrieval_iterations,
+            number_of_evidence_refinements=refinements,
             retrieval_decision=decision.decision,
             retrieval_relevance_decision=last_relevance,
             evidence_support_decision=last_support,
@@ -277,6 +311,8 @@ class SelfRAGAgent:
             self_rag_config=rag.to_dict(),
             reflection_trace=[c.to_log_dict() for c in self.reflector.calls],
             retrieval_history=retrieval_history,
+            evidence_windows=list(tracker.history),
+            extra_llm_call_reasons=extra_reasons,
         )
 
     def _generate(self, question: str, chunks: list[RetrievedChunk]) -> GenerationResult:

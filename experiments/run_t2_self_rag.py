@@ -51,6 +51,8 @@ def assert_no_gold_in_self_rag(question: str, item: dict, retrieved_chunks, reco
             "question": record.question,
             "answer": record.answer,
             "trace_prompts": [step.get("prompt") or "" for step in record.reflection_trace],
+            "windows": record.evidence_windows,
+            "reasons": record.extra_llm_call_reasons,
         },
         ensure_ascii=False,
     ).lower()
@@ -170,8 +172,12 @@ def main() -> None:
         )
         print(
             f"retrieval_iterations={record.number_of_retrieval_iterations} "
+            f"evidence_refinements={record.number_of_evidence_refinements} "
             f"llm_calls={record.number_of_llm_calls} retrieved={len(record.retrieved_chunks)}"
         )
+        print(f"extra_llm_call_reasons={record.extra_llm_call_reasons}")
+        if record.evidence_windows:
+            print(f"evidence_windows={json.dumps(record.evidence_windows)}")
         for chunk in record.retrieved_chunks:
             print(
                 f"  rank={chunk['rank']} pdf_page={chunk['page']} "
@@ -199,9 +205,15 @@ def main() -> None:
         if records
         else 0.0
     )
+    mean_ref = (
+        sum(int(r.get("number_of_evidence_refinements") or 0) for r in records) / len(records)
+        if records
+        else 0.0
+    )
     extra = {
         "mean_llm_calls": mean_llm,
         "mean_retrieval_iterations": mean_ret,
+        "mean_evidence_refinements": mean_ref,
         "self_rag_config": self_rag_cfg.to_dict(),
     }
     print("\n=== Self-RAG evaluation (gold not shown to the LLM) ===")

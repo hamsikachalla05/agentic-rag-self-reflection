@@ -17,7 +17,6 @@ Label:"""
 RELEVANCE_PROMPT = """Reply with exactly one label. No explanation.
 RELEVANT if any retrieved chunk could help answer the question.
 IRRELEVANT if none of the chunks are about the question.
-You may add an optional second line: QUERY: <short follow-up search query>
 Question: {question}
 Evidence:
 {evidence}
@@ -26,7 +25,6 @@ Label:"""
 SUPPORT_PROMPT = """Reply with exactly one label. No explanation.
 SUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).
 UNSUPPORTED if the evidence is missing those values.
-You may add an optional second line: QUERY: <short follow-up search query>
 Question: {question}
 Evidence:
 {evidence}

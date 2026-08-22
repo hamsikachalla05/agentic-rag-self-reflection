@@ -20,10 +20,12 @@ class SelfRAGConfig:
     evidence_support: bool = True
     answer_usefulness: bool = True
 
-    # Loop caps so reflection cannot retrieve/generate forever.
-    max_retrieval_iterations: int = 2
+    # One hybrid retrieve (plus empty-filter retry). Window slides are not
+    # additional hybrid searches.
+    max_retrieval_iterations: int = 1
+    max_evidence_refinements: int = 2
     max_answer_attempts: int = 2
-    max_llm_calls: int = 12
+    max_llm_calls: int = 8
     reflection_max_tokens: int = 16
 
     def to_dict(self) -> dict[str, Any]:

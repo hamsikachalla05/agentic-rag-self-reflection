@@ -163,7 +163,7 @@ class Reflector:
             default="RELEVANT",
             enabled=self.self_rag_cfg.retrieval_relevance,
             skip_decision="RELEVANT",
-            allow_followup=True,
+            allow_followup=False,
             llm_calls_used=llm_calls_used,
         )
 
@@ -180,7 +180,7 @@ class Reflector:
             default="SUPPORTED",
             enabled=self.self_rag_cfg.evidence_support,
             skip_decision="SUPPORTED",
-            allow_followup=True,
+            allow_followup=False,
             llm_calls_used=llm_calls_used,
         )
 
