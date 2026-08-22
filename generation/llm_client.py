@@ -149,7 +149,7 @@ class OpenAICompatibleLLM:
             or "http://localhost:11434/v1"
         ).rstrip("/")
 
-    def generate(self, prompt: str) -> LLMOutput:
+    def generate(self, prompt: str, max_tokens: int | None = None) -> LLMOutput:
         import time
 
         import requests
@@ -159,7 +159,7 @@ class OpenAICompatibleLLM:
         payload: dict[str, Any] = {
             "model": self.cfg.llm_model,
             "temperature": self.cfg.llm_temperature,
-            "max_tokens": self.cfg.llm_max_new_tokens,
+            "max_tokens": int(max_tokens) if max_tokens is not None else self.cfg.llm_max_new_tokens,
             "think": think,
             "options": {
                 "num_ctx": num_ctx,

@@ -201,13 +201,9 @@ The checked-in sample PDFs and 10 questions are an end-to-end prototype so you c
 
 ## Adding Self-RAG later
 
-Keep this baseline frozen. Add reflection as a new package (for example `reflection/`) that may:
+Keep this baseline frozen. Self-RAG lives in `self_rag/` and `experiments/run_t2_self_rag.py`. It wraps the same `HybridRetriever`, `AnswerGenerator`, evaluator, and 700-character evidence window. `config.CONFIG` has no Self-RAG flags; `SelfRAGConfig` enables the four reflection stages independently for later ablations.
 
-- grade retrieved documents
-- critique a draft answer
-- optionally issue a **new** retrieval call through the **same** `HybridRetriever`
-
-Do not change `config.py` defaults for chunk size, overlap, embedding model, hybrid weights, or `final_top_k` when comparing against this retrieval baseline.
+Do not change `config.py` defaults for chunk size, overlap, embedding model, hybrid weights, `final_top_k`, or `max_chars_per_chunk_in_prompt` when comparing against this retrieval baseline.
 
 ## T²-RAGBench (dataset adapter)
 

@@ -13,6 +13,7 @@ data/t2_ragbench/documents/
 data/t2_ragbench/raw/
 logs/baseline_*/
 logs/t2-ragbench-small_*/
+logs/t2-self-rag-small_*/
 logs/*.json
 logs/*.jsonl
 !logs/.gitkeep
