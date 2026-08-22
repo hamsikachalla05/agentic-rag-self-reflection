@@ -1,0 +1,120 @@
+{
+  "question_id": "q01",
+  "question": "What were Northstar Financial Inc. total revenues in 2023?",
+  "retrieval_query": "What were Northstar Financial Inc. total revenues in 2023?",
+  "metadata_filters": {
+    "year": 2023,
+    "company": "Northstar Financial Inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p3::c1::fa89fb5ea6",
+      "rank": 1,
+      "dense_score": 0.6987892985343933,
+      "bm25_score": 5.463175694711737,
+      "hybrid_score": 0.9244905903634035,
+      "page": 3,
+      "pages": [
+        2,
+        3
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p1::c0::08ce8ca8c3",
+      "rank": 2,
+      "dense_score": 0.7239937782287598,
+      "bm25_score": 1.477004869977737,
+      "hybrid_score": 0.6756775808562319,
+      "page": 1,
+      "pages": [
+        1,
+        2
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p5::c3::374b75e78f",
+      "rank": 3,
+      "dense_score": 0.6681318283081055,
+      "bm25_score": 2.1879183824190953,
+      "hybrid_score": 0.566163568574211,
+      "page": 5,
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p6::c4::4eebd764e8",
+      "rank": 4,
+      "dense_score": 0.6299784183502197,
+      "bm25_score": 1.7344180873700108,
+      "hybrid_score": 0.4149631696166085,
+      "page": 6,
+      "pages": [
+        6,
+        7
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p4::c2::60c4877450",
+      "rank": 5,
+      "dense_score": 0.5653577446937561,
+      "bm25_score": 0.8790842099083378,
+      "hybrid_score": 0.1517762785979883,
+      "page": 4,
+      "pages": [
+        3,
+        4
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    }
+  ],
+  "answer": "In 2023, Northstar Financial Inc. reported total revenues of $6.21 billion, which comprised 50.1% of its total revenues.",
+  "latency_seconds": 3.0433,
+  "input_tokens": 1190,
+  "output_tokens": 37,
+  "total_tokens": 1227,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 1,
+  "retrieval_latency_seconds": 0.0111,
+  "llm_latency_seconds": 2.2885,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "/workspace/data/reports",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "/workspace/data/indexes/baseline",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "huggingface_local",
+    "llm_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 96,
+    "llm_max_input_tokens": 1536,
+    "llm_device": "cpu",
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  }
+}

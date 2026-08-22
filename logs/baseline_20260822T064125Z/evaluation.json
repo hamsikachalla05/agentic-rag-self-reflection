@@ -1,0 +1,243 @@
+{
+  "retrieval": {
+    "n": 10,
+    "mrr": 0.0,
+    "recall_at_k": {
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "8": 0.0,
+      "10": 0.0
+    },
+    "hit_rate": 0.0
+  },
+  "latency": {
+    "mean_seconds": 2.4059,
+    "n": 10
+  },
+  "tokens": {
+    "mean_total": 834.9,
+    "n": 10
+  },
+  "answer_correctness": "not_implemented",
+  "evidence_support": "not_implemented",
+  "per_question": [
+    {
+      "question_id": "q01",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        3
+      ],
+      "gold_document_ids": [
+        "northstar-financial-inc_2023_annual-report"
+      ],
+      "retrieved_pages": [
+        1,
+        4
+      ]
+    },
+    {
+      "question_id": "q02",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        6
+      ],
+      "gold_document_ids": [
+        "northstar-financial-inc_2023_annual-report"
+      ],
+      "retrieved_pages": [
+        1,
+        4
+      ]
+    },
+    {
+      "question_id": "q03",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        2
+      ],
+      "gold_document_ids": [
+        "northstar-financial-inc_2023_annual-report"
+      ],
+      "retrieved_pages": [
+        1,
+        4
+      ]
+    },
+    {
+      "question_id": "q04",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        3
+      ],
+      "gold_document_ids": [
+        "cedartech-plc_2022_annual-report"
+      ],
+      "retrieved_pages": [
+        1
+      ]
+    },
+    {
+      "question_id": "q05",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        5
+      ],
+      "gold_document_ids": [
+        "northstar-financial-inc_2023_annual-report"
+      ],
+      "retrieved_pages": [
+        1,
+        4
+      ]
+    },
+    {
+      "question_id": "q06",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        5
+      ],
+      "gold_document_ids": [
+        "northstar-financial-inc_2023_annual-report"
+      ],
+      "retrieved_pages": [
+        1,
+        4
+      ]
+    },
+    {
+      "question_id": "q07",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        2
+      ],
+      "gold_document_ids": [
+        "cedartech-plc_2022_annual-report"
+      ],
+      "retrieved_pages": [
+        1
+      ]
+    },
+    {
+      "question_id": "q08",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        3
+      ],
+      "gold_document_ids": [
+        "northstar-financial-inc_2023_annual-report"
+      ],
+      "retrieved_pages": [
+        1,
+        4
+      ]
+    },
+    {
+      "question_id": "q09",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        7
+      ],
+      "gold_document_ids": [
+        "northstar-financial-inc_2023_annual-report"
+      ],
+      "retrieved_pages": [
+        4,
+        1
+      ]
+    },
+    {
+      "question_id": "q10",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [
+        3
+      ],
+      "gold_document_ids": [
+        "cedartech-plc_2022_annual-report"
+      ],
+      "retrieved_pages": [
+        1
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 """Token-based chunking with overlap.
 
-Every chunk keeps document identifiers needed for retrieval evaluation.
-Chunking is page-aware: a chunk is associated with the page where it starts,
-and records all pages it spans.
+Chunks are built **within a page** so page identifiers stay exact for retrieval
+evaluation. Pages longer than the chunk size are split with the configured
+overlap. Every chunk keeps document identifiers needed for evaluation.
 """
 
 from __future__ import annotations
@@ -74,60 +74,41 @@ def chunk_document(
         raise ValueError("chunk_overlap_tokens must be smaller than chunk_size_tokens")
 
     encoder = _get_encoder(encoding_name)
-    token_stream: list[tuple[int, int]] = []
-    text_by_page: dict[int, str] = {}
+    chunks: list[Chunk] = []
+    ordinal = 0
 
-    for page in document.pages:
-        page_text = (page.text or "").strip()
+    for parsed_page in document.pages:
+        page_text = (parsed_page.text or "").strip()
         if not page_text:
             continue
-        text_by_page[page.page] = page_text
         tokens = encoder.encode(page_text)
-        for token_id in tokens:
-            token_stream.append((page.page, token_id))
-        # Keep a page boundary marker so overlap still knows the page.
-        newline_tokens = encoder.encode("\n\n")
-        for token_id in newline_tokens:
-            token_stream.append((page.page, token_id))
-
-    if not token_stream:
-        return []
-
-    chunks: list[Chunk] = []
-    start = 0
-    ordinal = 0
-    n = len(token_stream)
-    step = max(chunk_size_tokens - chunk_overlap_tokens, 1)
-
-    while start < n:
-        end = min(start + chunk_size_tokens, n)
-        window = token_stream[start:end]
-        token_ids = [tok for _, tok in window]
-        pages = []
-        for page_no, _ in window:
-            if page_no not in pages:
-                pages.append(page_no)
-        text = encoder.decode(token_ids).strip()
-        if text:
-            page = pages[0]
-            chunk = Chunk(
-                chunk_id=_stable_chunk_id(document.document_id, page, ordinal, text),
-                document_id=document.document_id,
-                page=page,
-                pages=pages,
-                company=document.company,
-                year=document.year,
-                filing_type=document.filing_type,
-                source_filename=document.source_filename,
-                text=text,
-                token_count=len(token_ids),
-                extra_metadata=dict(document.extra_metadata),
-            )
-            chunks.append(chunk)
-            ordinal += 1
-        if end >= n:
-            break
-        start += step
+        start = 0
+        n = len(tokens)
+        step = max(chunk_size_tokens - chunk_overlap_tokens, 1)
+        while start < n:
+            end = min(start + chunk_size_tokens, n)
+            token_ids = tokens[start:end]
+            text = encoder.decode(token_ids).strip()
+            if text:
+                page = parsed_page.page
+                chunk = Chunk(
+                    chunk_id=_stable_chunk_id(document.document_id, page, ordinal, text),
+                    document_id=document.document_id,
+                    page=page,
+                    pages=[page],
+                    company=document.company,
+                    year=document.year,
+                    filing_type=document.filing_type,
+                    source_filename=document.source_filename,
+                    text=text,
+                    token_count=len(token_ids),
+                    extra_metadata=dict(document.extra_metadata),
+                )
+                chunks.append(chunk)
+                ordinal += 1
+            if end >= n:
+                break
+            start += step
 
     return chunks
 

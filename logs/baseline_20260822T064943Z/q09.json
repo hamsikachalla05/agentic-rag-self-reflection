@@ -1,0 +1,113 @@
+{
+  "question_id": "q09",
+  "question": "How much did Northstar Financial Inc. agree to pay to acquire Harbor Trust Partners?",
+  "retrieval_query": "How much did Northstar Financial Inc. agree to pay to acquire Harbor Trust Partners?",
+  "metadata_filters": {
+    "company": "Northstar Financial Inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p7::c6::95ff3af619",
+      "rank": 1,
+      "dense_score": 0.7243101596832275,
+      "bm25_score": 9.99540208002395,
+      "hybrid_score": 1.0,
+      "page": 7,
+      "pages": [
+        7
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p2::c1::9928e0b557",
+      "rank": 2,
+      "dense_score": 0.6716880798339844,
+      "bm25_score": 3.1874183399354203,
+      "hybrid_score": 0.5520401145418927,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p1::c0::f75bdcd6d1",
+      "rank": 3,
+      "dense_score": 0.6552788019180298,
+      "bm25_score": 2.1844199031636027,
+      "hybrid_score": 0.46204078304535035,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p3::c2::00550ea076",
+      "rank": 4,
+      "dense_score": 0.6440389156341553,
+      "bm25_score": 1.9312179755794276,
+      "hybrid_score": 0.4196413352130088,
+      "page": 3,
+      "pages": [
+        3
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p6::c5::0497358906",
+      "rank": 5,
+      "dense_score": 0.6316663026809692,
+      "bm25_score": 1.7863402105796524,
+      "hybrid_score": 0.37890713835813744,
+      "page": 6,
+      "pages": [
+        6
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    }
+  ],
+  "answer": "Northstar Financial Inc. — Annual Report for the year ended December, 2024.",
+  "latency_seconds": 0.4648,
+  "input_tokens": 512,
+  "output_tokens": 20,
+  "total_tokens": 532,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 1,
+  "retrieval_latency_seconds": 0.0112,
+  "llm_latency_seconds": 0.4519,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "/workspace/data/reports",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "/workspace/data/indexes/baseline",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "huggingface_local",
+    "llm_model": "google/flan-t5-base",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 96,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 280
+  }
+}

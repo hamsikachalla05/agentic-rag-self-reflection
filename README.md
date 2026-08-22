@@ -71,11 +71,11 @@ All research-critical parameters live in [`config.py`](config.py):
 | `embedding_model` | `BAAI/bge-small-en-v1.5` | free, local, 512-token context |
 | `dense_top_k` | 20 | |
 | `bm25_top_k` | 20 | |
-| `final_top_k` / `max_evidence_chunks` | 8 | context size; keep frozen |
+| `final_top_k` / `max_evidence_chunks` | 5 | context size; keep frozen |
 | `hybrid_dense_weight` | 0.6 | |
 | `hybrid_bm25_weight` | 0.4 | min-max normalized weighted sum |
 | `hybrid_method` | `weighted_minmax` | set `rrf` for reciprocal rank fusion |
-| `llm_model` | `Qwen/Qwen2.5-0.5B-Instruct` | free local Hugging Face model (long enough context for evidence) |
+| `llm_model` | `google/flan-t5-base` | free local Hugging Face encoder-decoder (CPU) |
 | `llm_temperature` | 0.0 | |
 | `max_retrieval_calls` | 2 | empty-filter retry only; no reflection |
 
@@ -85,7 +85,7 @@ Do not change embedding model, chunking, retriever, context size, or LLM between
 
 - PDFs are parsed with **pdfplumber** (text + tables). Page numbers are retained.
 - Metadata (`company`, `year`, `filing_type`, `document_id`) comes from a sidecar JSON or from the filename pattern `{company}_{year}_{filing_type}.pdf`. Missing fields stay missing.
-- Chunks are ~512 tokens with 50-token overlap. Each chunk has a stable `chunk_id` plus `document_id`, `page` / `pages`, `company`, `year`, `source_filename`, and `text`.
+- Chunks are ~512 tokens with 50-token overlap, **split within a page** so `page` stays exact for evaluation. Each chunk has a stable `chunk_id` plus `document_id`, `page` / `pages`, `company`, `year`, `source_filename`, and `text`.
 
 ## Retrieval
 
@@ -107,7 +107,7 @@ The controller is intentionally small:
 
 The LLM receives the original question, retrieved chunk text, and source/page identifiers. It is instructed to answer only from evidence, avoid unsupported claims, admit insufficient evidence, and cite pages. Dataset gold answers/contexts are **never** injected.
 
-Default generator: local `Qwen/Qwen2.5-0.5B-Instruct` (CPU). For a stronger but still local/OpenAI-compatible endpoint, set `llm_provider = "openai_compatible"` and `LLM_BASE_URL` / `LLM_API_KEY`. Freeze that choice before the main study.
+Default generator: local `google/flan-t5-base` (CPU, encoder-decoder). For a stronger OpenAI-compatible endpoint, set `llm_provider = "openai_compatible"` and `LLM_BASE_URL` / `LLM_API_KEY`. Freeze that choice before the main study. Evidence passed to FLAN-T5 is truncated to the start of each page-local chunk so figures and names remain in the 512-token encoder window.
 
 Token usage is logged as input / output / total tokens. There is no monetary cost metric.
 
@@ -162,7 +162,23 @@ python3 experiments/run_baseline.py --rebuild-index
 
 Place real annual-report PDFs in `data/reports/` using `{Company}_{Year}_{filing-type}.pdf`, add questions under `data/questions/`, then rebuild the index.
 
-First run downloads `BAAI/bge-small-en-v1.5` and `Qwen/Qwen2.5-0.5B-Instruct` from Hugging Face.
+First run downloads `BAAI/bge-small-en-v1.5` and `google/flan-t5-base` from Hugging Face.
+
+## Prototype end-to-end run
+
+Checked-in sample PDFs (Northstar 2023, CedarTech 2022) and 10 questions. Gold pages are used **only** by `evaluation/evaluator.py`. JSON records from the CPU prototype are in `logs/examples/`.
+
+| Metric | Value |
+| --- | --- |
+| Recall@1 | 0.80 |
+| Recall@3 | 1.00 |
+| MRR | 0.88 |
+| Mean latency | 0.40 s |
+| Mean total tokens | 520 |
+
+Rank-1 retrieved page matched the gold page for 8/10 questions; the other two matched within the top 3. Generated answers copied the correct figure or name for most questions (revenue, employees, office, operating income, segment, dividend, CEO, acquisition price). FLAN-T5-base still misses some numeric details (effective tax rate, one percentage). That is expected for this small frozen generator: Self-RAG should wrap this retriever rather than replace it.
+
+Example (`q01`): filters `{company, year}` from the question; rank-1 chunk is page 3 with dense/BM25/hybrid scores; answer `$12.40 billion`.
 
 ## Prototype vs full corpus
 

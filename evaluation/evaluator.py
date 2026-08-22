@@ -50,7 +50,12 @@ class Evaluator:
             or ([gold["document_id"]] if gold.get("document_id") else [])
         ]
         retrieved = record.get("retrieved_chunks") or []
-        retrieved_pages = [int(c["page"]) for c in retrieved if c.get("page") is not None]
+        retrieved_pages = []
+        for c in retrieved:
+            if c.get("pages"):
+                retrieved_pages.extend(int(p) for p in c["pages"])
+            elif c.get("page") is not None:
+                retrieved_pages.append(int(c["page"]))
 
         def is_hit(chunk: dict[str, Any]) -> bool:
             doc_ok = True
@@ -58,9 +63,10 @@ class Evaluator:
                 doc_ok = str(chunk.get("document_id")) in gold_docs
             page_ok = True
             if gold_pages:
-                page_ok = int(chunk.get("page")) in gold_pages or any(
-                    int(p) in gold_pages for p in chunk.get("pages") or []
-                )
+                chunk_pages = {int(p) for p in chunk.get("pages") or []}
+                if chunk.get("page") is not None:
+                    chunk_pages.add(int(chunk["page"]))
+                page_ok = bool(chunk_pages & set(gold_pages))
             return doc_ok and page_ok
 
         hits = [is_hit(c) for c in retrieved]

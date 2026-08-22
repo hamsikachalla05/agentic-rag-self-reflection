@@ -1,0 +1,114 @@
+{
+  "question_id": "q08",
+  "question": "What was the effective tax rate for Northstar Financial Inc. in 2023?",
+  "retrieval_query": "What was the effective tax rate for Northstar Financial Inc. in 2023?",
+  "metadata_filters": {
+    "year": 2023,
+    "company": "Northstar Financial Inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p3::c2::00550ea076",
+      "rank": 1,
+      "dense_score": 0.7404270172119141,
+      "bm25_score": 10.52711141586703,
+      "hybrid_score": 1.0,
+      "page": 3,
+      "pages": [
+        3
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p1::c0::f75bdcd6d1",
+      "rank": 2,
+      "dense_score": 0.6999150514602661,
+      "bm25_score": 2.844269606235117,
+      "hybrid_score": 0.5386602354432485,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p2::c1::9928e0b557",
+      "rank": 3,
+      "dense_score": 0.6667892336845398,
+      "bm25_score": 2.1982451920688435,
+      "hybrid_score": 0.41564050423814436,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p6::c5::0497358906",
+      "rank": 4,
+      "dense_score": 0.6367277503013611,
+      "bm25_score": 2.41369734344738,
+      "hybrid_score": 0.3401612201176716,
+      "page": 6,
+      "pages": [
+        6
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p7::c6::95ff3af619",
+      "rank": 5,
+      "dense_score": 0.5953152179718018,
+      "bm25_score": 1.6586737647707335,
+      "hybrid_score": 0.18873990954628994,
+      "page": 7,
+      "pages": [
+        7
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    }
+  ],
+  "answer": "leased facilities.\nInternal controls related to human capital, properties, and leased facilities are reviewed annually by the\naudit committee and by independent registered public accountants. Additional narrative item 2 for\nhuman capital, properties, and leased facilities.\nForward-looking statements concerning human capital, properties, and leased facilities are subject to\nrisks and uncertainties described in Item 1A. Additional narrative item 3 for human capital, properties,\nand leased facilities.\nThe company believes that disclosure about human",
+  "latency_seconds": 5.751,
+  "input_tokens": 1536,
+  "output_tokens": 96,
+  "total_tokens": 1632,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 1,
+  "retrieval_latency_seconds": 0.0156,
+  "llm_latency_seconds": 5.7307,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "/workspace/data/reports",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "/workspace/data/indexes/baseline",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "huggingface_local",
+    "llm_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 96,
+    "llm_max_input_tokens": 1536,
+    "llm_device": "cpu",
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 1600
+  }
+}

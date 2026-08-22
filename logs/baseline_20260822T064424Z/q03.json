@@ -1,0 +1,155 @@
+{
+  "question_id": "q03",
+  "question": "Where are Northstar Financial Inc. principal executive offices located?",
+  "retrieval_query": "Where are Northstar Financial Inc. principal executive offices located?",
+  "metadata_filters": {
+    "company": "Northstar Financial Inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p2::c1::ede22d7fec",
+      "rank": 1,
+      "dense_score": 0.6387863755226135,
+      "bm25_score": 10.905048341500232,
+      "hybrid_score": 0.8996483540111141,
+      "page": 2,
+      "pages": [
+        1,
+        2
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p1::c0::cb3888d0de",
+      "rank": 2,
+      "dense_score": 0.6777331233024597,
+      "bm25_score": 3.299439493609638,
+      "hybrid_score": 0.6987175686191888,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p6::c7::6f57f9b93c",
+      "rank": 3,
+      "dense_score": 0.6214818954467773,
+      "bm25_score": 2.628868705137168,
+      "hybrid_score": 0.5272151041822166,
+      "page": 6,
+      "pages": [
+        5,
+        6
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p2::c2::b02764b28c",
+      "rank": 4,
+      "dense_score": 0.5400547385215759,
+      "bm25_score": 2.619037724805712,
+      "hybrid_score": 0.3170174117615807,
+      "page": 2,
+      "pages": [
+        2,
+        3
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p6::c8::f82cfa6baf",
+      "rank": 5,
+      "dense_score": 0.549712598323822,
+      "bm25_score": 1.4664642963316772,
+      "hybrid_score": 0.2962451036273637,
+      "page": 6,
+      "pages": [
+        6,
+        7
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p3::c3::a6d266fdd5",
+      "rank": 6,
+      "dense_score": 0.5057693719863892,
+      "bm25_score": 0.9457593505741012,
+      "hybrid_score": 0.16239256008321046,
+      "page": 3,
+      "pages": [
+        3
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p4::c4::5772ed7ee4",
+      "rank": 7,
+      "dense_score": 0.4710109233856201,
+      "bm25_score": 0.8474678965255484,
+      "hybrid_score": 0.06893900421578811,
+      "page": 4,
+      "pages": [
+        3,
+        4
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p4::c5::c86b44b629",
+      "rank": 8,
+      "dense_score": 0.46824944019317627,
+      "bm25_score": 0.866737502752764,
+      "hybrid_score": 0.06258699399032075,
+      "page": 4,
+      "pages": [
+        4,
+        5
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    }
+  ],
+  "answer": "star-financial-inc_2023_annual-report file=Northstar-Financial-Inc_2023_annual-report.pdf page=4 pages=4]\nfinancial information are presented in millions of local reporting currency. Additional narrative item 5 for\nfinancial information.\nThe company believes that disclosure about financial information is material to an understanding of\nresults of operations and financial condition. Additional narrative item 6 for financial information.\nThe company believes that disclosure about financial information is material to an understanding of\nresults of operations and financial condition. Additional narrative item 7 for financial information.\nThe company believes that disclosure about financial information is material to an understanding of\nresults of operations and financial condition. Additional narrative item 8 for financial information.\nThe company believes that disclosure about financial information is material to an understanding of\nresults of operations and financial condition. Additional narrative item 9 for financial information.\nThe company believes that disclosure about financial information is material",
+  "latency_seconds": 9.5484,
+  "input_tokens": 2048,
+  "output_tokens": 192,
+  "total_tokens": 2240,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 1,
+  "retrieval_latency_seconds": 0.0256,
+  "llm_latency_seconds": 9.5151,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "/workspace/data/reports",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "/workspace/data/indexes/baseline",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 8,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "huggingface_local",
+    "llm_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 192,
+    "llm_max_input_tokens": 2048,
+    "llm_device": "cpu",
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 8,
+    "max_chars_per_chunk_in_prompt": 1200
+  }
+}

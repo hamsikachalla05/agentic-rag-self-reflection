@@ -1,0 +1,119 @@
+{
+  "question_id": "q09",
+  "question": "How much did Northstar Financial Inc. agree to pay to acquire Harbor Trust Partners?",
+  "retrieval_query": "How much did Northstar Financial Inc. agree to pay to acquire Harbor Trust Partners?",
+  "metadata_filters": {
+    "company": "Northstar Financial Inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p6::c4::4eebd764e8",
+      "rank": 1,
+      "dense_score": 0.7019486427307129,
+      "bm25_score": 8.519496827827856,
+      "hybrid_score": 1.0,
+      "page": 6,
+      "pages": [
+        6,
+        7
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p1::c0::08ce8ca8c3",
+      "rank": 2,
+      "dense_score": 0.6846604347229004,
+      "bm25_score": 2.694537302923786,
+      "hybrid_score": 0.6484311757067075,
+      "page": 1,
+      "pages": [
+        1,
+        2
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p5::c3::374b75e78f",
+      "rank": 3,
+      "dense_score": 0.6074105501174927,
+      "bm25_score": 1.398793954356749,
+      "hybrid_score": 0.3599617520931724,
+      "page": 5,
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p3::c1::fa89fb5ea6",
+      "rank": 4,
+      "dense_score": 0.5952982306480408,
+      "bm25_score": 1.4467471535303151,
+      "hybrid_score": 0.32775293819254714,
+      "page": 3,
+      "pages": [
+        2,
+        3
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p4::c2::60c4877450",
+      "rank": 5,
+      "dense_score": 0.5196385383605957,
+      "bm25_score": 1.0179478947439318,
+      "hybrid_score": 0.08879306464533948,
+      "page": 4,
+      "pages": [
+        3,
+        4
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    }
+  ],
+  "answer": "Northstar Financial Inc. agreed to pay Harbor Trust Partners $6.21 billion to acquire Harbor Trust Partners.",
+  "latency_seconds": 1.6236,
+  "input_tokens": 1191,
+  "output_tokens": 24,
+  "total_tokens": 1215,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 1,
+  "retrieval_latency_seconds": 0.0131,
+  "llm_latency_seconds": 1.6078,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "/workspace/data/reports",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "/workspace/data/indexes/baseline",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "huggingface_local",
+    "llm_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 96,
+    "llm_max_input_tokens": 1536,
+    "llm_device": "cpu",
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  }
+}

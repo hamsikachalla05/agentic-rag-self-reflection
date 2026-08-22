@@ -39,6 +39,7 @@ class RetrievedChunk:
             "bm25_score": self.bm25_score,
             "hybrid_score": self.hybrid_score,
             "page": self.page,
+            "pages": list(self.pages),
             "document_id": self.document_id,
         }
 

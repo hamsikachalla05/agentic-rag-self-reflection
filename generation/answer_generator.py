@@ -14,15 +14,10 @@ from generation.llm_client import build_llm
 from retrieval.hybrid_retriever import RetrievedChunk
 
 
-SYSTEM_INSTRUCTIONS = """You are a financial document QA assistant.
-Answer the question using ONLY the retrieved evidence below.
-Rules:
-- Do not use outside knowledge.
-- Do not make unsupported claims.
-- If the evidence is insufficient, say so explicitly: "The retrieved evidence is insufficient to answer this question."
-- Cite source filename and page number(s) for facts you use.
-- Be concise and specific (figures, dates, names).
-"""
+SYSTEM_INSTRUCTIONS = """Answer using ONLY the retrieved evidence.
+Do not use outside knowledge. Do not invent figures.
+If evidence is insufficient, reply exactly: The retrieved evidence is insufficient to answer this question.
+Cite source filename and page. Write 1-3 sentences."""
 
 
 @dataclass
@@ -45,22 +40,19 @@ def format_evidence(chunks: Sequence[RetrievedChunk], max_chars_per_chunk: int) 
         if len(text) > max_chars_per_chunk:
             text = text[: max_chars_per_chunk].rstrip() + " ..."
         pages = ",".join(str(p) for p in chunk.pages) if chunk.pages else str(chunk.page)
-        header = (
-            f"[rank={chunk.rank} chunk_id={chunk.chunk_id} "
-            f"document_id={chunk.document_id} file={chunk.source_filename} "
-            f"page={chunk.page} pages={pages}]"
-        )
+        header = f"[{chunk.rank}] {chunk.source_filename} p.{chunk.page}"
         blocks.append(f"{header}\n{text}")
     return "\n\n".join(blocks)
 
 
 def build_prompt(question: str, chunks: Sequence[RetrievedChunk], cfg: Config) -> str:
     evidence = format_evidence(chunks, cfg.max_chars_per_chunk_in_prompt)
+    # Compact prompt: encoder-decoder models (FLAN-T5) answer this format reliably.
     return (
-        f"{SYSTEM_INSTRUCTIONS}\n\n"
-        f"Question:\n{question}\n\n"
-        f"Retrieved evidence:\n{evidence}\n\n"
-        f"Final answer (with source/page citations):"
+        f"{SYSTEM_INSTRUCTIONS}\n"
+        f"Question: {question}\n"
+        f"Evidence:\n{evidence}\n"
+        f"Answer:"
     )
 
 

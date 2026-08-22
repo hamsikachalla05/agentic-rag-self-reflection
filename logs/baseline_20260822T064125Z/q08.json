@@ -1,0 +1,72 @@
+{
+  "question_id": "q08",
+  "question": "What was the effective tax rate for Northstar Financial Inc. in 2023?",
+  "retrieval_query": "What was the effective tax rate for Northstar Financial Inc. in 2023?",
+  "metadata_filters": {
+    "year": 2023,
+    "company": "Northstar Financial Inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p1::c0::b58aabf5b5",
+      "rank": 1,
+      "dense_score": 0.7889860272407532,
+      "bm25_score": 1.9139854893425117,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p4::c1::843aa95d26",
+      "rank": 2,
+      "dense_score": 0.7395950555801392,
+      "bm25_score": 0.4683792967911583,
+      "hybrid_score": 0.0,
+      "page": 4,
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    }
+  ],
+  "answer": "The effective tax rate for Northstar Financial Inc. in 2023 was 34%. This can be inferred from the information that the board of directors declared a cash dividend of $1.48 per common share in 2023, which represents 34% of the company's net income attributable to common shareholders.",
+  "latency_seconds": 3.7299,
+  "input_tokens": 891,
+  "output_tokens": 71,
+  "total_tokens": 962,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 1,
+  "retrieval_latency_seconds": 0.0132,
+  "llm_latency_seconds": 3.7139,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "/workspace/data/reports",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "/workspace/data/indexes/baseline",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 8,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "huggingface_local",
+    "llm_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 192,
+    "llm_max_input_tokens": 2048,
+    "llm_device": "cpu",
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 8,
+    "max_chars_per_chunk_in_prompt": 1200
+  }
+}

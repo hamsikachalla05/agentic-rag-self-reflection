@@ -41,7 +41,7 @@ class Config:
     # --- Retrieval ---
     dense_top_k: int = 20
     bm25_top_k: int = 20
-    final_top_k: int = 8
+    final_top_k: int = 5
     hybrid_dense_weight: float = 0.6
     hybrid_bm25_weight: float = 0.4
     rrf_k: int = 60
@@ -49,10 +49,10 @@ class Config:
 
     # --- LLM (free / local) ---
     llm_provider: str = "huggingface_local"
-    llm_model: str = "Qwen/Qwen2.5-0.5B-Instruct"
+    llm_model: str = "google/flan-t5-base"
     llm_temperature: float = 0.0
-    llm_max_new_tokens: int = 192
-    llm_max_input_tokens: int = 2048
+    llm_max_new_tokens: int = 96
+    llm_max_input_tokens: int = 512
     llm_device: str = "cpu"
 
     # --- Agent (baseline only: no reflection / critique) ---
@@ -60,8 +60,8 @@ class Config:
     retry_without_filters_if_empty: bool = True
 
     # --- Generation context ---
-    max_evidence_chunks: int = 8
-    max_chars_per_chunk_in_prompt: int = 1200
+    max_evidence_chunks: int = 5
+    max_chars_per_chunk_in_prompt: int = 400
 
     def to_dict(self) -> dict[str, Any]:
         raw = asdict(self)

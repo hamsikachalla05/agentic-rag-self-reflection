@@ -12,6 +12,7 @@ data/indexes/
 logs/*.json
 logs/*.jsonl
 !logs/.gitkeep
+!logs/examples/
 
 # Model caches if stored locally
 models/

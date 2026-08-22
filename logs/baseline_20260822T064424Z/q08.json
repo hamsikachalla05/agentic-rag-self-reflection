@@ -1,0 +1,156 @@
+{
+  "question_id": "q08",
+  "question": "What was the effective tax rate for Northstar Financial Inc. in 2023?",
+  "retrieval_query": "What was the effective tax rate for Northstar Financial Inc. in 2023?",
+  "metadata_filters": {
+    "year": 2023,
+    "company": "Northstar Financial Inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p2::c2::b02764b28c",
+      "rank": 1,
+      "dense_score": 0.6181365847587585,
+      "bm25_score": 10.864986321994031,
+      "hybrid_score": 0.8052195444898065,
+      "page": 2,
+      "pages": [
+        2,
+        3
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p1::c0::cb3888d0de",
+      "rank": 2,
+      "dense_score": 0.6777603626251221,
+      "bm25_score": 4.8322863035970345,
+      "hybrid_score": 0.7332981794606606,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p3::c3::a6d266fdd5",
+      "rank": 3,
+      "dense_score": 0.5858825445175171,
+      "bm25_score": 7.21177574141467,
+      "hybrid_score": 0.5383451255043188,
+      "page": 3,
+      "pages": [
+        3
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p6::c7::6f57f9b93c",
+      "rank": 4,
+      "dense_score": 0.6232737302780151,
+      "bm25_score": 4.1283223931562105,
+      "hybrid_score": 0.5241780844604409,
+      "page": 6,
+      "pages": [
+        5,
+        6
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p2::c1::ede22d7fec",
+      "rank": 5,
+      "dense_score": 0.6140926480293274,
+      "bm25_score": 3.4886104758826266,
+      "hybrid_score": 0.4659038384117582,
+      "page": 2,
+      "pages": [
+        1,
+        2
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p6::c8::f82cfa6baf",
+      "rank": 6,
+      "dense_score": 0.563098132610321,
+      "bm25_score": 2.4584570498925213,
+      "hybrid_score": 0.2537712482681134,
+      "page": 6,
+      "pages": [
+        6,
+        7
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p4::c4::5772ed7ee4",
+      "rank": 7,
+      "dense_score": 0.5268524289131165,
+      "bm25_score": 3.643142425994918,
+      "hybrid_score": 0.18773705776016497,
+      "page": 4,
+      "pages": [
+        3,
+        4
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    },
+    {
+      "chunk_id": "northstar-financial-inc_2023_annual-report::p4::c5::c86b44b629",
+      "rank": 8,
+      "dense_score": 0.526597797870636,
+      "bm25_score": 3.552259532024247,
+      "hybrid_score": 0.18288734789019867,
+      "page": 4,
+      "pages": [
+        4,
+        5
+      ],
+      "document_id": "northstar-financial-inc_2023_annual-report"
+    }
+  ],
+  "answer": "9e0c document_id=northstar-financial-inc_2023_annual-report file=Northstar-Financial-Inc_2023_annual-report.pdf page=4 pages=1,2]\nsides of regulation, litigation, and competitive dynamics. Additional narrative item 13 for human capital,\nproperties, and leased facilities.\nEmployees, vendors, and clients associated with human capital, properties, and leased facilities\nare subject to the company's code of conduct and risk policies. Additional narrative item 14 for\nhuman capital, properties, and leased facilities.\nManagement continues to monitor human capital, properties, and leased facilities in the ordinary\ncourse of business and reports material changes to the board. Additional narrative item 15 for\nhuman capital, properties, and leased facilities.\nInternal controls related to human capital, properties, and leased facilities are reviewed annually\nby the audit committee and by independent registered public accountants",
+  "latency_seconds": 10.9367,
+  "input_tokens": 2048,
+  "output_tokens": 192,
+  "total_tokens": 2240,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 1,
+  "retrieval_latency_seconds": 0.0144,
+  "llm_latency_seconds": 10.9166,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "/workspace/data/reports",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "/workspace/data/indexes/baseline",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 8,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "huggingface_local",
+    "llm_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 192,
+    "llm_max_input_tokens": 2048,
+    "llm_device": "cpu",
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 8,
+    "max_chars_per_chunk_in_prompt": 1200
+  }
+}

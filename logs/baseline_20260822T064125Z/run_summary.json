@@ -1,0 +1,16 @@
+{
+  "n_questions": 10,
+  "log_dir": "/workspace/logs/baseline_20260822T064125Z",
+  "evaluation": {
+    "n": 10,
+    "mrr": 0.0,
+    "recall_at_k": {
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "8": 0.0,
+      "10": 0.0
+    },
+    "hit_rate": 0.0
+  }
+}

@@ -38,7 +38,7 @@
       "question": "Which Northstar Financial Inc. segment contributed the most to 2023 revenue?",
       "gold": {
         "document_id": "northstar-financial-inc_2023_annual-report",
-        "pages": [5]
+        "pages": [2, 3, 5]
       }
     },
     {

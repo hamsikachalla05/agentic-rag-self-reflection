@@ -83,6 +83,7 @@ class HuggingFaceLocalLLM:
         generate_kwargs: dict[str, Any] = {
             "max_new_tokens": self.cfg.llm_max_new_tokens,
             "pad_token_id": tokenizer.pad_token_id or tokenizer.eos_token_id,
+            "repetition_penalty": 1.05,
         }
         if self.cfg.llm_temperature and self.cfg.llm_temperature > 0:
             generate_kwargs["do_sample"] = True
