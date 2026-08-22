@@ -194,6 +194,24 @@ Keep this baseline frozen. Add reflection as a new package (for example `reflect
 
 Do not change `config.py` defaults for chunk size, overlap, embedding model, hybrid weights, `final_top_k`, or LLM when comparing against this baseline.
 
+## T²-RAGBench (dataset adapter)
+
+Hugging Face dataset: [`G4KMU/t2-ragbench`](https://huggingface.co/datasets/G4KMU/t2-ragbench) (`FinQA`, `ConvFinQA`, `TAT-DQA`).
+
+The Arrow tables contain questions, answers, and page text. **Page PDFs are files in the same Hugging Face repo** (`data/FinQA/{split}/pdf/...`, `data/ConvFinQA/pdf/...`, `data/TAT-DQA/{split}/raw/...`), not binary columns. The adapter downloads only the PDFs needed for a run and indexes them with the **frozen** baseline pipeline.
+
+Gold `program_answer` / `context` are stored on the question record for evaluation and are attached to logs **after** generation. They are not passed to retrieval, embeddings, BM25, the agent, or the LLM.
+
+Evidence mapping: each PDF is one source page keyed by `context_id` (= our `document_id`). Recall/MRR use `chunk.document_id == gold.document_id`. Dataset `page_number` is the 10-K page label; pdfplumber’s page index inside the single-page PDF is 1. Token overlap vs `gold.evidence` is a secondary check because 512-token chunks are not identical to the dataset `context` string.
+
+```bash
+python3 experiments/run_t2_ragbench.py --prepare --rebuild-index
+```
+
+This prepares 5 FinQA test + 5 ConvFinQA turn_0 + 5 TAT-DQA test questions (15 unique page PDFs), then runs the frozen baseline.
+
+Do not process the full benchmark until this 15-question path is verified.
+
 ## Tests
 
 ```bash

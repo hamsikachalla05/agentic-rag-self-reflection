@@ -9,7 +9,10 @@ venv/
 
 # Generated indexes and experiment artifacts
 data/indexes/
+data/t2_ragbench/documents/
+data/t2_ragbench/raw/
 logs/baseline_*/
+logs/t2-ragbench-small_*/
 logs/*.json
 logs/*.jsonl
 !logs/.gitkeep

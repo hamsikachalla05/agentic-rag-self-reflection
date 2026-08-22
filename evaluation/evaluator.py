@@ -20,6 +20,9 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Iterable
 
+from evaluation.answer_metrics import is_answer_correct
+from evaluation.evidence_mapping import best_overlap
+
 
 @dataclass
 class RetrievalMetrics:
@@ -106,6 +109,7 @@ class Evaluator:
         log_path: Path | str,
         questions: list[dict[str, Any]],
         output_path: Path | str | None = None,
+        chunks_by_id: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         log_path = Path(log_path)
         records = [
@@ -117,12 +121,34 @@ class Evaluator:
         per_q = []
         latencies = []
         tokens = []
+        correctness: list[bool] = []
+        overlaps: list[dict[str, Any]] = []
         for record in records:
             latencies.append(record.get("latency_seconds") or 0.0)
             tokens.append(record.get("total_tokens") or 0)
-            metrics = self.retrieval_metrics(record, gold_by_id.get(record["question_id"]))
+            gold = gold_by_id.get(record["question_id"])
+            metrics = self.retrieval_metrics(record, gold)
             if metrics:
                 per_q.append(metrics)
+            if gold and (gold.get("answer") not in (None, "") or gold.get("original_answer") not in (None, "")):
+                correctness.append(
+                    is_answer_correct(
+                        record.get("answer") or "",
+                        gold.get("answer"),
+                        gold.get("original_answer"),
+                    )
+                )
+            if gold and gold.get("evidence"):
+                overlaps.append(
+                    {
+                        "question_id": record.get("question_id"),
+                        **best_overlap(
+                            record.get("retrieved_chunks") or [],
+                            gold.get("evidence") or "",
+                            chunks_by_id=chunks_by_id,
+                        ),
+                    }
+                )
         result = {
             "retrieval": self.summarize(per_q),
             "latency": {
@@ -133,8 +159,17 @@ class Evaluator:
                 "mean_total": sum(tokens) / len(tokens) if tokens else None,
                 "n": len(tokens),
             },
-            "answer_correctness": "not_implemented",
+            "answer_correctness": (
+                {
+                    "accuracy": sum(correctness) / len(correctness),
+                    "n": len(correctness),
+                    "n_correct": sum(correctness),
+                }
+                if correctness
+                else "not_implemented"
+            ),
             "evidence_support": "not_implemented",
+            "evidence_overlap": overlaps,
             "per_question": [asdict(m) for m in per_q],
         }
         if output_path:

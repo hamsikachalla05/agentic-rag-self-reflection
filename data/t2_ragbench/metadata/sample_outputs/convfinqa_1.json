@@ -1,0 +1,82 @@
+{
+  "question_id": "convfinqa_1",
+  "question": "What were the revenues for Republic Services in 2008, as reflected in the unaudited pro forma financial information?",
+  "retrieval_query": "What were the revenues for Republic Services in 2008, as reflected in the unaudited pro forma financial information?",
+  "metadata_filters": {
+    "year": 2008,
+    "company": "Republic Services"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1449::p1::c0::4bd5000939",
+      "rank": 1,
+      "dense_score": 0.7151459455490112,
+      "bm25_score": 24.106841079250582,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1449"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1449::p1::c1::597ef02c06",
+      "rank": 2,
+      "dense_score": 0.5126307010650635,
+      "bm25_score": 8.280284457695673,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1449"
+    }
+  ],
+  "answer": "$45 million",
+  "latency_seconds": 0.2031,
+  "input_tokens": 370,
+  "output_tokens": 5,
+  "total_tokens": 375,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 1,
+  "retrieval_latency_seconds": 0.0113,
+  "llm_latency_seconds": 0.1896,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "/workspace/data/t2_ragbench/documents",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "/workspace/data/indexes/t2_ragbench_small",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "huggingface_local",
+    "llm_model": "google/flan-t5-base",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 96,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 400
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "9362.2",
+  "gold_evidence_reference": "ConvFinQA | pdf/RSG/2008/page_114.pdf | source_page=114 | context_id=convfinqa_ctx_1449"
+}
