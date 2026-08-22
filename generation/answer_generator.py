@@ -14,10 +14,13 @@ from generation.llm_client import build_llm
 from retrieval.hybrid_retriever import RetrievedChunk
 
 
-SYSTEM_INSTRUCTIONS = """Answer using ONLY the retrieved evidence.
-Do not use outside knowledge. Do not invent figures.
-If evidence is insufficient, reply exactly: The retrieved evidence is insufficient to answer this question.
-Cite source filename and page. Write 1-3 sentences."""
+SYSTEM_INSTRUCTIONS = """Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.
+
+If the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.
+
+Give a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.
+
+Say exactly "The retrieved evidence is insufficient to answer this question" ONLY if the retrieved chunks truly lack the required information."""
 
 
 @dataclass
