@@ -47,7 +47,7 @@ def format_evidence(chunks: Sequence[RetrievedChunk], max_chars_per_chunk: int) 
 
 def build_prompt(question: str, chunks: Sequence[RetrievedChunk], cfg: Config) -> str:
     evidence = format_evidence(chunks, cfg.max_chars_per_chunk_in_prompt)
-    # Compact prompt: encoder-decoder models (FLAN-T5) answer this format reliably.
+    # Same evidence-only prompt for every backend (Gemini, FLAN-T5, etc.).
     return (
         f"{SYSTEM_INSTRUCTIONS}\n"
         f"Question: {question}\n"

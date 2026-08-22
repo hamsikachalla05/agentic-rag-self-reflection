@@ -12,4 +12,6 @@ def test_frozen_baseline_knobs_unchanged():
     assert CONFIG.hybrid_bm25_weight == 0.4
     assert CONFIG.hybrid_method == "weighted_minmax"
     assert CONFIG.llm_temperature == 0.0
-    assert CONFIG.llm_model == "google/flan-t5-base"
+    assert CONFIG.llm_provider == "gemini"
+    assert CONFIG.llm_model == "gemini-2.5-flash"
+    assert CONFIG.llm_api_key_env == "GEMINI_API_KEY"

@@ -75,11 +75,12 @@ All research-critical parameters live in [`config.py`](config.py):
 | `hybrid_dense_weight` | 0.6 | |
 | `hybrid_bm25_weight` | 0.4 | min-max normalized weighted sum |
 | `hybrid_method` | `weighted_minmax` | set `rrf` for reciprocal rank fusion |
-| `llm_model` | `google/flan-t5-base` | free local Hugging Face encoder-decoder (CPU) |
-| `llm_temperature` | 0.0 | |
+| `llm_provider` | `gemini` | experimental baseline generator |
+| `llm_model` | `gemini-2.5-flash` | Gemini API; local `google/flan-t5-base` remains optional |
+| `llm_temperature` | 0.0 | as close to deterministic as the API allows |
 | `max_retrieval_calls` | 2 | empty-filter retry only; no reflection |
 
-Do not change embedding model, chunking, retriever, context size, or LLM between baseline and Self-RAG runs unless the change is documented as a new experimental condition.
+Do not change embedding model, chunking, retriever, or context size between baseline and Self-RAG runs. Changing the LLM is a separate experimental condition and must be documented.
 
 ## Ingestion and chunking
 
@@ -107,7 +108,17 @@ The controller is intentionally small:
 
 The LLM receives the original question, retrieved chunk text, and source/page identifiers. It is instructed to answer only from evidence, avoid unsupported claims, admit insufficient evidence, and cite pages. Dataset gold answers/contexts are **never** injected.
 
-Default generator: local `google/flan-t5-base` (CPU, encoder-decoder). For a stronger OpenAI-compatible endpoint, set `llm_provider = "openai_compatible"` and `LLM_BASE_URL` / `LLM_API_KEY`. Freeze that choice before the main study. Evidence passed to FLAN-T5 is truncated to the start of each page-local chunk so figures and names remain in the 512-token encoder window.
+Default experimental generator: **Gemini 2.5 Flash** (`llm_provider = "gemini"`, `llm_model = "gemini-2.5-flash"`). The API key is read from `GEMINI_API_KEY` and is never stored in the repository.
+
+The previous local FLAN-T5 backend is still available:
+
+```python
+# config.py
+llm_provider = "huggingface_local"
+llm_model = "google/flan-t5-base"
+```
+
+An OpenAI-compatible endpoint can use `llm_provider = "openai_compatible"` with `LLM_BASE_URL` / `LLM_API_KEY`. Evidence passed into the prompt is truncated per chunk (`max_chars_per_chunk_in_prompt`) so every backend sees the same retrieved text.
 
 Token usage is logged as input / output / total tokens. There is no monetary cost metric.
 
@@ -162,7 +173,21 @@ python3 experiments/run_baseline.py --rebuild-index
 
 Place real annual-report PDFs in `data/reports/` using `{Company}_{Year}_{filing-type}.pdf`, add questions under `data/questions/`, then rebuild the index.
 
-First run downloads `BAAI/bge-small-en-v1.5` and `google/flan-t5-base` from Hugging Face.
+The first embedding run downloads `BAAI/bge-small-en-v1.5` from Hugging Face. Gemini generation requires an API key (do not commit the key):
+
+**Windows Git Bash / macOS / Linux**
+
+```bash
+export GEMINI_API_KEY="YOUR_KEY"
+```
+
+**PowerShell**
+
+```powershell
+$env:GEMINI_API_KEY="YOUR_KEY"
+```
+
+Local FLAN-T5 (`llm_provider = "huggingface_local"`) additionally downloads `google/flan-t5-base`.
 
 ## Prototype end-to-end run
 
@@ -192,7 +217,7 @@ Keep this baseline frozen. Add reflection as a new package (for example `reflect
 - critique a draft answer
 - optionally issue a **new** retrieval call through the **same** `HybridRetriever`
 
-Do not change `config.py` defaults for chunk size, overlap, embedding model, hybrid weights, `final_top_k`, or LLM when comparing against this baseline.
+Do not change `config.py` defaults for chunk size, overlap, embedding model, hybrid weights, or `final_top_k` when comparing against this retrieval baseline.
 
 ## T²-RAGBench (dataset adapter)
 
@@ -208,7 +233,7 @@ Evidence mapping: each PDF is one source page keyed by `context_id` (= our `docu
 python3 experiments/run_t2_ragbench.py --prepare --rebuild-index
 ```
 
-This prepares 5 FinQA test + 5 ConvFinQA turn_0 + 5 TAT-DQA test questions (15 unique page PDFs), then runs the frozen baseline.
+This prepares 5 FinQA test + 5 ConvFinQA turn_0 + 5 TAT-DQA test questions (15 unique page PDFs), then runs the frozen retrieval baseline with the configured generator (default: Gemini 2.5 Flash).
 
 Do not process the full benchmark until this 15-question path is verified.
 

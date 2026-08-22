@@ -47,13 +47,14 @@ class Config:
     rrf_k: int = 60
     hybrid_method: str = "weighted_minmax"  # or "rrf"
 
-    # --- LLM (free / local) ---
-    llm_provider: str = "huggingface_local"
-    llm_model: str = "google/flan-t5-base"
+    # --- LLM (experimental baseline generator; retrieval knobs stay frozen) ---
+    llm_provider: str = "gemini"
+    llm_model: str = "gemini-2.5-flash"
     llm_temperature: float = 0.0
-    llm_max_new_tokens: int = 96
-    llm_max_input_tokens: int = 512
+    llm_max_new_tokens: int = 1024
+    llm_max_input_tokens: int = 512  # local HF encoder-decoder only
     llm_device: str = "cpu"
+    llm_api_key_env: str = "GEMINI_API_KEY"
 
     # --- Agent (baseline only: no reflection / critique) ---
     max_retrieval_calls: int = 2

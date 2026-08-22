@@ -1,4 +1,8 @@
-"""Local / free LLM client. Default: Hugging Face encoder-decoder on CPU."""
+"""LLM backends.
+
+Default experimental generator: Gemini 2.5 Flash via the Gemini API.
+Local Hugging Face (FLAN-T5) and OpenAI-compatible endpoints remain available.
+"""
 
 from __future__ import annotations
 
@@ -159,8 +163,104 @@ class OpenAICompatibleLLM:
         )
 
 
+class GeminiLLM:
+    """Gemini API backend. The API key is read from the environment only."""
+
+    def __init__(self, cfg: Config | None = None):
+        self.cfg = cfg or CONFIG
+        env_name = getattr(self.cfg, "llm_api_key_env", None) or "GEMINI_API_KEY"
+        self.api_key = os.environ.get(env_name) or os.environ.get("GOOGLE_API_KEY") or ""
+        self._client = None
+
+    def _client_or_raise(self):
+        if not self.api_key:
+            env_name = getattr(self.cfg, "llm_api_key_env", None) or "GEMINI_API_KEY"
+            raise RuntimeError(
+                f"Missing Gemini API key. Set the {env_name} environment variable."
+            )
+        if self._client is None:
+            from google import genai
+
+            # Pass the key only when present. The SDK also reads GEMINI_API_KEY
+            # / GOOGLE_API_KEY from the process environment.
+            if self.api_key:
+                self._client = genai.Client(api_key=self.api_key)
+            else:
+                self._client = genai.Client()
+        return self._client
+
+    def _extract_text(self, response) -> str:
+        try:
+            text = response.text
+            if text:
+                return text.strip()
+        except Exception:
+            pass
+        candidates = getattr(response, "candidates", None) or []
+        parts: list[str] = []
+        for candidate in candidates:
+            content = getattr(candidate, "content", None)
+            for part in getattr(content, "parts", None) or []:
+                value = getattr(part, "text", None)
+                if value:
+                    parts.append(value)
+        return "\n".join(parts).strip()
+
+    def _usage(self, response) -> tuple[int, int]:
+        usage = getattr(response, "usage_metadata", None)
+        if usage is None:
+            return 0, 0
+        input_tokens = int(getattr(usage, "prompt_token_count", 0) or 0)
+        thoughts = int(getattr(usage, "thoughts_token_count", 0) or 0)
+        candidates = int(getattr(usage, "candidates_token_count", 0) or 0)
+        total = getattr(usage, "total_token_count", None)
+        output_tokens = candidates + thoughts
+        if total is not None and input_tokens:
+            output_tokens = max(output_tokens, int(total) - input_tokens)
+        return input_tokens, output_tokens
+
+    def generate(self, prompt: str) -> LLMOutput:
+        import time
+
+        from google.genai import types
+
+        client = self._client_or_raise()
+        gen_config = types.GenerateContentConfig(
+            temperature=self.cfg.llm_temperature,
+            max_output_tokens=self.cfg.llm_max_new_tokens,
+            candidate_count=1,
+            seed=0,
+        )
+        t0 = time.perf_counter()
+        response = client.models.generate_content(
+            model=self.cfg.llm_model,
+            contents=prompt,
+            config=gen_config,
+        )
+        latency = time.perf_counter() - t0
+        input_tokens, output_tokens = self._usage(response)
+        return LLMOutput(
+            text=self._extract_text(response),
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            latency_seconds=latency,
+            raw={
+                "provider": "gemini",
+                "model": self.cfg.llm_model,
+                "finish_reason": str(
+                    getattr((getattr(response, "candidates", None) or [None])[0], "finish_reason", "")
+                    or ""
+                ),
+            },
+        )
+
+
 def build_llm(cfg: Config | None = None):
     cfg = cfg or CONFIG
     if cfg.llm_provider == "openai_compatible":
         return OpenAICompatibleLLM(cfg)
-    return HuggingFaceLocalLLM(cfg)
+    if cfg.llm_provider == "huggingface_local":
+        return HuggingFaceLocalLLM(cfg)
+    if cfg.llm_provider == "gemini":
+        return GeminiLLM(cfg)
+    raise ValueError(f"Unknown llm_provider: {cfg.llm_provider}")

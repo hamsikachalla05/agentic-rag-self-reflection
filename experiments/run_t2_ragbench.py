@@ -103,7 +103,8 @@ def main() -> None:
     assert cfg.hybrid_dense_weight == 0.6
     assert cfg.hybrid_bm25_weight == 0.4
     assert cfg.hybrid_method == "weighted_minmax"
-    assert cfg.llm_model == CONFIG.llm_model
+    assert cfg.llm_provider == "gemini"
+    assert cfg.llm_model == "gemini-2.5-flash"
     assert cfg.llm_temperature == 0.0
 
     index_ready = (cfg.index_dir / "faiss.index").exists()
