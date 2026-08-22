@@ -9,6 +9,7 @@ venv/
 
 # Generated indexes and experiment artifacts
 data/indexes/
+logs/baseline_*/
 logs/*.json
 logs/*.jsonl
 !logs/.gitkeep
