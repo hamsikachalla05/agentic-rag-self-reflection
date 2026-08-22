@@ -7,10 +7,24 @@ Local Hugging Face (FLAN-T5) and OpenAI-compatible endpoints remain available.
 from __future__ import annotations
 
 import os
+import re
+import time
 from dataclasses import dataclass
 from typing import Any
 
 from config import CONFIG, Config
+
+# Free-tier GenerateRequestsPerMinutePerProject limit is 5 RPM.
+# 60/5 = 12s; a small extra gap avoids bursting the window.
+GEMINI_FREE_TIER_MIN_INTERVAL_SECONDS = 13.0
+GEMINI_RATE_LIMIT_SAFETY_MARGIN_SECONDS = 2.0
+GEMINI_RATE_LIMIT_MAX_RETRIES = 12
+GEMINI_RATE_LIMIT_MAX_WAIT_SECONDS = 120.0
+
+_RETRY_DELAY_RE = re.compile(
+    r"retryDelay['\"]?\s*[:=]\s*['\"]?(\d+(?:\.\d+)?)\s*s",
+    re.IGNORECASE,
+)
 
 
 @dataclass
@@ -163,6 +177,72 @@ class OpenAICompatibleLLM:
         )
 
 
+def _walk_retry_delay(value: Any) -> float | None:
+    if value is None:
+        return None
+    if isinstance(value, dict):
+        raw = value.get("retryDelay") or value.get("retry_delay")
+        if raw is not None:
+            parsed = _parse_delay_value(raw)
+            if parsed is not None:
+                return parsed
+        for nested in value.values():
+            parsed = _walk_retry_delay(nested)
+            if parsed is not None:
+                return parsed
+    elif isinstance(value, (list, tuple)):
+        for item in value:
+            parsed = _walk_retry_delay(item)
+            if parsed is not None:
+                return parsed
+    elif isinstance(value, str):
+        match = _RETRY_DELAY_RE.search(value)
+        if match:
+            return float(match.group(1))
+    return None
+
+
+def _parse_delay_value(raw: Any) -> float | None:
+    if raw is None:
+        return None
+    if isinstance(raw, (int, float)):
+        return float(raw)
+    if isinstance(raw, dict):
+        if "seconds" in raw:
+            nanos = float(raw.get("nanos") or 0) / 1e9
+            return float(raw["seconds"]) + nanos
+        return _walk_retry_delay(raw)
+    text = str(raw).strip()
+    if text.endswith("s") and text[:-1].replace(".", "", 1).isdigit():
+        return float(text[:-1])
+    try:
+        return float(text)
+    except ValueError:
+        match = _RETRY_DELAY_RE.search(text)
+        return float(match.group(1)) if match else None
+
+
+def is_gemini_rate_limit_error(exc: BaseException) -> bool:
+    code = getattr(exc, "code", None)
+    status = str(getattr(exc, "status", "") or "")
+    blob = f"{status} {exc}"
+    if code == 429:
+        return True
+    return "RESOURCE_EXHAUSTED" in blob or "GenerateRequestsPerMinute" in blob
+
+
+def gemini_retry_delay_seconds(exc: BaseException) -> float:
+    delay = _walk_retry_delay(getattr(exc, "details", None))
+    if delay is None:
+        delay = _walk_retry_delay(getattr(exc, "message", None))
+    if delay is None:
+        delay = _walk_retry_delay(str(exc))
+    if delay is None:
+        delay = 20.0
+    delay = delay + GEMINI_RATE_LIMIT_SAFETY_MARGIN_SECONDS
+    return min(max(delay, GEMINI_RATE_LIMIT_SAFETY_MARGIN_SECONDS), GEMINI_RATE_LIMIT_MAX_WAIT_SECONDS)
+
+
 class GeminiLLM:
     """Gemini API backend. The API key is read from the environment only."""
 
@@ -171,6 +251,11 @@ class GeminiLLM:
         env_name = getattr(self.cfg, "llm_api_key_env", None) or "GEMINI_API_KEY"
         self.api_key = os.environ.get(env_name) or os.environ.get("GOOGLE_API_KEY") or ""
         self._client = None
+        self._last_request_mono: float | None = None
+        self.min_request_interval_seconds = GEMINI_FREE_TIER_MIN_INTERVAL_SECONDS
+        self.rate_limit_retries = 0
+        self.rate_limit_waits = 0
+        self.rate_limit_wait_seconds = 0.0
 
     def _client_or_raise(self):
         if not self.api_key:
@@ -214,9 +299,23 @@ class GeminiLLM:
             output_tokens = max(output_tokens, int(total) - input_tokens)
         return input_tokens, output_tokens
 
-    def generate(self, prompt: str) -> LLMOutput:
-        import time
+    def _sleep(self, seconds: float) -> None:
+        if seconds <= 0:
+            return
+        time.sleep(seconds)
+        self.rate_limit_waits += 1
+        self.rate_limit_wait_seconds += seconds
 
+    def _pace(self) -> None:
+        if self.min_request_interval_seconds <= 0 or self._last_request_mono is None:
+            return
+        elapsed = time.monotonic() - self._last_request_mono
+        remaining = self.min_request_interval_seconds - elapsed
+        if remaining > 0:
+            print(f"Gemini free-tier pacing: waiting {remaining:.1f}s between generate_content calls")
+            self._sleep(remaining)
+
+    def generate(self, prompt: str) -> LLMOutput:
         from google.genai import types
 
         client = self._client_or_raise()
@@ -226,25 +325,55 @@ class GeminiLLM:
             candidate_count=1,
             seed=0,
         )
-        t0 = time.perf_counter()
-        response = client.models.generate_content(
-            model=self.cfg.llm_model,
-            contents=prompt,
-            config=gen_config,
-        )
-        latency = time.perf_counter() - t0
+        retries_before = self.rate_limit_retries
+        waits_before = self.rate_limit_waits
+        wait_seconds_before = self.rate_limit_wait_seconds
+        attempt = 0
+        response = None
+        api_latency = 0.0
+        while True:
+            self._pace()
+            self._last_request_mono = time.monotonic()
+            t0 = time.perf_counter()
+            try:
+                response = client.models.generate_content(
+                    model=self.cfg.llm_model,
+                    contents=prompt,
+                    config=gen_config,
+                )
+                api_latency = time.perf_counter() - t0
+                break
+            except Exception as exc:
+                if not is_gemini_rate_limit_error(exc):
+                    raise
+                attempt += 1
+                self.rate_limit_retries += 1
+                if attempt > GEMINI_RATE_LIMIT_MAX_RETRIES:
+                    raise
+                delay = gemini_retry_delay_seconds(exc)
+                print(
+                    f"Gemini 429 RESOURCE_EXHAUSTED; retrying the same request after {delay:.1f}s "
+                    f"(attempt {attempt}/{GEMINI_RATE_LIMIT_MAX_RETRIES})"
+                )
+                self._sleep(delay)
+                continue
         input_tokens, output_tokens = self._usage(response)
         return LLMOutput(
             text=self._extract_text(response),
             input_tokens=input_tokens,
             output_tokens=output_tokens,
-            latency_seconds=latency,
+            latency_seconds=api_latency,
             raw={
                 "provider": "gemini",
                 "model": self.cfg.llm_model,
                 "finish_reason": str(
                     getattr((getattr(response, "candidates", None) or [None])[0], "finish_reason", "")
                     or ""
+                ),
+                "rate_limit_retries": self.rate_limit_retries - retries_before,
+                "rate_limit_waits": self.rate_limit_waits - waits_before,
+                "rate_limit_wait_seconds": round(
+                    self.rate_limit_wait_seconds - wait_seconds_before, 4
                 ),
             },
         )

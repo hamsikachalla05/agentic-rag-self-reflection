@@ -29,6 +29,9 @@ class GenerationResult:
     latency_seconds: float
     llm_calls: int
     prompt: str
+    rate_limit_retries: int = 0
+    rate_limit_waits: int = 0
+    rate_limit_wait_seconds: float = 0.0
 
 
 def format_evidence(chunks: Sequence[RetrievedChunk], max_chars_per_chunk: int) -> str:
@@ -65,6 +68,7 @@ class AnswerGenerator:
         limited = list(chunks)[: self.cfg.max_evidence_chunks]
         prompt = build_prompt(question, limited, self.cfg)
         output = self.llm.generate(prompt)
+        raw = getattr(output, "raw", None) or {}
         return GenerationResult(
             answer=output.text,
             input_tokens=output.input_tokens,
@@ -73,4 +77,7 @@ class AnswerGenerator:
             latency_seconds=output.latency_seconds,
             llm_calls=1,
             prompt=prompt,
+            rate_limit_retries=int(raw.get("rate_limit_retries") or 0),
+            rate_limit_waits=int(raw.get("rate_limit_waits") or 0),
+            rate_limit_wait_seconds=float(raw.get("rate_limit_wait_seconds") or 0.0),
         )

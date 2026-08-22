@@ -49,6 +49,9 @@ class ExperimentRecord:
     number_of_llm_calls: int
     retrieval_latency_seconds: float = 0.0
     llm_latency_seconds: float = 0.0
+    rate_limit_retries: int = 0
+    rate_limit_waits: int = 0
+    rate_limit_wait_seconds: float = 0.0
     config_snapshot: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -162,5 +165,8 @@ class BaselineAgent:
             number_of_llm_calls=generation.llm_calls,
             retrieval_latency_seconds=round(retrieval_latency, 4),
             llm_latency_seconds=round(generation.latency_seconds, 4),
+            rate_limit_retries=generation.rate_limit_retries,
+            rate_limit_waits=generation.rate_limit_waits,
+            rate_limit_wait_seconds=round(generation.rate_limit_wait_seconds, 4),
             config_snapshot=self.cfg.to_dict(),
         )

@@ -160,7 +160,13 @@ def main() -> None:
                 f"doc={chunk['document_id']} hybrid={chunk['hybrid_score']:.4f} "
                 f"dense={chunk['dense_score']} bm25={chunk['bm25_score']}"
             )
-        print(f"latency={record.latency_seconds}s tokens={record.total_tokens}")
+        print(f"latency={record.latency_seconds}s llm_latency={record.llm_latency_seconds}s tokens={record.total_tokens}")
+        if record.rate_limit_waits:
+            print(
+                f"rate_limit waits={record.rate_limit_waits} "
+                f"retries={record.rate_limit_retries} "
+                f"wait_seconds={record.rate_limit_wait_seconds}"
+            )
         print(f"answer={record.answer}")
         print(f"gold_answer(eval-only)={item.get('gold_answer')}")
         print(f"saved {path}")
@@ -190,6 +196,16 @@ def main() -> None:
         )
     print("by_dataset", json.dumps(metrics.get("by_dataset"), indent=2))
     print(json.dumps({"latency": metrics["latency"], "tokens": metrics["tokens"]}, indent=2))
+    rate_limit = {
+        "retries": sum(int(r.get("rate_limit_retries") or 0) for r in records),
+        "waits": sum(int(r.get("rate_limit_waits") or 0) for r in records),
+        "wait_seconds": round(sum(float(r.get("rate_limit_wait_seconds") or 0) for r in records), 4),
+        "note": (
+            "llm_latency_seconds is generate_content time only and excludes rate-limit waits. "
+            "latency_seconds is end-to-end agent.answer() wall time and includes pacing/429 waits."
+        ),
+    }
+    print("rate_limit", json.dumps(rate_limit, indent=2))
     (logger.run_dir / "run_summary.json").write_text(
         json.dumps(
             {
@@ -205,6 +221,7 @@ def main() -> None:
                     "gold_field": metrics["answer_correctness"].get("gold_field"),
                 },
                 "by_dataset": metrics.get("by_dataset"),
+                "rate_limit": rate_limit,
             },
             indent=2,
         ),
