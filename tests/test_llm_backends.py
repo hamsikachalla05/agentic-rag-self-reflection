@@ -7,7 +7,7 @@ from generation.llm_client import GeminiLLM, HuggingFaceLocalLLM, LLMOutput, bui
 def test_default_backend_is_gemini():
     llm = build_llm(CONFIG)
     assert isinstance(llm, GeminiLLM)
-    assert CONFIG.llm_model == "gemini-2.5-flash"
+    assert CONFIG.llm_model == "gemini-3.6-flash"
 
 
 def test_flan_t5_backend_still_available():
@@ -60,7 +60,7 @@ def test_gemini_generate_uses_prompt_only(monkeypatch):
     prompt = "Question: net change?\nEvidence: 2014 5735; 2015 5829\nAnswer:"
     out = llm.generate(prompt)
     assert isinstance(out, LLMOutput)
-    assert captured["model"] == "gemini-2.5-flash"
+    assert captured["model"] == "gemini-3.6-flash"
     assert captured["contents"] == prompt
     assert captured["temperature"] == 0.0
     assert "gold_answer" not in captured["contents"]

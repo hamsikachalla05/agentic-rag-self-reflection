@@ -49,7 +49,7 @@ class Config:
 
     # --- LLM (experimental baseline generator; retrieval knobs stay frozen) ---
     llm_provider: str = "gemini"
-    llm_model: str = "gemini-2.5-flash"
+    llm_model: str = "gemini-3.6-flash"
     llm_temperature: float = 0.0
     llm_max_new_tokens: int = 1024
     llm_max_input_tokens: int = 512  # local HF encoder-decoder only

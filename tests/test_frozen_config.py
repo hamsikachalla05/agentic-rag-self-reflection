@@ -13,5 +13,5 @@ def test_frozen_baseline_knobs_unchanged():
     assert CONFIG.hybrid_method == "weighted_minmax"
     assert CONFIG.llm_temperature == 0.0
     assert CONFIG.llm_provider == "gemini"
-    assert CONFIG.llm_model == "gemini-2.5-flash"
+    assert CONFIG.llm_model == "gemini-3.6-flash"
     assert CONFIG.llm_api_key_env == "GEMINI_API_KEY"

@@ -1,6 +1,6 @@
 """LLM backends.
 
-Default experimental generator: Gemini 2.5 Flash via the Gemini API.
+Default experimental generator: Gemini 3.6 Flash via the Gemini API.
 Local Hugging Face (FLAN-T5) and OpenAI-compatible endpoints remain available.
 """
 
