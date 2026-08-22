@@ -225,6 +225,19 @@ python3 experiments/run_t2_ragbench.py --prepare --rebuild-index
 
 This prepares 5 FinQA test + 5 ConvFinQA turn_0 + 5 TAT-DQA test questions (15 unique page PDFs), then runs the frozen retrieval baseline with the local Ollama generator.
 
+Frozen 15-question generator baseline (`max_chars_per_chunk_in_prompt=700`; retrieval unchanged vs the 400-char run):
+
+| Metric | 400-char (old) | 700-char (frozen) |
+| --- | --- | --- |
+| Recall@1 / @3 / @5 / @10 | 1.0 | 1.0 |
+| MRR | 1.0 | 1.0 |
+| Answer accuracy | 6/15 = 40% | **8/15 = 53.3%** |
+| FinQA | — | 5/5 |
+| ConvFinQA | 0/5 | 0/5 |
+| TAT-DQA | — | 3/5 |
+| Mean tokens | 649.3 | 898.2 |
+| Mean latency | 9.16 s (laptop GPU) | 15.22 s (this run, CPU Ollama) |
+
 Do not process the full benchmark until this 15-question path is verified.
 
 ## Tests

@@ -65,9 +65,10 @@ class Config:
 
     # --- Generation context ---
     max_evidence_chunks: int = 5
-    # 700 chars/chunk: 5 retrieved chunks + instructions + longest 15-Q prompt
-    # is ~1430 input tokens (cl100k). With llm_max_new_tokens=512 this stays
-    # under llm_num_ctx=2048. 800 chars overflows that budget.
+    # Frozen evidence window after 15-Q: 400 chars -> 6/15; 700 chars -> 8/15.
+    # Real top-5 retrieved chunks, cl100k + chat overhead: max input ~1449;
+    # +512 new tokens = 1961 < llm_num_ctx=2048. 750 is 17 tokens of headroom
+    # (too tight); 800 overflows on the longest 15-Q prompt.
     max_chars_per_chunk_in_prompt: int = 700
 
     def to_dict(self) -> dict[str, Any]:
