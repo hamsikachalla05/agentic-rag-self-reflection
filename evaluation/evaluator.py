@@ -104,6 +104,55 @@ class Evaluator:
         summary["hit_rate"] = sum(1.0 for m in per_question if m.hit) / n
         return summary
 
+    def _by_dataset(
+        self,
+        per_q: list[RetrievalMetrics],
+        correctness: list[dict[str, Any]],
+        records: list[dict[str, Any]],
+        dataset_by_id: dict[str, Any],
+    ) -> dict[str, Any]:
+        groups: dict[str, dict[str, Any]] = {}
+        metrics_by_id = {m.question_id: m for m in per_q}
+        for record in records:
+            qid = record.get("question_id")
+            dataset = str(record.get("dataset") or dataset_by_id.get(qid) or "unknown")
+            bucket = groups.setdefault(
+                dataset,
+                {"retrieval": [], "correctness": [], "latencies": [], "tokens": []},
+            )
+            if qid in metrics_by_id:
+                bucket["retrieval"].append(metrics_by_id[qid])
+            bucket["latencies"].append(record.get("latency_seconds") or 0.0)
+            bucket["tokens"].append(record.get("total_tokens") or 0)
+        for row in correctness:
+            dataset = str(row.get("dataset") or "unknown")
+            groups.setdefault(
+                dataset,
+                {"retrieval": [], "correctness": [], "latencies": [], "tokens": []},
+            )["correctness"].append(row["correct"])
+        out: dict[str, Any] = {}
+        for dataset, bucket in groups.items():
+            n_corr = bucket["correctness"]
+            out[dataset] = {
+                "retrieval": self.summarize(bucket["retrieval"]),
+                "answer_correctness": {
+                    "accuracy": (sum(n_corr) / len(n_corr)) if n_corr else None,
+                    "n": len(n_corr),
+                    "n_correct": sum(n_corr) if n_corr else 0,
+                },
+                "latency": {
+                    "mean_seconds": sum(bucket["latencies"]) / len(bucket["latencies"])
+                    if bucket["latencies"]
+                    else None
+                },
+                "tokens": {
+                    "mean_total": sum(bucket["tokens"]) / len(bucket["tokens"])
+                    if bucket["tokens"]
+                    else None
+                },
+            }
+        return out
+
     def evaluate_log_file(
         self,
         log_path: Path | str,
@@ -118,30 +167,41 @@ class Evaluator:
             if line.strip()
         ]
         gold_by_id = {q["question_id"]: q.get("gold") for q in questions}
+        dataset_by_id = {q["question_id"]: q.get("dataset") for q in questions}
         per_q = []
         latencies = []
         tokens = []
-        correctness: list[bool] = []
+        correctness: list[dict[str, Any]] = []
         overlaps: list[dict[str, Any]] = []
         for record in records:
             latencies.append(record.get("latency_seconds") or 0.0)
             tokens.append(record.get("total_tokens") or 0)
             gold = gold_by_id.get(record["question_id"])
+            dataset = record.get("dataset") or dataset_by_id.get(record["question_id"])
             metrics = self.retrieval_metrics(record, gold)
             if metrics:
                 per_q.append(metrics)
             if gold and (gold.get("answer") not in (None, "") or gold.get("original_answer") not in (None, "")):
+                ok = is_answer_correct(
+                    record.get("answer") or "",
+                    gold.get("answer"),
+                    gold.get("original_answer"),
+                )
                 correctness.append(
-                    is_answer_correct(
-                        record.get("answer") or "",
-                        gold.get("answer"),
-                        gold.get("original_answer"),
-                    )
+                    {
+                        "question_id": record.get("question_id"),
+                        "dataset": dataset,
+                        "correct": ok,
+                        "prediction": record.get("answer"),
+                        "program_answer": gold.get("answer"),
+                        "original_answer": gold.get("original_answer"),
+                    }
                 )
             if gold and gold.get("evidence"):
                 overlaps.append(
                     {
                         "question_id": record.get("question_id"),
+                        "dataset": dataset,
                         **best_overlap(
                             record.get("retrieved_chunks") or [],
                             gold.get("evidence") or "",
@@ -149,6 +209,7 @@ class Evaluator:
                         ),
                     }
                 )
+        by_dataset = self._by_dataset(per_q, correctness, records, dataset_by_id)
         result = {
             "retrieval": self.summarize(per_q),
             "latency": {
@@ -161,13 +222,16 @@ class Evaluator:
             },
             "answer_correctness": (
                 {
-                    "accuracy": sum(correctness) / len(correctness),
+                    "accuracy": sum(1 for c in correctness if c["correct"]) / len(correctness),
                     "n": len(correctness),
-                    "n_correct": sum(correctness),
+                    "n_correct": sum(1 for c in correctness if c["correct"]),
+                    "gold_field": "program_answer (canonical); original_answer accepted as equivalent surface form",
+                    "per_question": correctness,
                 }
                 if correctness
                 else "not_implemented"
             ),
+            "by_dataset": by_dataset,
             "evidence_support": "not_implemented",
             "evidence_overlap": overlaps,
             "per_question": [asdict(m) for m in per_q],

@@ -173,7 +173,21 @@ def main() -> None:
     )
     print("\n=== T²-RAGBench evaluation (gold not shown to the LLM) ===")
     print(json.dumps(metrics["retrieval"], indent=2))
-    print("answer_correctness", json.dumps(metrics["answer_correctness"], indent=2))
+    correctness = metrics["answer_correctness"]
+    if isinstance(correctness, dict):
+        print(
+            "answer_correctness",
+            json.dumps(
+                {
+                    "accuracy": correctness.get("accuracy"),
+                    "n_correct": correctness.get("n_correct"),
+                    "n": correctness.get("n"),
+                    "gold_field": correctness.get("gold_field"),
+                },
+                indent=2,
+            ),
+        )
+    print("by_dataset", json.dumps(metrics.get("by_dataset"), indent=2))
     print(json.dumps({"latency": metrics["latency"], "tokens": metrics["tokens"]}, indent=2))
     (logger.run_dir / "run_summary.json").write_text(
         json.dumps(
@@ -181,7 +195,15 @@ def main() -> None:
                 "n_questions": len(records),
                 "log_dir": str(logger.run_dir),
                 "evaluation": metrics["retrieval"],
-                "answer_correctness": metrics["answer_correctness"],
+                "answer_correctness": metrics["answer_correctness"]
+                if not isinstance(metrics["answer_correctness"], dict)
+                else {
+                    "accuracy": metrics["answer_correctness"].get("accuracy"),
+                    "n_correct": metrics["answer_correctness"].get("n_correct"),
+                    "n": metrics["answer_correctness"].get("n"),
+                    "gold_field": metrics["answer_correctness"].get("gold_field"),
+                },
+                "by_dataset": metrics.get("by_dataset"),
             },
             indent=2,
         ),

@@ -1,0 +1,232 @@
+{
+  "method": "Recall/MRR hit = retrieved chunk.document_id == gold.document_id (context_id of the Hugging Face page PDF). Dataset page_number is the 10-K page label and is NOT comparable to pdfplumber's page index (always 1 for these single-page PDFs). Gold `context` is the same page's text from the dataset, not a separate snippet ID.",
+  "retrieval_eval_valid": true,
+  "page_level_note": "Page-level matching to dataset page_number would be incorrect if compared to chunk.page. Mapping is document/page-PDF level.",
+  "rows": [
+    {
+      "question_id": "finqa_test_0",
+      "dataset": "FinQA",
+      "gold_document_id": "finqa_test_ctx_110",
+      "parsed_document_id": "finqa_test_ctx_110",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": 23,
+      "sidecar_dataset_page": 23,
+      "gold_context_coverage_of_pdf_text": 0.8855721393034826,
+      "n_pdf_chars": 3469,
+      "n_gold_context_chars": 4169
+    },
+    {
+      "question_id": "finqa_test_1",
+      "dataset": "FinQA",
+      "gold_document_id": "finqa_test_ctx_159",
+      "parsed_document_id": "finqa_test_ctx_159",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": 41,
+      "sidecar_dataset_page": 41,
+      "gold_context_coverage_of_pdf_text": 0.09905660377358491,
+      "n_pdf_chars": 2308,
+      "n_gold_context_chars": 3142
+    },
+    {
+      "question_id": "finqa_test_2",
+      "dataset": "FinQA",
+      "gold_document_id": "finqa_test_ctx_359",
+      "parsed_document_id": "finqa_test_ctx_359",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": 61,
+      "sidecar_dataset_page": 61,
+      "gold_context_coverage_of_pdf_text": 0.5625,
+      "n_pdf_chars": 4350,
+      "n_gold_context_chars": 5450
+    },
+    {
+      "question_id": "finqa_test_3",
+      "dataset": "FinQA",
+      "gold_document_id": "finqa_test_ctx_77",
+      "parsed_document_id": "finqa_test_ctx_77",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": 70,
+      "sidecar_dataset_page": 70,
+      "gold_context_coverage_of_pdf_text": 0.5166666666666667,
+      "n_pdf_chars": 2813,
+      "n_gold_context_chars": 3228
+    },
+    {
+      "question_id": "finqa_test_4",
+      "dataset": "FinQA",
+      "gold_document_id": "finqa_test_ctx_261",
+      "parsed_document_id": "finqa_test_ctx_261",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": 27,
+      "sidecar_dataset_page": 27,
+      "gold_context_coverage_of_pdf_text": 0.8514851485148515,
+      "n_pdf_chars": 1812,
+      "n_gold_context_chars": 1727
+    },
+    {
+      "question_id": "convfinqa_0",
+      "dataset": "ConvFinQA",
+      "gold_document_id": "convfinqa_ctx_99",
+      "parsed_document_id": "convfinqa_ctx_99",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": "28",
+      "sidecar_dataset_page": "28",
+      "gold_context_coverage_of_pdf_text": 0.8125,
+      "n_pdf_chars": 4552,
+      "n_gold_context_chars": 4812
+    },
+    {
+      "question_id": "convfinqa_1",
+      "dataset": "ConvFinQA",
+      "gold_document_id": "convfinqa_ctx_1449",
+      "parsed_document_id": "convfinqa_ctx_1449",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": "114",
+      "sidecar_dataset_page": "114",
+      "gold_context_coverage_of_pdf_text": 0.5890909090909091,
+      "n_pdf_chars": 3589,
+      "n_gold_context_chars": 3985
+    },
+    {
+      "question_id": "convfinqa_2",
+      "dataset": "ConvFinQA",
+      "gold_document_id": "convfinqa_ctx_713",
+      "parsed_document_id": "convfinqa_ctx_713",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": "23",
+      "sidecar_dataset_page": "23",
+      "gold_context_coverage_of_pdf_text": 0.9367088607594937,
+      "n_pdf_chars": 4971,
+      "n_gold_context_chars": 5195
+    },
+    {
+      "question_id": "convfinqa_3",
+      "dataset": "ConvFinQA",
+      "gold_document_id": "convfinqa_ctx_7",
+      "parsed_document_id": "convfinqa_ctx_7",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": "33",
+      "sidecar_dataset_page": "33",
+      "gold_context_coverage_of_pdf_text": 0.21379310344827587,
+      "n_pdf_chars": 1468,
+      "n_gold_context_chars": 1738
+    },
+    {
+      "question_id": "convfinqa_5",
+      "dataset": "ConvFinQA",
+      "gold_document_id": "convfinqa_ctx_1536",
+      "parsed_document_id": "convfinqa_ctx_1536",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": "134",
+      "sidecar_dataset_page": "134",
+      "gold_context_coverage_of_pdf_text": 0.46184738955823296,
+      "n_pdf_chars": 3752,
+      "n_gold_context_chars": 4483
+    },
+    {
+      "question_id": "tatqa_test_9063",
+      "dataset": "TAT-DQA",
+      "gold_document_id": "01fdc2339641d7d4a8b06f32d937cffd",
+      "parsed_document_id": "01fdc2339641d7d4a8b06f32d937cffd",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": null,
+      "sidecar_dataset_page": null,
+      "gold_context_coverage_of_pdf_text": 1.0,
+      "n_pdf_chars": 2175,
+      "n_gold_context_chars": 2652
+    },
+    {
+      "question_id": "tatqa_test_9066",
+      "dataset": "TAT-DQA",
+      "gold_document_id": "03a1386971da69e2cd625b87239694d4",
+      "parsed_document_id": "03a1386971da69e2cd625b87239694d4",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": null,
+      "sidecar_dataset_page": null,
+      "gold_context_coverage_of_pdf_text": 1.0,
+      "n_pdf_chars": 1377,
+      "n_gold_context_chars": 1588
+    },
+    {
+      "question_id": "tatqa_test_9071",
+      "dataset": "TAT-DQA",
+      "gold_document_id": "03a98443a7286862ffe1b6bcc2193e54",
+      "parsed_document_id": "03a98443a7286862ffe1b6bcc2193e54",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": null,
+      "sidecar_dataset_page": null,
+      "gold_context_coverage_of_pdf_text": 1.0,
+      "n_pdf_chars": 7699,
+      "n_gold_context_chars": 4154
+    },
+    {
+      "question_id": "tatqa_test_9074",
+      "dataset": "TAT-DQA",
+      "gold_document_id": "0460e7ea49622c1702dc26530eda21b8",
+      "parsed_document_id": "0460e7ea49622c1702dc26530eda21b8",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": null,
+      "sidecar_dataset_page": null,
+      "gold_context_coverage_of_pdf_text": 0.9954954954954955,
+      "n_pdf_chars": 3124,
+      "n_gold_context_chars": 4643
+    },
+    {
+      "question_id": "tatqa_test_9077",
+      "dataset": "TAT-DQA",
+      "gold_document_id": "054153aec5a8b7066b1083f3ec3515ed",
+      "parsed_document_id": "054153aec5a8b7066b1083f3ec3515ed",
+      "ids_match": true,
+      "pdf_internal_pages": [
+        1
+      ],
+      "dataset_source_page": null,
+      "sidecar_dataset_page": null,
+      "gold_context_coverage_of_pdf_text": 0.9375,
+      "n_pdf_chars": 2882,
+      "n_gold_context_chars": 2923
+    }
+  ]
+}

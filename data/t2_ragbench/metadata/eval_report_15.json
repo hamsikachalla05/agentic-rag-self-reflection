@@ -1,0 +1,101 @@
+{
+  "n_questions": 15,
+  "log_dir": "/workspace/logs/t2-ragbench-small_20260822T081155Z",
+  "latency": {
+    "mean_seconds": 0.52484
+  },
+  "tokens": {
+    "mean_total": 438.2
+  },
+  "evaluation": {
+    "n": 15,
+    "mrr": 1.0,
+    "recall_at_k": {
+      "1": 1.0,
+      "3": 1.0,
+      "5": 1.0,
+      "10": 1.0
+    },
+    "hit_rate": 1.0
+  },
+  "answer_correctness": {
+    "accuracy": 0.06666666666666667,
+    "n_correct": 1,
+    "n": 15,
+    "gold_field": "program_answer (canonical); original_answer accepted as equivalent surface form"
+  },
+  "by_dataset": {
+    "FinQA": {
+      "retrieval": {
+        "n": 5,
+        "mrr": 1.0,
+        "recall_at_k": {
+          "1": 1.0,
+          "3": 1.0,
+          "5": 1.0,
+          "10": 1.0
+        },
+        "hit_rate": 1.0
+      },
+      "answer_correctness": {
+        "accuracy": 0.0,
+        "n": 5,
+        "n_correct": 0
+      },
+      "latency": {
+        "mean_seconds": 0.783
+      },
+      "tokens": {
+        "mean_total": 461.0
+      }
+    },
+    "ConvFinQA": {
+      "retrieval": {
+        "n": 5,
+        "mrr": 1.0,
+        "recall_at_k": {
+          "1": 1.0,
+          "3": 1.0,
+          "5": 1.0,
+          "10": 1.0
+        },
+        "hit_rate": 1.0
+      },
+      "answer_correctness": {
+        "accuracy": 0.0,
+        "n": 5,
+        "n_correct": 0
+      },
+      "latency": {
+        "mean_seconds": 0.19254
+      },
+      "tokens": {
+        "mean_total": 336.4
+      }
+    },
+    "TAT-DQA": {
+      "retrieval": {
+        "n": 5,
+        "mrr": 1.0,
+        "recall_at_k": {
+          "1": 1.0,
+          "3": 1.0,
+          "5": 1.0,
+          "10": 1.0
+        },
+        "hit_rate": 1.0
+      },
+      "answer_correctness": {
+        "accuracy": 0.2,
+        "n": 5,
+        "n_correct": 1
+      },
+      "latency": {
+        "mean_seconds": 0.59898
+      },
+      "tokens": {
+        "mean_total": 517.2
+      }
+    }
+  }
+}
