@@ -1,1 +1,24 @@
-..
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+
+# Generated indexes and experiment artifacts
+data/indexes/
+logs/*.json
+logs/*.jsonl
+!logs/.gitkeep
+
+# Model caches if stored locally
+models/
+*.bin
+*.gguf
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

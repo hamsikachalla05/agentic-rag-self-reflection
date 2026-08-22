@@ -1,0 +1,85 @@
+{
+  "description": "Prototype questions over synthetic annual reports. Gold pages are for evaluation only and must never be passed to the LLM.",
+  "questions": [
+    {
+      "question_id": "q01",
+      "question": "What were Northstar Financial Inc. total revenues in 2023?",
+      "gold": {
+        "document_id": "northstar-financial-inc_2023_annual-report",
+        "pages": [3]
+      }
+    },
+    {
+      "question_id": "q02",
+      "question": "How many employees did Northstar Financial Inc. have as of December 31, 2023?",
+      "gold": {
+        "document_id": "northstar-financial-inc_2023_annual-report",
+        "pages": [6]
+      }
+    },
+    {
+      "question_id": "q03",
+      "question": "Where are Northstar Financial Inc. principal executive offices located?",
+      "gold": {
+        "document_id": "northstar-financial-inc_2023_annual-report",
+        "pages": [2]
+      }
+    },
+    {
+      "question_id": "q04",
+      "question": "What was CedarTech PLC operating income in 2022?",
+      "gold": {
+        "document_id": "cedartech-plc_2022_annual-report",
+        "pages": [3]
+      }
+    },
+    {
+      "question_id": "q05",
+      "question": "Which Northstar Financial Inc. segment contributed the most to 2023 revenue?",
+      "gold": {
+        "document_id": "northstar-financial-inc_2023_annual-report",
+        "pages": [5]
+      }
+    },
+    {
+      "question_id": "q06",
+      "question": "What cash dividend per common share did Northstar Financial Inc. declare in 2023?",
+      "gold": {
+        "document_id": "northstar-financial-inc_2023_annual-report",
+        "pages": [5]
+      }
+    },
+    {
+      "question_id": "q07",
+      "question": "Who is the Chief Executive Officer of CedarTech PLC?",
+      "gold": {
+        "document_id": "cedartech-plc_2022_annual-report",
+        "pages": [2]
+      }
+    },
+    {
+      "question_id": "q08",
+      "question": "What was the effective tax rate for Northstar Financial Inc. in 2023?",
+      "gold": {
+        "document_id": "northstar-financial-inc_2023_annual-report",
+        "pages": [3]
+      }
+    },
+    {
+      "question_id": "q09",
+      "question": "How much did Northstar Financial Inc. agree to pay to acquire Harbor Trust Partners?",
+      "gold": {
+        "document_id": "northstar-financial-inc_2023_annual-report",
+        "pages": [7]
+      }
+    },
+    {
+      "question_id": "q10",
+      "question": "What percentage of CedarTech PLC 2022 revenue was recurring subscription revenue?",
+      "gold": {
+        "document_id": "cedartech-plc_2022_annual-report",
+        "pages": [3]
+      }
+    }
+  ]
+}
