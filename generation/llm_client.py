@@ -181,12 +181,7 @@ class GeminiLLM:
         if self._client is None:
             from google import genai
 
-            # Pass the key only when present. The SDK also reads GEMINI_API_KEY
-            # / GOOGLE_API_KEY from the process environment.
-            if self.api_key:
-                self._client = genai.Client(api_key=self.api_key)
-            else:
-                self._client = genai.Client()
+            self._client = genai.Client(api_key=self.api_key)
         return self._client
 
     def _extract_text(self, response) -> str:
