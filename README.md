@@ -203,6 +203,24 @@ The checked-in sample PDFs and 10 questions are an end-to-end prototype so you c
 
 Keep this baseline frozen. Self-RAG lives in `self_rag/` and `experiments/run_t2_self_rag.py`. It wraps the same `HybridRetriever`, `AnswerGenerator`, evaluator, and 700-character evidence window. `config.CONFIG` has no Self-RAG flags; `SelfRAGConfig` enables the four reflection stages independently for later ablations.
 
+Full Self-RAG on the same 15-question development subset (all four stages on):
+
+| Metric | Frozen baseline | Self-RAG |
+| --- | --- | --- |
+| Recall@1 | 1.0 | 0.933 |
+| Recall@3 / @5 / @10 | 1.0 | 1.0 |
+| MRR | 1.0 | 0.967 |
+| Answer accuracy | **8/15 = 53.3%** | **8/15 = 53.3%** |
+| FinQA | 5/5 | 5/5 |
+| ConvFinQA | 0/5 | 0/5 |
+| TAT-DQA | 3/5 | 3/5 |
+| Mean tokens | 898.2 | 5789.8 |
+| Mean latency | 15.22 s (CPU) | 49.86 s (CPU) |
+| Mean LLM calls | 1 | 6.47 |
+| Mean retrieval iterations | — | 1.47 |
+
+No question newly became correct. The same eight stayed correct; ConvFinQA remains 0/5. Rank-1 recall dipped because a follow-up query reordered one ConvFinQA hit (gold still in the top 3). Do not change the frozen baseline from this result.
+
 Do not change `config.py` defaults for chunk size, overlap, embedding model, hybrid weights, `final_top_k`, or `max_chars_per_chunk_in_prompt` when comparing against this retrieval baseline.
 
 ## T²-RAGBench (dataset adapter)
@@ -217,7 +235,10 @@ Evidence mapping: each PDF is one source page keyed by `context_id` (= our `docu
 
 ```bash
 python3 experiments/run_t2_ragbench.py --prepare --rebuild-index
+python3 experiments/run_t2_self_rag.py
 ```
+
+`run_t2_ragbench.py` is the frozen baseline. `run_t2_self_rag.py` is the separate Self-RAG experiment on the same 15 questions.
 
 This prepares 5 FinQA test + 5 ConvFinQA turn_0 + 5 TAT-DQA test questions (15 unique page PDFs), then runs the frozen retrieval baseline with the local Ollama generator.
 
