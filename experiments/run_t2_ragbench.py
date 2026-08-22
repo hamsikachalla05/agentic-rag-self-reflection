@@ -108,6 +108,7 @@ def main() -> None:
     assert cfg.llm_temperature == 0.0
     assert cfg.llm_num_ctx == 2048
     assert cfg.llm_think is False
+    assert cfg.max_chars_per_chunk_in_prompt == 700
 
     index_ready = (cfg.index_dir / "faiss.index").exists()
     if args.rebuild_index or not index_ready:

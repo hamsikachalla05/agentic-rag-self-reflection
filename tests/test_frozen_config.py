@@ -17,3 +17,5 @@ def test_frozen_baseline_knobs_unchanged():
     assert CONFIG.llm_base_url == "http://localhost:11434/v1"
     assert CONFIG.llm_num_ctx == 2048
     assert CONFIG.llm_think is False
+    assert CONFIG.max_evidence_chunks == 5
+    assert CONFIG.max_chars_per_chunk_in_prompt == 700

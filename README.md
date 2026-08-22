@@ -120,7 +120,7 @@ llm_provider = "huggingface_local"
 llm_model = "google/flan-t5-base"
 ```
 
-Evidence passed into the prompt is truncated per chunk (`max_chars_per_chunk_in_prompt`) so every backend sees the same retrieved text.
+Evidence passed into the prompt is truncated per chunk (`max_chars_per_chunk_in_prompt=700`) so Qwen sees more of each retrieved 512-token chunk while the full prompt plus 512 new tokens stays under `num_ctx=2048`.
 
 Token usage is logged as input / output / total tokens. There is no monetary cost metric.
 

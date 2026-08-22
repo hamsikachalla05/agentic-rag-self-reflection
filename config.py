@@ -65,7 +65,10 @@ class Config:
 
     # --- Generation context ---
     max_evidence_chunks: int = 5
-    max_chars_per_chunk_in_prompt: int = 400
+    # 700 chars/chunk: 5 retrieved chunks + instructions + longest 15-Q prompt
+    # is ~1430 input tokens (cl100k). With llm_max_new_tokens=512 this stays
+    # under llm_num_ctx=2048. 800 chars overflows that budget.
+    max_chars_per_chunk_in_prompt: int = 700
 
     def to_dict(self) -> dict[str, Any]:
         raw = asdict(self)
