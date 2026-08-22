@@ -155,7 +155,7 @@ Every question writes a JSON record (and a JSONL file) under `logs/<run>/`:
 
 End-to-end latency starts before processing the question and stops after the final answer. Retrieval and LLM timings are also stored.
 
-Gemini free-tier handling (5 `generate_content` requests/minute): the client paces calls (~13s apart) and retries the **same** request after `429 RESOURCE_EXHAUSTED`, using the API `retryDelay` plus a 2s margin. `llm_latency_seconds` is the successful `generate_content` call only and **excludes** wait time. `latency_seconds` is `agent.answer()` wall time and **includes** pacing/429 waits. Rate-limited questions are retried, never skipped or scored as incorrect.
+Gemini free-tier handling (5 `generate_content` requests/minute): the client spaces **every** `generate_content` call in the process by at least 20s (shared clock for the whole run). After `429 RESOURCE_EXHAUSTED` it retries the **same** request, waiting `max(API retryDelay, 20s) + 5s`. `llm_latency_seconds` is the successful `generate_content` call only and **excludes** wait time. `latency_seconds` is `agent.answer()` wall time and **includes** pacing/429 waits. Rate-limited questions are retried, never skipped or scored as incorrect.
 
 ## Evaluation (separate module)
 

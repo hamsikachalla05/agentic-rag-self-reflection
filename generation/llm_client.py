@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import os
 import re
+import threading
 import time
 from dataclasses import dataclass
 from typing import Any
@@ -15,11 +16,16 @@ from typing import Any
 from config import CONFIG, Config
 
 # Free-tier GenerateRequestsPerMinutePerProject limit is 5 RPM.
-# 60/5 = 12s; a small extra gap avoids bursting the window.
-GEMINI_FREE_TIER_MIN_INTERVAL_SECONDS = 13.0
-GEMINI_RATE_LIMIT_SAFETY_MARGIN_SECONDS = 2.0
+# Space every generate_content call by at least 20s so a 15-question run
+# stays below 5 requests/minute instead of retrying into 429s.
+GEMINI_FREE_TIER_MIN_INTERVAL_SECONDS = 20.0
+GEMINI_RATE_LIMIT_SAFETY_MARGIN_SECONDS = 5.0
 GEMINI_RATE_LIMIT_MAX_RETRIES = 12
-GEMINI_RATE_LIMIT_MAX_WAIT_SECONDS = 120.0
+GEMINI_RATE_LIMIT_MAX_WAIT_SECONDS = 180.0
+
+# One clock for the whole process so pacing is not reset per question/client.
+_LAST_GENERATE_CONTENT_MONO: float | None = None
+_PACE_LOCK = threading.Lock()
 
 _RETRY_DELAY_RE = re.compile(
     r"retryDelay['\"]?\s*[:=]\s*['\"]?(\d+(?:\.\d+)?)\s*s",
@@ -232,15 +238,17 @@ def is_gemini_rate_limit_error(exc: BaseException) -> bool:
 
 
 def gemini_retry_delay_seconds(exc: BaseException) -> float:
-    delay = _walk_retry_delay(getattr(exc, "details", None))
-    if delay is None:
-        delay = _walk_retry_delay(getattr(exc, "message", None))
-    if delay is None:
-        delay = _walk_retry_delay(str(exc))
-    if delay is None:
-        delay = 20.0
-    delay = delay + GEMINI_RATE_LIMIT_SAFETY_MARGIN_SECONDS
-    return min(max(delay, GEMINI_RATE_LIMIT_SAFETY_MARGIN_SECONDS), GEMINI_RATE_LIMIT_MAX_WAIT_SECONDS)
+    """Wait after a 429: max(API retryDelay, 20s) + 5s safety margin."""
+    reported = _walk_retry_delay(getattr(exc, "details", None))
+    if reported is None:
+        reported = _walk_retry_delay(getattr(exc, "message", None))
+    if reported is None:
+        reported = _walk_retry_delay(str(exc))
+    required = GEMINI_FREE_TIER_MIN_INTERVAL_SECONDS
+    if reported is not None and reported > required:
+        required = reported
+    delay = required + GEMINI_RATE_LIMIT_SAFETY_MARGIN_SECONDS
+    return min(delay, GEMINI_RATE_LIMIT_MAX_WAIT_SECONDS)
 
 
 class GeminiLLM:
@@ -251,8 +259,6 @@ class GeminiLLM:
         env_name = getattr(self.cfg, "llm_api_key_env", None) or "GEMINI_API_KEY"
         self.api_key = os.environ.get(env_name) or os.environ.get("GOOGLE_API_KEY") or ""
         self._client = None
-        self._last_request_mono: float | None = None
-        self.min_request_interval_seconds = GEMINI_FREE_TIER_MIN_INTERVAL_SECONDS
         self.rate_limit_retries = 0
         self.rate_limit_waits = 0
         self.rate_limit_wait_seconds = 0.0
@@ -307,13 +313,24 @@ class GeminiLLM:
         self.rate_limit_wait_seconds += seconds
 
     def _pace(self) -> None:
-        if self.min_request_interval_seconds <= 0 or self._last_request_mono is None:
-            return
-        elapsed = time.monotonic() - self._last_request_mono
-        remaining = self.min_request_interval_seconds - elapsed
-        if remaining > 0:
-            print(f"Gemini free-tier pacing: waiting {remaining:.1f}s between generate_content calls")
-            self._sleep(remaining)
+        """Wait until 20s have passed since the last generate_content in this process."""
+        global _LAST_GENERATE_CONTENT_MONO
+        with _PACE_LOCK:
+            last = _LAST_GENERATE_CONTENT_MONO
+            if last is None:
+                return
+            remaining = GEMINI_FREE_TIER_MIN_INTERVAL_SECONDS - (time.monotonic() - last)
+            if remaining > 0:
+                print(
+                    f"Gemini free-tier pacing: waiting {remaining:.1f}s "
+                    f"(minimum {GEMINI_FREE_TIER_MIN_INTERVAL_SECONDS:.0f}s between generate_content calls)"
+                )
+                self._sleep(remaining)
+
+    def _mark_request(self) -> None:
+        global _LAST_GENERATE_CONTENT_MONO
+        with _PACE_LOCK:
+            _LAST_GENERATE_CONTENT_MONO = time.monotonic()
 
     def generate(self, prompt: str) -> LLMOutput:
         from google.genai import types
@@ -333,7 +350,7 @@ class GeminiLLM:
         api_latency = 0.0
         while True:
             self._pace()
-            self._last_request_mono = time.monotonic()
+            self._mark_request()
             t0 = time.perf_counter()
             try:
                 response = client.models.generate_content(

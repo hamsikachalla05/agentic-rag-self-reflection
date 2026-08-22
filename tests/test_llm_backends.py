@@ -1,4 +1,5 @@
 from dataclasses import replace
+import time
 
 from config import CONFIG
 from generation.llm_client import (
@@ -104,7 +105,7 @@ def test_gemini_rate_limit_error_and_retry_delay():
 
     err = _Err()
     assert is_gemini_rate_limit_error(err)
-    assert gemini_retry_delay_seconds(err) == 48.0  # 46s + 2s margin
+    assert gemini_retry_delay_seconds(err) == 51.0  # max(46, 20) + 5s margin
 
 
 def test_gemini_retries_same_prompt_after_429(monkeypatch):
@@ -147,14 +148,28 @@ def test_gemini_retries_same_prompt_after_429(monkeypatch):
 
     monkeypatch.setenv("GEMINI_API_KEY", "test-not-a-real-key")
     monkeypatch.setattr("generation.llm_client.time.sleep", lambda s: slept.append(s))
+    monkeypatch.setattr("generation.llm_client._LAST_GENERATE_CONTENT_MONO", None)
     llm = GeminiLLM(CONFIG)
     llm._client = _Client()
-    llm.min_request_interval_seconds = 0
     out = llm.generate("Question: x\nEvidence: y\nAnswer:")
     assert calls["n"] == 2
     assert calls["contents"] == "Question: x\nEvidence: y\nAnswer:"
     assert out.text == "94.0"
-    assert slept and slept[0] >= 3.0  # 1s retryDelay + 2s margin
+    assert slept and slept[0] == 25.0  # max(1s retryDelay, 20s) + 5s margin
     assert out.raw["rate_limit_retries"] == 1
     assert out.latency_seconds >= 0
+
+
+def test_gemini_pacing_is_global_across_clients(monkeypatch):
+    slept = []
+    monkeypatch.setenv("GEMINI_API_KEY", "test-not-a-real-key")
+    monkeypatch.setattr("generation.llm_client.time.sleep", lambda s: slept.append(s))
+    monkeypatch.setattr("generation.llm_client._LAST_GENERATE_CONTENT_MONO", time.monotonic())
+    first = GeminiLLM(CONFIG)
+    second = GeminiLLM(CONFIG)
+    first._pace()
+    second._pace()
+    assert slept
+    assert slept[0] >= 19.0
+    assert slept[1] >= 19.0
 
