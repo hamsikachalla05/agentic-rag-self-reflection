@@ -203,23 +203,23 @@ The checked-in sample PDFs and 10 questions are an end-to-end prototype so you c
 
 Keep this baseline frozen. Self-RAG lives in `self_rag/` and `experiments/run_t2_self_rag.py`. It wraps the same `HybridRetriever`, `AnswerGenerator`, evaluator, and 700-character evidence window. `config.CONFIG` has no Self-RAG flags; `SelfRAGConfig` enables the four reflection stages independently for later ablations.
 
-Full Self-RAG on the same 15-question development subset (all four stages on):
+Full Self-RAG on the same 15-question development subset (all four stages on; in-document 700-char window slides when UNSUPPORTED):
 
-| Metric | Frozen baseline | Self-RAG |
-| --- | --- | --- |
-| Recall@1 | 1.0 | 0.933 |
-| Recall@3 / @5 / @10 | 1.0 | 1.0 |
-| MRR | 1.0 | 0.967 |
-| Answer accuracy | **8/15 = 53.3%** | **8/15 = 53.3%** |
-| FinQA | 5/5 | 5/5 |
-| ConvFinQA | 0/5 | 0/5 |
-| TAT-DQA | 3/5 | 3/5 |
-| Mean tokens | 898.2 | 5789.8 |
-| Mean latency | 15.22 s (CPU) | 49.86 s (CPU) |
-| Mean LLM calls | 1 | 6.47 |
-| Mean retrieval iterations | — | 1.47 |
+| Metric | Frozen baseline | Self-RAG (first) | Self-RAG (window refine) |
+| --- | --- | --- | --- |
+| Recall@1 / @3 / @5 / @10 | 1.0 | 0.933 / 1.0 / 1.0 / 1.0 | **1.0** |
+| MRR | 1.0 | 0.967 | **1.0** |
+| Answer accuracy | 8/15 = 53.3% | 8/15 = 53.3% | **13/15 = 86.7%** |
+| FinQA | 5/5 | 5/5 | 5/5 |
+| ConvFinQA | 0/5 | 0/5 | **4/5** |
+| TAT-DQA | 3/5 | 3/5 | **4/5** |
+| Mean tokens | 898.2 | 5789.8 | 3885.0 |
+| Mean latency (CPU) | 15.22 s | 49.86 s | 42.98 s |
+| Mean LLM calls | 1 | 6.47 | 5.67 |
+| Mean retrieval iterations | — | 1.47 | 1.0 |
+| Mean evidence-window refinements | — | — | 0.47 |
 
-No question newly became correct. The same eight stayed correct; ConvFinQA remains 0/5. Rank-1 recall dipped because a follow-up query reordered one ConvFinQA hit (gold still in the top 3). Do not change the frozen baseline from this result.
+Newly correct vs frozen baseline: `convfinqa_0`, `convfinqa_1`, `convfinqa_2`, `convfinqa_3`, `tatqa_test_9071`. Still incorrect: `convfinqa_5`, `tatqa_test_9074`. Frozen baseline was not changed.
 
 Do not change `config.py` defaults for chunk size, overlap, embedding model, hybrid weights, `final_top_k`, or `max_chars_per_chunk_in_prompt` when comparing against this retrieval baseline.
 
