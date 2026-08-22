@@ -75,9 +75,11 @@ All research-critical parameters live in [`config.py`](config.py):
 | `hybrid_dense_weight` | 0.6 | |
 | `hybrid_bm25_weight` | 0.4 | min-max normalized weighted sum |
 | `hybrid_method` | `weighted_minmax` | set `rrf` for reciprocal rank fusion |
-| `llm_provider` | `gemini` | experimental baseline generator |
-| `llm_model` | `gemini-3.6-flash` | Gemini API; local `google/flan-t5-base` remains optional |
-| `llm_temperature` | 0.0 | as close to deterministic as the API allows |
+| `llm_provider` | `openai_compatible` | local Ollama OpenAI-compatible API |
+| `llm_model` | `qwen3:4b-instruct-2507-q4_K_M` | frozen local generator (Q4_K_M, thinking off) |
+| `llm_base_url` | `http://localhost:11434/v1` | no cloud API |
+| `llm_num_ctx` | 2048 | 4 GB VRAM cap |
+| `llm_temperature` | 0.0 | |
 | `max_retrieval_calls` | 2 | empty-filter retry only; no reflection |
 
 Do not change embedding model, chunking, retriever, or context size between baseline and Self-RAG runs. Changing the LLM is a separate experimental condition and must be documented.
@@ -108,7 +110,7 @@ The controller is intentionally small:
 
 The LLM receives the original question, retrieved chunk text, and source/page identifiers. It is instructed to answer only from evidence, avoid unsupported claims, admit insufficient evidence, and cite pages. Dataset gold answers/contexts are **never** injected.
 
-Default experimental generator: **Gemini 3.6 Flash** (`llm_provider = "gemini"`, `llm_model = "gemini-3.6-flash"`). The API key is read from `GEMINI_API_KEY` and is never stored in the repository.
+Default experimental generator: **local Ollama** `qwen3:4b-instruct-2507-q4_K_M` (`llm_provider = "openai_compatible"`, `http://localhost:11434/v1`, dummy key `ollama`). Temperature is 0, `num_ctx=2048`, thinking off. No Gemini/OpenAI cloud API.
 
 The previous local FLAN-T5 backend is still available:
 
@@ -118,7 +120,7 @@ llm_provider = "huggingface_local"
 llm_model = "google/flan-t5-base"
 ```
 
-An OpenAI-compatible endpoint can use `llm_provider = "openai_compatible"` with `LLM_BASE_URL` / `LLM_API_KEY`. Evidence passed into the prompt is truncated per chunk (`max_chars_per_chunk_in_prompt`) so every backend sees the same retrieved text.
+Evidence passed into the prompt is truncated per chunk (`max_chars_per_chunk_in_prompt`) so every backend sees the same retrieved text.
 
 Token usage is logged as input / output / total tokens. There is no monetary cost metric.
 
@@ -175,21 +177,7 @@ python3 experiments/run_baseline.py --rebuild-index
 
 Place real annual-report PDFs in `data/reports/` using `{Company}_{Year}_{filing-type}.pdf`, add questions under `data/questions/`, then rebuild the index.
 
-The first embedding run downloads `BAAI/bge-small-en-v1.5` from Hugging Face. Gemini generation requires an API key (do not commit the key):
-
-**Windows Git Bash / macOS / Linux**
-
-```bash
-export GEMINI_API_KEY="YOUR_KEY"
-```
-
-**PowerShell**
-
-```powershell
-$env:GEMINI_API_KEY="YOUR_KEY"
-```
-
-Local FLAN-T5 (`llm_provider = "huggingface_local"`) additionally downloads `google/flan-t5-base`.
+The first embedding run downloads `BAAI/bge-small-en-v1.5` from Hugging Face. Generation uses local Ollama at `http://localhost:11434/v1` (`qwen3:4b-instruct-2507-q4_K_M`). Start Ollama on the laptop before running experiments. A dummy key `ollama` is used; no cloud API key is required.
 
 ## Prototype end-to-end run
 
@@ -235,7 +223,7 @@ Evidence mapping: each PDF is one source page keyed by `context_id` (= our `docu
 python3 experiments/run_t2_ragbench.py --prepare --rebuild-index
 ```
 
-This prepares 5 FinQA test + 5 ConvFinQA turn_0 + 5 TAT-DQA test questions (15 unique page PDFs), then runs the frozen retrieval baseline with the configured generator (default: Gemini 3.6 Flash).
+This prepares 5 FinQA test + 5 ConvFinQA turn_0 + 5 TAT-DQA test questions (15 unique page PDFs), then runs the frozen retrieval baseline with the local Ollama generator.
 
 Do not process the full benchmark until this 15-question path is verified.
 

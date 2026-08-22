@@ -103,9 +103,11 @@ def main() -> None:
     assert cfg.hybrid_dense_weight == 0.6
     assert cfg.hybrid_bm25_weight == 0.4
     assert cfg.hybrid_method == "weighted_minmax"
-    assert cfg.llm_provider == "gemini"
-    assert cfg.llm_model == "gemini-3.6-flash"
+    assert cfg.llm_provider == "openai_compatible"
+    assert cfg.llm_model == "qwen3:4b-instruct-2507-q4_K_M"
     assert cfg.llm_temperature == 0.0
+    assert cfg.llm_num_ctx == 2048
+    assert cfg.llm_think is False
 
     index_ready = (cfg.index_dir / "faiss.index").exists()
     if args.rebuild_index or not index_ready:

@@ -1,7 +1,8 @@
 """LLM backends.
 
-Default experimental generator: Gemini 3.6 Flash via the Gemini API.
-Local Hugging Face (FLAN-T5) and OpenAI-compatible endpoints remain available.
+Default experimental generator: local Ollama Qwen3-4B-Instruct-2507
+(Q4_K_M) via the OpenAI-compatible endpoint. Gemini and Hugging Face
+backends remain available.
 """
 
 from __future__ import annotations
@@ -136,50 +137,71 @@ class HuggingFaceLocalLLM:
 
 
 class OpenAICompatibleLLM:
-    """Optional OpenAI-compatible endpoint (vLLM, Ollama, Groq, etc.)."""
+    """OpenAI-compatible endpoint. Default: local Ollama on localhost."""
 
     def __init__(self, cfg: Config | None = None):
         self.cfg = cfg or CONFIG
-        self.api_key = os.environ.get("LLM_API_KEY") or os.environ.get("GROQ_API_KEY") or ""
-        self.base_url = os.environ.get("LLM_BASE_URL", "https://api.groq.com/openai/v1")
+        env_name = getattr(self.cfg, "llm_api_key_env", None) or "LLM_API_KEY"
+        self.api_key = os.environ.get(env_name) or os.environ.get("LLM_API_KEY") or "ollama"
+        self.base_url = (
+            os.environ.get("LLM_BASE_URL")
+            or getattr(self.cfg, "llm_base_url", None)
+            or "http://localhost:11434/v1"
+        ).rstrip("/")
 
     def generate(self, prompt: str) -> LLMOutput:
         import time
 
         import requests
 
+        think = bool(getattr(self.cfg, "llm_think", False))
+        num_ctx = int(getattr(self.cfg, "llm_num_ctx", 2048) or 2048)
+        payload: dict[str, Any] = {
+            "model": self.cfg.llm_model,
+            "temperature": self.cfg.llm_temperature,
+            "max_tokens": self.cfg.llm_max_new_tokens,
+            "think": think,
+            "options": {
+                "num_ctx": num_ctx,
+                "num_batch": 1,
+                "temperature": self.cfg.llm_temperature,
+            },
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You answer financial questions using only provided evidence.",
+                },
+                {"role": "user", "content": prompt},
+            ],
+        }
         t0 = time.perf_counter()
         response = requests.post(
-            f"{self.base_url.rstrip('/')}/chat/completions",
+            f"{self.base_url}/chat/completions",
             headers={
                 "Authorization": f"Bearer {self.api_key}",
                 "Content-Type": "application/json",
             },
-            json={
-                "model": self.cfg.llm_model,
-                "temperature": self.cfg.llm_temperature,
-                "max_tokens": self.cfg.llm_max_new_tokens,
-                "messages": [
-                    {
-                        "role": "system",
-                        "content": "You answer financial questions using only provided evidence.",
-                    },
-                    {"role": "user", "content": prompt},
-                ],
-            },
+            json=payload,
             timeout=120,
         )
         response.raise_for_status()
-        payload = response.json()
+        body = response.json()
         latency = time.perf_counter() - t0
-        text = payload["choices"][0]["message"]["content"].strip()
-        usage = payload.get("usage") or {}
+        message = ((body.get("choices") or [{}])[0].get("message") or {})
+        text = (message.get("content") or "").strip()
+        usage = body.get("usage") or {}
         return LLMOutput(
             text=text,
             input_tokens=int(usage.get("prompt_tokens") or 0),
             output_tokens=int(usage.get("completion_tokens") or 0),
             latency_seconds=latency,
-            raw={"provider": "openai_compatible", "model": self.cfg.llm_model},
+            raw={
+                "provider": "openai_compatible",
+                "model": self.cfg.llm_model,
+                "base_url": self.base_url,
+                "think": think,
+                "num_ctx": num_ctx,
+            },
         )
 
 
@@ -256,7 +278,7 @@ class GeminiLLM:
 
     def __init__(self, cfg: Config | None = None):
         self.cfg = cfg or CONFIG
-        env_name = getattr(self.cfg, "llm_api_key_env", None) or "GEMINI_API_KEY"
+        env_name = "GEMINI_API_KEY"
         self.api_key = os.environ.get(env_name) or os.environ.get("GOOGLE_API_KEY") or ""
         self._client = None
         self.rate_limit_retries = 0
@@ -265,7 +287,7 @@ class GeminiLLM:
 
     def _client_or_raise(self):
         if not self.api_key:
-            env_name = getattr(self.cfg, "llm_api_key_env", None) or "GEMINI_API_KEY"
+            env_name = "GEMINI_API_KEY"
             raise RuntimeError(
                 f"Missing Gemini API key. Set the {env_name} environment variable."
             )

@@ -12,6 +12,8 @@ def test_frozen_baseline_knobs_unchanged():
     assert CONFIG.hybrid_bm25_weight == 0.4
     assert CONFIG.hybrid_method == "weighted_minmax"
     assert CONFIG.llm_temperature == 0.0
-    assert CONFIG.llm_provider == "gemini"
-    assert CONFIG.llm_model == "gemini-3.6-flash"
-    assert CONFIG.llm_api_key_env == "GEMINI_API_KEY"
+    assert CONFIG.llm_provider == "openai_compatible"
+    assert CONFIG.llm_model == "qwen3:4b-instruct-2507-q4_K_M"
+    assert CONFIG.llm_base_url == "http://localhost:11434/v1"
+    assert CONFIG.llm_num_ctx == 2048
+    assert CONFIG.llm_think is False

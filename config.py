@@ -47,14 +47,17 @@ class Config:
     rrf_k: int = 60
     hybrid_method: str = "weighted_minmax"  # or "rrf"
 
-    # --- LLM (experimental baseline generator; retrieval knobs stay frozen) ---
-    llm_provider: str = "gemini"
-    llm_model: str = "gemini-3.6-flash"
+    # --- LLM (frozen local generator; retrieval knobs stay frozen) ---
+    llm_provider: str = "openai_compatible"
+    llm_model: str = "qwen3:4b-instruct-2507-q4_K_M"
     llm_temperature: float = 0.0
-    llm_max_new_tokens: int = 1024
+    llm_max_new_tokens: int = 512
     llm_max_input_tokens: int = 512  # local HF encoder-decoder only
     llm_device: str = "cpu"
-    llm_api_key_env: str = "GEMINI_API_KEY"
+    llm_base_url: str = "http://localhost:11434/v1"
+    llm_api_key_env: str = "LLM_API_KEY"
+    llm_num_ctx: int = 2048
+    llm_think: bool = False
 
     # --- Agent (baseline only: no reflection / critique) ---
     max_retrieval_calls: int = 2

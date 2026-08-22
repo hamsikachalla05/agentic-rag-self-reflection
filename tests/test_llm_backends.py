@@ -6,16 +6,63 @@ from generation.llm_client import (
     GeminiLLM,
     HuggingFaceLocalLLM,
     LLMOutput,
+    OpenAICompatibleLLM,
     build_llm,
     gemini_retry_delay_seconds,
     is_gemini_rate_limit_error,
 )
 
 
-def test_default_backend_is_gemini():
+def test_default_backend_is_local_ollama():
     llm = build_llm(CONFIG)
-    assert isinstance(llm, GeminiLLM)
-    assert CONFIG.llm_model == "gemini-3.6-flash"
+    assert isinstance(llm, OpenAICompatibleLLM)
+    assert CONFIG.llm_provider == "openai_compatible"
+    assert CONFIG.llm_model == "qwen3:4b-instruct-2507-q4_K_M"
+    assert CONFIG.llm_base_url == "http://localhost:11434/v1"
+    assert CONFIG.llm_temperature == 0.0
+    assert CONFIG.llm_num_ctx == 2048
+    assert CONFIG.llm_think is False
+    assert llm.base_url == "http://localhost:11434/v1"
+    assert llm.api_key == "ollama"
+
+
+def test_ollama_request_targets_localhost_and_disables_thinking(monkeypatch):
+    captured = {}
+
+    class _Resp:
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return {
+                "choices": [{"message": {"content": "94.0"}}],
+                "usage": {"prompt_tokens": 10, "completion_tokens": 2},
+            }
+
+    def _post(url, headers=None, json=None, timeout=None):
+        captured["url"] = url
+        captured["headers"] = headers
+        captured["json"] = json
+        captured["timeout"] = timeout
+        return _Resp()
+
+    monkeypatch.setattr("requests.post", _post)
+    llm = OpenAICompatibleLLM(CONFIG)
+    prompt = "Question: net change?\nEvidence: 2014 5735; 2015 5829\nAnswer:"
+    out = llm.generate(prompt)
+    assert captured["url"] == "http://localhost:11434/v1/chat/completions"
+    assert captured["json"]["model"] == "qwen3:4b-instruct-2507-q4_K_M"
+    assert captured["json"]["temperature"] == 0.0
+    assert captured["json"]["think"] is False
+    assert captured["json"]["options"]["num_ctx"] == 2048
+    assert captured["json"]["options"]["num_batch"] == 1
+    assert captured["json"]["messages"][1]["content"] == prompt
+    assert "gold_answer" not in prompt
+    assert "program_answer" not in captured["json"]["messages"][1]["content"]
+    assert captured["headers"]["Authorization"] == "Bearer ollama"
+    assert out.text == "94.0"
+    assert out.raw["provider"] == "openai_compatible"
+    assert out.raw["base_url"] == "http://localhost:11434/v1"
 
 
 def test_flan_t5_backend_still_available():
@@ -68,7 +115,7 @@ def test_gemini_generate_uses_prompt_only(monkeypatch):
     prompt = "Question: net change?\nEvidence: 2014 5735; 2015 5829\nAnswer:"
     out = llm.generate(prompt)
     assert isinstance(out, LLMOutput)
-    assert captured["model"] == "gemini-3.6-flash"
+    assert captured["model"] == CONFIG.llm_model
     assert captured["contents"] == prompt
     assert captured["temperature"] == 0.0
     assert "gold_answer" not in captured["contents"]
