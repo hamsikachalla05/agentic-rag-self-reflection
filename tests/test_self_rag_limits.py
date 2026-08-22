@@ -99,6 +99,28 @@ def test_max_retrieval_iterations_are_enforced():
     assert record.number_of_llm_calls <= rag.max_llm_calls
 
 
+def test_not_useful_with_no_chunks_triggers_retrieval():
+    rag = SelfRAGConfig(
+        max_retrieval_iterations=2,
+        max_answer_attempts=2,
+        max_llm_calls=12,
+    )
+    replies = [
+        "NO_RETRIEVAL",
+        "The retrieved evidence is insufficient to answer this question",
+        "NOT_USEFUL",
+        "10.0",
+        "USEFUL",
+    ]
+    holder = {"n": 0}
+    agent, llm, holder = _agent(replies, rag, holder)
+    record = agent.answer("What was Acme revenue in 2015?", "q1")
+    assert holder["n"] >= 1
+    assert record.number_of_retrieval_iterations >= 1
+    assert record.retrieved_chunks
+    assert record.answer == "10.0"
+
+
 def test_max_llm_calls_cap_skips_further_reflection():
     rag = SelfRAGConfig(
         max_retrieval_iterations=2,

@@ -203,14 +203,17 @@ class SelfRAGAgent:
             and answer_attempts < rag.max_answer_attempts
             and llm_used() < rag.max_llm_calls
         ):
-            can_retrieve_again = (
-                need_retrieval
-                and retrieval_iterations < rag.max_retrieval_iterations
+            missing_evidence = not chunks
+            can_retrieve_again = retrieval_iterations < rag.max_retrieval_iterations and (
+                need_retrieval or missing_evidence
             )
             if can_retrieve_again:
                 retrieval_iterations += 1
                 retrieval_calls += 1
-                if current_filters:
+                if missing_evidence:
+                    current_query = retrieval_query
+                    current_filters = filters or None
+                elif current_filters:
                     current_filters = None
                 t_ret = time.perf_counter()
                 new_chunks = self.retriever.retrieve(current_query, filters=current_filters)
