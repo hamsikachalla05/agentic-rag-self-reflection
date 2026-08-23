@@ -79,6 +79,7 @@ def test_max_hybrid_retrieves_is_one_when_unsupported():
         max_llm_calls=20,
     )
     replies = [
+        "Acme revenue 2015",
         "NEED_RETRIEVAL",
         "IRRELEVANT",
         "UNSUPPORTED",
@@ -91,7 +92,7 @@ def test_max_hybrid_retrieves_is_one_when_unsupported():
     agent, llm, holder, retriever = _agent(replies, rag, holder)
     record = agent.answer("What was Acme revenue in 2015?", "q1")
     assert holder["n"] == 1
-    assert retriever.queries == ["What was Acme revenue in 2015?"]
+    assert retriever.queries == ["Acme revenue 2015"]
     assert record.number_of_retrieval_iterations == 1
     assert record.number_of_evidence_refinements <= rag.max_evidence_refinements
     assert record.retrieved_chunks[0]["rank"] == 1
@@ -100,6 +101,7 @@ def test_max_hybrid_retrieves_is_one_when_unsupported():
 def test_no_retrieval_decision_does_not_drop_rank1():
     rag = SelfRAGConfig(max_llm_calls=12, max_answer_attempts=1)
     replies = [
+        "Acme revenue 2015",
         "NO_RETRIEVAL",
         "RELEVANT",
         "SUPPORTED",
@@ -121,9 +123,10 @@ def test_max_llm_calls_cap_skips_further_reflection():
         max_answer_attempts=2,
         max_llm_calls=2,
     )
-    replies = ["NEED_RETRIEVAL", "10.0"]
+    replies = ["Acme revenue 2015", "NEED_RETRIEVAL", "10.0"]
     holder = {"n": 0}
     agent, llm, holder, retriever = _agent(replies, rag, holder)
     record = agent.answer("What was Acme revenue in 2015?", "q1")
-    assert record.number_of_llm_calls <= rag.max_llm_calls
-    assert len(llm.prompts) <= rag.max_llm_calls
+    stage_calls = record.number_of_llm_calls - 1  # exclude query formulation
+    assert stage_calls <= rag.max_llm_calls
+    assert record.number_of_llm_calls <= rag.max_llm_calls + 1

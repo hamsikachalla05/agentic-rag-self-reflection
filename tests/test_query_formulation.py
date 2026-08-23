@@ -217,7 +217,7 @@ def test_evaluation_still_uses_gold_only_after_generation():
 
 
 def test_whitespace_helper_unchanged_for_self_rag():
-    """Self-RAG still calls formulate_query(); that helper must stay non-LLM."""
+    """Whitespace helper remains non-LLM; Self-RAG retrieve uses formulate_retrieval_query."""
     agent, llm, retriever = _agent([FORMULATED, "15%"])
     assert agent.formulate_query("  What is EPS?  ") == "What is EPS?"
     assert llm.prompts == []

@@ -46,6 +46,13 @@ class SelfRAGRecord:
     retrieval_history: list[dict[str, Any]] = field(default_factory=list)
     evidence_windows: list[dict[str, Any]] = field(default_factory=list)
     extra_llm_call_reasons: list[str] = field(default_factory=list)
+    original_question: str = ""
+    query_formulation_prompt: str = ""
+    query_formulation_raw_output: str = ""
+    query_formulation_latency_seconds: float = 0.0
+    query_formulation_input_tokens: int = 0
+    query_formulation_output_tokens: int = 0
+    query_formulation_trace: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -70,6 +77,13 @@ class SelfRAGRecord:
             rate_limit_waits=self.rate_limit_waits,
             rate_limit_wait_seconds=self.rate_limit_wait_seconds,
             config_snapshot=self.config_snapshot,
+            original_question=self.original_question or self.question,
+            query_formulation_prompt=self.query_formulation_prompt,
+            query_formulation_raw_output=self.query_formulation_raw_output,
+            query_formulation_latency_seconds=self.query_formulation_latency_seconds,
+            query_formulation_input_tokens=self.query_formulation_input_tokens,
+            query_formulation_output_tokens=self.query_formulation_output_tokens,
+            query_formulation_trace=self.query_formulation_trace,
         )
 
 
@@ -140,7 +154,9 @@ class SelfRAGAgent:
         rag = self.self_rag_cfg
         extra_reasons: list[str] = []
 
-        retrieval_query = self.baseline.formulate_query(question)
+        formulation = self.baseline.formulate_retrieval_query(question)
+        retrieval_query = formulation.retrieval_query
+        extra_reasons.append("query_formulation")
         filters = self.baseline.extract_metadata_filters(question)
 
         gen_input_tokens = 0
@@ -152,6 +168,8 @@ class SelfRAGAgent:
         rate_limit_wait_seconds = 0.0
 
         def llm_used() -> int:
+            """Self-RAG stage calls only. Query formulation is extra and does not
+            consume the frozen reflection max_llm_calls budget."""
             return gen_llm_calls + self.reflector.llm_calls
 
         def reflection_budget_used() -> int:
@@ -281,8 +299,12 @@ class SelfRAGAgent:
             extra_reasons.append("answer_usefulness_after_revision")
 
         latency = time.perf_counter() - t0
-        input_tokens = gen_input_tokens + self.reflector.input_tokens
-        output_tokens = gen_output_tokens + self.reflector.output_tokens
+        input_tokens = (
+            formulation.input_tokens + gen_input_tokens + self.reflector.input_tokens
+        )
+        output_tokens = (
+            formulation.output_tokens + gen_output_tokens + self.reflector.output_tokens
+        )
         return SelfRAGRecord(
             question_id=question_id,
             question=question,
@@ -295,7 +317,7 @@ class SelfRAGAgent:
             output_tokens=output_tokens,
             total_tokens=input_tokens + output_tokens,
             number_of_retrieval_calls=retrieval_calls,
-            number_of_llm_calls=llm_used(),
+            number_of_llm_calls=formulation.llm_calls + llm_used(),
             number_of_retrieval_iterations=retrieval_iterations,
             number_of_evidence_refinements=refinements,
             retrieval_decision=decision.decision,
@@ -303,16 +325,27 @@ class SelfRAGAgent:
             evidence_support_decision=last_support,
             answer_usefulness_decision=last_usefulness,
             retrieval_latency_seconds=round(retrieval_latency, 4),
-            llm_latency_seconds=round(gen_latency + self.reflector.latency_seconds, 4),
-            rate_limit_retries=rate_limit_retries,
-            rate_limit_waits=rate_limit_waits,
-            rate_limit_wait_seconds=round(rate_limit_wait_seconds, 4),
+            llm_latency_seconds=round(
+                formulation.latency_seconds + gen_latency + self.reflector.latency_seconds, 4
+            ),
+            rate_limit_retries=rate_limit_retries + formulation.rate_limit_retries,
+            rate_limit_waits=rate_limit_waits + formulation.rate_limit_waits,
+            rate_limit_wait_seconds=round(
+                rate_limit_wait_seconds + formulation.rate_limit_wait_seconds, 4
+            ),
             config_snapshot=self.cfg.to_dict(),
             self_rag_config=rag.to_dict(),
             reflection_trace=[c.to_log_dict() for c in self.reflector.calls],
             retrieval_history=retrieval_history,
             evidence_windows=list(tracker.history),
             extra_llm_call_reasons=extra_reasons,
+            original_question=question,
+            query_formulation_prompt=formulation.prompt,
+            query_formulation_raw_output=formulation.raw_output,
+            query_formulation_latency_seconds=round(formulation.latency_seconds, 4),
+            query_formulation_input_tokens=formulation.input_tokens,
+            query_formulation_output_tokens=formulation.output_tokens,
+            query_formulation_trace=formulation.to_trace(),
         )
 
     def _generate(self, question: str, chunks: list[RetrievedChunk]) -> GenerationResult:

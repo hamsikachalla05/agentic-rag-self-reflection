@@ -24,7 +24,7 @@ JSON log; gold attached after generation
 
 A normal baseline question uses **two** LLM calls. Gold answers and gold evidence are never passed into formulation, retrieval, or generation.
 
-Self-RAG is **not** part of the baseline. It currently still searches with the original question (`formulate_query()` whitespace helper). Wiring it to the same `QueryFormulator` is required before a fair 120-question SYSTEM A vs SYSTEM B comparison.
+Self-RAG is **not** part of the baseline. It uses the same `QueryFormulator` as the baseline, then frozen hybrid retrieval, then reflection and in-document 700-character window slides.
 
 ## Frozen knobs (`config.py`)
 

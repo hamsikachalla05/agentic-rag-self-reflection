@@ -101,6 +101,7 @@ def test_controller_refinement_changes_generation_evidence_without_requery():
     hit = _rc(text=text)
     retriever = _Retr([hit], [hit])
     replies = [
+        "Acme revenue 2015",
         "NEED_RETRIEVAL",
         "RELEVANT",
         "UNSUPPORTED",
@@ -116,7 +117,7 @@ def test_controller_refinement_changes_generation_evidence_without_requery():
         SelfRAGConfig(max_evidence_refinements=2, max_llm_calls=8),
     )
     record = agent.answer("What was Acme revenue in 2015?", "q1")
-    assert retriever.queries == ["What was Acme revenue in 2015?"]
+    assert retriever.queries == ["Acme revenue 2015"]
     assert record.retrieved_chunks[0]["chunk_id"] == "c0"
     assert record.retrieved_chunks[0]["rank"] == 1
     assert record.number_of_evidence_refinements >= 1
@@ -132,7 +133,16 @@ def test_controller_refinement_changes_generation_evidence_without_requery():
 def test_rank1_preserved_when_evidence_is_unsupported():
     hit = _rc(chunk_id="keep-rank1", text="hello " + ("z" * 2000))
     retriever = _Retr([hit], [hit])
-    replies = ["NEED_RETRIEVAL", "RELEVANT", "UNSUPPORTED", "UNSUPPORTED", "UNSUPPORTED", "no", "USEFUL"]
+    replies = [
+        "Acme revenue 2015",
+        "NEED_RETRIEVAL",
+        "RELEVANT",
+        "UNSUPPORTED",
+        "UNSUPPORTED",
+        "UNSUPPORTED",
+        "no",
+        "USEFUL",
+    ]
     llm = _ScriptedLLM(replies)
     agent = SelfRAGAgent(
         retriever,
@@ -149,7 +159,7 @@ def test_rank1_preserved_when_evidence_is_unsupported():
 def test_max_evidence_refinements_enforced():
     hit = _rc(text="N" * 5000)
     retriever = _Retr([hit], [hit])
-    replies = ["NEED_RETRIEVAL", "RELEVANT"] + ["UNSUPPORTED"] * 6 + ["ans", "USEFUL"]
+    replies = ["Acme revenue 2015", "NEED_RETRIEVAL", "RELEVANT"] + ["UNSUPPORTED"] * 6 + ["ans", "USEFUL"]
     llm = _ScriptedLLM(replies)
     rag = SelfRAGConfig(max_evidence_refinements=2, max_llm_calls=20)
     agent = SelfRAGAgent(retriever, AnswerGenerator(cfg=CONFIG, llm=llm), CONFIG, rag)

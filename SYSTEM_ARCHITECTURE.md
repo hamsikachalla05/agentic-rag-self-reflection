@@ -10,7 +10,7 @@ This document describes the **current code**, not a target design. Where intende
 
 | | **SYSTEM A — Lumer-style Agentic RAG (baseline)** | **SYSTEM B — Self-RAG V2** |
 | --- | --- | --- |
-| Query | LLM `QueryFormulator` before search | **Today:** original question (whitespace helper). **Intended:** same `QueryFormulator` |
+| Query | LLM `QueryFormulator` before search | Same `QueryFormulator`, then reflection |
 | Filters | Deterministic regex / string match on the **original question** | Same helper (`extract_metadata_filters`) |
 | Retrieve | Frozen hybrid (FAISS + BM25) | Same `HybridRetriever`, one hybrid pass |
 | Evidence | Top-5, first 700 characters per chunk | Same initial window; if UNSUPPORTED, slide a later 700-char slice in the same document / chunker sibling |
@@ -160,7 +160,7 @@ HTTP retries are not extra reasoning steps.
 
 | | Current code | Intended fair comparison |
 | --- | --- | --- |
-| Query used for hybrid search | `BaselineAgent.formulate_query()` = whitespace on the original question | Same `QueryFormulator` as SYSTEM A |
+| Query used for hybrid search | LLM `QueryFormulator` | Same `QueryFormulator` as SYSTEM A |
 | Why | Self-RAG files were frozen while formulation was added to the baseline | SYSTEM B = A + reflection + window refine |
 
 `QueryFormulator` is exported from `agent/` so Self-RAG can call `formulate_retrieval_query()` later **without** changing FAISS/BM25.
@@ -284,4 +284,4 @@ Self-RAG: `experiments/run_t2_self_rag.py` with the same questions/index when th
 | Final 120-Q **Agentic** baseline | Runner + frozen index; results live in a new `logs/t2-ragbench-final-120-agentic_*` directory when that job finishes |
 | Old 120-Q **conventional** RAG (query = question) | `logs/t2-ragbench-final-120_20260822T120619Z/` — **not** SYSTEM A |
 | Self-RAG V2 on original-question retrieval | Implemented; 120-Q was run **before** formulation was added to the baseline |
-| Self-RAG using `QueryFormulator` | **Not wired yet** — required before SYSTEM A vs B on the same 120 questions |
+| Self-RAG using `QueryFormulator` | Wired: `SelfRAGAgent.answer` calls `formulate_retrieval_query()` before hybrid retrieve |

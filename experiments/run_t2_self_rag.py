@@ -45,11 +45,17 @@ GOLD_LEAK_MARKERS = (
 
 
 def assert_no_gold_in_self_rag(question: str, item: dict, retrieved_chunks, record) -> None:
-    assert_no_gold_in_prompt(question, item, retrieved_chunks)
+    assert_no_gold_in_prompt(
+        question,
+        item,
+        retrieved_chunks,
+        extra_texts=[getattr(record, "query_formulation_prompt", "") or ""],
+    )
     blob = json.dumps(
         {
             "question": record.question,
             "answer": record.answer,
+            "query_formulation_prompt": getattr(record, "query_formulation_prompt", "") or "",
             "trace_prompts": [step.get("prompt") or "" for step in record.reflection_trace],
             "windows": record.evidence_windows,
             "reasons": record.extra_llm_call_reasons,
