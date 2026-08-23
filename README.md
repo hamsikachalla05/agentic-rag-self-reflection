@@ -1,261 +1,175 @@
-# Baseline Agentic RAG for financial annual-report QA
+# Agentic RAG for financial filing QA
 
-Research baseline for long-document financial QA. This repository implements **only the baseline**: hybrid retrieval plus a lightweight controller and an evidence-grounded LLM. **Self-RAG, retrieval grading, answer critique, and experimental query rewriting are not included** and should be added later on top of this pipeline without changing chunking, embeddings, the retriever, context size, or the LLM.
+Local research stack for T²-RAGBench (FinQA, ConvFinQA, TAT-DQA). The **baseline** is Lumer-style **Agentic RAG**: an LLM formulates a retrieval query, then frozen hybrid search (BGE + BM25) and an evidence-only Qwen generator. **Self-RAG V2** is a separate wrapper (reflection + in-document 700-character windows) on the same retriever and generator.
 
-## Architecture
+Full component diagram and comparison table: [`SYSTEM_ARCHITECTURE.md`](SYSTEM_ARCHITECTURE.md).
 
-```
-Question
-    ↓
-Agent (query = question; metadata filters only if explicit)
-    ↓
-Metadata filtering (optional; never invented)
-    ↓
-Hybrid retrieval
-    ├── Dense semantic vector search (FAISS + BGE)
-    └── BM25 keyword search
-    ↓
-Weighted score combination / ranking
-    ↓
-Top-k evidence
-    ↓
-LLM (evidence-only prompt)
-    ↓
-Final answer + JSON experiment log
-```
-
-The retriever is a stable interface (`retrieval/hybrid_retriever.py`). A future reflection module should wrap the agent or generator; it should not fork a second retrieval stack.
-
-## Project layout
+## Architecture (current baseline)
 
 ```
-project/
-├── data/
-│   ├── reports/                 # annual-report PDFs
-│   ├── questions/               # questions (+ gold pages for eval only)
-│   └── indexes/                 # built locally, not required in git
-├── ingestion/
-│   ├── pdf_parser.py
-│   └── chunker.py
-├── retrieval/
-│   ├── embeddings.py
-│   ├── vector_store.py
-│   ├── bm25.py
-│   ├── hybrid_retriever.py
-│   └── index_pipeline.py
-├── agent/
-│   └── agent.py
-├── generation/
-│   ├── llm_client.py
-│   └── answer_generator.py
-├── evaluation/
-│   ├── evaluator.py
-│   └── logging_utils.py
-├── experiments/
-│   ├── build_sample_corpus.py
-│   └── run_baseline.py
-├── logs/
-├── config.py
-├── requirements.txt
-└── README.md
+Original question
+    ↓
+LLM QueryFormulator          ← call 1: search query only; does not answer
+    ↓
+Deterministic metadata filters (from the original question)
+    ↓
+Hybrid retrieval (FAISS + BM25 → top-5)
+    ↓
+700-character evidence prefix per chunk
+    ↓
+Qwen answer generator        ← call 2: ORIGINAL question + evidence
+    ↓
+JSON log; gold attached after generation
 ```
 
-## Configuration (frozen baseline knobs)
+A normal baseline question uses **two** LLM calls. Gold answers and gold evidence are never passed into formulation, retrieval, or generation.
 
-All research-critical parameters live in [`config.py`](config.py):
+Self-RAG is **not** part of the baseline. It currently still searches with the original question (`formulate_query()` whitespace helper). Wiring it to the same `QueryFormulator` is required before a fair 120-question SYSTEM A vs SYSTEM B comparison.
 
-| Parameter | Default | Notes |
-| --- | --- | --- |
-| `chunk_size_tokens` | 512 | tiktoken `cl100k_base` |
-| `chunk_overlap_tokens` | 50 | |
-| `embedding_model` | `BAAI/bge-small-en-v1.5` | free, local, 512-token context |
-| `dense_top_k` | 20 | |
-| `bm25_top_k` | 20 | |
-| `final_top_k` / `max_evidence_chunks` | 5 | context size; keep frozen |
-| `hybrid_dense_weight` | 0.6 | |
-| `hybrid_bm25_weight` | 0.4 | min-max normalized weighted sum |
-| `hybrid_method` | `weighted_minmax` | set `rrf` for reciprocal rank fusion |
-| `llm_provider` | `openai_compatible` | local Ollama OpenAI-compatible API |
-| `llm_model` | `qwen3:4b-instruct-2507-q4_K_M` | frozen local generator (Q4_K_M, thinking off) |
-| `llm_base_url` | `http://localhost:11434/v1` | no cloud API |
-| `llm_num_ctx` | 2048 | 4 GB VRAM cap |
-| `llm_temperature` | 0.0 | |
-| `max_retrieval_calls` | 2 | empty-filter retry only; no reflection |
+## Frozen knobs (`config.py`)
 
-Do not change embedding model, chunking, retriever, or context size between baseline and Self-RAG runs. Changing the LLM is a separate experimental condition and must be documented.
+Do not change these between baseline and Self-RAG runs.
 
-## Ingestion and chunking
+| Parameter | Value |
+| --- | --- |
+| `chunk_size_tokens` / `chunk_overlap_tokens` | 512 / 50 (`cl100k_base`) |
+| `embedding_model` | `BAAI/bge-small-en-v1.5` |
+| `dense_top_k` / `bm25_top_k` / `final_top_k` | 20 / 20 / 5 |
+| Hybrid | 0.6 dense + 0.4 BM25, `weighted_minmax` |
+| `max_chars_per_chunk_in_prompt` | 700 |
+| `llm_model` | `qwen3:4b-instruct-2507-q4_K_M` |
+| `llm_provider` / `llm_base_url` | `openai_compatible` / `http://localhost:11434/v1` |
+| `llm_temperature` / `llm_num_ctx` / `llm_think` | 0.0 / 2048 / false |
+| Query formulation max tokens | 64 (`agent/query_formulation.py`) |
+| `max_retrieval_calls` | 2 (empty-filter retry only) |
 
-- PDFs are parsed with **pdfplumber** (text + tables). Page numbers are retained.
-- Metadata (`company`, `year`, `filing_type`, `document_id`) comes from a sidecar JSON or from the filename pattern `{company}_{year}_{filing_type}.pdf`. Missing fields stay missing.
-- Chunks are ~512 tokens with 50-token overlap, **split within a page** so `page` stays exact for evaluation. Each chunk has a stable `chunk_id` plus `document_id`, `page` / `pages`, `company`, `year`, `source_filename`, and `text`.
+Self-RAG flags live in `self_rag/config.py`, not in `config.CONFIG`.
 
-## Retrieval
+## Layout
 
-- **Dense:** `BAAI/bge-small-en-v1.5` embeddings in a local FAISS inner-product index (L2-normalized vectors).
-- **BM25:** `rank_bm25` over the same chunks.
-- **Hybrid:** min-max normalize each channel independently, then `0.6 * dense + 0.4 * BM25`. Chunks present in only one list get `0` on the other channel. Every returned chunk logs `dense_score`, `bm25_score`, `hybrid_score`, and `rank`.
-- **Filters:** optional `company`, `year`, `filing_type`, `document_id` applied **before** scoring. If the question does not contain a cue, no filter is applied.
+```
+agent/                 BaselineAgent + QueryFormulator
+retrieval/             embeddings, FAISS, BM25, hybrid fusion
+ingestion/             PDF parse + page-local chunking
+generation/            Ollama client + evidence-only answer prompt
+self_rag/              reflection controller + 700-char window tracker
+evaluation/            Recall@K, MRR, answer correctness (post-generation gold)
+experiments/
+  run_t2_ragbench.py           Lumer baseline runner
+  run_t2_self_rag.py           Self-RAG runner
+  final_120_questions.json     frozen 120-Q test set (40/40/40)
+data/t2_ragbench/      development 15-Q, PDFs, sidecars
+config.py
+SYSTEM_ARCHITECTURE.md
+```
 
-## Agent (baseline)
+## Ingestion and retrieval
 
-The controller is intentionally small:
+- PDFs: **pdfplumber**. Chunks stay on one page so `page` is well-defined.
+- Metadata (`company`, `year`, `filing_type`, `document_id`) from sidecar JSON or `{company}_{year}_{filing_type}.pdf`.
+- Dense: BGE-small in a local FAISS inner-product index (L2-normalized).
+- Sparse: BM25 on the same chunks.
+- Hybrid: min-max each channel, then `0.6 * dense + 0.4 * BM25`. Logs `dense_score`, `bm25_score`, `hybrid_score`, `rank`.
+- Filters: optional `company` / `year` / `filing_type` / `document_id` extracted **from the original question**. If filters return nothing, one retry without filters.
 
-1. Retrieval query = stripped user question (no rewrite module).
-2. Heuristic metadata extraction from explicit years, known company names, filing-type phrases, and document IDs already in the index.
-3. One hybrid retrieval call. If filters yield zero hits and `max_retrieval_calls >= 2`, retry once without filters.
-4. Pass retrieved chunks (not gold context) to the generator.
+## Query formulation
+
+`agent/query_formulation.py` is the Lumer agentic step. The LLM is told to identify entities, years, and financial concepts, preserve numbers/time, **not answer**, and output only a retrieval query. Empty model output falls back to the whitespace-normalized question. The answer prompt still uses the **original** question.
 
 ## Answer generation
 
-The LLM receives the original question, retrieved chunk text, and source/page identifiers. It is instructed to answer only from evidence, avoid unsupported claims, admit insufficient evidence, and cite pages. Dataset gold answers/contexts are **never** injected.
+Qwen sees the original question, truncated retrieved text, and source/page ids. It must use only that evidence, compute from tables when needed, and say the evidence is insufficient only when the values are missing. Default backend: local Ollama (dummy key `ollama`). Gemini/Hugging Face clients remain in `generation/llm_client.py` but are not the frozen experimental generator.
 
-Default experimental generator: **local Ollama** `qwen3:4b-instruct-2507-q4_K_M` (`llm_provider = "openai_compatible"`, `http://localhost:11434/v1`, dummy key `ollama`). Temperature is 0, `num_ctx=2048`, thinking off. No Gemini/OpenAI cloud API.
+## Gold isolation and evaluation
 
-The previous local FLAN-T5 backend is still available:
+Runners call `agent.answer(question, question_id)` with the question string only. `attach_eval_metadata` adds `gold_answer` / dataset fields to the **log** after generation.
 
-```python
-# config.py
-llm_provider = "huggingface_local"
-llm_model = "google/flan-t5-base"
-```
+`evaluation/evaluator.py`:
 
-Evidence passed into the prompt is truncated per chunk (`max_chars_per_chunk_in_prompt=700`) so Qwen sees more of each retrieved 512-token chunk while the full prompt plus 512 new tokens stays under `num_ctx=2048`.
-
-Token usage is logged as input / output / total tokens. There is no monetary cost metric.
+- Recall@K and MRR on `chunk.document_id == gold.document_id`
+- Answer correctness via `evaluation/answer_metrics.py` (`program_answer` / `original_answer`)
+- Latency and token aggregates
 
 ## Logging
 
-Every question writes a JSON record (and a JSONL file) under `logs/<run>/`:
+Each run uses a **new** timestamped directory `logs/<run_name>_<UTC>/` (never overwrite older 15-Q or 120-Q folders):
 
-```json
-{
-  "question_id": "...",
-  "question": "...",
-  "retrieval_query": "...",
-  "metadata_filters": {},
-  "retrieved_chunks": [
-    {
-      "chunk_id": "...",
-      "rank": 1,
-      "dense_score": 0.0,
-      "bm25_score": 0.0,
-      "hybrid_score": 0.0,
-      "page": 1,
-      "document_id": "..."
-    }
-  ],
-  "answer": "...",
-  "latency_seconds": 0.0,
-  "input_tokens": 0,
-  "output_tokens": 0,
-  "total_tokens": 0,
-  "number_of_retrieval_calls": 1,
-  "number_of_llm_calls": 1
-}
-```
+- `{question_id}.json`
+- `records.jsonl`
+- `evaluation.json`
+- `run_summary.json`
 
-End-to-end latency starts before processing the question and stops after the final answer. Retrieval and LLM timings are also stored.
+Baseline records include original question, formulated query, formulation prompt/raw output/latency/tokens, filters, chunk ids/ranks/scores, answer, `number_of_llm_calls` (2), and generation latency/tokens.
 
-Gemini free-tier handling (5 `generate_content` requests/minute): the client spaces **every** `generate_content` call in the process by at least 20s (shared clock for the whole run). After `429 RESOURCE_EXHAUSTED` it retries the **same** request, waiting `max(API retryDelay, 20s) + 5s`. `llm_latency_seconds` is the successful `generate_content` call only and **excludes** wait time. `latency_seconds` is `agent.answer()` wall time and **includes** pacing/429 waits. Rate-limited questions are retried, never skipped or scored as incorrect.
+## Question sets
 
-## Evaluation (separate module)
+| Set | Path | Role |
+| --- | --- | --- |
+| Development 15-Q | `data/t2_ragbench/questions/t2_small_15.json` | Plumbing / sanity (5 FinQA + 5 ConvFinQA + 5 TAT-DQA) |
+| Frozen 120-Q | `experiments/final_120_questions.json` | Final comparison set; 15-Q ids excluded; do not resample |
 
-`evaluation/evaluator.py` does **not** sit inside the retriever. Gold document/page IDs in the question file are used only after logging:
-
-- Recall@K and MRR when gold pages/document IDs are provided
-- latency and token aggregates
-- placeholders for answer correctness and evidence support
+Hugging Face source: [`G4KMU/t2-ragbench`](https://huggingface.co/datasets/G4KMU/t2-ragbench). The adapter downloads the page PDFs needed for a run and indexes them with the frozen pipeline.
 
 ## Setup
 
 ```bash
 python3 -m pip install -r requirements.txt
-python3 experiments/build_sample_corpus.py
-python3 experiments/run_baseline.py --rebuild-index
+# Start Ollama with qwen3:4b-instruct-2507-q4_K_M on localhost:11434
+python3 -m pytest tests -q
 ```
 
-Place real annual-report PDFs in `data/reports/` using `{Company}_{Year}_{filing-type}.pdf`, add questions under `data/questions/`, then rebuild the index.
+The first embedding run downloads `BAAI/bge-small-en-v1.5` from Hugging Face.
 
-The first embedding run downloads `BAAI/bge-small-en-v1.5` from Hugging Face. Generation uses local Ollama at `http://localhost:11434/v1` (`qwen3:4b-instruct-2507-q4_K_M`). Start Ollama on the laptop before running experiments. A dummy key `ollama` is used; no cloud API key is required.
+### Development 15-Q (existing small index)
 
-## Prototype end-to-end run
+```bash
+python3 experiments/run_t2_ragbench.py \
+  --questions data/t2_ragbench/questions/t2_small_15.json
+```
 
-Checked-in sample PDFs (Northstar 2023, CedarTech 2022) and 10 questions. Gold pages are used **only** by `evaluation/evaluator.py`. JSON records from the CPU prototype are in `logs/examples/`.
+### Frozen 120-Q Agentic baseline (do not rebuild if the index exists)
+
+```bash
+python3 experiments/run_t2_ragbench.py \
+  --questions experiments/final_120_questions.json \
+  --pdf-dir data/t2_ragbench/documents_final120 \
+  --index-dir data/indexes/t2_ragbench_final120 \
+  --run-name t2-ragbench-final-120-agentic
+```
+
+`--pdf-dir` / `--index-dir` / `--run-name` are existing runner flags so the 120-Q corpus is used and old conventional-RAG logs are not overwritten. Do **not** pass `--rebuild-index` when `data/indexes/t2_ragbench_final120` is already built.
+
+Self-RAG (same questions/index when that experiment is scheduled):
+
+```bash
+python3 experiments/run_t2_self_rag.py \
+  --questions experiments/final_120_questions.json \
+  --pdf-dir data/t2_ragbench/documents_final120 \
+  --index-dir data/indexes/t2_ragbench_final120 \
+  --run-name t2-self-rag-final-120
+```
+
+Tiny checked-in sample (Northstar / CedarTech) is still available via `experiments/build_sample_corpus.py` and `experiments/run_baseline.py`.
+
+## Results (do not mix conditions)
+
+**Development 15-Q, Lumer baseline with query formulation** (`logs/t2-ragbench-small-queryform_20260823T045242Z/`):
 
 | Metric | Value |
 | --- | --- |
-| Recall@1 | 0.80 |
-| Recall@3 | 1.00 |
-| MRR | 0.88 |
-| Mean latency | 0.40 s |
-| Mean total tokens | 520 |
+| Accuracy | 8/15 = 53.3% |
+| Recall@1 / @3 / @5 / @10 | 1.0 |
+| MRR | 1.0 |
+| Mean LLM calls | 2.0 |
+| Rank-1 gold document | 15/15 |
 
-Rank-1 retrieved page matched the gold page for 8/10 questions; the other two matched within the top 3. Generated answers copied the correct figure or name for most questions (revenue, employees, office, operating income, segment, dividend, CEO, acquisition price). FLAN-T5-base still misses some numeric details (effective tax rate, one percentage). That is expected for this small frozen generator: Self-RAG should wrap this retriever rather than replace it.
+Retrieval matched the earlier 15-Q conventional baseline (query = question) at Recall@1 = 1.0 / MRR = 1.0. ConvFinQA remains 0/5 on this small set (insufficient-evidence answers despite gold-document hits).
 
-Example (`q01`): filters `{company, year}` from the question; rank-1 chunk is page 3 with dense/BM25/hybrid scores; answer `$12.40 billion`.
+**Do not** treat `logs/t2-ragbench-final-120_20260822T120619Z/` (43/120 = 35.8%, query = question, 1 LLM call) as the Lumer Agentic RAG baseline.
 
-## Prototype vs full corpus
+**Self-RAG V2 15-Q** (window refine; **original-question** retrieval, before formulation was added): 13/15 accuracy, Recall@1 = 1.0. That number is not comparable to SYSTEM A until Self-RAG uses `QueryFormulator`.
 
-The checked-in sample PDFs and 10 questions are an end-to-end prototype so you can confirm that retrieved chunks map to the correct source pages. The same code paths scale to a full filing corpus: parse directory → chunk → embed → BM25 → hybrid retrieve → agent → log.
-
-## Adding Self-RAG later
-
-Keep this baseline frozen. Self-RAG lives in `self_rag/` and `experiments/run_t2_self_rag.py`. It wraps the same `HybridRetriever`, `AnswerGenerator`, evaluator, and 700-character evidence window. `config.CONFIG` has no Self-RAG flags; `SelfRAGConfig` enables the four reflection stages independently for later ablations.
-
-Full Self-RAG on the same 15-question development subset (all four stages on; in-document 700-char window slides when UNSUPPORTED):
-
-| Metric | Frozen baseline | Self-RAG (first) | Self-RAG (window refine) |
-| --- | --- | --- | --- |
-| Recall@1 / @3 / @5 / @10 | 1.0 | 0.933 / 1.0 / 1.0 / 1.0 | **1.0** |
-| MRR | 1.0 | 0.967 | **1.0** |
-| Answer accuracy | 8/15 = 53.3% | 8/15 = 53.3% | **13/15 = 86.7%** |
-| FinQA | 5/5 | 5/5 | 5/5 |
-| ConvFinQA | 0/5 | 0/5 | **4/5** |
-| TAT-DQA | 3/5 | 3/5 | **4/5** |
-| Mean tokens | 898.2 | 5789.8 | 3885.0 |
-| Mean latency (CPU) | 15.22 s | 49.86 s | 42.98 s |
-| Mean LLM calls | 1 | 6.47 | 5.67 |
-| Mean retrieval iterations | — | 1.47 | 1.0 |
-| Mean evidence-window refinements | — | — | 0.47 |
-
-Newly correct vs frozen baseline: `convfinqa_0`, `convfinqa_1`, `convfinqa_2`, `convfinqa_3`, `tatqa_test_9071`. Still incorrect: `convfinqa_5`, `tatqa_test_9074`. Frozen baseline was not changed.
-
-Do not change `config.py` defaults for chunk size, overlap, embedding model, hybrid weights, `final_top_k`, or `max_chars_per_chunk_in_prompt` when comparing against this retrieval baseline.
-
-## T²-RAGBench (dataset adapter)
-
-Hugging Face dataset: [`G4KMU/t2-ragbench`](https://huggingface.co/datasets/G4KMU/t2-ragbench) (`FinQA`, `ConvFinQA`, `TAT-DQA`).
-
-The Arrow tables contain questions, answers, and page text. **Page PDFs are files in the same Hugging Face repo** (`data/FinQA/{split}/pdf/...`, `data/ConvFinQA/pdf/...`, `data/TAT-DQA/{split}/raw/...`), not binary columns. The adapter downloads only the PDFs needed for a run and indexes them with the **frozen** baseline pipeline.
-
-Gold `program_answer` / `context` are stored on the question record for evaluation and are attached to logs **after** generation. They are not passed to retrieval, embeddings, BM25, the agent, or the LLM.
-
-Evidence mapping: each PDF is one source page keyed by `context_id` (= our `document_id`). Recall/MRR use `chunk.document_id == gold.document_id`. Dataset `page_number` is the 10-K page label; pdfplumber’s page index inside the single-page PDF is 1. Token overlap vs `gold.evidence` is a secondary check because 512-token chunks are not identical to the dataset `context` string.
-
-```bash
-python3 experiments/run_t2_ragbench.py --prepare --rebuild-index
-python3 experiments/run_t2_self_rag.py
-```
-
-`run_t2_ragbench.py` is the frozen baseline. `run_t2_self_rag.py` is the separate Self-RAG experiment on the same 15 questions.
-
-This prepares 5 FinQA test + 5 ConvFinQA turn_0 + 5 TAT-DQA test questions (15 unique page PDFs), then runs the frozen retrieval baseline with the local Ollama generator.
-
-Frozen 15-question generator baseline (`max_chars_per_chunk_in_prompt=700`; retrieval unchanged vs the 400-char run):
-
-| Metric | 400-char (old) | 700-char (frozen) |
-| --- | --- | --- |
-| Recall@1 / @3 / @5 / @10 | 1.0 | 1.0 |
-| MRR | 1.0 | 1.0 |
-| Answer accuracy | 6/15 = 40% | **8/15 = 53.3%** |
-| FinQA | — | 5/5 |
-| ConvFinQA | 0/5 | 0/5 |
-| TAT-DQA | — | 3/5 |
-| Mean tokens | 649.3 | 898.2 |
-| Mean latency | 9.16 s (laptop GPU) | 15.22 s (this run, CPU Ollama) |
-
-Do not process the full benchmark until this 15-question path is verified.
+The frozen 120-Q **Agentic** baseline uses `experiments/final_120_questions.json` and logs under `logs/t2-ragbench-final-120-agentic_*`.
 
 ## Tests
 
