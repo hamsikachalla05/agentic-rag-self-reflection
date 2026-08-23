@@ -2,6 +2,7 @@ from generation.answer_generator import build_prompt
 from retrieval.hybrid_retriever import RetrievedChunk
 from config import CONFIG
 from agent.agent import BaselineAgent
+from agent.query_formulation import build_query_formulation_prompt
 from pathlib import Path
 
 
@@ -33,6 +34,19 @@ def test_t2_gold_fields_are_not_in_generation_prompt():
     assert "gold_context" not in prompt
     # Retrieved PDF text may be present; the withheld gold string is not injected.
     assert "SECRET_GOLD_CONTEXT_SHOULD_NOT_APPEAR" not in prompt
+
+
+def test_query_formulation_prompt_does_not_include_gold_fields():
+    prompt = build_query_formulation_prompt(
+        "What was Analog Devices reported interest expense for fiscal year 2009?"
+    )
+    assert "gold_answer" not in prompt.lower()
+    assert "program_answer" not in prompt.lower()
+    assert "original_answer" not in prompt.lower()
+    assert "gold_evidence" not in prompt.lower()
+    assert "gold_context" not in prompt.lower()
+    assert "SECRET_GOLD" not in prompt
+    assert "Analog Devices" in prompt
 
 
 def test_agent_answer_only_takes_question_and_id():

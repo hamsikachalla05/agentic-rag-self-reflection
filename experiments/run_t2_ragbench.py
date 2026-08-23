@@ -50,22 +50,27 @@ def attach_eval_metadata(record: dict, item: dict) -> dict:
     return out
 
 
-def assert_no_gold_in_prompt(question: str, item: dict, retrieved_chunks) -> None:
-    prompt = build_prompt(question, retrieved_chunks, CONFIG)
+def _assert_no_gold_in_text(text: str, item: dict, *, allow_numeric_gold_in_evidence: bool) -> None:
     gold_answer = (item.get("gold_answer") or "").strip()
     evidence = ((item.get("gold") or {}).get("evidence") or "").strip()
-    lowered = prompt.lower()
+    lowered = (text or "").lower()
+    for marker in ("gold_answer", "program_answer", "original_answer", "gold_evidence", "gold_context"):
+        if marker in lowered:
+            raise AssertionError(f"Gold field {marker!r} leaked into an LLM prompt")
     if gold_answer and len(gold_answer) >= 8 and gold_answer.lower() in lowered:
-        # Short numeric golds like "13.2" can appear naturally in retrieved text.
-        if not any(ch.isalpha() for ch in gold_answer):
+        if allow_numeric_gold_in_evidence and not any(ch.isalpha() for ch in gold_answer):
             return
-        raise AssertionError("Gold answer leaked into the LLM prompt")
+        raise AssertionError("Gold answer leaked into an LLM prompt")
     if evidence and len(evidence) > 80:
-        marker = evidence[:80]
-        # Dataset context may overlap the PDF page we retrieved; that is the
-        # document, not a gold field injected by the runner.
         if "gold_answer" in lowered or "program_answer" in lowered:
             raise AssertionError("Gold field name leaked into the LLM prompt")
+
+
+def assert_no_gold_in_prompt(question: str, item: dict, retrieved_chunks, extra_texts: list[str] | None = None) -> None:
+    prompt = build_prompt(question, retrieved_chunks, CONFIG)
+    _assert_no_gold_in_text(prompt, item, allow_numeric_gold_in_evidence=True)
+    for extra in extra_texts or []:
+        _assert_no_gold_in_text(extra, item, allow_numeric_gold_in_evidence=False)
 
 
 def main() -> None:
@@ -151,7 +156,12 @@ def main() -> None:
                     text=chunk.text,
                 )
             )
-        assert_no_gold_in_prompt(question, item, retrieved)
+        assert_no_gold_in_prompt(
+            question,
+            item,
+            retrieved,
+            extra_texts=[record.query_formulation_prompt],
+        )
         payload = attach_eval_metadata(record.to_dict(), item)
         path = logger.write(payload)
         records.append(payload)

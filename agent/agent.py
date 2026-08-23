@@ -1,15 +1,16 @@
-"""Lightweight baseline agent / controller.
+"""Lumer-inspired baseline Agentic RAG controller.
 
 The agent:
   1. receives a question
-  2. uses the question as the retrieval query (no experimental rewriting)
+  2. LLM-formulates a concise retrieval query (does not answer)
   3. extracts metadata filters only when they are explicit in the question
-  4. calls the hybrid retriever
+  4. calls the hybrid retriever with the formulated query
   5. passes retrieved evidence to the LLM
   6. returns the final answer
 
 It does not grade retrieval, critique answers, or run Self-RAG.
-Reflection modules should wrap this agent later without changing retrieval.
+`formulate_query()` remains a whitespace-only helper so the current Self-RAG
+controller is unchanged; Self-RAG can later call QueryFormulator.
 """
 
 from __future__ import annotations
@@ -22,6 +23,8 @@ from typing import Any
 from config import CONFIG, Config
 from generation.answer_generator import AnswerGenerator, GenerationResult
 from retrieval.hybrid_retriever import HybridRetriever, RetrievedChunk
+
+from .query_formulation import QueryFormulator, QueryFormulationResult
 
 
 YEAR_RE = re.compile(r"\b(19\d{2}|20\d{2})\b")
@@ -53,6 +56,17 @@ class ExperimentRecord:
     rate_limit_waits: int = 0
     rate_limit_wait_seconds: float = 0.0
     config_snapshot: dict[str, Any] = field(default_factory=dict)
+    original_question: str = ""
+    query_formulation_prompt: str = ""
+    query_formulation_raw_output: str = ""
+    query_formulation_latency_seconds: float = 0.0
+    query_formulation_input_tokens: int = 0
+    query_formulation_output_tokens: int = 0
+    query_formulation_trace: dict[str, Any] = field(default_factory=dict)
+    answer_generation_latency_seconds: float = 0.0
+    answer_generation_input_tokens: int = 0
+    answer_generation_output_tokens: int = 0
+    answer_generation_prompt: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -66,12 +80,17 @@ class BaselineAgent:
         cfg: Config | None = None,
         known_companies: list[str] | None = None,
         known_document_ids: list[str] | None = None,
+        query_formulator: QueryFormulator | None = None,
     ):
         self.retriever = retriever
         self.generator = generator
         self.cfg = cfg or CONFIG
         self.known_companies = known_companies or self._companies_from_index()
         self.known_document_ids = known_document_ids or self._doc_ids_from_index()
+        self.query_formulator = query_formulator or QueryFormulator(
+            llm=self.generator.llm,
+            cfg=self.cfg,
+        )
 
     def _companies_from_index(self) -> list[str]:
         companies = {
@@ -85,8 +104,12 @@ class BaselineAgent:
         return sorted({c.document_id for c in self.retriever.chunks_by_id.values()})
 
     def formulate_query(self, question: str) -> str:
-        """Baseline query formulation: use the user question as-is."""
+        """Whitespace-only helper kept for the frozen Self-RAG controller."""
         return " ".join(question.strip().split())
+
+    def formulate_retrieval_query(self, question: str) -> QueryFormulationResult:
+        """LLM query formulation used by the Lumer-style baseline before retrieval."""
+        return self.query_formulator.formulate(question)
 
     def extract_metadata_filters(self, question: str) -> dict[str, Any]:
         """Extract filters only from explicit question cues. Do not invent values."""
@@ -119,7 +142,8 @@ class BaselineAgent:
 
     def answer(self, question: str, question_id: str) -> ExperimentRecord:
         t0 = time.perf_counter()
-        retrieval_query = self.formulate_query(question)
+        formulation = self.formulate_retrieval_query(question)
+        retrieval_query = formulation.retrieval_query
         filters = self.extract_metadata_filters(question)
 
         retrieval_calls = 0
@@ -150,6 +174,8 @@ class BaselineAgent:
         generation: GenerationResult = self.generator.generate(question, chunks)
         latency = time.perf_counter() - t0
 
+        input_tokens = formulation.input_tokens + generation.input_tokens
+        output_tokens = formulation.output_tokens + generation.output_tokens
         return ExperimentRecord(
             question_id=question_id,
             question=question,
@@ -158,15 +184,30 @@ class BaselineAgent:
             retrieved_chunks=[c.to_log_dict() for c in chunks],
             answer=generation.answer,
             latency_seconds=round(latency, 4),
-            input_tokens=generation.input_tokens,
-            output_tokens=generation.output_tokens,
-            total_tokens=generation.total_tokens,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            total_tokens=input_tokens + output_tokens,
             number_of_retrieval_calls=retrieval_calls,
-            number_of_llm_calls=generation.llm_calls,
+            number_of_llm_calls=formulation.llm_calls + generation.llm_calls,
             retrieval_latency_seconds=round(retrieval_latency, 4),
-            llm_latency_seconds=round(generation.latency_seconds, 4),
-            rate_limit_retries=generation.rate_limit_retries,
-            rate_limit_waits=generation.rate_limit_waits,
-            rate_limit_wait_seconds=round(generation.rate_limit_wait_seconds, 4),
+            llm_latency_seconds=round(
+                formulation.latency_seconds + generation.latency_seconds, 4
+            ),
+            rate_limit_retries=formulation.rate_limit_retries + generation.rate_limit_retries,
+            rate_limit_waits=formulation.rate_limit_waits + generation.rate_limit_waits,
+            rate_limit_wait_seconds=round(
+                formulation.rate_limit_wait_seconds + generation.rate_limit_wait_seconds, 4
+            ),
             config_snapshot=self.cfg.to_dict(),
+            original_question=question,
+            query_formulation_prompt=formulation.prompt,
+            query_formulation_raw_output=formulation.raw_output,
+            query_formulation_latency_seconds=round(formulation.latency_seconds, 4),
+            query_formulation_input_tokens=formulation.input_tokens,
+            query_formulation_output_tokens=formulation.output_tokens,
+            query_formulation_trace=formulation.to_trace(),
+            answer_generation_latency_seconds=round(generation.latency_seconds, 4),
+            answer_generation_input_tokens=generation.input_tokens,
+            answer_generation_output_tokens=generation.output_tokens,
+            answer_generation_prompt=generation.prompt,
         )

@@ -30,5 +30,6 @@ def test_does_not_invent_company_or_year():
 
 
 def test_query_is_the_question():
+    """Whitespace helper used by frozen Self-RAG; LLM formulation is separate."""
     agent = _agent()
     assert agent.formulate_query("  What is EPS?  ") == "What is EPS?"
