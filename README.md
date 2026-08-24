@@ -90,6 +90,7 @@ Runners call `agent.answer(question, question_id)` with the question string only
 - Answer correctness via `evaluation/answer_metrics.py` (`program_answer` / `original_answer`)
 - Latency and token aggregates
 
+The scorer accepts a prediction if **any** parsed number in the free-form text is equivalent to gold (absolute slack 0.05, plus unit/scale factors). A stray-number audit reclassified a few official-correct items where the boxed/final answer did not match gold; those IDs are listed in each run’s `evaluation.json` under `stray_number_reclassified`. Predictions were not regenerated. The evaluator code was not changed.
 ## Logging
 
 Each run uses a **new** timestamped directory `logs/<run_name>_<UTC>/` (never overwrite older 15-Q or 120-Q folders):
@@ -98,6 +99,8 @@ Each run uses a **new** timestamped directory `logs/<run_name>_<UTC>/` (never ov
 - `records.jsonl`
 - `evaluation.json`
 - `run_summary.json`
+
+The frozen 120-Q Lumer, Full Self-RAG, and four ablation directories are **checked in**. Older small/baseline folders stay gitignored.
 
 Baseline records include original question, formulated query, formulation prompt/raw output/latency/tokens, filters, chunk ids/ranks/scores, answer, `number_of_llm_calls` (2), and generation latency/tokens.
 
@@ -139,14 +142,23 @@ python3 experiments/run_t2_ragbench.py \
 
 `--pdf-dir` / `--index-dir` / `--run-name` are existing runner flags so the 120-Q corpus is used and old conventional-RAG logs are not overwritten. Do **not** pass `--rebuild-index` when `data/indexes/t2_ragbench_final120` is already built.
 
-Self-RAG (same questions/index when that experiment is scheduled):
+Self-RAG (same questions/index; do not rebuild the index):
 
 ```bash
 python3 experiments/run_t2_self_rag.py \
   --questions experiments/final_120_questions.json \
   --pdf-dir data/t2_ragbench/documents_final120 \
   --index-dir data/indexes/t2_ragbench_final120 \
-  --run-name t2-self-rag-final-120
+  --run-name t2-self-rag-final-120-agentic
+```
+
+One-component ablations (existing skip flags; sequential; do not overwrite old log dirs):
+
+```bash
+python3 experiments/run_t2_self_rag.py ... --run-name t2-self-rag-ablate-need-retrieval --no-retrieval-decision
+python3 experiments/run_t2_self_rag.py ... --run-name t2-self-rag-ablate-relevant --no-retrieval-relevance
+python3 experiments/run_t2_self_rag.py ... --run-name t2-self-rag-ablate-supported --no-evidence-support
+python3 experiments/run_t2_self_rag.py ... --run-name t2-self-rag-ablate-useful --no-answer-usefulness
 ```
 
 Tiny checked-in sample (Northstar / CedarTech) is still available via `experiments/build_sample_corpus.py` and `experiments/run_baseline.py`.
@@ -167,9 +179,26 @@ Retrieval matched the earlier 15-Q conventional baseline (query = question) at R
 
 **Do not** treat `logs/t2-ragbench-final-120_20260822T120619Z/` (43/120 = 35.8%, query = question, 1 LLM call) as the Lumer Agentic RAG baseline.
 
-**Self-RAG V2 15-Q** (window refine; **original-question** retrieval, before formulation was added): 13/15 accuracy, Recall@1 = 1.0. That number is not comparable to SYSTEM A until Self-RAG uses `QueryFormulator`.
+**Self-RAG V2 15-Q** (window refine; **original-question** retrieval, before formulation was added): 13/15 accuracy, Recall@1 = 1.0. That number is **not** the fair 120-Q comparison (SYSTEM B now uses `QueryFormulator`).
 
-The frozen 120-Q **Agentic** baseline uses `experiments/final_120_questions.json` and logs under `logs/t2-ragbench-final-120-agentic_*`.
+### Frozen 120-Q (fair comparison)
+
+Same manifest, PDFs, index, formulator, hybrid retrieve, and Qwen. Retrieval for Lumer and Full Self-RAG: R@1 **0.892**, R@5 **0.950**, MRR **0.917**.
+
+Headline accuracies below are **after the stray-number reclassification** (raw scorer in parentheses where it differed). Lumer had no stray-number cases.
+
+| System | Acc | FinQA | ConvFinQA | TAT-DQA | Lat (s) | Tokens | LLM | Refine | Log |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Lumer Agentic RAG | 45/120 = 37.5% | 12/40 | 15/40 | 18/40 | 18.97 | 1269.7 | 2.00 | — | `logs/t2-ragbench-final-120-agentic_20260823T050108Z/` |
+| Full Self-RAG V2 | **61/120 = 50.8%** (raw 62) | 16/40 | 19/40 | 26/40 | 56.38 | 5762.2 | 7.49 | 0.892 | `logs/t2-self-rag-final-120-agentic_20260823T054650Z/` |
+| NEED_RETRIEVAL OFF | 58/120 = 48.3% (raw 59) | 15/40 | 19/40 | 24/40 | 54.91 | 5951.2 | 6.73 | 0.875 | `logs/t2-self-rag-ablate-need-retrieval_20260823T080227Z/` |
+| RELEVANT OFF | 60/120 = 50.0% (raw 61) | 16/40 | 19/40 | 25/40 | 50.75 | 5196.0 | 6.79 | 0.875 | `logs/t2-self-rag-ablate-relevant_20260823T095300Z/` |
+| SUPPORTED OFF | 59/120 = 49.2% (raw 60) | 16/40 | 19/40 | 24/40 | 43.93 | 4265.5 | 5.97 | 0.858 | `logs/t2-self-rag-ablate-supported_20260823T113537Z/` |
+| USEFUL OFF | 57/120 = 47.5% (raw 60) | 16/40 | 18/40 | 23/40 | 36.17 | 3792.5 | 5.66 | 0.658 | `logs/t2-self-rag-ablate-useful_20260823T130730Z/` |
+
+Drop vs Full Self-RAG (61): NEED −3, REL −1, SUP −2, USE −4. Largest drop: **USEFUL OFF** after the audit (NEED was largest on the raw scorer).
+
+Reclassified IDs: Full SR `tatqa_test_9162`; NEED/REL/SUP `tatqa_test_9180`; USEFUL `tatqa_test_9180`, `finqa_test_927`, `tatqa_test_9642`. Per-question 0/1 matrix: `experiments/self_rag_ablation_correctness_matrix.csv`.
 
 ## Tests
 

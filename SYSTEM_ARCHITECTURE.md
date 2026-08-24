@@ -15,7 +15,7 @@ This document describes the **current code**, not a target design. Where intende
 | Retrieve | Frozen hybrid (FAISS + BM25) | Same `HybridRetriever`, one hybrid pass |
 | Evidence | Top-5, first 700 characters per chunk | Same initial window; if UNSUPPORTED, slide a later 700-char slice in the same document / chunker sibling |
 | Answer | Evidence-only Qwen prompt | Same generator; optional revision if NOT_USEFUL |
-| LLM calls / typical question | **2** (formulate + answer) | **~5–8** (formulate not yet wired; reflection + answer + optional refine) |
+| LLM calls / typical question | **2** (formulate + answer) | **~7.5 mean** (formulate + reflection + answer + optional refine; cap `max_llm_calls=8` on reflection/gen) |
 
 Shared and frozen for a fair comparison:
 
@@ -61,7 +61,8 @@ Shared and frozen for a fair comparison:
                     ┌────────────────────▼────────────────────┐
                     │  ExperimentLogger  →  Evaluator         │
                     │  records.jsonl / evaluation.json        │
-                    │  Recall@K, MRR, numeric answer match    │
+                    │  Recall@K, MRR, numeric answer match            │
+                    │  (any number in the writeup can match gold)     │
                     └─────────────────────────────────────────┘
 ```
 
@@ -156,18 +157,13 @@ HTTP retries are not extra reasoning steps.
 
 **Does not replace** hybrid search. It wraps the same retriever and `AnswerGenerator`.
 
-### 5.1 Current vs intended query path
+### 5.1 Query path
 
-| | Current code | Intended fair comparison |
-| --- | --- | --- |
-| Query used for hybrid search | LLM `QueryFormulator` | Same `QueryFormulator` as SYSTEM A |
-| Why | Self-RAG files were frozen while formulation was added to the baseline | SYSTEM B = A + reflection + window refine |
-
-`QueryFormulator` is exported from `agent/` so Self-RAG can call `formulate_retrieval_query()` later **without** changing FAISS/BM25.
+`SelfRAGAgent.answer` calls `formulate_retrieval_query()` then the same `HybridRetriever` as SYSTEM A. Filters still come from the original question. SYSTEM B = A + reflection + in-document 700-char window refine (not a new search).
 
 ### 5.2 Control loop (current)
 
-1. Always retrieve once with the frozen hybrid retriever (empty-filter retry only). **Original ranks are stored for Recall@K.**
+1. Formulate a retrieval query (`QueryFormulator`), then retrieve once with the frozen hybrid retriever (empty-filter retry only). **Original ranks are stored for Recall@K.**
 2. Build a 700-char evidence view (`EvidenceWindowTracker`).
 3. **Retrieval decision:** `NEED_RETRIEVAL` / `NO_RETRIEVAL` (does not drop rank-1).
 4. **Relevance:** `RELEVANT` / `IRRELEVANT`.
@@ -177,7 +173,7 @@ HTTP retries are not extra reasoning steps.
 6. Generate answer on the current view (original question + windowed text).
 7. **Usefulness:** `USEFUL` / `NOT_USEFUL`. Optional revision / extra window under `max_answer_attempts=2` and `max_llm_calls=8`.
 
-Caps live in `self_rag/config.py`, not in `config.CONFIG`.
+Caps live in `self_rag/config.py`, not in `config.CONFIG`. CLI skip flags on `experiments/run_t2_self_rag.py` turn off one reflection stage each: `--no-retrieval-decision`, `--no-retrieval-relevance`, `--no-evidence-support`, `--no-answer-usefulness`.
 
 ---
 
@@ -206,7 +202,7 @@ Numeric golds may appear inside retrieved PDF text; that is document content, no
 ### 6.3 Metrics
 
 - **Retrieval:** hit if a retrieved chunk’s `document_id` is in `gold.document_ids`. Recall@1/3/5/10, MRR. Self-RAG scores the **original** retrieval list, not window slides.
-- **Answers:** `evaluation/answer_metrics.py` against `program_answer` / `original_answer` (numbers, percents, yes/no, list forms).
+- **Answers:** `evaluation/answer_metrics.py` against `program_answer` / `original_answer` (numbers, percents, yes/no, list forms). Equivalence uses relative/absolute numeric slack and scale factors, and scans **the entire free-form prediction**. A post-hoc stray-number audit flipped a handful of official-correct rows where only an intermediate quantity matched gold; see `stray_number_reclassified` in those `evaluation.json` files. The matcher code was not changed.
 - **Cost:** wall latency, token totals, `number_of_llm_calls`.
 
 ### 6.4 Logs (never overwrite older runs)
@@ -218,7 +214,7 @@ Each run gets `logs/{run_name}_{UTC}/`:
 - `evaluation.json`
 - `run_summary.json`
 
-Baseline formulation logs include `retrieval_query`, `query_formulation_prompt`, `query_formulation_raw_output`, latencies/tokens for formulation vs generation, filters, chunk ids/ranks/scores, answer, `number_of_llm_calls`.
+The frozen 120-Q Lumer, Full Self-RAG V2, and four ablation run directories are committed under `logs/`. Do not overwrite them. Per-question correctness matrix: `experiments/self_rag_ablation_correctness_matrix.csv`.
 
 ---
 
@@ -271,7 +267,17 @@ python experiments/run_t2_ragbench.py \
 
 Do **not** pass `--rebuild-index` when the frozen `t2_ragbench_final120` index already exists.
 
-Self-RAG: `experiments/run_t2_self_rag.py` with the same questions/index when that comparison is scheduled.
+Self-RAG (same questions/index; do not `--rebuild-index`):
+
+```bash
+python experiments/run_t2_self_rag.py \
+  --questions experiments/final_120_questions.json \
+  --pdf-dir data/t2_ragbench/documents_final120 \
+  --index-dir data/indexes/t2_ragbench_final120 \
+  --run-name t2-self-rag-final-120-agentic
+```
+
+Ablations: same command with `--no-retrieval-decision`, `--no-retrieval-relevance`, `--no-evidence-support`, or `--no-answer-usefulness` and a new `--run-name`.
 
 ---
 
@@ -279,9 +285,10 @@ Self-RAG: `experiments/run_t2_self_rag.py` with the same questions/index when th
 
 | Item | Status |
 | --- | --- |
-| LLM query formulation on baseline | Implemented and used in `BaselineAgent.answer` |
+| LLM query formulation on baseline | Implemented in `BaselineAgent.answer` |
 | 15-Q development sanity (formulation on) | Recall@1 = 1.0, MRR = 1.0, accuracy 8/15 |
-| Final 120-Q **Agentic** baseline | Runner + frozen index; results live in a new `logs/t2-ragbench-final-120-agentic_*` directory when that job finishes |
-| Old 120-Q **conventional** RAG (query = question) | `logs/t2-ragbench-final-120_20260822T120619Z/` — **not** SYSTEM A |
-| Self-RAG V2 on original-question retrieval | Implemented; 120-Q was run **before** formulation was added to the baseline |
-| Self-RAG using `QueryFormulator` | Wired: `SelfRAGAgent.answer` calls `formulate_retrieval_query()` before hybrid retrieve |
+| Final 120-Q **Agentic** baseline (SYSTEM A) | **45/120 = 37.5%**; R@1 0.892; R@5 0.950; MRR 0.917; 2.0 LLM calls. Log: `logs/t2-ragbench-final-120-agentic_20260823T050108Z/` |
+| Old 120-Q **conventional** RAG (query = question) | `logs/t2-ragbench-final-120_20260822T120619Z/` (43/120) — **not** SYSTEM A |
+| Self-RAG V2 + same `QueryFormulator` (SYSTEM B) | **61/120 = 50.8%** after stray-number reclass (raw scorer 62/120). Mean LLM calls 7.49; evidence refinements 0.892. Log: `logs/t2-self-rag-final-120-agentic_20260823T054650Z/` |
+| One-component ablations (existing skip flags) | After reclass: NEED 58/120, REL 60/120, SUP 59/120, USE 57/120. Logs `logs/t2-self-rag-ablate-*` |
+| Stray-number audit | Predictions unchanged; `evaluation.json` / `run_summary.json` mark listed IDs incorrect |
