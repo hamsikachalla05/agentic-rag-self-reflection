@@ -1,0 +1,258 @@
+{
+  "question_id": "finqa_test_92",
+  "question": "What is the average operating income of Air Products' Industrial Gases segment in the Americas for the years 2014-2016, as reported in the company's 2016 financial statements?",
+  "retrieval_query": "Air Products Industrial Gases segment Americas average operating income 2014-2016 2016 financial statements",
+  "metadata_filters": {
+    "company": "Air Products"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_22::p1::c1::285dd401e6",
+      "rank": 1,
+      "dense_score": 0.6923823952674866,
+      "bm25_score": 16.19062592443035,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_22"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_22::p1::c0::8263686497",
+      "rank": 2,
+      "dense_score": 0.6421631574630737,
+      "bm25_score": 1.4415883056532237,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_22"
+    }
+  ],
+  "answer": "Average operating income = (895.2 + 808.4 + 762.6) / 3 = 2466.2 / 3 = 822.07  \nSource: finqa_test_ctx_22.pdf p.1",
+  "latency_seconds": 28.0032,
+  "input_tokens": 2169,
+  "output_tokens": 105,
+  "total_tokens": 2274,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1602,
+  "llm_latency_seconds": 27.8406,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the average operating income of Air Products' Industrial Gases segment in the Americas for the years 2014-2016, as reported in the company's 2016 financial statements?\nLabel:",
+      "input_tokens": 111,
+      "output_tokens": 7,
+      "latency_seconds": 1.3028665559977526
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the average operating income of Air Products' Industrial Gases segment in the Americas for the years 2014-2016, as reported in the company's 2016 financial statements?\nEvidence:\n[1] finqa_test_ctx_22.pdf p.1\naxbenefitsrelatedonlytooneoftheprojects,astheotherdidnotqualifyforalocaltaxdeduction.The\nlossfromdiscontinuedoperationsalsoincludeslandleasecosts,commercialandadministrativecosts,andcosts\nincurredforongoingprojectexitactivities.\nWeexpectadditionalexitcostsof$50to$100toberecordedinfutureperiods.\nInfiscal2015,ourlossfromdiscontinuedoperations,netoftax,relatedtoEfWwas$6.8.Thisresultedfromcosts\nforlandleasesandcommercialandadministrativeexpenses.\nInfiscal2014,ourlossfromdiscontinuedoperations,netoftax,was$2.9.Thisincludedaloss,netoftax,of$7.5\nforthecostofEfWlandleasesandcommercialandadministrativeexpenses.Thislosswaspartiallyoffsetbya\ngainof$3.9forthesaleoftheremainingHomecarebusinessandsettleme\n\n[2] finqa_test_ctx_22.pdf p.1\n2015vs.2014\nOnaGAAPbasis,theeffectivetaxratewas24.0%and27.1%in2015and2014,respectively.Theeffectivetax\nratewashigherinfiscalyear2014primarilyduetothegoodwillimpairmentchargeof$305.2,whichwasnot\ndeductiblefortaxpurposes,andtheChileantaxreformenactedinSeptember2014whichincreasedincometax\nexpenseby$20.6.Theseimpactswerepartiallyoffsetbyanincometaxbenefitof$51.6associatedwithlosses\nfromtransactionsandataxelectioninanon-U.S.subsidiary.RefertoNote10,Goodwill,andNote23,Income\nTaxes,totheconsolidatedfinancialstatementsforadditionalinformation.Onanon-GAAPbasis,theeffectivetax\nratewas24.2%and24.1%in2015and2014,respectively.\nDiscontinuedOperations\nOn29March2016,theBoardofDirectorsapprovedtheCompany’sex\nLabel:",
+      "input_tokens": 605,
+      "output_tokens": 5,
+      "latency_seconds": 5.399933729997429
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the average operating income of Air Products' Industrial Gases segment in the Americas for the years 2014-2016, as reported in the company's 2016 financial statements?\nEvidence:\n[1] finqa_test_ctx_22.pdf p.1\nntofcontingenciesrelatedtoasaleof\naseparateportionofthebusinesstoTheLindeGroupin2012.\nRefertoNote4,DiscontinuedOperations,foradditionaldetails.\nSegmentAnalysis\nIndustrialGases–Americas\n2016 2015 2014\nSales $3,343.6 $3,693.9 $4,078.5\nOperatingincome 895.2 808.4 762.6\nOperatingmargin 26.8% 21.9% 18.7%\nEquityaffiliates’income 52.7 64.6 60.9\nAdjustedEBITDA 1,390.4 1,289.9 1,237.9\nAdjustedEBITDAmargin 41.6% 34.9% 30.4%\n30\n\n[2] finqa_test_ctx_22.pdf p.1\nitofitsEnergy-from-Waste(EfW)\nbusiness.Asaresult,effortstostartupandoperateitstwoEfWprojectslocatedinTeesValley,UnitedKingdom,\nhavebeendiscontinued.Thedecisiontoexitthebusinessandstopdevelopmentoftheprojectswasbasedon\ncontinueddifficultiesencounteredandtheCompany’sconclusion,basedontestingandanalysiscompletedduring\nthesecondquarteroffiscalyear2016,thatsignificantadditionaltimeandresourceswouldberequiredtomake\ntheprojectsoperational.Inaddition,thedecisionallowstheCompanytoexecuteitsstrategyoffocusing\nresourcesonitscoreIndustrialGasesbusiness.TheEfWsegmenthasbeenpresentedasadiscontinued\noperation.PrioryearEfWbusinesssegmentinformationhasbeenreclassifiedtoconformtocurrentyear\npresentation.\nInfi\nDraft:\nAverage operating income = (895.2 + 808.4 + 762.6) / 3 = 2466.2 / 3 = 822.07  \nSource: finqa_test_ctx_22.pdf p.1\nLabel:",
+      "input_tokens": 635,
+      "output_tokens": 3,
+      "latency_seconds": 4.932908226997824
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Air Products Industrial Gases segment Americas average operating income 2014-2016 2016 financial statements",
+      "filters": {
+        "company": "Air Products"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_22::p1::c1::285dd401e6",
+        "finqa_test_ctx_22::p1::c0::8263686497"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_22::p1::c1::285dd401e6",
+          "document_id": "finqa_test_ctx_22",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_22::p1::c1::285dd401e6",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_22::p1::c0::8263686497",
+          "document_id": "finqa_test_ctx_22",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_22::p1::c0::8263686497",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_22::p1::c1::285dd401e6",
+          "document_id": "finqa_test_ctx_22",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1120,
+          "source_chunk_id": "finqa_test_ctx_22::p1::c1::285dd401e6",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_22::p1::c0::8263686497",
+          "document_id": "finqa_test_ctx_22",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_22::p1::c0::8263686497",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the average operating income of Air Products' Industrial Gases segment in the Americas for the years 2014-2016, as reported in the company's 2016 financial statements?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the average operating income of Air Products' Industrial Gases segment in the Americas for the years 2014-2016, as reported in the company's 2016 financial statements?\nRetrieval query:",
+  "query_formulation_raw_output": "Air Products Industrial Gases segment Americas average operating income 2014-2016 2016 financial statements",
+  "query_formulation_latency_seconds": 3.7784,
+  "query_formulation_input_tokens": 188,
+  "query_formulation_output_tokens": 28,
+  "query_formulation_trace": {
+    "original_question": "What is the average operating income of Air Products' Industrial Gases segment in the Americas for the years 2014-2016, as reported in the company's 2016 financial statements?",
+    "retrieval_query": "Air Products Industrial Gases segment Americas average operating income 2014-2016 2016 financial statements",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the average operating income of Air Products' Industrial Gases segment in the Americas for the years 2014-2016, as reported in the company's 2016 financial statements?\nRetrieval query:",
+    "raw_output": "Air Products Industrial Gases segment Americas average operating income 2014-2016 2016 financial statements",
+    "latency_seconds": 3.7783871380015626,
+    "input_tokens": 188,
+    "output_tokens": 28,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "822.0666666666666",
+  "gold_evidence_reference": "FinQA | pdf/APD/2016/page_40.pdf | source_page=40 | context_id=finqa_test_ctx_22"
+}

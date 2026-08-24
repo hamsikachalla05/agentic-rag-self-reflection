@@ -1,0 +1,145 @@
+{
+  "question_id": "finqa_test_725",
+  "question": "In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?",
+  "retrieval_query": "employee stock purchase plan \"Motorola Solutions\" 2011 \"2.2 million shares\" average share price",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_97::p1::c1::ee5b3d406d",
+      "rank": 1,
+      "dense_score": 0.7205628156661987,
+      "bm25_score": 26.176010556479287,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_97"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_97::p1::c0::d10026e659",
+      "rank": 2,
+      "dense_score": 0.6783260107040405,
+      "bm25_score": 22.771650524736877,
+      "hybrid_score": 0.5608678274130736,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_97"
+    },
+    {
+      "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c0::849a7e3f28",
+      "rank": 3,
+      "dense_score": 0.6902727484703064,
+      "bm25_score": 16.6471959846614,
+      "hybrid_score": 0.5067841770577102,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1766::p1::c2::9fb7288c98",
+      "rank": 4,
+      "dense_score": 0.6910732984542847,
+      "bm25_score": null,
+      "hybrid_score": 0.35319453197358774,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1766"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_479::p1::c1::f9f6d243b7",
+      "rank": 5,
+      "dense_score": 0.6891903877258301,
+      "bm25_score": null,
+      "hybrid_score": 0.33743596053788993,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_479"
+    }
+  ],
+  "answer": "The average share price at which the 2.2 million shares were purchased by employees in the 2011 employee stock purchase plan is $35.61.\n\nSource: finqa_test_ctx_97.pdf p.1  \nCalculation: For 2011, the purchase prices were $30.56 and $35.61. The average of these two prices is (30.56 + 35.61) / 2 = 33.085. However, the evidence states that employees purchased 2.2 million shares at prices of $30.56 and $35.61, and the average price for the 2011 purchase period is $35.61. Since the question asks for the average share price, and the evidence lists two prices, we take the average of the two prices.\n\nAverage price = (30.56 + 35.61) / 2 = 33.085\n\nBut the evidence does not specify which price corresponds to which period. However, it lists the prices for 2011 as $30.56 and $35.61, and the shares purchased were 2.2 million. Since the average price is not explicitly given, and only two prices are listed, we compute the average of the two prices.\n\nFinal answer: 33.085\n\nBut the evidence does not state that the average price was $35.61. It lists $30.56 and $35.61 as prices for 2011. The average of these two prices is:\n\n(30.56 + 35.61) / 2 = 33.085\n\nThus, the average share price is 33.085.\n\nAnswer: 33.085  \nSource: finqa_test_ctx_97.pdf p.1",
+  "latency_seconds": 69.7983,
+  "input_tokens": 1433,
+  "output_tokens": 445,
+  "total_tokens": 1878,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1452,
+  "llm_latency_seconds": 69.6518,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?\nRetrieval query:",
+  "query_formulation_raw_output": "employee stock purchase plan \"Motorola Solutions\" 2011 \"2.2 million shares\" average share price",
+  "query_formulation_latency_seconds": 3.2025,
+  "query_formulation_input_tokens": 178,
+  "query_formulation_output_tokens": 25,
+  "query_formulation_trace": {
+    "original_question": "In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?",
+    "retrieval_query": "employee stock purchase plan \"Motorola Solutions\" 2011 \"2.2 million shares\" average share price",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?\nRetrieval query:",
+    "raw_output": "employee stock purchase plan \"Motorola Solutions\" 2011 \"2.2 million shares\" average share price",
+    "latency_seconds": 3.2025194779998856,
+    "input_tokens": 178,
+    "output_tokens": 25,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 66.4493,
+  "answer_generation_input_tokens": 1255,
+  "answer_generation_output_tokens": 420,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?\nEvidence:\n[1] finqa_test_ctx_97.pdf p.1\nemployee pays per share is 85% of the lower of the fair market value\nof the Company’s stock on the close of the first trading day or last trading day of the purchase period. The plan has two\npurchase periods, the first one from October 1 through March 31 and the second one from April 1 through September 30. For\nthe years ended December 31, 2012, 2011 and 2010, employees purchased 1.4 million, 2.2 million and 2.7 million shares,\nrespectively, at purchase prices of $34.52 and $42.96, $30.56 and $35.61, and $41.79 and $42.00, respectively.\nThe Company calculates the value of each employee stock option, estimated on the date of grant, using the Black-Scholes\noption pricing model. The weighted-av ...\n\n[2] finqa_test_ctx_97.pdf p.1\nDefined Contribution Plan\nThe Company and certain subsidiaries have various defined contribution plans, in which all eligible employees may\nparticipate. In the U.S., the 401(k) plan is a contributory plan. Matching contributions are based upon the amount of the\nemployees’ contributions. After temporarily suspending all matching contributions, effective July 1, 2010, the Company\nreinstated matching contributions and provides a dollar for dollar (100%) match on the first 4% of employee contributions. The\nmaximum matching contribution for 2010 was pro-rated to account for the number of months remaining after the reinstatement.\nThe Company’s expenses for material defined contribution plans for t ...\n\n[3] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\nPART II\nItem 5. Market for the Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of\nEquity Securities.\nThe Company’s common stock is traded on the NASDAQ Stock Market LLC under the symbol SAFM.\nThe number of stockholders of record as of December 12, 2019, was 2,742. The number of beneficial owners of our\nstock is greater than the number of holders of record, and the exact number is unknown.\nThe amount of future common stock dividends will depend on our earnings, financial condition, capital requirements,\nthe effect a dividend would have on the Company's compliance with financial covenants and other factors, which will be\nconsidered by the Board of Directors on a qu ...\n\n[4] convfinqa_ctx_1766.pdf p.1\nresofcommon commercialpapermarkets.Ourcommercialpaperand\ntheirfixedratestofloatingrateobligationsthrough\nstockfor$63million,$793millionand$1.1billion termdebtcreditratingswerenotaffectedbythe\nInvestingactivities maturity. during2012,2011and2010,respectively. changesinthecreditenvironment.\nOurnetcashusedininvestingactivitiesfor2012\namountedto$3,245million,anincreaseof InMay2012,weissued$350millionofthree-year InDecember2012,ourboardofdirectorsapproveda Wemonitorthefinancialstrengthofourthird-party\n$2,658millioncomparedwith2011primarily 1.125%U.S.DollarNotes,$400millionoffive-year sharerepurchaseprogramauthorizingusto financialinstitutions,includingthosethatholdour\nattributabletothe$2,668acqui ...\n\n[5] convfinqa_ctx_479.pdf p.1\n1,000. Each Liquid Yield Option™ Note and 2010 687,376\nzero coupon convertible note is convertible at the option of the\nholder into 11.7152 and 15.6675 sharesofcommon stock, respec-\n1The $137.9 million accreted value ofthe zero coupon convertible notesatDecember\ntively, ifthe marketprice ofour common stockreachescertain lev-\n31, 2005 isincluded in year 2009. The holdersofour zero coupon convertible notes\nels. These conditionswere metatDecember 31, 2005 and 2004 for mayrequire usto purchase anynotesoutstanding atan accreted value of$161.7 mil-\nthe zero coupon convertible notesand atDecember 31, 2004 for the lion on May18, 2009. Thisaccreted value wascalculated based on the number of\nnotesouts ...\nAnswer:",
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "33.085",
+  "gold_evidence_reference": "FinQA | pdf/MSI/2012/page_87.pdf | source_page=87 | context_id=finqa_test_ctx_97"
+}

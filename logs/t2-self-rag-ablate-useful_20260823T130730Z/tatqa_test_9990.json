@@ -1,0 +1,223 @@
+{
+  "question_id": "tatqa_test_9990",
+  "question": "What was the total number of research and development labour resources for Opentext Corporation as of June 30, 2019?",
+  "retrieval_query": "Opentext Corporation research and development labour resources June 30 2019",
+  "metadata_filters": {
+    "year": 2019,
+    "company": "opentext-corporation"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c1::579e7d3ae5",
+      "rank": 1,
+      "dense_score": 0.6080605387687683,
+      "bm25_score": 33.68627911087704,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d80ea6ee60a1b1f11e971791784d7d6c"
+    },
+    {
+      "chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927",
+      "rank": 2,
+      "dense_score": 0.5633038282394409,
+      "bm25_score": 21.109781195994312,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d80ea6ee60a1b1f11e971791784d7d6c"
+    }
+  ],
+  "answer": "321,836\n\nSource: d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1  \nCalculation: The research and development expenses for Opentext Corporation as of June 30, 2019, are listed as $321,836 (in thousands) in the \"Research and development\" row under \"Operating Expenses\" for the year ended June 30, 2019.",
+  "latency_seconds": 32.5739,
+  "input_tokens": 2627,
+  "output_tokens": 148,
+  "total_tokens": 2775,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1377,
+  "llm_latency_seconds": 32.4351,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the total number of research and development labour resources for Opentext Corporation as of June 30, 2019?\nLabel:",
+      "input_tokens": 95,
+      "output_tokens": 7,
+      "latency_seconds": 1.0022775660036132
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the total number of research and development labour resources for Opentext Corporation as of June 30, 2019?\nEvidence:\n[1] d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\nbudgeted software upgrades and software development.\nChange between Fiscal\nincrease (decrease)\n(In thousands) 2019 and 2018 2018 and 2017\nPayroll and payroll-related benefits $ 12,629 $ 39,119\nContract labour and consulting (6,791) (3,899)\nShare-based compensation (385) (1,490)\nTravel and communication (588) (343)\nFacilities (4,775) 7,834\nOther miscellaneous (1,163) 473\nTotal change in research and development expenses $ (1,073) $ 41,694\nResearch and development expenses decreased by $1.1 million during the year ended June 30, 2019 as compared to the\nprior fiscal year. This was primarily due to a reduction in contract labour and consulting of $6.8 million and a reduction in the\nuse of facili\n\n[2] d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\nLiaison in Fiscal 2019, as well as Hightail, Guidance Software Inc. (Guidance), and Covisint Corporation (Covisint), which\nwere acquired during Fiscal 2018.\nOperating Expenses\nYear Ended June 30,\nChange Change\nincrease increase\n(In thousands) 2019 (decrease) 2018 (decrease) 2017\nResearch and development $ 321,836 $ (1,073) $ 322,909 $ 41,694 $ 281,215\nSales and marketing 518,035 (11,106) 529,141 84,687 444,454\nGeneral and administrative 207,909 2,682 205,227 34,874 170,353\nDepreciation 97,716 10,773 86,943 22,625 64,318\nAmortization of acquired customer-based intangible assets 189,827 5,709 184,118 33,276 150,842\nSpecial charges (recoveries) 35,719 6,508 29,211 (34,407) 63,618\nTotal operatin\nLabel:",
+      "input_tokens": 754,
+      "output_tokens": 4,
+      "latency_seconds": 5.592693348000466
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the total number of research and development labour resources for Opentext Corporation as of June 30, 2019?\nEvidence:\n[1] d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\nbudgeted software upgrades and software development.\nChange between Fiscal\nincrease (decrease)\n(In thousands) 2019 and 2018 2018 and 2017\nPayroll and payroll-related benefits $ 12,629 $ 39,119\nContract labour and consulting (6,791) (3,899)\nShare-based compensation (385) (1,490)\nTravel and communication (588) (343)\nFacilities (4,775) 7,834\nOther miscellaneous (1,163) 473\nTotal change in research and development expenses $ (1,073) $ 41,694\nResearch and development expenses decreased by $1.1 million during the year ended June 30, 2019 as compared to the\nprior fiscal year. This was primarily due to a reduction in contract labour and consulting of $6.8 million and a reduction in the\nuse of facili\n\n[2] d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\nLiaison in Fiscal 2019, as well as Hightail, Guidance Software Inc. (Guidance), and Covisint Corporation (Covisint), which\nwere acquired during Fiscal 2018.\nOperating Expenses\nYear Ended June 30,\nChange Change\nincrease increase\n(In thousands) 2019 (decrease) 2018 (decrease) 2017\nResearch and development $ 321,836 $ (1,073) $ 322,909 $ 41,694 $ 281,215\nSales and marketing 518,035 (11,106) 529,141 84,687 444,454\nGeneral and administrative 207,909 2,682 205,227 34,874 170,353\nDepreciation 97,716 10,773 86,943 22,625 64,318\nAmortization of acquired customer-based intangible assets 189,827 5,709 184,118 33,276 150,842\nSpecial charges (recoveries) 35,719 6,508 29,211 (34,407) 63,618\nTotal operatin\nLabel:",
+      "input_tokens": 759,
+      "output_tokens": 3,
+      "latency_seconds": 5.553207702003419
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Opentext Corporation research and development labour resources June 30 2019",
+      "filters": {
+        "year": 2019,
+        "company": "opentext-corporation"
+      },
+      "chunk_ids": [
+        "d80ea6ee60a1b1f11e971791784d7d6c::p1::c1::579e7d3ae5",
+        "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c1::579e7d3ae5",
+          "document_id": "d80ea6ee60a1b1f11e971791784d7d6c",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c1::579e7d3ae5",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927",
+          "document_id": "d80ea6ee60a1b1f11e971791784d7d6c",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the total number of research and development labour resources for Opentext Corporation as of June 30, 2019?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the total number of research and development labour resources for Opentext Corporation as of June 30, 2019?\nRetrieval query:",
+  "query_formulation_raw_output": "Opentext Corporation research and development labour resources June 30 2019",
+  "query_formulation_latency_seconds": 2.2394,
+  "query_formulation_input_tokens": 172,
+  "query_formulation_output_tokens": 19,
+  "query_formulation_trace": {
+    "original_question": "What was the total number of research and development labour resources for Opentext Corporation as of June 30, 2019?",
+    "retrieval_query": "Opentext Corporation research and development labour resources June 30 2019",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the total number of research and development labour resources for Opentext Corporation as of June 30, 2019?\nRetrieval query:",
+    "raw_output": "Opentext Corporation research and development labour resources June 30 2019",
+    "latency_seconds": 2.23937633800233,
+    "input_tokens": 172,
+    "output_tokens": 19,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "3667.0",
+  "gold_evidence_reference": "TAT-DQA | raw/d80ea6ee60a1b1f11e971791784d7d6c.pdf | context_id=d80ea6ee60a1b1f11e971791784d7d6c"
+}

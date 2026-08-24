@@ -1,0 +1,415 @@
+{
+  "question_id": "convfinqa_332",
+  "question": "What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?",
+  "retrieval_query": "CME Group future minimum payments non-cancellable operating leases as of December 31, 2012 due in 2013 proportion",
+  "metadata_filters": {
+    "company": "CME Group"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+      "rank": 1,
+      "dense_score": 0.7285382747650146,
+      "bm25_score": 28.87624922060916,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_476"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_476::p1::c1::9c42d1991f",
+      "rank": 2,
+      "dense_score": 0.6662569642066956,
+      "bm25_score": 25.017636038774004,
+      "hybrid_score": 0.5630103662173772,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_476"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 9.16876341171114,
+      "hybrid_score": 0.047949797982434976,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_47"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+      "rank": 4,
+      "dense_score": null,
+      "bm25_score": 7.635832664940482,
+      "hybrid_score": 0.02056585949770527,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_47"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+      "rank": 5,
+      "dense_score": 0.6270092725753784,
+      "bm25_score": 6.484572470013523,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_476"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 43.6975,
+  "input_tokens": 5578,
+  "output_tokens": 64,
+  "total_tokens": 5642,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "IRRELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1408,
+  "llm_latency_seconds": 43.555,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?\nLabel:",
+      "input_tokens": 105,
+      "output_tokens": 7,
+      "latency_seconds": 1.0027042769943364
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\ndo so, CME invests such contributions in assets that equivalents in the consolidated balance sheets. The\nmirrortheassumedinvestmentchoices.Thebalances balances in these plans are subject to the claims of\nin these plans are subject to the claims of general generalcreditorsofCOMEX.\ncreditors of the exchange and totaled $38.7 million\nand $31.8 million at December 31, 2012 and 2011 13.COMMITMENTS\nrespectively. Although the value of the plans is\nOperating Leases. CME Group has entered into\nrecorded as an asset in marketable securities in the\nvarious non-cancellable operating lease agreements,\nconsolidated balance sheets, there is an equal and\nwiththemostsignificantbeingasfollows:\noffsetting liabi\n\n[2] convfinqa_ctx_476.pdf p.1\nlease,\npercentage of their compensation and defer which has an initial term ending on\nincome taxes thereon until the time of November30,2022,containstwoconsecutive\ndistribution. renewaloptionsforsevenandtenyearsanda\ncontraction option which allows the company\nCOMEXMembers’RetirementPlanandBenefits.\nto reduce its occupied space after\nCOMEX maintains a retirement and benefit plan\nNovember30,2018.Inaddition,thecompany\nunder the COMEX Members’ Recognition and\nmay exercise a lease expansion option in\nRetention Plan (MRRP). This plan provides benefits\nDecember2017.\ntocertainmembersoftheCOMEXdivisionbasedon\nlong-termmembership,andparticipationislimitedto • In August 2006, the company entered into a\n\n[3] finqa_test_ctx_47.pdf p.1\n2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluationallowance ...................... (0.1) (4.7) 0.1\nImpactofrevisedstateandlocalapportionmentestimates .................. 3.1 0.5 (0.7)\nReclassificationofaccumulatedothercomprehensiveincome ............... 3.5 — —\nImpactof2017TaxAct ............................................. (101.6) — —\nOther,net ........................................................ (1.8) (0.3) 0.2\nEffectiveTaxExpense(Benefit)Rate .................................. (60.8)% 32.9% 36.3%\nIn 2017, the effective rate was lower than the statutory tax rate due to the remeasurement of the deferr\n\n[4] finqa_test_ctx_47.pdf p.1\nafter, including a reduction in the U.S. federal corporate income tax rate from 35% to 21%. The 2017 Tax Act\nmakes broad and complex changes to the U.S. tax code including, but not limited to, the repeal of the IRC\nSection 199 domestic production activities deduction in 2018 and accelerated depreciation that allows for full\nexpensingofqualifiedpropertybeginninginthefourthquarterof2017.\nOnDecember22,2017,theSECstaffissuedastaffaccountingbulletinthatprovidesguidanceonaccountingfor\nthetaxeffectsofthe2017TaxAct.Theguidanceprovidesameasurementperiodthatshouldnotextendbeyond\none year from the 2017 Tax Act enactment date for companies to complete the accounting for income taxes\nrelated to changes a\n\n[5] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\nLabel:",
+      "input_tokens": 1017,
+      "output_tokens": 5,
+      "latency_seconds": 7.472096721998241
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\ndo so, CME invests such contributions in assets that equivalents in the consolidated balance sheets. The\nmirrortheassumedinvestmentchoices.Thebalances balances in these plans are subject to the claims of\nin these plans are subject to the claims of general generalcreditorsofCOMEX.\ncreditors of the exchange and totaled $38.7 million\nand $31.8 million at December 31, 2012 and 2011 13.COMMITMENTS\nrespectively. Although the value of the plans is\nOperating Leases. CME Group has entered into\nrecorded as an asset in marketable securities in the\nvarious non-cancellable operating lease agreements,\nconsolidated balance sheets, there is an equal and\nwiththemostsignificantbeingasfollows:\noffsetting liabi\n\n[2] convfinqa_ctx_476.pdf p.1\nlease,\npercentage of their compensation and defer which has an initial term ending on\nincome taxes thereon until the time of November30,2022,containstwoconsecutive\ndistribution. renewaloptionsforsevenandtenyearsanda\ncontraction option which allows the company\nCOMEXMembers’RetirementPlanandBenefits.\nto reduce its occupied space after\nCOMEX maintains a retirement and benefit plan\nNovember30,2018.Inaddition,thecompany\nunder the COMEX Members’ Recognition and\nmay exercise a lease expansion option in\nRetention Plan (MRRP). This plan provides benefits\nDecember2017.\ntocertainmembersoftheCOMEXdivisionbasedon\nlong-termmembership,andparticipationislimitedto • In August 2006, the company entered into a\n\n[3] finqa_test_ctx_47.pdf p.1\n2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluationallowance ...................... (0.1) (4.7) 0.1\nImpactofrevisedstateandlocalapportionmentestimates .................. 3.1 0.5 (0.7)\nReclassificationofaccumulatedothercomprehensiveincome ............... 3.5 — —\nImpactof2017TaxAct ............................................. (101.6) — —\nOther,net ........................................................ (1.8) (0.3) 0.2\nEffectiveTaxExpense(Benefit)Rate .................................. (60.8)% 32.9% 36.3%\nIn 2017, the effective rate was lower than the statutory tax rate due to the remeasurement of the deferr\n\n[4] finqa_test_ctx_47.pdf p.1\nafter, including a reduction in the U.S. federal corporate income tax rate from 35% to 21%. The 2017 Tax Act\nmakes broad and complex changes to the U.S. tax code including, but not limited to, the repeal of the IRC\nSection 199 domestic production activities deduction in 2018 and accelerated depreciation that allows for full\nexpensingofqualifiedpropertybeginninginthefourthquarterof2017.\nOnDecember22,2017,theSECstaffissuedastaffaccountingbulletinthatprovidesguidanceonaccountingfor\nthetaxeffectsofthe2017TaxAct.Theguidanceprovidesameasurementperiodthatshouldnotextendbeyond\none year from the 2017 Tax Act enactment date for companies to complete the accounting for income taxes\nrelated to changes a\n\n[5] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\nLabel:",
+      "input_tokens": 1022,
+      "output_tokens": 3,
+      "latency_seconds": 7.626282204997551
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\nlity. The investment results of these\n• In April 2012, the company sold two\nplans have no impact on net income as the\nbuildings in Chicago at 141 W. Jackson and\ninvestment results are recorded in equal amounts to\nleased back a portion of the property. The\nboth investment income and compensation and\noperating lease, which has an initial lease\nbenefitsexpense.\nterm ending on April 30, 2027, contains four\nSupplemental Savings Plan. CME maintains a\nconsecutiverenewaloptionsforfiveyears.\nsupplemental plan to provide benefits for\n• InJanuary2011,thecompanyenteredintoan\nemployeeswhohavebeenimpactedbystatutory\noperating lease for office space in London.\nlimits under the provisions of the qualified\nT\n\n[2] convfinqa_ctx_476.pdf p.1\nn\nindividuals who were COMEX division members operating lease for additional office space in\nprior to NYMEX’s acquisition of COMEX in 1994. Chicago.Theinitialleaseterm,whichbecame\nNo new participants were permitted into the plan effective on August 10, 2006, terminates on\nafter the date of this acquisition. Under the terms of November 30, 2023. The lease contains two\nthe MRRP, the company is required to fund the plan 5-yearrenewaloptionsbeginningin2023.\nwith a minimum annual contribution of $0.8 million\nAt December 31, 2012, future minimum payments\nuntil it is fully funded. All benefits to be paid under\nunder non-cancellable operating leases were payable\nthe MRRP are based on reasonable actu\n\n[3] finqa_test_ctx_47.pdf p.1\n2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluationallowance ...................... (0.1) (4.7) 0.1\nImpactofrevisedstateandlocalapportionmentestimates .................. 3.1 0.5 (0.7)\nReclassificationofaccumulatedothercomprehensiveincome ............... 3.5 — —\nImpactof2017TaxAct ............................................. (101.6) — —\nOther,net ........................................................ (1.8) (0.3) 0.2\nEffectiveTaxExpense(Benefit)Rate .................................. (60.8)% 32.9% 36.3%\nIn 2017, the effective rate was lower than the statutory tax rate due to the remeasurement of the deferr\n\n[4] finqa_test_ctx_47.pdf p.1\nafter, including a reduction in the U.S. federal corporate income tax rate from 35% to 21%. The 2017 Tax Act\nmakes broad and complex changes to the U.S. tax code including, but not limited to, the repeal of the IRC\nSection 199 domestic production activities deduction in 2018 and accelerated depreciation that allows for full\nexpensingofqualifiedpropertybeginninginthefourthquarterof2017.\nOnDecember22,2017,theSECstaffissuedastaffaccountingbulletinthatprovidesguidanceonaccountingfor\nthetaxeffectsofthe2017TaxAct.Theguidanceprovidesameasurementperiodthatshouldnotextendbeyond\none year from the 2017 Tax Act enactment date for companies to complete the accounting for income taxes\nrelated to changes a\n\n[5] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\nLabel:",
+      "input_tokens": 1046,
+      "output_tokens": 3,
+      "latency_seconds": 7.247876212000847
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\nheinitialleaseterm,whichbecameeffective\npension and savings plan. Employees in this\nonJanuary20,2011,terminatesonMarch24,\nplan are subject to the vesting requirements of\n2026, with an option to terminate without\ntheunderlyingqualifiedplans.\npenaltyinJanuary2021.\nDeferred Compensation Plan. A deferred\ncompensation plan is maintained by CME, • In July 2008, the company renegotiated the\nunder which eligible officers and members of operating lease for its headquarters at 20\nthe board of directors may contribute a South Wacker Drive in Chicago. The lease,\npercentage of their compensation and defer which has an initial term ending on\nincome taxes thereon until the time of November30,2022,containst\n\n[2] convfinqa_ctx_476.pdf p.1\narial\nasfollows(inmillions):\nassumptions which are based upon the amounts that\nare available and are expected to be available to pay Year\nbenefits. Total contributions to the plan were $0.8 2013............................ $ 28.7\nmillion for each of 2010 through 2012. At 2014............................ 29.1\nDecember 31, 2012 and 2011, the obligation for the 2015............................ 28.9\nMRRP totaled $22.7 million and $21.6 million, 2016............................ 28.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember\n\n[3] finqa_test_ctx_47.pdf p.1\n2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluationallowance ...................... (0.1) (4.7) 0.1\nImpactofrevisedstateandlocalapportionmentestimates .................. 3.1 0.5 (0.7)\nReclassificationofaccumulatedothercomprehensiveincome ............... 3.5 — —\nImpactof2017TaxAct ............................................. (101.6) — —\nOther,net ........................................................ (1.8) (0.3) 0.2\nEffectiveTaxExpense(Benefit)Rate .................................. (60.8)% 32.9% 36.3%\nIn 2017, the effective rate was lower than the statutory tax rate due to the remeasurement of the deferr\n\n[4] finqa_test_ctx_47.pdf p.1\nafter, including a reduction in the U.S. federal corporate income tax rate from 35% to 21%. The 2017 Tax Act\nmakes broad and complex changes to the U.S. tax code including, but not limited to, the repeal of the IRC\nSection 199 domestic production activities deduction in 2018 and accelerated depreciation that allows for full\nexpensingofqualifiedpropertybeginninginthefourthquarterof2017.\nOnDecember22,2017,theSECstaffissuedastaffaccountingbulletinthatprovidesguidanceonaccountingfor\nthetaxeffectsofthe2017TaxAct.Theguidanceprovidesameasurementperiodthatshouldnotextendbeyond\none year from the 2017 Tax Act enactment date for companies to complete the accounting for income taxes\nrelated to changes a\n\n[5] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\nLabel:",
+      "input_tokens": 1059,
+      "output_tokens": 3,
+      "latency_seconds": 7.186164079001173
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "CME Group future minimum payments non-cancellable operating leases as of December 31, 2012 due in 2013 proportion",
+      "filters": {
+        "company": "CME Group"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_476::p1::c0::0979ba2979",
+        "convfinqa_ctx_476::p1::c1::9c42d1991f",
+        "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+        "finqa_test_ctx_47::p1::c0::171a02abe5",
+        "convfinqa_ctx_476::p1::c2::6d3b6f3263"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c1::9c42d1991f",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c1::9c42d1991f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 329,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c1::9c42d1991f",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c1::9c42d1991f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 329,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c1::9c42d1991f",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 2,
+          "char_start": 1400,
+          "char_end": 2072,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c1::9c42d1991f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 329,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?\nRetrieval query:",
+  "query_formulation_raw_output": "CME Group future minimum payments non-cancellable operating leases as of December 31, 2012 due in 2013 proportion",
+  "query_formulation_latency_seconds": 3.4928,
+  "query_formulation_input_tokens": 182,
+  "query_formulation_output_tokens": 32,
+  "query_formulation_trace": {
+    "original_question": "What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?",
+    "retrieval_query": "CME Group future minimum payments non-cancellable operating leases as of December 31, 2012 due in 2013 proportion",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What proportion of CME Group's total future minimum payments under non-cancellable operating leases as of December 31, 2012, are due in 2013?\nRetrieval query:",
+    "raw_output": "CME Group future minimum payments non-cancellable operating leases as of December 31, 2012 due in 2013 proportion",
+    "latency_seconds": 3.492791500997555,
+    "input_tokens": 182,
+    "output_tokens": 32,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "0.09637",
+  "gold_evidence_reference": "ConvFinQA | pdf/CME/2012/page_100.pdf | source_page=100 | context_id=convfinqa_ctx_476"
+}

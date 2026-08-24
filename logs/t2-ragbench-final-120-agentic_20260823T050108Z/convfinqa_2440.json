@@ -1,0 +1,145 @@
+{
+  "question_id": "convfinqa_2440",
+  "question": "What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?",
+  "retrieval_query": "Stockholders' 2019 equity derivative instruments balance as of December 31, 2006",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1595::p1::c0::b4038c2e10",
+      "rank": 1,
+      "dense_score": 0.7407759428024292,
+      "bm25_score": 29.85399097241391,
+      "hybrid_score": 0.6499046662683835,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1595"
+    },
+    {
+      "chunk_id": "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87",
+      "rank": 2,
+      "dense_score": 0.7736089825630188,
+      "bm25_score": null,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "9d473b9c09cabed1386df42ab20f4869"
+    },
+    {
+      "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c0::849a7e3f28",
+      "rank": 3,
+      "dense_score": 0.7551413178443909,
+      "bm25_score": 11.380764999985157,
+      "hybrid_score": 0.43953502006991946,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec"
+    },
+    {
+      "chunk_id": "3c70a27ee159768e51821887c914a814::p1::c0::4fe4848c98",
+      "rank": 4,
+      "dense_score": 0.75617516040802,
+      "bm25_score": 10.53120039983325,
+      "hybrid_score": 0.43383966419456477,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "3c70a27ee159768e51821887c914a814"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_622::p1::c0::42086026f7",
+      "rank": 5,
+      "dense_score": 0.73692387342453,
+      "bm25_score": 17.799295963050852,
+      "hybrid_score": 0.37159856429255345,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_622"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 16.2977,
+  "input_tokens": 1528,
+  "output_tokens": 36,
+  "total_tokens": 1564,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1433,
+  "llm_latency_seconds": 16.1536,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nRetrieval query:",
+  "query_formulation_raw_output": "Stockholders' 2019 equity derivative instruments balance as of December 31, 2006",
+  "query_formulation_latency_seconds": 3.4925,
+  "query_formulation_input_tokens": 172,
+  "query_formulation_output_tokens": 25,
+  "query_formulation_trace": {
+    "original_question": "What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?",
+    "retrieval_query": "Stockholders' 2019 equity derivative instruments balance as of December 31, 2006",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nRetrieval query:",
+    "raw_output": "Stockholders' 2019 equity derivative instruments balance as of December 31, 2006",
+    "latency_seconds": 3.4925423839995346,
+    "input_tokens": 172,
+    "output_tokens": 25,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 12.661,
+  "answer_generation_input_tokens": 1356,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nEvidence:\n[1] convfinqa_ctx_1595.pdf p.1\n94\nThe fair value of the Interest Agreements at December 31, 2007 and December 31, 2006 was $3 million and\n$1 million, respectively.\nThe Company is exposed to credit loss in the event of nonperformance by the counterparties to its swap\ncontracts. The Company minimizes its credit risk on these transactions by only dealing with leading, creditworthy\nfinancial institutions and does not anticipate nonperformance. In addition, the contracts are distributed among\nseveral financial institutions, all of whom presently have investment grade credit ratings, thus minimizing credit\nrisk concentration.\nStockholders’ Equity\nDerivative instruments activity, net of tax, included in Non-owner changes to equi ...\n\n[2] 9d473b9c09cabed1386df42ab20f4869.pdf p.1\nThe following table summarizes nonvested common stock activity as of December 31, 2019 and for the year then\nended:\nWeighted\nAverage\nGrant-Date\nNonvestedCommonStock Shares(000s) FairValue\nBalanceatthebeginningoftheperiod 8 $ 29.01\nGranted 16 $ 29.10\nVested (11) $ 28.89\nForfeitedorexpired (2) $ 29.16\nBalanceattheendoftheperiod 11 $ 29.24\nThe following table summarizes information regarding shares of common stock granted and vested (in thousands,\nexceptpercommonstockamounts):\nYearsEndedDecember31,\n2019 2018 2017\nNumberofsharesofcommonstockgranted 16 16 13\nWeightedaveragegrant-datefairvaluepercommonstock $ 29.10 $ 28.48 $ 30.49\nFairvalueofcommonstockvested $ 320 $ 315 $ 334\nCashusedtosettletheo ...\n\n[3] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\nPART II\nItem 5. Market for the Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of\nEquity Securities.\nThe Company’s common stock is traded on the NASDAQ Stock Market LLC under the symbol SAFM.\nThe number of stockholders of record as of December 12, 2019, was 2,742. The number of beneficial owners of our\nstock is greater than the number of holders of record, and the exact number is unknown.\nThe amount of future common stock dividends will depend on our earnings, financial condition, capital requirements,\nthe effect a dividend would have on the Company's compliance with financial covenants and other factors, which will be\nconsidered by the Board of Directors on a qu ...\n\n[4] 3c70a27ee159768e51821887c914a814.pdf p.1\nNotes to the Financial Statements\nFor the financial year ended 31 March 2019\n12.2 Deferred Taxes (Cont’d)\nCompany - 2018 Provisions Others Total\nDeferred tax assets S$ Mil S$ Mil S$ Mil\nBalance as at 1 April 2017 0.3 2.8 3.1\nEffects of adoption of SFRS(I) 15 - (1.0) (1.0)\nBalance as at 1 April 2017, restated 0.3 1.8 2.1\nCredited to income statement 0.2 9.0 9.2\nBalance as at 31 March 2018 0.5 10.8 11.3\nAccelerated tax\nCompany - 2018 depreciation Total\nDeferred tax liabilities S$ Mil S$ Mil\nBalance as at 1 April 2017 (285.3) (285.3)\nEffects of adoption of SFRS(I) 1 10.2 10.2\nBalance as at 1 April 2017, restated (275.1) (275.1)\nCharged to income statement (4.4) (4.4)\nBalance as at 31 March 2018 ...\n\n[5] convfinqa_ctx_622.pdf p.1\nFIDELITY NATIONAL INFORMATION SERVICES, INC.\nAND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS - (Continued)\nContingent consideration liabilities recorded in connection with business acquisitions must also be adjusted for changes in fair value\nuntil settled. See Note 3 for discussion of The Capital Markets Company BVBA (\"Capco\") contingent consideration liability.\n(d)Derivative Financial Instruments\nThe Company accounts for derivative financial instruments in accordance with Financial Accounting Standards Board Accounting\nStandards Codification (“FASB ASC”) Topic 815, Derivatives and Hedgingg . During 2016, 2015 and 2014, the Company engaged in\nhedging activities relating to its va ...\nAnswer:",
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "16.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/MSI/2007/page_102.pdf | source_page=102 | context_id=convfinqa_ctx_1595"
+}

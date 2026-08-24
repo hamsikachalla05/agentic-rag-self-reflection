@@ -1,0 +1,272 @@
+{
+  "question_id": "convfinqa_815",
+  "question": "What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?",
+  "retrieval_query": "Morgan Stanley 2013 consolidated financial statements future minimum rental commitments non-cancelable operating leases 2014 2015 combined total",
+  "metadata_filters": {
+    "company": "Morgan Stanley"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1006::p1::c1::82f433d851",
+      "rank": 1,
+      "dense_score": 0.777236819267273,
+      "bm25_score": 32.63656915110299,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1006"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1006::p1::c0::aca96ee2b0",
+      "rank": 2,
+      "dense_score": 0.737977147102356,
+      "bm25_score": 10.767103605728328,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1006"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 28.3469,
+  "input_tokens": 3376,
+  "output_tokens": 80,
+  "total_tokens": 3456,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1522,
+  "llm_latency_seconds": 28.1923,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?\nLabel:",
+      "input_tokens": 112,
+      "output_tokens": 7,
+      "latency_seconds": 1.1969416959982482
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?\nEvidence:\n[1] convfinqa_ctx_1006.pdf p.1\nthese funds that the Company forms primarily for\nclient investment, except that the Company may waive or lower applicable fees and charges for its\nemployees. The Company has contractual capital commitments, guarantees, lending facilities and counterparty\narrangementswithrespecttotheseinvestmentfunds.\nPremisesandEquipment. TheCompanyhasnon-cancelableoperatingleasescoveringpremisesandequipment\n(excluding commodities operating leases, shown separately). At December 31, 2013, future minimum rental\ncommitments under such leases (net of subleases, principally on office rentals) were as follows\n(dollarsinmillions):\nOperating\nPremises\nYearEnded Leases\n2014 ...........................................\n\n[2] convfinqa_ctx_1006.pdf p.1\nMORGANSTANLEY\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS—(Continued)\nLending Commitments. Primary lending commitments are those that are originated by the Company whereas\nsecondary lending commitments are purchased from third parties in the market. The commitments include\nlendingcommitmentsthataremadetoinvestmentgradeandnon-investmentgradecompaniesinconnectionwith\ncorporatelendingandotherbusinessactivities.\nCommitments for Secured Lending Transactions. Secured lending commitments are extended bythe Company\nto companies and are secured by real estate or other physical assets of the borrower. Loans made under these\narrangements typically are at variable rates and generally provide for over-collate\nLabel:",
+      "input_tokens": 435,
+      "output_tokens": 4,
+      "latency_seconds": 3.286970847999328
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?\nEvidence:\n[1] convfinqa_ctx_1006.pdf p.1\nthese funds that the Company forms primarily for\nclient investment, except that the Company may waive or lower applicable fees and charges for its\nemployees. The Company has contractual capital commitments, guarantees, lending facilities and counterparty\narrangementswithrespecttotheseinvestmentfunds.\nPremisesandEquipment. TheCompanyhasnon-cancelableoperatingleasescoveringpremisesandequipment\n(excluding commodities operating leases, shown separately). At December 31, 2013, future minimum rental\ncommitments under such leases (net of subleases, principally on office rentals) were as follows\n(dollarsinmillions):\nOperating\nPremises\nYearEnded Leases\n2014 ...........................................\n\n[2] convfinqa_ctx_1006.pdf p.1\nMORGANSTANLEY\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS—(Continued)\nLending Commitments. Primary lending commitments are those that are originated by the Company whereas\nsecondary lending commitments are purchased from third parties in the market. The commitments include\nlendingcommitmentsthataremadetoinvestmentgradeandnon-investmentgradecompaniesinconnectionwith\ncorporatelendingandotherbusinessactivities.\nCommitments for Secured Lending Transactions. Secured lending commitments are extended bythe Company\nto companies and are secured by real estate or other physical assets of the borrower. Loans made under these\narrangements typically are at variable rates and generally provide for over-collate\nLabel:",
+      "input_tokens": 440,
+      "output_tokens": 3,
+      "latency_seconds": 3.226008820005518
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?\nEvidence:\n[1] convfinqa_ctx_1006.pdf p.1\nthese funds that the Company forms primarily for\nclient investment, except that the Company may waive or lower applicable fees and charges for its\nemployees. The Company has contractual capital commitments, guarantees, lending facilities and counterparty\narrangementswithrespecttotheseinvestmentfunds.\nPremisesandEquipment. TheCompanyhasnon-cancelableoperatingleasescoveringpremisesandequipment\n(excluding commodities operating leases, shown separately). At December 31, 2013, future minimum rental\ncommitments under such leases (net of subleases, principally on office rentals) were as follows\n(dollarsinmillions):\nOperating\nPremises\nYearEnded Leases\n2014 ...........................................\n\n[2] convfinqa_ctx_1006.pdf p.1\nMORGANSTANLEY\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS—(Continued)\nLending Commitments. Primary lending commitments are those that are originated by the Company whereas\nsecondary lending commitments are purchased from third parties in the market. The commitments include\nlendingcommitmentsthataremadetoinvestmentgradeandnon-investmentgradecompaniesinconnectionwith\ncorporatelendingandotherbusinessactivities.\nCommitments for Secured Lending Transactions. Secured lending commitments are extended bythe Company\nto companies and are secured by real estate or other physical assets of the borrower. Loans made under these\narrangements typically are at variable rates and generally provide for over-collate\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 481,
+      "output_tokens": 4,
+      "latency_seconds": 3.8130980580026517
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?\nEvidence:\n[1] convfinqa_ctx_1006.pdf p.1\n.......................... $ 672\n2015 ..................................................................... 656\n2016 ..................................................................... 621\n2017 ..................................................................... 554\n2018 ..................................................................... 481\nThereafter ................................................................ 2,712\n234\n\n[2] convfinqa_ctx_1006.pdf p.1\nralization based upon the\ncreditworthinessoftheborrower.\nForward Starting Reverse Repurchase Agreements. The Company has entered into forward starting securities\npurchased under agreements to resell (agreements that have a trade date at or prior to December 31, 2013 and\nsettle subsequent to period-end) that are primarily secured bycollateral from U.S.government agencysecurities\nandothersovereigngovernmentobligations.\nCommercial and Residential Mortgage-Related Commitments. The Company enters into forward purchase\ncontracts involving residential mortgage loans, residential mortgage lending commitments to individuals and\nresidential home equity lines of credit. In addition, the Company enters\nLabel:",
+      "input_tokens": 354,
+      "output_tokens": 3,
+      "latency_seconds": 2.1438609619945055
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?\nEvidence:\n[1] convfinqa_ctx_1006.pdf p.1\n.......................... $ 672\n2015 ..................................................................... 656\n2016 ..................................................................... 621\n2017 ..................................................................... 554\n2018 ..................................................................... 481\nThereafter ................................................................ 2,712\n234\n\n[2] convfinqa_ctx_1006.pdf p.1\nralization based upon the\ncreditworthinessoftheborrower.\nForward Starting Reverse Repurchase Agreements. The Company has entered into forward starting securities\npurchased under agreements to resell (agreements that have a trade date at or prior to December 31, 2013 and\nsettle subsequent to period-end) that are primarily secured bycollateral from U.S.government agencysecurities\nandothersovereigngovernmentobligations.\nCommercial and Residential Mortgage-Related Commitments. The Company enters into forward purchase\ncontracts involving residential mortgage loans, residential mortgage lending commitments to individuals and\nresidential home equity lines of credit. In addition, the Company enters\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 395,
+      "output_tokens": 4,
+      "latency_seconds": 2.266537960997084
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Morgan Stanley 2013 consolidated financial statements future minimum rental commitments non-cancelable operating leases 2014 2015 combined total",
+      "filters": {
+        "company": "Morgan Stanley"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_1006::p1::c1::82f433d851",
+        "convfinqa_ctx_1006::p1::c0::aca96ee2b0"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1006::p1::c1::82f433d851",
+          "document_id": "convfinqa_ctx_1006",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1006::p1::c1::82f433d851",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1006::p1::c0::aca96ee2b0",
+          "document_id": "convfinqa_ctx_1006",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1006::p1::c0::aca96ee2b0",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1006::p1::c1::82f433d851",
+          "document_id": "convfinqa_ctx_1006",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1134,
+          "source_chunk_id": "convfinqa_ctx_1006::p1::c1::82f433d851",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1006::p1::c0::aca96ee2b0",
+          "document_id": "convfinqa_ctx_1006",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_1006::p1::c0::aca96ee2b0",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?\nRetrieval query:",
+  "query_formulation_raw_output": "Morgan Stanley 2013 consolidated financial statements future minimum rental commitments non-cancelable operating leases 2014 2015 combined total",
+  "query_formulation_latency_seconds": 4.2732,
+  "query_formulation_input_tokens": 189,
+  "query_formulation_output_tokens": 33,
+  "query_formulation_trace": {
+    "original_question": "What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?",
+    "retrieval_query": "Morgan Stanley 2013 consolidated financial statements future minimum rental commitments non-cancelable operating leases 2014 2015 combined total",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined total of future minimum rental commitments under non-cancelable operating leases for the years 2014 and 2015, as disclosed in Morgan Stanley's 2013 consolidated financial statements?\nRetrieval query:",
+    "raw_output": "Morgan Stanley 2013 consolidated financial statements future minimum rental commitments non-cancelable operating leases 2014 2015 combined total",
+    "latency_seconds": 4.2731609779948485,
+    "input_tokens": 189,
+    "output_tokens": 33,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "1328.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/MS/2013/page_240.pdf | source_page=240 | context_id=convfinqa_ctx_1006"
+}

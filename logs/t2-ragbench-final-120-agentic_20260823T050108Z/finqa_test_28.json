@@ -1,0 +1,123 @@
+{
+  "question_id": "finqa_test_28",
+  "question": "What was the total impairment cost recorded by Dollar General from 2003 to 2005, as disclosed in the notes to consolidated financial statements for the years ended February 3, 2006, January 28, 2005, and January 30, 2004?",
+  "retrieval_query": "Dollar General impairment cost 2003 to 2005 notes to consolidated financial statements February 3 2006 January 28 2005 January 30 2004",
+  "metadata_filters": {
+    "company": "Dollar General"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_217::p1::c0::4532eb4e85",
+      "rank": 1,
+      "dense_score": 0.7557070255279541,
+      "bm25_score": 52.513514094960264,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_217"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_217::p1::c1::c88b1eb3ed",
+      "rank": 2,
+      "dense_score": 0.6725988388061523,
+      "bm25_score": 16.802044553937865,
+      "hybrid_score": 0.09587265000473386,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_217"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_217::p1::c2::c174f01ae0",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 5.544414418027873,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_217"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 12.9714,
+  "input_tokens": 904,
+  "output_tokens": 59,
+  "total_tokens": 963,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1402,
+  "llm_latency_seconds": 12.8302,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the total impairment cost recorded by Dollar General from 2003 to 2005, as disclosed in the notes to consolidated financial statements for the years ended February 3, 2006, January 28, 2005, and January 30, 2004?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the total impairment cost recorded by Dollar General from 2003 to 2005, as disclosed in the notes to consolidated financial statements for the years ended February 3, 2006, January 28, 2005, and January 30, 2004?\nRetrieval query:",
+  "query_formulation_raw_output": "Dollar General impairment cost 2003 to 2005 notes to consolidated financial statements February 3 2006 January 28 2005 January 30 2004",
+  "query_formulation_latency_seconds": 6.4254,
+  "query_formulation_input_tokens": 212,
+  "query_formulation_output_tokens": 48,
+  "query_formulation_trace": {
+    "original_question": "What was the total impairment cost recorded by Dollar General from 2003 to 2005, as disclosed in the notes to consolidated financial statements for the years ended February 3, 2006, January 28, 2005, and January 30, 2004?",
+    "retrieval_query": "Dollar General impairment cost 2003 to 2005 notes to consolidated financial statements February 3 2006 January 28 2005 January 30 2004",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the total impairment cost recorded by Dollar General from 2003 to 2005, as disclosed in the notes to consolidated financial statements for the years ended February 3, 2006, January 28, 2005, and January 30, 2004?\nRetrieval query:",
+    "raw_output": "Dollar General impairment cost 2003 to 2005 notes to consolidated financial statements February 3 2006 January 28 2005 January 30 2004",
+    "latency_seconds": 6.425438927002688,
+    "input_tokens": 212,
+    "output_tokens": 48,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 6.4047,
+  "answer_generation_input_tokens": 692,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the total impairment cost recorded by Dollar General from 2003 to 2005, as disclosed in the notes to consolidated financial statements for the years ended February 3, 2006, January 28, 2005, and January 30, 2004?\nEvidence:\n[1] finqa_test_ctx_217.pdf p.1\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS\nFor the years ended February 3,2006,January 28, er appraised values. Assets to be disposed of are adjusted\n2005,and January 30,2004,gross realized gains and losses to the fair value less the cost to sell if less than the book\non the sales of available-for-sale securities were not mate- value. The Company recorded impairment charges of\nrial. The cost of securities sold is based upon the specific approximately $0.5 million and $0.6 million in 2004 and\nidentification method. 2003,respectively,and $4.7 million prior to 2003 to reduce\nthe carrying value of its Homerville,Georgia DC (which\nMerchandise inventories was sold in 2004). The Company also record ...\n\n[2] finqa_test_ctx_217.pdf p.1\nestimate on\nthe Company’s consolidated 2005 results of operations Vendor rebates\nwas an estimated reduction of gross profit and a corre- The Company records vendor rebates,primarily con-\nsponding decrease to inventory,at cost,of $5.2 million. sisting of new store allowances,volume purchase rebates\nand promotional allowances,when realized. The rebates\nStore pre-opening costs are recorded as a reduction to inventory purchases,at\nPre-opening costs related to new store openings and cost,which has the effect of reducing cost of goods sold,\nthe construction periods are expensed as incurred. as prescribed by Emerging Issues Task Force (“EITF”) Issue\nNo.02-16,“Accounting by a Customer (including a R ...\n\n[3] finqa_test_ctx_217.pdf p.1\nassets. The Company may adjust the net book expense and the amounts actually paid are reflected as a\nvalue of the underlying assets based upon such cash flow liability in Accrued expenses and other in the consolidated\nanalysis compared to the book value and may also consid- balance sheets and totaled approximately $25.0 million\n40\nAnswer:",
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "5.800000000000001",
+  "gold_evidence_reference": "FinQA | pdf/DG/2005/page_44.pdf | source_page=44 | context_id=finqa_test_ctx_217"
+}

@@ -1,0 +1,272 @@
+{
+  "question_id": "finqa_test_1070",
+  "question": "What percentage of the total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, are scheduled to be paid in 2021?",
+  "retrieval_query": "Union Pacific Corporation minimum capital lease payments total as of December 31, 2018, percentage scheduled to be paid in 2021",
+  "metadata_filters": {
+    "company": "Union Pacific Corporation"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_125::p1::c1::2ee913d302",
+      "rank": 1,
+      "dense_score": 0.7613319754600525,
+      "bm25_score": 32.93509925476228,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_125"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_125::p1::c0::9a6997203c",
+      "rank": 2,
+      "dense_score": 0.7005383372306824,
+      "bm25_score": 21.356922427880704,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_125"
+    }
+  ],
+  "answer": "2021 payment: $303 million  \nTotal minimum capital lease payments: $2,646 million  \n\nPercentage scheduled to be paid in 2021:  \n(303 / 2646) × 100 ≈ 11.45%\n\nSource: finqa_test_ctx_125.pdf p.1",
+  "latency_seconds": 35.9445,
+  "input_tokens": 3102,
+  "output_tokens": 141,
+  "total_tokens": 3243,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1551,
+  "llm_latency_seconds": 35.7878,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What percentage of the total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, are scheduled to be paid in 2021?\nLabel:",
+      "input_tokens": 105,
+      "output_tokens": 7,
+      "latency_seconds": 1.499309587998141
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What percentage of the total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, are scheduled to be paid in 2021?\nEvidence:\n[1] finqa_test_ctx_125.pdf p.1\notives, freight cars, and other property. The Consolidated Statements of Financial\nPosition as of December 31, 2018, and 2017 included $1,454 million, net of $912 million of accumulated\ndepreciation, and $1,635 million, net of $953 million of accumulated depreciation, respectively, for\nproperties held under capital leases. A charge to income resulting from the depreciation for assets held\nunder capital leases is included within depreciation expense in our Consolidated Statements of Income.\nFuture minimum lease payments for operating and capital leases with initial or remaining non-cancelable\nlease terms in excess of one year as of December 31, 2018, were as follows:\nOperating Capital\nMillion\n\n[2] finqa_test_ctx_125.pdf p.1\nFebruary 2018 which had no remaining authority. At December 31, 2018, we had remaining authority to\nissue up to $6.0 billion of debt securities under our shelf registration.\nReceivables Securitization Facility – As of December 31, 2018, and 2017, we recorded $400 million and\n$500 million, respectively, of borrowings under our Receivables Facility, as secured debt. (See further\ndiscussion of our receivables securitization facility in Note 11).\n16. Variable Interest Entities\nWe have entered into various lease transactions in which the structure of the leases contain variable interest\nentities (VIEs). These VIEs were created solely for the purpose of doing lease transactions (principally\ninvolv\nLabel:",
+      "input_tokens": 482,
+      "output_tokens": 4,
+      "latency_seconds": 4.022884957994393
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What percentage of the total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, are scheduled to be paid in 2021?\nEvidence:\n[1] finqa_test_ctx_125.pdf p.1\notives, freight cars, and other property. The Consolidated Statements of Financial\nPosition as of December 31, 2018, and 2017 included $1,454 million, net of $912 million of accumulated\ndepreciation, and $1,635 million, net of $953 million of accumulated depreciation, respectively, for\nproperties held under capital leases. A charge to income resulting from the depreciation for assets held\nunder capital leases is included within depreciation expense in our Consolidated Statements of Income.\nFuture minimum lease payments for operating and capital leases with initial or remaining non-cancelable\nlease terms in excess of one year as of December 31, 2018, were as follows:\nOperating Capital\nMillion\n\n[2] finqa_test_ctx_125.pdf p.1\nFebruary 2018 which had no remaining authority. At December 31, 2018, we had remaining authority to\nissue up to $6.0 billion of debt securities under our shelf registration.\nReceivables Securitization Facility – As of December 31, 2018, and 2017, we recorded $400 million and\n$500 million, respectively, of borrowings under our Receivables Facility, as secured debt. (See further\ndiscussion of our receivables securitization facility in Note 11).\n16. Variable Interest Entities\nWe have entered into various lease transactions in which the structure of the leases contain variable interest\nentities (VIEs). These VIEs were created solely for the purpose of doing lease transactions (principally\ninvolv\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 528,
+      "output_tokens": 4,
+      "latency_seconds": 4.064561106002657
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What percentage of the total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, are scheduled to be paid in 2021?\nEvidence:\n[1] finqa_test_ctx_125.pdf p.1\ns Leases Leases\n2019 $ 419 $ 148\n2020 378 155\n2021 303 159\n2022 272 142\n2023 234 94\nLater years 1,040 200\nTotal minimum lease payments $ 2,646 $ 898\nAmount representing interest N/A (144)\nPresent value of minimum lease payments N/A $ 754\nApproximately 97% of capital lease payments relate to locomotives. Rent expense for operating leases with\nterms exceeding one month was $397 million in 2018, $480 million in 2017, and $535 million in 2016. When\ncash rental payments are not made on a straight-line basis, we recognize variable rental expense on a\nstraight-line basis over the lease term. Contingent rentals and sub-rentals are not significant.\n18. Commitments and Contingencies\nAsserted and Unass\n\n[2] finqa_test_ctx_125.pdf p.1\ning railroad equipment and facilities) and have no other activities, assets or liabilities outside of the\nlease transactions. Within these lease arrangements, we have the right to purchase some or all of the\nassets at fixed prices. Depending on market conditions, fixed-price purchase options available in the leases\ncould potentially provide benefits to us; however, these benefits are not expected to be significant.\nWe maintain and operate the assets based on contractual obligations within the lease arrangements, which\nset specific guidelines consistent within the railroad industry. As such, we have no control over activities\nthat could materially impact the fair value of the leased assets. W\nDraft:\n2021 payment: $303 million  \nTotal minimum capital lease payments: $2,646 million  \n\nPercentage scheduled to be paid in 2021:  \n(303 / 2646) × 100 ≈ 11.45%\n\nSource: finqa_test_ctx_125.pdf p.1\nLabel:",
+      "input_tokens": 626,
+      "output_tokens": 3,
+      "latency_seconds": 3.8559272999991663
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Union Pacific Corporation minimum capital lease payments total as of December 31, 2018, percentage scheduled to be paid in 2021",
+      "filters": {
+        "company": "Union Pacific Corporation"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_125::p1::c1::2ee913d302",
+        "finqa_test_ctx_125::p1::c0::9a6997203c"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_125::p1::c1::2ee913d302",
+          "document_id": "finqa_test_ctx_125",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_125::p1::c1::2ee913d302",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_125::p1::c0::9a6997203c",
+          "document_id": "finqa_test_ctx_125",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_125::p1::c0::9a6997203c",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_125::p1::c1::2ee913d302",
+          "document_id": "finqa_test_ctx_125",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_125::p1::c1::2ee913d302",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_125::p1::c0::9a6997203c",
+          "document_id": "finqa_test_ctx_125",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_125::p1::c0::9a6997203c",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What percentage of the total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, are scheduled to be paid in 2021?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of the total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, are scheduled to be paid in 2021?\nRetrieval query:",
+  "query_formulation_raw_output": "Union Pacific Corporation minimum capital lease payments total as of December 31, 2018, percentage scheduled to be paid in 2021",
+  "query_formulation_latency_seconds": 4.0619,
+  "query_formulation_input_tokens": 182,
+  "query_formulation_output_tokens": 33,
+  "query_formulation_trace": {
+    "original_question": "What percentage of the total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, are scheduled to be paid in 2021?",
+    "retrieval_query": "Union Pacific Corporation minimum capital lease payments total as of December 31, 2018, percentage scheduled to be paid in 2021",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of the total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, are scheduled to be paid in 2021?\nRetrieval query:",
+    "raw_output": "Union Pacific Corporation minimum capital lease payments total as of December 31, 2018, percentage scheduled to be paid in 2021",
+    "latency_seconds": 4.061932076998346,
+    "input_tokens": 182,
+    "output_tokens": 33,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "0.17706013363028952",
+  "gold_evidence_reference": "FinQA | pdf/UNP/2018/page_74.pdf | source_page=74 | context_id=finqa_test_ctx_125"
+}

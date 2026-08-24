@@ -1,0 +1,123 @@
+{
+  "question_id": "tatqa_test_9180",
+  "question": "What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?",
+  "retrieval_query": "percentage change in non-controlling interest share of loss from 2018 to 2019 for Intu-Properties",
+  "metadata_filters": {
+    "company": "Intu-Properties"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c1::dbcad089c7",
+      "rank": 1,
+      "dense_score": 0.7662878036499023,
+      "bm25_score": 34.74357985950623,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1614d46700363e699110c89aaf7e5ba5"
+    },
+    {
+      "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c0::c0978e1f8f",
+      "rank": 2,
+      "dense_score": 0.6937758326530457,
+      "bm25_score": 32.73319149577891,
+      "hybrid_score": 0.6138854093270807,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1614d46700363e699110c89aaf7e5ba5"
+    },
+    {
+      "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c2::ae0e7a5287",
+      "rank": 3,
+      "dense_score": 0.6440858244895935,
+      "bm25_score": 8.016592449797702,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1614d46700363e699110c89aaf7e5ba5"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 12.329,
+  "input_tokens": 1005,
+  "output_tokens": 39,
+  "total_tokens": 1044,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1462,
+  "llm_latency_seconds": 12.182,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nRetrieval query:",
+  "query_formulation_raw_output": "percentage change in non-controlling interest share of loss from 2018 to 2019 for Intu-Properties",
+  "query_formulation_latency_seconds": 4.3157,
+  "query_formulation_input_tokens": 175,
+  "query_formulation_output_tokens": 28,
+  "query_formulation_trace": {
+    "original_question": "What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?",
+    "retrieval_query": "percentage change in non-controlling interest share of loss from 2018 to 2019 for Intu-Properties",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nRetrieval query:",
+    "raw_output": "percentage change in non-controlling interest share of loss from 2018 to 2019 for Intu-Properties",
+    "latency_seconds": 4.315661582000757,
+    "input_tokens": 175,
+    "output_tokens": 28,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 7.8663,
+  "answer_generation_input_tokens": 830,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nEvidence:\n[1] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\n.125% bonds 2023 (480.5) (479.5)\nBorrowings – compound financial instrument (488.5) (473.8)\nOther net liabilities (27.7) (31.2)\nNet liabilities (319.9) (142.7)\nThe balance sheet includes a non-controlling interest recoverable amount of £58.2 million (2018: £12.7 million attributable to non-\ncontrolling interest). This amount is considered to be recoverable in view of the £195.4 million owed to the non-controlling interest\n(which is included in the Group’s borrowings in note 23).\n35 Related party transactions\nKey management1 compensation\n£m 2019 2018\nSalaries and short-term employee benefits 4.7 4.9\nPensions and other post-employment benefits 0.3 0.8\nShare-based payments 1.5 1.7\n6.5 7.4\n1 Key ...\n\n[2] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nSSttrraatteeggiicc rreeppoorrtt\nGGoovveerrnnaannccee\nFFiinnaanncciiaall ssttaatteemmeennttss\nOO tthheerr iinnffoorrmmaattiioonn\n34 Subsidiaries, joint ventures and associates (continued)\nOther entities\nIntu (SGS) Finance plc and Intu Metrocentre Finance plc are consolidated as subsidiaries in these financial statements but are not listed in\nthe table above as the Group does not own the shares in these companies. These companies are vehicles set up on behalf of the Group for\nthe sole purpose of issuing some of the Group’s listed debt. The Group’s obligations in respect of this debt via a back-to-back intercompany\nloan agreement between these companies and other Group companies, and security o ...\n\n[3] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nshareholdings in January 2020 and February 2020 respectively. All outstanding loans in respect of the above arrangements have\nbeen repaid to the Company in full or in part. For those loans which have been partially repaid, the outstanding balance has been written off\nby the Company.\nintiun tpur opproepretiretsie ps lpc lcA Annnnuuaall rreeppoorrtt 22001199 115555\nAnswer:",
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "70.84",
+  "gold_evidence_reference": "TAT-DQA | raw/1614d46700363e699110c89aaf7e5ba5.pdf | context_id=1614d46700363e699110c89aaf7e5ba5"
+}

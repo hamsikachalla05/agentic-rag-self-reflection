@@ -1,0 +1,361 @@
+{
+  "question_id": "tatqa_test_9133",
+  "question": "What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?",
+  "retrieval_query": "amortization expense twelve months ended December 31 2018 cts-corporation debt issuance costs long-term debt 2019 report",
+  "metadata_filters": {
+    "company": "cts-corporation"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+      "rank": 1,
+      "dense_score": 0.754712700843811,
+      "bm25_score": 32.17699983924249,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0"
+    },
+    {
+      "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c0::ff2a19fec1",
+      "rank": 2,
+      "dense_score": 0.6837295293807983,
+      "bm25_score": 10.356143201476366,
+      "hybrid_score": 0.12873969920397862,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0"
+    },
+    {
+      "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c2::16de485e4a",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 41.0834,
+  "input_tokens": 5899,
+  "output_tokens": 91,
+  "total_tokens": 5990,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1519,
+  "llm_latency_seconds": 47.4334,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nLabel:",
+      "input_tokens": 114,
+      "output_tokens": 7,
+      "latency_seconds": 1.2886572939969483
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nEvidence:\n[1] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nThe Revolving Credit Facility requires, among other things, that we comply with a maximum total leverage ratio and a minimum\nfixed charge coverage ratio. Failure to comply with these covenants could reduce the borrowing availability under the Revolving\nCredit Facility. We were in compliance with all debt covenants at December 31, 2019. The Revolving Credit Facility requires that\nwe deliver quarterly financial statements, annual financial statements, auditor certifications, and compliance certificates within a\nspecified number of days after the end of a quarter and year. Additionally, the Revolving Credit Facility contains restrictions\nlimiting our ability to: dispose of assets; incur certain\n\n[2] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nTable of Contents\nBalance Sheet Classification:\nOperating lease obligations $ 2,787\nLong-term operating lease obligations 24,926\nTotal lease liabilities $ 27,713\nWeighted-average remaining lease terms (years) 9.04\nWeighted-average discount rate 6.54%\nSupplemental cash flow information related to leases:\nCash paid for amounts included in the measurement of lease liabilities $ 3,957\nLeased assets obtained in exchange for new operating lease liabilities $ 5,000\nNOTE 12 — Debt\nLong-term debt was comprised of the following:\nAs of December 31\n2019 2018\nTotal credit facility $ 300,000 $ 300,000\nBalance outstanding $ 99,700 $ 50,000\nStandby letters of credit $ 1,800 $ 1,940\nAmount available $ 198,50\n\n[3] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nlease liabilities | $ 5,000\n[/TABLE]\n\n[TABLE]\nTotal credit facility | $ 300,000 | $ 300,000\n[/TABLE]\n\n[TABLE]\nStandby letters of credit | $ 1,800 | $ 1,940\n[/TABLE]\n\n[TABLE]\nWeighted-average interest rate | 3.25% | 3.10%\n[/TABLE]\nLabel:",
+      "input_tokens": 686,
+      "output_tokens": 3,
+      "latency_seconds": 5.221383680996951
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nEvidence:\n[1] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nadditional debt; repay other debt or amend subordinated debt instruments;\ncreate liens on assets; make investments, loans or advances; make acquisitions or engage in mergers or consolidations; engage in\ncertain transactions with our subsidiaries and affiliates; and make stock repurchases and dividend payments. Interest rates on the\nRevolving Credit Facility fluctuate based upon the LIBOR and the Company’s quarterly total leverage ratio.\nWe have debt issuance costs related to our long-term debt that are being amortized using the straight-line method over the life of\nthe debt. Amortization expense for the twelve months ended December 31, 2019 was approximately $163 and $185 in 2018 and\n2017.\n\n[2] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\n0 $ 248,060\nWeighted-average interest rate 3.25% 3.10%\nCommitment fee percentage per annum 0.23% 0.20%\nOn February 12, 2019, we entered into an amended and restated five-year Credit Agreement with a group of banks (the \"Credit\nAgreement\") to extend the term of the facility. The Credit Agreement provides for a revolving credit facility of $300,000, which\nmay be increased by $150,000 at the request of the Company, subject to the administrative agent's approval. This new unsecured\ncredit facility replaces the prior $300,000 unsecured credit facility, which would have expired August 10, 2020. Borrowings of\n$50,000 under the prior credit agreement were refinanced into the Credit Agreement. The pr\n\n[3] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nlease liabilities | $ 5,000\n[/TABLE]\n\n[TABLE]\nTotal credit facility | $ 300,000 | $ 300,000\n[/TABLE]\n\n[TABLE]\nStandby letters of credit | $ 1,800 | $ 1,940\n[/TABLE]\n\n[TABLE]\nWeighted-average interest rate | 3.25% | 3.10%\n[/TABLE]\nLabel:",
+      "input_tokens": 688,
+      "output_tokens": 3,
+      "latency_seconds": 4.919527111000207
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nEvidence:\n[1] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nThese costs are included in interest expense in our Consolidated Statement of Earnings.\nWe use interest rate swaps to convert the revolving credit facility's variable rate of interest into a fixed rate on a portion of the debt\nas described more fully in Note 13 \"Derivatives.\" These swaps are treated as cash flow hedges and consequently, the changes in\nfair value were recorded in other comprehensive earnings.\nCTS CORPORATION 52\n\n[TABLE]\nOperating lease obligations | $ 2,787\n[/TABLE]\n\n[TABLE]\nTotal lease liabilities | $ 27,713\n[/TABLE]\n\n[TABLE]\nWeighted-average remaining lease terms (years) | 9.04\n[/TABLE]\n\n[TABLE]\nWeighted-average discount rate | 6.54%\n[/TABLE]\n\n[TABLE]\nSupplemental cash flow\n\n[2] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nior agreement was terminated as of\nFebruary 12, 2019.\nThe Revolving Credit Facility includes a swing line sublimit of $15,000 and a letter of credit sublimit of $10,000. Borrowings\nunder the Revolving Credit Facility bear interest at the base rate defined in the Credit Agreement. We also pay a quarterly\ncommitment fee on the unused portion of the Revolving Credit Facility. The commitment fee ranges from 0.20% to 0.30% based\non our total leverage ratio.\nThe Revolving Credit Facility requires, among other things, that we comply with a maximum total leverage ratio and a minimum\nfixed charge coverage ratio. Failure to comply with these covenants could reduce the borrowing availability under the\n\n[3] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nlease liabilities | $ 5,000\n[/TABLE]\n\n[TABLE]\nTotal credit facility | $ 300,000 | $ 300,000\n[/TABLE]\n\n[TABLE]\nStandby letters of credit | $ 1,800 | $ 1,940\n[/TABLE]\n\n[TABLE]\nWeighted-average interest rate | 3.25% | 3.10%\n[/TABLE]\nLabel:",
+      "input_tokens": 667,
+      "output_tokens": 3,
+      "latency_seconds": 4.746949767002661
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nEvidence:\n[1] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nThese costs are included in interest expense in our Consolidated Statement of Earnings.\nWe use interest rate swaps to convert the revolving credit facility's variable rate of interest into a fixed rate on a portion of the debt\nas described more fully in Note 13 \"Derivatives.\" These swaps are treated as cash flow hedges and consequently, the changes in\nfair value were recorded in other comprehensive earnings.\nCTS CORPORATION 52\n\n[TABLE]\nOperating lease obligations | $ 2,787\n[/TABLE]\n\n[TABLE]\nTotal lease liabilities | $ 27,713\n[/TABLE]\n\n[TABLE]\nWeighted-average remaining lease terms (years) | 9.04\n[/TABLE]\n\n[TABLE]\nWeighted-average discount rate | 6.54%\n[/TABLE]\n\n[TABLE]\nSupplemental cash flow\n\n[2] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nior agreement was terminated as of\nFebruary 12, 2019.\nThe Revolving Credit Facility includes a swing line sublimit of $15,000 and a letter of credit sublimit of $10,000. Borrowings\nunder the Revolving Credit Facility bear interest at the base rate defined in the Credit Agreement. We also pay a quarterly\ncommitment fee on the unused portion of the Revolving Credit Facility. The commitment fee ranges from 0.20% to 0.30% based\non our total leverage ratio.\nThe Revolving Credit Facility requires, among other things, that we comply with a maximum total leverage ratio and a minimum\nfixed charge coverage ratio. Failure to comply with these covenants could reduce the borrowing availability under the\n\n[3] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nlease liabilities | $ 5,000\n[/TABLE]\n\n[TABLE]\nTotal credit facility | $ 300,000 | $ 300,000\n[/TABLE]\n\n[TABLE]\nStandby letters of credit | $ 1,800 | $ 1,940\n[/TABLE]\n\n[TABLE]\nWeighted-average interest rate | 3.25% | 3.10%\n[/TABLE]\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 708,
+      "output_tokens": 4,
+      "latency_seconds": 5.631246173994441
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nEvidence:\n[1] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nThese costs are included in interest expense in our Consolidated Statement of Earnings.\nWe use interest rate swaps to convert the revolving credit facility's variable rate of interest into a fixed rate on a portion of the debt\nas described more fully in Note 13 \"Derivatives.\" These swaps are treated as cash flow hedges and consequently, the changes in\nfair value were recorded in other comprehensive earnings.\nCTS CORPORATION 52\n\n[TABLE]\nOperating lease obligations | $ 2,787\n[/TABLE]\n\n[TABLE]\nTotal lease liabilities | $ 27,713\n[/TABLE]\n\n[TABLE]\nWeighted-average remaining lease terms (years) | 9.04\n[/TABLE]\n\n[TABLE]\nWeighted-average discount rate | 6.54%\n[/TABLE]\n\n[TABLE]\nSupplemental cash flow\n\n[2] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nior agreement was terminated as of\nFebruary 12, 2019.\nThe Revolving Credit Facility includes a swing line sublimit of $15,000 and a letter of credit sublimit of $10,000. Borrowings\nunder the Revolving Credit Facility bear interest at the base rate defined in the Credit Agreement. We also pay a quarterly\ncommitment fee on the unused portion of the Revolving Credit Facility. The commitment fee ranges from 0.20% to 0.30% based\non our total leverage ratio.\nThe Revolving Credit Facility requires, among other things, that we comply with a maximum total leverage ratio and a minimum\nfixed charge coverage ratio. Failure to comply with these covenants could reduce the borrowing availability under the\n\n[3] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nlease liabilities | $ 5,000\n[/TABLE]\n\n[TABLE]\nTotal credit facility | $ 300,000 | $ 300,000\n[/TABLE]\n\n[TABLE]\nStandby letters of credit | $ 1,800 | $ 1,940\n[/TABLE]\n\n[TABLE]\nWeighted-average interest rate | 3.25% | 3.10%\n[/TABLE]\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 691,
+      "output_tokens": 11,
+      "latency_seconds": 6.504867308001849
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nEvidence:\n[1] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nThese costs are included in interest expense in our Consolidated Statement of Earnings.\nWe use interest rate swaps to convert the revolving credit facility's variable rate of interest into a fixed rate on a portion of the debt\nas described more fully in Note 13 \"Derivatives.\" These swaps are treated as cash flow hedges and consequently, the changes in\nfair value were recorded in other comprehensive earnings.\nCTS CORPORATION 52\n\n[TABLE]\nOperating lease obligations | $ 2,787\n[/TABLE]\n\n[TABLE]\nTotal lease liabilities | $ 27,713\n[/TABLE]\n\n[TABLE]\nWeighted-average remaining lease terms (years) | 9.04\n[/TABLE]\n\n[TABLE]\nWeighted-average discount rate | 6.54%\n[/TABLE]\n\n[TABLE]\nSupplemental cash flow\n\n[2] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nior agreement was terminated as of\nFebruary 12, 2019.\nThe Revolving Credit Facility includes a swing line sublimit of $15,000 and a letter of credit sublimit of $10,000. Borrowings\nunder the Revolving Credit Facility bear interest at the base rate defined in the Credit Agreement. We also pay a quarterly\ncommitment fee on the unused portion of the Revolving Credit Facility. The commitment fee ranges from 0.20% to 0.30% based\non our total leverage ratio.\nThe Revolving Credit Facility requires, among other things, that we comply with a maximum total leverage ratio and a minimum\nfixed charge coverage ratio. Failure to comply with these covenants could reduce the borrowing availability under the\n\n[3] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nlease liabilities | $ 5,000\n[/TABLE]\n\n[TABLE]\nTotal credit facility | $ 300,000 | $ 300,000\n[/TABLE]\n\n[TABLE]\nStandby letters of credit | $ 1,800 | $ 1,940\n[/TABLE]\n\n[TABLE]\nWeighted-average interest rate | 3.25% | 3.10%\n[/TABLE]\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 708,
+      "output_tokens": 4,
+      "latency_seconds": 0.7162304269950255
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "amortization expense twelve months ended December 31 2018 cts-corporation debt issuance costs long-term debt 2019 report",
+      "filters": {
+        "company": "cts-corporation"
+      },
+      "chunk_ids": [
+        "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+        "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c0::ff2a19fec1",
+        "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c2::16de485e4a"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+          "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c0::ff2a19fec1",
+          "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c0::ff2a19fec1",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c2::16de485e4a",
+          "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 229,
+          "source_chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c2::16de485e4a",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+          "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c0::ff2a19fec1",
+          "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c0::ff2a19fec1",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c2::16de485e4a",
+          "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 229,
+          "source_chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c2::16de485e4a",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+          "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c0::ff2a19fec1",
+          "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0",
+          "rank": 2,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c0::ff2a19fec1",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c2::16de485e4a",
+          "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 229,
+          "source_chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c2::16de485e4a",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nRetrieval query:",
+  "query_formulation_raw_output": "amortization expense twelve months ended December 31 2018 cts-corporation debt issuance costs long-term debt 2019 report",
+  "query_formulation_latency_seconds": 4.8306,
+  "query_formulation_input_tokens": 191,
+  "query_formulation_output_tokens": 34,
+  "query_formulation_trace": {
+    "original_question": "What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?",
+    "retrieval_query": "amortization expense twelve months ended December 31 2018 cts-corporation debt issuance costs long-term debt 2019 report",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nRetrieval query:",
+    "raw_output": "amortization expense twelve months ended December 31 2018 cts-corporation debt issuance costs long-term debt 2019 report",
+    "latency_seconds": 4.830637710001611,
+    "input_tokens": 191,
+    "output_tokens": 34,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "163.0",
+  "gold_evidence_reference": "TAT-DQA | raw/0dfb4455ae2e1b2066e99d9a3a05baf0.pdf | context_id=0dfb4455ae2e1b2066e99d9a3a05baf0"
+}

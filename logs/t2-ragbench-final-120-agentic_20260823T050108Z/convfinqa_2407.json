@@ -1,0 +1,147 @@
+{
+  "question_id": "convfinqa_2407",
+  "question": "What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?",
+  "retrieval_query": "Kellogg's net cash from operations 2012 property additions percentage",
+  "metadata_filters": {
+    "year": 2012
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+      "rank": 1,
+      "dense_score": 0.6512865424156189,
+      "bm25_score": 5.646860398024502,
+      "hybrid_score": 0.7556231848753516,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_476"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+      "rank": 2,
+      "dense_score": 0.6470111012458801,
+      "bm25_score": 5.887011333880687,
+      "hybrid_score": 0.7385208817149529,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_476"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_981::p1::c1::4884531fd6",
+      "rank": 3,
+      "dense_score": 0.6310081481933594,
+      "bm25_score": 6.34185212907234,
+      "hybrid_score": 0.6459837778686577,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_981"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1766::p1::c1::d6faca7d97",
+      "rank": 4,
+      "dense_score": 0.6752734780311584,
+      "bm25_score": null,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1766"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_317::p1::c0::13a2d0412f",
+      "rank": 5,
+      "dense_score": 0.6224237084388733,
+      "bm25_score": 6.610175249924808,
+      "hybrid_score": 0.5979073166823623,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_317"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 14.1264,
+  "input_tokens": 1453,
+  "output_tokens": 27,
+  "total_tokens": 1480,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1419,
+  "llm_latency_seconds": 13.984,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nRetrieval query:",
+  "query_formulation_raw_output": "Kellogg's net cash from operations 2012 property additions percentage",
+  "query_formulation_latency_seconds": 2.3921,
+  "query_formulation_input_tokens": 170,
+  "query_formulation_output_tokens": 16,
+  "query_formulation_trace": {
+    "original_question": "What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?",
+    "retrieval_query": "Kellogg's net cash from operations 2012 property additions percentage",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nRetrieval query:",
+    "raw_output": "Kellogg's net cash from operations 2012 property additions percentage",
+    "latency_seconds": 2.3921061559994996,
+    "input_tokens": 170,
+    "output_tokens": 16,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 11.5919,
+  "answer_generation_input_tokens": 1283,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\n\n[2] convfinqa_ctx_476.pdf p.1\ndo so, CME invests such contributions in assets that equivalents in the consolidated balance sheets. The\nmirrortheassumedinvestmentchoices.Thebalances balances in these plans are subject to the claims of\nin these plans are subject to the claims of general generalcreditorsofCOMEX.\ncreditors of the exchange and totaled $38.7 million\nand $31.8 million at December 31, 2012 and 2011 13.COMMITMENTS\nrespectively. Although the value of the plans is\nOperating Leases. CME Group has entered into\nrecorded as an asset in marketable securities in the\nvarious non-cancellable operating lease agreements,\nconsolidated balance sheets, there is an equal and\nwiththemostsignificantbeingasfollows:\noffsetting liabi ...\n\n[3] convfinqa_ctx_981.pdf p.1\natJanuary1 .............................................. $102 $107\nAccrualsforwarrantiesissuedduringtheyear ........................ 42 28\nAccrualsrelatedtopre-existingwarranties ........................... 16 8\nSettlementsmade(incashorkind)duringtheyear .................... (38) (38)\nOther,net(includingcurrencytranslation) ........................... (4) (3)\nBalanceatDecember31 ........................................... $118 $102\nInvestments. With respect to the Company’s investments in private equity funds, the Company\nhad, at December 31, 2012, commitments to contribute up to $19 million of additional capital to such\nfunds representing the Company’s aggregate capital commitment to such ...\n\n[4] convfinqa_ctx_1766.pdf p.1\n,we\nNetcashprovidedbyoperating afloatingrateobligationthroughmaturity. wouldcontinuetohaveaccesstoourFour-YearCredit\nactivities $1,758 $1,595 $1,008 Totaldebtwas$7.9billionatyear-end2012and Agreement,whichexpiresinMarch2015.Thissource\nAdditionstoproperties (533) (594) (474) InApril2010,ourboardofdirectorsapprovedashare ofliquidityisunusedandavailableonanunsecured\n$6.0billionatyear-end2011.\nCashflow $1,225 $1,001 $ 534 repurchaseprogramauthorizingustorepurchase basis,althoughwedonotcurrentlyplantouseit.\nyear-over-yearchange 22.4% 87.5% sharesofourcommonstockamountingto$2.5billion\nInMarch2012,weenteredintointerestrateswapson\nduring2010through2012.Thisthreeyear Capitalandcreditmarkets,including ...\n\n[5] finqa_test_ctx_317.pdf p.1\nTable of Contents\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.\nPrice Range\nOur common stock trades on the NASDAQ Global Select Market under the symbol “MKTX”. The range of closing price information for\nour common stock, as reported by NASDAQ, was as follows:\n2012: High Low\nJanuary 1, 2012 to March 31, 2012 $3 7.79 $2 9.26\nApril 1, 2012 to June 30, 2012 $3 7.65 $2 6.22\nJuly 1, 2012 to September 30, 2012 $3 4.00 $2 6.88\nOctober 1, 2012 to December 31, 2012 $3 5.30 $2 9.00\n2011: High Low\nJanuary 1, 2011 to March 31, 2011 $2 4.19 $1 9.78\nApril 1, 2011 to June 30, 2011 $2 5.22 $2 1.00\nJuly 1, 2011 to September 30, 20 ...\nAnswer:",
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "0.69681",
+  "gold_evidence_reference": "ConvFinQA | pdf/K/2012/page_44.pdf | source_page=44 | context_id=convfinqa_ctx_1766"
+}

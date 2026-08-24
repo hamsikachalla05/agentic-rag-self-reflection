@@ -1,0 +1,260 @@
+{
+  "question_id": "finqa_test_182",
+  "question": "What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?",
+  "retrieval_query": "Marathon Oil share repurchases 4th quarter 2004 average price $37.73 total shares 45,686",
+  "metadata_filters": {
+    "year": 2004,
+    "company": "Marathon Oil"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_146::p1::c1::950a06e67f",
+      "rank": 1,
+      "dense_score": 0.7881301641464233,
+      "bm25_score": 39.66977420106277,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_146"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_146::p1::c0::cc9a870ab2",
+      "rank": 2,
+      "dense_score": 0.7406405210494995,
+      "bm25_score": 15.489323600514869,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_146"
+    }
+  ],
+  "answer": "Total cost = Average price per share × Total shares repurchased  \n= $37.73 × 45,686  \n= $17,243,000 (approximately)\n\nSource: finqa_test_ctx_146.pdf p.1",
+  "latency_seconds": 34.5623,
+  "input_tokens": 3201,
+  "output_tokens": 111,
+  "total_tokens": 3312,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NO_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1548,
+  "llm_latency_seconds": 34.405,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NO_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NO_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?\nLabel:",
+      "input_tokens": 125,
+      "output_tokens": 6,
+      "latency_seconds": 1.137144451997301
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?\nEvidence:\n[1] finqa_test_ctx_146.pdf p.1\nso. In determining its dividend policy with respect to Marathon\ncommon stock, the Board will rely on the financial statements of Marathon. Dividends on Marathon common stock\nare limited to legally available funds of Marathon.\nThe following table provides information about purchases by Marathon and its affiliated purchaser during the\nfourth quarter ended December31, 2004 of equity securities that are registered by Marathon pursuant to Section12\nof the Exchange Act:\nISSUER PURCHASES OF EQUITY SECURITIES\n(a) (b) (c) (d)\nMaximum\nTotal Number Number of\nof Shares Shares that\nPurchased as May Yet Be\nTotal Number Part of Publicly Purchased Under\nof Shares Average Price Announced Plans the Plans or\nP\n\n[2] finqa_test_ctx_146.pdf p.1\nIn July, 2002, Marathon received a Notice of Enforcement from the State of Texas for alleged excess air emissions\nfrom its Yates Gas Plant and production operations on its Kloh lease. A settlement of this matter was finalized in\n2004, with Marathon and its co-owners paying a civil penalty of $74,000 and the donation of land as a Supplemental\nEnvironmental Project in lieu of a further penalty of $74,000. Marathon is owner of a 38% interest in the facilities.\nIn May, 2003, Marathon received a Consolidated Compliance Order & Notice or Potential Penalty from the State\nof Louisiana for alleged various air permit regulatory violations. This matter was settled for a civil penalty of\n$148,628 and aw\nLabel:",
+      "input_tokens": 483,
+      "output_tokens": 4,
+      "latency_seconds": 3.7653475439947215
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?\nEvidence:\n[1] finqa_test_ctx_146.pdf p.1\nso. In determining its dividend policy with respect to Marathon\ncommon stock, the Board will rely on the financial statements of Marathon. Dividends on Marathon common stock\nare limited to legally available funds of Marathon.\nThe following table provides information about purchases by Marathon and its affiliated purchaser during the\nfourth quarter ended December31, 2004 of equity securities that are registered by Marathon pursuant to Section12\nof the Exchange Act:\nISSUER PURCHASES OF EQUITY SECURITIES\n(a) (b) (c) (d)\nMaximum\nTotal Number Number of\nof Shares Shares that\nPurchased as May Yet Be\nTotal Number Part of Publicly Purchased Under\nof Shares Average Price Announced Plans the Plans or\nP\n\n[2] finqa_test_ctx_146.pdf p.1\nIn July, 2002, Marathon received a Notice of Enforcement from the State of Texas for alleged excess air emissions\nfrom its Yates Gas Plant and production operations on its Kloh lease. A settlement of this matter was finalized in\n2004, with Marathon and its co-owners paying a civil penalty of $74,000 and the donation of land as a Supplemental\nEnvironmental Project in lieu of a further penalty of $74,000. Marathon is owner of a 38% interest in the facilities.\nIn May, 2003, Marathon received a Consolidated Compliance Order & Notice or Potential Penalty from the State\nof Louisiana for alleged various air permit regulatory violations. This matter was settled for a civil penalty of\n$148,628 and aw\nLabel:",
+      "input_tokens": 488,
+      "output_tokens": 3,
+      "latency_seconds": 3.730992566997884
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?\nEvidence:\n[1] finqa_test_ctx_146.pdf p.1\neriod Purchased(1)(2) Paid per Share or Programs(1) Programs\n10/01/04 – 10/31/04 6,015 $40.51 N/A N/A\n11/01/04 – 11/30/04 5,145 $38.94 N/A N/A\n12/01/04 – 12/31/04 34,526 $37.07 N/A N/A\nTotal: 45,686 $37.73 N/A N/A\n(1) 42,749 shares were repurchased in open-market transactions under the Marathon Oil Corporation Dividend Reinvestment and\nDirect Stock Purchase Plan (the ‘‘Plan’’) by the administrator of the Plan. Stock needed to meet the requirements of the Plan are\neither purchased in the open market or issued directly by Marathon.\n(2) 2,936 shares of restricted stock were delivered by employees to Marathon, upon vesting, to satisfy tax withholding requirements.\nItem 6. Selected Financial Data\n\n[2] finqa_test_ctx_146.pdf p.1\naits formal closure with the State.\nIn August of 2004, the West Virginia Department of Environmental Protection (‘‘WVDEP’’) submitted a draft\nconsent order to MAP regarding MAP’s handling of alleged hazardous waste generated from tank cleanings in the\nState of West Virginia. The proposed order seeks a civil penalty of $337,900. MAP has met with the WVDEP and\ndiscussions are ongoing in an attempt to resolve this matter.\nItem 4. Submission of Matters to a Vote of Security Holders\nNot applicable.\nPART II\nItem 5. Market for Registrant’s Common Equity and Related Stockholder Matters and\nIssuer Purchases of Equity Securities\nThe principal market on which the Company’s common stock is traded is the\nLabel:",
+      "input_tokens": 575,
+      "output_tokens": 3,
+      "latency_seconds": 3.6004497979956795
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?\nEvidence:\n[1] finqa_test_ctx_146.pdf p.1\neriod Purchased(1)(2) Paid per Share or Programs(1) Programs\n10/01/04 – 10/31/04 6,015 $40.51 N/A N/A\n11/01/04 – 11/30/04 5,145 $38.94 N/A N/A\n12/01/04 – 12/31/04 34,526 $37.07 N/A N/A\nTotal: 45,686 $37.73 N/A N/A\n(1) 42,749 shares were repurchased in open-market transactions under the Marathon Oil Corporation Dividend Reinvestment and\nDirect Stock Purchase Plan (the ‘‘Plan’’) by the administrator of the Plan. Stock needed to meet the requirements of the Plan are\neither purchased in the open market or issued directly by Marathon.\n(2) 2,936 shares of restricted stock were delivered by employees to Marathon, upon vesting, to satisfy tax withholding requirements.\nItem 6. Selected Financial Data\n\n[2] finqa_test_ctx_146.pdf p.1\naits formal closure with the State.\nIn August of 2004, the West Virginia Department of Environmental Protection (‘‘WVDEP’’) submitted a draft\nconsent order to MAP regarding MAP’s handling of alleged hazardous waste generated from tank cleanings in the\nState of West Virginia. The proposed order seeks a civil penalty of $337,900. MAP has met with the WVDEP and\ndiscussions are ongoing in an attempt to resolve this matter.\nItem 4. Submission of Matters to a Vote of Security Holders\nNot applicable.\nPART II\nItem 5. Market for Registrant’s Common Equity and Related Stockholder Matters and\nIssuer Purchases of Equity Securities\nThe principal market on which the Company’s common stock is traded is the\nDraft:\nTotal cost = Average price per share × Total shares repurchased  \n= $37.73 × 45,686  \n= $17,243,000 (approximately)\n\nSource: finqa_test_ctx_146.pdf p.1\nLabel:",
+      "input_tokens": 665,
+      "output_tokens": 3,
+      "latency_seconds": 5.454785449997871
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Marathon Oil share repurchases 4th quarter 2004 average price $37.73 total shares 45,686",
+      "filters": {
+        "year": 2004,
+        "company": "Marathon Oil"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_146::p1::c1::950a06e67f",
+        "finqa_test_ctx_146::p1::c0::cc9a870ab2"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_146::p1::c1::950a06e67f",
+          "document_id": "finqa_test_ctx_146",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_146::p1::c1::950a06e67f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_146::p1::c0::cc9a870ab2",
+          "document_id": "finqa_test_ctx_146",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_146::p1::c0::cc9a870ab2",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_146::p1::c1::950a06e67f",
+          "document_id": "finqa_test_ctx_146",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_146::p1::c1::950a06e67f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_146::p1::c0::cc9a870ab2",
+          "document_id": "finqa_test_ctx_146",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_146::p1::c0::cc9a870ab2",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?\nRetrieval query:",
+  "query_formulation_raw_output": "Marathon Oil share repurchases 4th quarter 2004 average price $37.73 total shares 45,686",
+  "query_formulation_latency_seconds": 4.5615,
+  "query_formulation_input_tokens": 202,
+  "query_formulation_output_tokens": 33,
+  "query_formulation_trace": {
+    "original_question": "What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?",
+    "retrieval_query": "Marathon Oil share repurchases 4th quarter 2004 average price $37.73 total shares 45,686",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the total cost of the share repurchases made by Marathon Oil during the 4th quarter of 2004, given that the total average price paid per share was $37.73 and a total of 45,686 shares were repurchased?\nRetrieval query:",
+    "raw_output": "Marathon Oil share repurchases 4th quarter 2004 average price $37.73 total shares 45,686",
+    "latency_seconds": 4.5615109389982536,
+    "input_tokens": 202,
+    "output_tokens": 33,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "1723732.7799999998",
+  "gold_evidence_reference": "FinQA | pdf/MRO/2004/page_46.pdf | source_page=46 | context_id=finqa_test_ctx_146"
+}

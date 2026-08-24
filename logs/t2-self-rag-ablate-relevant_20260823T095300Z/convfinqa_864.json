@@ -1,0 +1,274 @@
+{
+  "question_id": "convfinqa_864",
+  "question": "What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?",
+  "retrieval_query": "Aon net change unrecognized tax benefits 2010 additions reductions settlements other factors",
+  "metadata_filters": {
+    "year": 2010,
+    "company": "Aon"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+      "rank": 1,
+      "dense_score": 0.8079432249069214,
+      "bm25_score": 38.15178160565724,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1334"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1334::p1::c1::a18ccba2c4",
+      "rank": 2,
+      "dense_score": 0.6770883202552795,
+      "bm25_score": 11.052988169011261,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1334"
+    }
+  ],
+  "answer": "Net change in Aon's unrecognized tax benefits during 2010:\n\nAdditions (current year) = 7  \nAdditions (prior years) = 4  \nReductions (prior years) = (7)  \nSettlements = (1)  \nLapse of statute of limitations = (5)  \nAcquisitions = 26  \nForeign currency translation = 1  \n\nSum = 7 + 4 + (7) + (1) + (5) + 26 + 1 = 30  \n\nThe balance at December 31, 2010, is $77 million (from the table), and the balance at December 31, 2009, is $86 million (from the table).  \n\nNet change = Balance 2010 - Balance 2009 = 77 - 86 = -9 million  \n\nThus, the net change is -9 million.  \n\nSource: convfinqa_ctx_1334.pdf p.1  \n\nAnswer: -9",
+  "latency_seconds": 48.7015,
+  "input_tokens": 3148,
+  "output_tokens": 271,
+  "total_tokens": 3419,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 8,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1355,
+  "llm_latency_seconds": 48.5638,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?\nLabel:",
+      "input_tokens": 96,
+      "output_tokens": 7,
+      "latency_seconds": 1.18397723200178
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?\nEvidence:\n[1] convfinqa_ctx_1334.pdf p.1\nremitted to the U.S. due to foreign tax credits and exclusions that may become available at the time of\nremittance.\nAt December 31, 2010, Aon had domestic federal operating loss carryforwards of $56 million that\nwill expire at various dates from 2011 to 2024, state operating loss carryforwards of $610 million that\nwill expire at various dates from 2011 to 2031, and foreign operating and capital loss carryforwards of\n$720 million and $251 million, respectively, nearly all of which are subject to indefinite carryforward.\nUnrecognized Tax Provisions\nThe following is a reconciliation of the Company’s beginning and ending amount of unrecognized\ntax benefits (in millions):\n2010 2009\nBalance at Jan\n\n[2] convfinqa_ctx_1334.pdf p.1\nas well as various\nstate and international jurisdictions. Aon has substantially concluded all U.S. federal income tax matters\nfor years through 2006. Material U.S. state and local income tax jurisdiction examinations have been\nconcluded for years through 2002. Aon has concluded income tax examinations in its primary\ninternational jurisdictions through 2004.\n96\nLabel:",
+      "input_tokens": 398,
+      "output_tokens": 3,
+      "latency_seconds": 2.982466282999667
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?\nEvidence:\n[1] convfinqa_ctx_1334.pdf p.1\nremitted to the U.S. due to foreign tax credits and exclusions that may become available at the time of\nremittance.\nAt December 31, 2010, Aon had domestic federal operating loss carryforwards of $56 million that\nwill expire at various dates from 2011 to 2024, state operating loss carryforwards of $610 million that\nwill expire at various dates from 2011 to 2031, and foreign operating and capital loss carryforwards of\n$720 million and $251 million, respectively, nearly all of which are subject to indefinite carryforward.\nUnrecognized Tax Provisions\nThe following is a reconciliation of the Company’s beginning and ending amount of unrecognized\ntax benefits (in millions):\n2010 2009\nBalance at Jan\n\n[2] convfinqa_ctx_1334.pdf p.1\nas well as various\nstate and international jurisdictions. Aon has substantially concluded all U.S. federal income tax matters\nfor years through 2006. Material U.S. state and local income tax jurisdiction examinations have been\nconcluded for years through 2002. Aon has concluded income tax examinations in its primary\ninternational jurisdictions through 2004.\n96\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 439,
+      "output_tokens": 4,
+      "latency_seconds": 3.394175898996764
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?\nEvidence:\n[1] convfinqa_ctx_1334.pdf p.1\nuary 1 $ 77 $ 86\nAdditions based on tax positions related to the current year 7 2\nAdditions for tax positions of prior years 4 5\nReductions for tax positions of prior years (7) (11)\nSettlements (1) (10)\nLapse of statute of limitations (5) (3)\nAcquisitions 26 6\nForeign currency translation (1) 2\nBalance at December 31 $100 $ 77\nAs of December 31, 2010, $85 million of unrecognized tax benefits would impact the effective tax\nrate if recognized. Aon does not expect the unrecognized tax positions to change significantly over the\nnext twelve months, except for a potential reduction of unrecognized tax benefits in the range of\n$10-$15 million relating to anticipated audit settlements.\nThe Company r\n\n[2] convfinqa_ctx_1334.pdf p.1\nas well as various\nstate and international jurisdictions. Aon has substantially concluded all U.S. federal income tax matters\nfor years through 2006. Material U.S. state and local income tax jurisdiction examinations have been\nconcluded for years through 2002. Aon has concluded income tax examinations in its primary\ninternational jurisdictions through 2004.\n96\nLabel:",
+      "input_tokens": 405,
+      "output_tokens": 3,
+      "latency_seconds": 2.59373444999801
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?\nEvidence:\n[1] convfinqa_ctx_1334.pdf p.1\nuary 1 $ 77 $ 86\nAdditions based on tax positions related to the current year 7 2\nAdditions for tax positions of prior years 4 5\nReductions for tax positions of prior years (7) (11)\nSettlements (1) (10)\nLapse of statute of limitations (5) (3)\nAcquisitions 26 6\nForeign currency translation (1) 2\nBalance at December 31 $100 $ 77\nAs of December 31, 2010, $85 million of unrecognized tax benefits would impact the effective tax\nrate if recognized. Aon does not expect the unrecognized tax positions to change significantly over the\nnext twelve months, except for a potential reduction of unrecognized tax benefits in the range of\n$10-$15 million relating to anticipated audit settlements.\nThe Company r\n\n[2] convfinqa_ctx_1334.pdf p.1\nas well as various\nstate and international jurisdictions. Aon has substantially concluded all U.S. federal income tax matters\nfor years through 2006. Material U.S. state and local income tax jurisdiction examinations have been\nconcluded for years through 2002. Aon has concluded income tax examinations in its primary\ninternational jurisdictions through 2004.\n96\nDraft:\nNet change in Aon's unrecognized tax benefits during 2010:\n\nAdditions (current year) = 7  \nAdditions (prior years) = 4  \nReductions (prior years) = (7)  \nSettlements = (1)  \nLapse of statute of limitations = (5)  \nAcquisitions = 26  \nForeign currency translation = 1  \n\nSum = 7 + 4 + (7) + (1) + (5) + 26 + 1 = 30  \n\nThe balance at December 31, 2010, is $77 million (from the table), and the balance at December 31, 2009, is $86 million (from the table).  \n\nNet change = Balance 2010 - Balance 2009 = 77 - 86 = -9 million  \n\nThus, the net change is -9 million.  \n\nSource: convfinqa_ctx_1334.pdf p.1  \n\nAnswer: -9\nLabel:",
+      "input_tokens": 658,
+      "output_tokens": 3,
+      "latency_seconds": 4.43616689099872
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Aon net change unrecognized tax benefits 2010 additions reductions settlements other factors",
+      "filters": {
+        "year": 2010,
+        "company": "Aon"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+        "convfinqa_ctx_1334::p1::c1::a18ccba2c4"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "document_id": "convfinqa_ctx_1334",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1334::p1::c1::a18ccba2c4",
+          "document_id": "convfinqa_ctx_1334",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 362,
+          "source_chunk_id": "convfinqa_ctx_1334::p1::c1::a18ccba2c4",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "document_id": "convfinqa_ctx_1334",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1334::p1::c1::a18ccba2c4",
+          "document_id": "convfinqa_ctx_1334",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 362,
+          "source_chunk_id": "convfinqa_ctx_1334::p1::c1::a18ccba2c4",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?\nRetrieval query:",
+  "query_formulation_raw_output": "Aon net change unrecognized tax benefits 2010 additions reductions settlements other factors",
+  "query_formulation_latency_seconds": 2.4951,
+  "query_formulation_input_tokens": 173,
+  "query_formulation_output_tokens": 18,
+  "query_formulation_trace": {
+    "original_question": "What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?",
+    "retrieval_query": "Aon net change unrecognized tax benefits 2010 additions reductions settlements other factors",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the net change in Aon's unrecognized tax benefits during 2010, considering additions, reductions, settlements, and other factors?\nRetrieval query:",
+    "raw_output": "Aon net change unrecognized tax benefits 2010 additions reductions settlements other factors",
+    "latency_seconds": 2.495065702001739,
+    "input_tokens": 173,
+    "output_tokens": 18,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "23.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/AON/2010/page_100.pdf | source_page=100 | context_id=convfinqa_ctx_1334"
+}

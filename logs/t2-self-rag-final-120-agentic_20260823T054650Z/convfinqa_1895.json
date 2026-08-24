@@ -1,0 +1,287 @@
+{
+  "question_id": "convfinqa_1895",
+  "question": "What was the net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013?",
+  "retrieval_query": "Snap-on net change in balance of cash and cash equivalents 2012 2013",
+  "metadata_filters": {
+    "company": "Snap-on"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+      "rank": 1,
+      "dense_score": 0.7569127082824707,
+      "bm25_score": 32.95715588463905,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_928"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_928::p1::c1::2c4de2badc",
+      "rank": 2,
+      "dense_score": 0.7315313816070557,
+      "bm25_score": 29.063944814168327,
+      "hybrid_score": 0.6756084813720875,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_928"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_206::p1::c1::3b8f893375",
+      "rank": 3,
+      "dense_score": 0.7277071475982666,
+      "bm25_score": 25.312739489621578,
+      "hybrid_score": 0.5124699321900628,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_206"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_206::p1::c0::759d87f18e",
+      "rank": 4,
+      "dense_score": 0.7049157619476318,
+      "bm25_score": 23.379130242801804,
+      "hybrid_score": 0.2775896709174103,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_206"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_928::p1::c2::6aa09ea32b",
+      "rank": 5,
+      "dense_score": 0.6740675568580627,
+      "bm25_score": 21.878729582856717,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_928"
+    }
+  ],
+  "answer": "The net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013 was $3.1 million.\n\nSource: convfinqa_ctx_928.pdf p.1  \nCalculation: $217.6 million (2013) - $214.5 million (2012) = $3.1 million\n\nAnswer: 3.1",
+  "latency_seconds": 49.701,
+  "input_tokens": 4541,
+  "output_tokens": 131,
+  "total_tokens": 4672,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1445,
+  "llm_latency_seconds": 49.5545,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013?\nLabel:",
+      "input_tokens": 95,
+      "output_tokens": 7,
+      "latency_seconds": 1.41558187299961
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013?\nEvidence:\n[1] convfinqa_ctx_928.pdf p.1\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations (continued)\nLiquidity and Capital Resources\nSnap-on’s growth has historically been funded by a combination of cash provided by operating activities and debt financing.\nSnap-on believes that its cash from operations and collections of finance receivables, coupled with its sources of borrowings\nand available cash on hand, are sufficient to fund its currently anticipated requirements for scheduled debt payments\n(including the March 2014 repayment of $100.0 million of 5.85% unsecured notes upon maturity), payments of interest and\ndividends, new receivables originated by our financial services businesses, capita\n\n[2] convfinqa_ctx_928.pdf p.1\n374.6 323.1\nContract receivables – net 68.4 62.7\nInventories – net 434.4 404.2\nOther current assets 169.6 166.6\nTotal current assets 1,796.2 1,669.0\nNotes payable and current maturities of long-term debt (113.1) (5.2)\nAccounts payable (155.6) (142.5)\nOther current liabilities (446.7) (441.5)\nTotal current liabilities (715.4) (589.2)\nWorking capital $ 1,080.8 $ 1,079.8\nCash and cash equivalents of $217.6 million as of 2013 year end compared to cash and cash equivalents of $214.5\nmillion at 2012 year end. The $3.1 million net increase in cash and cash equivalents includes the impacts of (i) $508.8\nmillion of cash from collections of finance receivables; (ii) $392.6 million of cash generated fr\n\n[3] finqa_test_ctx_206.pdf p.1\ninformation has not been\npresented as the net effects of the Challenger acquisition were neither significant nor material to Snap-on’s results of\noperations or financial position.\nNote 3: Receivables\nTrade and Other Accounts Receivable\nSnap-on’s trade and other accounts receivable primarily arise from the sale of tools and diagnostic and equipment\nproducts to a broad range of industrial and commercial customers and to Snap-on’s independent franchise van channel\non a non-extended-term basis with payment terms generally ranging from 30 to 120 days.\nThe components of Snap-on’s trade and other accounts receivable as of 2013 and 2012 year end are as follows:\n(Amounts in millions) 2013 2012\nTrade\n\n[4] finqa_test_ctx_206.pdf p.1\nNotes to Consolidated Financial Statements (continued)\nGoodwill and other intangible assets: Goodwill and other indefinite-lived assets are tested for impairment annually or\nmore frequently if events or changes in circumstances indicate that the assets might be impaired. Annual impairment\ntests are performed by the company in the second quarter of each year. Snap-on evaluates the existence of goodwill and\nindefinite-lived intangible asset impairment on the basis of whether the assets are fully recoverable from projected,\ndiscounted cash flows of the related business unit or asset. Intangible assets with finite lives are amortized over their\nestimated useful lives using straight-line and acce\n\n[5] convfinqa_ctx_928.pdf p.1\nvarious regulatory requirements; and/or (iii) take advantage of business expansion\nopportunities as they arise; as such, the company does not presently expect to repatriate these funds to fund its U.S.\noperations or obligations. The repatriation of cash from certain foreign subsidiaries could have adverse net tax\nconsequences on the company should Snap-on be required to pay and record U.S. income taxes and foreign withholding\ntaxes on funds that were previously considered permanently invested. Alternatively, the repatriation of such cash from\ncertain other foreign subsidiaries could result in favorable net tax consequences for the company. Snap-on periodically\nevaluates opportunities to repa\nLabel:",
+      "input_tokens": 1012,
+      "output_tokens": 4,
+      "latency_seconds": 7.957543188997079
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013?\nEvidence:\n[1] convfinqa_ctx_928.pdf p.1\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations (continued)\nLiquidity and Capital Resources\nSnap-on’s growth has historically been funded by a combination of cash provided by operating activities and debt financing.\nSnap-on believes that its cash from operations and collections of finance receivables, coupled with its sources of borrowings\nand available cash on hand, are sufficient to fund its currently anticipated requirements for scheduled debt payments\n(including the March 2014 repayment of $100.0 million of 5.85% unsecured notes upon maturity), payments of interest and\ndividends, new receivables originated by our financial services businesses, capita\n\n[2] convfinqa_ctx_928.pdf p.1\n374.6 323.1\nContract receivables – net 68.4 62.7\nInventories – net 434.4 404.2\nOther current assets 169.6 166.6\nTotal current assets 1,796.2 1,669.0\nNotes payable and current maturities of long-term debt (113.1) (5.2)\nAccounts payable (155.6) (142.5)\nOther current liabilities (446.7) (441.5)\nTotal current liabilities (715.4) (589.2)\nWorking capital $ 1,080.8 $ 1,079.8\nCash and cash equivalents of $217.6 million as of 2013 year end compared to cash and cash equivalents of $214.5\nmillion at 2012 year end. The $3.1 million net increase in cash and cash equivalents includes the impacts of (i) $508.8\nmillion of cash from collections of finance receivables; (ii) $392.6 million of cash generated fr\n\n[3] finqa_test_ctx_206.pdf p.1\ninformation has not been\npresented as the net effects of the Challenger acquisition were neither significant nor material to Snap-on’s results of\noperations or financial position.\nNote 3: Receivables\nTrade and Other Accounts Receivable\nSnap-on’s trade and other accounts receivable primarily arise from the sale of tools and diagnostic and equipment\nproducts to a broad range of industrial and commercial customers and to Snap-on’s independent franchise van channel\non a non-extended-term basis with payment terms generally ranging from 30 to 120 days.\nThe components of Snap-on’s trade and other accounts receivable as of 2013 and 2012 year end are as follows:\n(Amounts in millions) 2013 2012\nTrade\n\n[4] finqa_test_ctx_206.pdf p.1\nNotes to Consolidated Financial Statements (continued)\nGoodwill and other intangible assets: Goodwill and other indefinite-lived assets are tested for impairment annually or\nmore frequently if events or changes in circumstances indicate that the assets might be impaired. Annual impairment\ntests are performed by the company in the second quarter of each year. Snap-on evaluates the existence of goodwill and\nindefinite-lived intangible asset impairment on the basis of whether the assets are fully recoverable from projected,\ndiscounted cash flows of the related business unit or asset. Intangible assets with finite lives are amortized over their\nestimated useful lives using straight-line and acce\n\n[5] convfinqa_ctx_928.pdf p.1\nvarious regulatory requirements; and/or (iii) take advantage of business expansion\nopportunities as they arise; as such, the company does not presently expect to repatriate these funds to fund its U.S.\noperations or obligations. The repatriation of cash from certain foreign subsidiaries could have adverse net tax\nconsequences on the company should Snap-on be required to pay and record U.S. income taxes and foreign withholding\ntaxes on funds that were previously considered permanently invested. Alternatively, the repatriation of such cash from\ncertain other foreign subsidiaries could result in favorable net tax consequences for the company. Snap-on periodically\nevaluates opportunities to repa\nLabel:",
+      "input_tokens": 1017,
+      "output_tokens": 3,
+      "latency_seconds": 7.908611414000916
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013?\nEvidence:\n[1] convfinqa_ctx_928.pdf p.1\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations (continued)\nLiquidity and Capital Resources\nSnap-on’s growth has historically been funded by a combination of cash provided by operating activities and debt financing.\nSnap-on believes that its cash from operations and collections of finance receivables, coupled with its sources of borrowings\nand available cash on hand, are sufficient to fund its currently anticipated requirements for scheduled debt payments\n(including the March 2014 repayment of $100.0 million of 5.85% unsecured notes upon maturity), payments of interest and\ndividends, new receivables originated by our financial services businesses, capita\n\n[2] convfinqa_ctx_928.pdf p.1\n374.6 323.1\nContract receivables – net 68.4 62.7\nInventories – net 434.4 404.2\nOther current assets 169.6 166.6\nTotal current assets 1,796.2 1,669.0\nNotes payable and current maturities of long-term debt (113.1) (5.2)\nAccounts payable (155.6) (142.5)\nOther current liabilities (446.7) (441.5)\nTotal current liabilities (715.4) (589.2)\nWorking capital $ 1,080.8 $ 1,079.8\nCash and cash equivalents of $217.6 million as of 2013 year end compared to cash and cash equivalents of $214.5\nmillion at 2012 year end. The $3.1 million net increase in cash and cash equivalents includes the impacts of (i) $508.8\nmillion of cash from collections of finance receivables; (ii) $392.6 million of cash generated fr\n\n[3] finqa_test_ctx_206.pdf p.1\ninformation has not been\npresented as the net effects of the Challenger acquisition were neither significant nor material to Snap-on’s results of\noperations or financial position.\nNote 3: Receivables\nTrade and Other Accounts Receivable\nSnap-on’s trade and other accounts receivable primarily arise from the sale of tools and diagnostic and equipment\nproducts to a broad range of industrial and commercial customers and to Snap-on’s independent franchise van channel\non a non-extended-term basis with payment terms generally ranging from 30 to 120 days.\nThe components of Snap-on’s trade and other accounts receivable as of 2013 and 2012 year end are as follows:\n(Amounts in millions) 2013 2012\nTrade\n\n[4] finqa_test_ctx_206.pdf p.1\nNotes to Consolidated Financial Statements (continued)\nGoodwill and other intangible assets: Goodwill and other indefinite-lived assets are tested for impairment annually or\nmore frequently if events or changes in circumstances indicate that the assets might be impaired. Annual impairment\ntests are performed by the company in the second quarter of each year. Snap-on evaluates the existence of goodwill and\nindefinite-lived intangible asset impairment on the basis of whether the assets are fully recoverable from projected,\ndiscounted cash flows of the related business unit or asset. Intangible assets with finite lives are amortized over their\nestimated useful lives using straight-line and acce\n\n[5] convfinqa_ctx_928.pdf p.1\nvarious regulatory requirements; and/or (iii) take advantage of business expansion\nopportunities as they arise; as such, the company does not presently expect to repatriate these funds to fund its U.S.\noperations or obligations. The repatriation of cash from certain foreign subsidiaries could have adverse net tax\nconsequences on the company should Snap-on be required to pay and record U.S. income taxes and foreign withholding\ntaxes on funds that were previously considered permanently invested. Alternatively, the repatriation of such cash from\ncertain other foreign subsidiaries could result in favorable net tax consequences for the company. Snap-on periodically\nevaluates opportunities to repa\nDraft:\nThe net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013 was $3.1 million.\n\nSource: convfinqa_ctx_928.pdf p.1  \nCalculation: $217.6 million (2013) - $214.5 million (2012) = $3.1 million\n\nAnswer: 3.1\nLabel:",
+      "input_tokens": 1140,
+      "output_tokens": 3,
+      "latency_seconds": 9.12401428099838
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Snap-on net change in balance of cash and cash equivalents 2012 2013",
+      "filters": {
+        "company": "Snap-on"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_928::p1::c0::9293808038",
+        "convfinqa_ctx_928::p1::c1::2c4de2badc",
+        "finqa_test_ctx_206::p1::c1::3b8f893375",
+        "finqa_test_ctx_206::p1::c0::759d87f18e",
+        "convfinqa_ctx_928::p1::c2::6aa09ea32b"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+          "document_id": "convfinqa_ctx_928",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_928::p1::c1::2c4de2badc",
+          "document_id": "convfinqa_ctx_928",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_928::p1::c1::2c4de2badc",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_206::p1::c1::3b8f893375",
+          "document_id": "finqa_test_ctx_206",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_206::p1::c1::3b8f893375",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_206::p1::c0::759d87f18e",
+          "document_id": "finqa_test_ctx_206",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_206::p1::c0::759d87f18e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_928::p1::c2::6aa09ea32b",
+          "document_id": "convfinqa_ctx_928",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_928::p1::c2::6aa09ea32b",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013?\nRetrieval query:",
+  "query_formulation_raw_output": "Snap-on net change in balance of cash and cash equivalents 2012 2013",
+  "query_formulation_latency_seconds": 3.0185,
+  "query_formulation_input_tokens": 172,
+  "query_formulation_output_tokens": 22,
+  "query_formulation_trace": {
+    "original_question": "What was the net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013?",
+    "retrieval_query": "Snap-on net change in balance of cash and cash equivalents 2012 2013",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013?\nRetrieval query:",
+    "raw_output": "Snap-on net change in balance of cash and cash equivalents 2012 2013",
+    "latency_seconds": 3.0185104650008725,
+    "input_tokens": 172,
+    "output_tokens": 22,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "3.1",
+  "gold_evidence_reference": "ConvFinQA | pdf/SNA/2013/page_56.pdf | source_page=56 | context_id=convfinqa_ctx_928"
+}

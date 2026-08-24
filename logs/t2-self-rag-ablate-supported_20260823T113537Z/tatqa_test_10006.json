@@ -1,0 +1,334 @@
+{
+  "question_id": "tatqa_test_10006",
+  "question": "What was the difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc.?",
+  "retrieval_query": "Cisco Systems, Inc. total products and services revenue fiscal 2018 vs fiscal 2017",
+  "metadata_filters": {
+    "company": "cisco-systems-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c1::8d080708d1",
+      "rank": 1,
+      "dense_score": 0.6826552152633667,
+      "bm25_score": 17.17758913385113,
+      "hybrid_score": 0.6646529251028619,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d9929fa56778e739f071d0d586171994"
+    },
+    {
+      "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+      "rank": 2,
+      "dense_score": 0.6943225860595703,
+      "bm25_score": 7.370391799064235,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d9929fa56778e739f071d0d586171994"
+    },
+    {
+      "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c3::5f5deb6c3e",
+      "rank": 3,
+      "dense_score": 0.6853920221328735,
+      "bm25_score": 11.832807795338667,
+      "hybrid_score": 0.5253208093539511,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d9929fa56778e739f071d0d586171994"
+    },
+    {
+      "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c2::a34b6e8364",
+      "rank": 4,
+      "dense_score": 0.6734474301338196,
+      "bm25_score": 7.825248378131725,
+      "hybrid_score": 0.018551949697354558,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d9929fa56778e739f071d0d586171994"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 66.1589,
+  "input_tokens": 7377,
+  "output_tokens": 65,
+  "total_tokens": 7442,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1348,
+  "llm_latency_seconds": 66.0204,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc.?\nLabel:",
+      "input_tokens": 96,
+      "output_tokens": 7,
+      "latency_seconds": 1.0683047239945154
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc.?\nEvidence:\n[1] d9929fa56778e739f071d0d586171994.pdf p.1\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8,457 7,945 7,855\nAPJC. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4,683 4,726 4,741\nSegment total . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33,479 31,463 30,880\nUnallocated corporate items . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (813) (857) (656)\nTotal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 32,666 $ 30,606 $ 30,224\nAmounts may not sum and percentages may not reca\n\n[2] d9929fa56778e739f071d0d586171994.pdf p.1\nSummarized financial information by segment for fiscal 2019, 2018, and 2017, based on our internal management system and as\nutilized by our Chief Operating Decision Maker (CODM), is as follows (in millions):\nYears Ended July 27, 2019 July 28, 2018 July 29, 2017\nRevenue:\nAmericas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,927 $ 29,070 $ 28,351\nEMEA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13,100 12,425 12,004\nAPJC. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7,877 7,834 7,650\nTot\n\n[3] d9929fa56778e739f071d0d586171994.pdf p.1\n48,005\n(1) Includes SPVSS business revenue of $168 million and $903 million for fiscal 2019 and 2018, respectively.\n(c) Additional Segment Information\nThe majority of our assets as of July 27, 2019 and July 28, 2018 were attributable to our U.S. operations. In fiscal 2019, 2018, and\n2017, no single customer accounted for 10% or more of revenue.\nProperty and equipment information is based on the physical location of the assets. The following table presents property and\nequipment information for geographic areas (in millions):\nJuly 27, 2019 July 28, 2018 July 29, 2017\nProperty and equipment, net:\nUnited States . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n[4] d9929fa56778e739f071d0d586171994.pdf p.1\n:\nInfrastructure Platforms . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,191 $ 28,322 $ 27,817\nApplications. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5,803 5,036 4,568\nSecurity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2,730 2,352 2,152\nOther Products. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 281 999 1,168\nTotal Product . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39,005 36,709 35,705\nServices . . . . . . .\nLabel:",
+      "input_tokens": 1558,
+      "output_tokens": 4,
+      "latency_seconds": 12.374952438993205
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc.?\nEvidence:\n[1] d9929fa56778e739f071d0d586171994.pdf p.1\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8,457 7,945 7,855\nAPJC. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4,683 4,726 4,741\nSegment total . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33,479 31,463 30,880\nUnallocated corporate items . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (813) (857) (656)\nTotal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 32,666 $ 30,606 $ 30,224\nAmounts may not sum and percentages may not reca\n\n[2] d9929fa56778e739f071d0d586171994.pdf p.1\nSummarized financial information by segment for fiscal 2019, 2018, and 2017, based on our internal management system and as\nutilized by our Chief Operating Decision Maker (CODM), is as follows (in millions):\nYears Ended July 27, 2019 July 28, 2018 July 29, 2017\nRevenue:\nAmericas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,927 $ 29,070 $ 28,351\nEMEA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13,100 12,425 12,004\nAPJC. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7,877 7,834 7,650\nTot\n\n[3] d9929fa56778e739f071d0d586171994.pdf p.1\n48,005\n(1) Includes SPVSS business revenue of $168 million and $903 million for fiscal 2019 and 2018, respectively.\n(c) Additional Segment Information\nThe majority of our assets as of July 27, 2019 and July 28, 2018 were attributable to our U.S. operations. In fiscal 2019, 2018, and\n2017, no single customer accounted for 10% or more of revenue.\nProperty and equipment information is based on the physical location of the assets. The following table presents property and\nequipment information for geographic areas (in millions):\nJuly 27, 2019 July 28, 2018 July 29, 2017\nProperty and equipment, net:\nUnited States . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n[4] d9929fa56778e739f071d0d586171994.pdf p.1\n:\nInfrastructure Platforms . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,191 $ 28,322 $ 27,817\nApplications. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5,803 5,036 4,568\nSecurity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2,730 2,352 2,152\nOther Products. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 281 999 1,168\nTotal Product . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39,005 36,709 35,705\nServices . . . . . . .\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1604,
+      "output_tokens": 4,
+      "latency_seconds": 14.347694360003516
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc.?\nEvidence:\n[1] d9929fa56778e739f071d0d586171994.pdf p.1\nlculate due to rounding.\nRevenue in the United States was $27.4 billion, $25.5 billion, and $25.0 billion for fiscal 2019, 2018, and 2017, respectively.\n(b) Revenue for Groups of Similar Products and Services\nWe design, manufacture, and sell IP-based networking and other products related to the communications and IT industry and\nprovide services associated with these products and their use.\nThe following table presents revenue for groups of similar products and services (in millions):\nYears Ended July 27, 2019 July 28, 2018 July 29, 2017\nRevenue:\nInfrastructure Platforms . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,\n\n[2] d9929fa56778e739f071d0d586171994.pdf p.1\nal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 51,904 $ 49,330 $ 48,005\nGross margin:\nAmericas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 20,338 $ 18,792 $ 18,284\nEMEA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8,457 7,945\n\n[3] d9929fa56778e739f071d0d586171994.pdf p.1\n. . . . . . . . . . $ 2,266 $ 2,487 $ 2,711\nInternational. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 523 519 611\nTotal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 2,789 $ 3,006 $ 3,322\n104\n\n[4] d9929fa56778e739f071d0d586171994.pdf p.1\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12,899 12,621 12,300\nTotal (1). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 51,904 $ 49,330 $ 48,005\n(1) Includes SPVSS business revenue of $168 million and $903 million for fiscal 2019 and 2018, respectively.\n(c) Additional Segment Information\nThe majority of our assets as of July 27,\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1124,
+      "output_tokens": 4,
+      "latency_seconds": 10.325982571004715
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Cisco Systems, Inc. total products and services revenue fiscal 2018 vs fiscal 2017",
+      "filters": {
+        "company": "cisco-systems-inc"
+      },
+      "chunk_ids": [
+        "d9929fa56778e739f071d0d586171994::p1::c1::8d080708d1",
+        "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+        "d9929fa56778e739f071d0d586171994::p1::c3::5f5deb6c3e",
+        "d9929fa56778e739f071d0d586171994::p1::c2::a34b6e8364"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c1::8d080708d1",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c1::8d080708d1",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c3::5f5deb6c3e",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c3::5f5deb6c3e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c2::a34b6e8364",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c2::a34b6e8364",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c1::8d080708d1",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1369,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c1::8d080708d1",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1132,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c3::5f5deb6c3e",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 3,
+          "char_start": 700,
+          "char_end": 1020,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c3::5f5deb6c3e",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c2::a34b6e8364",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 4,
+          "char_start": 700,
+          "char_end": 1145,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c2::a34b6e8364",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc.?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc.?\nRetrieval query:",
+  "query_formulation_raw_output": "Cisco Systems, Inc. total products and services revenue fiscal 2018 vs fiscal 2017",
+  "query_formulation_latency_seconds": 2.892,
+  "query_formulation_input_tokens": 173,
+  "query_formulation_output_tokens": 24,
+  "query_formulation_trace": {
+    "original_question": "What was the difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc.?",
+    "retrieval_query": "Cisco Systems, Inc. total products and services revenue fiscal 2018 vs fiscal 2017",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc.?\nRetrieval query:",
+    "raw_output": "Cisco Systems, Inc. total products and services revenue fiscal 2018 vs fiscal 2017",
+    "latency_seconds": 2.892034981006873,
+    "input_tokens": 173,
+    "output_tokens": 24,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "1325.0",
+  "gold_evidence_reference": "TAT-DQA | raw/d9929fa56778e739f071d0d586171994.pdf | context_id=d9929fa56778e739f071d0d586171994"
+}

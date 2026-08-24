@@ -1,0 +1,287 @@
+{
+  "question_id": "convfinqa_2467",
+  "question": "What is the net change in revenue from 1998 to 1999 for AES Corporation, as reported in the 2000 financial review?",
+  "retrieval_query": "AES Corporation net change in revenue 1998 to 1999 2000 financial review",
+  "metadata_filters": {
+    "company": "AES Corporation"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_150::p1::c0::f173fa7025",
+      "rank": 1,
+      "dense_score": 0.7207731604576111,
+      "bm25_score": 25.13012149833309,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_150"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_150::p1::c2::0d685333bf",
+      "rank": 2,
+      "dense_score": 0.654384434223175,
+      "bm25_score": 20.052135488063577,
+      "hybrid_score": 0.675020240859554,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_150"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_150::p1::c1::c1c407d22d",
+      "rank": 3,
+      "dense_score": 0.5933743119239807,
+      "bm25_score": 15.446933869914947,
+      "hybrid_score": 0.3773463385512965,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_150"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_321::p1::c0::4ab59ce26e",
+      "rank": 4,
+      "dense_score": 0.5584867000579834,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0031716537872499622,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_321"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_321::p1::c1::dc2a60ed9f",
+      "rank": 5,
+      "dense_score": 0.5576242804527283,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_321"
+    }
+  ],
+  "answer": "Net change in revenue from 1998 to 1999 = Revenue in 1999 - Revenue in 1998  \n= $5,960 - $8,091 = -$2,131  \n\nSource: convfinqa_ctx_150.pdf p.1  \n\nAnswer: -2131",
+  "latency_seconds": 50.3015,
+  "input_tokens": 5042,
+  "output_tokens": 113,
+  "total_tokens": 5155,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1622,
+  "llm_latency_seconds": 50.1375,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the net change in revenue from 1998 to 1999 for AES Corporation, as reported in the 2000 financial review?\nEvidence:\n[1] convfinqa_ctx_150.pdf p.1\nAES 2000 FINANCIAL REVIEW\nIn May 2000, a subsidiary of the company acquired In December 2000, a subsidiary of the Company\nan additional 5% of the preferred, non-voting shares of entered into an agreement with EDF to jointly acquire an\nEletropaulo for approximately $90 million. In January additional 9.2% interest in Light, which is held by a sub-\n2000, 59% of the preferred non-voting shares were sidiary of Companhia Siderurgica Nacional (“CSN”).\nacquired for approximately $1 billion at auction from Pursuant to this transaction, the Company acquired an\nBNDES, the National Development Bank of Brazil. The additional 2.75% interest in Light for $114.6 million.\nprice established at auction was app\n\n[2] convfinqa_ctx_150.pdf p.1\nfor the Company’s investments in\n30% of the shares while EDF acquired the remainder. 50% or less owned investments accounted for using the\nWith the completion of this transaction, the Company equity method:\nowns approximately 21.14% of Light.\nAS OF AND FOR THE YEARS ENDED DECEMBER 31, 2000 1999 1998\nRevenues $6,241 $5,960 $8,091\nOperating income 1,989 1,839 2,079\nNet income 859 62 1,146\nCurrent assets 2,423 2,259 2,712\nNoncurrent assets 13,080 15,359 19,025\nCurrent liabilities 3,370 3,637 4,809\nNoncurrent liabilities 5,927 7,536 7,356\nStockholders’ equity 6,206 6,445 9,572\n110\n\n[3] convfinqa_ctx_150.pdf p.1\nfor approxi- sole controlling shareholder of Eletropaulo and EDF\nmately $40 million. Songas Limited owns the Songo would become the sole controlling shareholder of Light.\nSongo Gas-to-Electricity Project in Tanzania. Under the Upon consummation of the transaction, AES will begin\nterms of a project management agreement, the Company consolidating Eletropaulo’s operating results. The struc-\nhas assumed overall project management responsibility. ture and process by which this rationalization may be\nThe project consists of the refurbishment and operation of effected, and the resulting timing, have yet to be deter-\nfive natural gas wells in coastal Tanzania, the construction mined and will likely\n\n[4] finqa_test_ctx_321.pdf p.1\nTHEAESCORPORATION\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS—(Continued)\nDECEMBER31,2010,2009,AND2008\nRecoursedebtasofDecember31,2010isscheduledtoreachmaturityassetforthinthetablebelow:\nDecember31, AnnualMaturities\n(inmillions)\n2011 ....................................................... $ 463\n2012 ....................................................... —\n2013 ....................................................... —\n2014 ....................................................... 497\n2015 ....................................................... 500\nThereafter ................................................... 3,152\nTotalrecoursedebt............................................ $4,612\nRecourseDebtTra\n\n[5] finqa_test_ctx_321.pdf p.1\n• theinterestratemarginapplicabletotherevolvingcreditloanfacilityisnowbasedonthecreditrating\nassignedtotheloansunderthecreditagreement,withpricingcurrentlyatLIBOR+3.00%;\n• thereisanundrawnfeeof0.625%perannum;\n• theCompanymayincuracombinationofadditionaltermloanandrevolvercommitmentssolongas\ntotaltermloanandrevolvercommitments(includingthosecurrentlyoutstanding)donotexceed$1.4\nbillion;and\n• thenegativepledge(i.e.,acaponfirstliendebt)of$3.0billion.\nRecourseDebtCovenantsandGuarantees\nCertainoftheCompany’sobligationsundertheseniorsecuredcreditfacilityareguaranteedbyitsdirect\nsubsidiariesthroughwhichtheCompanyownsitsinterestsintheAESShadyPoint,AESHawaii,AESWarrior\nRunandAESEasternEnergybusinesses\nLabel:",
+      "input_tokens": 1163,
+      "output_tokens": 4,
+      "latency_seconds": 8.936376686004223
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the net change in revenue from 1998 to 1999 for AES Corporation, as reported in the 2000 financial review?\nEvidence:\n[1] convfinqa_ctx_150.pdf p.1\nAES 2000 FINANCIAL REVIEW\nIn May 2000, a subsidiary of the company acquired In December 2000, a subsidiary of the Company\nan additional 5% of the preferred, non-voting shares of entered into an agreement with EDF to jointly acquire an\nEletropaulo for approximately $90 million. In January additional 9.2% interest in Light, which is held by a sub-\n2000, 59% of the preferred non-voting shares were sidiary of Companhia Siderurgica Nacional (“CSN”).\nacquired for approximately $1 billion at auction from Pursuant to this transaction, the Company acquired an\nBNDES, the National Development Bank of Brazil. The additional 2.75% interest in Light for $114.6 million.\nprice established at auction was app\n\n[2] convfinqa_ctx_150.pdf p.1\nfor the Company’s investments in\n30% of the shares while EDF acquired the remainder. 50% or less owned investments accounted for using the\nWith the completion of this transaction, the Company equity method:\nowns approximately 21.14% of Light.\nAS OF AND FOR THE YEARS ENDED DECEMBER 31, 2000 1999 1998\nRevenues $6,241 $5,960 $8,091\nOperating income 1,989 1,839 2,079\nNet income 859 62 1,146\nCurrent assets 2,423 2,259 2,712\nNoncurrent assets 13,080 15,359 19,025\nCurrent liabilities 3,370 3,637 4,809\nNoncurrent liabilities 5,927 7,536 7,356\nStockholders’ equity 6,206 6,445 9,572\n110\n\n[3] convfinqa_ctx_150.pdf p.1\nfor approxi- sole controlling shareholder of Eletropaulo and EDF\nmately $40 million. Songas Limited owns the Songo would become the sole controlling shareholder of Light.\nSongo Gas-to-Electricity Project in Tanzania. Under the Upon consummation of the transaction, AES will begin\nterms of a project management agreement, the Company consolidating Eletropaulo’s operating results. The struc-\nhas assumed overall project management responsibility. ture and process by which this rationalization may be\nThe project consists of the refurbishment and operation of effected, and the resulting timing, have yet to be deter-\nfive natural gas wells in coastal Tanzania, the construction mined and will likely\n\n[4] finqa_test_ctx_321.pdf p.1\nTHEAESCORPORATION\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS—(Continued)\nDECEMBER31,2010,2009,AND2008\nRecoursedebtasofDecember31,2010isscheduledtoreachmaturityassetforthinthetablebelow:\nDecember31, AnnualMaturities\n(inmillions)\n2011 ....................................................... $ 463\n2012 ....................................................... —\n2013 ....................................................... —\n2014 ....................................................... 497\n2015 ....................................................... 500\nThereafter ................................................... 3,152\nTotalrecoursedebt............................................ $4,612\nRecourseDebtTra\n\n[5] finqa_test_ctx_321.pdf p.1\n• theinterestratemarginapplicabletotherevolvingcreditloanfacilityisnowbasedonthecreditrating\nassignedtotheloansunderthecreditagreement,withpricingcurrentlyatLIBOR+3.00%;\n• thereisanundrawnfeeof0.625%perannum;\n• theCompanymayincuracombinationofadditionaltermloanandrevolvercommitmentssolongas\ntotaltermloanandrevolvercommitments(includingthosecurrentlyoutstanding)donotexceed$1.4\nbillion;and\n• thenegativepledge(i.e.,acaponfirstliendebt)of$3.0billion.\nRecourseDebtCovenantsandGuarantees\nCertainoftheCompany’sobligationsundertheseniorsecuredcreditfacilityareguaranteedbyitsdirect\nsubsidiariesthroughwhichtheCompanyownsitsinterestsintheAESShadyPoint,AESHawaii,AESWarrior\nRunandAESEasternEnergybusinesses\nLabel:",
+      "input_tokens": 1168,
+      "output_tokens": 3,
+      "latency_seconds": 8.948618026995973
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the net change in revenue from 1998 to 1999 for AES Corporation, as reported in the 2000 financial review?\nEvidence:\n[1] convfinqa_ctx_150.pdf p.1\nAES 2000 FINANCIAL REVIEW\nIn May 2000, a subsidiary of the company acquired In December 2000, a subsidiary of the Company\nan additional 5% of the preferred, non-voting shares of entered into an agreement with EDF to jointly acquire an\nEletropaulo for approximately $90 million. In January additional 9.2% interest in Light, which is held by a sub-\n2000, 59% of the preferred non-voting shares were sidiary of Companhia Siderurgica Nacional (“CSN”).\nacquired for approximately $1 billion at auction from Pursuant to this transaction, the Company acquired an\nBNDES, the National Development Bank of Brazil. The additional 2.75% interest in Light for $114.6 million.\nprice established at auction was app\n\n[2] convfinqa_ctx_150.pdf p.1\nfor the Company’s investments in\n30% of the shares while EDF acquired the remainder. 50% or less owned investments accounted for using the\nWith the completion of this transaction, the Company equity method:\nowns approximately 21.14% of Light.\nAS OF AND FOR THE YEARS ENDED DECEMBER 31, 2000 1999 1998\nRevenues $6,241 $5,960 $8,091\nOperating income 1,989 1,839 2,079\nNet income 859 62 1,146\nCurrent assets 2,423 2,259 2,712\nNoncurrent assets 13,080 15,359 19,025\nCurrent liabilities 3,370 3,637 4,809\nNoncurrent liabilities 5,927 7,536 7,356\nStockholders’ equity 6,206 6,445 9,572\n110\n\n[3] convfinqa_ctx_150.pdf p.1\nfor approxi- sole controlling shareholder of Eletropaulo and EDF\nmately $40 million. Songas Limited owns the Songo would become the sole controlling shareholder of Light.\nSongo Gas-to-Electricity Project in Tanzania. Under the Upon consummation of the transaction, AES will begin\nterms of a project management agreement, the Company consolidating Eletropaulo’s operating results. The struc-\nhas assumed overall project management responsibility. ture and process by which this rationalization may be\nThe project consists of the refurbishment and operation of effected, and the resulting timing, have yet to be deter-\nfive natural gas wells in coastal Tanzania, the construction mined and will likely\n\n[4] finqa_test_ctx_321.pdf p.1\nTHEAESCORPORATION\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS—(Continued)\nDECEMBER31,2010,2009,AND2008\nRecoursedebtasofDecember31,2010isscheduledtoreachmaturityassetforthinthetablebelow:\nDecember31, AnnualMaturities\n(inmillions)\n2011 ....................................................... $ 463\n2012 ....................................................... —\n2013 ....................................................... —\n2014 ....................................................... 497\n2015 ....................................................... 500\nThereafter ................................................... 3,152\nTotalrecoursedebt............................................ $4,612\nRecourseDebtTra\n\n[5] finqa_test_ctx_321.pdf p.1\n• theinterestratemarginapplicabletotherevolvingcreditloanfacilityisnowbasedonthecreditrating\nassignedtotheloansunderthecreditagreement,withpricingcurrentlyatLIBOR+3.00%;\n• thereisanundrawnfeeof0.625%perannum;\n• theCompanymayincuracombinationofadditionaltermloanandrevolvercommitmentssolongas\ntotaltermloanandrevolvercommitments(includingthosecurrentlyoutstanding)donotexceed$1.4\nbillion;and\n• thenegativepledge(i.e.,acaponfirstliendebt)of$3.0billion.\nRecourseDebtCovenantsandGuarantees\nCertainoftheCompany’sobligationsundertheseniorsecuredcreditfacilityareguaranteedbyitsdirect\nsubsidiariesthroughwhichtheCompanyownsitsinterestsintheAESShadyPoint,AESHawaii,AESWarrior\nRunandAESEasternEnergybusinesses\nDraft:\nNet change in revenue from 1998 to 1999 = Revenue in 1999 - Revenue in 1998  \n= $5,960 - $8,091 = -$2,131  \n\nSource: convfinqa_ctx_150.pdf p.1  \n\nAnswer: -2131\nLabel:",
+      "input_tokens": 1277,
+      "output_tokens": 3,
+      "latency_seconds": 10.446395035003661
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "AES Corporation net change in revenue 1998 to 1999 2000 financial review",
+      "filters": {
+        "company": "AES Corporation"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_150::p1::c0::f173fa7025",
+        "convfinqa_ctx_150::p1::c2::0d685333bf",
+        "convfinqa_ctx_150::p1::c1::c1c407d22d",
+        "finqa_test_ctx_321::p1::c0::4ab59ce26e",
+        "finqa_test_ctx_321::p1::c1::dc2a60ed9f"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_150::p1::c0::f173fa7025",
+          "document_id": "convfinqa_ctx_150",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_150::p1::c0::f173fa7025",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_150::p1::c2::0d685333bf",
+          "document_id": "convfinqa_ctx_150",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 583,
+          "source_chunk_id": "convfinqa_ctx_150::p1::c2::0d685333bf",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_150::p1::c1::c1c407d22d",
+          "document_id": "convfinqa_ctx_150",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_150::p1::c1::c1c407d22d",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_321::p1::c0::4ab59ce26e",
+          "document_id": "finqa_test_ctx_321",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_321::p1::c0::4ab59ce26e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_321::p1::c1::dc2a60ed9f",
+          "document_id": "finqa_test_ctx_321",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_321::p1::c1::dc2a60ed9f",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the net change in revenue from 1998 to 1999 for AES Corporation, as reported in the 2000 financial review?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the net change in revenue from 1998 to 1999 for AES Corporation, as reported in the 2000 financial review?\nRetrieval query:",
+  "query_formulation_raw_output": "AES Corporation net change in revenue 1998 to 1999 2000 financial review",
+  "query_formulation_latency_seconds": 2.9693,
+  "query_formulation_input_tokens": 178,
+  "query_formulation_output_tokens": 25,
+  "query_formulation_trace": {
+    "original_question": "What is the net change in revenue from 1998 to 1999 for AES Corporation, as reported in the 2000 financial review?",
+    "retrieval_query": "AES Corporation net change in revenue 1998 to 1999 2000 financial review",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the net change in revenue from 1998 to 1999 for AES Corporation, as reported in the 2000 financial review?\nRetrieval query:",
+    "raw_output": "AES Corporation net change in revenue 1998 to 1999 2000 financial review",
+    "latency_seconds": 2.969274408002093,
+    "input_tokens": 178,
+    "output_tokens": 25,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "-2131.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/AES/2000/page_111.pdf | source_page=111 | context_id=convfinqa_ctx_150"
+}

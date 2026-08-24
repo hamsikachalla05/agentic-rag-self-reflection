@@ -1,0 +1,367 @@
+{
+  "question_id": "tatqa_test_9799",
+  "question": "What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?",
+  "retrieval_query": "average basic earnings per share AND Sanderson Farms AND fiscal years 2017 to 2019 AND 2019 annual report",
+  "metadata_filters": {
+    "company": "sanderson-farms",
+    "filing_type": "annual report"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c2::4477aaf21a",
+      "rank": 1,
+      "dense_score": 0.6629761457443237,
+      "bm25_score": 13.826716374774467,
+      "hybrid_score": 0.7774447090127589,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec"
+    },
+    {
+      "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c1::c7cae973c4",
+      "rank": 2,
+      "dense_score": 0.6512010097503662,
+      "bm25_score": 20.689085414251675,
+      "hybrid_score": 0.7074193414441723,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec"
+    },
+    {
+      "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c3::475a9e54f6",
+      "rank": 3,
+      "dense_score": 0.6652005910873413,
+      "bm25_score": 5.098644424242762,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec"
+    },
+    {
+      "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c0::849a7e3f28",
+      "rank": 4,
+      "dense_score": 0.6364914178848267,
+      "bm25_score": 20.504440872705473,
+      "hybrid_score": 0.3952626217137917,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec"
+    },
+    {
+      "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p2::c4::8bad1c118a",
+      "rank": 5,
+      "dense_score": null,
+      "bm25_score": 16.946535101466225,
+      "hybrid_score": 0.3039783335138794,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec"
+    }
+  ],
+  "answer": "Basic earnings per share for fiscal years 2017, 2018, and 2019:\n\n- 2017: $12.30  \n- 2018: $2.70  \n- 2019: $2.41  \n\nAverage = (12.30 + 2.70 + 2.41) / 3 = 17.41 / 3 = 5.8033...\n\nRounded to two decimal places: 5.80\n\nSource: a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1 (Basic earnings per share data for 2015–2019)\n\nAnswer: 5.80",
+  "latency_seconds": 124.4961,
+  "input_tokens": 10982,
+  "output_tokens": 247,
+  "total_tokens": 11229,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1409,
+  "llm_latency_seconds": 124.3515,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?\nLabel:",
+      "input_tokens": 106,
+      "output_tokens": 7,
+      "latency_seconds": 1.222626725997543
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?\nEvidence:\n[1] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n$ | — |  | — |  |  | 1,176,615\n[/TABLE]\n\n[TABLE]\nOct. 1 - Oct. 31, 2019 | 34,344 |  | $ | 154.81 |  | 34,344 |  |  | 1,176,615\n[/TABLE]\n\n[TABLE]\nNet sales | $ | 3,440,258 |  |  | $3,236,004 |  |  | $ | 3,342,226 |  |  | $ | 2,816,057 |  |  | $ | 2,803,480\nOperating income | 67,994 |  |  |  | 29,700 |  |  | 425,239 |  |  |  | 294,111 |  |  |  | 335,998 | \nNet income | 53,294 |  |  |  | 61,431 |  |  | 279,745 |  |  |  | 188,961 |  |  |  | 216,001 | \nBasic earnings per share | 2.41 |  |  |  | 2.70 |  |  | 12.30 |  |  |  | 8.37 |  |  |  | 9.52 | \nDiluted earnings per share | 2.41 |  |  |  | 2.70 |  |  | 12.30 |  |  |  | 8.37 |  |  |  | 9.52 | \nWorking capital | 365,430 |  |  |  | 367,600 |  |  |\n\n[2] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\nmillion shares of its common stock in open market\ntransactions or negotiated purchases, subject to market conditions, share price and other considerations. The\nauthorization will expire on May 31, 2021. During the fourth quarter of fiscal 2018, the Company purchased 823,385\nshares in open market transactions under this program. The Company’s repurchases of vested restricted stock to satisfy\ntax withholding obligations of its Stock Incentive Plan participants are not made under the 2018 general repurchase plan.\n3 Does not include vested restricted shares that may yet be repurchased under the Stock Incentive Plan as described in\nNote 1.\nItem 6. Selected Financial Data\nYear Ended October 31,\n20\n\n[3] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n-term debt, less current maturities | 55,000 |  |  |  | — |  |  | — |  |  |  | — |  |  |  | — | \nStockholders’ equity | 1,417,675 |  |  |  | 1,387,893 |  |  | 1,432,862 |  |  |  | 1,190,262 |  |  |  | 1,029,861 | \nCash dividends declared per share | $ | 1.28 |  |  | $ 1.28 |  |  | $ | 2.04 |  |  | $ | 1.90 |  |  | $ | 1.38\n[/TABLE]\n\n[4] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\nPART II\nItem 5. Market for the Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of\nEquity Securities.\nThe Company’s common stock is traded on the NASDAQ Stock Market LLC under the symbol SAFM.\nThe number of stockholders of record as of December 12, 2019, was 2,742. The number of beneficial owners of our\nstock is greater than the number of holders of record, and the exact number is unknown.\nThe amount of future common stock dividends will depend on our earnings, financial condition, capital requirements,\nthe effect a dividend would have on the Company's compliance with financial covenants and other factors, which will be\nconsidered by the Board of Directors on a qu\n\n[5] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.2\nVarious factors affecting the comparability of the information included in the table above are discussed in\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations.\nItem 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations\nCAUTIONARY STATEMENT REGARDING RISKS AND UNCERTAINTIES THAT MAY AFFECT FUTURE\nPERFORMANCE\nThis Annual Report, and other periodic reports filed by the Company under the Securities Exchange Act of 1934, as\namended (the \"Exchange Act\"), and other written or oral statements made by it or on its behalf, may include forward-looking\nstatements within the meaning of the \"Safe Harbor\" provisions of Section 27A of the\nLabel:",
+      "input_tokens": 1403,
+      "output_tokens": 4,
+      "latency_seconds": 11.65880407700024
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?\nEvidence:\n[1] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n$ | — |  | — |  |  | 1,176,615\n[/TABLE]\n\n[TABLE]\nOct. 1 - Oct. 31, 2019 | 34,344 |  | $ | 154.81 |  | 34,344 |  |  | 1,176,615\n[/TABLE]\n\n[TABLE]\nNet sales | $ | 3,440,258 |  |  | $3,236,004 |  |  | $ | 3,342,226 |  |  | $ | 2,816,057 |  |  | $ | 2,803,480\nOperating income | 67,994 |  |  |  | 29,700 |  |  | 425,239 |  |  |  | 294,111 |  |  |  | 335,998 | \nNet income | 53,294 |  |  |  | 61,431 |  |  | 279,745 |  |  |  | 188,961 |  |  |  | 216,001 | \nBasic earnings per share | 2.41 |  |  |  | 2.70 |  |  | 12.30 |  |  |  | 8.37 |  |  |  | 9.52 | \nDiluted earnings per share | 2.41 |  |  |  | 2.70 |  |  | 12.30 |  |  |  | 8.37 |  |  |  | 9.52 | \nWorking capital | 365,430 |  |  |  | 367,600 |  |  |\n\n[2] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\nmillion shares of its common stock in open market\ntransactions or negotiated purchases, subject to market conditions, share price and other considerations. The\nauthorization will expire on May 31, 2021. During the fourth quarter of fiscal 2018, the Company purchased 823,385\nshares in open market transactions under this program. The Company’s repurchases of vested restricted stock to satisfy\ntax withholding obligations of its Stock Incentive Plan participants are not made under the 2018 general repurchase plan.\n3 Does not include vested restricted shares that may yet be repurchased under the Stock Incentive Plan as described in\nNote 1.\nItem 6. Selected Financial Data\nYear Ended October 31,\n20\n\n[3] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n-term debt, less current maturities | 55,000 |  |  |  | — |  |  | — |  |  |  | — |  |  |  | — | \nStockholders’ equity | 1,417,675 |  |  |  | 1,387,893 |  |  | 1,432,862 |  |  |  | 1,190,262 |  |  |  | 1,029,861 | \nCash dividends declared per share | $ | 1.28 |  |  | $ 1.28 |  |  | $ | 2.04 |  |  | $ | 1.90 |  |  | $ | 1.38\n[/TABLE]\n\n[4] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\nPART II\nItem 5. Market for the Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of\nEquity Securities.\nThe Company’s common stock is traded on the NASDAQ Stock Market LLC under the symbol SAFM.\nThe number of stockholders of record as of December 12, 2019, was 2,742. The number of beneficial owners of our\nstock is greater than the number of holders of record, and the exact number is unknown.\nThe amount of future common stock dividends will depend on our earnings, financial condition, capital requirements,\nthe effect a dividend would have on the Company's compliance with financial covenants and other factors, which will be\nconsidered by the Board of Directors on a qu\n\n[5] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.2\nVarious factors affecting the comparability of the information included in the table above are discussed in\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations.\nItem 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations\nCAUTIONARY STATEMENT REGARDING RISKS AND UNCERTAINTIES THAT MAY AFFECT FUTURE\nPERFORMANCE\nThis Annual Report, and other periodic reports filed by the Company under the Securities Exchange Act of 1934, as\namended (the \"Exchange Act\"), and other written or oral statements made by it or on its behalf, may include forward-looking\nstatements within the meaning of the \"Safe Harbor\" provisions of Section 27A of the\nLabel:",
+      "input_tokens": 1408,
+      "output_tokens": 3,
+      "latency_seconds": 12.671940848005761
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?\nEvidence:\n[1] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n$ | — |  | — |  |  | 1,176,615\n[/TABLE]\n\n[TABLE]\nOct. 1 - Oct. 31, 2019 | 34,344 |  | $ | 154.81 |  | 34,344 |  |  | 1,176,615\n[/TABLE]\n\n[TABLE]\nNet sales | $ | 3,440,258 |  |  | $3,236,004 |  |  | $ | 3,342,226 |  |  | $ | 2,816,057 |  |  | $ | 2,803,480\nOperating income | 67,994 |  |  |  | 29,700 |  |  | 425,239 |  |  |  | 294,111 |  |  |  | 335,998 | \nNet income | 53,294 |  |  |  | 61,431 |  |  | 279,745 |  |  |  | 188,961 |  |  |  | 216,001 | \nBasic earnings per share | 2.41 |  |  |  | 2.70 |  |  | 12.30 |  |  |  | 8.37 |  |  |  | 9.52 | \nDiluted earnings per share | 2.41 |  |  |  | 2.70 |  |  | 12.30 |  |  |  | 8.37 |  |  |  | 9.52 | \nWorking capital | 365,430 |  |  |  | 367,600 |  |  |\n\n[2] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\nmillion shares of its common stock in open market\ntransactions or negotiated purchases, subject to market conditions, share price and other considerations. The\nauthorization will expire on May 31, 2021. During the fourth quarter of fiscal 2018, the Company purchased 823,385\nshares in open market transactions under this program. The Company’s repurchases of vested restricted stock to satisfy\ntax withholding obligations of its Stock Incentive Plan participants are not made under the 2018 general repurchase plan.\n3 Does not include vested restricted shares that may yet be repurchased under the Stock Incentive Plan as described in\nNote 1.\nItem 6. Selected Financial Data\nYear Ended October 31,\n20\n\n[3] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n-term debt, less current maturities | 55,000 |  |  |  | — |  |  | — |  |  |  | — |  |  |  | — | \nStockholders’ equity | 1,417,675 |  |  |  | 1,387,893 |  |  | 1,432,862 |  |  |  | 1,190,262 |  |  |  | 1,029,861 | \nCash dividends declared per share | $ | 1.28 |  |  | $ 1.28 |  |  | $ | 2.04 |  |  | $ | 1.90 |  |  | $ | 1.38\n[/TABLE]\n\n[4] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\nPART II\nItem 5. Market for the Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of\nEquity Securities.\nThe Company’s common stock is traded on the NASDAQ Stock Market LLC under the symbol SAFM.\nThe number of stockholders of record as of December 12, 2019, was 2,742. The number of beneficial owners of our\nstock is greater than the number of holders of record, and the exact number is unknown.\nThe amount of future common stock dividends will depend on our earnings, financial condition, capital requirements,\nthe effect a dividend would have on the Company's compliance with financial covenants and other factors, which will be\nconsidered by the Board of Directors on a qu\n\n[5] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.2\nVarious factors affecting the comparability of the information included in the table above are discussed in\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations.\nItem 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations\nCAUTIONARY STATEMENT REGARDING RISKS AND UNCERTAINTIES THAT MAY AFFECT FUTURE\nPERFORMANCE\nThis Annual Report, and other periodic reports filed by the Company under the Securities Exchange Act of 1934, as\namended (the \"Exchange Act\"), and other written or oral statements made by it or on its behalf, may include forward-looking\nstatements within the meaning of the \"Safe Harbor\" provisions of Section 27A of the\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1449,
+      "output_tokens": 4,
+      "latency_seconds": 12.261470805999124
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?\nEvidence:\n[1] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n650,817 |  |  |  | 465,135 |  |  |  | 396,834 | \nTotal assets | 1,774,134 |  |  |  | 1,659,440 |  |  | 1,733,243 |  |  |  | 1,422,700 |  |  |  | 1,246,752 | \nLong-term debt, less current maturities | 55,000 |  |  |  | — |  |  | — |  |  |  | — |  |  |  | — | \nStockholders’ equity |\n\n[2] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n19 2018 2017 2016 2015\n(In thousands, except per share data)\nNet sales $3,440,258 $3,236,004 $3,342,226 $2,816,057 $2,803,480\nOperating income 67,994 29,700 425,239 294,111 335,998\nNet income 53,294 61,431 279,745 188,961 216,001\nBasic earnings per share 2.41 2.70 12.30 8.37 9.52\nDiluted earnings per share 2.41 2.70 12.30 8.37 9.52\nWorking capital 365,430 367,600 650,817 465,135 396,834\nTotal assets 1,774,134 1,659,440 1,733,243 1,422,700 1,246,752\nLong-term debt, less current maturities 55,000 — — — —\nStockholders’ equity 1,417,675 1,387,893 1,432,862 1,190,262 1,029,861\nCash dividends declared per share $ 1.28 $ 1.28 $ 2.04 $ 1.90 $ 1.38\n28\n\n[TABLE]\nAug. 1 - Aug. 31, 2019 | — |  | $ | — |\n\n[3] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n-term debt, less current maturities | 55,000 |  |  |  | — |  |  | — |  |  |  | — |  |  |  | — | \nStockholders’ equity | 1,417,675 |  |  |  | 1,387,893 |  |  | 1,432,862 |  |  |  | 1,190,262 |  |  |  | 1,029,861 | \nCash dividends declared per share | $ | 1.28 |  |  | $ 1.28 |  |  | $ | 2.04 |  |  | $ | 1.90 |  |  | $ | 1.38\n[/TABLE]\n\n[4] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\narterly basis.\nDuring its fourth fiscal quarter, the Company repurchased shares of its common stock as follows:\n(d) Maximum\nNumber (or\n(c) Total Number Approximate\nof Shares Dollar Value) of\nPurchased as Part Shares that May\n(a) Total Number of Publicly Yet Be Purchased\nof Shares (b) Average Price Announced Plans Under the Plans or\nPeriod Purchased(1) Paid per Share or Programs(2) Programs(2) (3)\nAug. 1 - Aug. 31, 2019 — $ — — 1,176,615\nSep. 1 - Sep. 30, 2019 901 $ 151.33 901 1,176,615\nOct. 1 - Oct. 31, 2019 34,344 $ 154.81 34,344 1,176,615\nTotal 35,245 $ 154.72 35,245 1,176,615\n1 All purchases were made pursuant to the Company's Stock Incentive Plan, as amended and restated on February 11,\n\n[5] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.2\nSecurities Act of 1933, as amended, and\nSection 21E of the Exchange Act. These forward-looking statements are based on a number of assumptions about future\nevents and are subject to various risks, uncertainties and other factors that may cause actual results to differ materially from\nthe views, beliefs and estimates expressed in such statements. These risks, uncertainties and other factors include, but are not\nlimited to, the risks described in the \"Risk Factors\" section of this Annual Report, and to the following:\n(1) Changes in the market price for the Company’s finished products and feed grains, both of which may fluctuate\nsubstantially and exhibit cyclical characteristics typically asso\nLabel:",
+      "input_tokens": 1546,
+      "output_tokens": 3,
+      "latency_seconds": 12.959236992006481
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?\nEvidence:\n[1] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n650,817 |  |  |  | 465,135 |  |  |  | 396,834 | \nTotal assets | 1,774,134 |  |  |  | 1,659,440 |  |  | 1,733,243 |  |  |  | 1,422,700 |  |  |  | 1,246,752 | \nLong-term debt, less current maturities | 55,000 |  |  |  | — |  |  | — |  |  |  | — |  |  |  | — | \nStockholders’ equity |\n\n[2] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n19 2018 2017 2016 2015\n(In thousands, except per share data)\nNet sales $3,440,258 $3,236,004 $3,342,226 $2,816,057 $2,803,480\nOperating income 67,994 29,700 425,239 294,111 335,998\nNet income 53,294 61,431 279,745 188,961 216,001\nBasic earnings per share 2.41 2.70 12.30 8.37 9.52\nDiluted earnings per share 2.41 2.70 12.30 8.37 9.52\nWorking capital 365,430 367,600 650,817 465,135 396,834\nTotal assets 1,774,134 1,659,440 1,733,243 1,422,700 1,246,752\nLong-term debt, less current maturities 55,000 — — — —\nStockholders’ equity 1,417,675 1,387,893 1,432,862 1,190,262 1,029,861\nCash dividends declared per share $ 1.28 $ 1.28 $ 2.04 $ 1.90 $ 1.38\n28\n\n[TABLE]\nAug. 1 - Aug. 31, 2019 | — |  | $ | — |\n\n[3] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\n-term debt, less current maturities | 55,000 |  |  |  | — |  |  | — |  |  |  | — |  |  |  | — | \nStockholders’ equity | 1,417,675 |  |  |  | 1,387,893 |  |  | 1,432,862 |  |  |  | 1,190,262 |  |  |  | 1,029,861 | \nCash dividends declared per share | $ | 1.28 |  |  | $ 1.28 |  |  | $ | 2.04 |  |  | $ | 1.90 |  |  | $ | 1.38\n[/TABLE]\n\n[4] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\narterly basis.\nDuring its fourth fiscal quarter, the Company repurchased shares of its common stock as follows:\n(d) Maximum\nNumber (or\n(c) Total Number Approximate\nof Shares Dollar Value) of\nPurchased as Part Shares that May\n(a) Total Number of Publicly Yet Be Purchased\nof Shares (b) Average Price Announced Plans Under the Plans or\nPeriod Purchased(1) Paid per Share or Programs(2) Programs(2) (3)\nAug. 1 - Aug. 31, 2019 — $ — — 1,176,615\nSep. 1 - Sep. 30, 2019 901 $ 151.33 901 1,176,615\nOct. 1 - Oct. 31, 2019 34,344 $ 154.81 34,344 1,176,615\nTotal 35,245 $ 154.72 35,245 1,176,615\n1 All purchases were made pursuant to the Company's Stock Incentive Plan, as amended and restated on February 11,\n\n[5] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.2\nSecurities Act of 1933, as amended, and\nSection 21E of the Exchange Act. These forward-looking statements are based on a number of assumptions about future\nevents and are subject to various risks, uncertainties and other factors that may cause actual results to differ materially from\nthe views, beliefs and estimates expressed in such statements. These risks, uncertainties and other factors include, but are not\nlimited to, the risks described in the \"Risk Factors\" section of this Annual Report, and to the following:\n(1) Changes in the market price for the Company’s finished products and feed grains, both of which may fluctuate\nsubstantially and exhibit cyclical characteristics typically asso\nDraft:\nBasic earnings per share for fiscal years 2017, 2018, and 2019:\n\n- 2017: $12.30  \n- 2018: $2.70  \n- 2019: $2.41  \n\nAverage = (12.30 + 2.70 + 2.41) / 3 = 17.41 / 3 = 5.8033...\n\nRounded to two decimal places: 5.80\n\nSource: a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1 (Basic earnings per share data for 2015–2019)\n\nAnswer: 5.80\nLabel:",
+      "input_tokens": 1757,
+      "output_tokens": 3,
+      "latency_seconds": 16.262333272999967
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "average basic earnings per share AND Sanderson Farms AND fiscal years 2017 to 2019 AND 2019 annual report",
+      "filters": {
+        "company": "sanderson-farms",
+        "filing_type": "annual report"
+      },
+      "chunk_ids": [
+        "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c2::4477aaf21a",
+        "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c1::c7cae973c4",
+        "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c3::475a9e54f6",
+        "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c0::849a7e3f28",
+        "a38d13377f754ca4beb5ed5cc9b5c1ec::p2::c4::8bad1c118a"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c2::4477aaf21a",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c2::4477aaf21a",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c1::c7cae973c4",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c1::c7cae973c4",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c3::475a9e54f6",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 333,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c3::475a9e54f6",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c0::849a7e3f28",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c0::849a7e3f28",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p2::c4::8bad1c118a",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p2::c4::8bad1c118a",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c2::4477aaf21a",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 982,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c2::4477aaf21a",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c1::c7cae973c4",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c1::c7cae973c4",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c3::475a9e54f6",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 333,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c3::475a9e54f6",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c0::849a7e3f28",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 4,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c0::849a7e3f28",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p2::c4::8bad1c118a",
+          "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec",
+          "rank": 5,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p2::c4::8bad1c118a",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?\nRetrieval query:",
+  "query_formulation_raw_output": "average basic earnings per share AND Sanderson Farms AND fiscal years 2017 to 2019 AND 2019 annual report",
+  "query_formulation_latency_seconds": 4.1804,
+  "query_formulation_input_tokens": 183,
+  "query_formulation_output_tokens": 32,
+  "query_formulation_trace": {
+    "original_question": "What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?",
+    "retrieval_query": "average basic earnings per share AND Sanderson Farms AND fiscal years 2017 to 2019 AND 2019 annual report",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the average basic earnings per share for the fiscal years 2017 to 2019 for Sanderson Farms, as reported in the 2019 annual report?\nRetrieval query:",
+    "raw_output": "average basic earnings per share AND Sanderson Farms AND fiscal years 2017 to 2019 AND 2019 annual report",
+    "latency_seconds": 4.180362913000863,
+    "input_tokens": 183,
+    "output_tokens": 32,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "5.8",
+  "gold_evidence_reference": "TAT-DQA | raw/a38d13377f754ca4beb5ed5cc9b5c1ec.pdf | context_id=a38d13377f754ca4beb5ed5cc9b5c1ec"
+}

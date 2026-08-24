@@ -1,0 +1,101 @@
+{
+  "n_questions": 120,
+  "log_dir": "/workspace/logs/t2-ragbench-final-120-agentic_20260823T050108Z",
+  "evaluation": {
+    "n": 120,
+    "mrr": 0.9173611111111111,
+    "recall_at_k": {
+      "1": 0.8916666666666667,
+      "3": 0.9416666666666667,
+      "5": 0.95,
+      "10": 0.95
+    },
+    "hit_rate": 0.95
+  },
+  "answer_correctness": {
+    "accuracy": 0.375,
+    "n_correct": 45,
+    "n": 120,
+    "gold_field": "program_answer (canonical); original_answer accepted as equivalent surface form"
+  },
+  "by_dataset": {
+    "ConvFinQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.89375,
+        "recall_at_k": {
+          "1": 0.85,
+          "3": 0.925,
+          "5": 0.95,
+          "10": 0.95
+        },
+        "hit_rate": 0.95
+      },
+      "answer_correctness": {
+        "accuracy": 0.375,
+        "n": 40,
+        "n_correct": 15
+      },
+      "latency": {
+        "mean_seconds": 16.70888
+      },
+      "tokens": {
+        "mean_total": 1229.9
+      }
+    },
+    "FinQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.8833333333333334,
+        "recall_at_k": {
+          "1": 0.85,
+          "3": 0.925,
+          "5": 0.925,
+          "10": 0.925
+        },
+        "hit_rate": 0.925
+      },
+      "answer_correctness": {
+        "accuracy": 0.3,
+        "n": 40,
+        "n_correct": 12
+      },
+      "latency": {
+        "mean_seconds": 17.742089999999997
+      },
+      "tokens": {
+        "mean_total": 1202.725
+      }
+    },
+    "TAT-DQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.975,
+        "recall_at_k": {
+          "1": 0.975,
+          "3": 0.975,
+          "5": 0.975,
+          "10": 0.975
+        },
+        "hit_rate": 0.975
+      },
+      "answer_correctness": {
+        "accuracy": 0.45,
+        "n": 40,
+        "n_correct": 18
+      },
+      "latency": {
+        "mean_seconds": 22.455914999999997
+      },
+      "tokens": {
+        "mean_total": 1376.45
+      }
+    }
+  },
+  "rate_limit": {
+    "retries": 0,
+    "waits": 0,
+    "wait_seconds": 0.0,
+    "note": "llm_latency_seconds is generate_content time only and excludes rate-limit waits. latency_seconds is end-to-end agent.answer() wall time and includes pacing/429 waits."
+  }
+}

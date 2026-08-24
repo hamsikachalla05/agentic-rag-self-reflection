@@ -1,0 +1,307 @@
+{
+  "question_id": "finqa_test_628",
+  "question": "In the 2018 PPG Annual Report, are the environmental reserves for New Jersey Chrome, glass and chemical, and other contingencies combined greater than the asbestos-related claim reserves established by PPG Industries?",
+  "retrieval_query": "entities: PPG Industries, New Jersey Chrome, glass and chemical, asbestos-related claim reserves, environmental reserves, other contingencies; year: 2018; financial concept: reserves comparison; numerical information: none",
+  "metadata_filters": {
+    "year": 2018,
+    "company": "PPG Industries",
+    "filing_type": "annual report"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_24::p1::c0::ce494de875",
+      "rank": 1,
+      "dense_score": 0.7831931114196777,
+      "bm25_score": 40.407474217989254,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_24"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_24::p1::c2::c4fd56d0fc",
+      "rank": 2,
+      "dense_score": 0.7708158493041992,
+      "bm25_score": 77.41833935626049,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_24"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_24::p1::c1::2adfceca1c",
+      "rank": 3,
+      "dense_score": 0.7711963057518005,
+      "bm25_score": 65.66096716476783,
+      "hybrid_score": 0.29137358972925315,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_24"
+    }
+  ],
+  "answer": "Environmental reserves (New Jersey Chrome, glass and chemical, and other contingencies) in 2018: $151 + $90 + $50 = $291 million  \nAsbestos-related claim reserves: $180 million  \n\n$291 > $180  \n\nAnswer: yes",
+  "latency_seconds": 53.8268,
+  "input_tokens": 3878,
+  "output_tokens": 217,
+  "total_tokens": 4095,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1512,
+  "llm_latency_seconds": 53.667,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: In the 2018 PPG Annual Report, are the environmental reserves for New Jersey Chrome, glass and chemical, and other contingencies combined greater than the asbestos-related claim reserves established by PPG Industries?\nLabel:",
+      "input_tokens": 109,
+      "output_tokens": 7,
+      "latency_seconds": 1.1297798859959585
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: In the 2018 PPG Annual Report, are the environmental reserves for New Jersey Chrome, glass and chemical, and other contingencies combined greater than the asbestos-related claim reserves established by PPG Industries?\nEvidence:\n[1] finqa_test_ctx_24.pdf p.1\nNotes to the Consolidated Financial Statements\nCurrent open and active claims post-Pittsburgh Corning bankruptcy\nThe Company is aware of approximately 460 open and active asbestos-related claims pending against the Company and\ncertain of its subsidiaries. These claims consist primarily of non-PC Relationship Claims and claims against a subsidiary of\nPPG. The Company is defending the remaining open and active claims vigorously.\nSince April 1, 2013, a subsidiary of PPG has been implicated in claims alleging death or injury caused by asbestos-containing\nproducts manufactured, distributed or sold by a North American architectural coatings business or its predecessors which\nwas acquired by PPG. A\n\n[2] finqa_test_ctx_24.pdf p.1\nin Jersey City, N.J. (“New Jersey Chrome”) and for other environmental contingencies, including\nNational Priority List sites and legacy glass and chemical manufacturing sites. These reserves are reported as Accounts\npayable and accrued liabilities and Other liabilities in the accompanying consolidated balance sheet.\nEnvironmental Reserves\n($ in millions) 2018 2017\nNew Jersey Chrome $151 $136\nGlass and chemical 90 71\nOther 50 51\nTotal $291 $258\nCurrent Portion $105 $73\n2018 PPG ANNUAL REPORT AND FORM 10-K 83\n\n[TABLE]\nNew Jersey Chrome | $151 |  | $136\n[/TABLE]\n\n[TABLE]\nOther | 50 |  | 51\n[/TABLE]\n\n[TABLE]\nCurrent Portion | $105 |  | $73\n[/TABLE]\n\n[3] finqa_test_ctx_24.pdf p.1\nits nature is subject to many uncertainties that may change over time,\nincluding (i) the ultimate number of claims filed; (ii) the amounts required to resolve both currently known and future unknown\nclaims; (iii) the amount of insurance, if any, available to cover such claims; (iv) the unpredictable aspects of the litigation\nprocess, including a changing trial docket and the jurisdictions in which trials are scheduled; (v) the outcome of any trials,\nincluding potential judgments or jury verdicts; (vi) the lack of specific information in many cases concerning exposure for\nwhich PPG is allegedly responsible, and the claimants’ alleged diseases resulting from such exposure; and (vii) potential\nLabel:",
+      "input_tokens": 638,
+      "output_tokens": 4,
+      "latency_seconds": 5.078727521002293
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: In the 2018 PPG Annual Report, are the environmental reserves for New Jersey Chrome, glass and chemical, and other contingencies combined greater than the asbestos-related claim reserves established by PPG Industries?\nEvidence:\n[1] finqa_test_ctx_24.pdf p.1\nNotes to the Consolidated Financial Statements\nCurrent open and active claims post-Pittsburgh Corning bankruptcy\nThe Company is aware of approximately 460 open and active asbestos-related claims pending against the Company and\ncertain of its subsidiaries. These claims consist primarily of non-PC Relationship Claims and claims against a subsidiary of\nPPG. The Company is defending the remaining open and active claims vigorously.\nSince April 1, 2013, a subsidiary of PPG has been implicated in claims alleging death or injury caused by asbestos-containing\nproducts manufactured, distributed or sold by a North American architectural coatings business or its predecessors which\nwas acquired by PPG. A\n\n[2] finqa_test_ctx_24.pdf p.1\nin Jersey City, N.J. (“New Jersey Chrome”) and for other environmental contingencies, including\nNational Priority List sites and legacy glass and chemical manufacturing sites. These reserves are reported as Accounts\npayable and accrued liabilities and Other liabilities in the accompanying consolidated balance sheet.\nEnvironmental Reserves\n($ in millions) 2018 2017\nNew Jersey Chrome $151 $136\nGlass and chemical 90 71\nOther 50 51\nTotal $291 $258\nCurrent Portion $105 $73\n2018 PPG ANNUAL REPORT AND FORM 10-K 83\n\n[TABLE]\nNew Jersey Chrome | $151 |  | $136\n[/TABLE]\n\n[TABLE]\nOther | 50 |  | 51\n[/TABLE]\n\n[TABLE]\nCurrent Portion | $105 |  | $73\n[/TABLE]\n\n[3] finqa_test_ctx_24.pdf p.1\nits nature is subject to many uncertainties that may change over time,\nincluding (i) the ultimate number of claims filed; (ii) the amounts required to resolve both currently known and future unknown\nclaims; (iii) the amount of insurance, if any, available to cover such claims; (iv) the unpredictable aspects of the litigation\nprocess, including a changing trial docket and the jurisdictions in which trials are scheduled; (v) the outcome of any trials,\nincluding potential judgments or jury verdicts; (vi) the lack of specific information in many cases concerning exposure for\nwhich PPG is allegedly responsible, and the claimants’ alleged diseases resulting from such exposure; and (vii) potential\nDraft:\nEnvironmental reserves (New Jersey Chrome, glass and chemical, and other contingencies) in 2018: $151 + $90 + $50 = $291 million  \nAsbestos-related claim reserves: Not explicitly stated in the evidence.  \n\nThe evidence does not provide the amount of asbestos-related claim reserves established by PPG Industries.  \n\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 759,
+      "output_tokens": 4,
+      "latency_seconds": 6.803927060995193
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: In the 2018 PPG Annual Report, are the environmental reserves for New Jersey Chrome, glass and chemical, and other contingencies combined greater than the asbestos-related claim reserves established by PPG Industries?\nEvidence:\n[1] finqa_test_ctx_24.pdf p.1\nll such claims have been either served upon or tendered to the seller for defense and indemnity\npursuant to obligations undertaken by the seller in connection with the Company’s purchase of the North American architectural\ncoatings business. The seller has accepted the defense of these claims subject to the terms of various agreements between\nthe Company and the seller. The seller’s defense and indemnity obligations in connection with newly filed claims ceased\nwith respect to claims filed after April 1, 2018.\nPPG has established reserves totaling approximately $180 million for asbestos-related claims that would not be channeled\nto the Trust which, based on presently available information, we\n\n[2] finqa_test_ctx_24.pdf p.1\nin Jersey City, N.J. (“New Jersey Chrome”) and for other environmental contingencies, including\nNational Priority List sites and legacy glass and chemical manufacturing sites. These reserves are reported as Accounts\npayable and accrued liabilities and Other liabilities in the accompanying consolidated balance sheet.\nEnvironmental Reserves\n($ in millions) 2018 2017\nNew Jersey Chrome $151 $136\nGlass and chemical 90 71\nOther 50 51\nTotal $291 $258\nCurrent Portion $105 $73\n2018 PPG ANNUAL REPORT AND FORM 10-K 83\n\n[TABLE]\nNew Jersey Chrome | $151 |  | $136\n[/TABLE]\n\n[TABLE]\nOther | 50 |  | 51\n[/TABLE]\n\n[TABLE]\nCurrent Portion | $105 |  | $73\n[/TABLE]\n\n[3] finqa_test_ctx_24.pdf p.1\nchanges in applicable federal and/or state tort liability law. All of these factors may have a material effect upon future asbestos-\nrelated liability estimates. As a potential offset to any future asbestos financial exposure, under the PC plan of reorganization\nPPG retained, for its own account, the right to pursue insurance coverage from certain of its historical insurers that did not\nparticipate in the PC plan of reorganization. While the ultimate outcome of PPG’s asbestos litigation cannot be predicted\nwith certainty, PPG believes that any financial exposure resulting from its asbestos-related claims will not have a material\nadverse effect on PPG’s consolidated financial position, liquid\nDraft:\nEnvironmental reserves (New Jersey Chrome, glass and chemical, and other contingencies) in 2018: $151 + $90 + $50 = $291 million  \nAsbestos-related claim reserves: $180 million  \n\n$291 > $180  \n\nAnswer: yes\nLabel:",
+      "input_tokens": 733,
+      "output_tokens": 3,
+      "latency_seconds": 5.862434825001401
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "entities: PPG Industries, New Jersey Chrome, glass and chemical, asbestos-related claim reserves, environmental reserves, other contingencies; year: 2018; financial concept: reserves comparison; numerical information: none",
+      "filters": {
+        "year": 2018,
+        "company": "PPG Industries",
+        "filing_type": "annual report"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_24::p1::c0::ce494de875",
+        "finqa_test_ctx_24::p1::c2::c4fd56d0fc",
+        "finqa_test_ctx_24::p1::c1::2adfceca1c"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_24::p1::c0::ce494de875",
+          "document_id": "finqa_test_ctx_24",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_24::p1::c0::ce494de875",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_24::p1::c2::c4fd56d0fc",
+          "document_id": "finqa_test_ctx_24",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 652,
+          "source_chunk_id": "finqa_test_ctx_24::p1::c2::c4fd56d0fc",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_24::p1::c1::2adfceca1c",
+          "document_id": "finqa_test_ctx_24",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_24::p1::c1::2adfceca1c",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_24::p1::c0::ce494de875",
+          "document_id": "finqa_test_ctx_24",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_24::p1::c0::ce494de875",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_24::p1::c2::c4fd56d0fc",
+          "document_id": "finqa_test_ctx_24",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 652,
+          "source_chunk_id": "finqa_test_ctx_24::p1::c2::c4fd56d0fc",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_24::p1::c1::2adfceca1c",
+          "document_id": "finqa_test_ctx_24",
+          "rank": 3,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_24::p1::c1::2adfceca1c",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "In the 2018 PPG Annual Report, are the environmental reserves for New Jersey Chrome, glass and chemical, and other contingencies combined greater than the asbestos-related claim reserves established by PPG Industries?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the 2018 PPG Annual Report, are the environmental reserves for New Jersey Chrome, glass and chemical, and other contingencies combined greater than the asbestos-related claim reserves established by PPG Industries?\nRetrieval query:",
+  "query_formulation_raw_output": "entities: PPG Industries, New Jersey Chrome, glass and chemical, asbestos-related claim reserves, environmental reserves, other contingencies; year: 2018; financial concept: reserves comparison; numerical information: none",
+  "query_formulation_latency_seconds": 6.2855,
+  "query_formulation_input_tokens": 186,
+  "query_formulation_output_tokens": 45,
+  "query_formulation_trace": {
+    "original_question": "In the 2018 PPG Annual Report, are the environmental reserves for New Jersey Chrome, glass and chemical, and other contingencies combined greater than the asbestos-related claim reserves established by PPG Industries?",
+    "retrieval_query": "entities: PPG Industries, New Jersey Chrome, glass and chemical, asbestos-related claim reserves, environmental reserves, other contingencies; year: 2018; financial concept: reserves comparison; numerical information: none",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the 2018 PPG Annual Report, are the environmental reserves for New Jersey Chrome, glass and chemical, and other contingencies combined greater than the asbestos-related claim reserves established by PPG Industries?\nRetrieval query:",
+    "raw_output": "entities: PPG Industries, New Jersey Chrome, glass and chemical, asbestos-related claim reserves, environmental reserves, other contingencies; year: 2018; financial concept: reserves comparison; numerical information: none",
+    "latency_seconds": 6.2855493940005545,
+    "input_tokens": 186,
+    "output_tokens": 45,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "471.0",
+  "gold_evidence_reference": "FinQA | pdf/PPG/2018/page_85.pdf | source_page=85 | context_id=finqa_test_ctx_24"
+}

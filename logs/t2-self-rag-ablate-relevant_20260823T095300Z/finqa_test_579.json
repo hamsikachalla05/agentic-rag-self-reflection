@@ -1,0 +1,283 @@
+{
+  "question_id": "finqa_test_579",
+  "question": "What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?",
+  "retrieval_query": "Devon Energy aggregate ownership interests in EnLink tax rate net earnings gain 2018 financial statements supplementary data",
+  "metadata_filters": {
+    "year": 2018,
+    "company": "Devon Energy"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_346::p1::c0::30beb4da3d",
+      "rank": 1,
+      "dense_score": 0.7350174188613892,
+      "bm25_score": 40.95741132068043,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_346"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 18.8113,
+  "input_tokens": 2650,
+  "output_tokens": 81,
+  "total_tokens": 2731,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1373,
+  "llm_latency_seconds": 21.7234,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?\nLabel:",
+      "input_tokens": 108,
+      "output_tokens": 7,
+      "latency_seconds": 1.063951944001019
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?\nEvidence:\n[1] finqa_test_ctx_346.pdf p.1\nThe remaining change in other expense was\ndriven primarily by changes on foreign currency For discussion on income taxes, see Note 8 in\nexchange instruments as further discussed in Note 7 in “Item 8. Financial Statements and Supplementary Data”\n“Item 8. Financial Statements and Supplementary Data” of this report.\nof this report.\nDiscontinued Operations\nIncome Taxes\nDiscontinued operations net earnings increased\nprimarily due to the gain on the sale of our aggregate\n2018 2017 ownership interests in EnLink and the General Partner\nCurrent expense (benefit) $ (70) $ 112\nof $2.6 billion ($2.2 billion after-tax). For discussion on\nDeferred expense (benefit) 226 (97) discontinued operations, see No\nLabel:",
+      "input_tokens": 296,
+      "output_tokens": 3,
+      "latency_seconds": 2.188711434995639
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?\nEvidence:\n[1] finqa_test_ctx_346.pdf p.1\nte 19 in “Item 8.\nTotal expense $ 156 $ 15 Financial Statements and Supplementary Data” of this\nEffective income tax rate 17% 2% report” of this report.\nResults of Operations – 2017 vs. 2016\nThe graph below shows the change in net earnings from 2016 to 2017. The material changes are further\ndiscussed by category on the following pages. To facilitate the review, these numbers are being presented before\nconsideration of earnings attributable to noncontrolling interests.\nNet Earnings\n$1,204 $1,078\n($1,458) $1,308 $1 ($165) $63 ($4) $400 ($397) $126\n2016 Upstream Marketing Exploration DD&A G&A Financing Other (1) Income Discontinued 2017\noperations operations expenses costs, net taxes operations\nLabel:",
+      "input_tokens": 343,
+      "output_tokens": 3,
+      "latency_seconds": 1.8409493069993914
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?\nEvidence:\n[1] finqa_test_ctx_346.pdf p.1\n(1) Other in the table above includes asset impairments, asset dispositions, restructuring and transaction costs and other expenses.\nThe graph below presents the drivers of the upstream operations change presented above, with additional\ndetails and discussion of the drivers following the graph.\nUpstream Operations\n$358 ($18) $3,484\n$$11,339955\n$$22,117766 (($$442277))\n2016 Production Field prices Hedging 2017\nvolumes expenses\n35\nLabel:",
+      "input_tokens": 250,
+      "output_tokens": 3,
+      "latency_seconds": 1.36733983400336
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?\nEvidence:\n[1] finqa_test_ctx_346.pdf p.1\n(1) Other in the table above includes asset impairments, asset dispositions, restructuring and transaction costs and other expenses.\nThe graph below presents the drivers of the upstream operations change presented above, with additional\ndetails and discussion of the drivers following the graph.\nUpstream Operations\n$358 ($18) $3,484\n$$11,339955\n$$22,117766 (($$442277))\n2016 Production Field prices Hedging 2017\nvolumes expenses\n35\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 291,
+      "output_tokens": 4,
+      "latency_seconds": 2.3449595509955543
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?\nEvidence:\n[1] finqa_test_ctx_346.pdf p.1\n(1) Other in the table above includes asset impairments, asset dispositions, restructuring and transaction costs and other expenses.\nThe graph below presents the drivers of the upstream operations change presented above, with additional\ndetails and discussion of the drivers following the graph.\nUpstream Operations\n$358 ($18) $3,484\n$$11,339955\n$$22,117766 (($$442277))\n2016 Production Field prices Hedging 2017\nvolumes expenses\n35\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 274,
+      "output_tokens": 11,
+      "latency_seconds": 3.0516166640009033
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?\nEvidence:\n[1] finqa_test_ctx_346.pdf p.1\n(1) Other in the table above includes asset impairments, asset dispositions, restructuring and transaction costs and other expenses.\nThe graph below presents the drivers of the upstream operations change presented above, with additional\ndetails and discussion of the drivers following the graph.\nUpstream Operations\n$358 ($18) $3,484\n$$11,339955\n$$22,117766 (($$442277))\n2016 Production Field prices Hedging 2017\nvolumes expenses\n35\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 291,
+      "output_tokens": 4,
+      "latency_seconds": 0.47666547400149284
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Devon Energy aggregate ownership interests in EnLink tax rate net earnings gain 2018 financial statements supplementary data",
+      "filters": {
+        "year": 2018,
+        "company": "Devon Energy"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_346::p1::c0::30beb4da3d"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_346::p1::c0::30beb4da3d",
+          "document_id": "finqa_test_ctx_346",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_346::p1::c0::30beb4da3d",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_346::p1::c0::30beb4da3d",
+          "document_id": "finqa_test_ctx_346",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_346::p1::c0::30beb4da3d",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_346::p1::c0::30beb4da3d",
+          "document_id": "finqa_test_ctx_346",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 1833,
+          "source_chunk_id": "finqa_test_ctx_346::p1::c0::30beb4da3d",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?\nRetrieval query:",
+  "query_formulation_raw_output": "Devon Energy aggregate ownership interests in EnLink tax rate net earnings gain 2018 financial statements supplementary data",
+  "query_formulation_latency_seconds": 2.8801,
+  "query_formulation_input_tokens": 185,
+  "query_formulation_output_tokens": 24,
+  "query_formulation_trace": {
+    "original_question": "What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?",
+    "retrieval_query": "Devon Energy aggregate ownership interests in EnLink tax rate net earnings gain 2018 financial statements supplementary data",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the tax rate on the net earnings due to the gain on the sale of Devon Energy's aggregate ownership interests in EnLink, as reported in the 2018 financial statements and supplementary data?\nRetrieval query:",
+    "raw_output": "Devon Energy aggregate ownership interests in EnLink tax rate net earnings gain 2018 financial statements supplementary data",
+    "latency_seconds": 2.8800885060045402,
+    "input_tokens": 185,
+    "output_tokens": 24,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "0.18181818181818177",
+  "gold_evidence_reference": "FinQA | pdf/DVN/2018/page_35.pdf | source_page=35 | context_id=finqa_test_ctx_346"
+}

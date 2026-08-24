@@ -1,0 +1,323 @@
+{
+  "question_id": "finqa_test_65",
+  "question": "Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?",
+  "retrieval_query": "Abiomed, Inc. compensation expense employee stock purchase plan 2005 Annual Report fiscal year 2004 to fiscal year 2005",
+  "metadata_filters": {
+    "company": "Abiomed, Inc.",
+    "filing_type": "annual report"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_38::p1::c0::210df27416",
+      "rank": 1,
+      "dense_score": 0.7036731839179993,
+      "bm25_score": 41.7127127562254,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_38"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_38::p1::c1::0573b29819",
+      "rank": 2,
+      "dense_score": 0.6964971423149109,
+      "bm25_score": 31.38400800599873,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_38"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 28.1424,
+  "input_tokens": 3832,
+  "output_tokens": 92,
+  "total_tokens": 3924,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1479,
+  "llm_latency_seconds": 31.5913,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nLabel:",
+      "input_tokens": 114,
+      "output_tokens": 7,
+      "latency_seconds": 1.0836758360019303
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nEvidence:\n[1] finqa_test_ctx_38.pdf p.1\nNotes to Consolidated Financial Statements — March 31, 2005\nThe fair value per share of the options granted during fiscal 2003, 2004 and 2005 was computed as $1.69,\n$1.53 and $3.94, per share, respectively, and was calculated using the Black-Scholes option-pricing model\nwith the following assumptions.\n2003 2004 2005\nRisk-free interest rate 2.92% 2.56% 3.87%\nExpected dividend yield — — —\nExpected option term in years 5.0 years 5.3 years 7.5 years\nAssumed stock price volatility 85% 86% 84%\nIn addition to compensation expense related to that abnormal freight, handling costs, and wasted\nstock option grants, the pro forma compensation materials (spoilage) are required to be treated as\nexpense sho\n\n[2] finqa_test_ctx_38.pdf p.1\nURRENCIES\nfor exchanges of nonmonetary assets that do not\nThe U.S. dollar is the functional currency for the\nhave commercial substance. The Company is\nCompany’s single foreign subsidiary, ABIOMED\nrequired to adopt FAS 153 for nonmonetary\nB.V. The financial statements of ABIOMED B.V.\nasset exchanges occurring in the second quarter\nare remeasured into U.S. dollars using current\nof fiscal year 2006 and its adoption is not\nrates of exchange for monetary assets and\nexpected to have a significant impact on the\nliabilities and historical rates of exchange for\nCompany’s consolidated financial statements.\nnonmonetary assets. Foreign exchange gains\nand losses are included in the results of In December\nLabel:",
+      "input_tokens": 514,
+      "output_tokens": 4,
+      "latency_seconds": 3.7180338300022413
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nEvidence:\n[1] finqa_test_ctx_38.pdf p.1\nNotes to Consolidated Financial Statements — March 31, 2005\nThe fair value per share of the options granted during fiscal 2003, 2004 and 2005 was computed as $1.69,\n$1.53 and $3.94, per share, respectively, and was calculated using the Black-Scholes option-pricing model\nwith the following assumptions.\n2003 2004 2005\nRisk-free interest rate 2.92% 2.56% 3.87%\nExpected dividend yield — — —\nExpected option term in years 5.0 years 5.3 years 7.5 years\nAssumed stock price volatility 85% 86% 84%\nIn addition to compensation expense related to that abnormal freight, handling costs, and wasted\nstock option grants, the pro forma compensation materials (spoilage) are required to be treated as\nexpense sho\n\n[2] finqa_test_ctx_38.pdf p.1\nURRENCIES\nfor exchanges of nonmonetary assets that do not\nThe U.S. dollar is the functional currency for the\nhave commercial substance. The Company is\nCompany’s single foreign subsidiary, ABIOMED\nrequired to adopt FAS 153 for nonmonetary\nB.V. The financial statements of ABIOMED B.V.\nasset exchanges occurring in the second quarter\nare remeasured into U.S. dollars using current\nof fiscal year 2006 and its adoption is not\nrates of exchange for monetary assets and\nexpected to have a significant impact on the\nliabilities and historical rates of exchange for\nCompany’s consolidated financial statements.\nnonmonetary assets. Foreign exchange gains\nand losses are included in the results of In December\nLabel:",
+      "input_tokens": 519,
+      "output_tokens": 3,
+      "latency_seconds": 3.662702662993979
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nEvidence:\n[1] finqa_test_ctx_38.pdf p.1\nwn in the table above includes current period charges rather than as a portion of\ncompensation expense related to stock issued inventory cost. Additionally, the standard clarifies\nunder the Company’s Employee Stock Purchase that fixed production overhead should be\nPlan of approximately $44,000, $19,000 and allocated based on the normal capacity of a\n$28,000 for fiscal 2003, 2004 and 2005, production facility. The statement is effective for\nrespectively. the Company beginning in the first quarter of\nfiscal year 2007. Adoption is not expected to\nThis pro forma compensation expense may not\nhave a material impact on the Company’s results\nbe representative of the amount to be expected\nof operatio\n\n[2] finqa_test_ctx_38.pdf p.1\n2004 the FASB issued a revised\noperations in other income, net. Statement of Financial Accounting Standard\n(SFAS) No. 123, Share-Based Payment (FAS\n(U) RECENT ACCOUNTING PRONOUNCEMENTS\n123(R)). FAS 123(R) requires public entities to\nIn November 2004, the Financial Accounting\nmeasure the cost of employee services received\nStandards Board (FASB) issued SFAS No. 151,\nin exchange for an award of equity instruments\nInventory Costs (FAS 151), which adopts wording\nbased on the grant-date fair value of the award\nfrom the International Accounting Standards\nand recognize the cost over the period during\nBoard’s (IASB) Standard No. 2, Inventories, in an\nwhich an employee is required to provide service\nLabel:",
+      "input_tokens": 502,
+      "output_tokens": 3,
+      "latency_seconds": 2.8288776140034315
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nEvidence:\n[1] finqa_test_ctx_38.pdf p.1\nns, financial position or cash flows.\nin future years as pro forma compensation\nexpense may vary based upon the number of In December 2004, the FASB issued SFAS No.\noptions granted and shares purchased. The pro 153, Exchanges of Nonmonetary Assets (FAS\nforma tax effect of the employee compensation 153) which eliminates the exception from fair\nexpense has not been considered due to the value measurement for nonmonetary exchanges\nCompany’s reported net losses. of similar productive assets and replaces it with a\ngeneral exception from fair value measurement\n(T) TRANSLATION OF FOREIGN CURRENCIES\nfor exchanges of nonmonetary assets that do not\nThe U.S. dollar is the functional currency for the\nha\n\n[2] finqa_test_ctx_38.pdf p.1\neffort to improve the comparability of international\nin exchange for the award. In April 2005, the\nfinancial reporting. The new standard indicates\nABIOMED,INC.2005 ANNUAL REPORT:Financials Page 15\nLabel:",
+      "input_tokens": 363,
+      "output_tokens": 3,
+      "latency_seconds": 1.9800497129981522
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nEvidence:\n[1] finqa_test_ctx_38.pdf p.1\nns, financial position or cash flows.\nin future years as pro forma compensation\nexpense may vary based upon the number of In December 2004, the FASB issued SFAS No.\noptions granted and shares purchased. The pro 153, Exchanges of Nonmonetary Assets (FAS\nforma tax effect of the employee compensation 153) which eliminates the exception from fair\nexpense has not been considered due to the value measurement for nonmonetary exchanges\nCompany’s reported net losses. of similar productive assets and replaces it with a\ngeneral exception from fair value measurement\n(T) TRANSLATION OF FOREIGN CURRENCIES\nfor exchanges of nonmonetary assets that do not\nThe U.S. dollar is the functional currency for the\nha\n\n[2] finqa_test_ctx_38.pdf p.1\neffort to improve the comparability of international\nin exchange for the award. In April 2005, the\nfinancial reporting. The new standard indicates\nABIOMED,INC.2005 ANNUAL REPORT:Financials Page 15\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 404,
+      "output_tokens": 4,
+      "latency_seconds": 3.0572058990001096
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nEvidence:\n[1] finqa_test_ctx_38.pdf p.1\nns, financial position or cash flows.\nin future years as pro forma compensation\nexpense may vary based upon the number of In December 2004, the FASB issued SFAS No.\noptions granted and shares purchased. The pro 153, Exchanges of Nonmonetary Assets (FAS\nforma tax effect of the employee compensation 153) which eliminates the exception from fair\nexpense has not been considered due to the value measurement for nonmonetary exchanges\nCompany’s reported net losses. of similar productive assets and replaces it with a\ngeneral exception from fair value measurement\n(T) TRANSLATION OF FOREIGN CURRENCIES\nfor exchanges of nonmonetary assets that do not\nThe U.S. dollar is the functional currency for the\nha\n\n[2] finqa_test_ctx_38.pdf p.1\neffort to improve the comparability of international\nin exchange for the award. In April 2005, the\nfinancial reporting. The new standard indicates\nABIOMED,INC.2005 ANNUAL REPORT:Financials Page 15\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 387,
+      "output_tokens": 11,
+      "latency_seconds": 3.5987438689990086
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": false,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nEvidence:\n[1] finqa_test_ctx_38.pdf p.1\nns, financial position or cash flows.\nin future years as pro forma compensation\nexpense may vary based upon the number of In December 2004, the FASB issued SFAS No.\noptions granted and shares purchased. The pro 153, Exchanges of Nonmonetary Assets (FAS\nforma tax effect of the employee compensation 153) which eliminates the exception from fair\nexpense has not been considered due to the value measurement for nonmonetary exchanges\nCompany’s reported net losses. of similar productive assets and replaces it with a\ngeneral exception from fair value measurement\n(T) TRANSLATION OF FOREIGN CURRENCIES\nfor exchanges of nonmonetary assets that do not\nThe U.S. dollar is the functional currency for the\nha\n\n[2] finqa_test_ctx_38.pdf p.1\neffort to improve the comparability of international\nin exchange for the award. In April 2005, the\nfinancial reporting. The new standard indicates\nABIOMED,INC.2005 ANNUAL REPORT:Financials Page 15\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Abiomed, Inc. compensation expense employee stock purchase plan 2005 Annual Report fiscal year 2004 to fiscal year 2005",
+      "filters": {
+        "company": "Abiomed, Inc.",
+        "filing_type": "annual report"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_38::p1::c0::210df27416",
+        "finqa_test_ctx_38::p1::c1::0573b29819"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_38::p1::c0::210df27416",
+          "document_id": "finqa_test_ctx_38",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_38::p1::c0::210df27416",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_38::p1::c1::0573b29819",
+          "document_id": "finqa_test_ctx_38",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_38::p1::c1::0573b29819",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_38::p1::c0::210df27416",
+          "document_id": "finqa_test_ctx_38",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_38::p1::c0::210df27416",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_38::p1::c1::0573b29819",
+          "document_id": "finqa_test_ctx_38",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_38::p1::c1::0573b29819",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_38::p1::c0::210df27416",
+          "document_id": "finqa_test_ctx_38",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "finqa_test_ctx_38::p1::c0::210df27416",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_38::p1::c1::0573b29819",
+          "document_id": "finqa_test_ctx_38",
+          "rank": 2,
+          "char_start": 1400,
+          "char_end": 1596,
+          "source_chunk_id": "finqa_test_ctx_38::p1::c1::0573b29819",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nRetrieval query:",
+  "query_formulation_raw_output": "Abiomed, Inc. compensation expense employee stock purchase plan 2005 Annual Report fiscal year 2004 to fiscal year 2005",
+  "query_formulation_latency_seconds": 4.0903,
+  "query_formulation_input_tokens": 191,
+  "query_formulation_output_tokens": 35,
+  "query_formulation_trace": {
+    "original_question": "Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?",
+    "retrieval_query": "Abiomed, Inc. compensation expense employee stock purchase plan 2005 Annual Report fiscal year 2004 to fiscal year 2005",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: Did the compensation expense related to Abiomed, Inc.'s employee stock purchase plan, as disclosed in the 2005 Annual Report, increase from fiscal year 2004 to fiscal year 2005?\nRetrieval query:",
+    "raw_output": "Abiomed, Inc. compensation expense employee stock purchase plan 2005 Annual Report fiscal year 2004 to fiscal year 2005",
+    "latency_seconds": 4.09027833899745,
+    "input_tokens": 191,
+    "output_tokens": 35,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "1",
+  "gold_evidence_reference": "FinQA | pdf/ABMD/2005/page_29.pdf | source_page=29 | context_id=finqa_test_ctx_38"
+}

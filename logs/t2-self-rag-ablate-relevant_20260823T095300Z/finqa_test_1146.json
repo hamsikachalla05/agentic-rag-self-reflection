@@ -1,0 +1,365 @@
+{
+  "question_id": "finqa_test_1146",
+  "question": "What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?",
+  "retrieval_query": "European Papers net sales 2004 2005 2006 International Paper 2006 report",
+  "metadata_filters": {
+    "company": "International Paper"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_263::p1::c0::a0293d20bb",
+      "rank": 1,
+      "dense_score": 0.7438654899597168,
+      "bm25_score": 41.34192259190469,
+      "hybrid_score": 0.9857382608388596,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_263"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_263::p1::c1::df9c895a08",
+      "rank": 2,
+      "dense_score": 0.7379647493362427,
+      "bm25_score": 42.7722828679631,
+      "hybrid_score": 0.9769252284603922,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_263"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_263::p1::c2::eb49043b50",
+      "rank": 3,
+      "dense_score": 0.6645113229751587,
+      "bm25_score": 27.47242248897875,
+      "hybrid_score": 0.5371357247050859,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_263"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+      "rank": 4,
+      "dense_score": 0.6392959356307983,
+      "bm25_score": 13.847727720065768,
+      "hybrid_score": 0.30268308968675095,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_639"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+      "rank": 5,
+      "dense_score": 0.627518892288208,
+      "bm25_score": 3.371449275057531,
+      "hybrid_score": 0.1521729446349027,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_639"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 70.4563,
+  "input_tokens": 7875,
+  "output_tokens": 71,
+  "total_tokens": 7946,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 8,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.142,
+  "llm_latency_seconds": 70.3113,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?\nLabel:",
+      "input_tokens": 110,
+      "output_tokens": 7,
+      "latency_seconds": 1.127457903996401
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?\nEvidence:\n[1] finqa_test_ctx_263.pdf p.1\nPRINTING PAPERSnetsalesfor2006decreased3% U.S. COATED PAPERS net sales were $920 million\nfrom both 2005 and 2004 due principally to the sale in 2006, $1.6 billion in 2005 and $1.4 billion in 2004.\nof the U.S. coated papers business in August 2006. Operating profits in 2006 were 26% lower than in\nHowever,operatingprofitsin2006were43%higher 2005. A small operating loss was reported for the\nthanin2005and33%higherthanin2004.Compared businessin2004.Thisbusinesswassoldinthethird\nwith 2005, earnings improved for U.S. uncoated quarterof2006.Duringthefirsttwoquartersof2006,\npapers, market pulp and European Papers, but this salesvolumeswereupslightlyversus2005.Average\nwas partially offset by earnings\n\n[2] finqa_test_ctx_263.pdf p.1\nand\n2006 in the U.S. uncoated papers, market pulp and tissue pulp. Average sales price realizations were\ncoatedpapersbusinesseswereoffsetbylowerearn- higher in 2006, reflecting higher average prices for\nings in the European and Brazilian papers busi- fluff pulp and bleached hardwood and softwood\nnesses. The printing papers segment took 555,000 pulp. Operating earnings increased 30% from 2005\ntons of downtime in 2006, including 150,000 tons of andmorethan100%from2004principallyduetothe\nlack-of-order downtime to align production with impactofthehigheraveragesalesprices.Inputcosts\ncustomerdemand.Thiscomparedwith970,000tons for wood and energy were higher in 2006 than in\nof total downtime in 200\n\n[3] finqa_test_ctx_263.pdf p.1\nsignificantly, reflecting benefits from price increases from $134 million in 2005 and $166 million in 2004,\nannouncedinlate2005andearly2006.Lack-of-order due principally to incremental costs associated with\ndowntime declined from 450,000 tons in 2005 to anextendedmilloutageinMogiGuacutoconvertto\n40,000 tons in 2006, reflecting firm market demand an elemental-chlorine-free bleaching process, to\nand the impact of the permanent closure of three rebuild the primary recovery boiler, and for other\nuncoated freesheet machines in 2005. Operating environmentalupgrades.\nearningsin2006morethandoubledcomparedwith\nboth 2005 and 2004. The benefits of improved aver- EUROPEAN PAPERSnetsalesin2006were$1.5bil\n\n[4] convfinqa_ctx_639.pdf p.1\nAddition-\ndecreases effective with our January contract open-\nally, efficient customer service, cost-effective logis-\ners. Input costs for board and resin are expected to\ntics and focused working capital management are\nbe lower and operating costs are also expected to\nkeyfactorsinthissegment’sprofitability.\ndecrease.\nEuropean Consumer Packaging net sales in Distribution\n2012 were $380 million compared with $375 million Inmillions 2012 2011 2010\nin2011and$345millionin2010.Operatingprofitsin Sales $6,040 $6,630 $6,735\n2012 were $99 million compared with $93 million in OperatingProfit 22 34 78\n2011and$76millionin2010.Salesvolumesin2012\nincreasedfrom2011.Averagesalespricerealizations\nDistributio\n\n[5] convfinqa_ctx_639.pdf p.1\nFoodservice sales volumes increased in 2012 In the first quarter of 2013, sales volumes are\ncompared with 2011. Average sales margins were expected to increase slightly. Average sales price\nrealizations for folding carton board and bristols\nhigher reflecting the realization of sales price\nboard are expected to be lower reflecting increased\nincreases for the pass-through of earlier cost\ncompetitivepressuresandseasonallyweakermarket\nincreases. Raw material costs for board and resins\ndemand. Input costs should be higher for pulp and\nwere lower. Operating costs and distribution costs\nchemicals.However,costsrelatedtotheramp-upof\nwerebothhigher.\nthe new coated paperboard machine should be\nTheU.S.S\nLabel:",
+      "input_tokens": 1247,
+      "output_tokens": 3,
+      "latency_seconds": 10.094589170003019
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?\nEvidence:\n[1] finqa_test_ctx_263.pdf p.1\nPRINTING PAPERSnetsalesfor2006decreased3% U.S. COATED PAPERS net sales were $920 million\nfrom both 2005 and 2004 due principally to the sale in 2006, $1.6 billion in 2005 and $1.4 billion in 2004.\nof the U.S. coated papers business in August 2006. Operating profits in 2006 were 26% lower than in\nHowever,operatingprofitsin2006were43%higher 2005. A small operating loss was reported for the\nthanin2005and33%higherthanin2004.Compared businessin2004.Thisbusinesswassoldinthethird\nwith 2005, earnings improved for U.S. uncoated quarterof2006.Duringthefirsttwoquartersof2006,\npapers, market pulp and European Papers, but this salesvolumeswereupslightlyversus2005.Average\nwas partially offset by earnings\n\n[2] finqa_test_ctx_263.pdf p.1\nand\n2006 in the U.S. uncoated papers, market pulp and tissue pulp. Average sales price realizations were\ncoatedpapersbusinesseswereoffsetbylowerearn- higher in 2006, reflecting higher average prices for\nings in the European and Brazilian papers busi- fluff pulp and bleached hardwood and softwood\nnesses. The printing papers segment took 555,000 pulp. Operating earnings increased 30% from 2005\ntons of downtime in 2006, including 150,000 tons of andmorethan100%from2004principallyduetothe\nlack-of-order downtime to align production with impactofthehigheraveragesalesprices.Inputcosts\ncustomerdemand.Thiscomparedwith970,000tons for wood and energy were higher in 2006 than in\nof total downtime in 200\n\n[3] finqa_test_ctx_263.pdf p.1\nsignificantly, reflecting benefits from price increases from $134 million in 2005 and $166 million in 2004,\nannouncedinlate2005andearly2006.Lack-of-order due principally to incremental costs associated with\ndowntime declined from 450,000 tons in 2005 to anextendedmilloutageinMogiGuacutoconvertto\n40,000 tons in 2006, reflecting firm market demand an elemental-chlorine-free bleaching process, to\nand the impact of the permanent closure of three rebuild the primary recovery boiler, and for other\nuncoated freesheet machines in 2005. Operating environmentalupgrades.\nearningsin2006morethandoubledcomparedwith\nboth 2005 and 2004. The benefits of improved aver- EUROPEAN PAPERSnetsalesin2006were$1.5bil\n\n[4] convfinqa_ctx_639.pdf p.1\nAddition-\ndecreases effective with our January contract open-\nally, efficient customer service, cost-effective logis-\ners. Input costs for board and resin are expected to\ntics and focused working capital management are\nbe lower and operating costs are also expected to\nkeyfactorsinthissegment’sprofitability.\ndecrease.\nEuropean Consumer Packaging net sales in Distribution\n2012 were $380 million compared with $375 million Inmillions 2012 2011 2010\nin2011and$345millionin2010.Operatingprofitsin Sales $6,040 $6,630 $6,735\n2012 were $99 million compared with $93 million in OperatingProfit 22 34 78\n2011and$76millionin2010.Salesvolumesin2012\nincreasedfrom2011.Averagesalespricerealizations\nDistributio\n\n[5] convfinqa_ctx_639.pdf p.1\nFoodservice sales volumes increased in 2012 In the first quarter of 2013, sales volumes are\ncompared with 2011. Average sales margins were expected to increase slightly. Average sales price\nrealizations for folding carton board and bristols\nhigher reflecting the realization of sales price\nboard are expected to be lower reflecting increased\nincreases for the pass-through of earlier cost\ncompetitivepressuresandseasonallyweakermarket\nincreases. Raw material costs for board and resins\ndemand. Input costs should be higher for pulp and\nwere lower. Operating costs and distribution costs\nchemicals.However,costsrelatedtotheramp-upof\nwerebothhigher.\nthe new coated paperboard machine should be\nTheU.S.S\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1288,
+      "output_tokens": 4,
+      "latency_seconds": 11.662293007997505
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?\nEvidence:\n[1] finqa_test_ctx_263.pdf p.1\ndeclines in Brazilian sales price realizations for coated freesheet paper\npapers. Benefits from higher average sales price and coated groundwood paper were higher than in\nrealizations in the United States, Europe and Brazil 2005, reflecting the impact of previously announced\n($284 million), improved manufacturing operations price increases. However, input costs for energy,\n($73 million), reduced lack-of-order downtime ($41 wood and other raw materials increased over 2005\nmillion), higher sales volumes in Europe ($23 levels.Manufacturingoperationswerefavorabledue\nmillion), and other items ($65 million) were partially tohighermachineefficiencyandmillcostsavings.\noffsetbyhigherrawmaterialandene\n\n[2] finqa_test_ctx_263.pdf p.1\n5, of which 520,000 tons 2005. Manufacturing operations were unfavorable,\nrelatedtolack-of-orders. driven primarily by poor operations at our Riegel-\nwood,NorthCarolinamill.\nPrintingPapers\nInmillions 2006 2005 2004 BRAZILIAN PAPER net sales for 2006 of $496 mil-\nlion were higher than the $465 million in 2005 and\nSales $6,930 $7,170 $7,135\nthe $417 million in 2004. The sales increase in 2006\nOperatingProfit $ 677 $ 473 $ 508\nreflects higher sales volumes than in 2005, partic-\nularly for uncoated freesheet paper, and a\nU.S. UNCOATED PAPERS net sales in 2006 were strengthening of the Brazilian currency versus the\n$3.5 billion, compared with $3.2 billion in 2005 and U.S. dollar. Average sales pr\n\n[3] finqa_test_ctx_263.pdf p.1\n-\nage sales price realizations more than offset higher lion,comparedwith$1.4billionin2005and$1.5bil-\ninputcostsforfreight,woodandenergy,whichwere lionin2004.Salesvolumesin2006werehigherthan\nallabove2005levels.Milloperationswerefavorable in 2005 at our Eastern European mills due to stron-\ncompared with 2005 due to current-year improve- germarketdemand.Averagesalespricerealizations\nments in machine performance, lower labor, chem- increased in 2006 in both Eastern and Western\nical and energy consumption costs, as well as European markets. Operating earnings in 2006 rose\napproximately $30 million of charges incurred in 20%from2005,butwere15%below2004levels.The\n2005formachineshutdowns. improvemen\n\n[4] convfinqa_ctx_639.pdf p.1\nAddition-\ndecreases effective with our January contract open-\nally, efficient customer service, cost-effective logis-\ners. Input costs for board and resin are expected to\ntics and focused working capital management are\nbe lower and operating costs are also expected to\nkeyfactorsinthissegment’sprofitability.\ndecrease.\nEuropean Consumer Packaging net sales in Distribution\n2012 were $380 million compared with $375 million Inmillions 2012 2011 2010\nin2011and$345millionin2010.Operatingprofitsin Sales $6,040 $6,630 $6,735\n2012 were $99 million compared with $93 million in OperatingProfit 22 34 78\n2011and$76millionin2010.Salesvolumesin2012\nincreasedfrom2011.Averagesalespricerealizations\nDistributio\n\n[5] convfinqa_ctx_639.pdf p.1\nFoodservice sales volumes increased in 2012 In the first quarter of 2013, sales volumes are\ncompared with 2011. Average sales margins were expected to increase slightly. Average sales price\nrealizations for folding carton board and bristols\nhigher reflecting the realization of sales price\nboard are expected to be lower reflecting increased\nincreases for the pass-through of earlier cost\ncompetitivepressuresandseasonallyweakermarket\nincreases. Raw material costs for board and resins\ndemand. Input costs should be higher for pulp and\nwere lower. Operating costs and distribution costs\nchemicals.However,costsrelatedtotheramp-upof\nwerebothhigher.\nthe new coated paperboard machine should be\nTheU.S.S\nLabel:",
+      "input_tokens": 1193,
+      "output_tokens": 3,
+      "latency_seconds": 9.56932086800225
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?\nEvidence:\n[1] finqa_test_ctx_263.pdf p.1\ndeclines in Brazilian sales price realizations for coated freesheet paper\npapers. Benefits from higher average sales price and coated groundwood paper were higher than in\nrealizations in the United States, Europe and Brazil 2005, reflecting the impact of previously announced\n($284 million), improved manufacturing operations price increases. However, input costs for energy,\n($73 million), reduced lack-of-order downtime ($41 wood and other raw materials increased over 2005\nmillion), higher sales volumes in Europe ($23 levels.Manufacturingoperationswerefavorabledue\nmillion), and other items ($65 million) were partially tohighermachineefficiencyandmillcostsavings.\noffsetbyhigherrawmaterialandene\n\n[2] finqa_test_ctx_263.pdf p.1\n5, of which 520,000 tons 2005. Manufacturing operations were unfavorable,\nrelatedtolack-of-orders. driven primarily by poor operations at our Riegel-\nwood,NorthCarolinamill.\nPrintingPapers\nInmillions 2006 2005 2004 BRAZILIAN PAPER net sales for 2006 of $496 mil-\nlion were higher than the $465 million in 2005 and\nSales $6,930 $7,170 $7,135\nthe $417 million in 2004. The sales increase in 2006\nOperatingProfit $ 677 $ 473 $ 508\nreflects higher sales volumes than in 2005, partic-\nularly for uncoated freesheet paper, and a\nU.S. UNCOATED PAPERS net sales in 2006 were strengthening of the Brazilian currency versus the\n$3.5 billion, compared with $3.2 billion in 2005 and U.S. dollar. Average sales pr\n\n[3] finqa_test_ctx_263.pdf p.1\n-\nage sales price realizations more than offset higher lion,comparedwith$1.4billionin2005and$1.5bil-\ninputcostsforfreight,woodandenergy,whichwere lionin2004.Salesvolumesin2006werehigherthan\nallabove2005levels.Milloperationswerefavorable in 2005 at our Eastern European mills due to stron-\ncompared with 2005 due to current-year improve- germarketdemand.Averagesalespricerealizations\nments in machine performance, lower labor, chem- increased in 2006 in both Eastern and Western\nical and energy consumption costs, as well as European markets. Operating earnings in 2006 rose\napproximately $30 million of charges incurred in 20%from2005,butwere15%below2004levels.The\n2005formachineshutdowns. improvemen\n\n[4] convfinqa_ctx_639.pdf p.1\nAddition-\ndecreases effective with our January contract open-\nally, efficient customer service, cost-effective logis-\ners. Input costs for board and resin are expected to\ntics and focused working capital management are\nbe lower and operating costs are also expected to\nkeyfactorsinthissegment’sprofitability.\ndecrease.\nEuropean Consumer Packaging net sales in Distribution\n2012 were $380 million compared with $375 million Inmillions 2012 2011 2010\nin2011and$345millionin2010.Operatingprofitsin Sales $6,040 $6,630 $6,735\n2012 were $99 million compared with $93 million in OperatingProfit 22 34 78\n2011and$76millionin2010.Salesvolumesin2012\nincreasedfrom2011.Averagesalespricerealizations\nDistributio\n\n[5] convfinqa_ctx_639.pdf p.1\nFoodservice sales volumes increased in 2012 In the first quarter of 2013, sales volumes are\ncompared with 2011. Average sales margins were expected to increase slightly. Average sales price\nrealizations for folding carton board and bristols\nhigher reflecting the realization of sales price\nboard are expected to be lower reflecting increased\nincreases for the pass-through of earlier cost\ncompetitivepressuresandseasonallyweakermarket\nincreases. Raw material costs for board and resins\ndemand. Input costs should be higher for pulp and\nwere lower. Operating costs and distribution costs\nchemicals.However,costsrelatedtotheramp-upof\nwerebothhigher.\nthe new coated paperboard machine should be\nTheU.S.S\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1234,
+      "output_tokens": 4,
+      "latency_seconds": 10.718872345998534
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "European Papers net sales 2004 2005 2006 International Paper 2006 report",
+      "filters": {
+        "company": "International Paper"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_263::p1::c0::a0293d20bb",
+        "finqa_test_ctx_263::p1::c1::df9c895a08",
+        "finqa_test_ctx_263::p1::c2::eb49043b50",
+        "convfinqa_ctx_639::p1::c1::f178761af9",
+        "convfinqa_ctx_639::p1::c0::e40d3cd393"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_263::p1::c0::a0293d20bb",
+          "document_id": "finqa_test_ctx_263",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_263::p1::c0::a0293d20bb",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_263::p1::c1::df9c895a08",
+          "document_id": "finqa_test_ctx_263",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_263::p1::c1::df9c895a08",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_263::p1::c2::eb49043b50",
+          "document_id": "finqa_test_ctx_263",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_263::p1::c2::eb49043b50",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_263::p1::c0::a0293d20bb",
+          "document_id": "finqa_test_ctx_263",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_263::p1::c0::a0293d20bb",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_263::p1::c1::df9c895a08",
+          "document_id": "finqa_test_ctx_263",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_263::p1::c1::df9c895a08",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_263::p1::c2::eb49043b50",
+          "document_id": "finqa_test_ctx_263",
+          "rank": 3,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_263::p1::c2::eb49043b50",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?\nRetrieval query:",
+  "query_formulation_raw_output": "European Papers net sales 2004 2005 2006 International Paper 2006 report",
+  "query_formulation_latency_seconds": 3.5957,
+  "query_formulation_input_tokens": 187,
+  "query_formulation_output_tokens": 28,
+  "query_formulation_trace": {
+    "original_question": "What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?",
+    "retrieval_query": "European Papers net sales 2004 2005 2006 International Paper 2006 report",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the sum of European Papers' net sales for the years 2004, 2005, and 2006, according to International Paper's 2006 report?\nRetrieval query:",
+    "raw_output": "European Papers net sales 2004 2005 2006 International Paper 2006 report",
+    "latency_seconds": 3.5957400469997083,
+    "input_tokens": 187,
+    "output_tokens": 28,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "4.4",
+  "gold_evidence_reference": "FinQA | pdf/IP/2006/page_30.pdf | source_page=30 | context_id=finqa_test_ctx_263"
+}

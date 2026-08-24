@@ -1,0 +1,421 @@
+{
+  "question_id": "finqa_test_1081",
+  "question": "What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?",
+  "retrieval_query": "Baker Hughes net change in cash 2015 cash flows operating investing financing activities",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+      "rank": 1,
+      "dense_score": 0.675589919090271,
+      "bm25_score": 25.02210368140415,
+      "hybrid_score": 0.7120827299303454,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_29"
+    },
+    {
+      "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+      "rank": 2,
+      "dense_score": 0.698855996131897,
+      "bm25_score": 13.050299342306552,
+      "hybrid_score": 0.6954105221853062,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d69f61835b35ec05879669dc41ff57aa"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+      "rank": 3,
+      "dense_score": 0.6842077374458313,
+      "bm25_score": 13.140606738812352,
+      "hybrid_score": 0.5164362159059065,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_928"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+      "rank": 4,
+      "dense_score": 0.6808202266693115,
+      "bm25_score": null,
+      "hybrid_score": 0.3768076888087903,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_29"
+    },
+    {
+      "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+      "rank": 5,
+      "dense_score": 0.6665345430374146,
+      "bm25_score": 13.51452702396848,
+      "hybrid_score": 0.3072441325995539,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac"
+    }
+  ],
+  "answer": "Net change in cash during 2015 for Baker Hughes:\n\nOperating activities: $1,277 million  \nInvesting activities: $(466) million  \nFinancing activities: $(515) million  \n\nNet change in cash = Operating + Investing + Financing  \n= 1,277 + (466) + (515)  \n= 1,277 - 466 - 515  \n= 1,277 - 981  \n= $296 million  \n\nSource: finqa_test_ctx_29.pdf p.1\n\n296",
+  "latency_seconds": 74.6611,
+  "input_tokens": 7041,
+  "output_tokens": 170,
+  "total_tokens": 7211,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1497,
+  "llm_latency_seconds": 74.5064,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?\nEvidence:\n[1] finqa_test_ctx_29.pdf p.1\n. The maximum combined borrowing at\nany time under both the 2017 Credit Agreement and the commercial paper program is $3 billion.\nOn November 6, 2017, we announced that our board of directors authorized BHGE LLC to repurchase up to $3\nbillion of its common units from the Company and GE. The proceeds of such repurchase that are distributed to the\nCompany will be used to repurchase Class A shares of the Company on the open market or in privately negotiated\ntransactions.\nOn December 15, 2017, we filed a shelf registration statement on Form S-3 with the SEC to give us the ability\nto sell up to $3 billion in debt securities in amounts to be determined at the time of an offering. Any such offering\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nMedia Segment Profitability\nOperating income was $998 million for the year ended December 31, 2018 as compared to $1,021 million for the year ended December 31, 2017. The\ndecrease was driven by higher restructuring costs, higher depreciation and amortization expense and investments in our services, partially offset by the revenue\nperformance discussed above. Non-GAAP business segment income increased 0.5% on a constant currency basis.\nCorporate Expenses and Eliminations\nOperating expenses were $144 million for the year ended December 31, 2018 as compared to $143 million for the year ended December 31, 2017, primarily\ndue to an increase in transaction related costs and business optimization c\n\n[3] convfinqa_ctx_928.pdf p.1\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations (continued)\nLiquidity and Capital Resources\nSnap-on’s growth has historically been funded by a combination of cash provided by operating activities and debt financing.\nSnap-on believes that its cash from operations and collections of finance receivables, coupled with its sources of borrowings\nand available cash on hand, are sufficient to fund its currently anticipated requirements for scheduled debt payments\n(including the March 2014 repayment of $100.0 million of 5.85% unsecured notes upon maturity), payments of interest and\ndividends, new receivables originated by our financial services businesses, capita\n\n[4] finqa_test_ctx_29.pdf p.1\nLIQUIDITY AND CAPITAL RESOURCES\nOur objective in financing our business is to maintain sufficient liquidity, adequate financial resources and\nfinancial flexibility in order to fund the requirements of our business. At December 31, 2017, we had cash and\nequivalents of $7.0 billion compared to $981 million of cash and equivalents at December 31, 2016. Cash and\nequivalents includes $997 million of cash held on behalf of GE at December 31, 2017.\nAt December 31, 2017, approximately $3.2 billion of our cash and equivalents was held by foreign subsidiaries\ncompared to approximately $878 million at December 31, 2016. A substantial portion of the cash held by foreign\nsubsidiaries at December 31, 2017\n\n[5] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nConnectivity\nbusiness, lower legal expenses and lower stock-based compensation expense, partially offset with lower sales volumes and\npricing reductions on certain products.\nMedical Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 0.3 $ 0.2 $ 0.1 50.0 %\nGross Profit $ (3.5) $ (3.1) $ (0.4) (12.9)%\nLoss from Operations $ (11.4) $ (8.5) $ (2.9) (34.1)%\nNet Sales. The Medical segment had minimal net sales in both periods from newly launched products.\nGross Profit. Medical segment gross profit was a loss of $3.5 million in fiscal 2018 compared to a loss of $3.1\nmillion in\nLabel:",
+      "input_tokens": 1099,
+      "output_tokens": 5,
+      "latency_seconds": 9.301902229999541
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?\nEvidence:\n[1] finqa_test_ctx_29.pdf p.1\n. The maximum combined borrowing at\nany time under both the 2017 Credit Agreement and the commercial paper program is $3 billion.\nOn November 6, 2017, we announced that our board of directors authorized BHGE LLC to repurchase up to $3\nbillion of its common units from the Company and GE. The proceeds of such repurchase that are distributed to the\nCompany will be used to repurchase Class A shares of the Company on the open market or in privately negotiated\ntransactions.\nOn December 15, 2017, we filed a shelf registration statement on Form S-3 with the SEC to give us the ability\nto sell up to $3 billion in debt securities in amounts to be determined at the time of an offering. Any such offering\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nMedia Segment Profitability\nOperating income was $998 million for the year ended December 31, 2018 as compared to $1,021 million for the year ended December 31, 2017. The\ndecrease was driven by higher restructuring costs, higher depreciation and amortization expense and investments in our services, partially offset by the revenue\nperformance discussed above. Non-GAAP business segment income increased 0.5% on a constant currency basis.\nCorporate Expenses and Eliminations\nOperating expenses were $144 million for the year ended December 31, 2018 as compared to $143 million for the year ended December 31, 2017, primarily\ndue to an increase in transaction related costs and business optimization c\n\n[3] convfinqa_ctx_928.pdf p.1\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations (continued)\nLiquidity and Capital Resources\nSnap-on’s growth has historically been funded by a combination of cash provided by operating activities and debt financing.\nSnap-on believes that its cash from operations and collections of finance receivables, coupled with its sources of borrowings\nand available cash on hand, are sufficient to fund its currently anticipated requirements for scheduled debt payments\n(including the March 2014 repayment of $100.0 million of 5.85% unsecured notes upon maturity), payments of interest and\ndividends, new receivables originated by our financial services businesses, capita\n\n[4] finqa_test_ctx_29.pdf p.1\nLIQUIDITY AND CAPITAL RESOURCES\nOur objective in financing our business is to maintain sufficient liquidity, adequate financial resources and\nfinancial flexibility in order to fund the requirements of our business. At December 31, 2017, we had cash and\nequivalents of $7.0 billion compared to $981 million of cash and equivalents at December 31, 2016. Cash and\nequivalents includes $997 million of cash held on behalf of GE at December 31, 2017.\nAt December 31, 2017, approximately $3.2 billion of our cash and equivalents was held by foreign subsidiaries\ncompared to approximately $878 million at December 31, 2016. A substantial portion of the cash held by foreign\nsubsidiaries at December 31, 2017\n\n[5] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nConnectivity\nbusiness, lower legal expenses and lower stock-based compensation expense, partially offset with lower sales volumes and\npricing reductions on certain products.\nMedical Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 0.3 $ 0.2 $ 0.1 50.0 %\nGross Profit $ (3.5) $ (3.1) $ (0.4) (12.9)%\nLoss from Operations $ (11.4) $ (8.5) $ (2.9) (34.1)%\nNet Sales. The Medical segment had minimal net sales in both periods from newly launched products.\nGross Profit. Medical segment gross profit was a loss of $3.5 million in fiscal 2018 compared to a loss of $3.1\nmillion in\nLabel:",
+      "input_tokens": 1104,
+      "output_tokens": 3,
+      "latency_seconds": 9.176164634998713
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?\nEvidence:\n[1] finqa_test_ctx_29.pdf p.1\n, if\nit does occur, may happen in one or more transactions. The specific terms of any securities to be sold will be\ndescribed in supplemental filings with the SEC. The registration statement will expire in 2020.\nDuring the year ended December 31, 2017, we used cash to fund a variety of activities including certain working\ncapital needs and restructuring costs, capital expenditures, business acquisitions, the payment of dividends and\nshare repurchases. We believe that cash on hand, cash flows generated from operations and the available credit\nfacility will provide sufficient liquidity to manage our global cash needs.\nCash Flows\nCash flows provided by (used in) each type of activity were as fo\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nMedia Segment Profitability\nOperating income was $998 million for the year ended December 31, 2018 as compared to $1,021 million for the year ended December 31, 2017. The\ndecrease was driven by higher restructuring costs, higher depreciation and amortization expense and investments in our services, partially offset by the revenue\nperformance discussed above. Non-GAAP business segment income increased 0.5% on a constant currency basis.\nCorporate Expenses and Eliminations\nOperating expenses were $144 million for the year ended December 31, 2018 as compared to $143 million for the year ended December 31, 2017, primarily\ndue to an increase in transaction related costs and business optimization c\n\n[3] convfinqa_ctx_928.pdf p.1\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations (continued)\nLiquidity and Capital Resources\nSnap-on’s growth has historically been funded by a combination of cash provided by operating activities and debt financing.\nSnap-on believes that its cash from operations and collections of finance receivables, coupled with its sources of borrowings\nand available cash on hand, are sufficient to fund its currently anticipated requirements for scheduled debt payments\n(including the March 2014 repayment of $100.0 million of 5.85% unsecured notes upon maturity), payments of interest and\ndividends, new receivables originated by our financial services businesses, capita\n\n[4] finqa_test_ctx_29.pdf p.1\nhas been reinvested in active non-U.S. business operations. At December 31,\n2017, our intent is, among other things, to use this cash to fund the operations of our foreign subsidiaries, and we\nhave not changed our indefinite reinvestment decision as a result of U.S. tax reform but will reassess this during the\ncourse of 2018. If we decide at a later date to repatriate those funds to the U.S., we may be required to provide\ntaxes on certain of those funds, however, due to the enactment of U.S. tax reform, repatriations of foreign earnings\nwill generally be free of U.S. federal tax but may incur other taxes such as withholding or state taxes.\nOn July 3, 2017, in connection with the Transaction\n\n[5] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nConnectivity\nbusiness, lower legal expenses and lower stock-based compensation expense, partially offset with lower sales volumes and\npricing reductions on certain products.\nMedical Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 0.3 $ 0.2 $ 0.1 50.0 %\nGross Profit $ (3.5) $ (3.1) $ (0.4) (12.9)%\nLoss from Operations $ (11.4) $ (8.5) $ (2.9) (34.1)%\nNet Sales. The Medical segment had minimal net sales in both periods from newly launched products.\nGross Profit. Medical segment gross profit was a loss of $3.5 million in fiscal 2018 compared to a loss of $3.1\nmillion in\nLabel:",
+      "input_tokens": 1067,
+      "output_tokens": 3,
+      "latency_seconds": 7.199174916000629
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?\nEvidence:\n[1] finqa_test_ctx_29.pdf p.1\nllows for the years ended December 31:\n(In millions) 2017 2016 2015\nOperating activities $ (799) $ 262 $ 1,277\nInvesting activities (4,130) (472) (466)\nFinancing activities 10,919 (102) (515)\nOperating Activities\nOur largest source of operating cash is payments from customers, of which the largest component is collecting\ncash related to product or services sales including advance payments or progress collections for work to be\nperformed. The primary use of operating cash is to pay our suppliers, employees, tax authorities and others for a\nwide range of material and services.\n36 | BHGE 2017 FORM 10-K\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nMedia Segment Profitability\nOperating income was $998 million for the year ended December 31, 2018 as compared to $1,021 million for the year ended December 31, 2017. The\ndecrease was driven by higher restructuring costs, higher depreciation and amortization expense and investments in our services, partially offset by the revenue\nperformance discussed above. Non-GAAP business segment income increased 0.5% on a constant currency basis.\nCorporate Expenses and Eliminations\nOperating expenses were $144 million for the year ended December 31, 2018 as compared to $143 million for the year ended December 31, 2017, primarily\ndue to an increase in transaction related costs and business optimization c\n\n[3] convfinqa_ctx_928.pdf p.1\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations (continued)\nLiquidity and Capital Resources\nSnap-on’s growth has historically been funded by a combination of cash provided by operating activities and debt financing.\nSnap-on believes that its cash from operations and collections of finance receivables, coupled with its sources of borrowings\nand available cash on hand, are sufficient to fund its currently anticipated requirements for scheduled debt payments\n(including the March 2014 repayment of $100.0 million of 5.85% unsecured notes upon maturity), payments of interest and\ndividends, new receivables originated by our financial services businesses, capita\n\n[4] finqa_test_ctx_29.pdf p.1\ns, BHGE LLC entered into a new five-year $3 billion\ncommitted unsecured revolving credit facility (2017 Credit Agreement) with commercial banks maturing in July\n2022. As of December 31, 2017, there were no borrowings under the 2017 Credit Agreement.\nOn November 3, 2017, BHGE LLC entered into a commercial paper program under which it may issue from\ntime to time up to $3 billion in commercial paper with maturities of no more than 397 days. At December 31, 2017,\nthere were no borrowings outstanding under the commercial paper program. The maximum combined borrowing at\nany time under both the 2017 Credit Agreement and the commercial paper program is $3 billion.\nOn November 6, 2017, we announced t\n\n[5] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nConnectivity\nbusiness, lower legal expenses and lower stock-based compensation expense, partially offset with lower sales volumes and\npricing reductions on certain products.\nMedical Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 0.3 $ 0.2 $ 0.1 50.0 %\nGross Profit $ (3.5) $ (3.1) $ (0.4) (12.9)%\nLoss from Operations $ (11.4) $ (8.5) $ (2.9) (34.1)%\nNet Sales. The Medical segment had minimal net sales in both periods from newly launched products.\nGross Profit. Medical segment gross profit was a loss of $3.5 million in fiscal 2018 compared to a loss of $3.1\nmillion in\nLabel:",
+      "input_tokens": 1113,
+      "output_tokens": 3,
+      "latency_seconds": 7.7364834179970785
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?\nEvidence:\n[1] finqa_test_ctx_29.pdf p.1\nllows for the years ended December 31:\n(In millions) 2017 2016 2015\nOperating activities $ (799) $ 262 $ 1,277\nInvesting activities (4,130) (472) (466)\nFinancing activities 10,919 (102) (515)\nOperating Activities\nOur largest source of operating cash is payments from customers, of which the largest component is collecting\ncash related to product or services sales including advance payments or progress collections for work to be\nperformed. The primary use of operating cash is to pay our suppliers, employees, tax authorities and others for a\nwide range of material and services.\n36 | BHGE 2017 FORM 10-K\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nMedia Segment Profitability\nOperating income was $998 million for the year ended December 31, 2018 as compared to $1,021 million for the year ended December 31, 2017. The\ndecrease was driven by higher restructuring costs, higher depreciation and amortization expense and investments in our services, partially offset by the revenue\nperformance discussed above. Non-GAAP business segment income increased 0.5% on a constant currency basis.\nCorporate Expenses and Eliminations\nOperating expenses were $144 million for the year ended December 31, 2018 as compared to $143 million for the year ended December 31, 2017, primarily\ndue to an increase in transaction related costs and business optimization c\n\n[3] convfinqa_ctx_928.pdf p.1\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations (continued)\nLiquidity and Capital Resources\nSnap-on’s growth has historically been funded by a combination of cash provided by operating activities and debt financing.\nSnap-on believes that its cash from operations and collections of finance receivables, coupled with its sources of borrowings\nand available cash on hand, are sufficient to fund its currently anticipated requirements for scheduled debt payments\n(including the March 2014 repayment of $100.0 million of 5.85% unsecured notes upon maturity), payments of interest and\ndividends, new receivables originated by our financial services businesses, capita\n\n[4] finqa_test_ctx_29.pdf p.1\ns, BHGE LLC entered into a new five-year $3 billion\ncommitted unsecured revolving credit facility (2017 Credit Agreement) with commercial banks maturing in July\n2022. As of December 31, 2017, there were no borrowings under the 2017 Credit Agreement.\nOn November 3, 2017, BHGE LLC entered into a commercial paper program under which it may issue from\ntime to time up to $3 billion in commercial paper with maturities of no more than 397 days. At December 31, 2017,\nthere were no borrowings outstanding under the commercial paper program. The maximum combined borrowing at\nany time under both the 2017 Credit Agreement and the commercial paper program is $3 billion.\nOn November 6, 2017, we announced t\n\n[5] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nConnectivity\nbusiness, lower legal expenses and lower stock-based compensation expense, partially offset with lower sales volumes and\npricing reductions on certain products.\nMedical Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 0.3 $ 0.2 $ 0.1 50.0 %\nGross Profit $ (3.5) $ (3.1) $ (0.4) (12.9)%\nLoss from Operations $ (11.4) $ (8.5) $ (2.9) (34.1)%\nNet Sales. The Medical segment had minimal net sales in both periods from newly launched products.\nGross Profit. Medical segment gross profit was a loss of $3.5 million in fiscal 2018 compared to a loss of $3.1\nmillion in\nDraft:\nNet change in cash during 2015 for Baker Hughes:\n\nOperating activities: $1,277 million  \nInvesting activities: $(466) million  \nFinancing activities: $(515) million  \n\nNet change in cash = Operating + Investing + Financing  \n= 1,277 + (466) + (515)  \n= 1,277 - 466 - 515  \n= 1,277 - 981  \n= $296 million  \n\nSource: finqa_test_ctx_29.pdf p.1\n\n296\nLabel:",
+      "input_tokens": 1278,
+      "output_tokens": 3,
+      "latency_seconds": 11.08042520199524
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Baker Hughes net change in cash 2015 cash flows operating investing financing activities",
+      "filters": {
+        "year": 2015,
+        "company": "Baker Hughes"
+      },
+      "chunk_ids": [],
+      "reason": "baseline_retrieve"
+    },
+    {
+      "iteration": 2,
+      "query": "Baker Hughes net change in cash 2015 cash flows operating investing financing activities",
+      "filters": {},
+      "chunk_ids": [
+        "finqa_test_ctx_29::p1::c1::67859185a2",
+        "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+        "convfinqa_ctx_928::p1::c0::9293808038",
+        "finqa_test_ctx_29::p1::c0::6dda82a985",
+        "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "document_id": "d69f61835b35ec05879669dc41ff57aa",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+          "document_id": "convfinqa_ctx_928",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "document_id": "d69f61835b35ec05879669dc41ff57aa",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+          "document_id": "convfinqa_ctx_928",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 4,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 2006,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "document_id": "d69f61835b35ec05879669dc41ff57aa",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+          "document_id": "convfinqa_ctx_928",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 4,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?\nRetrieval query:",
+  "query_formulation_raw_output": "Baker Hughes net change in cash 2015 cash flows operating investing financing activities",
+  "query_formulation_latency_seconds": 2.2943,
+  "query_formulation_input_tokens": 179,
+  "query_formulation_output_tokens": 19,
+  "query_formulation_trace": {
+    "original_question": "What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?",
+    "retrieval_query": "Baker Hughes net change in cash 2015 cash flows operating investing financing activities",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the net change in cash during 2015 for Baker Hughes, as reflected in the cash flows provided by or used in operating, investing, and financing activities?\nRetrieval query:",
+    "raw_output": "Baker Hughes net change in cash 2015 cash flows operating investing financing activities",
+    "latency_seconds": 2.294297453001491,
+    "input_tokens": 179,
+    "output_tokens": 19,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "296.0",
+  "gold_evidence_reference": "FinQA | pdf/BKR/2017/page_56.pdf | source_page=56 | context_id=finqa_test_ctx_29"
+}

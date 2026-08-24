@@ -1,0 +1,145 @@
+{
+  "question_id": "convfinqa_2565",
+  "question": "What proportion of Duke Realty Corporation's total contractual obligations in 2017 consisted of long-term debt?",
+  "retrieval_query": "Duke Realty Corporation total contractual obligations 2017 long-term debt proportion",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_23::p1::c0::c34ccde5b7",
+      "rank": 1,
+      "dense_score": 0.7808287143707275,
+      "bm25_score": 16.001555870346728,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_23"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+      "rank": 2,
+      "dense_score": 0.7470774054527283,
+      "bm25_score": 14.760352056653781,
+      "hybrid_score": 0.7182577405343649,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1156"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_325::p1::c0::f2894e8c8d",
+      "rank": 3,
+      "dense_score": 0.7201709747314453,
+      "bm25_score": 14.2276073313931,
+      "hybrid_score": 0.5162167951792103,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_325"
+    },
+    {
+      "chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c1::7e153f4be3",
+      "rank": 4,
+      "dense_score": 0.7124713659286499,
+      "bm25_score": 12.585168733446157,
+      "hybrid_score": 0.3847944362265019,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "f1075884f3ae99a0c74074f82c97d74f"
+    },
+    {
+      "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c1::da1702e07c",
+      "rank": 5,
+      "dense_score": 0.6944199800491333,
+      "bm25_score": 14.654921437129772,
+      "hybrid_score": 0.36914909832205045,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d69f61835b35ec05879669dc41ff57aa"
+    }
+  ],
+  "answer": "From evidence [1] convfinqa_ctx_23.pdf p.1:\n\nTotal contractual obligations in 2017: $558,138 (thousands)  \nLong-term debt in 2017: $203,244 (thousands)\n\nProportion of long-term debt to total contractual obligations in 2017:\n$203,244 / $558,138 ≈ 0.3644\n\nAnswer: 0.3644",
+  "latency_seconds": 36.0308,
+  "input_tokens": 1934,
+  "output_tokens": 133,
+  "total_tokens": 2067,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1517,
+  "llm_latency_seconds": 35.8781,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What proportion of Duke Realty Corporation's total contractual obligations in 2017 consisted of long-term debt?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What proportion of Duke Realty Corporation's total contractual obligations in 2017 consisted of long-term debt?\nRetrieval query:",
+  "query_formulation_raw_output": "Duke Realty Corporation total contractual obligations 2017 long-term debt proportion",
+  "query_formulation_latency_seconds": 2.2533,
+  "query_formulation_input_tokens": 165,
+  "query_formulation_output_tokens": 17,
+  "query_formulation_trace": {
+    "original_question": "What proportion of Duke Realty Corporation's total contractual obligations in 2017 consisted of long-term debt?",
+    "retrieval_query": "Duke Realty Corporation total contractual obligations 2017 long-term debt proportion",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What proportion of Duke Realty Corporation's total contractual obligations in 2017 consisted of long-term debt?\nRetrieval query:",
+    "raw_output": "Duke Realty Corporation total contractual obligations 2017 long-term debt proportion",
+    "latency_seconds": 2.2533148340007756,
+    "input_tokens": 165,
+    "output_tokens": 17,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 33.6248,
+  "answer_generation_input_tokens": 1769,
+  "answer_generation_output_tokens": 116,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What proportion of Duke Realty Corporation's total contractual obligations in 2017 consisted of long-term debt?\nEvidence:\n[1] convfinqa_ctx_23.pdf p.1\nPayments due by Period (in thousands)\nContractual Obligations Total 2017 2018 2019 2020 2021 Thereafter\nLong-term debt (1) $3,508,789 $ 203,244 $409,257 $366,456 $461,309 $329,339 $1,739,184\nLine of credit (2) 56,127 2,650 2,650 2,650 48,177 — —\nShare of unconsolidated joint ventures' debt (3) 91,235 2,444 28,466 5,737 11,598 1,236 41,754\nGround leases 311,120 10,745 5,721 5,758 5,793 5,822 277,281\nDevelopment and construction backlog costs(4) 344,700 331,553 13,147 — — — —\nOther 43,357 7,502 7,342 5,801 4,326 3,906 14,480\nTotal Contractual Obligations $4,355,328 $ 558,138 $466,583 $386,402 $531,203 $340,303 $2,072,699\n(1) Our long-term debt consists of both secured and unsecured debt and in ...\n\n[2] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949 ...\n\n[3] convfinqa_ctx_325.pdf p.1\nestimate would equal up to 5% of annual revenue. The expenditures are expected to be used primarily for normal,\nrecurring items necessary to support our business. We also anticipate making income tax payments in the range of\n$425 million to $475 million in 2019.\nContractual Obligations\nIn the table below, we set forth our contractual obligations as of December 31, 2018. Certain amounts included\nin this table are based on our estimates and assumptions about these obligations, including their duration,\nanticipated actions by third parties and other factors. The contractual obligations we will actually pay in future\nperiods may vary from those reflected in the table because the estimates and as ...\n\n[4] f1075884f3ae99a0c74074f82c97d74f.pdf p.1\nObligations and Commitments\nThe following is a summary of our contractual obligations and commercial commitments as of September 29, 2019 (in thousands):\nPayments Due by Fiscal Year\nLess than\nTotal 1 year 1-3 years 3-5 years After 5 years\nContractual Obligations:\nLong-term debt obligations (1) 1,708,916 65,087 115,141 667,245 861,443\nCapital lease obligations 3,937 879 1,758 1,260 40\nOperating lease obligations 1,094,011 193,313 332,020 205,173 363,505\nPurchase commitments (2) 1,906,900 854,100 722,900 308,400 21,500\nBenefit obligations (3) 74,714 15,068 13,499 13,533 32,614\nTotal contractual obligations $ 4,788,478 $ 1,128,447 $ 1,185,318 $ 1,195,611 $ 1,279,102\nOther Commercial Commitments ...\n\n[5] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nand their growth initiatives and amounts needed to service our U.S. indebtedness and related obligations.\nThe below table illustrates our weighted average interest rate and cash paid for interest over the last three years.\n2019 2018 2017\nWeighted average interest rate 4.40% 4.67% 4.32%\nCash paid for interest, net of amounts capitalized (in millions) $ 386 $ 380 $ 352\nOur contractual obligations, commitments and debt service requirements over the next several years are significant. We believe we will have available\nresources to meet both our short-term and long-term liquidity requirements, including our senior secured debt service. We expect the cash flow from our\noperations, combined with ex ...\nAnswer:",
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "0.36415",
+  "gold_evidence_reference": "ConvFinQA | pdf/DRE/2016/page_64.pdf | source_page=64 | context_id=convfinqa_ctx_23"
+}
