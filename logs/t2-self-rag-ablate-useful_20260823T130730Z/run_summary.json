@@ -13,8 +13,8 @@
     "hit_rate": 0.95
   },
   "answer_correctness": {
-    "accuracy": 0.5,
-    "n_correct": 60,
+    "accuracy": 0.475,
+    "n_correct": 57,
     "n": 120,
     "gold_field": "program_answer (canonical); original_answer accepted as equivalent surface form",
     "per_question": [
@@ -30,7 +30,7 @@
         "question_id": "convfinqa_1311",
         "dataset": "ConvFinQA",
         "correct": true,
-        "prediction": "Step 1: Identify the estimated future benefit payments for 2016 and for 2021\u20132025 from the table in the evidence.\n\nFrom [1] convfinqa_ctx_409.pdf p.1:\n- 2016: $2,160 million (for qualified defined benefit pension plans)\n- 2021\u20132025: $13,670 million (for qualified defined benefit pension plans)\n\nStep 2: Compute the proportion of the 2016 payments compared to the 2021\u20132025 payments.\n\nProportion = (2016 payment) / (2021\u20132025 payment)\n= 2,160 / 13,670\n\nStep 3: Perform the division.\n\n2,160 \u00f7 13,670 \u2248 0.1580\n\nFinal answer: 0.158\n\nSource: convfinqa_ctx_409.pdf p.1",
+        "prediction": "Step 1: Identify the estimated future benefit payments for 2016 and for 2021–2025 from the table in the evidence.\n\nFrom [1] convfinqa_ctx_409.pdf p.1:\n- 2016: $2,160 million (for qualified defined benefit pension plans)\n- 2021–2025: $13,670 million (for qualified defined benefit pension plans)\n\nStep 2: Compute the proportion of the 2016 payments compared to the 2021–2025 payments.\n\nProportion = (2016 payment) / (2021–2025 payment)\n= 2,160 / 13,670\n\nStep 3: Perform the division.\n\n2,160 ÷ 13,670 ≈ 0.1580\n\nFinal answer: 0.158\n\nSource: convfinqa_ctx_409.pdf p.1",
         "program_answer": "0.15801",
         "original_answer": "0.15801"
       },
@@ -294,7 +294,7 @@
         "question_id": "convfinqa_79",
         "dataset": "ConvFinQA",
         "correct": true,
-        "prediction": "Percentage increase = [(49.0 - 26.6) / 26.6] \u00d7 100 = (22.4 / 26.6) \u00d7 100 \u2248 84.29%\n\nSource: convfinqa_ctx_1059.pdf p.1",
+        "prediction": "Percentage increase = [(49.0 - 26.6) / 26.6] × 100 = (22.4 / 26.6) × 100 ≈ 84.29%\n\nSource: convfinqa_ctx_1059.pdf p.1",
         "program_answer": "22.4",
         "original_answer": "22.4"
       },
@@ -342,7 +342,7 @@
         "question_id": "finqa_test_1023",
         "dataset": "FinQA",
         "correct": true,
-        "prediction": "The percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited is calculated as follows:\n\nFrom the table on page 1 of finqa_test_ctx_330.pdf:\n- Treasury market value in 2009: $2,068 million\n- Treasury market value in 2010: $2,075 million\n\nPercentage change = [(2010 - 2009) / 2009] \u00d7 100  \n= [(2075 - 2068) / 2068] \u00d7 100  \n= (7 / 2068) \u00d7 100  \n\u2248 0.338%\n\nAnswer: 0.338% (source: finqa_test_ctx_330.pdf p.1)",
+        "prediction": "The percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited is calculated as follows:\n\nFrom the table on page 1 of finqa_test_ctx_330.pdf:\n- Treasury market value in 2009: $2,068 million\n- Treasury market value in 2010: $2,075 million\n\nPercentage change = [(2010 - 2009) / 2009] × 100  \n= [(2075 - 2068) / 2068] × 100  \n= (7 / 2068) × 100  \n≈ 0.338%\n\nAnswer: 0.338% (source: finqa_test_ctx_330.pdf p.1)",
         "program_answer": "0.0033849129593810446",
         "original_answer": "0.3%"
       },
@@ -350,7 +350,7 @@
         "question_id": "finqa_test_1070",
         "dataset": "FinQA",
         "correct": false,
-        "prediction": "To find the percentage of total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, that are scheduled to be paid in 2021:\n\nFrom the evidence:\n- Total minimum lease payments = $2,646 (as of December 31, 2018)\n- Payments scheduled for 2021 = $303\n\nPercentage = (Payment in 2021 / Total minimum lease payments) \u00d7 100  \n= (303 / 2646) \u00d7 100  \n\u2248 11.45%\n\nSource: finqa_test_ctx_125.pdf p.1\n\n11.45%",
+        "prediction": "To find the percentage of total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, that are scheduled to be paid in 2021:\n\nFrom the evidence:\n- Total minimum lease payments = $2,646 (as of December 31, 2018)\n- Payments scheduled for 2021 = $303\n\nPercentage = (Payment in 2021 / Total minimum lease payments) × 100  \n= (303 / 2646) × 100  \n≈ 11.45%\n\nSource: finqa_test_ctx_125.pdf p.1\n\n11.45%",
         "program_answer": "0.17706013363028952",
         "original_answer": "18%"
       },
@@ -374,7 +374,7 @@
         "question_id": "finqa_test_182",
         "dataset": "FinQA",
         "correct": true,
-        "prediction": "Total cost = average price per share \u00d7 number of shares repurchased  \n= $37.73 \u00d7 45,686  \n= $1,724,388.28  \n\nSource: finqa_test_ctx_146.pdf p.1",
+        "prediction": "Total cost = average price per share × number of shares repurchased  \n= $37.73 × 45,686  \n= $1,724,388.28  \n\nSource: finqa_test_ctx_146.pdf p.1",
         "program_answer": "1723732.7799999998",
         "original_answer": "$ 1723732.78"
       },
@@ -398,7 +398,7 @@
         "question_id": "finqa_test_247",
         "dataset": "FinQA",
         "correct": true,
-        "prediction": "Average number of berths per ship = Total berths \u00f7 Number of ships  \n= 503,000 \u00f7 298  \n= 1,688.59\n\nSource: convfinqa_ctx_23.pdf p.1 (contextual data provided in question)  \n\n1688.59",
+        "prediction": "Average number of berths per ship = Total berths ÷ Number of ships  \n= 503,000 ÷ 298  \n= 1,688.59\n\nSource: convfinqa_ctx_23.pdf p.1 (contextual data provided in question)  \n\n1688.59",
         "program_answer": "1687.9194630872482",
         "original_answer": "1687.92"
       },
@@ -470,7 +470,7 @@
         "question_id": "finqa_test_491",
         "dataset": "FinQA",
         "correct": true,
-        "prediction": "Percentage growth rate = ((2013 dividends - 2012 dividends) / 2012 dividends) \u00d7 100  \n= (($92 million - $83 million) / $83 million) \u00d7 100  \n= ($9 million / $83 million) \u00d7 100  \n= 0.1084 \u00d7 100  \n= 10.84%\n\nSource: finqa_test_ctx_375.pdf p.1",
+        "prediction": "Percentage growth rate = ((2013 dividends - 2012 dividends) / 2012 dividends) × 100  \n= (($92 million - $83 million) / $83 million) × 100  \n= ($9 million / $83 million) × 100  \n= 0.1084 × 100  \n= 10.84%\n\nSource: finqa_test_ctx_375.pdf p.1",
         "program_answer": "0.10843373493975904",
         "original_answer": "10.8%"
       },
@@ -486,7 +486,7 @@
         "question_id": "finqa_test_529",
         "dataset": "FinQA",
         "correct": true,
-        "prediction": "2006 purchase commitment: $2,408  \nTotal purchase commitments (2006 + 2007): $3,772  \n\nPercentage allocated for 2006 = (2,408 / 3,772) \u00d7 100 \u2248 63.8%  \n\nSource: finqa_test_ctx_242.pdf p.1",
+        "prediction": "2006 purchase commitment: $2,408  \nTotal purchase commitments (2006 + 2007): $3,772  \n\nPercentage allocated for 2006 = (2,408 / 3,772) × 100 ≈ 63.8%  \n\nSource: finqa_test_ctx_242.pdf p.1",
         "program_answer": "0.6383881230116649",
         "original_answer": "64%"
       },
@@ -518,7 +518,7 @@
         "question_id": "finqa_test_6",
         "dataset": "FinQA",
         "correct": true,
-        "prediction": "Percentage = (463 / 4612) \u00d7 100 = 10.04%\n\nSource: finqa_test_ctx_321.pdf p.1",
+        "prediction": "Percentage = (463 / 4612) × 100 = 10.04%\n\nSource: finqa_test_ctx_321.pdf p.1",
         "program_answer": "0.10039028620988726",
         "original_answer": "10%"
       },
@@ -558,7 +558,7 @@
         "question_id": "finqa_test_720",
         "dataset": "FinQA",
         "correct": true,
-        "prediction": "From the table in finqa_test_ctx_209.pdf p.1:\n\n- Deferred acquisition payments total: $121.0  \n- Total contingent acquisition payments total: $268.4  \n\nPercentage accounted for by deferred acquisition payments:\n\n(121.0 / 268.4) \u00d7 100 = 44.73%\n\nAnswer: 44.73% (finqa_test_ctx_209.pdf p.1)",
+        "prediction": "From the table in finqa_test_ctx_209.pdf p.1:\n\n- Deferred acquisition payments total: $121.0  \n- Total contingent acquisition payments total: $268.4  \n\nPercentage accounted for by deferred acquisition payments:\n\n(121.0 / 268.4) × 100 = 44.73%\n\nAnswer: 44.73% (finqa_test_ctx_209.pdf p.1)",
         "program_answer": "0.4508196721311476",
         "original_answer": "45.1%"
       },
@@ -621,8 +621,8 @@
       {
         "question_id": "finqa_test_927",
         "dataset": "FinQA",
-        "correct": true,
-        "prediction": "$22.08 million\n\nSource: finqa_test_ctx_252.pdf p.1, \"Equity compensation plans approved by security holders\" row, column (a) value is 2,590,898 shares, column (b) is $22.08 per share. The total value is calculated as 2,590,898 \u00d7 $22.08 = $57,230,000 (approximately). However, the question asks for the total value of securities approved, and the table shows the exercise price per share, not total value. The total value of securities approved is not directly given. The value per share is $22.08, but the total value is not computed in the evidence.\n\nThe retrieved evidence is insufficient to answer this question.",
+        "correct": false,
+        "prediction": "$22.08 million\n\nSource: finqa_test_ctx_252.pdf p.1, \"Equity compensation plans approved by security holders\" row, column (a) value is 2,590,898 shares, column (b) is $22.08 per share. The total value is calculated as 2,590,898 × $22.08 = $57,230,000 (approximately). However, the question asks for the total value of securities approved, and the table shows the exercise price per share, not total value. The total value of securities approved is not directly given. The value per share is $22.08, but the total value is not computed in the evidence.\n\nThe retrieved evidence is insufficient to answer this question.",
         "program_answer": "57.207027839999995",
         "original_answer": "57.2"
       },
@@ -630,7 +630,7 @@
         "question_id": "finqa_test_94",
         "dataset": "FinQA",
         "correct": true,
-        "prediction": "The cumulative total stockholder return for Cadence Design Systems Inc. on January 2, 2010, was $100. On January 1, 2011, it was $137.90.\n\nPercentage increase = ((137.90 - 100) / 100) \u00d7 100 = (37.90 / 100) \u00d7 100 = 37.90%\n\nSource: finqa_test_ctx_300.pdf p.1",
+        "prediction": "The cumulative total stockholder return for Cadence Design Systems Inc. on January 2, 2010, was $100. On January 1, 2011, it was $137.90.\n\nPercentage increase = ((137.90 - 100) / 100) × 100 = (37.90 / 100) × 100 = 37.90%\n\nSource: finqa_test_ctx_300.pdf p.1",
         "program_answer": "0.37900000000000006",
         "original_answer": "37.9%"
       },
@@ -710,7 +710,7 @@
         "question_id": "tatqa_test_10170",
         "dataset": "TAT-DQA",
         "correct": true,
-        "prediction": "Percentage change in interest income = [(Interest income 2019 - Interest income 2018) / Interest income 2018] \u00d7 100  \n= [(8,220 - 5,778) / 5,778] \u00d7 100  \n= (2,442 / 5,778) \u00d7 100  \n= 0.4233 \u00d7 100  \n= 42.33%\n\nSource: f59bd5ee555e5cc8cf1d5223a0145049.pdf p.1\n\n42.33",
+        "prediction": "Percentage change in interest income = [(Interest income 2019 - Interest income 2018) / Interest income 2018] × 100  \n= [(8,220 - 5,778) / 5,778] × 100  \n= (2,442 / 5,778) × 100  \n= 0.4233 × 100  \n= 42.33%\n\nSource: f59bd5ee555e5cc8cf1d5223a0145049.pdf p.1\n\n42.33",
         "program_answer": "42.26",
         "original_answer": "42.26"
       },
@@ -733,8 +733,8 @@
       {
         "question_id": "tatqa_test_9180",
         "dataset": "TAT-DQA",
-        "correct": true,
-        "prediction": "Percentage change in non-controlling interest share of loss from 2018 to 2019:\n\n2018: \u00a312.7 million  \n2019: \u00a370.9 million  \n\nChange = 70.9 - 12.7 = 58.2 million  \nPercentage change = (58.2 / 12.7) \u00d7 100 \u2248 458.3%\n\nSource: 1614d46700363e699110c89aaf7e5ba5.pdf p.1\n\n458.3",
+        "correct": false,
+        "prediction": "Percentage change in non-controlling interest share of loss from 2018 to 2019:\n\n2018: £12.7 million  \n2019: £70.9 million  \n\nChange = 70.9 - 12.7 = 58.2 million  \nPercentage change = (58.2 / 12.7) × 100 ≈ 458.3%\n\nSource: 1614d46700363e699110c89aaf7e5ba5.pdf p.1\n\n458.3",
         "program_answer": "70.84",
         "original_answer": "70.84"
       },
@@ -798,7 +798,7 @@
         "question_id": "tatqa_test_9447",
         "dataset": "TAT-DQA",
         "correct": false,
-        "prediction": "The earnings allocated to participating securities in 2018 were $810 (thousands), and in 2019 were $462 (thousands).  \n\nPercentage decrease = [(810 - 462) / 810] \u00d7 100 = (348 / 810) \u00d7 100 \u2248 42.96%  \n\nSource: 52e6a43255d7a284a287057e708a426d.pdf p.2  \n\nAnswer: 42.96%",
+        "prediction": "The earnings allocated to participating securities in 2018 were $810 (thousands), and in 2019 were $462 (thousands).  \n\nPercentage decrease = [(810 - 462) / 810] × 100 = (348 / 810) × 100 ≈ 42.96%  \n\nSource: 52e6a43255d7a284a287057e708a426d.pdf p.2  \n\nAnswer: 42.96%",
         "program_answer": "-42.96",
         "original_answer": "-42.96"
       },
@@ -814,7 +814,7 @@
         "question_id": "tatqa_test_9579",
         "dataset": "TAT-DQA",
         "correct": true,
-        "prediction": "The 'Other' category in non-current assets was 1 \u20ac million in both FY2018 and FY2019.  \nPercentage change = ((1 - 1) / 1) \u00d7 100 = 0%.  \nSource: 7399b5db48b8dc118aa8f0c7336fffa3.pdf p.1",
+        "prediction": "The 'Other' category in non-current assets was 1 € million in both FY2018 and FY2019.  \nPercentage change = ((1 - 1) / 1) × 100 = 0%.  \nSource: 7399b5db48b8dc118aa8f0c7336fffa3.pdf p.1",
         "program_answer": "0.0",
         "original_answer": "0"
       },
@@ -861,7 +861,7 @@
       {
         "question_id": "tatqa_test_9642",
         "dataset": "TAT-DQA",
-        "correct": true,
+        "correct": false,
         "prediction": "-2,879 million\n\nSource: [1] 814bb4c0c0fc78247bb9a442b1f3094c.pdf p.1 (Early debt extinguishment costs (3,604) (725) (2,879))",
         "program_answer": "3600000000.0",
         "original_answer": "['$3.6 billion']"
@@ -886,7 +886,7 @@
         "question_id": "tatqa_test_9693",
         "dataset": "TAT-DQA",
         "correct": true,
-        "prediction": "Percentage change = [(2019 Adjusted EBITDA - 2018 Adjusted EBITDA) / 2018 Adjusted EBITDA] \u00d7 100  \n= [(108,307 - 93,081) / 93,081] \u00d7 100  \n= (15,226 / 93,081) \u00d7 100  \n= 0.1636 \u00d7 100  \n= 16.36%\n\nSource: 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.2\n\n16.36",
+        "prediction": "Percentage change = [(2019 Adjusted EBITDA - 2018 Adjusted EBITDA) / 2018 Adjusted EBITDA] × 100  \n= [(108,307 - 93,081) / 93,081] × 100  \n= (15,226 / 93,081) × 100  \n= 0.1636 × 100  \n= 16.36%\n\nSource: 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.2\n\n16.36",
         "program_answer": "16.36",
         "original_answer": "16.36"
       },
@@ -902,7 +902,7 @@
         "question_id": "tatqa_test_9726",
         "dataset": "TAT-DQA",
         "correct": true,
-        "prediction": "Percentage change in high price per share of NetApp's common stock on NASDAQ during the second quarter between fiscal 2018 and fiscal 2019:\n\nFrom evidence [1]p.1:\n- Fiscal 2018 Second Quarter High: $45.14\n- Fiscal 2019 Second Quarter High: $88.08\n\nCalculation:\n((88.08 - 45.14) / 45.14) \u00d7 100 = (42.94 / 45.14) \u00d7 100 \u2248 95.06%\n\nAnswer: 95.06%  \nSource: 9082b05b2e0e2600d7f405f82795f041.pdf p.1",
+        "prediction": "Percentage change in high price per share of NetApp's common stock on NASDAQ during the second quarter between fiscal 2018 and fiscal 2019:\n\nFrom evidence [1]p.1:\n- Fiscal 2018 Second Quarter High: $45.14\n- Fiscal 2019 Second Quarter High: $88.08\n\nCalculation:\n((88.08 - 45.14) / 45.14) × 100 = (42.94 / 45.14) × 100 ≈ 95.06%\n\nAnswer: 95.06%  \nSource: 9082b05b2e0e2600d7f405f82795f041.pdf p.1",
         "program_answer": "95.13",
         "original_answer": "95.13"
       },
@@ -978,7 +978,13 @@
         "program_answer": "3667.0",
         "original_answer": "['3,667']"
       }
-    ]
+    ],
+    "stray_number_reclassified": [
+      "finqa_test_927",
+      "tatqa_test_9180",
+      "tatqa_test_9642"
+    ],
+    "stray_number_audit_note": "Stray-number audit: these IDs were official-correct because a non-final quantity in the free-form answer matched gold; reclassified to incorrect. Predictions were not changed. Evaluator code was not changed."
   },
   "by_dataset": {
     "ConvFinQA": {
@@ -1018,9 +1024,9 @@
         "hit_rate": 0.925
       },
       "answer_correctness": {
-        "accuracy": 0.425,
+        "accuracy": 0.4,
         "n": 40,
-        "n_correct": 17
+        "n_correct": 16
       },
       "latency": {
         "mean_seconds": 35.496085
@@ -1042,9 +1048,9 @@
         "hit_rate": 0.975
       },
       "answer_correctness": {
-        "accuracy": 0.625,
+        "accuracy": 0.575,
         "n": 40,
-        "n_correct": 25
+        "n_correct": 23
       },
       "latency": {
         "mean_seconds": 39.723282499999996

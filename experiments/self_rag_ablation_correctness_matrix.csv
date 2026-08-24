@@ -74,7 +74,7 @@ finqa_test_861,FinQA,0,0,0,0,0,0,0,000000
 finqa_test_872,FinQA,0,0,0,0,0,0,0,000000
 finqa_test_911,FinQA,0,0,0,0,0,0,0,000000
 finqa_test_92,FinQA,0,1,1,1,1,1,5,011111
-finqa_test_927,FinQA,0,0,0,0,0,1,1,000001
+finqa_test_927,FinQA,0,0,0,0,0,0,0,000000
 finqa_test_94,FinQA,0,1,1,1,1,1,5,011111
 finqa_test_941,FinQA,0,1,1,1,1,1,5,011111
 finqa_test_95,FinQA,1,1,1,1,1,1,6,111111
@@ -87,8 +87,8 @@ tatqa_test_10134,TAT-DQA,1,1,1,1,1,1,6,111111
 tatqa_test_10167,TAT-DQA,0,0,0,0,0,0,0,000000
 tatqa_test_10170,TAT-DQA,0,1,1,1,1,1,5,011111
 tatqa_test_9133,TAT-DQA,0,0,0,0,0,0,0,000000
-tatqa_test_9162,TAT-DQA,0,1,0,0,0,0,1,010000
-tatqa_test_9180,TAT-DQA,0,0,1,1,1,1,4,001111
+tatqa_test_9162,TAT-DQA,0,0,0,0,0,0,0,000000
+tatqa_test_9180,TAT-DQA,0,0,0,0,0,0,0,000000
 tatqa_test_9195,TAT-DQA,0,0,0,0,0,0,0,000000
 tatqa_test_9252,TAT-DQA,1,1,1,1,1,1,6,111111
 tatqa_test_9278,TAT-DQA,1,1,1,1,1,1,6,111111
@@ -104,7 +104,7 @@ tatqa_test_9594,TAT-DQA,0,0,0,0,0,0,0,000000
 tatqa_test_9619,TAT-DQA,0,0,0,0,0,0,0,000000
 tatqa_test_9622,TAT-DQA,1,1,1,1,1,1,6,111111
 tatqa_test_9634,TAT-DQA,1,1,1,1,1,1,6,111111
-tatqa_test_9642,TAT-DQA,0,0,0,0,1,1,2,000011
+tatqa_test_9642,TAT-DQA,0,0,0,0,1,0,1,000010
 tatqa_test_9650,TAT-DQA,1,1,1,1,0,1,5,111101
 tatqa_test_9665,TAT-DQA,0,0,0,0,0,0,0,000000
 tatqa_test_9693,TAT-DQA,1,1,1,1,1,1,6,111111
