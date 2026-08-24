@@ -1,0 +1,4367 @@
+{
+  "retrieval": {
+    "n": 120,
+    "mrr": 0.9173611111111111,
+    "recall_at_k": {
+      "1": 0.8916666666666667,
+      "3": 0.9416666666666667,
+      "5": 0.95,
+      "10": 0.95
+    },
+    "hit_rate": 0.95
+  },
+  "latency": {
+    "mean_seconds": 56.375545,
+    "n": 120
+  },
+  "tokens": {
+    "mean_total": 5762.166666666667,
+    "n": 120
+  },
+  "answer_correctness": {
+    "accuracy": 0.5083333333333333,
+    "n": 120,
+    "n_correct": 61,
+    "gold_field": "program_answer (canonical); original_answer accepted as equivalent surface form",
+    "per_question": [
+      {
+        "question_id": "convfinqa_1190",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "-0.25",
+        "original_answer": "-0.25"
+      },
+      {
+        "question_id": "convfinqa_1311",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Step 1: Identify the future benefit payments for 2016 and for 2021–2025 from the table in the evidence.\n\nFrom [1] convfinqa_ctx_409.pdf p.1:\n- 2016: $2,160 million (for qualified defined benefit pension plans)\n- 2021–2025: $13,670 million (for qualified defined benefit pension plans)\n\nStep 2: Compute the proportion of the 2016 payment compared to the 2021–2025 payment.\n\nProportion = (Payment in 2016) / (Payment 2021–2025)\n= 2,160 / 13,670\n\nStep 3: Perform the division.\n\n2,160 ÷ 13,670 ≈ 0.1580\n\nFinal answer: 0.158\n\nSource: convfinqa_ctx_409.pdf p.1",
+        "program_answer": "0.15801",
+        "original_answer": "0.15801"
+      },
+      {
+        "question_id": "convfinqa_1529",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "138.0",
+        "original_answer": "138.0"
+      },
+      {
+        "question_id": "convfinqa_1598",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "7,600\n\nSource: convfinqa_ctx_637.pdf p.1",
+        "program_answer": "7600.0",
+        "original_answer": "7600.0"
+      },
+      {
+        "question_id": "convfinqa_1621",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "112660.0",
+        "original_answer": "112660.0"
+      },
+      {
+        "question_id": "convfinqa_1650",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$3.2 million (2017) + $23.3 million (2016) = $26.5 million\n\nSource: convfinqa_ctx_1046.pdf p.1",
+        "program_answer": "26.5",
+        "original_answer": "26.5"
+      },
+      {
+        "question_id": "convfinqa_1790",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1.50271",
+        "original_answer": "1.50271"
+      },
+      {
+        "question_id": "convfinqa_1873",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$3.5 billion\n\nSource: convfinqa_ctx_639.pdf p.1",
+        "program_answer": "3.5",
+        "original_answer": "3.5"
+      },
+      {
+        "question_id": "convfinqa_1895",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "The net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013 was $3.1 million.\n\nSource: convfinqa_ctx_928.pdf p.1  \nCalculation: $217.6 million (2013) - $214.5 million (2012) = $3.1 million\n\nAnswer: 3.1",
+        "program_answer": "3.1",
+        "original_answer": "3.1"
+      },
+      {
+        "question_id": "convfinqa_2063",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "20,628\n\nSource: convfinqa_ctx_602.pdf p.1 (Cost of sales for 2019)",
+        "program_answer": "20628.0",
+        "original_answer": "20628.0"
+      },
+      {
+        "question_id": "convfinqa_2136",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "17.74",
+        "original_answer": "17.74"
+      },
+      {
+        "question_id": "convfinqa_2219",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Operating leases (3) = $846 million  \nPurchase obligations (4) = $1,507 million  \n\nCombined amount = $846 + $1,507 = $2,353 million  \n\nSource: convfinqa_ctx_325.pdf p.1  \nAnswer: 2353",
+        "program_answer": "2353.0",
+        "original_answer": "2353.0"
+      },
+      {
+        "question_id": "convfinqa_2239",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$118  \nCalculation: Balance at December 31 = $102 (beginning balance) + $42 (accruals for warranties issued during the year) + $16 (accruals related to pre-existing warranties) - $38 (settlements made) - $4 (other, net) = $118  \nSource: convfinqa_ctx_981.pdf p.1",
+        "program_answer": "118.0",
+        "original_answer": "118.0"
+      },
+      {
+        "question_id": "convfinqa_23",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "475,000\n\nSource: convfinqa_ctx_994.pdf p.1, TABLE (row \"2024 and thereafter\")",
+        "program_answer": "475000.0",
+        "original_answer": "475000.0"
+      },
+      {
+        "question_id": "convfinqa_2407",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.69681",
+        "original_answer": "0.69681"
+      },
+      {
+        "question_id": "convfinqa_2440",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "16.0",
+        "original_answer": "16.0"
+      },
+      {
+        "question_id": "convfinqa_2467",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Net change in revenue from 1998 to 1999:\n\nRevenue in 1999: $5,960  \nRevenue in 1998: $8,091  \n\nChange = 1999 revenue - 1998 revenue = 5,960 - 8,091 = -2,131  \n\nSource: convfinqa_ctx_150.pdf p.1  \n\nAnswer: -2131",
+        "program_answer": "-2131.0",
+        "original_answer": "-2131.0"
+      },
+      {
+        "question_id": "convfinqa_2564",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "yes",
+        "original_answer": "yes"
+      },
+      {
+        "question_id": "convfinqa_2565",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.36415",
+        "original_answer": "0.36415"
+      },
+      {
+        "question_id": "convfinqa_2650",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "122.3",
+        "original_answer": "122.3"
+      },
+      {
+        "question_id": "convfinqa_2757",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1.14394",
+        "original_answer": "1.14394"
+      },
+      {
+        "question_id": "convfinqa_2800",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "145.0",
+        "original_answer": "145.0"
+      },
+      {
+        "question_id": "convfinqa_2887",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$1.29 billion  \nSource: convfinqa_ctx_1119.pdf p.1  \nNote: The evidence states \"the aggregate amounts include losses of approximately $1.29 billion and $324 million reported in 'Marketmaking' and 'Other principal transactions,' respectively.\" The $1.29 billion loss is specifically attributed to \"Marketmaking\" in the level 3 derivative assets and liabilities table.",
+        "program_answer": "1.29",
+        "original_answer": "1.29"
+      },
+      {
+        "question_id": "convfinqa_2930",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "515.9",
+        "original_answer": "515.9"
+      },
+      {
+        "question_id": "convfinqa_3034",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "From evidence [2] convfinqa_ctx_745.pdf p.1:\n\n- Allowance for other funds used during construction in 2016: $15  \n- Allowance for borrowed funds used during construction in 2016: $6  \n\nTotal = $15 + $6 = $21\n\nAnswer: 21",
+        "program_answer": "21.0",
+        "original_answer": "21.0"
+      },
+      {
+        "question_id": "convfinqa_332",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.09637",
+        "original_answer": "0.09637"
+      },
+      {
+        "question_id": "convfinqa_3338",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The estimated future net amortization expense of the present value of future profits for The Hartford Financial Services Group, Inc. is given as:\n\n- 2014: $23 (from [2] convfinqa_ctx_1659.pdf p.1, F-53)\n- 2013: $58 (from [2], same source)\n\nChange between 2013 and 2014 = 2014 value - 2013 value = $23 - $58 = -$35\n\nAnswer: -35",
+        "program_answer": "-34.0",
+        "original_answer": "-34.0"
+      },
+      {
+        "question_id": "convfinqa_3341",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "The fair value of BlackRock's 1.375% notes due in 2015 is $753 million (from table in convfinqa_ctx_426.pdf p.1).  \nThe fair value of BlackRock's 6.25% notes due in 2017 is $785 million (from same table).  \n\nCombined fair value = 753 + 785 = 1,538 million  \n\nAnswer: 1538  \nSource: convfinqa_ctx_426.pdf p.1",
+        "program_answer": "1538.0",
+        "original_answer": "1538.0"
+      },
+      {
+        "question_id": "convfinqa_34",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2.8",
+        "original_answer": "2.8"
+      },
+      {
+        "question_id": "convfinqa_363",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The recorded value of vehicles under capital lease decreased from $86 million in 2014 to $74 million in 2015.\n\nDecrease = $86 - $74 = $12 million.\n\nSource: convfinqa_ctx_1727.pdf p.1",
+        "program_answer": "-12.0",
+        "original_answer": "-12.0"
+      },
+      {
+        "question_id": "convfinqa_386",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Net change in earnings attributable to Altria from 2016 to 2017 = 2017 net earnings - 2016 net earnings  \n= $10,222 - $14,239 = -$4,017  \n\nSource: convfinqa_ctx_26.pdf p.1 [TABLE] Net earnings attributable to Altria Group, Inc.  \n\nAnswer: -4017",
+        "program_answer": "-4017.0",
+        "original_answer": "-4017.0"
+      },
+      {
+        "question_id": "convfinqa_40",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$6,424,582  \nSource: convfinqa_ctx_1156.pdf p.1 (Long-term debt(1) entry under \"Less than 1 year\" and \"More than 1 year\" categories, total $6,424,582 in thousands)",
+        "program_answer": "6424582.0",
+        "original_answer": "6424582.0"
+      },
+      {
+        "question_id": "convfinqa_529",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Price change for Apple Inc. from September 30, 2006 ($100) to September 30, 2011 ($495):\n\n$495 - $100 = $395\n\nSource: convfinqa_ctx_366.pdf p.1",
+        "program_answer": "395.0",
+        "original_answer": "395.0"
+      },
+      {
+        "question_id": "convfinqa_652",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "Change in Fidelity National Information Services' total trade receivables, net, from 2015 to 2016:\n\nTotal trade receivables, net in 2015: $1,747 million  \nTotal trade receivables, net in 2016: $1,680 million  \nChange = 1,680 - 1,747 = -67 million\n\nAnswer: -67 (in millions)  \nSource: convfinqa_ctx_622.pdf p.1",
+        "program_answer": "-92.0",
+        "original_answer": "-92.0"
+      },
+      {
+        "question_id": "convfinqa_79",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Percentage increase = [(49.0 - 26.6) / 26.6] × 100 = (22.4 / 26.6) × 100 ≈ 84.29%\n\nSource: convfinqa_ctx_1059.pdf p.1",
+        "program_answer": "22.4",
+        "original_answer": "22.4"
+      },
+      {
+        "question_id": "convfinqa_815",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1328.0",
+        "original_answer": "1328.0"
+      },
+      {
+        "question_id": "convfinqa_864",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "Net change in Aon's unrecognized tax benefits during 2010:\n\nAdditions (current year) = 7  \nAdditions (prior years) = 4  \nReductions (prior years) = (7)  \nSettlements = (1)  \nLapse of statute of limitations = (5)  \nAcquisitions = 26  \nForeign currency translation = (1)  \n\nSum = 7 + 4 + (7) + (1) + (5) + 26 + (1) = 38  \n\nThe balance at December 31, 2010, is $77 million (from the table). The balance at December 31, 2009, is $86 million (from the table).  \n\nNet change = $77 - $86 = -$9 million  \n\nSource: convfinqa_ctx_1334.pdf p.1  \n\nAnswer: -9",
+        "program_answer": "23.0",
+        "original_answer": "23.0"
+      },
+      {
+        "question_id": "convfinqa_888",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$44 million (2011) + $44 million (2010) = $88 million\n\nSource: convfinqa_ctx_1574.pdf p.1",
+        "program_answer": "88.0",
+        "original_answer": "88.0"
+      },
+      {
+        "question_id": "convfinqa_996",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "122.8",
+        "original_answer": "122.8"
+      },
+      {
+        "question_id": "convfinqa_997",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Beginning of year: 421 million barrels  \nEnd of year: 388 million barrels  \n\nCombined total = 421 + 388 = 809 million barrels  \n\nSource: convfinqa_ctx_1309.pdf p.1",
+        "program_answer": "809.0",
+        "original_answer": "809.0"
+      },
+      {
+        "question_id": "finqa_test_1023",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "The percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited is calculated as follows:\n\nFrom the table on page 1 of finqa_test_ctx_330.pdf:\n- Treasury market value in 2009: $2,068 million\n- Treasury market value in 2010: $2,075 million\n\nPercentage change = [(2010 value - 2009 value) / 2009 value] × 100  \n= [(2075 - 2068) / 2068] × 100  \n= (7 / 2068) × 100  \n≈ 0.338%\n\nAnswer: 0.338% (source: finqa_test_ctx_330.pdf p.1)",
+        "program_answer": "0.0033849129593810446",
+        "original_answer": "0.3%"
+      },
+      {
+        "question_id": "finqa_test_1070",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "To find the percentage of total minimum capital lease payments due from Union Pacific Corporation as of December 31, 2018, that are scheduled to be paid in 2021:\n\nFrom the evidence:\n- Total minimum lease payments = $2,646 (as of December 31, 2018)\n- Payments scheduled for 2021 = $303\n\nPercentage = (Payment in 2021 / Total minimum lease payments) × 100  \n= (303 / 97) × 100? Wait — total is 2,646, not 97.\n\nCorrect calculation:\n= (303 / 2,646) × 100  \n= 0.1145 × 100  \n≈ 11.45%\n\nSource: finqa_test_ctx_125.pdf p.1\n\nAnswer: 11.45%",
+        "program_answer": "0.17706013363028952",
+        "original_answer": "18%"
+      },
+      {
+        "question_id": "finqa_test_1081",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Net change in cash during 2015 for Baker Hughes:\n\nOperating activities: $1,277 million (2015)  \nInvesting activities: $(466) million (2015)  \nFinancing activities: $(515) million (2015)  \n\nNet change in cash = Operating + Investing + Financing  \n= 1,277 + (466) + (515)  \n= 1,277 - 466 - 515  \n= 1,277 - 981  \n= 296 million\n\nAnswer: 296 (in millions)  \nSource: finqa_test_ctx_29.pdf p.1",
+        "program_answer": "296.0",
+        "original_answer": "296"
+      },
+      {
+        "question_id": "finqa_test_1146",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "4.4",
+        "original_answer": "4.4"
+      },
+      {
+        "question_id": "finqa_test_182",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Total cost = Average price per share × Total shares repurchased  \n= $37.73 × 45,686  \n= $17,243,000 (approximately)\n\nSource: finqa_test_ctx_146.pdf p.1",
+        "program_answer": "1723732.7799999998",
+        "original_answer": "$ 1723732.78"
+      },
+      {
+        "question_id": "finqa_test_191",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "16.430000000000007",
+        "original_answer": "16.43"
+      },
+      {
+        "question_id": "finqa_test_244",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The return on investment (ROI) for Applied Materials, Inc. is calculated using the performance graph data from the 2018 report. The graph shows the cumulative total stockholder return for Applied common stock from October 27, 2013, to October 28, 2018. The value of the stock on October 27, 2013, is not explicitly given, but the performance graph starts at $100 (assumed initial investment). The value of the stock on October 28, 2018, is $171.11 (as shown in the performance graph).\n\nThus, the return on investment is:\n\n(Ending value - Beginning value) / Beginning value  \n= (171.11 - 100) / 100  \n= 71.11 / 100  \n= 0.7111 or 71.11%\n\nSource: finqa_test_ctx_7.pdf p.1\n\n71.11%",
+        "program_answer": "-0.03329999999999998",
+        "original_answer": "-3.3%"
+      },
+      {
+        "question_id": "finqa_test_247",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Average number of berths per ship = Total berths ÷ Number of ships  \n= 503,000 ÷ 298  \n= 1,688.59\n\nSource: convfinqa_ctx_23.pdf p.1 (contextual data provided in question)  \n\n1688.59",
+        "program_answer": "1687.9194630872482",
+        "original_answer": "1687.92"
+      },
+      {
+        "question_id": "finqa_test_273",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The total return to Ball Corporation stockholders, assuming a $100 investment on December 31, 2007, and reinvested dividends, by the end of 2012 is $207.62.\n\nSource: finqa_test_ctx_289.pdf p.1, \"TOTAL RETURNTOSTOCKHOLDERS (Assumes $100 investment on 12/31/07)\" table, showing the value of $207.62 on December 31, 2012.",
+        "program_answer": "1.0762",
+        "original_answer": "107.6%"
+      },
+      {
+        "question_id": "finqa_test_28",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "5.800000000000001",
+        "original_answer": "5.8"
+      },
+      {
+        "question_id": "finqa_test_283",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Net increase in outstanding shares from January 3, 2016, to December 29, 2018:\n\n- Balance at January 3, 2016: 1,214 million shares outstanding\n- Balance at December 29, 2018: 1,220 million shares outstanding\n\nNet increase = 1,220 - 1,214 = 6 million shares\n\nAnswer: 6\n\nSource: finqa_test_ctx_92.pdf p.1",
+        "program_answer": "6.0",
+        "original_answer": "6"
+      },
+      {
+        "question_id": "finqa_test_400",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.10599999999999998",
+        "original_answer": "10.6%"
+      },
+      {
+        "question_id": "finqa_test_41",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.12160000000000015",
+        "original_answer": "12.16%"
+      },
+      {
+        "question_id": "finqa_test_428",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "4331309.0",
+        "original_answer": "4331309"
+      },
+      {
+        "question_id": "finqa_test_439",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "28000.0",
+        "original_answer": "28000"
+      },
+      {
+        "question_id": "finqa_test_444",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "92.0",
+        "original_answer": "92"
+      },
+      {
+        "question_id": "finqa_test_491",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Percentage growth rate = ((2013 dividends - 2012 dividends) / 2012 dividends) × 100  \n= ((92 - 83) / 83) × 100  \n= (9 / 83) × 100  \n≈ 10.84%\n\nSource: finqa_test_ctx_375.pdf p.1",
+        "program_answer": "0.10843373493975904",
+        "original_answer": "10.8%"
+      },
+      {
+        "question_id": "finqa_test_527",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Basic net income per common share = Diluted net income available for common shareholders / Weighted average number of common shares outstanding\n\nFrom evidence [1] p.1:\n- Diluted net income available for common shareholders in 2008 = $59,584 (in thousands)\n- Weighted average number of common shares outstanding in 2008 = 146,915 (in thousands)\n\nCalculation:\n59,584 / 146,915 = 0.4057\n\nAnswer: 0.4057 (in thousands of dollars per share)\n\nSource: finqa_test_ctx_107.pdf p.1",
+        "program_answer": "0.3853656876425144",
+        "original_answer": ".385"
+      },
+      {
+        "question_id": "finqa_test_529",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "2006 purchase commitment: $2,408  \nTotal purchase commitments (2006 + 2007): $3,772  \n\nPercentage allocated for 2006 = (2,408 / 3,772) × 100 ≈ 63.8%  \n\nSource: finqa_test_ctx_242.pdf p.1",
+        "program_answer": "0.6383881230116649",
+        "original_answer": "64%"
+      },
+      {
+        "question_id": "finqa_test_555",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "6.59",
+        "original_answer": "6.59"
+      },
+      {
+        "question_id": "finqa_test_559",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.8058252427184466",
+        "original_answer": "80.6%"
+      },
+      {
+        "question_id": "finqa_test_579",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.18181818181818177",
+        "original_answer": "18.2%"
+      },
+      {
+        "question_id": "finqa_test_6",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Percentage = (463 / 4612) × 100 = 10.04%\n\nSource: finqa_test_ctx_321.pdf p.1",
+        "program_answer": "0.10039028620988726",
+        "original_answer": "10%"
+      },
+      {
+        "question_id": "finqa_test_628",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "Environmental reserves (New Jersey Chrome, glass and chemical, and other contingencies) in 2018: $151 + $90 + $50 = $291 million  \nAsbestos-related claim reserves: $180 million  \n\n$291 > $180  \n\nAnswer: yes",
+        "program_answer": "471.0",
+        "original_answer": "no"
+      },
+      {
+        "question_id": "finqa_test_631",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.020999999999999963",
+        "original_answer": "2.1%"
+      },
+      {
+        "question_id": "finqa_test_65",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1",
+        "original_answer": "yes"
+      },
+      {
+        "question_id": "finqa_test_66",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The intangible assets acquired by News Corp in 2017 include:\n- License of the realtor.com® trademark: $116 million\n- Customer relationships, other tradenames, and multiple listings service agreements: $100 million\n- Technology (realtor.com® website): $39 million\n\nTotal intangible assets = $116M + $100M + $39M = $255 million\n\nProportion attributable to the license of the realtor.com® trademark = $116 million / $255 million ≈ 0.455\n\nAnswer: 0.455  \nSource: finqa_test_ctx_197.pdf p.1",
+        "program_answer": "0.5370370370370371",
+        "original_answer": "54%"
+      },
+      {
+        "question_id": "finqa_test_720",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "From the table in finqa_test_ctx_209.pdf p.1:\n\n- Deferred acquisition payments total: $121.0  \n- Total contingent acquisition payments total: $268.4  \n\nPercentage accounted for by deferred acquisition payments:\n\n(121.0 / 268.4) × 100 = 44.73%\n\nAnswer: 44.73% (finqa_test_ctx_209.pdf p.1)",
+        "program_answer": "0.4508196721311476",
+        "original_answer": "45.1%"
+      },
+      {
+        "question_id": "finqa_test_725",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The average share price at which the 2.2 million shares were purchased by employees in the 2011 employee stock purchase plan at Motorola Solutions is $35.61.\n\nSource: finqa_test_ctx_97.pdf p.1  \nCalculation: The evidence states that for the years ended December 31, 2011, employees purchased 2.2 million shares at a purchase price of $35.61.\n\nAnswer: 35.61",
+        "program_answer": "33.085",
+        "original_answer": "33.085"
+      },
+      {
+        "question_id": "finqa_test_760",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "70000000.0",
+        "original_answer": "70000000"
+      },
+      {
+        "question_id": "finqa_test_832",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "The decrease in additions for tax positions of prior years in 2018 is calculated as follows:\n\nAdditions for tax positions of prior years in 2018: 10  \nAdditions for tax positions of prior years in 2017: 12  \n\nDecrease = 12 - 10 = 2\n\nSource: finqa_test_ctx_357.pdf p.1\n\nAnswer: 2",
+        "program_answer": "2.0",
+        "original_answer": "2"
+      },
+      {
+        "question_id": "finqa_test_861",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "405.0",
+        "original_answer": "405"
+      },
+      {
+        "question_id": "finqa_test_872",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "$10.6 million (2017) + $11 million (2018) + $11.2 million (2019) = $32.8 million\n\nSource: finqa_test_ctx_113.pdf p.1",
+        "program_answer": "21.6",
+        "original_answer": "44.4"
+      },
+      {
+        "question_id": "finqa_test_911",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "29.600000000000023",
+        "original_answer": "29.6"
+      },
+      {
+        "question_id": "finqa_test_92",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Average operating income = (895.2 + 808.4 + 762.6) / 3 = 2466.2 / 3 = 822.07  \nSource: finqa_test_ctx_22.pdf p.1",
+        "program_answer": "822.0666666666666",
+        "original_answer": "822.06"
+      },
+      {
+        "question_id": "finqa_test_927",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "57.207027839999995",
+        "original_answer": "57.2"
+      },
+      {
+        "question_id": "finqa_test_94",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "The cumulative total stockholder return for Cadence Design Systems Inc. on January 2, 2010, was $100. On January 1, 2011, it was $137.90.\n\nPercentage increase = ((137.90 - 100) / 100) × 100 = (37.90 / 100) × 100 = 37.90%\n\nSource: finqa_test_ctx_300.pdf p.1",
+        "program_answer": "0.37900000000000006",
+        "original_answer": "37.9%"
+      },
+      {
+        "question_id": "finqa_test_941",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Carrying amount of notes and other long-term assets in 2004: $1,702 million  \nFair value of notes and other long-term assets in 2004: $1,770 million  \n\nDifference = $1,770 - $1,702 = $68 million  \n\nSource: finqa_test_ctx_11.pdf p.1",
+        "program_answer": "68.0",
+        "original_answer": "68"
+      },
+      {
+        "question_id": "finqa_test_95",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "362,400  \nSource: finqa_test_ctx_286.pdf p.1",
+        "program_answer": "364400.0",
+        "original_answer": "364400"
+      },
+      {
+        "question_id": "finqa_test_990",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "The ratio of The Priceline Group Inc. to the NASDAQ Composite Index at December 31, 2016, is 313.45 / 216.54 = 1.447.\n\nSource: finqa_test_ctx_192.pdf p.1",
+        "program_answer": "1.4475385610048952",
+        "original_answer": "1.44"
+      },
+      {
+        "question_id": "tatqa_test_10001",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "70238.0",
+        "original_answer": "70238"
+      },
+      {
+        "question_id": "tatqa_test_10006",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The difference in total products and services revenue between fiscal 2018 and 2017 for Cisco Systems, Inc. is $49,330 million - $48,005 million = $1,325 million.\n\nSource: d9929fa56778e739f071d0d586171994.pdf p.1",
+        "program_answer": "1325.0",
+        "original_answer": "1325"
+      },
+      {
+        "question_id": "tatqa_test_10037",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The FY2019 Performance Rights Plan has a higher number of outstanding shares at the end of the period (547,949) compared to FY2018 (407,262).\n\nSource: dc105a860fbe0bfd73a477bda3945171.pdf p.1",
+        "program_answer": "2018.0",
+        "original_answer": "['2018']"
+      },
+      {
+        "question_id": "tatqa_test_10059",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Change in Valuation allowance from fiscal 2018 to fiscal 2019 = Valuation allowance in 2019 - Valuation allowance in 2018  \n= 7,925 - 4,263 = 3,662 (in thousands)\n\nSource: debfaf15530ee227395897df205fa19f.pdf p.1\n\n3662",
+        "program_answer": "3662.0",
+        "original_answer": "3662"
+      },
+      {
+        "question_id": "tatqa_test_10134",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The total amount of contractual obligations due within the next fiscal year (less than 1 year) as of September 29, 2019, is $1,128,447 (from the \"Total contractual obligations\" row and \"Less than 1 year\" column in the table on page 1 of f1075884f3ae99a0c74074f82c97d74f.pdf).\n\nCalculation:  \nFrom the table:  \n- Long-term debt obligations (less than 1 year): $65,087  \n- Capital lease obligations (less than 1 year): $879  \n- Operating lease obligations (less than 1 year): $193,313  \n- Purchase commitments (less than 1 year): $854,100  \n- Benefit obligations (less than 1 year): $15,068  \n\nSum:  \n65,087 + 879 + 193,313 + 854,100 + 15,068 = $1,128,447\n\nAnswer: 1128447",
+        "program_answer": "1128447.0",
+        "original_answer": "['$1,128,447']"
+      },
+      {
+        "question_id": "tatqa_test_10167",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2017.0",
+        "original_answer": "['2017']"
+      },
+      {
+        "question_id": "tatqa_test_10170",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Percentage change in interest income = [(Interest income 2019 - Interest income 2018) / Interest income 2018] × 100  \n= [(8,220 - 5,778) / 5,778] × 100  \n= (2,442 / 5,778) × 100  \n= 42.33%\n\nSource: f59bd5ee555e5cc8cf1d5223a0145049.pdf p.1\n\nAnswer: 42.33%",
+        "program_answer": "42.26",
+        "original_answer": "42.26"
+      },
+      {
+        "question_id": "tatqa_test_9133",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "163.0",
+        "original_answer": "['163']"
+      },
+      {
+        "question_id": "tatqa_test_9162",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "Interface Segment Net Sales (April 28, 2018): $73.2 million  \nMedical Segment Net Sales (April 29, 2017): $0.2 million  \n\nAverage net sales for Interface and Medical segments:  \n(73.2 + 0.2) / 2 = 73.4 / 2 = 36.7 million  \n\nSource: 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1  \nAnswer: 36.7",
+        "program_answer": "0.25",
+        "original_answer": "0.25"
+      },
+      {
+        "question_id": "tatqa_test_9180",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "70.84",
+        "original_answer": "70.84"
+      },
+      {
+        "question_id": "tatqa_test_9195",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "-0.5",
+        "original_answer": "-0.5"
+      },
+      {
+        "question_id": "tatqa_test_9252",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Change in 'United States' 'Property and equipment, net' from March 31, 2018 to March 31, 2019:  \n$62,455 (2019) - $62,064 (2018) = $391  \n\nSource: 270bd8844a1df7adb9e0877771195f85.pdf p.1  \n\n391",
+        "program_answer": "391.0",
+        "original_answer": "391"
+      },
+      {
+        "question_id": "tatqa_test_9278",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "368%\n\nSource: [2] 2da56df966a1c15057d2661ce589be1c.pdf p.1, TABLE: Share of net earnings in other affiliates | 2018: 3,711 | 2017: 793 | % Change: 368%",
+        "program_answer": "367.97",
+        "original_answer": "367.97"
+      },
+      {
+        "question_id": "tatqa_test_9308",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Sum of total stock-based compensation expense and unrecognized stock-based compensation expense for unvested employee stock options and unvested RSUs as of December 31, 2019:\n\nTotal stock-based compensation expense (from evidence): $3,711  \nUnrecognized stock-based compensation expense for unvested employee stock options: $4,801  \nUnrecognized stock-based compensation expense for unvested RSUs: $1,882  \n\nSum = $3,711 + $4,801 + $1,882 = $10,394\n\nSource: 36d1468e2be20ccc765f76c712ed5e1e.pdf p.1\n\nAnswer: 10394",
+        "program_answer": "10394.0",
+        "original_answer": "10394"
+      },
+      {
+        "question_id": "tatqa_test_9345",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2.0",
+        "original_answer": "2"
+      },
+      {
+        "question_id": "tatqa_test_9367",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The decrease in depreciation in 2019 for Marin Software Inc. was $0.5 million.\n\nSource: 434b94166389d203839e681526978a7d.pdf p.1",
+        "program_answer": "500000.0",
+        "original_answer": "['$0.5 million']"
+      },
+      {
+        "question_id": "tatqa_test_9388",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The valuation allowance recorded by ACI Worldwide Inc. on its deferred tax asset related to U.S. foreign tax credits in 2018 was $15.5 million.\n\nSource: [1] p.1 \"During the year ended December 31, 2018, the Company recorded a $15.5 million valuation allowance on its deferred tax asset related to U.S. foreign tax credits based upon business conditions and tax laws in effect at that time.\"",
+        "program_answer": "15500000.0",
+        "original_answer": "['$15.5 million']"
+      },
+      {
+        "question_id": "tatqa_test_9447",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The earnings allocated to participating securities in 2018 were $810 (thousands), and in 2019 were $462 (thousands).  \n\nPercentage decrease = [(810 - 462) / 810] × 100 = (348 / 810) × 100 ≈ 42.96%  \n\nSource: 52e6a43255d7a284a287057e708a426d.pdf p.2  \n\n42.96",
+        "program_answer": "-42.96",
+        "original_answer": "-42.96"
+      },
+      {
+        "question_id": "tatqa_test_9564",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The total net deferred taxes for assets and liabilities for Conagra Brands, Inc. for the fiscal year ended May 26, 2019, is $325.0 million. This is derived from the \"Net deferred taxes\" row in the table for May 26, 2019, which is $325.0 million (after subtracting the valuation allowance of $738.1 million from the total deferred taxes of $1,063.1 million).\n\nSource: 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\n\nAnswer: 325.0",
+        "program_answer": "2942.3",
+        "original_answer": "2942.3"
+      },
+      {
+        "question_id": "tatqa_test_9579",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The 'Other' category in non-current assets was 1 € million in both FY2018 and FY2019.  \nPercentage change = [(1 - 1) / 1] × 100 = 0%.  \nSource: 7399b5db48b8dc118aa8f0c7336fffa3.pdf p.1",
+        "program_answer": "0.0",
+        "original_answer": "0"
+      },
+      {
+        "question_id": "tatqa_test_9581",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018, is calculated as follows:\n\nFrom Table \"Total Revenues by Business\" on page 1 of 75fec3ba291d21ab7ffca720542f1780.pdf:\n\n- Cloud and license: $31,994 million (2018 actual)\n- Hardware: $3,994 million (2018 actual)\n\nSum = $31,994 + $3,994 = $35,988 million\n\nAnswer: 35988",
+        "program_answer": "35988.0",
+        "original_answer": "35988"
+      },
+      {
+        "question_id": "tatqa_test_9594",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2496185.0",
+        "original_answer": "2496185"
+      },
+      {
+        "question_id": "tatqa_test_9619",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "6.4",
+        "original_answer": "6.4"
+      },
+      {
+        "question_id": "tatqa_test_9622",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Change in Current deferred income for Spirent Communications Plc in 2019 = 2019 value - 2018 value = 53.2 - 55.2 = -2.0 million\n\nSource: 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1, Table under \"25. Deferred income\" with values for 2019 and 2018.\n\nAnswer: -2.0",
+        "program_answer": "-2.0",
+        "original_answer": "-2"
+      },
+      {
+        "question_id": "tatqa_test_9634",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Change in constant currency revenue between 2018 and 2019 = 583,600 - 532,600 = 51,000 (in thousands)\n\nSource: 7e8a46437303bd16e1b748161210ecdc.pdf p.1 [TABLE] Constant currency revenue | $ | 583,600 |  |  | $ | 532,600 |  |  | $ | 487,850 |\n\nAnswer: 51,000",
+        "program_answer": "51000.0",
+        "original_answer": "51000"
+      },
+      {
+        "question_id": "tatqa_test_9642",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "-2,879 million (from the \"Early debt extinguishment costs\" row in the \"Other Income (Expense), Net\" table, showing a decrease of 2,879 from 2018 to 2019)\n\nSource: 814bb4c0c0fc78247bb9a442b1f3094c.pdf p.1",
+        "program_answer": "3600000000.0",
+        "original_answer": "['$3.6 billion']"
+      },
+      {
+        "question_id": "tatqa_test_9650",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Nominal difference in sales between 2019 and 2018 for New Zealand Food:  \nFrom table, F19 sales = 6,712 (NZ$ million), F18 sales = 6,433 (NZ$ million)  \nDifference = 6,712 - 6,433 = 279 (NZ$ million)  \n\nSource: 83924a3098a43b0ff8f25791decd0151.pdf p.1 [TABLE]  \nAnswer: 279",
+        "program_answer": "279.0",
+        "original_answer": "279"
+      },
+      {
+        "question_id": "tatqa_test_9665",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "125.6",
+        "original_answer": "125.6"
+      },
+      {
+        "question_id": "tatqa_test_9693",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Percentage change = [(2019 Adjusted EBITDA - 2018 Adjusted EBITDA) / 2018 Adjusted EBITDA] × 100  \n= [(108,307 - 93,081) / 93,081] × 100  \n= (15,226 / 93,081) × 100  \n= 16.35%\n\nSource: 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.2",
+        "program_answer": "16.36",
+        "original_answer": "16.36"
+      },
+      {
+        "question_id": "tatqa_test_9707",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "$5.7 million\n\nSource: [1] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1",
+        "program_answer": "5.7",
+        "original_answer": "['5.7']"
+      },
+      {
+        "question_id": "tatqa_test_9726",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "High price per share in second quarter:\n- Fiscal 2019: $88.08\n- Fiscal 2018: $45.14\n\nPercentage change = [(88.08 - 45.14) / 45.14] × 100 = (42.94 / 45.14) × 100 ≈ 95.06%\n\nSource: 9082b05b2e0e2600d7f405f82795f041.pdf p.1\n\n95.06",
+        "program_answer": "95.13",
+        "original_answer": "95.13"
+      },
+      {
+        "question_id": "tatqa_test_9758",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "23%  \nSource: 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1 (Total Product Sales row)",
+        "program_answer": "23.0",
+        "original_answer": "['23%']"
+      },
+      {
+        "question_id": "tatqa_test_9761",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "16 (from the table showing \"Number of shares of common stock granted\" for 2018 as 16,000 shares, or 16 in thousands)\n\nSource: 9d473b9c09cabed1386df42ab20f4869.pdf p.1, table under \"Years Ended December 31, 2019 2018 2017\"",
+        "program_answer": "16.0",
+        "original_answer": "['16']"
+      },
+      {
+        "question_id": "tatqa_test_9799",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Basic earnings per share for fiscal years 2017, 2018, and 2019:\n\n- 2017: $12.30  \n- 2018: $2.70  \n- 2019: $2.41  \n\nAverage = (12.30 + 2.70 + 2.41) / 3 = 17.41 / 3 = 5.8033...\n\nRounded to two decimal places: 5.80\n\nSource: a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1 (Basic earnings per share data for 2015–2019)\n\nAnswer: 5.80",
+        "program_answer": "5.8",
+        "original_answer": "5.8"
+      },
+      {
+        "question_id": "tatqa_test_9852",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Sum of operating accruals for 2018 and 2019:  \n2019: $23,695  \n2018: $24,020  \nSum = 23,695 + 24,020 = 47,715  \n\nSource: b0f915f83dc1cd1850aec59abadb7dda.pdf p.1  \nAnswer: 47715",
+        "program_answer": "47715.0",
+        "original_answer": "47715"
+      },
+      {
+        "question_id": "tatqa_test_9904",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019:\n\nFrom the table on page 1:\n- Net profit/(loss) for the year excluding impairment in 2019: 46.0 USDm\n- Net profit/(loss) for the year excluding impairment in 2018: -34.8 USDm\n\nChange = 46.0 - (-34.8) = 80.8 USDm\n\nAnswer: 80.8",
+        "program_answer": "80.8",
+        "original_answer": "80.8"
+      },
+      {
+        "question_id": "tatqa_test_9976",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Sum of capitalized interest for 2018 and 2019: 51 + 45 = 96\n\nSource: d35878bbfd434409ed509a53c9af591a.pdf p.1, Note 6 Interest expense",
+        "program_answer": "96.0",
+        "original_answer": "96"
+      },
+      {
+        "question_id": "tatqa_test_9979",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in 2019:\n\nTotal revenue for Network Solutions (Access & Aggregation + Subscriber Solutions & Experience + Traditional & Other Products) = $289,980 + $144,651 + $20,595 = $455,226  \nTotal revenue for Services & Support = $58,894 + $8,269 + $7,672 = $74,835  \n\nDifference = $455,226 - $74,835 = $380,391\n\nSource: d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\n\n380391",
+        "program_answer": "380391.0",
+        "original_answer": "380391"
+      },
+      {
+        "question_id": "tatqa_test_9987",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "383 / 454 = 0.844 = 84.4%\n\nSource: d69f61835b35ec05879669dc41ff57aa.pdf p.1",
+        "program_answer": "84.36",
+        "original_answer": "84.36"
+      },
+      {
+        "question_id": "tatqa_test_9990",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "3,667\n\nSource: d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1  \nCalculation: The evidence states that research and development labour resources increased by 336 employees, from 3,331 employees at June 30, 2018 to 3,667 employees at June 30, 2019. Therefore, the total number of research and development labour resources as of June 30, 2019, is 3,667.",
+        "program_answer": "3667.0",
+        "original_answer": "['3,667']"
+      }
+    ],
+    "stray_number_reclassified": [
+      "tatqa_test_9162"
+    ],
+    "stray_number_audit_note": "Stray-number audit: these IDs were official-correct because a non-final quantity in the free-form answer matched gold; reclassified to incorrect. Predictions were not changed. Evaluator code was not changed."
+  },
+  "by_dataset": {
+    "ConvFinQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.89375,
+        "recall_at_k": {
+          "1": 0.85,
+          "3": 0.925,
+          "5": 0.95,
+          "10": 0.95
+        },
+        "hit_rate": 0.95
+      },
+      "answer_correctness": {
+        "accuracy": 0.475,
+        "n": 40,
+        "n_correct": 19
+      },
+      "latency": {
+        "mean_seconds": 52.7116
+      },
+      "tokens": {
+        "mean_total": 5733.675
+      }
+    },
+    "FinQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.8833333333333334,
+        "recall_at_k": {
+          "1": 0.85,
+          "3": 0.925,
+          "5": 0.925,
+          "10": 0.925
+        },
+        "hit_rate": 0.925
+      },
+      "answer_correctness": {
+        "accuracy": 0.4,
+        "n": 40,
+        "n_correct": 16
+      },
+      "latency": {
+        "mean_seconds": 54.9905725
+      },
+      "tokens": {
+        "mean_total": 5766.425
+      }
+    },
+    "TAT-DQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.975,
+        "recall_at_k": {
+          "1": 0.975,
+          "3": 0.975,
+          "5": 0.975,
+          "10": 0.975
+        },
+        "hit_rate": 0.975
+      },
+      "answer_correctness": {
+        "accuracy": 0.65,
+        "n": 40,
+        "n_correct": 26
+      },
+      "latency": {
+        "mean_seconds": 61.424462500000004
+      },
+      "tokens": {
+        "mean_total": 5786.4
+      }
+    }
+  },
+  "evidence_support": "not_implemented",
+  "evidence_overlap": [
+    {
+      "question_id": "convfinqa_1190",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1256::p1::c1::eca4160766",
+      "rank": 2,
+      "coverage": 0.5652173913043478
+    },
+    {
+      "question_id": "convfinqa_1311",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_409::p1::c0::f22fefaf4d",
+      "rank": 1,
+      "coverage": 0.46543778801843316
+    },
+    {
+      "question_id": "convfinqa_1529",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1432::p1::c0::69751d8f98",
+      "rank": 1,
+      "coverage": 0.4016393442622951
+    },
+    {
+      "question_id": "convfinqa_1598",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_637::p1::c0::12d4221eba",
+      "rank": 1,
+      "coverage": 0.03676470588235294
+    },
+    {
+      "question_id": "convfinqa_1621",
+      "dataset": "ConvFinQA",
+      "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+      "rank": 4,
+      "coverage": 0.23295454545454544
+    },
+    {
+      "question_id": "convfinqa_1650",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+      "rank": 2,
+      "coverage": 0.6292834890965732
+    },
+    {
+      "question_id": "convfinqa_1790",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+      "rank": 1,
+      "coverage": 0.21708185053380782
+    },
+    {
+      "question_id": "convfinqa_1873",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+      "rank": 2,
+      "coverage": 0.4879725085910653
+    },
+    {
+      "question_id": "convfinqa_1895",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_928::p1::c0::9293808038",
+      "rank": 1,
+      "coverage": 0.6058631921824105
+    },
+    {
+      "question_id": "convfinqa_2063",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_602::p1::c1::44df70e6fe",
+      "rank": 1,
+      "coverage": 0.06611570247933884
+    },
+    {
+      "question_id": "convfinqa_2136",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_873::p1::c0::6b43b74cd0",
+      "rank": 2,
+      "coverage": 0.7093023255813954
+    },
+    {
+      "question_id": "convfinqa_2219",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_325::p1::c1::85b9611fd5",
+      "rank": 2,
+      "coverage": 0.5865384615384616
+    },
+    {
+      "question_id": "convfinqa_2239",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_981::p1::c0::31510c44f5",
+      "rank": 1,
+      "coverage": 0.6577946768060836
+    },
+    {
+      "question_id": "convfinqa_23",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_994::p1::c0::4327507037",
+      "rank": 1,
+      "coverage": 0.07048458149779736
+    },
+    {
+      "question_id": "convfinqa_2407",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+      "rank": 2,
+      "coverage": 0.1360381861575179
+    },
+    {
+      "question_id": "convfinqa_2440",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1595::p1::c0::b4038c2e10",
+      "rank": 1,
+      "coverage": 0.6681034482758621
+    },
+    {
+      "question_id": "convfinqa_2467",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_150::p1::c1::c1c407d22d",
+      "rank": 3,
+      "coverage": 0.5410764872521246
+    },
+    {
+      "question_id": "convfinqa_2564",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1321::p1::c1::eb32da9198",
+      "rank": 3,
+      "coverage": 0.041401273885350316
+    },
+    {
+      "question_id": "convfinqa_2565",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_23::p1::c0::c34ccde5b7",
+      "rank": 1,
+      "coverage": 0.3277591973244147
+    },
+    {
+      "question_id": "convfinqa_2650",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1207::p1::c1::01cc1453ca",
+      "rank": 2,
+      "coverage": 0.5725806451612904
+    },
+    {
+      "question_id": "convfinqa_2757",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_479::p1::c0::d302d11737",
+      "rank": 1,
+      "coverage": 0.327683615819209
+    },
+    {
+      "question_id": "convfinqa_2800",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1422::p1::c0::21ad0a8254",
+      "rank": 1,
+      "coverage": 0.9206349206349206
+    },
+    {
+      "question_id": "convfinqa_2887",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1119::p1::c0::e04e6b2e46",
+      "rank": 2,
+      "coverage": 0.47186147186147187
+    },
+    {
+      "question_id": "convfinqa_2930",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_569::p1::c0::43a46d924f",
+      "rank": 1,
+      "coverage": 0.7764705882352941
+    },
+    {
+      "question_id": "convfinqa_3034",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1046::p1::c1::a30e58a57e",
+      "rank": 3,
+      "coverage": 0.25396825396825395
+    },
+    {
+      "question_id": "convfinqa_332",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+      "rank": 1,
+      "coverage": 0.5074074074074074
+    },
+    {
+      "question_id": "convfinqa_3338",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1659::p1::c0::1e1ed94d5a",
+      "rank": 1,
+      "coverage": 0.7121951219512195
+    },
+    {
+      "question_id": "convfinqa_3341",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_426::p1::c1::470c416a15",
+      "rank": 5,
+      "coverage": 0.09364548494983277
+    },
+    {
+      "question_id": "convfinqa_34",
+      "dataset": "ConvFinQA",
+      "chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+      "rank": 4,
+      "coverage": 0.26294820717131473
+    },
+    {
+      "question_id": "convfinqa_363",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1727::p1::c0::2b10e28222",
+      "rank": 1,
+      "coverage": 0.634703196347032
+    },
+    {
+      "question_id": "convfinqa_386",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_26::p1::c0::68a6d27224",
+      "rank": 1,
+      "coverage": 0.8156028368794326
+    },
+    {
+      "question_id": "convfinqa_40",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1156::p1::c1::4a213c13ad",
+      "rank": 4,
+      "coverage": 0.6644067796610169
+    },
+    {
+      "question_id": "convfinqa_529",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+      "rank": 1,
+      "coverage": 0.6637168141592921
+    },
+    {
+      "question_id": "convfinqa_652",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_622::p1::c0::42086026f7",
+      "rank": 1,
+      "coverage": 0.6373239436619719
+    },
+    {
+      "question_id": "convfinqa_79",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1059::p1::c0::a9a349fca8",
+      "rank": 1,
+      "coverage": 0.046413502109704644
+    },
+    {
+      "question_id": "convfinqa_815",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1006::p1::c0::aca96ee2b0",
+      "rank": 2,
+      "coverage": 0.6570048309178744
+    },
+    {
+      "question_id": "convfinqa_864",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+      "rank": 1,
+      "coverage": 0.8719512195121951
+    },
+    {
+      "question_id": "convfinqa_888",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1574::p1::c2::4ef83e4731",
+      "rank": 1,
+      "coverage": 0.047337278106508875
+    },
+    {
+      "question_id": "convfinqa_996",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1798::p1::c1::2a6335c0cf",
+      "rank": 2,
+      "coverage": 0.14022140221402213
+    },
+    {
+      "question_id": "convfinqa_997",
+      "dataset": "ConvFinQA",
+      "chunk_id": "convfinqa_ctx_1309::p1::c0::9c4b11ba93",
+      "rank": 1,
+      "coverage": 0.36127167630057805
+    },
+    {
+      "question_id": "finqa_test_1023",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_330::p1::c0::72b8b2a9db",
+      "rank": 1,
+      "coverage": 0.3310344827586207
+    },
+    {
+      "question_id": "finqa_test_1070",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_125::p1::c0::9a6997203c",
+      "rank": 2,
+      "coverage": 0.5672727272727273
+    },
+    {
+      "question_id": "finqa_test_1081",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+      "rank": 1,
+      "coverage": 0.6415770609318996
+    },
+    {
+      "question_id": "finqa_test_1146",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_263::p1::c0::a0293d20bb",
+      "rank": 1,
+      "coverage": 0.3607142857142857
+    },
+    {
+      "question_id": "finqa_test_182",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_146::p1::c0::cc9a870ab2",
+      "rank": 2,
+      "coverage": 0.6552901023890785
+    },
+    {
+      "question_id": "finqa_test_191",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_332::p1::c0::2de3e0a642",
+      "rank": 1,
+      "coverage": 0.1927710843373494
+    },
+    {
+      "question_id": "finqa_test_244",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+      "rank": 1,
+      "coverage": 0.9096774193548387
+    },
+    {
+      "question_id": "finqa_test_247",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_268::p1::c0::aac7eb07c0",
+      "rank": 1,
+      "coverage": 0.8638743455497382
+    },
+    {
+      "question_id": "finqa_test_273",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_289::p1::c0::0cd0c3cce8",
+      "rank": 1,
+      "coverage": 0.2978723404255319
+    },
+    {
+      "question_id": "finqa_test_28",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_217::p1::c1::c88b1eb3ed",
+      "rank": 2,
+      "coverage": 0.5828025477707006
+    },
+    {
+      "question_id": "finqa_test_283",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+      "rank": 2,
+      "coverage": 0.5632183908045977
+    },
+    {
+      "question_id": "finqa_test_400",
+      "dataset": "FinQA",
+      "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c1::78631230a4",
+      "rank": 2,
+      "coverage": 0.18732782369146006
+    },
+    {
+      "question_id": "finqa_test_41",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_302::p1::c0::5ecb88f5ea",
+      "rank": 1,
+      "coverage": 0.7706422018348624
+    },
+    {
+      "question_id": "finqa_test_428",
+      "dataset": "FinQA",
+      "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+      "rank": 5,
+      "coverage": 0.2719298245614035
+    },
+    {
+      "question_id": "finqa_test_439",
+      "dataset": "FinQA",
+      "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+      "rank": 1,
+      "coverage": 0.2033195020746888
+    },
+    {
+      "question_id": "finqa_test_444",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+      "rank": 4,
+      "coverage": 0.23660714285714285
+    },
+    {
+      "question_id": "finqa_test_491",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_375::p1::c0::8ef2732c06",
+      "rank": 1,
+      "coverage": 0.5510204081632653
+    },
+    {
+      "question_id": "finqa_test_527",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_107::p1::c0::fc0c2f6931",
+      "rank": 2,
+      "coverage": 0.6188679245283019
+    },
+    {
+      "question_id": "finqa_test_529",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_242::p1::c0::81f13f15f5",
+      "rank": 1,
+      "coverage": 0.6680497925311203
+    },
+    {
+      "question_id": "finqa_test_555",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_317::p1::c1::898284a911",
+      "rank": 2,
+      "coverage": 0.6882352941176471
+    },
+    {
+      "question_id": "finqa_test_559",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_44::p1::c0::23e0c0789c",
+      "rank": 3,
+      "coverage": 0.44654088050314467
+    },
+    {
+      "question_id": "finqa_test_579",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_346::p1::c0::30beb4da3d",
+      "rank": 1,
+      "coverage": 0.8120805369127517
+    },
+    {
+      "question_id": "finqa_test_6",
+      "dataset": "FinQA",
+      "chunk_id": "convfinqa_ctx_150::p1::c1::c1c407d22d",
+      "rank": 4,
+      "coverage": 0.21076233183856502
+    },
+    {
+      "question_id": "finqa_test_628",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_24::p1::c0::ce494de875",
+      "rank": 1,
+      "coverage": 0.5491329479768786
+    },
+    {
+      "question_id": "finqa_test_631",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+      "rank": 5,
+      "coverage": 0.4675925925925926
+    },
+    {
+      "question_id": "finqa_test_65",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_38::p1::c0::210df27416",
+      "rank": 1,
+      "coverage": 0.6468401486988847
+    },
+    {
+      "question_id": "finqa_test_66",
+      "dataset": "FinQA",
+      "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+      "rank": 3,
+      "coverage": 0.25663716814159293
+    },
+    {
+      "question_id": "finqa_test_720",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_209::p1::c1::a97668cdbb",
+      "rank": 2,
+      "coverage": 0.44339622641509435
+    },
+    {
+      "question_id": "finqa_test_725",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_97::p1::c0::d10026e659",
+      "rank": 2,
+      "coverage": 0.5590277777777778
+    },
+    {
+      "question_id": "finqa_test_760",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_166::p1::c0::5bd44793aa",
+      "rank": 2,
+      "coverage": 0.4936708860759494
+    },
+    {
+      "question_id": "finqa_test_832",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+      "rank": 1,
+      "coverage": 0.6329113924050633
+    },
+    {
+      "question_id": "finqa_test_861",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_79::p1::c0::337b8e3676",
+      "rank": 2,
+      "coverage": 0.07692307692307693
+    },
+    {
+      "question_id": "finqa_test_872",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_113::p1::c0::a294e3a68c",
+      "rank": 1,
+      "coverage": 0.6302083333333334
+    },
+    {
+      "question_id": "finqa_test_911",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_206::p1::c0::759d87f18e",
+      "rank": 3,
+      "coverage": 0.703971119133574
+    },
+    {
+      "question_id": "finqa_test_92",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_22::p1::c1::285dd401e6",
+      "rank": 1,
+      "coverage": 0.07509881422924901
+    },
+    {
+      "question_id": "finqa_test_927",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_252::p1::c1::6f0374f98e",
+      "rank": 1,
+      "coverage": 0.08
+    },
+    {
+      "question_id": "finqa_test_94",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_300::p1::c0::cc02817a5e",
+      "rank": 1,
+      "coverage": 0.8512396694214877
+    },
+    {
+      "question_id": "finqa_test_941",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_11::p1::c1::ca7846f070",
+      "rank": 3,
+      "coverage": 0.49514563106796117
+    },
+    {
+      "question_id": "finqa_test_95",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+      "rank": 1,
+      "coverage": 0.6770833333333334
+    },
+    {
+      "question_id": "finqa_test_990",
+      "dataset": "FinQA",
+      "chunk_id": "finqa_test_ctx_192::p1::c0::21e453a8f5",
+      "rank": 1,
+      "coverage": 0.7222222222222222
+    },
+    {
+      "question_id": "tatqa_test_10001",
+      "dataset": "TAT-DQA",
+      "chunk_id": "d96d19db7d772ce4afe421dcda706842::p1::c0::a30626bd9d",
+      "rank": 1,
+      "coverage": 0.9457831325301205
+    },
+    {
+      "question_id": "tatqa_test_10006",
+      "dataset": "TAT-DQA",
+      "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c1::8d080708d1",
+      "rank": 1,
+      "coverage": 0.41089108910891087
+    },
+    {
+      "question_id": "tatqa_test_10037",
+      "dataset": "TAT-DQA",
+      "chunk_id": "dc105a860fbe0bfd73a477bda3945171::p1::c0::f19749d444",
+      "rank": 1,
+      "coverage": 0.9714285714285714
+    },
+    {
+      "question_id": "tatqa_test_10059",
+      "dataset": "TAT-DQA",
+      "chunk_id": "debfaf15530ee227395897df205fa19f::p1::c1::98192ed1ae",
+      "rank": 2,
+      "coverage": 0.609375
+    },
+    {
+      "question_id": "tatqa_test_10134",
+      "dataset": "TAT-DQA",
+      "chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c1::7e153f4be3",
+      "rank": 1,
+      "coverage": 0.5894428152492669
+    },
+    {
+      "question_id": "tatqa_test_10167",
+      "dataset": "TAT-DQA",
+      "chunk_id": "f5850c2764209f26fccf7923dd714ea4::p1::c0::0a0698bc92",
+      "rank": 1,
+      "coverage": 0.8695652173913043
+    },
+    {
+      "question_id": "tatqa_test_10170",
+      "dataset": "TAT-DQA",
+      "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c5::833e085906",
+      "rank": 3,
+      "coverage": 0.34627831715210355
+    },
+    {
+      "question_id": "tatqa_test_9133",
+      "dataset": "TAT-DQA",
+      "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+      "rank": 1,
+      "coverage": 0.6826568265682657
+    },
+    {
+      "question_id": "tatqa_test_9162",
+      "dataset": "TAT-DQA",
+      "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+      "rank": 2,
+      "coverage": 0.7766497461928934
+    },
+    {
+      "question_id": "tatqa_test_9180",
+      "dataset": "TAT-DQA",
+      "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c1::dbcad089c7",
+      "rank": 1,
+      "coverage": 0.6666666666666666
+    },
+    {
+      "question_id": "tatqa_test_9195",
+      "dataset": "TAT-DQA",
+      "chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761",
+      "rank": 2,
+      "coverage": 0.21674876847290642
+    },
+    {
+      "question_id": "tatqa_test_9252",
+      "dataset": "TAT-DQA",
+      "chunk_id": "270bd8844a1df7adb9e0877771195f85::p1::c0::0c5635a256",
+      "rank": 1,
+      "coverage": 0.9658119658119658
+    },
+    {
+      "question_id": "tatqa_test_9278",
+      "dataset": "TAT-DQA",
+      "chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+      "rank": 3,
+      "coverage": 0.36764705882352944
+    },
+    {
+      "question_id": "tatqa_test_9308",
+      "dataset": "TAT-DQA",
+      "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c1::357e56e327",
+      "rank": 2,
+      "coverage": 0.6875
+    },
+    {
+      "question_id": "tatqa_test_9345",
+      "dataset": "TAT-DQA",
+      "chunk_id": "3c70a27ee159768e51821887c914a814::p1::c0::4fe4848c98",
+      "rank": 1,
+      "coverage": 0.7321428571428571
+    },
+    {
+      "question_id": "tatqa_test_9367",
+      "dataset": "TAT-DQA",
+      "chunk_id": "434b94166389d203839e681526978a7d::p1::c0::06c2863d3c",
+      "rank": 1,
+      "coverage": 0.7070707070707071
+    },
+    {
+      "question_id": "tatqa_test_9388",
+      "dataset": "TAT-DQA",
+      "chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c0::75b9f2f74e",
+      "rank": 2,
+      "coverage": 0.5836734693877551
+    },
+    {
+      "question_id": "tatqa_test_9447",
+      "dataset": "TAT-DQA",
+      "chunk_id": "52e6a43255d7a284a287057e708a426d::p1::c0::ce786ce492",
+      "rank": 4,
+      "coverage": 0.5012722646310432
+    },
+    {
+      "question_id": "tatqa_test_9564",
+      "dataset": "TAT-DQA",
+      "chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c2::6beef2850f",
+      "rank": 2,
+      "coverage": 0.549618320610687
+    },
+    {
+      "question_id": "tatqa_test_9579",
+      "dataset": "TAT-DQA",
+      "chunk_id": "7399b5db48b8dc118aa8f0c7336fffa3::p1::c0::c9d0363687",
+      "rank": 1,
+      "coverage": 0.9891304347826086
+    },
+    {
+      "question_id": "tatqa_test_9581",
+      "dataset": "TAT-DQA",
+      "chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c0::ba7705c4f0",
+      "rank": 1,
+      "coverage": 0.7439024390243902
+    },
+    {
+      "question_id": "tatqa_test_9594",
+      "dataset": "TAT-DQA",
+      "chunk_id": "771fd661a72d5018797f3ea240571013::p1::c1::e4f36177b0",
+      "rank": 3,
+      "coverage": 0.6761904761904762
+    },
+    {
+      "question_id": "tatqa_test_9619",
+      "dataset": "TAT-DQA",
+      "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+      "rank": 2,
+      "coverage": 0.625
+    },
+    {
+      "question_id": "tatqa_test_9622",
+      "dataset": "TAT-DQA",
+      "chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+      "rank": 1,
+      "coverage": 1.0
+    },
+    {
+      "question_id": "tatqa_test_9634",
+      "dataset": "TAT-DQA",
+      "chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c0::8242027699",
+      "rank": 1,
+      "coverage": 0.6915887850467289
+    },
+    {
+      "question_id": "tatqa_test_9642",
+      "dataset": "TAT-DQA",
+      "chunk_id": "814bb4c0c0fc78247bb9a442b1f3094c::p1::c0::5b907540dd",
+      "rank": 1,
+      "coverage": 0.7446808510638298
+    },
+    {
+      "question_id": "tatqa_test_9650",
+      "dataset": "TAT-DQA",
+      "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c0::04d29dc6c7",
+      "rank": 2,
+      "coverage": 0.7142857142857143
+    },
+    {
+      "question_id": "tatqa_test_9665",
+      "dataset": "TAT-DQA",
+      "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+      "rank": 2,
+      "coverage": 0.18473895582329317
+    },
+    {
+      "question_id": "tatqa_test_9693",
+      "dataset": "TAT-DQA",
+      "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c1::b8d9ab438f",
+      "rank": 1,
+      "coverage": 0.4166666666666667
+    },
+    {
+      "question_id": "tatqa_test_9707",
+      "dataset": "TAT-DQA",
+      "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c0::2dbe29b9d0",
+      "rank": 2,
+      "coverage": 0.6681222707423581
+    },
+    {
+      "question_id": "tatqa_test_9726",
+      "dataset": "TAT-DQA",
+      "chunk_id": "9082b05b2e0e2600d7f405f82795f041::p1::c0::62a5153ebb",
+      "rank": 1,
+      "coverage": 0.8584070796460177
+    },
+    {
+      "question_id": "tatqa_test_9758",
+      "dataset": "TAT-DQA",
+      "chunk_id": "9b048dfc08e40405ae69dc2e057dd41a::p1::c0::e5b1382549",
+      "rank": 1,
+      "coverage": 0.9876543209876543
+    },
+    {
+      "question_id": "tatqa_test_9761",
+      "dataset": "TAT-DQA",
+      "chunk_id": "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87",
+      "rank": 1,
+      "coverage": 0.6440677966101694
+    },
+    {
+      "question_id": "tatqa_test_9799",
+      "dataset": "TAT-DQA",
+      "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p2::c4::8bad1c118a",
+      "rank": 5,
+      "coverage": 0.37375745526838966
+    },
+    {
+      "question_id": "tatqa_test_9852",
+      "dataset": "TAT-DQA",
+      "chunk_id": "b0f915f83dc1cd1850aec59abadb7dda::p1::c0::6b7866a748",
+      "rank": 1,
+      "coverage": 0.6234309623430963
+    },
+    {
+      "question_id": "tatqa_test_9904",
+      "dataset": "TAT-DQA",
+      "chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c0::f03eb2dc29",
+      "rank": 1,
+      "coverage": 0.7842105263157895
+    },
+    {
+      "question_id": "tatqa_test_9976",
+      "dataset": "TAT-DQA",
+      "chunk_id": "d35878bbfd434409ed509a53c9af591a::p1::c0::2315cbd341",
+      "rank": 2,
+      "coverage": 0.8532608695652174
+    },
+    {
+      "question_id": "tatqa_test_9979",
+      "dataset": "TAT-DQA",
+      "chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c0::31414ed2d4",
+      "rank": 2,
+      "coverage": 0.9014778325123153
+    },
+    {
+      "question_id": "tatqa_test_9987",
+      "dataset": "TAT-DQA",
+      "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+      "rank": 1,
+      "coverage": 0.7297297297297297
+    },
+    {
+      "question_id": "tatqa_test_9990",
+      "dataset": "TAT-DQA",
+      "chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927",
+      "rank": 2,
+      "coverage": 0.7952380952380952
+    }
+  ],
+  "per_question": [
+    {
+      "question_id": "convfinqa_1190",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1256"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_1311",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_409"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_1529",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1432"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_1598",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_637"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_1621",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_235"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_1650",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1046"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_1790",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_711"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_1873",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_639"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_1895",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_928"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2063",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_602"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2136",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_873"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2219",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_325"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2239",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_981"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_23",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_994"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2407",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.25,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1766"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2440",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1595"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2467",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_150"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2564",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1321"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2565",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_23"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2650",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1207"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2757",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_479"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2800",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1422"
+      ],
+      "retrieved_pages": [
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2887",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1119"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_2930",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_569"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_3034",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_745"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_332",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_476"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_3338",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1659"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_3341",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_426"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_34",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1764"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_363",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1727"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_386",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_26"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_40",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1156"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_529",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_366"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_652",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_622"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_79",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1059"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_815",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1006"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_864",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1334"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_888",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1574"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_996",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1798"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "convfinqa_997",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "convfinqa_ctx_1309"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_1023",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_330"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_1070",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_125"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_1081",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_29"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_1146",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_263"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_182",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_146"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_191",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_332"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_244",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_7"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_247",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_268"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_273",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_289"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_28",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_217"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_283",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_92"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_400",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_145"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_41",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_302"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_428",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_55"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_439",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_373"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_444",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_141"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_491",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_375"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_527",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_107"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_529",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_242"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_555",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_317"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_559",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_44"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_579",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_346"
+      ],
+      "retrieved_pages": [
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_6",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_321"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_628",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_24"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_631",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.3333333333333333,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_47"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_65",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_38"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_66",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_197"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_720",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_209"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_725",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_97"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_760",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_166"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_832",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_357"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_861",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_79"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_872",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_113"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_911",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_206"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_92",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_22"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_927",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_252"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_94",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_300"
+      ],
+      "retrieved_pages": [
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_941",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_11"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_95",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_286"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "finqa_test_990",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "finqa_test_ctx_192"
+      ],
+      "retrieved_pages": [
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_10001",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "d96d19db7d772ce4afe421dcda706842"
+      ],
+      "retrieved_pages": [
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_10006",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "d9929fa56778e739f071d0d586171994"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_10037",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "dc105a860fbe0bfd73a477bda3945171"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_10059",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "debfaf15530ee227395897df205fa19f"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_10134",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "f1075884f3ae99a0c74074f82c97d74f"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_10167",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "f5850c2764209f26fccf7923dd714ea4"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_10170",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "f59bd5ee555e5cc8cf1d5223a0145049"
+      ],
+      "retrieved_pages": [
+        2,
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9133",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "0dfb4455ae2e1b2066e99d9a3a05baf0"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9162",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "1380a11c3e0c1ebff7c19af6d1c014ac"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9180",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "1614d46700363e699110c89aaf7e5ba5"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9195",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "1a8874a4f3c3f8044c083509da0746b2"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9252",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "270bd8844a1df7adb9e0877771195f85"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9278",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "2da56df966a1c15057d2661ce589be1c"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9308",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "36d1468e2be20ccc765f76c712ed5e1e"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9345",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "3c70a27ee159768e51821887c914a814"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9367",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "434b94166389d203839e681526978a7d"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9388",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "4ab898d6877c171a1e67f9be919c5e68"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9447",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "52e6a43255d7a284a287057e708a426d"
+      ],
+      "retrieved_pages": [
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9564",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "6c509acf4599f1a22272abbe9a37a1ec"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9579",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "7399b5db48b8dc118aa8f0c7336fffa3"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9581",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "75fec3ba291d21ab7ffca720542f1780"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9594",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "771fd661a72d5018797f3ea240571013"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9619",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "7c1a0fac586f2de1336256cc0bf74e68"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9622",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "7cacb4529b5137a61f1e8fc7a7f6c6a1"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9634",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "7e8a46437303bd16e1b748161210ecdc"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9642",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "814bb4c0c0fc78247bb9a442b1f3094c"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9650",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "83924a3098a43b0ff8f25791decd0151"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9665",
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "hit": false,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "8904a4eb6ba20505519dbbd57dd120bf"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9693",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "8c6114af79ce7f7775b24ac57a2c7b64"
+      ],
+      "retrieved_pages": [
+        1,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9707",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "8f88cc6a1780582fa50c0b8318c2fb38"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9726",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "9082b05b2e0e2600d7f405f82795f041"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9758",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "9b048dfc08e40405ae69dc2e057dd41a"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9761",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "9d473b9c09cabed1386df42ab20f4869"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9799",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "a38d13377f754ca4beb5ed5cc9b5c1ec"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9852",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "b0f915f83dc1cd1850aec59abadb7dda"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9904",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "bf323df09be1d8b4fbc8cc4df2936c92"
+      ],
+      "retrieved_pages": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9976",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "d35878bbfd434409ed509a53c9af591a"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9979",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "d44e4b853cdde28b616e66c5d6573cd0"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9987",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "d69f61835b35ec05879669dc41ff57aa"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "question_id": "tatqa_test_9990",
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "hit": true,
+      "gold_pages": [],
+      "gold_document_ids": [
+        "d80ea6ee60a1b1f11e971791784d7d6c"
+      ],
+      "retrieved_pages": [
+        1,
+        1
+      ]
+    }
+  ]
+}

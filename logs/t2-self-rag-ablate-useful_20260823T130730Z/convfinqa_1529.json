@@ -1,0 +1,411 @@
+{
+  "question_id": "convfinqa_1529",
+  "question": "What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?",
+  "retrieval_query": "FTSE NAREIT Composite REIT Index cumulative total return including dividends December 31 2003 assuming 100 invested December 31 2002",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1432::p1::c0::69751d8f98",
+      "rank": 1,
+      "dense_score": 0.7677263617515564,
+      "bm25_score": 59.289207581787025,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1432"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1422::p1::c0::21ad0a8254",
+      "rank": 2,
+      "dense_score": 0.7294805645942688,
+      "bm25_score": 31.743211170210582,
+      "hybrid_score": 0.5344303953765212,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1422"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+      "rank": 3,
+      "dense_score": 0.7240605354309082,
+      "bm25_score": 34.14476779125279,
+      "hybrid_score": 0.515892482599087,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_7"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+      "rank": 4,
+      "dense_score": 0.7249627113342285,
+      "bm25_score": 28.494969267430218,
+      "hybrid_score": 0.47947687526218086,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_366"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_302::p1::c0::5ecb88f5ea",
+      "rank": 5,
+      "dense_score": 0.7223658561706543,
+      "bm25_score": 24.771513136005527,
+      "hybrid_score": 0.4339223789187078,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_302"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 55.1026,
+  "input_tokens": 6754,
+  "output_tokens": 70,
+  "total_tokens": 6824,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1409,
+  "llm_latency_seconds": 54.96,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?\nLabel:",
+      "input_tokens": 118,
+      "output_tokens": 7,
+      "latency_seconds": 1.0557883350047632
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?\nEvidence:\n[1] convfinqa_ctx_1432.pdf p.1\nStockPerformanceGraph\nThefollowing performance graphcompares thecumulative totalreturn(includingdividends)totheholders\nofourcommonstockfromDecember31,2002throughDecember31,2007,withthecumulativetotalreturnsof\nthe NYSE Composite Index, the FTSE NAREIT Composite REIT Index (the “All REIT Index”), the FTSE\nNAREIT Healthcare Equity REIT Index (the “Healthcare REIT Index”) and the Russell 1000 Index over the\nsame period. The comparison assumes $100 was invested on December 31, 2002 in our common stock and in\neachoftheforegoingindicesandassumesreinvestmentofdividends,asapplicable.WehaveincludedtheNYSE\nCompositeIndexintheperformancegraphbecauseourcommonstockislistedontheNYSE.Wehaveincluded\ntheother\n\n[2] convfinqa_ctx_1422.pdf p.1\nFORM\n10-K\nStock performance graph:\nThe graph below shows the cumulative total shareholder return assuming the investment of $100, on December 31, 2013, and the\nreinvestment of dividends thereafter, if any, in the Company’s common stock versus the Standard and Poor’s S&P 500 Retail Index (“S&P\n500 Retail Index”) and the Standard and Poor’s S&P 500 Index (“S&P 500”).\nDecember 31,\nCompany/Index 2013 2014 2015 2016 2017 2018\nO’Reilly Automotive, Inc. $ 100 $ 150 $ 197 $ 216 $ 187 $ 268\nS&P 500 Retail Index 100 110 137 143 184 208\nS&P 500 $ 100 $ 111 $ 111 $ 121 $ 145 $ 136\n22\n\n[TABLE]\nO’Reilly Automotive, Inc. |  | $ 100 |  | $ 150 |  | $ 197 |  | $ 216 |  | $ 187 |  | $ 268\n[/TABLE]\n\n[TABLE]\nS&\n\n[3] finqa_test_ctx_7.pdf p.1\nPART II\nItem 5: Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\nMarket Information\nApplied’s common stock is traded on the NASDAQ Global Select Market under the symbol AMAT. As of December 7,\n2018, there were 2,854 registered holders of Applied common stock.\nPerformance Graph\nThe performance graph below shows the five-year cumulative total stockholder return on Applied common stock during the\nperiod from October 27, 2013 through October 28, 2018. This is compared with the cumulative total return of the Standard &\nPoor’s 500 Stock Index and the RDG Semiconductor Composite Index over the same period. The comparison assumes $100 was\ni\n\n[4] convfinqa_ctx_366.pdf p.1\nCompanyStockPerformance\nThe following graph shows a five-year comparison of cumulative total shareholder return, calculated on a\ndividendreinvestedbasis,fortheCompany,theS&P500CompositeIndex,theS&PComputerHardwareIndex,\nand the Dow Jones U.S. Technology Index. The graph assumes $100 was invested in each of the Company’s\ncommon stock, the S&P 500 Composite Index, the S&P Computer Hardware Index, and the Dow Jones U.S.\nTechnology Index on September 30, 2006. Data points on the graph are annual. Note that historic stock price\nperformanceisnotnecessarilyindicativeoffuturestockpriceperformance.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Apple Inc., The S&P 500 Index,\nthe S&P Computer Har\n\n[5] finqa_test_ctx_302.pdf p.1\nSupplemental Financial Information\nCommonStockPerformance\nThe following graph compares the performance of an each of the firm’s common stock, the S&P 500 Index and\ninvestment in the firm’s common stock from the S&P 500 Financials Index, and the dividends were\nDecember 26, 2008 (the last trading day before the firm’s reinvestedonthedateofpaymentwithoutpaymentofany\n2009 fiscal year) through December 31, 2013, with the commissions. The performance shown in the graph\nS&P 500 Index and the S&P 500 Financials Index. The represents past performance and should not be considered\ngraphassumes$100wasinvestedonDecember26,2008in anindicationoffutureperformance.\n$300\n$250\n$200\n$150\n$100\n$50\n$0\nDec-08 Dec-\nLabel:",
+      "input_tokens": 1271,
+      "output_tokens": 4,
+      "latency_seconds": 9.59124754199729
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?\nEvidence:\n[1] convfinqa_ctx_1432.pdf p.1\nStockPerformanceGraph\nThefollowing performance graphcompares thecumulative totalreturn(includingdividends)totheholders\nofourcommonstockfromDecember31,2002throughDecember31,2007,withthecumulativetotalreturnsof\nthe NYSE Composite Index, the FTSE NAREIT Composite REIT Index (the “All REIT Index”), the FTSE\nNAREIT Healthcare Equity REIT Index (the “Healthcare REIT Index”) and the Russell 1000 Index over the\nsame period. The comparison assumes $100 was invested on December 31, 2002 in our common stock and in\neachoftheforegoingindicesandassumesreinvestmentofdividends,asapplicable.WehaveincludedtheNYSE\nCompositeIndexintheperformancegraphbecauseourcommonstockislistedontheNYSE.Wehaveincluded\ntheother\n\n[2] convfinqa_ctx_1422.pdf p.1\nFORM\n10-K\nStock performance graph:\nThe graph below shows the cumulative total shareholder return assuming the investment of $100, on December 31, 2013, and the\nreinvestment of dividends thereafter, if any, in the Company’s common stock versus the Standard and Poor’s S&P 500 Retail Index (“S&P\n500 Retail Index”) and the Standard and Poor’s S&P 500 Index (“S&P 500”).\nDecember 31,\nCompany/Index 2013 2014 2015 2016 2017 2018\nO’Reilly Automotive, Inc. $ 100 $ 150 $ 197 $ 216 $ 187 $ 268\nS&P 500 Retail Index 100 110 137 143 184 208\nS&P 500 $ 100 $ 111 $ 111 $ 121 $ 145 $ 136\n22\n\n[TABLE]\nO’Reilly Automotive, Inc. |  | $ 100 |  | $ 150 |  | $ 197 |  | $ 216 |  | $ 187 |  | $ 268\n[/TABLE]\n\n[TABLE]\nS&\n\n[3] finqa_test_ctx_7.pdf p.1\nPART II\nItem 5: Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\nMarket Information\nApplied’s common stock is traded on the NASDAQ Global Select Market under the symbol AMAT. As of December 7,\n2018, there were 2,854 registered holders of Applied common stock.\nPerformance Graph\nThe performance graph below shows the five-year cumulative total stockholder return on Applied common stock during the\nperiod from October 27, 2013 through October 28, 2018. This is compared with the cumulative total return of the Standard &\nPoor’s 500 Stock Index and the RDG Semiconductor Composite Index over the same period. The comparison assumes $100 was\ni\n\n[4] convfinqa_ctx_366.pdf p.1\nCompanyStockPerformance\nThe following graph shows a five-year comparison of cumulative total shareholder return, calculated on a\ndividendreinvestedbasis,fortheCompany,theS&P500CompositeIndex,theS&PComputerHardwareIndex,\nand the Dow Jones U.S. Technology Index. The graph assumes $100 was invested in each of the Company’s\ncommon stock, the S&P 500 Composite Index, the S&P Computer Hardware Index, and the Dow Jones U.S.\nTechnology Index on September 30, 2006. Data points on the graph are annual. Note that historic stock price\nperformanceisnotnecessarilyindicativeoffuturestockpriceperformance.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Apple Inc., The S&P 500 Index,\nthe S&P Computer Har\n\n[5] finqa_test_ctx_302.pdf p.1\nSupplemental Financial Information\nCommonStockPerformance\nThe following graph compares the performance of an each of the firm’s common stock, the S&P 500 Index and\ninvestment in the firm’s common stock from the S&P 500 Financials Index, and the dividends were\nDecember 26, 2008 (the last trading day before the firm’s reinvestedonthedateofpaymentwithoutpaymentofany\n2009 fiscal year) through December 31, 2013, with the commissions. The performance shown in the graph\nS&P 500 Index and the S&P 500 Financials Index. The represents past performance and should not be considered\ngraphassumes$100wasinvestedonDecember26,2008in anindicationoffutureperformance.\n$300\n$250\n$200\n$150\n$100\n$50\n$0\nDec-08 Dec-\nLabel:",
+      "input_tokens": 1276,
+      "output_tokens": 3,
+      "latency_seconds": 9.835451509003178
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?\nEvidence:\n[1] convfinqa_ctx_1432.pdf p.1\nindicesbecausewebelievethattheyareeithermostrepresentativeoftheindustryinwhichwecompete,\nor otherwise provide a fair basis for comparison with Ventas, and are therefore particularly relevant to an\nassessmentofourperformance.Thefiguresinthetablebelowareroundedtothenearestdollar.\n12/31/2002 12/31/2003 12/31/2004 12/31/2005 12/31/2006 12/31/2007\nVentas ............................. $100 $206 $270 $331 $457 $512\nNYSECompositeIndex................ $100 $132 $151 $166 $200 $217\nAllREITIndex ...................... $100 $138 $181 $196 $262 $215\nHealthcareREITIndex ................ $100 $154 $186 $189 $273 $279\nRussell1000Index.................... $100 $130 $145 $154 $178 $188\n$550\n$500\n$450\n$400\n$35\n\n[2] convfinqa_ctx_1422.pdf p.1\nFORM\n10-K\nStock performance graph:\nThe graph below shows the cumulative total shareholder return assuming the investment of $100, on December 31, 2013, and the\nreinvestment of dividends thereafter, if any, in the Company’s common stock versus the Standard and Poor’s S&P 500 Retail Index (“S&P\n500 Retail Index”) and the Standard and Poor’s S&P 500 Index (“S&P 500”).\nDecember 31,\nCompany/Index 2013 2014 2015 2016 2017 2018\nO’Reilly Automotive, Inc. $ 100 $ 150 $ 197 $ 216 $ 187 $ 268\nS&P 500 Retail Index 100 110 137 143 184 208\nS&P 500 $ 100 $ 111 $ 111 $ 121 $ 145 $ 136\n22\n\n[TABLE]\nO’Reilly Automotive, Inc. |  | $ 100 |  | $ 150 |  | $ 197 |  | $ 216 |  | $ 187 |  | $ 268\n[/TABLE]\n\n[TABLE]\nS&\n\n[3] finqa_test_ctx_7.pdf p.1\nPART II\nItem 5: Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\nMarket Information\nApplied’s common stock is traded on the NASDAQ Global Select Market under the symbol AMAT. As of December 7,\n2018, there were 2,854 registered holders of Applied common stock.\nPerformance Graph\nThe performance graph below shows the five-year cumulative total stockholder return on Applied common stock during the\nperiod from October 27, 2013 through October 28, 2018. This is compared with the cumulative total return of the Standard &\nPoor’s 500 Stock Index and the RDG Semiconductor Composite Index over the same period. The comparison assumes $100 was\ni\n\n[4] convfinqa_ctx_366.pdf p.1\nCompanyStockPerformance\nThe following graph shows a five-year comparison of cumulative total shareholder return, calculated on a\ndividendreinvestedbasis,fortheCompany,theS&P500CompositeIndex,theS&PComputerHardwareIndex,\nand the Dow Jones U.S. Technology Index. The graph assumes $100 was invested in each of the Company’s\ncommon stock, the S&P 500 Composite Index, the S&P Computer Hardware Index, and the Dow Jones U.S.\nTechnology Index on September 30, 2006. Data points on the graph are annual. Note that historic stock price\nperformanceisnotnecessarilyindicativeoffuturestockpriceperformance.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Apple Inc., The S&P 500 Index,\nthe S&P Computer Har\n\n[5] finqa_test_ctx_302.pdf p.1\nSupplemental Financial Information\nCommonStockPerformance\nThe following graph compares the performance of an each of the firm’s common stock, the S&P 500 Index and\ninvestment in the firm’s common stock from the S&P 500 Financials Index, and the dividends were\nDecember 26, 2008 (the last trading day before the firm’s reinvestedonthedateofpaymentwithoutpaymentofany\n2009 fiscal year) through December 31, 2013, with the commissions. The performance shown in the graph\nS&P 500 Index and the S&P 500 Financials Index. The represents past performance and should not be considered\ngraphassumes$100wasinvestedonDecember26,2008in anindicationoffutureperformance.\n$300\n$250\n$200\n$150\n$100\n$50\n$0\nDec-08 Dec-\nLabel:",
+      "input_tokens": 1386,
+      "output_tokens": 3,
+      "latency_seconds": 10.151209558003757
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?\nEvidence:\n[1] convfinqa_ctx_1432.pdf p.1\n0\n$300\n$250\n$200\n$150\n$100\n$50\n$0\n12/31/2002 12/31/2003 12/31/2004 12/31/2005 12/31/2006 12/31/2007\nsralloD\nVentas NYSE Composite Index All REIT Index Healthcare REIT Index Russell 1000 Index\n42\n\n[2] convfinqa_ctx_1422.pdf p.1\nFORM\n10-K\nStock performance graph:\nThe graph below shows the cumulative total shareholder return assuming the investment of $100, on December 31, 2013, and the\nreinvestment of dividends thereafter, if any, in the Company’s common stock versus the Standard and Poor’s S&P 500 Retail Index (“S&P\n500 Retail Index”) and the Standard and Poor’s S&P 500 Index (“S&P 500”).\nDecember 31,\nCompany/Index 2013 2014 2015 2016 2017 2018\nO’Reilly Automotive, Inc. $ 100 $ 150 $ 197 $ 216 $ 187 $ 268\nS&P 500 Retail Index 100 110 137 143 184 208\nS&P 500 $ 100 $ 111 $ 111 $ 121 $ 145 $ 136\n22\n\n[TABLE]\nO’Reilly Automotive, Inc. |  | $ 100 |  | $ 150 |  | $ 197 |  | $ 216 |  | $ 187 |  | $ 268\n[/TABLE]\n\n[TABLE]\nS&\n\n[3] finqa_test_ctx_7.pdf p.1\nPART II\nItem 5: Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\nMarket Information\nApplied’s common stock is traded on the NASDAQ Global Select Market under the symbol AMAT. As of December 7,\n2018, there were 2,854 registered holders of Applied common stock.\nPerformance Graph\nThe performance graph below shows the five-year cumulative total stockholder return on Applied common stock during the\nperiod from October 27, 2013 through October 28, 2018. This is compared with the cumulative total return of the Standard &\nPoor’s 500 Stock Index and the RDG Semiconductor Composite Index over the same period. The comparison assumes $100 was\ni\n\n[4] convfinqa_ctx_366.pdf p.1\nCompanyStockPerformance\nThe following graph shows a five-year comparison of cumulative total shareholder return, calculated on a\ndividendreinvestedbasis,fortheCompany,theS&P500CompositeIndex,theS&PComputerHardwareIndex,\nand the Dow Jones U.S. Technology Index. The graph assumes $100 was invested in each of the Company’s\ncommon stock, the S&P 500 Composite Index, the S&P Computer Hardware Index, and the Dow Jones U.S.\nTechnology Index on September 30, 2006. Data points on the graph are annual. Note that historic stock price\nperformanceisnotnecessarilyindicativeoffuturestockpriceperformance.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Apple Inc., The S&P 500 Index,\nthe S&P Computer Har\n\n[5] finqa_test_ctx_302.pdf p.1\nSupplemental Financial Information\nCommonStockPerformance\nThe following graph compares the performance of an each of the firm’s common stock, the S&P 500 Index and\ninvestment in the firm’s common stock from the S&P 500 Financials Index, and the dividends were\nDecember 26, 2008 (the last trading day before the firm’s reinvestedonthedateofpaymentwithoutpaymentofany\n2009 fiscal year) through December 31, 2013, with the commissions. The performance shown in the graph\nS&P 500 Index and the S&P 500 Financials Index. The represents past performance and should not be considered\ngraphassumes$100wasinvestedonDecember26,2008in anindicationoffutureperformance.\n$300\n$250\n$200\n$150\n$100\n$50\n$0\nDec-08 Dec-\nLabel:",
+      "input_tokens": 1210,
+      "output_tokens": 3,
+      "latency_seconds": 9.075523746003455
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "FTSE NAREIT Composite REIT Index cumulative total return including dividends December 31 2003 assuming 100 invested December 31 2002",
+      "filters": {},
+      "chunk_ids": [
+        "convfinqa_ctx_1432::p1::c0::69751d8f98",
+        "convfinqa_ctx_1422::p1::c0::21ad0a8254",
+        "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+        "convfinqa_ctx_366::p1::c0::64d06d47d6",
+        "finqa_test_ctx_302::p1::c0::5ecb88f5ea"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1432::p1::c0::69751d8f98",
+          "document_id": "convfinqa_ctx_1432",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1432::p1::c0::69751d8f98",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1422::p1::c0::21ad0a8254",
+          "document_id": "convfinqa_ctx_1422",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1422::p1::c0::21ad0a8254",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+          "document_id": "finqa_test_ctx_7",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "document_id": "convfinqa_ctx_366",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_302::p1::c0::5ecb88f5ea",
+          "document_id": "finqa_test_ctx_302",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_302::p1::c0::5ecb88f5ea",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1432::p1::c0::69751d8f98",
+          "document_id": "convfinqa_ctx_1432",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_1432::p1::c0::69751d8f98",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1422::p1::c0::21ad0a8254",
+          "document_id": "convfinqa_ctx_1422",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1422::p1::c0::21ad0a8254",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+          "document_id": "finqa_test_ctx_7",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "document_id": "convfinqa_ctx_366",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_302::p1::c0::5ecb88f5ea",
+          "document_id": "finqa_test_ctx_302",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_302::p1::c0::5ecb88f5ea",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1432::p1::c0::69751d8f98",
+          "document_id": "convfinqa_ctx_1432",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 1594,
+          "source_chunk_id": "convfinqa_ctx_1432::p1::c0::69751d8f98",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1422::p1::c0::21ad0a8254",
+          "document_id": "convfinqa_ctx_1422",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1422::p1::c0::21ad0a8254",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+          "document_id": "finqa_test_ctx_7",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "document_id": "convfinqa_ctx_366",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_302::p1::c0::5ecb88f5ea",
+          "document_id": "finqa_test_ctx_302",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_302::p1::c0::5ecb88f5ea",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?\nRetrieval query:",
+  "query_formulation_raw_output": "FTSE NAREIT Composite REIT Index cumulative total return including dividends December 31 2003 assuming 100 invested December 31 2002",
+  "query_formulation_latency_seconds": 4.183,
+  "query_formulation_input_tokens": 195,
+  "query_formulation_output_tokens": 39,
+  "query_formulation_trace": {
+    "original_question": "What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?",
+    "retrieval_query": "FTSE NAREIT Composite REIT Index cumulative total return including dividends December 31 2003 assuming 100 invested December 31 2002",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the cumulative total return of the FTSE NAREIT Composite REIT Index, including dividends, on December 31, 2003, assuming $100 was invested on December 31, 2002?\nRetrieval query:",
+    "raw_output": "FTSE NAREIT Composite REIT Index cumulative total return including dividends December 31 2003 assuming 100 invested December 31 2002",
+    "latency_seconds": 4.182971704998636,
+    "input_tokens": 195,
+    "output_tokens": 39,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "138.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/VTR/2007/page_48.pdf | source_page=48 | context_id=convfinqa_ctx_1432"
+}

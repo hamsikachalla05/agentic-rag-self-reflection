@@ -1,0 +1,221 @@
+{
+  "question_id": "convfinqa_1311",
+  "question": "As of December 31, 2015, what proportion of the total estimated future benefit payments due in 2016 represents compared to the payments due between 2021 and 2025 for Lockheed Martin's qualified defined benefit pension plans?",
+  "retrieval_query": "Lockheed Martin qualified defined benefit pension plans future benefit payments December 31, 2015 2016 proportion 2021-2025",
+  "metadata_filters": {
+    "company": "Lockheed Martin"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_409::p1::c0::f22fefaf4d",
+      "rank": 1,
+      "dense_score": 0.758740246295929,
+      "bm25_score": 42.00225370821774,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_409"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_409::p1::c1::53ee209ad3",
+      "rank": 2,
+      "dense_score": 0.6341415047645569,
+      "bm25_score": 5.469125848290174,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_409"
+    }
+  ],
+  "answer": "Step 1: Identify the future benefit payments for 2016 and for 2021–2025 from the table in the evidence.\n\nFrom [1] convfinqa_ctx_409.pdf p.1:\n- 2016: $2,160 million (for qualified defined benefit pension plans)\n- 2021–2025: $13,670 million (for qualified defined benefit pension plans)\n\nStep 2: Compute the proportion of the 2016 payment compared to the 2021–2025 payment.\n\nProportion = (Payment in 2016) / (Payment 2021–2025)\n= 2,160 / 13,670\n\nStep 3: Perform the division.\n\n2,160 ÷ 13,670 ≈ 0.1580\n\nFinal answer: 0.158\n\nSource: convfinqa_ctx_409.pdf p.1",
+  "latency_seconds": 55.768,
+  "input_tokens": 3127,
+  "output_tokens": 285,
+  "total_tokens": 3412,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1645,
+  "llm_latency_seconds": 55.6014,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: As of December 31, 2015, what proportion of the total estimated future benefit payments due in 2016 represents compared to the payments due between 2021 and 2025 for Lockheed Martin's qualified defined benefit pension plans?\nLabel:",
+      "input_tokens": 123,
+      "output_tokens": 7,
+      "latency_seconds": 1.2285828960011713
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: As of December 31, 2015, what proportion of the total estimated future benefit payments due in 2016 represents compared to the payments due between 2021 and 2025 for Lockheed Martin's qualified defined benefit pension plans?\nEvidence:\n[1] convfinqa_ctx_409.pdf p.1\nContributionsandExpectedBenefitPayments\nThefundingofourqualifieddefinedbenefitpensionplansisdeterminedinaccordancewithERISA,asamendedbythe\nPPA,andinamannerconsistentwithCASandInternalRevenueCoderules.In2015,wemade$5millionincontributionsto\nour new Sikorsky bargained qualified defined benefit pension plan and we plan to make approximately $25 million in\ncontributionstothisplanin2016.\nThe following table presents estimated future benefit payments, which reflect expected future employee service, as of\nDecember31,2015(inmillions):\n2016 2017 2018 2019 2020 2021-2025\nQualifieddefinedbenefitpensionplans $2,160 $2,240 $2,320 $2,410 $2,500 $13,670\nRetireemedicalandlifeinsuranceplans 190 190 200 200 2\n\n[2] convfinqa_ctx_409.pdf p.1\nremaining shares were\nheldinaseparatetrust.NosharesofpreferredstockwereissuedandoutstandingatDecember31,2015or2014.\nRepurchasesofCommonStock\nDuring2015,werepurchased15.2millionsharesofourcommonstockfor$3.1billion.During2014and2013,wepaid\n$1.9billionand$1.8billiontorepurchase11.5millionand16.2millionsharesofourcommonstock.\nOn September 24, 2015, our Board of Directors approved a $3.0 billion increase to our share repurchase program.\nInclusive of this increase, the total remaining authorization for future common share repurchases under our program was\n$3.6 billion as of December 31, 2015. As we repurchase our common shares, we reduce common stock for the $1 of par\nvalue of the shares repurchas\nLabel:",
+      "input_tokens": 610,
+      "output_tokens": 4,
+      "latency_seconds": 4.804931667000346
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: As of December 31, 2015, what proportion of the total estimated future benefit payments due in 2016 represents compared to the payments due between 2021 and 2025 for Lockheed Martin's qualified defined benefit pension plans?\nEvidence:\n[1] convfinqa_ctx_409.pdf p.1\nContributionsandExpectedBenefitPayments\nThefundingofourqualifieddefinedbenefitpensionplansisdeterminedinaccordancewithERISA,asamendedbythe\nPPA,andinamannerconsistentwithCASandInternalRevenueCoderules.In2015,wemade$5millionincontributionsto\nour new Sikorsky bargained qualified defined benefit pension plan and we plan to make approximately $25 million in\ncontributionstothisplanin2016.\nThe following table presents estimated future benefit payments, which reflect expected future employee service, as of\nDecember31,2015(inmillions):\n2016 2017 2018 2019 2020 2021-2025\nQualifieddefinedbenefitpensionplans $2,160 $2,240 $2,320 $2,410 $2,500 $13,670\nRetireemedicalandlifeinsuranceplans 190 190 200 200 2\n\n[2] convfinqa_ctx_409.pdf p.1\nremaining shares were\nheldinaseparatetrust.NosharesofpreferredstockwereissuedandoutstandingatDecember31,2015or2014.\nRepurchasesofCommonStock\nDuring2015,werepurchased15.2millionsharesofourcommonstockfor$3.1billion.During2014and2013,wepaid\n$1.9billionand$1.8billiontorepurchase11.5millionand16.2millionsharesofourcommonstock.\nOn September 24, 2015, our Board of Directors approved a $3.0 billion increase to our share repurchase program.\nInclusive of this increase, the total remaining authorization for future common share repurchases under our program was\n$3.6 billion as of December 31, 2015. As we repurchase our common shares, we reduce common stock for the $1 of par\nvalue of the shares repurchas\nLabel:",
+      "input_tokens": 615,
+      "output_tokens": 3,
+      "latency_seconds": 4.772863993995998
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: As of December 31, 2015, what proportion of the total estimated future benefit payments due in 2016 represents compared to the payments due between 2021 and 2025 for Lockheed Martin's qualified defined benefit pension plans?\nEvidence:\n[1] convfinqa_ctx_409.pdf p.1\nContributionsandExpectedBenefitPayments\nThefundingofourqualifieddefinedbenefitpensionplansisdeterminedinaccordancewithERISA,asamendedbythe\nPPA,andinamannerconsistentwithCASandInternalRevenueCoderules.In2015,wemade$5millionincontributionsto\nour new Sikorsky bargained qualified defined benefit pension plan and we plan to make approximately $25 million in\ncontributionstothisplanin2016.\nThe following table presents estimated future benefit payments, which reflect expected future employee service, as of\nDecember31,2015(inmillions):\n2016 2017 2018 2019 2020 2021-2025\nQualifieddefinedbenefitpensionplans $2,160 $2,240 $2,320 $2,410 $2,500 $13,670\nRetireemedicalandlifeinsuranceplans 190 190 200 200 2\n\n[2] convfinqa_ctx_409.pdf p.1\nremaining shares were\nheldinaseparatetrust.NosharesofpreferredstockwereissuedandoutstandingatDecember31,2015or2014.\nRepurchasesofCommonStock\nDuring2015,werepurchased15.2millionsharesofourcommonstockfor$3.1billion.During2014and2013,wepaid\n$1.9billionand$1.8billiontorepurchase11.5millionand16.2millionsharesofourcommonstock.\nOn September 24, 2015, our Board of Directors approved a $3.0 billion increase to our share repurchase program.\nInclusive of this increase, the total remaining authorization for future common share repurchases under our program was\n$3.6 billion as of December 31, 2015. As we repurchase our common shares, we reduce common stock for the $1 of par\nvalue of the shares repurchas\nDraft:\nStep 1: Identify the future benefit payments for 2016 and for 2021–2025 from the table in the evidence.\n\nFrom [1] convfinqa_ctx_409.pdf p.1:\n- 2016: $2,160 million (for qualified defined benefit pension plans)\n- 2021–2025: $13,670 million (for qualified defined benefit pension plans)\n\nStep 2: Compute the proportion of the 2016 payment compared to the 2021–2025 payment.\n\nProportion = (Payment in 2016) / (Payment 2021–2025)\n= 2,160 / 13,670\n\nStep 3: Perform the division.\n\n2,160 ÷ 13,670 ≈ 0.1580\n\nFinal answer: 0.158\n\nSource: convfinqa_ctx_409.pdf p.1\nLabel:",
+      "input_tokens": 876,
+      "output_tokens": 3,
+      "latency_seconds": 6.886670727995806
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Lockheed Martin qualified defined benefit pension plans future benefit payments December 31, 2015 2016 proportion 2021-2025",
+      "filters": {
+        "company": "Lockheed Martin"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_409::p1::c0::f22fefaf4d",
+        "convfinqa_ctx_409::p1::c1::53ee209ad3"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_409::p1::c0::f22fefaf4d",
+          "document_id": "convfinqa_ctx_409",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_409::p1::c0::f22fefaf4d",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_409::p1::c1::53ee209ad3",
+          "document_id": "convfinqa_ctx_409",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_409::p1::c1::53ee209ad3",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "As of December 31, 2015, what proportion of the total estimated future benefit payments due in 2016 represents compared to the payments due between 2021 and 2025 for Lockheed Martin's qualified defined benefit pension plans?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: As of December 31, 2015, what proportion of the total estimated future benefit payments due in 2016 represents compared to the payments due between 2021 and 2025 for Lockheed Martin's qualified defined benefit pension plans?\nRetrieval query:",
+  "query_formulation_raw_output": "Lockheed Martin qualified defined benefit pension plans future benefit payments December 31, 2015 2016 proportion 2021-2025",
+  "query_formulation_latency_seconds": 5.1289,
+  "query_formulation_input_tokens": 200,
+  "query_formulation_output_tokens": 38,
+  "query_formulation_trace": {
+    "original_question": "As of December 31, 2015, what proportion of the total estimated future benefit payments due in 2016 represents compared to the payments due between 2021 and 2025 for Lockheed Martin's qualified defined benefit pension plans?",
+    "retrieval_query": "Lockheed Martin qualified defined benefit pension plans future benefit payments December 31, 2015 2016 proportion 2021-2025",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: As of December 31, 2015, what proportion of the total estimated future benefit payments due in 2016 represents compared to the payments due between 2021 and 2025 for Lockheed Martin's qualified defined benefit pension plans?\nRetrieval query:",
+    "raw_output": "Lockheed Martin qualified defined benefit pension plans future benefit payments December 31, 2015 2016 proportion 2021-2025",
+    "latency_seconds": 5.128860333003104,
+    "input_tokens": 200,
+    "output_tokens": 38,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "0.15801",
+  "gold_evidence_reference": "ConvFinQA | pdf/LMT/2015/page_106.pdf | source_page=106 | context_id=convfinqa_ctx_409"
+}

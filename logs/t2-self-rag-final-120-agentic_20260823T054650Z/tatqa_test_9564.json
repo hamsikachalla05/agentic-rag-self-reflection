@@ -1,0 +1,243 @@
+{
+  "question_id": "tatqa_test_9564",
+  "question": "What is the total net deferred taxes for assets and liabilities for Conagra Brands, Inc. from the fiscal years ended May 26, 2019, to May 27, 2018?",
+  "retrieval_query": "Conagra Brands, Inc. net deferred taxes assets and liabilities fiscal years ended May 26, 2019 and May 27, 2018",
+  "metadata_filters": {
+    "company": "conagra-brands-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c0::b230578892",
+      "rank": 1,
+      "dense_score": 0.7633327841758728,
+      "bm25_score": 27.69301807250097,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "6c509acf4599f1a22272abbe9a37a1ec"
+    },
+    {
+      "chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c2::6beef2850f",
+      "rank": 2,
+      "dense_score": 0.6797261834144592,
+      "bm25_score": 22.531986277154513,
+      "hybrid_score": 0.13872776805052475,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "6c509acf4599f1a22272abbe9a37a1ec"
+    },
+    {
+      "chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c1::338c5cef4d",
+      "rank": 3,
+      "dense_score": 0.6915369033813477,
+      "bm25_score": 19.791632216319368,
+      "hybrid_score": 0.08475924048575376,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "6c509acf4599f1a22272abbe9a37a1ec"
+    }
+  ],
+  "answer": "The total net deferred taxes for assets and liabilities for Conagra Brands, Inc. for the fiscal year ended May 26, 2019, is $325.0 million. This is derived from the \"Net deferred taxes\" row in the table for May 26, 2019, which is $325.0 million (after subtracting the valuation allowance of $738.1 million from the total deferred taxes of $1,063.1 million).\n\nSource: 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\n\nAnswer: 325.0",
+  "latency_seconds": 61.0856,
+  "input_tokens": 4582,
+  "output_tokens": 205,
+  "total_tokens": 4787,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1383,
+  "llm_latency_seconds": 60.9461,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the total net deferred taxes for assets and liabilities for Conagra Brands, Inc. from the fiscal years ended May 26, 2019, to May 27, 2018?\nLabel:",
+      "input_tokens": 112,
+      "output_tokens": 7,
+      "latency_seconds": 1.2098145330019179
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the total net deferred taxes for assets and liabilities for Conagra Brands, Inc. from the fiscal years ended May 26, 2019, to May 27, 2018?\nEvidence:\n[1] 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\nNotes to Consolidated Financial Statements - (Continued)\nFiscal Years Ended May 26, 2019, May 27, 2018, and May 28, 2017\n(columnar dollars in millions except per share amounts)\nThe tax effect of temporary differences and carryforwards that give rise to significant portions of deferred tax assets and\nliabilities consisted of the following:\nMay 26, 2019 May 27, 2018\nAssets Liabilities Assets Liabilities\nProperty, plant and equipment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ — $ 240.7 $ — $ 141.0\nInventory. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15.2 — 2.6 —\nGoodwill, trademarks and other intangible assets . . . . . . . .\n\n[2] 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\nand penalties. Interest and penalties recognized\nin the Consolidated Statements of Operations was an expense of $1.2 million in fiscal 2019, an expense of $1.6 million in\nfiscal 2018, and a benefit of $0.3 million in fiscal 2017.\nThe net amount of unrecognized tax benefits at May 26, 2019 and May 27, 2018 that, if recognized, would favorably\nimpact our effective tax rate was $37.3 million and $27.8 million, respectively.\nWe accrue interest and penalties associated with uncertain tax positions as part of income tax expense.\nWe conduct business and file tax returns in numerous countries, states, and local jurisdictions. The U.S. Internal Revenue\nService (\"IRS\") has completed its audit of the C\n\n[3] 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\nwards. . . . . . . . . . . . . . . . . . . 766.5 — 762.5 —\nFederal credits. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18.0 — 3.5 —\nOther. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37.6 24.0 23.6 9.5\n1,063.1 1,637.1 997.3 722.5\nLess: Valuation allowance. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (738.1) — (739.6) —\nNet deferred taxes. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 325.0 $ 1,637.1 $ 257.7 $ 722.5\nThe liability for gross unrecognized tax benefits at May 26, 2019 was $44.1 million, excluding a related liability of $11.7\nmillion for gross interest a\nLabel:",
+      "input_tokens": 999,
+      "output_tokens": 4,
+      "latency_seconds": 7.916571820001991
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the total net deferred taxes for assets and liabilities for Conagra Brands, Inc. from the fiscal years ended May 26, 2019, to May 27, 2018?\nEvidence:\n[1] 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\nNotes to Consolidated Financial Statements - (Continued)\nFiscal Years Ended May 26, 2019, May 27, 2018, and May 28, 2017\n(columnar dollars in millions except per share amounts)\nThe tax effect of temporary differences and carryforwards that give rise to significant portions of deferred tax assets and\nliabilities consisted of the following:\nMay 26, 2019 May 27, 2018\nAssets Liabilities Assets Liabilities\nProperty, plant and equipment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ — $ 240.7 $ — $ 141.0\nInventory. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15.2 — 2.6 —\nGoodwill, trademarks and other intangible assets . . . . . . . .\n\n[2] 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\nand penalties. Interest and penalties recognized\nin the Consolidated Statements of Operations was an expense of $1.2 million in fiscal 2019, an expense of $1.6 million in\nfiscal 2018, and a benefit of $0.3 million in fiscal 2017.\nThe net amount of unrecognized tax benefits at May 26, 2019 and May 27, 2018 that, if recognized, would favorably\nimpact our effective tax rate was $37.3 million and $27.8 million, respectively.\nWe accrue interest and penalties associated with uncertain tax positions as part of income tax expense.\nWe conduct business and file tax returns in numerous countries, states, and local jurisdictions. The U.S. Internal Revenue\nService (\"IRS\") has completed its audit of the C\n\n[3] 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\nwards. . . . . . . . . . . . . . . . . . . 766.5 — 762.5 —\nFederal credits. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18.0 — 3.5 —\nOther. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37.6 24.0 23.6 9.5\n1,063.1 1,637.1 997.3 722.5\nLess: Valuation allowance. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (738.1) — (739.6) —\nNet deferred taxes. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 325.0 $ 1,637.1 $ 257.7 $ 722.5\nThe liability for gross unrecognized tax benefits at May 26, 2019 was $44.1 million, excluding a related liability of $11.7\nmillion for gross interest a\nLabel:",
+      "input_tokens": 1004,
+      "output_tokens": 3,
+      "latency_seconds": 7.913163482997334
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the total net deferred taxes for assets and liabilities for Conagra Brands, Inc. from the fiscal years ended May 26, 2019, to May 27, 2018?\nEvidence:\n[1] 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\nNotes to Consolidated Financial Statements - (Continued)\nFiscal Years Ended May 26, 2019, May 27, 2018, and May 28, 2017\n(columnar dollars in millions except per share amounts)\nThe tax effect of temporary differences and carryforwards that give rise to significant portions of deferred tax assets and\nliabilities consisted of the following:\nMay 26, 2019 May 27, 2018\nAssets Liabilities Assets Liabilities\nProperty, plant and equipment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ — $ 240.7 $ — $ 141.0\nInventory. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15.2 — 2.6 —\nGoodwill, trademarks and other intangible assets . . . . . . . .\n\n[2] 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\nand penalties. Interest and penalties recognized\nin the Consolidated Statements of Operations was an expense of $1.2 million in fiscal 2019, an expense of $1.6 million in\nfiscal 2018, and a benefit of $0.3 million in fiscal 2017.\nThe net amount of unrecognized tax benefits at May 26, 2019 and May 27, 2018 that, if recognized, would favorably\nimpact our effective tax rate was $37.3 million and $27.8 million, respectively.\nWe accrue interest and penalties associated with uncertain tax positions as part of income tax expense.\nWe conduct business and file tax returns in numerous countries, states, and local jurisdictions. The U.S. Internal Revenue\nService (\"IRS\") has completed its audit of the C\n\n[3] 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\nwards. . . . . . . . . . . . . . . . . . . 766.5 — 762.5 —\nFederal credits. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18.0 — 3.5 —\nOther. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37.6 24.0 23.6 9.5\n1,063.1 1,637.1 997.3 722.5\nLess: Valuation allowance. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (738.1) — (739.6) —\nNet deferred taxes. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 325.0 $ 1,637.1 $ 257.7 $ 722.5\nThe liability for gross unrecognized tax benefits at May 26, 2019 was $44.1 million, excluding a related liability of $11.7\nmillion for gross interest a\nDraft:\nThe total net deferred taxes for assets and liabilities for Conagra Brands, Inc. for the fiscal year ended May 26, 2019, is $325.0 million. This is derived from the \"Net deferred taxes\" row in the table for May 26, 2019, which is $325.0 million (after subtracting the valuation allowance of $738.1 million from the total deferred taxes of $1,063.1 million).\n\nSource: 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\n\nAnswer: 325.0\nLabel:",
+      "input_tokens": 1186,
+      "output_tokens": 3,
+      "latency_seconds": 9.939365220998297
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Conagra Brands, Inc. net deferred taxes assets and liabilities fiscal years ended May 26, 2019 and May 27, 2018",
+      "filters": {
+        "company": "conagra-brands-inc"
+      },
+      "chunk_ids": [
+        "6c509acf4599f1a22272abbe9a37a1ec::p1::c0::b230578892",
+        "6c509acf4599f1a22272abbe9a37a1ec::p1::c2::6beef2850f",
+        "6c509acf4599f1a22272abbe9a37a1ec::p1::c1::338c5cef4d"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c0::b230578892",
+          "document_id": "6c509acf4599f1a22272abbe9a37a1ec",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c0::b230578892",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c2::6beef2850f",
+          "document_id": "6c509acf4599f1a22272abbe9a37a1ec",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c2::6beef2850f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c1::338c5cef4d",
+          "document_id": "6c509acf4599f1a22272abbe9a37a1ec",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "6c509acf4599f1a22272abbe9a37a1ec::p1::c1::338c5cef4d",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the total net deferred taxes for assets and liabilities for Conagra Brands, Inc. from the fiscal years ended May 26, 2019, to May 27, 2018?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total net deferred taxes for assets and liabilities for Conagra Brands, Inc. from the fiscal years ended May 26, 2019, to May 27, 2018?\nRetrieval query:",
+  "query_formulation_raw_output": "Conagra Brands, Inc. net deferred taxes assets and liabilities fiscal years ended May 26, 2019 and May 27, 2018",
+  "query_formulation_latency_seconds": 4.8633,
+  "query_formulation_input_tokens": 189,
+  "query_formulation_output_tokens": 37,
+  "query_formulation_trace": {
+    "original_question": "What is the total net deferred taxes for assets and liabilities for Conagra Brands, Inc. from the fiscal years ended May 26, 2019, to May 27, 2018?",
+    "retrieval_query": "Conagra Brands, Inc. net deferred taxes assets and liabilities fiscal years ended May 26, 2019 and May 27, 2018",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total net deferred taxes for assets and liabilities for Conagra Brands, Inc. from the fiscal years ended May 26, 2019, to May 27, 2018?\nRetrieval query:",
+    "raw_output": "Conagra Brands, Inc. net deferred taxes assets and liabilities fiscal years ended May 26, 2019 and May 27, 2018",
+    "latency_seconds": 4.86326548299985,
+    "input_tokens": 189,
+    "output_tokens": 37,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "2942.3",
+  "gold_evidence_reference": "TAT-DQA | raw/6c509acf4599f1a22272abbe9a37a1ec.pdf | context_id=6c509acf4599f1a22272abbe9a37a1ec"
+}

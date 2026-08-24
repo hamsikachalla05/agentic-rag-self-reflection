@@ -1,0 +1,447 @@
+{
+  "question_id": "finqa_test_400",
+  "question": "What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?",
+  "retrieval_query": "statutory U.S. federal income tax rate effective income tax rate Ecolab 2016",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+      "rank": 1,
+      "dense_score": 0.7548824548721313,
+      "bm25_score": 26.72613282303733,
+      "hybrid_score": 0.9332549581481835,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_47"
+    },
+    {
+      "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c1::78631230a4",
+      "rank": 2,
+      "dense_score": 0.739702045917511,
+      "bm25_score": 25.48549870914232,
+      "hybrid_score": 0.8174583768016195,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "8f88cc6a1780582fa50c0b8318c2fb38"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+      "rank": 3,
+      "dense_score": 0.7368096709251404,
+      "bm25_score": 20.645094972296814,
+      "hybrid_score": 0.6972777276739668,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_47"
+    },
+    {
+      "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c0::2dbe29b9d0",
+      "rank": 4,
+      "dense_score": 0.7100698351860046,
+      "bm25_score": 26.683387322396843,
+      "hybrid_score": 0.668561540499718,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "8f88cc6a1780582fa50c0b8318c2fb38"
+    },
+    {
+      "chunk_id": "debfaf15530ee227395897df205fa19f::p1::c0::9c0c5a069a",
+      "rank": 5,
+      "dense_score": 0.7271109819412231,
+      "bm25_score": 20.903309589771386,
+      "hybrid_score": 0.6456907969313898,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "debfaf15530ee227395897df205fa19f"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 85.2887,
+  "input_tokens": 10825,
+  "output_tokens": 80,
+  "total_tokens": 10905,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "IRRELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1715,
+  "llm_latency_seconds": 97.0365,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nLabel:",
+      "input_tokens": 97,
+      "output_tokens": 7,
+      "latency_seconds": 1.1624188200003118
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nEvidence:\n[1] finqa_test_ctx_47.pdf p.1\n2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluationallowance ...................... (0.1) (4.7) 0.1\nImpactofrevisedstateandlocalapportionmentestimates .................. 3.1 0.5 (0.7)\nReclassificationofaccumulatedothercomprehensiveincome ............... 3.5 — —\nImpactof2017TaxAct ............................................. (101.6) — —\nOther,net ........................................................ (1.8) (0.3) 0.2\nEffectiveTaxExpense(Benefit)Rate .................................. (60.8)% 32.9% 36.3%\nIn 2017, the effective rate was lower than the statutory tax rate due to the remeasurement of the deferr\n\n[2] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nfor the fiscal year ended March 31, 2017 is 35%. The Tax Cuts and Jobs Act enacted on December 22, 2017 reduced the U.S.\nfederal corporate tax rate from 35% to 21%, effective January 1, 2018. Based on the fiscal year of the Company ending on March 31, the statutory income tax\nrate for the fiscal year ended March 31, 2018 is a blended rate of 31.6% based on the number of days in the fiscal year before January 1, 2018 and the number\nof days in the fiscal after December 31, 2017. The statutory income tax rate for the fiscal year ended March 31, 2019 is 21%.\n(2) The effect of prior year adjustments was offset by a full valuation allowance resulting in no impact on the provision for income taxes.\n\n[3] finqa_test_ctx_47.pdf p.1\nafter, including a reduction in the U.S. federal corporate income tax rate from 35% to 21%. The 2017 Tax Act\nmakes broad and complex changes to the U.S. tax code including, but not limited to, the repeal of the IRC\nSection 199 domestic production activities deduction in 2018 and accelerated depreciation that allows for full\nexpensingofqualifiedpropertybeginninginthefourthquarterof2017.\nOnDecember22,2017,theSECstaffissuedastaffaccountingbulletinthatprovidesguidanceonaccountingfor\nthetaxeffectsofthe2017TaxAct.Theguidanceprovidesameasurementperiodthatshouldnotextendbeyond\none year from the 2017 Tax Act enactment date for companies to complete the accounting for income taxes\nrelated to changes a\n\n[4] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nKEMET CORPORATION AND SUBSIDIARIES\nNotes to Consolidated Financial Statements (Continued)\nDifferences between the provision for income taxes on earnings from continuing operations and the amount computed\nusing the U.S. Federal statutory income tax rate are as follows (amounts in thousands):\nFiscal Years Ended March 31,\n2019 2018 2017\nAmount computed using the statutory rate (1) $ 35,791 $ 59,162 $ 3,722\nChange in U.S. valuation allowance (67,761) (66,948) (7,080)\nUnremitted earnings of foreign subsidiaries — — 2,127\nEffect of prior year adjustments (2) 2,450 (1,337) 1,789\nIRC section 162(m) limitation (3) 4,553 — —\nExpired foreign tax credits — 407 4,766\nTaxable foreign source income 3,502 2\n\n[5] debfaf15530ee227395897df205fa19f.pdf p.1\nCOHERENT, INC. AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)\n16. INCOME TAXES (Continued)\nThe reconciliation of the income tax expense at the U.S. Federal statutory rate (21.0% in fiscal\n2019, 24.5% in fiscal 2018 and 35.0% in fiscal 2017) to actual income tax expense is as follows (in\nthousands):\nFiscal\n2019 2018 2017\nFederal statutory tax expense . . . . . . . . . . . . . . . . . $12,610 $ 88,684 $105,719\nValuation allowance . . . . . . . . . . . . . . . . . . . . . . . . 7,925 4,263 4,454\nForeign taxes at rates greater (less) than U.S. rates,\nnet. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (8,210) 8,417 (12,346)\nStock-based compensation .\nLabel:",
+      "input_tokens": 1368,
+      "output_tokens": 5,
+      "latency_seconds": 11.460364893995575
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nEvidence:\n[1] finqa_test_ctx_47.pdf p.1\n2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluationallowance ...................... (0.1) (4.7) 0.1\nImpactofrevisedstateandlocalapportionmentestimates .................. 3.1 0.5 (0.7)\nReclassificationofaccumulatedothercomprehensiveincome ............... 3.5 — —\nImpactof2017TaxAct ............................................. (101.6) — —\nOther,net ........................................................ (1.8) (0.3) 0.2\nEffectiveTaxExpense(Benefit)Rate .................................. (60.8)% 32.9% 36.3%\nIn 2017, the effective rate was lower than the statutory tax rate due to the remeasurement of the deferr\n\n[2] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nfor the fiscal year ended March 31, 2017 is 35%. The Tax Cuts and Jobs Act enacted on December 22, 2017 reduced the U.S.\nfederal corporate tax rate from 35% to 21%, effective January 1, 2018. Based on the fiscal year of the Company ending on March 31, the statutory income tax\nrate for the fiscal year ended March 31, 2018 is a blended rate of 31.6% based on the number of days in the fiscal year before January 1, 2018 and the number\nof days in the fiscal after December 31, 2017. The statutory income tax rate for the fiscal year ended March 31, 2019 is 21%.\n(2) The effect of prior year adjustments was offset by a full valuation allowance resulting in no impact on the provision for income taxes.\n\n[3] finqa_test_ctx_47.pdf p.1\nafter, including a reduction in the U.S. federal corporate income tax rate from 35% to 21%. The 2017 Tax Act\nmakes broad and complex changes to the U.S. tax code including, but not limited to, the repeal of the IRC\nSection 199 domestic production activities deduction in 2018 and accelerated depreciation that allows for full\nexpensingofqualifiedpropertybeginninginthefourthquarterof2017.\nOnDecember22,2017,theSECstaffissuedastaffaccountingbulletinthatprovidesguidanceonaccountingfor\nthetaxeffectsofthe2017TaxAct.Theguidanceprovidesameasurementperiodthatshouldnotextendbeyond\none year from the 2017 Tax Act enactment date for companies to complete the accounting for income taxes\nrelated to changes a\n\n[4] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nKEMET CORPORATION AND SUBSIDIARIES\nNotes to Consolidated Financial Statements (Continued)\nDifferences between the provision for income taxes on earnings from continuing operations and the amount computed\nusing the U.S. Federal statutory income tax rate are as follows (amounts in thousands):\nFiscal Years Ended March 31,\n2019 2018 2017\nAmount computed using the statutory rate (1) $ 35,791 $ 59,162 $ 3,722\nChange in U.S. valuation allowance (67,761) (66,948) (7,080)\nUnremitted earnings of foreign subsidiaries — — 2,127\nEffect of prior year adjustments (2) 2,450 (1,337) 1,789\nIRC section 162(m) limitation (3) 4,553 — —\nExpired foreign tax credits — 407 4,766\nTaxable foreign source income 3,502 2\n\n[5] debfaf15530ee227395897df205fa19f.pdf p.1\nCOHERENT, INC. AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)\n16. INCOME TAXES (Continued)\nThe reconciliation of the income tax expense at the U.S. Federal statutory rate (21.0% in fiscal\n2019, 24.5% in fiscal 2018 and 35.0% in fiscal 2017) to actual income tax expense is as follows (in\nthousands):\nFiscal\n2019 2018 2017\nFederal statutory tax expense . . . . . . . . . . . . . . . . . $12,610 $ 88,684 $105,719\nValuation allowance . . . . . . . . . . . . . . . . . . . . . . . . 7,925 4,263 4,454\nForeign taxes at rates greater (less) than U.S. rates,\nnet. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (8,210) 8,417 (12,346)\nStock-based compensation .\nLabel:",
+      "input_tokens": 1373,
+      "output_tokens": 3,
+      "latency_seconds": 12.44857516099728
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nEvidence:\n[1] finqa_test_ctx_47.pdf p.1\ned tax\nliabilities as a result of the 2017 Tax Act. This decrease was partially offset by an increase in the state\napportionment impact of the Illinois income tax rate change on deferred tax liabilities as well as the\nreclassification of income tax expense from accumulated other comprehensive income related to the disposal of\nBM&FBOVESPAshares.\nIn 2016, the effective rate was lower than the statutory tax rate largely due to the release of the valuation\nallowances related to the sale of BM&FBOVESPA shares. The decrease was partially offset by an increase in\nstatetaxexpenseandthestateapportionmentimpactondeferredtaxliabilities.\nIn 2015, the effective rate was higher than the statutory tax rate\n\n[2] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nfor the fiscal year ended March 31, 2017 is 35%. The Tax Cuts and Jobs Act enacted on December 22, 2017 reduced the U.S.\nfederal corporate tax rate from 35% to 21%, effective January 1, 2018. Based on the fiscal year of the Company ending on March 31, the statutory income tax\nrate for the fiscal year ended March 31, 2018 is a blended rate of 31.6% based on the number of days in the fiscal year before January 1, 2018 and the number\nof days in the fiscal after December 31, 2017. The statutory income tax rate for the fiscal year ended March 31, 2019 is 21%.\n(2) The effect of prior year adjustments was offset by a full valuation allowance resulting in no impact on the provision for income taxes.\n\n[3] finqa_test_ctx_47.pdf p.1\nssociated with the 2017 Tax Act. According to the staff accounting bulletin, entities must\nrecognize the impact in the financial statements for the activities that they have completed the work to\nunderstand the impact as a result of the tax reform law. For those activities which have not completed, the\ncompanywouldincludeprovisionalamountsifareasonableestimateisavailable.\nAs a result of the reduction of the federal corporate income tax rate, the company has revalued its net deferred\ntaxliability,excludingaftertaxcredits,asofDecember31,2017.Basedonthisrevaluationandotherimpactsof\nthe 2017 Tax Act, the company has recognized a net tax benefit of $2.6 billion, which was recorded as a\nreductiont\n\n[4] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nKEMET CORPORATION AND SUBSIDIARIES\nNotes to Consolidated Financial Statements (Continued)\nDifferences between the provision for income taxes on earnings from continuing operations and the amount computed\nusing the U.S. Federal statutory income tax rate are as follows (amounts in thousands):\nFiscal Years Ended March 31,\n2019 2018 2017\nAmount computed using the statutory rate (1) $ 35,791 $ 59,162 $ 3,722\nChange in U.S. valuation allowance (67,761) (66,948) (7,080)\nUnremitted earnings of foreign subsidiaries — — 2,127\nEffect of prior year adjustments (2) 2,450 (1,337) 1,789\nIRC section 162(m) limitation (3) 4,553 — —\nExpired foreign tax credits — 407 4,766\nTaxable foreign source income 3,502 2\n\n[5] debfaf15530ee227395897df205fa19f.pdf p.1\nCOHERENT, INC. AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)\n16. INCOME TAXES (Continued)\nThe reconciliation of the income tax expense at the U.S. Federal statutory rate (21.0% in fiscal\n2019, 24.5% in fiscal 2018 and 35.0% in fiscal 2017) to actual income tax expense is as follows (in\nthousands):\nFiscal\n2019 2018 2017\nFederal statutory tax expense . . . . . . . . . . . . . . . . . $12,610 $ 88,684 $105,719\nValuation allowance . . . . . . . . . . . . . . . . . . . . . . . . 7,925 4,263 4,454\nForeign taxes at rates greater (less) than U.S. rates,\nnet. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (8,210) 8,417 (12,346)\nStock-based compensation .\nLabel:",
+      "input_tokens": 1316,
+      "output_tokens": 3,
+      "latency_seconds": 10.958034302006126
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nEvidence:\n[1] finqa_test_ctx_47.pdf p.1\nprimarily due to the impact of state and local\nincome taxes. The effective rate was primarily reduced by the Section 199 Domestic Productions Activities\nDeduction (Section 199 deduction) and the impact of state and local apportionment factors in deferred tax\nexpense. The Section 199 deduction is related to certain activities performed by the company’s electronic\nplatform.\n81\n\n[2] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nfor the fiscal year ended March 31, 2017 is 35%. The Tax Cuts and Jobs Act enacted on December 22, 2017 reduced the U.S.\nfederal corporate tax rate from 35% to 21%, effective January 1, 2018. Based on the fiscal year of the Company ending on March 31, the statutory income tax\nrate for the fiscal year ended March 31, 2018 is a blended rate of 31.6% based on the number of days in the fiscal year before January 1, 2018 and the number\nof days in the fiscal after December 31, 2017. The statutory income tax rate for the fiscal year ended March 31, 2019 is 21%.\n(2) The effect of prior year adjustments was offset by a full valuation allowance resulting in no impact on the provision for income taxes.\n\n[3] finqa_test_ctx_47.pdf p.1\noincometaxexpensefortheyearendedDecember31,2017.Thecompanyhasrecognizedprovisional\nadjustments but management hasnotcompleted itsaccounting forincome taxeffects forcertain elements ofthe\n2017 Tax Act, principally due to the accelerated depreciation that will allow for full expensing of qualified\nproperty.\nReconciliationofthestatutoryU.S.federalincometaxratetotheeffectivetaxrateisasfollows:\n2017 2016 2015\nStatutoryU.S.federaltaxrate ........................................ 35.0% 35.0% 35.0%\nStatetaxes,netoffederalbenefit ...................................... 2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluati\n\n[4] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nKEMET CORPORATION AND SUBSIDIARIES\nNotes to Consolidated Financial Statements (Continued)\nDifferences between the provision for income taxes on earnings from continuing operations and the amount computed\nusing the U.S. Federal statutory income tax rate are as follows (amounts in thousands):\nFiscal Years Ended March 31,\n2019 2018 2017\nAmount computed using the statutory rate (1) $ 35,791 $ 59,162 $ 3,722\nChange in U.S. valuation allowance (67,761) (66,948) (7,080)\nUnremitted earnings of foreign subsidiaries — — 2,127\nEffect of prior year adjustments (2) 2,450 (1,337) 1,789\nIRC section 162(m) limitation (3) 4,553 — —\nExpired foreign tax credits — 407 4,766\nTaxable foreign source income 3,502 2\n\n[5] debfaf15530ee227395897df205fa19f.pdf p.1\nCOHERENT, INC. AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)\n16. INCOME TAXES (Continued)\nThe reconciliation of the income tax expense at the U.S. Federal statutory rate (21.0% in fiscal\n2019, 24.5% in fiscal 2018 and 35.0% in fiscal 2017) to actual income tax expense is as follows (in\nthousands):\nFiscal\n2019 2018 2017\nFederal statutory tax expense . . . . . . . . . . . . . . . . . $12,610 $ 88,684 $105,719\nValuation allowance . . . . . . . . . . . . . . . . . . . . . . . . 7,925 4,263 4,454\nForeign taxes at rates greater (less) than U.S. rates,\nnet. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (8,210) 8,417 (12,346)\nStock-based compensation .\nLabel:",
+      "input_tokens": 1264,
+      "output_tokens": 3,
+      "latency_seconds": 10.43777413800126
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nEvidence:\n[1] finqa_test_ctx_47.pdf p.1\nprimarily due to the impact of state and local\nincome taxes. The effective rate was primarily reduced by the Section 199 Domestic Productions Activities\nDeduction (Section 199 deduction) and the impact of state and local apportionment factors in deferred tax\nexpense. The Section 199 deduction is related to certain activities performed by the company’s electronic\nplatform.\n81\n\n[2] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nfor the fiscal year ended March 31, 2017 is 35%. The Tax Cuts and Jobs Act enacted on December 22, 2017 reduced the U.S.\nfederal corporate tax rate from 35% to 21%, effective January 1, 2018. Based on the fiscal year of the Company ending on March 31, the statutory income tax\nrate for the fiscal year ended March 31, 2018 is a blended rate of 31.6% based on the number of days in the fiscal year before January 1, 2018 and the number\nof days in the fiscal after December 31, 2017. The statutory income tax rate for the fiscal year ended March 31, 2019 is 21%.\n(2) The effect of prior year adjustments was offset by a full valuation allowance resulting in no impact on the provision for income taxes.\n\n[3] finqa_test_ctx_47.pdf p.1\noincometaxexpensefortheyearendedDecember31,2017.Thecompanyhasrecognizedprovisional\nadjustments but management hasnotcompleted itsaccounting forincome taxeffects forcertain elements ofthe\n2017 Tax Act, principally due to the accelerated depreciation that will allow for full expensing of qualified\nproperty.\nReconciliationofthestatutoryU.S.federalincometaxratetotheeffectivetaxrateisasfollows:\n2017 2016 2015\nStatutoryU.S.federaltaxrate ........................................ 35.0% 35.0% 35.0%\nStatetaxes,netoffederalbenefit ...................................... 2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluati\n\n[4] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nKEMET CORPORATION AND SUBSIDIARIES\nNotes to Consolidated Financial Statements (Continued)\nDifferences between the provision for income taxes on earnings from continuing operations and the amount computed\nusing the U.S. Federal statutory income tax rate are as follows (amounts in thousands):\nFiscal Years Ended March 31,\n2019 2018 2017\nAmount computed using the statutory rate (1) $ 35,791 $ 59,162 $ 3,722\nChange in U.S. valuation allowance (67,761) (66,948) (7,080)\nUnremitted earnings of foreign subsidiaries — — 2,127\nEffect of prior year adjustments (2) 2,450 (1,337) 1,789\nIRC section 162(m) limitation (3) 4,553 — —\nExpired foreign tax credits — 407 4,766\nTaxable foreign source income 3,502 2\n\n[5] debfaf15530ee227395897df205fa19f.pdf p.1\nCOHERENT, INC. AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)\n16. INCOME TAXES (Continued)\nThe reconciliation of the income tax expense at the U.S. Federal statutory rate (21.0% in fiscal\n2019, 24.5% in fiscal 2018 and 35.0% in fiscal 2017) to actual income tax expense is as follows (in\nthousands):\nFiscal\n2019 2018 2017\nFederal statutory tax expense . . . . . . . . . . . . . . . . . $12,610 $ 88,684 $105,719\nValuation allowance . . . . . . . . . . . . . . . . . . . . . . . . 7,925 4,263 4,454\nForeign taxes at rates greater (less) than U.S. rates,\nnet. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (8,210) 8,417 (12,346)\nStock-based compensation .\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1305,
+      "output_tokens": 4,
+      "latency_seconds": 10.802084581002418
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nEvidence:\n[1] finqa_test_ctx_47.pdf p.1\nprimarily due to the impact of state and local\nincome taxes. The effective rate was primarily reduced by the Section 199 Domestic Productions Activities\nDeduction (Section 199 deduction) and the impact of state and local apportionment factors in deferred tax\nexpense. The Section 199 deduction is related to certain activities performed by the company’s electronic\nplatform.\n81\n\n[2] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nfor the fiscal year ended March 31, 2017 is 35%. The Tax Cuts and Jobs Act enacted on December 22, 2017 reduced the U.S.\nfederal corporate tax rate from 35% to 21%, effective January 1, 2018. Based on the fiscal year of the Company ending on March 31, the statutory income tax\nrate for the fiscal year ended March 31, 2018 is a blended rate of 31.6% based on the number of days in the fiscal year before January 1, 2018 and the number\nof days in the fiscal after December 31, 2017. The statutory income tax rate for the fiscal year ended March 31, 2019 is 21%.\n(2) The effect of prior year adjustments was offset by a full valuation allowance resulting in no impact on the provision for income taxes.\n\n[3] finqa_test_ctx_47.pdf p.1\noincometaxexpensefortheyearendedDecember31,2017.Thecompanyhasrecognizedprovisional\nadjustments but management hasnotcompleted itsaccounting forincome taxeffects forcertain elements ofthe\n2017 Tax Act, principally due to the accelerated depreciation that will allow for full expensing of qualified\nproperty.\nReconciliationofthestatutoryU.S.federalincometaxratetotheeffectivetaxrateisasfollows:\n2017 2016 2015\nStatutoryU.S.federaltaxrate ........................................ 35.0% 35.0% 35.0%\nStatetaxes,netoffederalbenefit ...................................... 2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluati\n\n[4] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nKEMET CORPORATION AND SUBSIDIARIES\nNotes to Consolidated Financial Statements (Continued)\nDifferences between the provision for income taxes on earnings from continuing operations and the amount computed\nusing the U.S. Federal statutory income tax rate are as follows (amounts in thousands):\nFiscal Years Ended March 31,\n2019 2018 2017\nAmount computed using the statutory rate (1) $ 35,791 $ 59,162 $ 3,722\nChange in U.S. valuation allowance (67,761) (66,948) (7,080)\nUnremitted earnings of foreign subsidiaries — — 2,127\nEffect of prior year adjustments (2) 2,450 (1,337) 1,789\nIRC section 162(m) limitation (3) 4,553 — —\nExpired foreign tax credits — 407 4,766\nTaxable foreign source income 3,502 2\n\n[5] debfaf15530ee227395897df205fa19f.pdf p.1\nCOHERENT, INC. AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)\n16. INCOME TAXES (Continued)\nThe reconciliation of the income tax expense at the U.S. Federal statutory rate (21.0% in fiscal\n2019, 24.5% in fiscal 2018 and 35.0% in fiscal 2017) to actual income tax expense is as follows (in\nthousands):\nFiscal\n2019 2018 2017\nFederal statutory tax expense . . . . . . . . . . . . . . . . . $12,610 $ 88,684 $105,719\nValuation allowance . . . . . . . . . . . . . . . . . . . . . . . . 7,925 4,263 4,454\nForeign taxes at rates greater (less) than U.S. rates,\nnet. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (8,210) 8,417 (12,346)\nStock-based compensation .\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 1288,
+      "output_tokens": 11,
+      "latency_seconds": 11.923658504994819
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": false,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nEvidence:\n[1] finqa_test_ctx_47.pdf p.1\nprimarily due to the impact of state and local\nincome taxes. The effective rate was primarily reduced by the Section 199 Domestic Productions Activities\nDeduction (Section 199 deduction) and the impact of state and local apportionment factors in deferred tax\nexpense. The Section 199 deduction is related to certain activities performed by the company’s electronic\nplatform.\n81\n\n[2] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nfor the fiscal year ended March 31, 2017 is 35%. The Tax Cuts and Jobs Act enacted on December 22, 2017 reduced the U.S.\nfederal corporate tax rate from 35% to 21%, effective January 1, 2018. Based on the fiscal year of the Company ending on March 31, the statutory income tax\nrate for the fiscal year ended March 31, 2018 is a blended rate of 31.6% based on the number of days in the fiscal year before January 1, 2018 and the number\nof days in the fiscal after December 31, 2017. The statutory income tax rate for the fiscal year ended March 31, 2019 is 21%.\n(2) The effect of prior year adjustments was offset by a full valuation allowance resulting in no impact on the provision for income taxes.\n\n[3] finqa_test_ctx_47.pdf p.1\noincometaxexpensefortheyearendedDecember31,2017.Thecompanyhasrecognizedprovisional\nadjustments but management hasnotcompleted itsaccounting forincome taxeffects forcertain elements ofthe\n2017 Tax Act, principally due to the accelerated depreciation that will allow for full expensing of qualified\nproperty.\nReconciliationofthestatutoryU.S.federalincometaxratetotheeffectivetaxrateisasfollows:\n2017 2016 2015\nStatutoryU.S.federaltaxrate ........................................ 35.0% 35.0% 35.0%\nStatetaxes,netoffederalbenefit ...................................... 2.1 3.7 3.0\nDomesticproductionactivitiesdeduction ............................... (1.0) (1.3) (1.3)\nIncrease(decrease)indomesticvaluati\n\n[4] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1\nKEMET CORPORATION AND SUBSIDIARIES\nNotes to Consolidated Financial Statements (Continued)\nDifferences between the provision for income taxes on earnings from continuing operations and the amount computed\nusing the U.S. Federal statutory income tax rate are as follows (amounts in thousands):\nFiscal Years Ended March 31,\n2019 2018 2017\nAmount computed using the statutory rate (1) $ 35,791 $ 59,162 $ 3,722\nChange in U.S. valuation allowance (67,761) (66,948) (7,080)\nUnremitted earnings of foreign subsidiaries — — 2,127\nEffect of prior year adjustments (2) 2,450 (1,337) 1,789\nIRC section 162(m) limitation (3) 4,553 — —\nExpired foreign tax credits — 407 4,766\nTaxable foreign source income 3,502 2\n\n[5] debfaf15530ee227395897df205fa19f.pdf p.1\nCOHERENT, INC. AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)\n16. INCOME TAXES (Continued)\nThe reconciliation of the income tax expense at the U.S. Federal statutory rate (21.0% in fiscal\n2019, 24.5% in fiscal 2018 and 35.0% in fiscal 2017) to actual income tax expense is as follows (in\nthousands):\nFiscal\n2019 2018 2017\nFederal statutory tax expense . . . . . . . . . . . . . . . . . $12,610 $ 88,684 $105,719\nValuation allowance . . . . . . . . . . . . . . . . . . . . . . . . 7,925 4,263 4,454\nForeign taxes at rates greater (less) than U.S. rates,\nnet. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . (8,210) 8,417 (12,346)\nStock-based compensation .\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "statutory U.S. federal income tax rate effective income tax rate Ecolab 2016",
+      "filters": {
+        "year": 2016,
+        "company": "Ecolab"
+      },
+      "chunk_ids": [],
+      "reason": "baseline_retrieve"
+    },
+    {
+      "iteration": 2,
+      "query": "statutory U.S. federal income tax rate effective income tax rate Ecolab 2016",
+      "filters": {},
+      "chunk_ids": [
+        "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+        "8f88cc6a1780582fa50c0b8318c2fb38::p1::c1::78631230a4",
+        "finqa_test_ctx_47::p1::c0::171a02abe5",
+        "8f88cc6a1780582fa50c0b8318c2fb38::p1::c0::2dbe29b9d0",
+        "debfaf15530ee227395897df205fa19f::p1::c0::9c0c5a069a"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c1::78631230a4",
+          "document_id": "8f88cc6a1780582fa50c0b8318c2fb38",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c1::78631230a4",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c0::2dbe29b9d0",
+          "document_id": "8f88cc6a1780582fa50c0b8318c2fb38",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c0::2dbe29b9d0",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "debfaf15530ee227395897df205fa19f::p1::c0::9c0c5a069a",
+          "document_id": "debfaf15530ee227395897df205fa19f",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "debfaf15530ee227395897df205fa19f::p1::c0::9c0c5a069a",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c1::78631230a4",
+          "document_id": "8f88cc6a1780582fa50c0b8318c2fb38",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c1::78631230a4",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 3,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c0::2dbe29b9d0",
+          "document_id": "8f88cc6a1780582fa50c0b8318c2fb38",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c0::2dbe29b9d0",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "debfaf15530ee227395897df205fa19f::p1::c0::9c0c5a069a",
+          "document_id": "debfaf15530ee227395897df205fa19f",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "debfaf15530ee227395897df205fa19f::p1::c0::9c0c5a069a",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 1778,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c1::0944c1d5e9",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c1::78631230a4",
+          "document_id": "8f88cc6a1780582fa50c0b8318c2fb38",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c1::78631230a4",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "document_id": "finqa_test_ctx_47",
+          "rank": 3,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "finqa_test_ctx_47::p1::c0::171a02abe5",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c0::2dbe29b9d0",
+          "document_id": "8f88cc6a1780582fa50c0b8318c2fb38",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8f88cc6a1780582fa50c0b8318c2fb38::p1::c0::2dbe29b9d0",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "debfaf15530ee227395897df205fa19f::p1::c0::9c0c5a069a",
+          "document_id": "debfaf15530ee227395897df205fa19f",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "debfaf15530ee227395897df205fa19f::p1::c0::9c0c5a069a",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nRetrieval query:",
+  "query_formulation_raw_output": "statutory U.S. federal income tax rate effective income tax rate Ecolab 2016",
+  "query_formulation_latency_seconds": 3.1454,
+  "query_formulation_input_tokens": 174,
+  "query_formulation_output_tokens": 22,
+  "query_formulation_trace": {
+    "original_question": "What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?",
+    "retrieval_query": "statutory U.S. federal income tax rate effective income tax rate Ecolab 2016",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the difference between the statutory U.S. federal income tax rate and the effective income tax rate for Ecolab in 2016?\nRetrieval query:",
+    "raw_output": "statutory U.S. federal income tax rate effective income tax rate Ecolab 2016",
+    "latency_seconds": 3.1454121339993435,
+    "input_tokens": 174,
+    "output_tokens": 22,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "0.10599999999999998",
+  "gold_evidence_reference": "FinQA | pdf/ECL/2017/page_94.pdf | source_page=94 | context_id=finqa_test_ctx_145"
+}

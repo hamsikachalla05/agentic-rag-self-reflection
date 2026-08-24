@@ -1,0 +1,274 @@
+{
+  "question_id": "finqa_test_927",
+  "question": "What is the total value of securities approved by Hologic's security holders, as reflected in the equity compensation plan information table for the fiscal year ended September 29, 2007, in millions?",
+  "retrieval_query": "Hologic security holders approved securities value equity compensation plan table fiscal year ended September 29 2007 millions",
+  "metadata_filters": {
+    "year": 2007,
+    "company": "Hologic"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_252::p1::c1::6f0374f98e",
+      "rank": 1,
+      "dense_score": 0.6587156653404236,
+      "bm25_score": 5.30972657965449,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_252"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_252::p1::c0::a55554cb8b",
+      "rank": 2,
+      "dense_score": 0.6248754858970642,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_252"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 54.3809,
+  "input_tokens": 3275,
+  "output_tokens": 269,
+  "total_tokens": 3544,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1473,
+  "llm_latency_seconds": 54.231,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the total value of securities approved by Hologic's security holders, as reflected in the equity compensation plan information table for the fiscal year ended September 29, 2007, in millions?\nLabel:",
+      "input_tokens": 109,
+      "output_tokens": 7,
+      "latency_seconds": 1.2286016430007294
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the total value of securities approved by Hologic's security holders, as reflected in the equity compensation plan information table for the fiscal year ended September 29, 2007, in millions?\nEvidence:\n[1] finqa_test_ctx_252.pdf p.1\navailablefor\nissuedupon Weighted-average futureissuanceunder\nexerciseof exercisepriceof equitycompensation\noutstanding outstanding plans(excluding\noptions,warrants options, securitiesreflectedin\nandrights warrantsandrights column(a))\nPlanCategory (a) (b) (c)\nEquitycompensationplansapprovedbysecurity\nholders ................................... 2,590,898 $22.08 942,512\nEquitycompensationplansnotapprovedbysecurity\nholders(1) ................................ 352,796 $ 7.33 —\nTotal ................................... 2,943,694 $20.31 942,512\n(1) Includesthefollowingplans:1997EmployeeEquityIncentivePlanand2000AcquisitionEquityIncentive\nPlan.Adescriptionofeachoftheseplansisasfollows:\n1997EmployeeEq\n\n[2] finqa_test_ctx_252.pdf p.1\nPARTIII\nItem10. Directors,andExecutiveOfficersandCorporateGovernance.\nPursuanttoSection406oftheSarbanes-OxleyActof2002,wehaveadoptedaCodeofEthicsforSenior\nFinancialOfficersthatappliestoourprincipalexecutiveofficerandprincipalfinancialofficer,principal\naccountingofficerandcontroller,andotherpersonsperformingsimilarfunctions.OurCodeofEthicsforSenior\nFinancialOfficersispubliclyavailableonourwebsiteatwww.hologic.com.Weintendtosatisfythedisclosure\nrequirementunderItem5.05ofCurrentReportonForm8-Kregardinganamendmentto,orwaiverfrom,a\nprovisionofthiscodebypostingsuchinformationonourwebsite,attheaddressspecifiedabove.\nTheadditionalinformationrequiredbythisitemisincorporatedbyreferencetoourDefinitiveP\nLabel:",
+      "input_tokens": 539,
+      "output_tokens": 4,
+      "latency_seconds": 4.431044083998131
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the total value of securities approved by Hologic's security holders, as reflected in the equity compensation plan information table for the fiscal year ended September 29, 2007, in millions?\nEvidence:\n[1] finqa_test_ctx_252.pdf p.1\navailablefor\nissuedupon Weighted-average futureissuanceunder\nexerciseof exercisepriceof equitycompensation\noutstanding outstanding plans(excluding\noptions,warrants options, securitiesreflectedin\nandrights warrantsandrights column(a))\nPlanCategory (a) (b) (c)\nEquitycompensationplansapprovedbysecurity\nholders ................................... 2,590,898 $22.08 942,512\nEquitycompensationplansnotapprovedbysecurity\nholders(1) ................................ 352,796 $ 7.33 —\nTotal ................................... 2,943,694 $20.31 942,512\n(1) Includesthefollowingplans:1997EmployeeEquityIncentivePlanand2000AcquisitionEquityIncentive\nPlan.Adescriptionofeachoftheseplansisasfollows:\n1997EmployeeEq\n\n[2] finqa_test_ctx_252.pdf p.1\nPARTIII\nItem10. Directors,andExecutiveOfficersandCorporateGovernance.\nPursuanttoSection406oftheSarbanes-OxleyActof2002,wehaveadoptedaCodeofEthicsforSenior\nFinancialOfficersthatappliestoourprincipalexecutiveofficerandprincipalfinancialofficer,principal\naccountingofficerandcontroller,andotherpersonsperformingsimilarfunctions.OurCodeofEthicsforSenior\nFinancialOfficersispubliclyavailableonourwebsiteatwww.hologic.com.Weintendtosatisfythedisclosure\nrequirementunderItem5.05ofCurrentReportonForm8-Kregardinganamendmentto,orwaiverfrom,a\nprovisionofthiscodebypostingsuchinformationonourwebsite,attheaddressspecifiedabove.\nTheadditionalinformationrequiredbythisitemisincorporatedbyreferencetoourDefinitiveP\nDraft:\n$22.08 million\n\nSource: finqa_test_ctx_252.pdf p.1, Equitycompensationplansapprovedbysecurity holders column (a) with exercise price of $22.08. The question asks for the total value of securities approved, and the value per share is $22.08, with 2,590,898 shares outstanding. However, the total value is not directly given as a sum. The value of securities approved is the number of shares times the exercise price:  \n\n2,590,898 × $22.08 = $57,238,000 (approximately).  \n\nBut the evidence does not provide the total value of securities approved in millions as a computed figure. The only value given in the table is $22.08 per share, not the total value.  \n\nThus, the retrieved evidence is insufficient to answer this question.  \n\nFinal answer: The retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 788,
+      "output_tokens": 4,
+      "latency_seconds": 6.275524550997943
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the total value of securities approved by Hologic's security holders, as reflected in the equity compensation plan information table for the fiscal year ended September 29, 2007, in millions?\nEvidence:\n[1] finqa_test_ctx_252.pdf p.1\nuityIncentivePlan.Thepurposesofthe1997EmployeeEquityIncentivePlan(the\n“1997Plan”),adoptedbytheBoardofDirectorsinMay1997,aretoattractandretainkeyemployees,\nconsultantsandadvisors,toprovideanincentiveforthemtoassistusinachievinglong-rangeperformancegoals,\nandtoenablesuchpersontoparticipateinourlong-termgrowth.Ingeneral,underthe1997Plan,allemployees,\n79\n\n[2] finqa_test_ctx_252.pdf p.1\nroxy\nStatementforourannualmeetingofstockholderstobefiledwiththeSecuritiesandExchangeCommission\nwithin120daysafterthecloseofourfiscalyear.\nItem11. ExecutiveCompensation.\nTheinformationrequiredbythisitemisincorporatedbyreferencetoourDefinitiveProxyStatementforour\nannualmeetingofstockholderstobefiledwiththeSecuritiesandExchangeCommissionwithin120daysafter\nthecloseofourfiscalyear.\nItem12. SecurityOwnershipofCertainBeneficialOwnersandManagementandRelatedStockholder\nMatters.\nWemaintainanumberofequitycompensationplansforemployees,officers,directorsandotherswhose\neffortscontributetooursuccess.Thetablebelowsetsforthcertaininformationasoftheendofourfiscalyear\nendedSeptember29,2007regardingthesharesofo\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 487,
+      "output_tokens": 4,
+      "latency_seconds": 3.8690848059995915
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Hologic security holders approved securities value equity compensation plan table fiscal year ended September 29 2007 millions",
+      "filters": {
+        "year": 2007,
+        "company": "Hologic"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_252::p1::c1::6f0374f98e",
+        "finqa_test_ctx_252::p1::c0::a55554cb8b"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_252::p1::c1::6f0374f98e",
+          "document_id": "finqa_test_ctx_252",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_252::p1::c1::6f0374f98e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_252::p1::c0::a55554cb8b",
+          "document_id": "finqa_test_ctx_252",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_252::p1::c0::a55554cb8b",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_252::p1::c1::6f0374f98e",
+          "document_id": "finqa_test_ctx_252",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1052,
+          "source_chunk_id": "finqa_test_ctx_252::p1::c1::6f0374f98e",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_252::p1::c0::a55554cb8b",
+          "document_id": "finqa_test_ctx_252",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_252::p1::c0::a55554cb8b",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the total value of securities approved by Hologic's security holders, as reflected in the equity compensation plan information table for the fiscal year ended September 29, 2007, in millions?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total value of securities approved by Hologic's security holders, as reflected in the equity compensation plan information table for the fiscal year ended September 29, 2007, in millions?\nRetrieval query:",
+  "query_formulation_raw_output": "Hologic security holders approved securities value equity compensation plan table fiscal year ended September 29 2007 millions",
+  "query_formulation_latency_seconds": 3.4136,
+  "query_formulation_input_tokens": 186,
+  "query_formulation_output_tokens": 25,
+  "query_formulation_trace": {
+    "original_question": "What is the total value of securities approved by Hologic's security holders, as reflected in the equity compensation plan information table for the fiscal year ended September 29, 2007, in millions?",
+    "retrieval_query": "Hologic security holders approved securities value equity compensation plan table fiscal year ended September 29 2007 millions",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total value of securities approved by Hologic's security holders, as reflected in the equity compensation plan information table for the fiscal year ended September 29, 2007, in millions?\nRetrieval query:",
+    "raw_output": "Hologic security holders approved securities value equity compensation plan table fiscal year ended September 29 2007 millions",
+    "latency_seconds": 3.4135998229976394,
+    "input_tokens": 186,
+    "output_tokens": 25,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "57.207027839999995",
+  "gold_evidence_reference": "FinQA | pdf/HOLX/2007/page_93.pdf | source_page=93 | context_id=finqa_test_ctx_252"
+}

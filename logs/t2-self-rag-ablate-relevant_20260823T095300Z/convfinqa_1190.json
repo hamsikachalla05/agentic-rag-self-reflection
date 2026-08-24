@@ -1,0 +1,272 @@
+{
+  "question_id": "convfinqa_1190",
+  "question": "What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?",
+  "retrieval_query": "net change in high bid price of Extra Space Storage common stock from quarter ended December 31, 2004 to quarter ended March 31, 2005",
+  "metadata_filters": {
+    "company": "Extra Space Storage"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1256::p1::c0::03cb9f1b82",
+      "rank": 1,
+      "dense_score": 0.7308399677276611,
+      "bm25_score": 44.12434059478638,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1256"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1256::p1::c1::eca4160766",
+      "rank": 2,
+      "dense_score": 0.6685501337051392,
+      "bm25_score": 16.41039073830572,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1256"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 36.3403,
+  "input_tokens": 3987,
+  "output_tokens": 82,
+  "total_tokens": 4069,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 8,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1448,
+  "llm_latency_seconds": 36.1927,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?\nLabel:",
+      "input_tokens": 113,
+      "output_tokens": 7,
+      "latency_seconds": 1.4651329609987442
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?\nEvidence:\n[1] convfinqa_ctx_1256.pdf p.1\nPART II\nItem 5. Market for Registrant’s Common Equity and Related Stockholder Matters\nMarket Information\nOur common stock has been traded on the New York Stock Exchange (‘‘NYSE’’) under the\nsymbol ‘‘EXR’’ since our IPO on August 17, 2004. Prior to that time there was no public market for\nour common stock.\nThe following table sets forth, for the periods indicated, the high and low bid price for our\ncommon stock as reported by the NYSE and the per share dividends declared:\nDividends\nHigh Low Declared\nPeriod from August 17, 2004 to September 30, 2004 . . . . . . . . . . . . . . . . . $14.38 $12.50 $0.1113\nQuarter Ended December 31, 2004 . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n[2] convfinqa_ctx_1256.pdf p.1\n15.00. At February 28, 2006, we had 166 holders of record of our common stock.\nHolders of shares of common stock are entitled to receive distributions when declared by our\nboard of directors out of any assets legally available for that purpose. As a REIT, we are required to\ndistribute at least 90% of our ‘‘REIT taxable income’’ is generally equivalent to our net taxable\nordinary income, determined without regard to the deduction for dividends paid, to our stockholders\nannually in order to maintain our REIT qualifications for U.S. federal income tax purposes.\nUnregistered Sales of Equity Securities and Use of Proceeds\nOn June 20, 2005, we completed the sale of 6,200,000 shares of our common s\nLabel:",
+      "input_tokens": 556,
+      "output_tokens": 3,
+      "latency_seconds": 4.253991956000391
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?\nEvidence:\n[1] convfinqa_ctx_1256.pdf p.1\nPART II\nItem 5. Market for Registrant’s Common Equity and Related Stockholder Matters\nMarket Information\nOur common stock has been traded on the New York Stock Exchange (‘‘NYSE’’) under the\nsymbol ‘‘EXR’’ since our IPO on August 17, 2004. Prior to that time there was no public market for\nour common stock.\nThe following table sets forth, for the periods indicated, the high and low bid price for our\ncommon stock as reported by the NYSE and the per share dividends declared:\nDividends\nHigh Low Declared\nPeriod from August 17, 2004 to September 30, 2004 . . . . . . . . . . . . . . . . . $14.38 $12.50 $0.1113\nQuarter Ended December 31, 2004 . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n[2] convfinqa_ctx_1256.pdf p.1\n15.00. At February 28, 2006, we had 166 holders of record of our common stock.\nHolders of shares of common stock are entitled to receive distributions when declared by our\nboard of directors out of any assets legally available for that purpose. As a REIT, we are required to\ndistribute at least 90% of our ‘‘REIT taxable income’’ is generally equivalent to our net taxable\nordinary income, determined without regard to the deduction for dividends paid, to our stockholders\nannually in order to maintain our REIT qualifications for U.S. federal income tax purposes.\nUnregistered Sales of Equity Securities and Use of Proceeds\nOn June 20, 2005, we completed the sale of 6,200,000 shares of our common s\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 597,
+      "output_tokens": 4,
+      "latency_seconds": 5.1807615169964265
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?\nEvidence:\n[1] convfinqa_ctx_1256.pdf p.1\n14.55 12.60 0.2275\nQuarter Ended March 31, 2005 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14.30 12.55 0.2275\nQuarter Ended June 30, 2005 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14.75 12.19 0.2275\nQuarter Ended September 30, 2005 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16.71 14.32 0.2275\nQuarter Ended December 31, 2005 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15.90 13.00 0.2275\nOn February 28, 2006, the closing price of our common stock as reported by the NYSE was\n$15.00. At February 28, 2006, we had 166 holders of record of our common stock.\nHolders of shares of common stock are entitled to receive distributio\n\n[2] convfinqa_ctx_1256.pdf p.1\ntock, $.01 par value,\nfor $83,514, which we reported in a Current Report on Form 8-K filed with the Securities and\nExchange Commission on June 24, 2005. We used the proceeds for general corporate purposes,\nincluding debt repayment. The shares were issued pursuant to an exemption from registration under\nthe Securities Act of 1933, as amended.\n22\nLabel:",
+      "input_tokens": 586,
+      "output_tokens": 3,
+      "latency_seconds": 4.6585353539994685
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?\nEvidence:\n[1] convfinqa_ctx_1256.pdf p.1\n14.55 12.60 0.2275\nQuarter Ended March 31, 2005 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14.30 12.55 0.2275\nQuarter Ended June 30, 2005 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14.75 12.19 0.2275\nQuarter Ended September 30, 2005 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16.71 14.32 0.2275\nQuarter Ended December 31, 2005 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15.90 13.00 0.2275\nOn February 28, 2006, the closing price of our common stock as reported by the NYSE was\n$15.00. At February 28, 2006, we had 166 holders of record of our common stock.\nHolders of shares of common stock are entitled to receive distributio\n\n[2] convfinqa_ctx_1256.pdf p.1\ntock, $.01 par value,\nfor $83,514, which we reported in a Current Report on Form 8-K filed with the Securities and\nExchange Commission on June 24, 2005. We used the proceeds for general corporate purposes,\nincluding debt repayment. The shares were issued pursuant to an exemption from registration under\nthe Securities Act of 1933, as amended.\n22\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 627,
+      "output_tokens": 4,
+      "latency_seconds": 4.034887797002739
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "net change in high bid price of Extra Space Storage common stock from quarter ended December 31, 2004 to quarter ended March 31, 2005",
+      "filters": {
+        "company": "Extra Space Storage"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_1256::p1::c0::03cb9f1b82",
+        "convfinqa_ctx_1256::p1::c1::eca4160766"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1256::p1::c0::03cb9f1b82",
+          "document_id": "convfinqa_ctx_1256",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1256::p1::c0::03cb9f1b82",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1256::p1::c1::eca4160766",
+          "document_id": "convfinqa_ctx_1256",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1256::p1::c1::eca4160766",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1256::p1::c0::03cb9f1b82",
+          "document_id": "convfinqa_ctx_1256",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_1256::p1::c0::03cb9f1b82",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1256::p1::c1::eca4160766",
+          "document_id": "convfinqa_ctx_1256",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1046,
+          "source_chunk_id": "convfinqa_ctx_1256::p1::c1::eca4160766",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?\nRetrieval query:",
+  "query_formulation_raw_output": "net change in high bid price of Extra Space Storage common stock from quarter ended December 31, 2004 to quarter ended March 31, 2005",
+  "query_formulation_latency_seconds": 5.1919,
+  "query_formulation_input_tokens": 190,
+  "query_formulation_output_tokens": 39,
+  "query_formulation_trace": {
+    "original_question": "What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?",
+    "retrieval_query": "net change in high bid price of Extra Space Storage common stock from quarter ended December 31, 2004 to quarter ended March 31, 2005",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the net change in the high bid price of Extra Space Storage's common stock from the quarter ended December 31, 2004, to the quarter ended March 31, 2005?\nRetrieval query:",
+    "raw_output": "net change in high bid price of Extra Space Storage common stock from quarter ended December 31, 2004 to quarter ended March 31, 2005",
+    "latency_seconds": 5.19188782099809,
+    "input_tokens": 190,
+    "output_tokens": 39,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "-0.25",
+  "gold_evidence_reference": "ConvFinQA | pdf/EXR/2005/page_46.pdf | source_page=46 | context_id=convfinqa_ctx_1256"
+}

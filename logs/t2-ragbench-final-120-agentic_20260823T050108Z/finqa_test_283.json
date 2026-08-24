@@ -1,0 +1,123 @@
+{
+  "question_id": "finqa_test_283",
+  "question": "What is the net increase in outstanding shares of Kraft Heinz's common stock from January 3, 2016, to December 29, 2018, in millions?",
+  "retrieval_query": "net increase in outstanding shares of Kraft Heinz common stock from January 3, 2016, to December 29, 2018, in millions",
+  "metadata_filters": {
+    "company": "Kraft Heinz"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_92::p1::c1::8622580990",
+      "rank": 1,
+      "dense_score": 0.6387099027633667,
+      "bm25_score": 35.42675697311063,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_92"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+      "rank": 2,
+      "dense_score": null,
+      "bm25_score": 17.71252132119253,
+      "hybrid_score": 0.15953932107381885,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_92"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_92::p1::c2::6be4ada42b",
+      "rank": 3,
+      "dense_score": 0.5906268954277039,
+      "bm25_score": 5.959592976029542,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_92"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 10.9472,
+  "input_tokens": 885,
+  "output_tokens": 48,
+  "total_tokens": 933,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1395,
+  "llm_latency_seconds": 10.8071,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What is the net increase in outstanding shares of Kraft Heinz's common stock from January 3, 2016, to December 29, 2018, in millions?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the net increase in outstanding shares of Kraft Heinz's common stock from January 3, 2016, to December 29, 2018, in millions?\nRetrieval query:",
+  "query_formulation_raw_output": "net increase in outstanding shares of Kraft Heinz common stock from January 3, 2016, to December 29, 2018, in millions",
+  "query_formulation_latency_seconds": 4.5816,
+  "query_formulation_input_tokens": 184,
+  "query_formulation_output_tokens": 37,
+  "query_formulation_trace": {
+    "original_question": "What is the net increase in outstanding shares of Kraft Heinz's common stock from January 3, 2016, to December 29, 2018, in millions?",
+    "retrieval_query": "net increase in outstanding shares of Kraft Heinz common stock from January 3, 2016, to December 29, 2018, in millions",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the net increase in outstanding shares of Kraft Heinz's common stock from January 3, 2016, to December 29, 2018, in millions?\nRetrieval query:",
+    "raw_output": "net increase in outstanding shares of Kraft Heinz common stock from January 3, 2016, to December 29, 2018, in millions",
+    "latency_seconds": 4.581603599002847,
+    "input_tokens": 184,
+    "output_tokens": 37,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 6.2255,
+  "answer_generation_input_tokens": 701,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What is the net increase in outstanding shares of Kraft Heinz's common stock from January 3, 2016, to December 29, 2018, in millions?\nEvidence:\n[1] finqa_test_ctx_92.pdf p.1\ndetermined the fair value of our long-term debt using\nLevel 2 inputs. Fair values are generally estimated based on quoted market prices for identical or similar instruments.\nNote 20. Capital Stock\nPreferred Stock\nOur Second Amended and Restated Certificate of Incorporation authorizes the issuance of up to 920,000 shares of preferred stock.\nOn June 7, 2016, we redeemed all 80,000 outstanding shares of our Series A Preferred Stock for $8.3 billion. We funded this redemption primarily through the\nissuance of long-term debt in May 2016, as well as other sources of liquidity, including our U.S. commercial paper program, U.S. securitization program, and\ncash on hand. In connection with the redempt ...\n\n[2] finqa_test_ctx_92.pdf p.1\nDebt Issuance Costs:\nDebt issuance costs are reflected as a direct deduction of our long-term debt balance on the consolidated balance sheets. We incurred debt issuance costs of\n$15 million in 2018 and $53 million in 2016. Debt issuance costs in 2017 were insignificant. Unamortized debt issuance costs were $115 million at\nDecember 29, 2018, $114 million at December 30, 2017, and $124 million at December 31, 2016. Amortization of debt issuance costs was $16 million in\n2018, $16 million in 2017, and $14 million in 2016.\nDebt Premium:\nUnamortized debt premiums are presented on the consolidated balance sheets as a direct addition to the carrying amount of debt. Unamortized debt premium,\nnet, was ...\n\n[3] finqa_test_ctx_92.pdf p.1\n1,221 |  |  | (2 | ) |  | 1,219 | \n[/TABLE]\n\n[TABLE]\nBalance at December 29, 2018 | 1,224 |  |  | (4 | ) |  | 1,220 | \n[/TABLE]\nAnswer:",
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "6.0",
+  "gold_evidence_reference": "FinQA | pdf/KHC/2018/page_132.pdf | source_page=132 | context_id=finqa_test_ctx_92"
+}

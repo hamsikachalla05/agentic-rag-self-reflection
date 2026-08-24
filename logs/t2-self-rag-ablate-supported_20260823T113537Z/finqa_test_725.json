@@ -1,0 +1,293 @@
+{
+  "question_id": "finqa_test_725",
+  "question": "In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?",
+  "retrieval_query": "entity:Motorola Solutions; year:2011; financial concept:employee stock purchase plan; numerical value:2.2 million shares; metric:average share price",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_97::p1::c1::ee5b3d406d",
+      "rank": 1,
+      "dense_score": 0.6880791187286377,
+      "bm25_score": 28.856354945018595,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_97"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_97::p1::c0::d10026e659",
+      "rank": 2,
+      "dense_score": 0.6826587915420532,
+      "bm25_score": 24.913166435886055,
+      "hybrid_score": 0.8294509236771654,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_97"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_409::p1::c0::f22fefaf4d",
+      "rank": 3,
+      "dense_score": 0.6689691543579102,
+      "bm25_score": 13.188271762463213,
+      "hybrid_score": 0.358056649991943,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_409"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+      "rank": 4,
+      "dense_score": 0.6670078635215759,
+      "bm25_score": null,
+      "hybrid_score": 0.28988739403898955,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1046"
+    },
+    {
+      "chunk_id": "dc105a860fbe0bfd73a477bda3945171::p1::c0::f19749d444",
+      "rank": 5,
+      "dense_score": 0.6585499048233032,
+      "bm25_score": 16.233094162179274,
+      "hybrid_score": 0.27480812644855174,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "dc105a860fbe0bfd73a477bda3945171"
+    }
+  ],
+  "answer": "The average share price at which the 2.2 million shares were purchased by employees in the 2011 employee stock purchase plan at Motorola Solutions is $35.61.\n\nSource: finqa_test_ctx_97.pdf p.1  \nCalculation: The evidence states that for the years ended December 31, 2011, employees purchased 2.2 million shares at a purchase price of $35.61. Since the question asks for the average share price for the 2.2 million shares purchased in 2011, and only one price is provided for that year, that price is the average.\n\nAnswer: 35.61",
+  "latency_seconds": 57.3904,
+  "input_tokens": 3973,
+  "output_tokens": 195,
+  "total_tokens": 4168,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1523,
+  "llm_latency_seconds": 57.2362,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?\nLabel:",
+      "input_tokens": 101,
+      "output_tokens": 7,
+      "latency_seconds": 1.442139357997803
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?\nEvidence:\n[1] finqa_test_ctx_97.pdf p.1\nemployee pays per share is 85% of the lower of the fair market value\nof the Company’s stock on the close of the first trading day or last trading day of the purchase period. The plan has two\npurchase periods, the first one from October 1 through March 31 and the second one from April 1 through September 30. For\nthe years ended December 31, 2012, 2011 and 2010, employees purchased 1.4 million, 2.2 million and 2.7 million shares,\nrespectively, at purchase prices of $34.52 and $42.96, $30.56 and $35.61, and $41.79 and $42.00, respectively.\nThe Company calculates the value of each employee stock option, estimated on the date of grant, using the Black-Scholes\noption pricing model. The weighted-av\n\n[2] finqa_test_ctx_97.pdf p.1\nDefined Contribution Plan\nThe Company and certain subsidiaries have various defined contribution plans, in which all eligible employees may\nparticipate. In the U.S., the 401(k) plan is a contributory plan. Matching contributions are based upon the amount of the\nemployees’ contributions. After temporarily suspending all matching contributions, effective July 1, 2010, the Company\nreinstated matching contributions and provides a dollar for dollar (100%) match on the first 4% of employee contributions. The\nmaximum matching contribution for 2010 was pro-rated to account for the number of months remaining after the reinstatement.\nThe Company’s expenses for material defined contribution plans for t\n\n[3] convfinqa_ctx_409.pdf p.1\nContributionsandExpectedBenefitPayments\nThefundingofourqualifieddefinedbenefitpensionplansisdeterminedinaccordancewithERISA,asamendedbythe\nPPA,andinamannerconsistentwithCASandInternalRevenueCoderules.In2015,wemade$5millionincontributionsto\nour new Sikorsky bargained qualified defined benefit pension plan and we plan to make approximately $25 million in\ncontributionstothisplanin2016.\nThe following table presents estimated future benefit payments, which reflect expected future employee service, as of\nDecember31,2015(inmillions):\n2016 2017 2018 2019 2020 2021-2025\nQualifieddefinedbenefitpensionplans $2,160 $2,240 $2,320 $2,410 $2,500 $13,670\nRetireemedicalandlifeinsuranceplans 190 190 200 200 2\n\n[4] convfinqa_ctx_1046.pdf p.1\nNOTE 18 – EARNINGS PER SHARE (EPS)\nBasic EPS is calculated by dividing Net earnings attributable to Allegion plc by the weighted-average number of ordinary shares\noutstanding for the applicable period. Diluted EPS is calculated after adjusting the denominator of the basic EPS calculation for\nthe effect of all potentially dilutive ordinary shares, which in the Company’s case, includes shares issuable under share-based\ncompensation plans.\nThe following table summarizes the weighted-average number of ordinary shares outstanding for basic and diluted earnings per\nshare calculations.\nIn millions 2017 2016 2015\nWeighted-average number of basic shares 95.1 95.8 95.9\nShares issuable under incentive\n\n[5] dc105a860fbe0bfd73a477bda3945171.pdf p.1\nstnemetatS\nlaicnaniF\n5.2 Employee share plans (continued) FY2018 Performance Rights Plan\nThe following table illustrates the number of, and\nShares issued under the FY2019, FY2018 and\nmovements in, shares issued during the year:\nFY2017 Performance Rights plans\n2019 2018 For the purposes of Sections 200B and 200E of the\nNUMBER NUMBER\nCorporations Act, iSelect shareholders have approved the\ngiving of any potential benefits under the Performance Outstanding at the 547,949 -\nRights Plan provided in connection with any future beginning of the period\nretirement of a participant who holds a ‘managerial\nor Executive office’ such that for the purposes of the Granted during the - 772,303\nprovisions, th\nLabel:",
+      "input_tokens": 1140,
+      "output_tokens": 4,
+      "latency_seconds": 9.179495500000485
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?\nEvidence:\n[1] finqa_test_ctx_97.pdf p.1\nemployee pays per share is 85% of the lower of the fair market value\nof the Company’s stock on the close of the first trading day or last trading day of the purchase period. The plan has two\npurchase periods, the first one from October 1 through March 31 and the second one from April 1 through September 30. For\nthe years ended December 31, 2012, 2011 and 2010, employees purchased 1.4 million, 2.2 million and 2.7 million shares,\nrespectively, at purchase prices of $34.52 and $42.96, $30.56 and $35.61, and $41.79 and $42.00, respectively.\nThe Company calculates the value of each employee stock option, estimated on the date of grant, using the Black-Scholes\noption pricing model. The weighted-av\n\n[2] finqa_test_ctx_97.pdf p.1\nDefined Contribution Plan\nThe Company and certain subsidiaries have various defined contribution plans, in which all eligible employees may\nparticipate. In the U.S., the 401(k) plan is a contributory plan. Matching contributions are based upon the amount of the\nemployees’ contributions. After temporarily suspending all matching contributions, effective July 1, 2010, the Company\nreinstated matching contributions and provides a dollar for dollar (100%) match on the first 4% of employee contributions. The\nmaximum matching contribution for 2010 was pro-rated to account for the number of months remaining after the reinstatement.\nThe Company’s expenses for material defined contribution plans for t\n\n[3] convfinqa_ctx_409.pdf p.1\nContributionsandExpectedBenefitPayments\nThefundingofourqualifieddefinedbenefitpensionplansisdeterminedinaccordancewithERISA,asamendedbythe\nPPA,andinamannerconsistentwithCASandInternalRevenueCoderules.In2015,wemade$5millionincontributionsto\nour new Sikorsky bargained qualified defined benefit pension plan and we plan to make approximately $25 million in\ncontributionstothisplanin2016.\nThe following table presents estimated future benefit payments, which reflect expected future employee service, as of\nDecember31,2015(inmillions):\n2016 2017 2018 2019 2020 2021-2025\nQualifieddefinedbenefitpensionplans $2,160 $2,240 $2,320 $2,410 $2,500 $13,670\nRetireemedicalandlifeinsuranceplans 190 190 200 200 2\n\n[4] convfinqa_ctx_1046.pdf p.1\nNOTE 18 – EARNINGS PER SHARE (EPS)\nBasic EPS is calculated by dividing Net earnings attributable to Allegion plc by the weighted-average number of ordinary shares\noutstanding for the applicable period. Diluted EPS is calculated after adjusting the denominator of the basic EPS calculation for\nthe effect of all potentially dilutive ordinary shares, which in the Company’s case, includes shares issuable under share-based\ncompensation plans.\nThe following table summarizes the weighted-average number of ordinary shares outstanding for basic and diluted earnings per\nshare calculations.\nIn millions 2017 2016 2015\nWeighted-average number of basic shares 95.1 95.8 95.9\nShares issuable under incentive\n\n[5] dc105a860fbe0bfd73a477bda3945171.pdf p.1\nstnemetatS\nlaicnaniF\n5.2 Employee share plans (continued) FY2018 Performance Rights Plan\nThe following table illustrates the number of, and\nShares issued under the FY2019, FY2018 and\nmovements in, shares issued during the year:\nFY2017 Performance Rights plans\n2019 2018 For the purposes of Sections 200B and 200E of the\nNUMBER NUMBER\nCorporations Act, iSelect shareholders have approved the\ngiving of any potential benefits under the Performance Outstanding at the 547,949 -\nRights Plan provided in connection with any future beginning of the period\nretirement of a participant who holds a ‘managerial\nor Executive office’ such that for the purposes of the Granted during the - 772,303\nprovisions, th\nDraft:\nThe average share price at which the 2.2 million shares were purchased by employees in the 2011 employee stock purchase plan at Motorola Solutions is $35.61.\n\nSource: finqa_test_ctx_97.pdf p.1  \nCalculation: The evidence states that for the years ended December 31, 2011, employees purchased 2.2 million shares at a purchase price of $35.61. Since the question asks for the average share price for the 2.2 million shares purchased in 2011, and only one price is provided for that year, that price is the average.\n\nAnswer: 35.61\nLabel:",
+      "input_tokens": 1321,
+      "output_tokens": 3,
+      "latency_seconds": 10.944854128996667
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "entity:Motorola Solutions; year:2011; financial concept:employee stock purchase plan; numerical value:2.2 million shares; metric:average share price",
+      "filters": {
+        "year": 2011,
+        "company": "Motorola Solutions"
+      },
+      "chunk_ids": [],
+      "reason": "baseline_retrieve"
+    },
+    {
+      "iteration": 2,
+      "query": "entity:Motorola Solutions; year:2011; financial concept:employee stock purchase plan; numerical value:2.2 million shares; metric:average share price",
+      "filters": {},
+      "chunk_ids": [
+        "finqa_test_ctx_97::p1::c1::ee5b3d406d",
+        "finqa_test_ctx_97::p1::c0::d10026e659",
+        "convfinqa_ctx_409::p1::c0::f22fefaf4d",
+        "convfinqa_ctx_1046::p1::c0::c242753d55",
+        "dc105a860fbe0bfd73a477bda3945171::p1::c0::f19749d444"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_97::p1::c1::ee5b3d406d",
+          "document_id": "finqa_test_ctx_97",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_97::p1::c1::ee5b3d406d",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_97::p1::c0::d10026e659",
+          "document_id": "finqa_test_ctx_97",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_97::p1::c0::d10026e659",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_409::p1::c0::f22fefaf4d",
+          "document_id": "convfinqa_ctx_409",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_409::p1::c0::f22fefaf4d",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+          "document_id": "convfinqa_ctx_1046",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "dc105a860fbe0bfd73a477bda3945171::p1::c0::f19749d444",
+          "document_id": "dc105a860fbe0bfd73a477bda3945171",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "dc105a860fbe0bfd73a477bda3945171::p1::c0::f19749d444",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?\nRetrieval query:",
+  "query_formulation_raw_output": "entity:Motorola Solutions; year:2011; financial concept:employee stock purchase plan; numerical value:2.2 million shares; metric:average share price",
+  "query_formulation_latency_seconds": 5.576,
+  "query_formulation_input_tokens": 178,
+  "query_formulation_output_tokens": 36,
+  "query_formulation_trace": {
+    "original_question": "In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?",
+    "retrieval_query": "entity:Motorola Solutions; year:2011; financial concept:employee stock purchase plan; numerical value:2.2 million shares; metric:average share price",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the 2011 employee stock purchase plan at Motorola Solutions, what was the average share price at which the 2.2 million shares were purchased by employees?\nRetrieval query:",
+    "raw_output": "entity:Motorola Solutions; year:2011; financial concept:employee stock purchase plan; numerical value:2.2 million shares; metric:average share price",
+    "latency_seconds": 5.575965599004121,
+    "input_tokens": 178,
+    "output_tokens": 36,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "33.085",
+  "gold_evidence_reference": "FinQA | pdf/MSI/2012/page_87.pdf | source_page=87 | context_id=finqa_test_ctx_97"
+}

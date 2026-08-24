@@ -1,0 +1,421 @@
+{
+  "question_id": "convfinqa_1621",
+  "question": "What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?",
+  "retrieval_query": "American Tower prepaid income tax AND value added tax AND other consumption tax receivables AS OF December 31, 2011",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+      "rank": 1,
+      "dense_score": 0.721011757850647,
+      "bm25_score": 24.49605862765744,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1334"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+      "rank": 2,
+      "dense_score": 0.7146682739257812,
+      "bm25_score": 22.104253481204232,
+      "hybrid_score": 0.7801025976734917,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_145"
+    },
+    {
+      "chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+      "rank": 3,
+      "dense_score": 0.7055022120475769,
+      "bm25_score": 20.94180150947334,
+      "hybrid_score": 0.6083180704022286,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "4ab898d6877c171a1e67f9be919c5e68"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+      "rank": 4,
+      "dense_score": 0.6973370909690857,
+      "bm25_score": 21.93913491534719,
+      "hybrid_score": 0.5846564300201388,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_357"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_145::p1::c0::c356ea5b91",
+      "rank": 5,
+      "dense_score": 0.6844158172607422,
+      "bm25_score": 21.18053084892517,
+      "hybrid_score": 0.39850020111805234,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_145"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 46.0389,
+  "input_tokens": 5796,
+  "output_tokens": 61,
+  "total_tokens": 5857,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "IRRELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1477,
+  "llm_latency_seconds": 45.8865,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?\nLabel:",
+      "input_tokens": 102,
+      "output_tokens": 7,
+      "latency_seconds": 0.9958215589940664
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?\nEvidence:\n[1] convfinqa_ctx_1334.pdf p.1\nremitted to the U.S. due to foreign tax credits and exclusions that may become available at the time of\nremittance.\nAt December 31, 2010, Aon had domestic federal operating loss carryforwards of $56 million that\nwill expire at various dates from 2011 to 2024, state operating loss carryforwards of $610 million that\nwill expire at various dates from 2011 to 2031, and foreign operating and capital loss carryforwards of\n$720 million and $251 million, respectively, nearly all of which are subject to indefinite carryforward.\nUnrecognized Tax Provisions\nThe following is a reconciliation of the Company’s beginning and ending amount of unrecognized\ntax benefits (in millions):\n2010 2009\nBalance at Jan\n\n[2] finqa_test_ctx_145.pdf p.1\nare subject to continued technical guidance which may change the provisional amounts recorded in the financial\nstatements, and will be evaluated throughout the measurement period, as permitted by SAB 118.\nAs of December 31, 2015, the Company had deferred tax liabilities of $25.8 million on foreign earnings of the legacy Nalco entities and\nlegacy Champion entities that the Company intended to repatriate. The deferred tax liabilities originated based on purchase accounting\ndecisions made in connection with the Nalco merger and Champion acquisition and were the result of extensive studies required to\ncalculate the impact at the purchase date. The remaining foreign earnings were repatriated in 2\n\n[3] 4ab898d6877c171a1e67f9be919c5e68.pdf p.1\nTax Act reduced the U.S. federal corporate income tax rate from 35% to 21%, effective January 1, 2018. During the year ended\nDecember 31, 2017, the Company remeasured certain deferred tax assets and liabilities and recorded a $15.0 million provisional tax\ncharge. During the year ended December 31, 2018, the Company reduced the initial provisional tax charge by recording a $4.9\nmillion benefit related to accelerated tax deductions claimed on the 2018 U.S. Federal Income Tax Return.\nThe Tax Act required U.S. companies to pay a one-time transition tax on certain unremitted foreign earnings. During the year ended\nDecember 31, 2017, the Company recorded a $20.9 million provisional tax charge base\n\n[4] finqa_test_ctx_357.pdf p.1\nUncertain Tax Positions\nThe following is a reconciliation of the Company’s beginning and ending amount of uncertain tax positions (in millions):\n2018 2017\nBalance at January 1 $ 280 $ 278\nAdditions based on tax positions related to the current year 18 25\nAdditions for tax positions of prior years 10 12\nReductions for tax positions of prior years (24) (26)\nSettlements — (6)\nBusiness combinations 1 —\nLapse of statute of limitations (6) (7)\nForeign currency translation — 4\nBalance at December 31 $ 279 $ 280\nThe Company’s liability for uncertain tax positions as of December 31, 2018, 2017, and 2016, includes $228 million, $219 million,\nand $240 million, respectively, related to amounts that woul\n\n[5] finqa_test_ctx_145.pdf p.1\nIn 2017, the Company obtained tax benefits from tax holidays in two foreign jurisdictions, the Dominican Republic and Singapore. The\nCompany received a permit of operation, which expires in July 2021, from the National Council of Free Zones of Exportation for the\nDominican Republic. Companies operating under the Free Zones are not subject to income tax in the Dominican Republic on export\nincome. The Company has two tax incentives awarded by the Singapore Economic Development Board. These incentives provide for a\npreferential 10% tax rate on certain headquarter income and a 0% tax rate on manufacturing profits generated at the Company’s facility\nlocated on Jurong Island. In 2016 and 2015 one\nLabel:",
+      "input_tokens": 1078,
+      "output_tokens": 5,
+      "latency_seconds": 8.353939316999458
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?\nEvidence:\n[1] convfinqa_ctx_1334.pdf p.1\nremitted to the U.S. due to foreign tax credits and exclusions that may become available at the time of\nremittance.\nAt December 31, 2010, Aon had domestic federal operating loss carryforwards of $56 million that\nwill expire at various dates from 2011 to 2024, state operating loss carryforwards of $610 million that\nwill expire at various dates from 2011 to 2031, and foreign operating and capital loss carryforwards of\n$720 million and $251 million, respectively, nearly all of which are subject to indefinite carryforward.\nUnrecognized Tax Provisions\nThe following is a reconciliation of the Company’s beginning and ending amount of unrecognized\ntax benefits (in millions):\n2010 2009\nBalance at Jan\n\n[2] finqa_test_ctx_145.pdf p.1\nare subject to continued technical guidance which may change the provisional amounts recorded in the financial\nstatements, and will be evaluated throughout the measurement period, as permitted by SAB 118.\nAs of December 31, 2015, the Company had deferred tax liabilities of $25.8 million on foreign earnings of the legacy Nalco entities and\nlegacy Champion entities that the Company intended to repatriate. The deferred tax liabilities originated based on purchase accounting\ndecisions made in connection with the Nalco merger and Champion acquisition and were the result of extensive studies required to\ncalculate the impact at the purchase date. The remaining foreign earnings were repatriated in 2\n\n[3] 4ab898d6877c171a1e67f9be919c5e68.pdf p.1\nTax Act reduced the U.S. federal corporate income tax rate from 35% to 21%, effective January 1, 2018. During the year ended\nDecember 31, 2017, the Company remeasured certain deferred tax assets and liabilities and recorded a $15.0 million provisional tax\ncharge. During the year ended December 31, 2018, the Company reduced the initial provisional tax charge by recording a $4.9\nmillion benefit related to accelerated tax deductions claimed on the 2018 U.S. Federal Income Tax Return.\nThe Tax Act required U.S. companies to pay a one-time transition tax on certain unremitted foreign earnings. During the year ended\nDecember 31, 2017, the Company recorded a $20.9 million provisional tax charge base\n\n[4] finqa_test_ctx_357.pdf p.1\nUncertain Tax Positions\nThe following is a reconciliation of the Company’s beginning and ending amount of uncertain tax positions (in millions):\n2018 2017\nBalance at January 1 $ 280 $ 278\nAdditions based on tax positions related to the current year 18 25\nAdditions for tax positions of prior years 10 12\nReductions for tax positions of prior years (24) (26)\nSettlements — (6)\nBusiness combinations 1 —\nLapse of statute of limitations (6) (7)\nForeign currency translation — 4\nBalance at December 31 $ 279 $ 280\nThe Company’s liability for uncertain tax positions as of December 31, 2018, 2017, and 2016, includes $228 million, $219 million,\nand $240 million, respectively, related to amounts that woul\n\n[5] finqa_test_ctx_145.pdf p.1\nIn 2017, the Company obtained tax benefits from tax holidays in two foreign jurisdictions, the Dominican Republic and Singapore. The\nCompany received a permit of operation, which expires in July 2021, from the National Council of Free Zones of Exportation for the\nDominican Republic. Companies operating under the Free Zones are not subject to income tax in the Dominican Republic on export\nincome. The Company has two tax incentives awarded by the Singapore Economic Development Board. These incentives provide for a\npreferential 10% tax rate on certain headquarter income and a 0% tax rate on manufacturing profits generated at the Company’s facility\nlocated on Jurong Island. In 2016 and 2015 one\nLabel:",
+      "input_tokens": 1083,
+      "output_tokens": 3,
+      "latency_seconds": 8.46922977000213
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?\nEvidence:\n[1] convfinqa_ctx_1334.pdf p.1\nuary 1 $ 77 $ 86\nAdditions based on tax positions related to the current year 7 2\nAdditions for tax positions of prior years 4 5\nReductions for tax positions of prior years (7) (11)\nSettlements (1) (10)\nLapse of statute of limitations (5) (3)\nAcquisitions 26 6\nForeign currency translation (1) 2\nBalance at December 31 $100 $ 77\nAs of December 31, 2010, $85 million of unrecognized tax benefits would impact the effective tax\nrate if recognized. Aon does not expect the unrecognized tax positions to change significantly over the\nnext twelve months, except for a potential reduction of unrecognized tax benefits in the range of\n$10-$15 million relating to anticipated audit settlements.\nThe Company r\n\n[2] finqa_test_ctx_145.pdf p.1\nare subject to continued technical guidance which may change the provisional amounts recorded in the financial\nstatements, and will be evaluated throughout the measurement period, as permitted by SAB 118.\nAs of December 31, 2015, the Company had deferred tax liabilities of $25.8 million on foreign earnings of the legacy Nalco entities and\nlegacy Champion entities that the Company intended to repatriate. The deferred tax liabilities originated based on purchase accounting\ndecisions made in connection with the Nalco merger and Champion acquisition and were the result of extensive studies required to\ncalculate the impact at the purchase date. The remaining foreign earnings were repatriated in 2\n\n[3] 4ab898d6877c171a1e67f9be919c5e68.pdf p.1\nTax Act reduced the U.S. federal corporate income tax rate from 35% to 21%, effective January 1, 2018. During the year ended\nDecember 31, 2017, the Company remeasured certain deferred tax assets and liabilities and recorded a $15.0 million provisional tax\ncharge. During the year ended December 31, 2018, the Company reduced the initial provisional tax charge by recording a $4.9\nmillion benefit related to accelerated tax deductions claimed on the 2018 U.S. Federal Income Tax Return.\nThe Tax Act required U.S. companies to pay a one-time transition tax on certain unremitted foreign earnings. During the year ended\nDecember 31, 2017, the Company recorded a $20.9 million provisional tax charge base\n\n[4] finqa_test_ctx_357.pdf p.1\nUncertain Tax Positions\nThe following is a reconciliation of the Company’s beginning and ending amount of uncertain tax positions (in millions):\n2018 2017\nBalance at January 1 $ 280 $ 278\nAdditions based on tax positions related to the current year 18 25\nAdditions for tax positions of prior years 10 12\nReductions for tax positions of prior years (24) (26)\nSettlements — (6)\nBusiness combinations 1 —\nLapse of statute of limitations (6) (7)\nForeign currency translation — 4\nBalance at December 31 $ 279 $ 280\nThe Company’s liability for uncertain tax positions as of December 31, 2018, 2017, and 2016, includes $228 million, $219 million,\nand $240 million, respectively, related to amounts that woul\n\n[5] finqa_test_ctx_145.pdf p.1\nIn 2017, the Company obtained tax benefits from tax holidays in two foreign jurisdictions, the Dominican Republic and Singapore. The\nCompany received a permit of operation, which expires in July 2021, from the National Council of Free Zones of Exportation for the\nDominican Republic. Companies operating under the Free Zones are not subject to income tax in the Dominican Republic on export\nincome. The Company has two tax incentives awarded by the Singapore Economic Development Board. These incentives provide for a\npreferential 10% tax rate on certain headquarter income and a 0% tax rate on manufacturing profits generated at the Company’s facility\nlocated on Jurong Island. In 2016 and 2015 one\nLabel:",
+      "input_tokens": 1090,
+      "output_tokens": 3,
+      "latency_seconds": 7.583719433001534
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?\nEvidence:\n[1] convfinqa_ctx_1334.pdf p.1\necognizes penalties and interest related to unrecognized income tax benefits in its\nprovision for income taxes. Aon accrued potential penalties of less than $1 million during each of 2010,\n2009 and 2008. Aon accrued interest of less than $1 million in 2010, $2 million during 2009 and less\nthan $1 million in 2008. Aon has recorded a liability for penalties of $5 million and for interest of\n$18 million for both December 31, 2010 and 2009.\nAon and its subsidiaries file income tax returns in the U.S. federal jurisdiction as well as various\nstate and international jurisdictions. Aon has substantially concluded all U.S. federal income tax matters\nfor years through 2006. Material U.S. state and loc\n\n[2] finqa_test_ctx_145.pdf p.1\nare subject to continued technical guidance which may change the provisional amounts recorded in the financial\nstatements, and will be evaluated throughout the measurement period, as permitted by SAB 118.\nAs of December 31, 2015, the Company had deferred tax liabilities of $25.8 million on foreign earnings of the legacy Nalco entities and\nlegacy Champion entities that the Company intended to repatriate. The deferred tax liabilities originated based on purchase accounting\ndecisions made in connection with the Nalco merger and Champion acquisition and were the result of extensive studies required to\ncalculate the impact at the purchase date. The remaining foreign earnings were repatriated in 2\n\n[3] 4ab898d6877c171a1e67f9be919c5e68.pdf p.1\nTax Act reduced the U.S. federal corporate income tax rate from 35% to 21%, effective January 1, 2018. During the year ended\nDecember 31, 2017, the Company remeasured certain deferred tax assets and liabilities and recorded a $15.0 million provisional tax\ncharge. During the year ended December 31, 2018, the Company reduced the initial provisional tax charge by recording a $4.9\nmillion benefit related to accelerated tax deductions claimed on the 2018 U.S. Federal Income Tax Return.\nThe Tax Act required U.S. companies to pay a one-time transition tax on certain unremitted foreign earnings. During the year ended\nDecember 31, 2017, the Company recorded a $20.9 million provisional tax charge base\n\n[4] finqa_test_ctx_357.pdf p.1\nUncertain Tax Positions\nThe following is a reconciliation of the Company’s beginning and ending amount of uncertain tax positions (in millions):\n2018 2017\nBalance at January 1 $ 280 $ 278\nAdditions based on tax positions related to the current year 18 25\nAdditions for tax positions of prior years 10 12\nReductions for tax positions of prior years (24) (26)\nSettlements — (6)\nBusiness combinations 1 —\nLapse of statute of limitations (6) (7)\nForeign currency translation — 4\nBalance at December 31 $ 279 $ 280\nThe Company’s liability for uncertain tax positions as of December 31, 2018, 2017, and 2016, includes $228 million, $219 million,\nand $240 million, respectively, related to amounts that woul\n\n[5] finqa_test_ctx_145.pdf p.1\nIn 2017, the Company obtained tax benefits from tax holidays in two foreign jurisdictions, the Dominican Republic and Singapore. The\nCompany received a permit of operation, which expires in July 2021, from the National Council of Free Zones of Exportation for the\nDominican Republic. Companies operating under the Free Zones are not subject to income tax in the Dominican Republic on export\nincome. The Company has two tax incentives awarded by the Singapore Economic Development Board. These incentives provide for a\npreferential 10% tax rate on certain headquarter income and a 0% tax rate on manufacturing profits generated at the Company’s facility\nlocated on Jurong Island. In 2016 and 2015 one\nLabel:",
+      "input_tokens": 1088,
+      "output_tokens": 3,
+      "latency_seconds": 7.491136343996914
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "American Tower prepaid income tax AND value added tax AND other consumption tax receivables AS OF December 31, 2011",
+      "filters": {
+        "year": 2011,
+        "company": "American Tower"
+      },
+      "chunk_ids": [],
+      "reason": "baseline_retrieve"
+    },
+    {
+      "iteration": 2,
+      "query": "American Tower prepaid income tax AND value added tax AND other consumption tax receivables AS OF December 31, 2011",
+      "filters": {},
+      "chunk_ids": [
+        "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+        "finqa_test_ctx_145::p1::c2::c77c4e483c",
+        "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+        "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+        "finqa_test_ctx_145::p1::c0::c356ea5b91"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "document_id": "convfinqa_ctx_1334",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "document_id": "finqa_test_ctx_145",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+          "document_id": "4ab898d6877c171a1e67f9be919c5e68",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "document_id": "finqa_test_ctx_357",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_145::p1::c0::c356ea5b91",
+          "document_id": "finqa_test_ctx_145",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_145::p1::c0::c356ea5b91",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "document_id": "convfinqa_ctx_1334",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "document_id": "finqa_test_ctx_145",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+          "document_id": "4ab898d6877c171a1e67f9be919c5e68",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "document_id": "finqa_test_ctx_357",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_145::p1::c0::c356ea5b91",
+          "document_id": "finqa_test_ctx_145",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_145::p1::c0::c356ea5b91",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "document_id": "convfinqa_ctx_1334",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "document_id": "finqa_test_ctx_145",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+          "document_id": "4ab898d6877c171a1e67f9be919c5e68",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "document_id": "finqa_test_ctx_357",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_145::p1::c0::c356ea5b91",
+          "document_id": "finqa_test_ctx_145",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_145::p1::c0::c356ea5b91",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?\nRetrieval query:",
+  "query_formulation_raw_output": "American Tower prepaid income tax AND value added tax AND other consumption tax receivables AS OF December 31, 2011",
+  "query_formulation_latency_seconds": 3.1397,
+  "query_formulation_input_tokens": 179,
+  "query_formulation_output_tokens": 29,
+  "query_formulation_trace": {
+    "original_question": "What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?",
+    "retrieval_query": "American Tower prepaid income tax AND value added tax AND other consumption tax receivables AS OF December 31, 2011",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined value of prepaid income tax and value added tax and other consumption tax receivables for American Tower as of December 31, 2011?\nRetrieval query:",
+    "raw_output": "American Tower prepaid income tax AND value added tax AND other consumption tax receivables AS OF December 31, 2011",
+    "latency_seconds": 3.1396745940000983,
+    "input_tokens": 179,
+    "output_tokens": 29,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "112660.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/AMT/2012/page_111.pdf | source_page=111 | context_id=convfinqa_ctx_235"
+}

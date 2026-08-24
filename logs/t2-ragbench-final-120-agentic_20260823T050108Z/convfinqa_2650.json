@@ -1,0 +1,123 @@
+{
+  "question_id": "convfinqa_2650",
+  "question": "What was the increase in segment earnings for Ball Corporation's metal beverage packaging segment in Europe from 2009 to 2010, in millions?",
+  "retrieval_query": "Ball Corporation metal beverage packaging segment Europe segment earnings increase 2009 2010 millions",
+  "metadata_filters": {
+    "company": "Ball Corporation"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1207::p1::c0::516aa9a414",
+      "rank": 1,
+      "dense_score": 0.8693432807922363,
+      "bm25_score": 54.93472480734551,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1207"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1207::p1::c1::01cc1453ca",
+      "rank": 2,
+      "dense_score": 0.7458971738815308,
+      "bm25_score": 40.38399087833142,
+      "hybrid_score": 0.493530956254421,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1207"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_289::p1::c0::0cd0c3cce8",
+      "rank": 3,
+      "dense_score": 0.6698331236839294,
+      "bm25_score": 11.892047593576557,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_289"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 11.4628,
+  "input_tokens": 1045,
+  "output_tokens": 33,
+  "total_tokens": 1078,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1467,
+  "llm_latency_seconds": 11.313,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the increase in segment earnings for Ball Corporation's metal beverage packaging segment in Europe from 2009 to 2010, in millions?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the increase in segment earnings for Ball Corporation's metal beverage packaging segment in Europe from 2009 to 2010, in millions?\nRetrieval query:",
+  "query_formulation_raw_output": "Ball Corporation metal beverage packaging segment Europe segment earnings increase 2009 2010 millions",
+  "query_formulation_latency_seconds": 3.3371,
+  "query_formulation_input_tokens": 176,
+  "query_formulation_output_tokens": 22,
+  "query_formulation_trace": {
+    "original_question": "What was the increase in segment earnings for Ball Corporation's metal beverage packaging segment in Europe from 2009 to 2010, in millions?",
+    "retrieval_query": "Ball Corporation metal beverage packaging segment Europe segment earnings increase 2009 2010 millions",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the increase in segment earnings for Ball Corporation's metal beverage packaging segment in Europe from 2009 to 2010, in millions?\nRetrieval query:",
+    "raw_output": "Ball Corporation metal beverage packaging segment Europe segment earnings increase 2009 2010 millions",
+    "latency_seconds": 3.337061130998336,
+    "input_tokens": 176,
+    "output_tokens": 22,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 7.976,
+  "answer_generation_input_tokens": 869,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the increase in segment earnings for Ball Corporation's metal beverage packaging segment in Europe from 2009 to 2010, in millions?\nEvidence:\n[1] convfinqa_ctx_1207.pdf p.1\nSegment sales were $100.7 million lower in 2009 than in 2008, primarily as a result of the impact of lower aluminum prices\npartially offset by an increase in sales volumes. The higher sales volumes in 2009 were the result of incremental volumes\nfrom the four plants purchased from AB InBev, partially offset by certain plant closures and lower sales volumes in the\nexisting business.\nSegment earnings in 2010 were $122.3 million higher than in 2009 primarily due to a net $85 million impact related to the\nhigher sales volumes and $45 million of product mix and improved manufacturing performance associated with higher\nproduction. Also adding to the 2010 improvement was the effect of a $7 million o ...\n\n[2] convfinqa_ctx_1207.pdf p.1\nto 2009, primarily due to unfavorable foreign exchange effects of\n$93 million and price and mix changes, partially offset by higher sales volumes.\nSegment sales in 2009 as compared to 2008 were $129.2 million lower due to $110 million of unfavorable foreign\nexchange effects, partially offset by better commercial terms. Sales volumes in 2009 were essentially flat compared to those\nin the prior year.\nSegment earnings in 2010 decreased $1.9 million compared to 2009, primarily the result of a $28 million increase related to\nhigher sales volumes, offset by $18 million of negative effects from foreign currency translation and $12 million of higher\ninventory and other costs.\nWhile 2009 sales volume ...\n\n[3] finqa_test_ctx_289.pdf p.1\nShareholderReturnPerformance\nThelinegraphbelowcomparestheannualpercentagechangeinBallCorporationscumulativetotalshareholderreturnonitscommon\nstockwiththecumulativetotalreturnoftheDowJonesContainers&PackagingIndexandtheS&PComposite500StockIndexfor\nthefive-yearperiodendedDecember31,2012.Itassumes$100wasinvestedonDecember31,2007,andthatalldividendswere\nreinvested.TheDowJonesContainers&PackagingIndextotalreturnhasbeenweightedbymarketcapitalization.\nTOTALRETURNTOSTOCKHOLDERS\n(Assumes$100investmenton12/31/07)\nTotalReturnAnalysis\n12/31/2007 12/31/2008 12/31/2009 12/31/2010 12/31/2011 12/31/2012\nBallCorporation........................ $ 100.00 $ 93.28 $ 117.01 $ 155.14 $ 164.09 $ 207.62\nDJUSContain ...\nAnswer:",
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "122.3",
+  "gold_evidence_reference": "ConvFinQA | pdf/BLL/2010/page_33.pdf | source_page=33 | context_id=convfinqa_ctx_1207"
+}

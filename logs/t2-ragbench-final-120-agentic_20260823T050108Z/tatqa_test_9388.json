@@ -1,0 +1,123 @@
+{
+  "question_id": "tatqa_test_9388",
+  "question": "What was the valuation allowance recorded by ACI Worldwide Inc. on its deferred tax asset related to U.S. foreign tax credits in 2018, as disclosed in its 2019 financial report?",
+  "retrieval_query": "ACI Worldwide Inc. valuation allowance deferred tax asset U.S. foreign tax credits 2018 2019 financial report",
+  "metadata_filters": {
+    "company": "aci-worldwide-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+      "rank": 1,
+      "dense_score": 0.7551541328430176,
+      "bm25_score": 34.000319514238996,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "4ab898d6877c171a1e67f9be919c5e68"
+    },
+    {
+      "chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c0::75b9f2f74e",
+      "rank": 2,
+      "dense_score": 0.727914035320282,
+      "bm25_score": 29.89907963295926,
+      "hybrid_score": 0.7015118305155359,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "4ab898d6877c171a1e67f9be919c5e68"
+    },
+    {
+      "chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c2::6782cb5dc7",
+      "rank": 3,
+      "dense_score": 0.683655858039856,
+      "bm25_score": 10.52926295317986,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "4ab898d6877c171a1e67f9be919c5e68"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 12.7299,
+  "input_tokens": 1144,
+  "output_tokens": 40,
+  "total_tokens": 1184,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1354,
+  "llm_latency_seconds": 12.5939,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the valuation allowance recorded by ACI Worldwide Inc. on its deferred tax asset related to U.S. foreign tax credits in 2018, as disclosed in its 2019 financial report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the valuation allowance recorded by ACI Worldwide Inc. on its deferred tax asset related to U.S. foreign tax credits in 2018, as disclosed in its 2019 financial report?\nRetrieval query:",
+  "query_formulation_raw_output": "ACI Worldwide Inc. valuation allowance deferred tax asset U.S. foreign tax credits 2018 2019 financial report",
+  "query_formulation_latency_seconds": 4.0926,
+  "query_formulation_input_tokens": 187,
+  "query_formulation_output_tokens": 29,
+  "query_formulation_trace": {
+    "original_question": "What was the valuation allowance recorded by ACI Worldwide Inc. on its deferred tax asset related to U.S. foreign tax credits in 2018, as disclosed in its 2019 financial report?",
+    "retrieval_query": "ACI Worldwide Inc. valuation allowance deferred tax asset U.S. foreign tax credits 2018 2019 financial report",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the valuation allowance recorded by ACI Worldwide Inc. on its deferred tax asset related to U.S. foreign tax credits in 2018, as disclosed in its 2019 financial report?\nRetrieval query:",
+    "raw_output": "ACI Worldwide Inc. valuation allowance deferred tax asset U.S. foreign tax credits 2018 2019 financial report",
+    "latency_seconds": 4.092563050999161,
+    "input_tokens": 187,
+    "output_tokens": 29,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 8.5013,
+  "answer_generation_input_tokens": 957,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the valuation allowance recorded by ACI Worldwide Inc. on its deferred tax asset related to U.S. foreign tax credits in 2018, as disclosed in its 2019 financial report?\nEvidence:\n[1] 4ab898d6877c171a1e67f9be919c5e68.pdf p.1\nTax Act reduced the U.S. federal corporate income tax rate from 35% to 21%, effective January 1, 2018. During the year ended\nDecember 31, 2017, the Company remeasured certain deferred tax assets and liabilities and recorded a $15.0 million provisional tax\ncharge. During the year ended December 31, 2018, the Company reduced the initial provisional tax charge by recording a $4.9\nmillion benefit related to accelerated tax deductions claimed on the 2018 U.S. Federal Income Tax Return.\nThe Tax Act required U.S. companies to pay a one-time transition tax on certain unremitted foreign earnings. During the year ended\nDecember 31, 2017, the Company recorded a $20.9 million provisional tax charge base ...\n\n[2] 4ab898d6877c171a1e67f9be919c5e68.pdf p.1\n12. Employee Benefit Plans\nACI 401(k) Plan\nThe ACI 401(k) Plan is a defined contribution plan covering all domestic employees of the Company. Participants may contribute up\nto 75% of their annual eligible compensation up to a maximum of $19,000 (for employees who are under the age of 50 on\nDecember 31, 2019) or a maximum of $25,000 (for employees aged 50 or older on December 31, 2019). After one year of service,\nthe Company matches 100% of the first 4% of eligible participant contributions and 50% of the next 4% of eligible participant\ncontributions, not to exceed $5,000 per employee annually. Company contributions charged to expense were $6.4 million during\nboth the years ended December 31, ...\n\n[3] 4ab898d6877c171a1e67f9be919c5e68.pdf p.1\nreinvested. The earnings of all other foreign subsidiaries are no longer\nconsidered indefinitely reinvested. The Company is also permanently reinvested for outside book/tax basis differences related to\nforeign subsidiaries.\nFor financial reporting purposes, income before income taxes includes the following components (in thousands):\nYears Ended December 31,\n2019 2018 2017\nUnited States $ (16,317 ) $ 16,312 $ (42,863 )\nForeign 88,527 75,487 86,435\nTotal $ 72,210 $ 91,799 $ 43,572\n79\n\n[TABLE]\n | United States | $ | (16,317 | ) |  | $ | 16,312 |  | $ | (42,863 | )\n[/TABLE]\n\n[TABLE]\n | Total | $ | 72,210 |  |  | $ | 91,799 |  | $ | 43,572 | \n[/TABLE]\nAnswer:",
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "15500000.0",
+  "gold_evidence_reference": "TAT-DQA | raw/4ab898d6877c171a1e67f9be919c5e68.pdf | context_id=4ab898d6877c171a1e67f9be919c5e68"
+}

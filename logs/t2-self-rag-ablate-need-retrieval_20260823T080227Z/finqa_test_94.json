@@ -1,0 +1,227 @@
+{
+  "question_id": "finqa_test_94",
+  "question": "What was the percentage increase in the cumulative total stockholder return for Cadence Design Systems Inc. from January 2, 2010, to January 1, 2011, based on the $100 initial investment tracked in the stockholder return performance graph?",
+  "retrieval_query": "Cadence Design Systems Inc. percentage increase cumulative total stockholder return January 2 2010 January 1 2011 $100 initial investment stockholder return performance graph",
+  "metadata_filters": {
+    "company": "Cadence Design Systems"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_300::p1::c0::cc02817a5e",
+      "rank": 1,
+      "dense_score": 0.8523005247116089,
+      "bm25_score": 65.30081313033611,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_300"
+    }
+  ],
+  "answer": "The cumulative total stockholder return for Cadence Design Systems Inc. on January 2, 2010, was $100. On January 1, 2011, it was $137.90.\n\nPercentage increase = ((137.90 - 100) / 100) × 100 = (37.90 / 100) × 100 = 37.90%\n\nSource: finqa_test_ctx_300.pdf p.1",
+  "latency_seconds": 36.7576,
+  "input_tokens": 2691,
+  "output_tokens": 174,
+  "total_tokens": 2865,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1577,
+  "llm_latency_seconds": 36.5983,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the percentage increase in the cumulative total stockholder return for Cadence Design Systems Inc. from January 2, 2010, to January 1, 2011, based on the $100 initial investment tracked in the stockholder return performance graph?\nEvidence:\n[1] finqa_test_ctx_300.pdf p.1\nStockholderReturnPerformanceGraph\nThefollowing graphcomparesthecumulative 5-yeartotalstockholderreturnonourcommonstockrelative\ntothecumulativetotalreturnoftheNASDAQCompositeindexandtheS&P400InformationTechnologyindex.\nThe graph assumes that the value of the investment in our common stock on January 2, 2010 and in each index\non December 31, 2009 (including reinvestment of dividends) was $100 and tracks it each year thereafter on the\nlast day of Cadence’s fiscal year through January 3, 2015 and, for each index, on the last day of the calendar\nyear.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Cadence Design Systems, Inc., the NASDAQ Composite Index,\nand S&P 400 Information Technology\n$3\nLabel:",
+      "input_tokens": 328,
+      "output_tokens": 5,
+      "latency_seconds": 2.7439386269979877
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the percentage increase in the cumulative total stockholder return for Cadence Design Systems Inc. from January 2, 2010, to January 1, 2011, based on the $100 initial investment tracked in the stockholder return performance graph?\nEvidence:\n[1] finqa_test_ctx_300.pdf p.1\nStockholderReturnPerformanceGraph\nThefollowing graphcomparesthecumulative 5-yeartotalstockholderreturnonourcommonstockrelative\ntothecumulativetotalreturnoftheNASDAQCompositeindexandtheS&P400InformationTechnologyindex.\nThe graph assumes that the value of the investment in our common stock on January 2, 2010 and in each index\non December 31, 2009 (including reinvestment of dividends) was $100 and tracks it each year thereafter on the\nlast day of Cadence’s fiscal year through January 3, 2015 and, for each index, on the last day of the calendar\nyear.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Cadence Design Systems, Inc., the NASDAQ Composite Index,\nand S&P 400 Information Technology\n$3\nLabel:",
+      "input_tokens": 333,
+      "output_tokens": 3,
+      "latency_seconds": 2.5308973209976102
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the percentage increase in the cumulative total stockholder return for Cadence Design Systems Inc. from January 2, 2010, to January 1, 2011, based on the $100 initial investment tracked in the stockholder return performance graph?\nEvidence:\n[1] finqa_test_ctx_300.pdf p.1\n50\n$300\n$250\n$200\n$150\n$100\n$50\n$0\n1/2/10 1/1/11 12/31/11 12/29/12 12/28/13 1/3/15\nCadence Design Systems, Inc. NASDAQ Composite S&P 400 Information Technology\n*$100 invested on 1/2/10 in stock or 12/31/09 in index, including reinvestment of dividends.\nIndexes calculated on month-end basis.\nCopyright© 2014 S&P, a division of The McGraw-Hill Companies Inc. All rights reserved.\n1/2/2010 1/1/2011 12/31/2011 12/29/2012 12/28/2013 1/3/2015\nCadenceDesignSystems,Inc. 100.00 137.90 173.62 224.37 232.55 314.36\nNASDAQComposite 100.00 117.61 118.70 139.00 196.83 223.74\nS&P400InformationTechnology 100.00 128.72 115.22 135.29 173.25 187.84\nThe stock price performance included in this graph is not necessa\nLabel:",
+      "input_tokens": 530,
+      "output_tokens": 3,
+      "latency_seconds": 3.328467572995578
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the percentage increase in the cumulative total stockholder return for Cadence Design Systems Inc. from January 2, 2010, to January 1, 2011, based on the $100 initial investment tracked in the stockholder return performance graph?\nEvidence:\n[1] finqa_test_ctx_300.pdf p.1\n50\n$300\n$250\n$200\n$150\n$100\n$50\n$0\n1/2/10 1/1/11 12/31/11 12/29/12 12/28/13 1/3/15\nCadence Design Systems, Inc. NASDAQ Composite S&P 400 Information Technology\n*$100 invested on 1/2/10 in stock or 12/31/09 in index, including reinvestment of dividends.\nIndexes calculated on month-end basis.\nCopyright© 2014 S&P, a division of The McGraw-Hill Companies Inc. All rights reserved.\n1/2/2010 1/1/2011 12/31/2011 12/29/2012 12/28/2013 1/3/2015\nCadenceDesignSystems,Inc. 100.00 137.90 173.62 224.37 232.55 314.36\nNASDAQComposite 100.00 117.61 118.70 139.00 196.83 223.74\nS&P400InformationTechnology 100.00 128.72 115.22 135.29 173.25 187.84\nThe stock price performance included in this graph is not necessa\nDraft:\nThe cumulative total stockholder return for Cadence Design Systems Inc. on January 2, 2010, was $100. On January 1, 2011, it was $137.90.\n\nPercentage increase = ((137.90 - 100) / 100) × 100 = (37.90 / 100) × 100 = 37.90%\n\nSource: finqa_test_ctx_300.pdf p.1\nLabel:",
+      "input_tokens": 680,
+      "output_tokens": 3,
+      "latency_seconds": 5.281206191997626
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Cadence Design Systems Inc. percentage increase cumulative total stockholder return January 2 2010 January 1 2011 $100 initial investment stockholder return performance graph",
+      "filters": {
+        "company": "Cadence Design Systems"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_300::p1::c0::cc02817a5e"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_300::p1::c0::cc02817a5e",
+          "document_id": "finqa_test_ctx_300",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_300::p1::c0::cc02817a5e",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_300::p1::c0::cc02817a5e",
+          "document_id": "finqa_test_ctx_300",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_300::p1::c0::cc02817a5e",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the percentage increase in the cumulative total stockholder return for Cadence Design Systems Inc. from January 2, 2010, to January 1, 2011, based on the $100 initial investment tracked in the stockholder return performance graph?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage increase in the cumulative total stockholder return for Cadence Design Systems Inc. from January 2, 2010, to January 1, 2011, based on the $100 initial investment tracked in the stockholder return performance graph?\nRetrieval query:",
+  "query_formulation_raw_output": "Cadence Design Systems Inc. percentage increase cumulative total stockholder return January 2 2010 January 1 2011 $100 initial investment stockholder return performance graph",
+  "query_formulation_latency_seconds": 5.5713,
+  "query_formulation_input_tokens": 202,
+  "query_formulation_output_tokens": 41,
+  "query_formulation_trace": {
+    "original_question": "What was the percentage increase in the cumulative total stockholder return for Cadence Design Systems Inc. from January 2, 2010, to January 1, 2011, based on the $100 initial investment tracked in the stockholder return performance graph?",
+    "retrieval_query": "Cadence Design Systems Inc. percentage increase cumulative total stockholder return January 2 2010 January 1 2011 $100 initial investment stockholder return performance graph",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage increase in the cumulative total stockholder return for Cadence Design Systems Inc. from January 2, 2010, to January 1, 2011, based on the $100 initial investment tracked in the stockholder return performance graph?\nRetrieval query:",
+    "raw_output": "Cadence Design Systems Inc. percentage increase cumulative total stockholder return January 2 2010 January 1 2011 $100 initial investment stockholder return performance graph",
+    "latency_seconds": 5.571323621996271,
+    "input_tokens": 202,
+    "output_tokens": 41,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "0.37900000000000006",
+  "gold_evidence_reference": "FinQA | pdf/CDNS/2015/page_30.pdf | source_page=30 | context_id=finqa_test_ctx_300"
+}

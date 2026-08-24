@@ -1,0 +1,135 @@
+{
+  "question_id": "finqa_test_191",
+  "question": "Given the average exercise prices of $26.93 and $33.32 for stock options in 2016 and 2017, respectively, what is the increase in total value of stock options from 2016 to 2017, in millions of dollars, for Howmet Aerospace as reported in its 2018 financial document?",
+  "retrieval_query": "Howmet Aerospace average exercise prices $26.93 2016 $33.32 2017 increase total value stock options 2018 financial document millions dollars",
+  "metadata_filters": {
+    "company": "Howmet Aerospace"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_332::p1::c0::2de3e0a642",
+      "rank": 1,
+      "dense_score": 0.681609034538269,
+      "bm25_score": 12.916574897295751,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_332"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_711::p1::c1::9e64901225",
+      "rank": 2,
+      "dense_score": 0.666022777557373,
+      "bm25_score": 2.7144687744033367,
+      "hybrid_score": 0.46637997641182366,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_711"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_711::p1::c2::39357a385d",
+      "rank": 3,
+      "dense_score": 0.6423696875572205,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.05197340033658868,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_711"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_711::p1::c0::64c0db5bfd",
+      "rank": 4,
+      "dense_score": 0.6386483311653137,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_711"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 15.7075,
+  "input_tokens": 1292,
+  "output_tokens": 54,
+  "total_tokens": 1346,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.149,
+  "llm_latency_seconds": 15.5567,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "Given the average exercise prices of $26.93 and $33.32 for stock options in 2016 and 2017, respectively, what is the increase in total value of stock options from 2016 to 2017, in millions of dollars, for Howmet Aerospace as reported in its 2018 financial document?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: Given the average exercise prices of $26.93 and $33.32 for stock options in 2016 and 2017, respectively, what is the increase in total value of stock options from 2016 to 2017, in millions of dollars, for Howmet Aerospace as reported in its 2018 financial document?\nRetrieval query:",
+  "query_formulation_raw_output": "Howmet Aerospace average exercise prices $26.93 2016 $33.32 2017 increase total value stock options 2018 financial document millions dollars",
+  "query_formulation_latency_seconds": 5.919,
+  "query_formulation_input_tokens": 224,
+  "query_formulation_output_tokens": 43,
+  "query_formulation_trace": {
+    "original_question": "Given the average exercise prices of $26.93 and $33.32 for stock options in 2016 and 2017, respectively, what is the increase in total value of stock options from 2016 to 2017, in millions of dollars, for Howmet Aerospace as reported in its 2018 financial document?",
+    "retrieval_query": "Howmet Aerospace average exercise prices $26.93 2016 $33.32 2017 increase total value stock options 2018 financial document millions dollars",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: Given the average exercise prices of $26.93 and $33.32 for stock options in 2016 and 2017, respectively, what is the increase in total value of stock options from 2016 to 2017, in millions of dollars, for Howmet Aerospace as reported in its 2018 financial document?\nRetrieval query:",
+    "raw_output": "Howmet Aerospace average exercise prices $26.93 2016 $33.32 2017 increase total value stock options 2018 financial document millions dollars",
+    "latency_seconds": 5.918977329001791,
+    "input_tokens": 224,
+    "output_tokens": 43,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 9.6377,
+  "answer_generation_input_tokens": 1068,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: Given the average exercise prices of $26.93 and $33.32 for stock options in 2016 and 2017, respectively, what is the increase in total value of stock options from 2016 to 2017, in millions of dollars, for Howmet Aerospace as reported in its 2018 financial document?\nEvidence:\n[1] finqa_test_ctx_332.pdf p.1\nThefollowingshareswereexcludedfromthecalculationofaveragesharesoutstanding–dilutedastheireffectwasanti-\ndilutive(sharesinmillions).\n2018 2017 2016\nMandatoryconvertiblepreferredstock n/a 39 39\nConvertiblenotes — 14 14\nStockoptions(1) 9 11 13\nStockawards — 7 8\n(1) Theaverageexercisepriceofoptionspersharewas$26.79,$33.32,and$26.93for2018,2017,and2016,\nrespectively.\nIn2017,hadArconicgeneratedsufficientnetincome,30million,14million,5million,and1millionpotentialsharesof\ncommonstockrelatedtothemandatoryconvertiblepreferredstock,convertiblenotes,stockawards,andstockoptions,\nrespectively,wouldhavebeenincludedindilutedaveragesharesoutstanding.Themandatoryconvertiblepreferredstock\nconvertedonOctober2,2 ...\n\n[2] convfinqa_ctx_711.pdf p.1\nalsbusiness,combinedwithprioryearcumulativelossesandashort\nexpirationperiod.\nInDecember2011,oneofArconic’sformersubsidiariesinBrazilappliedforataxholidayrelatedtoitsexpanded\nminingandrefiningoperations.During2013,theapplicationwasamendedandre-filedand,separately,asimilar\napplicationwasfiledforanotheroneofArconic’sformersubsidiariesinBrazil.ThedeadlinefortheBrazilian\ngovernmenttodenytheapplicationwasJuly11,2014.SinceArconicdidnotreceivenoticethatitsapplicationswere\ndenied,thetaxholidaytookeffectautomaticallyonJuly12,2014.Asaresult,thetaxrateapplicabletoqualified\nholidayincomeforthesesubsidiariesdecreasedsignificantly(from34%to15.25%),resultinginfuturecashtax\nsavingsoverthe10-yearholidayperiod ...\n\n[3] convfinqa_ctx_711.pdf p.1\n151\nThecumulativeamountofArconic’sforeignundistributednetearningsforwhichnodeferredtaxeshavebeenprovided\nwasapproximately$450atDecember31,2016.Arconichasanumberofcommitmentsandobligationsrelatedtothe\nCompany’sgrowthstrategyinforeignjurisdictions.Assuch,managementhasnoplanstodistributesuchearningsin\ntheforeseeablefuture,and,therefore,hasdetermineditisnotpracticabletodeterminetherelateddeferredtaxliability.\n112\n\n[4] convfinqa_ctx_711.pdf p.1\nIn2016,Arconicalsorecognizeddiscreteincometaxbenefitsrelatedtothereleaseofvaluationallowancesoncertain\nnetdeferredtaxassetsinRussiaandCanadaof$19and$20respectively.Afterweighingallavailableevidence,\nmanagementdeterminedthatitwasmorelikelythannotthatthenetincometaxbenefitsassociatedwiththeunderlying\ndeferredtaxassetswouldberealizablebasedonhistoriccumulativeincomeandprojectedtaxableincome.\nArconicalsorecordedadditionalvaluationallowancesinAustraliaof$93relatedtotheSeparationTransaction,in\nSpainof$163relatedtoataxlawchangeandinLuxembourgof$280relatedtotheSeparationTransactionaswellasa\ntaxlawchange.Thesevaluationallowancesfullyoffsetcurrentyearchangesindeferredtaxassetbalancesofeach\nrespectivej ...\nAnswer:",
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "16.430000000000007",
+  "gold_evidence_reference": "FinQA | pdf/HWM/2018/page_96.pdf | source_page=96 | context_id=finqa_test_ctx_332"
+}

@@ -1,0 +1,147 @@
+{
+  "question_id": "convfinqa_386",
+  "question": "What is the net change in earnings attributable to Altria from 2016 to 2017?",
+  "retrieval_query": "Altria net change in earnings attributable 2016 2017",
+  "metadata_filters": {
+    "company": "Altria"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_26::p1::c0::68a6d27224",
+      "rank": 1,
+      "dense_score": 0.777301013469696,
+      "bm25_score": 23.01545453517202,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_26"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_26::p1::c1::e6b8b8eb56",
+      "rank": 2,
+      "dense_score": 0.7637162208557129,
+      "bm25_score": 15.966562403059472,
+      "hybrid_score": 0.2645971864063536,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_26"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_44::p1::c2::9bb9c16551",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 6.24922757951497,
+      "hybrid_score": 0.0779360131213662,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_44"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_44::p1::c1::e705f872e6",
+      "rank": 4,
+      "dense_score": null,
+      "bm25_score": 2.5699283904009826,
+      "hybrid_score": 0.007260018522261845,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_44"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_44::p1::c0::23e0c0789c",
+      "rank": 5,
+      "dense_score": null,
+      "bm25_score": 2.1919813885451496,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_44"
+    }
+  ],
+  "answer": "Net earnings attributable to Altria Group, Inc. in 2017: $10,222 million  \nNet earnings attributable to Altria Group, Inc. in 2016: $14,239 million  \n\nChange = 2017 - 2016 = 10,222 - 14,239 = -4,017 million\n\nAnswer: -4017 (in millions)  \nSource: convfinqa_ctx_26.pdf p.1",
+  "latency_seconds": 27.174,
+  "input_tokens": 1286,
+  "output_tokens": 137,
+  "total_tokens": 1423,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1527,
+  "llm_latency_seconds": 27.0205,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What is the net change in earnings attributable to Altria from 2016 to 2017?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the net change in earnings attributable to Altria from 2016 to 2017?\nRetrieval query:",
+  "query_formulation_raw_output": "Altria net change in earnings attributable 2016 2017",
+  "query_formulation_latency_seconds": 2.7512,
+  "query_formulation_input_tokens": 168,
+  "query_formulation_output_tokens": 19,
+  "query_formulation_trace": {
+    "original_question": "What is the net change in earnings attributable to Altria from 2016 to 2017?",
+    "retrieval_query": "Altria net change in earnings attributable 2016 2017",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the net change in earnings attributable to Altria from 2016 to 2017?\nRetrieval query:",
+    "raw_output": "Altria net change in earnings attributable 2016 2017",
+    "latency_seconds": 2.751150414998847,
+    "input_tokens": 168,
+    "output_tokens": 19,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 24.2694,
+  "answer_generation_input_tokens": 1118,
+  "answer_generation_output_tokens": 118,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What is the net change in earnings attributable to Altria from 2016 to 2017?\nEvidence:\n[1] convfinqa_ctx_26.pdf p.1\nPerformance Stock Units: In January 2017, Altria Group, Note 12. Earnings per Share\nInc. granted an aggregate of 187,886 performance stock units to\nBasic and diluted EPS were calculated using the following:\neligible employees. The payout of the performance stock units\nrequires the achievement of certain performance measures, which For the Years Ended December 31,\nwere predetermined at the time of grant, over a three-year\n(in millions) 2017 2016 2015\nperformance cycle. These performance measures consist of Altria\nNet earnings attributable to\nGroup, Inc.’s adjusted diluted earnings per share (“EPS”)\nAltria Group, Inc. $ 10,222 $ 14,239 $ 5,241\ncompounded annual growth rate and Altria Group, In ...\n\n[2] convfinqa_ctx_26.pdf p.1\n, 2018 10:00pm Andra Design LLC\n\n[TABLE]\nNet earnings attributable to\nAltria Group, Inc. | $ 10,222 |  | $ 14,239 |  | $ 5,241\n[/TABLE]\n\n[TABLE]\nEarnings for basic and diluted\nEPS | $ 10,208 |  | $ 14,215 |  | $ 5,231\n[/TABLE]\n\n[3] finqa_test_ctx_44.pdf p.1\n5\n2014, Middleton announced the national expansion of Black &\nSkoal 269.6 283.8 288.4\nMild Casino, a dark tobacco blend, in the tipped segment.\nCopenhagen and Skoal 718.2 709.9 680.9\nThe following discussion compares operating results for\nOther 75.1 77.6 82.4\nthe smokeable products segment for the year ended December\nTotal smokeless products 793.3 787.5 763.3\n31, 2013 with the year ended December 31, 2012.\nNet revenues, which include excise taxes billed to Smokeless products shipment volume includes cans and\ncustomers, decreased $348 million (1.6%), due primarily to packs sold, as well as promotional units, but excludes\nlower shipment volume ($1,046 million), partially offset by internationa ...\n\n[4] finqa_test_ctx_44.pdf p.1\n3 share points versus\nfactors, PM USA estimates that its 2014 domestic cigarettes 2012, due to retail share gains by Marlboro, as well as L&M in\nshipment volume decreased approximately 3%, and that total Discount, partially offset by share losses on other portfolio\nindustry cigarette volumes declined approximately 3.5%. brands. In 2013, L&M continued to gain retail share as the total\nPM USA’s shipments of premium cigarettes accounted discount segment was flat to declining versus 2012.\nfor 91.8% of its reported domestic cigarettes shipment In the machine-made large cigars category, Black & Mild’s\nvolume for 2014, versus 92.1% for 2013. retail share for 2013 decreased 1.0 share point, driven b ...\n\n[5] finqa_test_ctx_44.pdf p.1\nadministering and litigating product liability claims. Litigation volume decreased 4.1% versus 2012. PM USA’s 2013\ndefense costs are influenced by a number of factors, including reported domestic cigarettes shipment volume decreased\nthe number and types of cases filed, the number of cases tried 4.1%, due primarily to the industry’s rate of decline, changes\nannually, the results of trials and appeals, the development of in trade inventories and other factors, partially offset by retail\nthe law controlling relevant legal issues, and litigation strategy share gains. When adjusted for trade inventories and other\nand tactics. For further discussion on these matters, see Note 18 factors, PM USA es ...\nAnswer:",
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "-4017.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/MO/2017/page_65.pdf | source_page=65 | context_id=convfinqa_ctx_26"
+}

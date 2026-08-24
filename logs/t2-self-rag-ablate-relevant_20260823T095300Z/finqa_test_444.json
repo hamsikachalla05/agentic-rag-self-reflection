@@ -1,0 +1,435 @@
+{
+  "question_id": "finqa_test_444",
+  "question": "What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?",
+  "retrieval_query": "average balance of unresolved home equity indemnification and repurchase claims PNC Financial Services December 31 2012 December 31 2011 2013 Form 10-K",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_357::p1::c1::aeb1e79ae8",
+      "rank": 1,
+      "dense_score": 0.7354227304458618,
+      "bm25_score": 19.06131458393808,
+      "hybrid_score": 0.6165747434134622,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_357"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+      "rank": 2,
+      "dense_score": 0.7522199153900146,
+      "bm25_score": null,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_141"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+      "rank": 3,
+      "dense_score": 0.7495595216751099,
+      "bm25_score": null,
+      "hybrid_score": 0.5697610162314749,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_141"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+      "rank": 4,
+      "dense_score": null,
+      "bm25_score": 22.12524628848086,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_29"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_317::p1::c1::898284a911",
+      "rank": 5,
+      "dense_score": null,
+      "bm25_score": 21.742130203806223,
+      "hybrid_score": 0.3759293624583219,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_317"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 70.7316,
+  "input_tokens": 7868,
+  "output_tokens": 91,
+  "total_tokens": 7959,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1625,
+  "llm_latency_seconds": 70.5663,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?\nLabel:",
+      "input_tokens": 125,
+      "output_tokens": 7,
+      "latency_seconds": 1.117686223005876
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?\nEvidence:\n[1] finqa_test_ctx_357.pdf p.1\nerves\nAs a company incorporated in England and Wales, Aon is required under U.K. law to have available “distributable reserves” to\nmake share repurchases or pay dividends to shareholders. Distributable reserves may be created through the earnings of the U.K.\nparent company and, among other methods, through a reduction in share capital approved by the courts of England and Wales.\nDistributable reserves are not directly linked to a U.S. GAAP reported amount (e.g., retained earnings). As of December 31, 2018\nand 2017, the Company had distributable reserves in excess of $2.2 billion and $1.2 billion, respectively.\nOrdinary Shares\nAon has a share repurchase program authorized by the Company’s Boa\n\n[2] finqa_test_ctx_141.pdf p.1\nHomeEquityRepurchaseObligations beencured,andtheeffectofsuchbreachisdeemedtohave\nPNC’srepurchaseobligationsincludeobligationswithrespect hadamaterialandadverseeffectonthevalueofthe\ntocertainbrokeredhomeequityloans/linesthatweresoldtoa transferredloan.Dependingonthesaleagreementandupon\nlimitednumberofprivateinvestorsinthefinancialservices propernoticefromtheinvestor,wetypicallyrespondtohome\nindustrybyNationalCitypriortoouracquisitionofNational equityindemnificationandrepurchaserequestswithin60\nCity.PNCisnolongerengagedinthebrokeredhomeequity days,althoughfinalresolutionoftheclaimmaytakealonger\nlendingbusiness,andourexposureundertheseloan periodoftime.Mosthomeequitysaleagreementsdonot\nrepurcha\n\n[3] finqa_test_ctx_141.pdf p.1\naction,includingunderwritingstandards,delivery\nofallrequiredloandocumentstotheinvestororitsdesignated\nparty,sufficientcollateralvaluation,andthevalidityofthe Thefollowingtabledetailstheunpaidprincipalbalanceofour\nliensecuringtheloan.Asaresultofallegedbreachesofthese unresolvedhomeequityindemnificationandrepurchase\ncontractualobligations,investorsmayrequestPNCto claimsatDecember31,2012andDecember31,2011,\nindemnifythemagainstlossesoncertainloansorto respectively.\nrepurchaseloans.\nTable31:AnalysisofHomeEquityUnresolvedAsserted\nWeinvestigateeveryinvestorclaimonaloanbyloanbasisto IndemnificationandRepurchaseClaims\ndeterminetheexistenceofalegitimateclaim,andthatall\notherconditionsforindemnificatio\n\n[4] finqa_test_ctx_29.pdf p.1\n. The maximum combined borrowing at\nany time under both the 2017 Credit Agreement and the commercial paper program is $3 billion.\nOn November 6, 2017, we announced that our board of directors authorized BHGE LLC to repurchase up to $3\nbillion of its common units from the Company and GE. The proceeds of such repurchase that are distributed to the\nCompany will be used to repurchase Class A shares of the Company on the open market or in privately negotiated\ntransactions.\nOn December 15, 2017, we filed a shelf registration statement on Form S-3 with the SEC to give us the ability\nto sell up to $3 billion in debt securities in amounts to be determined at the time of an offering. Any such offering\n\n[5] finqa_test_ctx_317.pdf p.1\nshare payable on February 28, 2013 to stockholders of record as of the close of\nbusiness on February 14, 2013. Any future declaration and payment of dividends will be at the sole discretion of our Board of Directors. The\nBoard of Directors may take into account such matters as general business conditions, our financial results, capital requirements, and contractual,\nlegal, and regulatory restrictions on the payment of dividends to our stockholders or by our subsidiaries to the parent and any other such factors\nas the Board of Directors may deem relevant.\nRecent Sales of Unregistered Securities\nNone.\nSecurities Authorized for Issuance Under Equity Compensation Plans\nPlease see the section ent\nLabel:",
+      "input_tokens": 1070,
+      "output_tokens": 3,
+      "latency_seconds": 8.453192095999839
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?\nEvidence:\n[1] finqa_test_ctx_357.pdf p.1\nrd of Directors (the “Repurchase Program”). The Repurchase\nProgram was established in April 2012 with $5.0 billion in authorized repurchases, and was increased by $5.0 billion in authorized\nrepurchases in each of November 2014 and February 2017 for a total of $15.0 billion in repurchase authorizations.\nUnder the Repurchase Program, Class A Ordinary Shares may be repurchased through the open market or in privately negotiated\ntransactions, from time to time, based on prevailing market conditions, and will be funded from available capital.\n81\n\n[TABLE]\nBalance at January 1 $ 280 $ 278 | \nBalance at January 1 | $ 280 $ 278\n[/TABLE]\n\n[TABLE]\nAdditions for tax positions of prior years 10 12 | \nAddi\n\n[2] finqa_test_ctx_141.pdf p.1\nHomeEquityRepurchaseObligations beencured,andtheeffectofsuchbreachisdeemedtohave\nPNC’srepurchaseobligationsincludeobligationswithrespect hadamaterialandadverseeffectonthevalueofthe\ntocertainbrokeredhomeequityloans/linesthatweresoldtoa transferredloan.Dependingonthesaleagreementandupon\nlimitednumberofprivateinvestorsinthefinancialservices propernoticefromtheinvestor,wetypicallyrespondtohome\nindustrybyNationalCitypriortoouracquisitionofNational equityindemnificationandrepurchaserequestswithin60\nCity.PNCisnolongerengagedinthebrokeredhomeequity days,althoughfinalresolutionoftheclaimmaytakealonger\nlendingbusiness,andourexposureundertheseloan periodoftime.Mosthomeequitysaleagreementsdonot\nrepurcha\n\n[3] finqa_test_ctx_141.pdf p.1\naction,includingunderwritingstandards,delivery\nofallrequiredloandocumentstotheinvestororitsdesignated\nparty,sufficientcollateralvaluation,andthevalidityofthe Thefollowingtabledetailstheunpaidprincipalbalanceofour\nliensecuringtheloan.Asaresultofallegedbreachesofthese unresolvedhomeequityindemnificationandrepurchase\ncontractualobligations,investorsmayrequestPNCto claimsatDecember31,2012andDecember31,2011,\nindemnifythemagainstlossesoncertainloansorto respectively.\nrepurchaseloans.\nTable31:AnalysisofHomeEquityUnresolvedAsserted\nWeinvestigateeveryinvestorclaimonaloanbyloanbasisto IndemnificationandRepurchaseClaims\ndeterminetheexistenceofalegitimateclaim,andthatall\notherconditionsforindemnificatio\n\n[4] finqa_test_ctx_29.pdf p.1\n. The maximum combined borrowing at\nany time under both the 2017 Credit Agreement and the commercial paper program is $3 billion.\nOn November 6, 2017, we announced that our board of directors authorized BHGE LLC to repurchase up to $3\nbillion of its common units from the Company and GE. The proceeds of such repurchase that are distributed to the\nCompany will be used to repurchase Class A shares of the Company on the open market or in privately negotiated\ntransactions.\nOn December 15, 2017, we filed a shelf registration statement on Form S-3 with the SEC to give us the ability\nto sell up to $3 billion in debt securities in amounts to be determined at the time of an offering. Any such offering\n\n[5] finqa_test_ctx_317.pdf p.1\nshare payable on February 28, 2013 to stockholders of record as of the close of\nbusiness on February 14, 2013. Any future declaration and payment of dividends will be at the sole discretion of our Board of Directors. The\nBoard of Directors may take into account such matters as general business conditions, our financial results, capital requirements, and contractual,\nlegal, and regulatory restrictions on the payment of dividends to our stockholders or by our subsidiaries to the parent and any other such factors\nas the Board of Directors may deem relevant.\nRecent Sales of Unregistered Securities\nNone.\nSecurities Authorized for Issuance Under Equity Compensation Plans\nPlease see the section ent\nLabel:",
+      "input_tokens": 1095,
+      "output_tokens": 3,
+      "latency_seconds": 8.389610341997468
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?\nEvidence:\n[1] finqa_test_ctx_357.pdf p.1\nrd of Directors (the “Repurchase Program”). The Repurchase\nProgram was established in April 2012 with $5.0 billion in authorized repurchases, and was increased by $5.0 billion in authorized\nrepurchases in each of November 2014 and February 2017 for a total of $15.0 billion in repurchase authorizations.\nUnder the Repurchase Program, Class A Ordinary Shares may be repurchased through the open market or in privately negotiated\ntransactions, from time to time, based on prevailing market conditions, and will be funded from available capital.\n81\n\n[TABLE]\nBalance at January 1 $ 280 $ 278 | \nBalance at January 1 | $ 280 $ 278\n[/TABLE]\n\n[TABLE]\nAdditions for tax positions of prior years 10 12 | \nAddi\n\n[2] finqa_test_ctx_141.pdf p.1\nHomeEquityRepurchaseObligations beencured,andtheeffectofsuchbreachisdeemedtohave\nPNC’srepurchaseobligationsincludeobligationswithrespect hadamaterialandadverseeffectonthevalueofthe\ntocertainbrokeredhomeequityloans/linesthatweresoldtoa transferredloan.Dependingonthesaleagreementandupon\nlimitednumberofprivateinvestorsinthefinancialservices propernoticefromtheinvestor,wetypicallyrespondtohome\nindustrybyNationalCitypriortoouracquisitionofNational equityindemnificationandrepurchaserequestswithin60\nCity.PNCisnolongerengagedinthebrokeredhomeequity days,althoughfinalresolutionoftheclaimmaytakealonger\nlendingbusiness,andourexposureundertheseloan periodoftime.Mosthomeequitysaleagreementsdonot\nrepurcha\n\n[3] finqa_test_ctx_141.pdf p.1\naction,includingunderwritingstandards,delivery\nofallrequiredloandocumentstotheinvestororitsdesignated\nparty,sufficientcollateralvaluation,andthevalidityofthe Thefollowingtabledetailstheunpaidprincipalbalanceofour\nliensecuringtheloan.Asaresultofallegedbreachesofthese unresolvedhomeequityindemnificationandrepurchase\ncontractualobligations,investorsmayrequestPNCto claimsatDecember31,2012andDecember31,2011,\nindemnifythemagainstlossesoncertainloansorto respectively.\nrepurchaseloans.\nTable31:AnalysisofHomeEquityUnresolvedAsserted\nWeinvestigateeveryinvestorclaimonaloanbyloanbasisto IndemnificationandRepurchaseClaims\ndeterminetheexistenceofalegitimateclaim,andthatall\notherconditionsforindemnificatio\n\n[4] finqa_test_ctx_29.pdf p.1\n. The maximum combined borrowing at\nany time under both the 2017 Credit Agreement and the commercial paper program is $3 billion.\nOn November 6, 2017, we announced that our board of directors authorized BHGE LLC to repurchase up to $3\nbillion of its common units from the Company and GE. The proceeds of such repurchase that are distributed to the\nCompany will be used to repurchase Class A shares of the Company on the open market or in privately negotiated\ntransactions.\nOn December 15, 2017, we filed a shelf registration statement on Form S-3 with the SEC to give us the ability\nto sell up to $3 billion in debt securities in amounts to be determined at the time of an offering. Any such offering\n\n[5] finqa_test_ctx_317.pdf p.1\nshare payable on February 28, 2013 to stockholders of record as of the close of\nbusiness on February 14, 2013. Any future declaration and payment of dividends will be at the sole discretion of our Board of Directors. The\nBoard of Directors may take into account such matters as general business conditions, our financial results, capital requirements, and contractual,\nlegal, and regulatory restrictions on the payment of dividends to our stockholders or by our subsidiaries to the parent and any other such factors\nas the Board of Directors may deem relevant.\nRecent Sales of Unregistered Securities\nNone.\nSecurities Authorized for Issuance Under Equity Compensation Plans\nPlease see the section ent\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1136,
+      "output_tokens": 4,
+      "latency_seconds": 9.755398294997576
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?\nEvidence:\n[1] finqa_test_ctx_357.pdf p.1\ntions for tax positions of prior years | 10 12\n[/TABLE]\n\n[TABLE]\nSettlements — (6) | \nSettlements | (6)\n[/TABLE]\n\n[TABLE]\nLapse of statute of limitations (6) (7) | \nLapse of statute of limitations | (7)\n[/TABLE]\n\n[2] finqa_test_ctx_141.pdf p.1\nHomeEquityRepurchaseObligations beencured,andtheeffectofsuchbreachisdeemedtohave\nPNC’srepurchaseobligationsincludeobligationswithrespect hadamaterialandadverseeffectonthevalueofthe\ntocertainbrokeredhomeequityloans/linesthatweresoldtoa transferredloan.Dependingonthesaleagreementandupon\nlimitednumberofprivateinvestorsinthefinancialservices propernoticefromtheinvestor,wetypicallyrespondtohome\nindustrybyNationalCitypriortoouracquisitionofNational equityindemnificationandrepurchaserequestswithin60\nCity.PNCisnolongerengagedinthebrokeredhomeequity days,althoughfinalresolutionoftheclaimmaytakealonger\nlendingbusiness,andourexposureundertheseloan periodoftime.Mosthomeequitysaleagreementsdonot\nrepurcha\n\n[3] finqa_test_ctx_141.pdf p.1\naction,includingunderwritingstandards,delivery\nofallrequiredloandocumentstotheinvestororitsdesignated\nparty,sufficientcollateralvaluation,andthevalidityofthe Thefollowingtabledetailstheunpaidprincipalbalanceofour\nliensecuringtheloan.Asaresultofallegedbreachesofthese unresolvedhomeequityindemnificationandrepurchase\ncontractualobligations,investorsmayrequestPNCto claimsatDecember31,2012andDecember31,2011,\nindemnifythemagainstlossesoncertainloansorto respectively.\nrepurchaseloans.\nTable31:AnalysisofHomeEquityUnresolvedAsserted\nWeinvestigateeveryinvestorclaimonaloanbyloanbasisto IndemnificationandRepurchaseClaims\ndeterminetheexistenceofalegitimateclaim,andthatall\notherconditionsforindemnificatio\n\n[4] finqa_test_ctx_29.pdf p.1\n. The maximum combined borrowing at\nany time under both the 2017 Credit Agreement and the commercial paper program is $3 billion.\nOn November 6, 2017, we announced that our board of directors authorized BHGE LLC to repurchase up to $3\nbillion of its common units from the Company and GE. The proceeds of such repurchase that are distributed to the\nCompany will be used to repurchase Class A shares of the Company on the open market or in privately negotiated\ntransactions.\nOn December 15, 2017, we filed a shelf registration statement on Form S-3 with the SEC to give us the ability\nto sell up to $3 billion in debt securities in amounts to be determined at the time of an offering. Any such offering\n\n[5] finqa_test_ctx_317.pdf p.1\nshare payable on February 28, 2013 to stockholders of record as of the close of\nbusiness on February 14, 2013. Any future declaration and payment of dividends will be at the sole discretion of our Board of Directors. The\nBoard of Directors may take into account such matters as general business conditions, our financial results, capital requirements, and contractual,\nlegal, and regulatory restrictions on the payment of dividends to our stockholders or by our subsidiaries to the parent and any other such factors\nas the Board of Directors may deem relevant.\nRecent Sales of Unregistered Securities\nNone.\nSecurities Authorized for Issuance Under Equity Compensation Plans\nPlease see the section ent\nLabel:",
+      "input_tokens": 976,
+      "output_tokens": 3,
+      "latency_seconds": 7.717588619001617
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?\nEvidence:\n[1] finqa_test_ctx_357.pdf p.1\ntions for tax positions of prior years | 10 12\n[/TABLE]\n\n[TABLE]\nSettlements — (6) | \nSettlements | (6)\n[/TABLE]\n\n[TABLE]\nLapse of statute of limitations (6) (7) | \nLapse of statute of limitations | (7)\n[/TABLE]\n\n[2] finqa_test_ctx_141.pdf p.1\nHomeEquityRepurchaseObligations beencured,andtheeffectofsuchbreachisdeemedtohave\nPNC’srepurchaseobligationsincludeobligationswithrespect hadamaterialandadverseeffectonthevalueofthe\ntocertainbrokeredhomeequityloans/linesthatweresoldtoa transferredloan.Dependingonthesaleagreementandupon\nlimitednumberofprivateinvestorsinthefinancialservices propernoticefromtheinvestor,wetypicallyrespondtohome\nindustrybyNationalCitypriortoouracquisitionofNational equityindemnificationandrepurchaserequestswithin60\nCity.PNCisnolongerengagedinthebrokeredhomeequity days,althoughfinalresolutionoftheclaimmaytakealonger\nlendingbusiness,andourexposureundertheseloan periodoftime.Mosthomeequitysaleagreementsdonot\nrepurcha\n\n[3] finqa_test_ctx_141.pdf p.1\naction,includingunderwritingstandards,delivery\nofallrequiredloandocumentstotheinvestororitsdesignated\nparty,sufficientcollateralvaluation,andthevalidityofthe Thefollowingtabledetailstheunpaidprincipalbalanceofour\nliensecuringtheloan.Asaresultofallegedbreachesofthese unresolvedhomeequityindemnificationandrepurchase\ncontractualobligations,investorsmayrequestPNCto claimsatDecember31,2012andDecember31,2011,\nindemnifythemagainstlossesoncertainloansorto respectively.\nrepurchaseloans.\nTable31:AnalysisofHomeEquityUnresolvedAsserted\nWeinvestigateeveryinvestorclaimonaloanbyloanbasisto IndemnificationandRepurchaseClaims\ndeterminetheexistenceofalegitimateclaim,andthatall\notherconditionsforindemnificatio\n\n[4] finqa_test_ctx_29.pdf p.1\n. The maximum combined borrowing at\nany time under both the 2017 Credit Agreement and the commercial paper program is $3 billion.\nOn November 6, 2017, we announced that our board of directors authorized BHGE LLC to repurchase up to $3\nbillion of its common units from the Company and GE. The proceeds of such repurchase that are distributed to the\nCompany will be used to repurchase Class A shares of the Company on the open market or in privately negotiated\ntransactions.\nOn December 15, 2017, we filed a shelf registration statement on Form S-3 with the SEC to give us the ability\nto sell up to $3 billion in debt securities in amounts to be determined at the time of an offering. Any such offering\n\n[5] finqa_test_ctx_317.pdf p.1\nshare payable on February 28, 2013 to stockholders of record as of the close of\nbusiness on February 14, 2013. Any future declaration and payment of dividends will be at the sole discretion of our Board of Directors. The\nBoard of Directors may take into account such matters as general business conditions, our financial results, capital requirements, and contractual,\nlegal, and regulatory restrictions on the payment of dividends to our stockholders or by our subsidiaries to the parent and any other such factors\nas the Board of Directors may deem relevant.\nRecent Sales of Unregistered Securities\nNone.\nSecurities Authorized for Issuance Under Equity Compensation Plans\nPlease see the section ent\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1017,
+      "output_tokens": 4,
+      "latency_seconds": 8.75949333999597
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "average balance of unresolved home equity indemnification and repurchase claims PNC Financial Services December 31 2012 December 31 2011 2013 Form 10-K",
+      "filters": {
+        "company": "PNC Financial Services",
+        "filing_type": "10-K"
+      },
+      "chunk_ids": [],
+      "reason": "baseline_retrieve"
+    },
+    {
+      "iteration": 2,
+      "query": "average balance of unresolved home equity indemnification and repurchase claims PNC Financial Services December 31 2012 December 31 2011 2013 Form 10-K",
+      "filters": {},
+      "chunk_ids": [
+        "finqa_test_ctx_357::p1::c1::aeb1e79ae8",
+        "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+        "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+        "finqa_test_ctx_29::p1::c1::67859185a2",
+        "finqa_test_ctx_317::p1::c1::898284a911"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_357::p1::c1::aeb1e79ae8",
+          "document_id": "finqa_test_ctx_357",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_357::p1::c1::aeb1e79ae8",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+          "document_id": "finqa_test_ctx_141",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+          "document_id": "finqa_test_ctx_141",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_317::p1::c1::898284a911",
+          "document_id": "finqa_test_ctx_317",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_317::p1::c1::898284a911",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_357::p1::c1::aeb1e79ae8",
+          "document_id": "finqa_test_ctx_357",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_357::p1::c1::aeb1e79ae8",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+          "document_id": "finqa_test_ctx_141",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+          "document_id": "finqa_test_ctx_141",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_317::p1::c1::898284a911",
+          "document_id": "finqa_test_ctx_317",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_317::p1::c1::898284a911",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_357::p1::c1::aeb1e79ae8",
+          "document_id": "finqa_test_ctx_357",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 1611,
+          "source_chunk_id": "finqa_test_ctx_357::p1::c1::aeb1e79ae8",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+          "document_id": "finqa_test_ctx_141",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+          "document_id": "finqa_test_ctx_141",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c1::67859185a2",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_317::p1::c1::898284a911",
+          "document_id": "finqa_test_ctx_317",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_317::p1::c1::898284a911",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_2",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?\nRetrieval query:",
+  "query_formulation_raw_output": "average balance of unresolved home equity indemnification and repurchase claims PNC Financial Services December 31 2012 December 31 2011 2013 Form 10-K",
+  "query_formulation_latency_seconds": 5.0854,
+  "query_formulation_input_tokens": 202,
+  "query_formulation_output_tokens": 45,
+  "query_formulation_trace": {
+    "original_question": "What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?",
+    "retrieval_query": "average balance of unresolved home equity indemnification and repurchase claims PNC Financial Services December 31 2012 December 31 2011 2013 Form 10-K",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the average balance of unresolved home equity indemnification and repurchase claims for PNC Financial Services at December 31, 2012, and December 31, 2011, as reported in the 2013 Form 10-K?\nRetrieval query:",
+    "raw_output": "average balance of unresolved home equity indemnification and repurchase claims PNC Financial Services December 31 2012 December 31 2011 2013 Form 10-K",
+    "latency_seconds": 5.085396933995071,
+    "input_tokens": 202,
+    "output_tokens": 45,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "92.0",
+  "gold_evidence_reference": "FinQA | pdf/PNC/2012/page_100.pdf | source_page=100 | context_id=finqa_test_ctx_141"
+}

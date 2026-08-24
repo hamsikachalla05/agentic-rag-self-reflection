@@ -1,0 +1,221 @@
+{
+  "question_id": "tatqa_test_9758",
+  "question": "What was the percentage growth in Altium Limited's total sales from 2018 to 2019, as reported in the 2019 Directors’ Report?",
+  "retrieval_query": "Altium Limited total sales percentage growth 2018 to 2019 2019 Directors' Report",
+  "metadata_filters": {
+    "company": "altium-limited"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "9b048dfc08e40405ae69dc2e057dd41a::p1::c0::e5b1382549",
+      "rank": 1,
+      "dense_score": 0.8184683918952942,
+      "bm25_score": 30.9855976588987,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "9b048dfc08e40405ae69dc2e057dd41a"
+    },
+    {
+      "chunk_id": "9b048dfc08e40405ae69dc2e057dd41a::p1::c1::0f9db97f5e",
+      "rank": 2,
+      "dense_score": 0.6853020787239075,
+      "bm25_score": 11.48197728787681,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "9b048dfc08e40405ae69dc2e057dd41a"
+    }
+  ],
+  "answer": "23%  \nSource: 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1 (Total Product Sales: 177,216 vs. 144,541, 23% increase)",
+  "latency_seconds": 35.6834,
+  "input_tokens": 3012,
+  "output_tokens": 107,
+  "total_tokens": 3119,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1607,
+  "llm_latency_seconds": 35.5203,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the percentage growth in Altium Limited's total sales from 2018 to 2019, as reported in the 2019 Directors’ Report?\nEvidence:\n[1] 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1\nAltium Limited\nDirectors’ Report\nConsolidated\n2019 2018 Change\nProduct Sales US$’000 US$’000 %\nAltium Designer licenses 65,157 53,088 23%\nAltium Designer subscriptions 58,959 53,701 10%\nOctopart search advertising 17,940 11,968 50%\nTASKING licenses 13,536 10,432 30%\nTASKING maintenance 8,324 4,706 67%\nAltium Nexus 6,277 3,769 67%\nService sales 3,337 4,624 (28%)\nOther 3,656 2,254 62%\nTotal Product Sales 177,216 144,541 23%\nOperational Highlights\nAltium achieved US$177.2 million in sales (a 23% increase) and growth rate. China results were outstanding with revenue at US$19.8\nUS$171.8 million in product revenue (a 23% increase). million, a growth rate of 37%. The Altium focus on our business in\n\n[2] 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1\n53,701 | 10%\nOctopart search advertising | 17,940 | 11,968 | 50%\nTASKING licenses | 13,536 | 10,432 | 30%\nTASKING maintenance | 8,324 | 4,706 | 67%\nAltium Nexus | 6,277 | 3,769 | 67%\nService sales | 3,337 | 4,624 | (28%)\nOther | 3,656 | 2,254 | 62%\nTotal Product Sales | 177,216 | 144,541 | 23%\n[/TABLE]\nLabel:",
+      "input_tokens": 657,
+      "output_tokens": 4,
+      "latency_seconds": 5.548146034001547
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the percentage growth in Altium Limited's total sales from 2018 to 2019, as reported in the 2019 Directors’ Report?\nEvidence:\n[1] 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1\nAltium Limited\nDirectors’ Report\nConsolidated\n2019 2018 Change\nProduct Sales US$’000 US$’000 %\nAltium Designer licenses 65,157 53,088 23%\nAltium Designer subscriptions 58,959 53,701 10%\nOctopart search advertising 17,940 11,968 50%\nTASKING licenses 13,536 10,432 30%\nTASKING maintenance 8,324 4,706 67%\nAltium Nexus 6,277 3,769 67%\nService sales 3,337 4,624 (28%)\nOther 3,656 2,254 62%\nTotal Product Sales 177,216 144,541 23%\nOperational Highlights\nAltium achieved US$177.2 million in sales (a 23% increase) and growth rate. China results were outstanding with revenue at US$19.8\nUS$171.8 million in product revenue (a 23% increase). million, a growth rate of 37%. The Altium focus on our business in\n\n[2] 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1\n53,701 | 10%\nOctopart search advertising | 17,940 | 11,968 | 50%\nTASKING licenses | 13,536 | 10,432 | 30%\nTASKING maintenance | 8,324 | 4,706 | 67%\nAltium Nexus | 6,277 | 3,769 | 67%\nService sales | 3,337 | 4,624 | (28%)\nOther | 3,656 | 2,254 | 62%\nTotal Product Sales | 177,216 | 144,541 | 23%\n[/TABLE]\nLabel:",
+      "input_tokens": 662,
+      "output_tokens": 3,
+      "latency_seconds": 5.3838731560026645
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the percentage growth in Altium Limited's total sales from 2018 to 2019, as reported in the 2019 Directors’ Report?\nEvidence:\n[1] 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1\nAltium Limited\nDirectors’ Report\nConsolidated\n2019 2018 Change\nProduct Sales US$’000 US$’000 %\nAltium Designer licenses 65,157 53,088 23%\nAltium Designer subscriptions 58,959 53,701 10%\nOctopart search advertising 17,940 11,968 50%\nTASKING licenses 13,536 10,432 30%\nTASKING maintenance 8,324 4,706 67%\nAltium Nexus 6,277 3,769 67%\nService sales 3,337 4,624 (28%)\nOther 3,656 2,254 62%\nTotal Product Sales 177,216 144,541 23%\nOperational Highlights\nAltium achieved US$177.2 million in sales (a 23% increase) and growth rate. China results were outstanding with revenue at US$19.8\nUS$171.8 million in product revenue (a 23% increase). million, a growth rate of 37%. The Altium focus on our business in\n\n[2] 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1\n53,701 | 10%\nOctopart search advertising | 17,940 | 11,968 | 50%\nTASKING licenses | 13,536 | 10,432 | 30%\nTASKING maintenance | 8,324 | 4,706 | 67%\nAltium Nexus | 6,277 | 3,769 | 67%\nService sales | 3,337 | 4,624 | (28%)\nOther | 3,656 | 2,254 | 62%\nTotal Product Sales | 177,216 | 144,541 | 23%\n[/TABLE]\nDraft:\n23%  \nSource: 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1 (Total Product Sales: 177,216 vs. 144,541, 23% increase)\nLabel:",
+      "input_tokens": 762,
+      "output_tokens": 3,
+      "latency_seconds": 6.092414056001871
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Altium Limited total sales percentage growth 2018 to 2019 2019 Directors' Report",
+      "filters": {
+        "company": "altium-limited"
+      },
+      "chunk_ids": [
+        "9b048dfc08e40405ae69dc2e057dd41a::p1::c0::e5b1382549",
+        "9b048dfc08e40405ae69dc2e057dd41a::p1::c1::0f9db97f5e"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "9b048dfc08e40405ae69dc2e057dd41a::p1::c0::e5b1382549",
+          "document_id": "9b048dfc08e40405ae69dc2e057dd41a",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "9b048dfc08e40405ae69dc2e057dd41a::p1::c0::e5b1382549",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "9b048dfc08e40405ae69dc2e057dd41a::p1::c1::0f9db97f5e",
+          "document_id": "9b048dfc08e40405ae69dc2e057dd41a",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 303,
+          "source_chunk_id": "9b048dfc08e40405ae69dc2e057dd41a::p1::c1::0f9db97f5e",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the percentage growth in Altium Limited's total sales from 2018 to 2019, as reported in the 2019 Directors’ Report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage growth in Altium Limited's total sales from 2018 to 2019, as reported in the 2019 Directors’ Report?\nRetrieval query:",
+  "query_formulation_raw_output": "Altium Limited total sales percentage growth 2018 to 2019 2019 Directors' Report",
+  "query_formulation_latency_seconds": 3.752,
+  "query_formulation_input_tokens": 181,
+  "query_formulation_output_tokens": 27,
+  "query_formulation_trace": {
+    "original_question": "What was the percentage growth in Altium Limited's total sales from 2018 to 2019, as reported in the 2019 Directors’ Report?",
+    "retrieval_query": "Altium Limited total sales percentage growth 2018 to 2019 2019 Directors' Report",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage growth in Altium Limited's total sales from 2018 to 2019, as reported in the 2019 Directors’ Report?\nRetrieval query:",
+    "raw_output": "Altium Limited total sales percentage growth 2018 to 2019 2019 Directors' Report",
+    "latency_seconds": 3.7519772329978878,
+    "input_tokens": 181,
+    "output_tokens": 27,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "23.0",
+  "gold_evidence_reference": "TAT-DQA | raw/9b048dfc08e40405ae69dc2e057dd41a.pdf | context_id=9b048dfc08e40405ae69dc2e057dd41a"
+}

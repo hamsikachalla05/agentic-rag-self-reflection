@@ -1,0 +1,190 @@
+{
+  "note": "T\u00b2-RAGBench does not include a program/derivation string. program_answer is the executed numeric result. original_answer is the source dataset's surface form. context is the gold page text.",
+  "canonical_gold_field": "program_answer",
+  "equivalent_surface_field": "original_answer",
+  "examples": {
+    "FinQA": {
+      "split": "test",
+      "n_printed": 5,
+      "rows": [
+        {
+          "id": "finqa_test_0",
+          "question": "What is the net change in Entergy's net revenue from 2014 to 2015, considering factors such as retail electric price, volume/weather, and the impact of the Louisiana business combination customer credits?",
+          "program_answer": "94.0",
+          "original_answer": "94",
+          "context": "entergy corporation and subsidiaries management 2019s financial discussion and analysis a result of the entergy louisiana and entergy gulf states louisiana business combination , results of operations for 2015 also include two items that occurred in october 2015 : 1 ) a deferred tax asset and resulting net increase in tax basis of approximately $ 334 million and 2 ) a regulatory liability of $ 107...",
+          "file_name": "pdf/ETR/2016/page_23.pdf",
+          "page_number": 23,
+          "context_id": "finqa_test_ctx_110",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "finqa_test_1",
+          "question": "As of December 26, 2015, what percentage of Intel's total facilities, measured in square feet, were leased?",
+          "program_answer": "0.14464285714285713",
+          "original_answer": "14%",
+          "context": "item 1b . unresolved staff comments not applicable . item 2 . properties as of december 26 , 2015 , our major facilities consisted of : ( square feet in millions ) united states countries total owned facilities1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30.7 17.2 47.9 leased facilities2 . . . . . . . . . . . . . . . . . . . ...",
+          "file_name": "pdf/INTC/2015/page_41.pdf",
+          "page_number": 41,
+          "context_id": "finqa_test_ctx_159",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "finqa_test_2",
+          "question": "What is the percentage change in the total notional amount of cash flow hedges denominated in euros, British pounds, and other currencies for Analog Devices as reported in their 2011 financial statements compared to the previous year?",
+          "program_answer": "0.09864188706218716",
+          "original_answer": "9.9%",
+          "context": "undesignated hedges was $ 41.2 million and $ 42.1 million , respectively . the fair value of these hedging instruments in the company 2019s consolidated balance sheets as of october 29 , 2011 and october 30 , 2010 was immaterial . interest rate exposure management 2014 on june 30 , 2009 , the company entered into interest rate swap transactions related to its outstanding 5.0% ( 5.0 % ) senior unse...",
+          "file_name": "pdf/ADI/2011/page_61.pdf",
+          "page_number": 61,
+          "context_id": "finqa_test_ctx_359",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "finqa_test_3",
+          "question": "What percentage of the total purchase price for the Metavante acquisition does the value of Metavante stock awards represent?",
+          "program_answer": "0.0289889679545346",
+          "original_answer": "2.9%",
+          "context": "chairman and a director of the board of fis as well as the chairman of the board of lps . effective march 1 , 2010 , mr . kennedy and the company mutually agreed that he would no longer serve as an executive officer and director of the company and its subsidiaries . the revenue and expense items with lps are , therefore , summarized above as related party activity through march 1 , 2010 . we belie...",
+          "file_name": "pdf/FIS/2010/page_70.pdf",
+          "page_number": 70,
+          "context_id": "finqa_test_ctx_77",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "finqa_test_4",
+          "question": "What was the difference in percentage cumulative total shareholder return on Masco common stock versus the S&P 500 Index for the five-year period ended 2017, given that a $100 investment in Masco common stock on December 31, 2012, would have grown to $318.46 by December 31, 2017, while the same investment in the S&P 500 Index would have grown to $206.49 over the same period?",
+          "program_answer": "1.1196999999999995",
+          "original_answer": null,
+          "context": "performance graph the table below compares the cumulative total shareholder return on our common stock with the cumulative total return of ( i ) the standard & poor's 500 composite stock index ( \"s&p 500 index\" ) , ( ii ) the standard & poor's industrials index ( \"s&p industrials index\" ) and ( iii ) the standard & poor's consumer durables & apparel index ( \"s&p consumer durables & apparel index\" ...",
+          "file_name": "pdf/MAS/2017/page_27.pdf",
+          "page_number": 27,
+          "context_id": "finqa_test_ctx_261",
+          "derivation_fields_present": []
+        }
+      ]
+    },
+    "ConvFinQA": {
+      "split": "turn_0",
+      "n_printed": 5,
+      "rows": [
+        {
+          "id": "convfinqa_0",
+          "question": "What was the net cash from operating activities for Jack Henry & Associates in the fiscal year ended June 30, 2009, as reported in their 2009 annual report?",
+          "program_answer": "206588.0",
+          "original_answer": "206588.0",
+          "context": "26 | 2009 annual report in fiscal 2008 , revenues in the credit union systems and services business segment increased 14% ( 14 % ) from fiscal 2007 . all revenue components within the segment experienced growth during fiscal 2008 . license revenue generated the largest dollar growth in revenue as episys ae , our flagship core processing system aimed at larger credit unions , experienced strong sal...",
+          "file_name": "pdf/JKHY/2009/page_28.pdf",
+          "page_number": "28",
+          "context_id": "convfinqa_ctx_99",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "convfinqa_1",
+          "question": "What were the revenues for Republic Services in 2008, as reflected in the unaudited pro forma financial information?",
+          "program_answer": "9362.2",
+          "original_answer": "9362.2",
+          "context": "substantially all of the goodwill and other intangible assets recorded related to the acquisition of allied are not deductible for tax purposes . pro forma information the consolidated financial statements presented for republic include the operating results of allied from the date of the acquisition . the following pro forma information is presented assuming the merger had been completed as of ja...",
+          "file_name": "pdf/RSG/2008/page_114.pdf",
+          "page_number": "114",
+          "context_id": "convfinqa_ctx_1449",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "convfinqa_2",
+          "question": "What was the total of net sales for Apple Inc. in 2001, as reported in the 2002 financial year?",
+          "program_answer": "5363.0",
+          "original_answer": "5363.0",
+          "context": "in a new business model such as the retail segment is inherently risky , particularly in light of the significant investment involved , the current economic climate , and the fixed nature of a substantial portion of the retail segment's operating expenses . results for this segment are dependent upon a number of risks and uncertainties , some of which are discussed below under the heading \"factors...",
+          "file_name": "pdf/AAPL/2002/page_23.pdf",
+          "page_number": "23",
+          "context_id": "convfinqa_ctx_713",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "convfinqa_3",
+          "question": "What was the percentage change in the cumulative total return on investment for United Parcel Service Inc.'s Class B common stock from December 31, 2004 to December 31, 2009, assuming a $100 initial investment?",
+          "program_answer": "-24.05",
+          "original_answer": "-24.05",
+          "context": "( 1 ) includes shares repurchased through our publicly announced share repurchase program and shares tendered to pay the exercise price and tax withholding on employee stock options . shareowner return performance graph the following performance graph and related information shall not be deemed 201csoliciting material 201d or to be 201cfiled 201d with the securities and exchange commission , nor s...",
+          "file_name": "pdf/UPS/2009/page_33.pdf",
+          "page_number": "33",
+          "context_id": "convfinqa_ctx_7",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "convfinqa_4",
+          "question": "What was the percentage change in the performance price of United Parcel Service's Class B common stock from December 31, 2004 to December 31, 2006, as reflected in the shareowner return performance graph?",
+          "program_answer": "-8.94",
+          "original_answer": "-8.94",
+          "context": "( 1 ) includes shares repurchased through our publicly announced share repurchase program and shares tendered to pay the exercise price and tax withholding on employee stock options . shareowner return performance graph the following performance graph and related information shall not be deemed 201csoliciting material 201d or to be 201cfiled 201d with the securities and exchange commission , nor s...",
+          "file_name": "pdf/UPS/2009/page_33.pdf",
+          "page_number": "33",
+          "context_id": "convfinqa_ctx_7",
+          "derivation_fields_present": []
+        }
+      ]
+    },
+    "TAT-DQA": {
+      "split": "test",
+      "n_printed": 5,
+      "rows": [
+        {
+          "id": "tatqa_test_9063",
+          "question": "In which year did the non-current assets in the Asia Pacific region exceed those of the previous year, as reported by Spirent Communications Plc in their 2019 financial report?",
+          "program_answer": "2019.0",
+          "original_answer": "['2019']",
+          "context": "3. Operating segments continued  |                      | 2019 $ million | 2018 $ million | |----------------------|---------------|---------------| | Americas             | 196.9         | 184.6         | | Asia Pacific         | 7.4           | 4.4           | | Europe, Middle East  | 11.5          | 5.1           | |                      | 215.8         | 194.1         |  Note 1. Non-current as...",
+          "file_name": "raw/01fdc2339641d7d4a8b06f32d937cffd.pdf",
+          "page_number": null,
+          "context_id": "01fdc2339641d7d4a8b06f32d937cffd",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "tatqa_test_9064",
+          "question": "What percentage of the total non-current assets in Europe, Middle East and Africa did the United Kingdom's $6.9 million non-current assets represent in 2019?",
+          "program_answer": "60.0",
+          "original_answer": "60",
+          "context": "3. Operating segments continued  |                      | 2019 $ million | 2018 $ million | |----------------------|---------------|---------------| | Americas             | 196.9         | 184.6         | | Asia Pacific         | 7.4           | 4.4           | | Europe, Middle East  | 11.5          | 5.1           | |                      | 215.8         | 194.1         |  Note 1. Non-current as...",
+          "file_name": "raw/01fdc2339641d7d4a8b06f32d937cffd.pdf",
+          "page_number": null,
+          "context_id": "01fdc2339641d7d4a8b06f32d937cffd",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "tatqa_test_9065",
+          "question": "What was the percentage change in Spirent Communications Plc's non-current assets in the Asia Pacific region from 2018 to 2019?",
+          "program_answer": "68.18",
+          "original_answer": "68.18",
+          "context": "3. Operating segments continued  |                      | 2019 $ million | 2018 $ million | |----------------------|---------------|---------------| | Americas             | 196.9         | 184.6         | | Asia Pacific         | 7.4           | 4.4           | | Europe, Middle East  | 11.5          | 5.1           | |                      | 215.8         | 194.1         |  Note 1. Non-current as...",
+          "file_name": "raw/01fdc2339641d7d4a8b06f32d937cffd.pdf",
+          "page_number": null,
+          "context_id": "01fdc2339641d7d4a8b06f32d937cffd",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "tatqa_test_9066",
+          "question": "What percentage change occurred in the number of BCE retail wireless subscribers from 2018 to 2019?",
+          "program_answer": "3.6",
+          "original_answer": "['+3.6%']",
+          "context": "FINANCIAL AND OPERATIONAL HIGHLIGHTS  Network and service innovation is driving customer growth  With the highest-performance networks and unmatched new services and content, Bell is building a better communications experience at home, in the workplace and on the go.  And customers are responding: In 2019, Bell welcomed the industry\u2019s highest number of new subscribers across the growth services of...",
+          "file_name": "raw/03a1386971da69e2cd625b87239694d4.pdf",
+          "page_number": null,
+          "context_id": "03a1386971da69e2cd625b87239694d4",
+          "derivation_fields_present": []
+        },
+        {
+          "id": "tatqa_test_9067",
+          "question": "In what year did BCE welcome the highest number of new subscribers for retail Internet, IPTV, and wireless, with a total of 16.29 million subscribers?",
+          "program_answer": "2019.0",
+          "original_answer": "['2019']",
+          "context": "FINANCIAL AND OPERATIONAL HIGHLIGHTS  Network and service innovation is driving customer growth  With the highest-performance networks and unmatched new services and content, Bell is building a better communications experience at home, in the workplace and on the go.  And customers are responding: In 2019, Bell welcomed the industry\u2019s highest number of new subscribers across the growth services of...",
+          "file_name": "raw/03a1386971da69e2cd625b87239694d4.pdf",
+          "page_number": null,
+          "context_id": "03a1386971da69e2cd625b87239694d4",
+          "derivation_fields_present": []
+        }
+      ]
+    }
+  }
+}

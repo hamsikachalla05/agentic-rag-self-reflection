@@ -1,0 +1,81 @@
+{
+  "question_id": "finqa_test_0",
+  "question": "What is the net change in Entergy's net revenue from 2014 to 2015, considering factors such as retail electric price, volume/weather, and the impact of the Louisiana business combination customer credits?",
+  "retrieval_query": "What is the net change in Entergy's net revenue from 2014 to 2015, considering factors such as retail electric price, volume/weather, and the impact of the Louisiana business combination customer credits?",
+  "metadata_filters": {
+    "company": "Entergy"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_110::p1::c1::ffcea524de",
+      "rank": 1,
+      "dense_score": 0.8218017220497131,
+      "bm25_score": 58.366020495369504,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_110"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_110::p1::c0::dd9e396181",
+      "rank": 2,
+      "dense_score": 0.7816838026046753,
+      "bm25_score": 43.4398719933236,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_110"
+    }
+  ],
+  "answer": "$5.4 million",
+  "latency_seconds": 0.7016,
+  "input_tokens": 313,
+  "output_tokens": 5,
+  "total_tokens": 318,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 1,
+  "retrieval_latency_seconds": 0.0138,
+  "llm_latency_seconds": 0.3302,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "/workspace/data/t2_ragbench/documents",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "/workspace/data/indexes/t2_ragbench_small",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "huggingface_local",
+    "llm_model": "google/flan-t5-base",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 96,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 400
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "94.0",
+  "gold_evidence_reference": "FinQA | pdf/ETR/2016/page_23.pdf | source_page=23 | context_id=finqa_test_ctx_110"
+}

@@ -1,0 +1,283 @@
+{
+  "question_id": "tatqa_test_9693",
+  "question": "What was the percentage change in Alarm.com's adjusted EBITDA from $93,081 thousand in 2018 to $108,307 thousand in 2019?",
+  "retrieval_query": "Alarm.com adjusted EBITDA percentage change from $93,081 thousand in 2018 to $108,307 thousand in 2019",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c1::b8d9ab438f",
+      "rank": 1,
+      "dense_score": 0.7771274447441101,
+      "bm25_score": 23.10211477185571,
+      "hybrid_score": 0.843772707638521,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "8c6114af79ce7f7775b24ac57a2c7b64"
+    },
+    {
+      "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p2::c3::b530941c0c",
+      "rank": 2,
+      "dense_score": 0.6887008547782898,
+      "bm25_score": 30.511029137359355,
+      "hybrid_score": 0.6228345525845796,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "8c6114af79ce7f7775b24ac57a2c7b64"
+    },
+    {
+      "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+      "rank": 3,
+      "dense_score": 0.74966961145401,
+      "bm25_score": null,
+      "hybrid_score": 0.4828842548160953,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "8c6114af79ce7f7775b24ac57a2c7b64"
+    },
+    {
+      "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c2::0114f67597",
+      "rank": 4,
+      "dense_score": null,
+      "bm25_score": 21.355006972298394,
+      "hybrid_score": 0.20693250305209548,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "8c6114af79ce7f7775b24ac57a2c7b64"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_426::p1::c3::5c20aec4e1",
+      "rank": 5,
+      "dense_score": 0.675837516784668,
+      "bm25_score": null,
+      "hybrid_score": 0.16796862784977468,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_426"
+    }
+  ],
+  "answer": "Percentage change in Alarm.com's adjusted EBITDA from 2018 to 2019:\n\nGiven:\n- 2018 adjusted EBITDA = $93,081 thousand\n- 2019 adjusted EBITDA = $108,307 thousand\n\nFormula for percentage change:\n((New value - Old value) / Old value) × 100\n\nCalculation:\n((108,307 - 93,081) / 93,081) × 100\n= (15,226 / 93,081) × 100\n≈ 16.36%\n\nSource: 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\n\n16.36",
+  "latency_seconds": 66.4584,
+  "input_tokens": 4245,
+  "output_tokens": 249,
+  "total_tokens": 4494,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NO_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.156,
+  "llm_latency_seconds": 66.2978,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NO_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NO_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the percentage change in Alarm.com's adjusted EBITDA from $93,081 thousand in 2018 to $108,307 thousand in 2019?\nLabel:",
+      "input_tokens": 111,
+      "output_tokens": 6,
+      "latency_seconds": 1.013977586000692
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the percentage change in Alarm.com's adjusted EBITDA from $93,081 thousand in 2018 to $108,307 thousand in 2019?\nEvidence:\n[1] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nhave three\nto five-year service contracts with our subscribers. Our SaaS and license revenue renewal rate is calculated across our entire\nsubscriber base on the Alarm.com platform, including subscribers whose contract with their service provider reached the end of its\ncontractual term during the measurement period, as well as subscribers whose contract with their service provider has not reached\nthe end of its contractual term during the measurement period, and is not intended to estimate the rate at which our subscribers\nrenew their contracts with our service provider partners. We believe that our SaaS and license revenue renewal rate allows us to\nmeasure our ability to retain and grow our\n\n[2] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.2\nnot reflect the potentially dilutive impact of equity-based compensation; (d) Adjusted EBITDA does not reflect tax payments that\nmay represent a reduction in cash available to us; and (e) other companies, including companies in our industry, may calculate\nAdjusted EBITDA or similarly titled measures differently, which reduces its usefulness as a comparative measure.\nBecause of these and other limitations, you should consider Adjusted EBITDA alongside our other GAAP-based financial\nperformance measures, our net income and our other GAAP financial results. The following table presents a reconciliation of\nAdjusted EBITDA to net income, the most directly comparable GAAP measure, for each of the\n\n[3] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nAs of December 31,\n2019 2018 2017 2016 2015\nBalance sheet and other data:\nCash and cash equivalents $ 119,629 $ 146,061 $ 96,329 $ 140,634 $ 128,358\nWorking capital 167,879 152,793 119,433 150,485 131,971\nTotal assets 557,799 440,985 371,641 261,245 226,095\nTotal long-term obligations 115,143 88,126 94,311 30,297 26,885\nTotal stockholders' equity 355,651 277,589 232,827 191,249 170,131\n_____________________\n(1) Excludes amortization and depreciation shown in operating expenses below.\n(2) Includes stock-based compensation expense as follows:\nYear Ended December 31,\n2019 2018 2017 2016 2015\nStock-based compensation expense data:\nSales and marketing $ 2,075 $ 1,196 $ 561 $ 536 $ 372\nGeneral and\n\n[4] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nunder our executive bonus plan.\nFurther, we believe the exclusion of certain expenses in calculating Adjusted EBITDA facilitates comparisons of our operating\nperformance on a period-to-period basis and, in the case of exclusion of acquisition-related expense and certain historical legal\nexpenses, excludes items that we do not consider to be indicative of our core operating performance. Accordingly, we believe that\nAdjusted EBITDA provides useful information to investors and others in understanding and evaluating our operating results in the\nsame manner as our management and board of directors.\nOur use of Adjusted EBITDA has limitations as an analytical tool, and you should not consider it in\n\n[5] convfinqa_ctx_426.pdf p.1\noffloatingrate\n$750millionof1.375%notesmaturinginJune2015(the notes(“2013FloatingRateNotes”),whichwererepaidinMay\n“2015Notes”)and$750millionof3.375%notesmaturingin 2013atmaturity.Netproceedsofthisofferingwereusedto\nJune2022(the“2022Notes”).Netproceedswereusedto fundtherepurchaseofBlackRock’sSeriesBPreferredfrom\nfundtherepurchaseofBlackRock’scommonstockand affiliatesofMerrillLynch&Co.,Inc.(“MerrillLynch”).Interest\nSeriesBPreferredfromBarclaysandaffiliatesandfor\nF-30\nLabel:",
+      "input_tokens": 1210,
+      "output_tokens": 3,
+      "latency_seconds": 10.028435755004466
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the percentage change in Alarm.com's adjusted EBITDA from $93,081 thousand in 2018 to $108,307 thousand in 2019?\nEvidence:\n[1] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nhave three\nto five-year service contracts with our subscribers. Our SaaS and license revenue renewal rate is calculated across our entire\nsubscriber base on the Alarm.com platform, including subscribers whose contract with their service provider reached the end of its\ncontractual term during the measurement period, as well as subscribers whose contract with their service provider has not reached\nthe end of its contractual term during the measurement period, and is not intended to estimate the rate at which our subscribers\nrenew their contracts with our service provider partners. We believe that our SaaS and license revenue renewal rate allows us to\nmeasure our ability to retain and grow our\n\n[2] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.2\nnot reflect the potentially dilutive impact of equity-based compensation; (d) Adjusted EBITDA does not reflect tax payments that\nmay represent a reduction in cash available to us; and (e) other companies, including companies in our industry, may calculate\nAdjusted EBITDA or similarly titled measures differently, which reduces its usefulness as a comparative measure.\nBecause of these and other limitations, you should consider Adjusted EBITDA alongside our other GAAP-based financial\nperformance measures, our net income and our other GAAP financial results. The following table presents a reconciliation of\nAdjusted EBITDA to net income, the most directly comparable GAAP measure, for each of the\n\n[3] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nAs of December 31,\n2019 2018 2017 2016 2015\nBalance sheet and other data:\nCash and cash equivalents $ 119,629 $ 146,061 $ 96,329 $ 140,634 $ 128,358\nWorking capital 167,879 152,793 119,433 150,485 131,971\nTotal assets 557,799 440,985 371,641 261,245 226,095\nTotal long-term obligations 115,143 88,126 94,311 30,297 26,885\nTotal stockholders' equity 355,651 277,589 232,827 191,249 170,131\n_____________________\n(1) Excludes amortization and depreciation shown in operating expenses below.\n(2) Includes stock-based compensation expense as follows:\nYear Ended December 31,\n2019 2018 2017 2016 2015\nStock-based compensation expense data:\nSales and marketing $ 2,075 $ 1,196 $ 561 $ 536 $ 372\nGeneral and\n\n[4] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nunder our executive bonus plan.\nFurther, we believe the exclusion of certain expenses in calculating Adjusted EBITDA facilitates comparisons of our operating\nperformance on a period-to-period basis and, in the case of exclusion of acquisition-related expense and certain historical legal\nexpenses, excludes items that we do not consider to be indicative of our core operating performance. Accordingly, we believe that\nAdjusted EBITDA provides useful information to investors and others in understanding and evaluating our operating results in the\nsame manner as our management and board of directors.\nOur use of Adjusted EBITDA has limitations as an analytical tool, and you should not consider it in\n\n[5] convfinqa_ctx_426.pdf p.1\noffloatingrate\n$750millionof1.375%notesmaturinginJune2015(the notes(“2013FloatingRateNotes”),whichwererepaidinMay\n“2015Notes”)and$750millionof3.375%notesmaturingin 2013atmaturity.Netproceedsofthisofferingwereusedto\nJune2022(the“2022Notes”).Netproceedswereusedto fundtherepurchaseofBlackRock’sSeriesBPreferredfrom\nfundtherepurchaseofBlackRock’scommonstockand affiliatesofMerrillLynch&Co.,Inc.(“MerrillLynch”).Interest\nSeriesBPreferredfromBarclaysandaffiliatesandfor\nF-30\nDraft:\nPercentage change in Alarm.com's adjusted EBITDA from 2018 to 2019:\n\nGiven:\n- 2018 adjusted EBITDA = $93,081 thousand\n- 2019 adjusted EBITDA = $108,307 thousand\n\nFormula for percentage change:\n((New value - Old value) / Old value) × 100\n\nCalculation:\n((108,307 - 93,081) / 93,081) × 100\n= (15,226 / 93,081) × 100\n≈ 16.36%\n\nSource: 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\n\n16.36\nLabel:",
+      "input_tokens": 1438,
+      "output_tokens": 3,
+      "latency_seconds": 12.255848940003489
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Alarm.com adjusted EBITDA percentage change from $93,081 thousand in 2018 to $108,307 thousand in 2019",
+      "filters": {},
+      "chunk_ids": [
+        "8c6114af79ce7f7775b24ac57a2c7b64::p1::c1::b8d9ab438f",
+        "8c6114af79ce7f7775b24ac57a2c7b64::p2::c3::b530941c0c",
+        "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+        "8c6114af79ce7f7775b24ac57a2c7b64::p1::c2::0114f67597",
+        "convfinqa_ctx_426::p1::c3::5c20aec4e1"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c1::b8d9ab438f",
+          "document_id": "8c6114af79ce7f7775b24ac57a2c7b64",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c1::b8d9ab438f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p2::c3::b530941c0c",
+          "document_id": "8c6114af79ce7f7775b24ac57a2c7b64",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p2::c3::b530941c0c",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "document_id": "8c6114af79ce7f7775b24ac57a2c7b64",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c2::0114f67597",
+          "document_id": "8c6114af79ce7f7775b24ac57a2c7b64",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c2::0114f67597",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_426::p1::c3::5c20aec4e1",
+          "document_id": "convfinqa_ctx_426",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 469,
+          "source_chunk_id": "convfinqa_ctx_426::p1::c3::5c20aec4e1",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the percentage change in Alarm.com's adjusted EBITDA from $93,081 thousand in 2018 to $108,307 thousand in 2019?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage change in Alarm.com's adjusted EBITDA from $93,081 thousand in 2018 to $108,307 thousand in 2019?\nRetrieval query:",
+  "query_formulation_raw_output": "Alarm.com adjusted EBITDA percentage change from $93,081 thousand in 2018 to $108,307 thousand in 2019",
+  "query_formulation_latency_seconds": 4.7445,
+  "query_formulation_input_tokens": 188,
+  "query_formulation_output_tokens": 40,
+  "query_formulation_trace": {
+    "original_question": "What was the percentage change in Alarm.com's adjusted EBITDA from $93,081 thousand in 2018 to $108,307 thousand in 2019?",
+    "retrieval_query": "Alarm.com adjusted EBITDA percentage change from $93,081 thousand in 2018 to $108,307 thousand in 2019",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage change in Alarm.com's adjusted EBITDA from $93,081 thousand in 2018 to $108,307 thousand in 2019?\nRetrieval query:",
+    "raw_output": "Alarm.com adjusted EBITDA percentage change from $93,081 thousand in 2018 to $108,307 thousand in 2019",
+    "latency_seconds": 4.744452861006721,
+    "input_tokens": 188,
+    "output_tokens": 40,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "16.36",
+  "gold_evidence_reference": "TAT-DQA | raw/8c6114af79ce7f7775b24ac57a2c7b64.pdf | context_id=8c6114af79ce7f7775b24ac57a2c7b64"
+}

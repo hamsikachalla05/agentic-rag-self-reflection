@@ -1,0 +1,287 @@
+{
+  "question_id": "finqa_test_247",
+  "question": "At the end of 2016, what was the average number of berths per ship in the global cruise fleet, given that the fleet consisted of approximately 298 ships and was served by around 503,000 berths?",
+  "retrieval_query": "average number of berths per ship global cruise fleet 2016 298 ships 503000 berths",
+  "metadata_filters": {
+    "year": 2016
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_268::p1::c0::aac7eb07c0",
+      "rank": 1,
+      "dense_score": 0.7865339517593384,
+      "bm25_score": 50.86241841648028,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_268"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_23::p1::c0::c34ccde5b7",
+      "rank": 2,
+      "dense_score": 0.5807486176490784,
+      "bm25_score": 2.4555246509674378,
+      "hybrid_score": 0.1443998697565389,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_23"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+      "rank": 3,
+      "dense_score": 0.5646872520446777,
+      "bm25_score": 5.812208371452185,
+      "hybrid_score": 0.13373160689961644,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_622"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_23::p1::c1::2c2455d215",
+      "rank": 4,
+      "dense_score": 0.5604028701782227,
+      "bm25_score": 4.963356011310477,
+      "hybrid_score": 0.11716843919785577,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_23"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_23::p1::c2::d46e28069c",
+      "rank": 5,
+      "dense_score": 0.5662016272544861,
+      "bm25_score": 2.5266032868107358,
+      "hybrid_score": 0.11138732351842198,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_23"
+    }
+  ],
+  "answer": "Average number of berths per ship = Total berths ÷ Number of ships  \n= 503,000 ÷ 298  \n= 1,688.59\n\nSource: convfinqa_ctx_23.pdf p.1 (contextual data provided in question)  \n\n1688.59",
+  "latency_seconds": 45.1374,
+  "input_tokens": 4438,
+  "output_tokens": 117,
+  "total_tokens": 4555,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NO_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1335,
+  "llm_latency_seconds": 45.0025,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NO_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NO_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: At the end of 2016, what was the average number of berths per ship in the global cruise fleet, given that the fleet consisted of approximately 298 ships and was served by around 503,000 berths?\nLabel:",
+      "input_tokens": 120,
+      "output_tokens": 6,
+      "latency_seconds": 0.9476088480005274
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: At the end of 2016, what was the average number of berths per ship in the global cruise fleet, given that the fleet consisted of approximately 298 ships and was served by around 503,000 berths?\nEvidence:\n[1] finqa_test_ctx_268.pdf p.1\nrates are still low and that a significant portion of cruise guests carried are first-time cruisers. We believe this presents\nan opportunity for long-term growth and a potential for increased profitability.\nThe following table details industry market penetration rates for North America, Europe and Asia/Pacific\ncomputed based on the number of annual cruise guests as a percentage of the total population:\nYear North America(1)(2) Europe(1)(3) Asia/Pacific(1)(4)\n2012 3.33% 1.21% 0.04%\n2013 3.32% 1.24% 0.05%\n2014 3.46% 1.23% 0.06%\n2015 3.36% 1.25% 0.08%\n2016 3.49% 1.24% 0.09%\n(1) Source: Our estimates are based on a combination of data obtained from publicly available sources including the Intern\n\n[2] convfinqa_ctx_23.pdf p.1\nPayments due by Period (in thousands)\nContractual Obligations Total 2017 2018 2019 2020 2021 Thereafter\nLong-term debt (1) $3,508,789 $ 203,244 $409,257 $366,456 $461,309 $329,339 $1,739,184\nLine of credit (2) 56,127 2,650 2,650 2,650 48,177 — —\nShare of unconsolidated joint ventures' debt (3) 91,235 2,444 28,466 5,737 11,598 1,236 41,754\nGround leases 311,120 10,745 5,721 5,758 5,793 5,822 277,281\nDevelopment and construction backlog costs(4) 344,700 331,553 13,147 — — — —\nOther 43,357 7,502 7,342 5,801 4,326 3,906 14,480\nTotal Contractual Obligations $4,355,328 $ 558,138 $466,583 $386,402 $531,203 $340,303 $2,072,699\n(1) Our long-term debt consists of both secured and unsecured debt and in\n\n[3] convfinqa_ctx_622.pdf p.1\nAs of December 31, 2016 and 2015, the notional amount of these derivativeswas approximately $143 million aaand\n$81 million, respectively, and the fair value was nominal. These derivatives have not been designated as hedges for accounting purposes.\nWe also use currency forward contracts to manage our exposure tofluctuations in costs caused by variations in Indian Rupee (\"IIINR\")\nexchange rates. As of December 31, 2016, the notional amount of these derivatives was approximately $7 million and the fair vallue was\nless than $1 million, which is included in Prepaid Expenses and Other Current Assets in the Consolidated Balance Sheets. TheseINR\nforward contracts are designated as cash flow hedges.\n\n[4] convfinqa_ctx_23.pdf p.1\nventure debt includes both principal and interest. Interest expense for variable rate debt was\ncalculated using the interest rate at December 31, 2016.\n(4) Represents estimated remaining costs on the completion of owned development projects and third-party construction projects.\nRelated Partyy TTTransactions\nWWWe provide property and asset management, leasing, construction and other tenant-related services to\nunconsolidated companies in which we have equity interests. For the years ended December 31, 2016, 2015 and\n2014 we earned management fees of $4.5 million,$6.8 million and $8.5 million, leasing fees of $2.4 million, $3.0\nmillion and $3.4 million and construction and development fees of\n\n[5] convfinqa_ctx_23.pdf p.1\n.4 million at December 31,\n2016. No future payments on these leases are material in any individual year.\nWWWe are subject to various legal proceedings and claims that arise in the ordinary course of business. In the opinion\nof management, the amount of any ultimate liability with respect to these actions is not expected to materially affffect\nour consolidated financial statements or results of operations.\nWWWe own certain parcels of land that are subject to special property tax assessments levied by quasi municipal\nentities.TTTo the extent that such special assessments are fixed and determinable, the discounted value of the full\n-50-\n\n[TABLE]\nLong-term debt | (1) |  | $ | 3,508,789 |  | $ |\nLabel:",
+      "input_tokens": 1341,
+      "output_tokens": 4,
+      "latency_seconds": 10.544264256997849
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: At the end of 2016, what was the average number of berths per ship in the global cruise fleet, given that the fleet consisted of approximately 298 ships and was served by around 503,000 berths?\nEvidence:\n[1] finqa_test_ctx_268.pdf p.1\nrates are still low and that a significant portion of cruise guests carried are first-time cruisers. We believe this presents\nan opportunity for long-term growth and a potential for increased profitability.\nThe following table details industry market penetration rates for North America, Europe and Asia/Pacific\ncomputed based on the number of annual cruise guests as a percentage of the total population:\nYear North America(1)(2) Europe(1)(3) Asia/Pacific(1)(4)\n2012 3.33% 1.21% 0.04%\n2013 3.32% 1.24% 0.05%\n2014 3.46% 1.23% 0.06%\n2015 3.36% 1.25% 0.08%\n2016 3.49% 1.24% 0.09%\n(1) Source: Our estimates are based on a combination of data obtained from publicly available sources including the Intern\n\n[2] convfinqa_ctx_23.pdf p.1\nPayments due by Period (in thousands)\nContractual Obligations Total 2017 2018 2019 2020 2021 Thereafter\nLong-term debt (1) $3,508,789 $ 203,244 $409,257 $366,456 $461,309 $329,339 $1,739,184\nLine of credit (2) 56,127 2,650 2,650 2,650 48,177 — —\nShare of unconsolidated joint ventures' debt (3) 91,235 2,444 28,466 5,737 11,598 1,236 41,754\nGround leases 311,120 10,745 5,721 5,758 5,793 5,822 277,281\nDevelopment and construction backlog costs(4) 344,700 331,553 13,147 — — — —\nOther 43,357 7,502 7,342 5,801 4,326 3,906 14,480\nTotal Contractual Obligations $4,355,328 $ 558,138 $466,583 $386,402 $531,203 $340,303 $2,072,699\n(1) Our long-term debt consists of both secured and unsecured debt and in\n\n[3] convfinqa_ctx_622.pdf p.1\nAs of December 31, 2016 and 2015, the notional amount of these derivativeswas approximately $143 million aaand\n$81 million, respectively, and the fair value was nominal. These derivatives have not been designated as hedges for accounting purposes.\nWe also use currency forward contracts to manage our exposure tofluctuations in costs caused by variations in Indian Rupee (\"IIINR\")\nexchange rates. As of December 31, 2016, the notional amount of these derivatives was approximately $7 million and the fair vallue was\nless than $1 million, which is included in Prepaid Expenses and Other Current Assets in the Consolidated Balance Sheets. TheseINR\nforward contracts are designated as cash flow hedges.\n\n[4] convfinqa_ctx_23.pdf p.1\nventure debt includes both principal and interest. Interest expense for variable rate debt was\ncalculated using the interest rate at December 31, 2016.\n(4) Represents estimated remaining costs on the completion of owned development projects and third-party construction projects.\nRelated Partyy TTTransactions\nWWWe provide property and asset management, leasing, construction and other tenant-related services to\nunconsolidated companies in which we have equity interests. For the years ended December 31, 2016, 2015 and\n2014 we earned management fees of $4.5 million,$6.8 million and $8.5 million, leasing fees of $2.4 million, $3.0\nmillion and $3.4 million and construction and development fees of\n\n[5] convfinqa_ctx_23.pdf p.1\n.4 million at December 31,\n2016. No future payments on these leases are material in any individual year.\nWWWe are subject to various legal proceedings and claims that arise in the ordinary course of business. In the opinion\nof management, the amount of any ultimate liability with respect to these actions is not expected to materially affffect\nour consolidated financial statements or results of operations.\nWWWe own certain parcels of land that are subject to special property tax assessments levied by quasi municipal\nentities.TTTo the extent that such special assessments are fixed and determinable, the discounted value of the full\n-50-\n\n[TABLE]\nLong-term debt | (1) |  | $ | 3,508,789 |  | $ |\nLabel:",
+      "input_tokens": 1346,
+      "output_tokens": 3,
+      "latency_seconds": 10.480025363001914
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "average number of berths per ship global cruise fleet 2016 298 ships 503000 berths",
+      "filters": {
+        "year": 2016
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_268::p1::c0::aac7eb07c0",
+        "convfinqa_ctx_23::p1::c0::c34ccde5b7",
+        "convfinqa_ctx_622::p1::c1::34c1846156",
+        "convfinqa_ctx_23::p1::c1::2c2455d215",
+        "convfinqa_ctx_23::p1::c2::d46e28069c"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_268::p1::c0::aac7eb07c0",
+          "document_id": "finqa_test_ctx_268",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_268::p1::c0::aac7eb07c0",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_23::p1::c0::c34ccde5b7",
+          "document_id": "convfinqa_ctx_23",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_23::p1::c0::c34ccde5b7",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "document_id": "convfinqa_ctx_622",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_23::p1::c1::2c2455d215",
+          "document_id": "convfinqa_ctx_23",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_23::p1::c1::2c2455d215",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_23::p1::c2::d46e28069c",
+          "document_id": "convfinqa_ctx_23",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_23::p1::c2::d46e28069c",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "At the end of 2016, what was the average number of berths per ship in the global cruise fleet, given that the fleet consisted of approximately 298 ships and was served by around 503,000 berths?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: At the end of 2016, what was the average number of berths per ship in the global cruise fleet, given that the fleet consisted of approximately 298 ships and was served by around 503,000 berths?\nRetrieval query:",
+  "query_formulation_raw_output": "average number of berths per ship global cruise fleet 2016 298 ships 503000 berths",
+  "query_formulation_latency_seconds": 3.2528,
+  "query_formulation_input_tokens": 197,
+  "query_formulation_output_tokens": 30,
+  "query_formulation_trace": {
+    "original_question": "At the end of 2016, what was the average number of berths per ship in the global cruise fleet, given that the fleet consisted of approximately 298 ships and was served by around 503,000 berths?",
+    "retrieval_query": "average number of berths per ship global cruise fleet 2016 298 ships 503000 berths",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: At the end of 2016, what was the average number of berths per ship in the global cruise fleet, given that the fleet consisted of approximately 298 ships and was served by around 503,000 berths?\nRetrieval query:",
+    "raw_output": "average number of berths per ship global cruise fleet 2016 298 ships 503000 berths",
+    "latency_seconds": 3.2527931650038227,
+    "input_tokens": 197,
+    "output_tokens": 30,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "1687.9194630872482",
+  "gold_evidence_reference": "FinQA | pdf/RCL/2016/page_6.pdf | source_page=6 | context_id=finqa_test_ctx_268"
+}

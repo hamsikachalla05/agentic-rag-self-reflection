@@ -1,0 +1,147 @@
+{
+  "question_id": "convfinqa_3341",
+  "question": "What is the combined fair value of BlackRock's 1.375% notes due in 2015 and 6.25% notes due in 2017 as of December 31, 2014?",
+  "retrieval_query": "BlackRock 1.375% notes due 2015 6.25% notes due 2017 fair value as of December 31 2014",
+  "metadata_filters": {
+    "company": "BlackRock"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_79::p1::c0::337b8e3676",
+      "rank": 1,
+      "dense_score": 0.6828438639640808,
+      "bm25_score": 9.218543001105099,
+      "hybrid_score": 0.8316284675372111,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_79"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_426::p1::c2::9fb02fb61e",
+      "rank": 2,
+      "dense_score": 0.6778687834739685,
+      "bm25_score": 10.014129475555555,
+      "hybrid_score": 0.8080613758229888,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_426"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_426::p1::c3::5c20aec4e1",
+      "rank": 3,
+      "dense_score": 0.6901117563247681,
+      "bm25_score": 6.236980713725384,
+      "hybrid_score": 0.8059741670763946,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_426"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_426::p1::c0::f3a2b6a48c",
+      "rank": 4,
+      "dense_score": 0.6632675528526306,
+      "bm25_score": 12.112161058356655,
+      "hybrid_score": 0.7310709487365771,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_426"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_426::p1::c1::470c416a15",
+      "rank": 5,
+      "dense_score": 0.6842894554138184,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.5416713607547695,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_426"
+    }
+  ],
+  "answer": "The fair value of BlackRock's 1.375% notes due in 2015 is $753 million (from table in convfinqa_ctx_426.pdf p.1).  \nThe fair value of BlackRock's 6.25% notes due in 2017 is $785 million (from same table).  \nCombined fair value = 753 + 785 = 1,538 million.\n\nAnswer: 1538\n\nSource: convfinqa_ctx_426.pdf p.1",
+  "latency_seconds": 35.1045,
+  "input_tokens": 1636,
+  "output_tokens": 167,
+  "total_tokens": 1803,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1458,
+  "llm_latency_seconds": 34.9578,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What is the combined fair value of BlackRock's 1.375% notes due in 2015 and 6.25% notes due in 2017 as of December 31, 2014?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the combined fair value of BlackRock's 1.375% notes due in 2015 and 6.25% notes due in 2017 as of December 31, 2014?\nRetrieval query:",
+  "query_formulation_raw_output": "BlackRock 1.375% notes due 2015 6.25% notes due 2017 fair value as of December 31 2014",
+  "query_formulation_latency_seconds": 5.8337,
+  "query_formulation_input_tokens": 196,
+  "query_formulation_output_tokens": 43,
+  "query_formulation_trace": {
+    "original_question": "What is the combined fair value of BlackRock's 1.375% notes due in 2015 and 6.25% notes due in 2017 as of December 31, 2014?",
+    "retrieval_query": "BlackRock 1.375% notes due 2015 6.25% notes due 2017 fair value as of December 31 2014",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the combined fair value of BlackRock's 1.375% notes due in 2015 and 6.25% notes due in 2017 as of December 31, 2014?\nRetrieval query:",
+    "raw_output": "BlackRock 1.375% notes due 2015 6.25% notes due 2017 fair value as of December 31 2014",
+    "latency_seconds": 5.833666922997509,
+    "input_tokens": 196,
+    "output_tokens": 43,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 29.1241,
+  "answer_generation_input_tokens": 1440,
+  "answer_generation_output_tokens": 124,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What is the combined fair value of BlackRock's 1.375% notes due in 2015 and 6.25% notes due in 2017 as of December 31, 2014?\nEvidence:\n[1] finqa_test_ctx_79.pdf p.1\ncomparableTreasurysecurity.Theunamortizeddiscount 13.CommitmentsandContingencies\nanddebtissuancecostsarebeingamortizedoverthe\nOperatingLeaseCommitments\nremainingtermofthe2022Notes.\nTheCompanyleasesitsprimaryofficespacesunder\n2021Notes.InMay2011,theCompanyissued$1.5billionin agreementsthatexpirethrough2035.Futureminimum\naggregateprincipalamountofunsecuredunsubordinated commitmentsundertheseoperatingleasesareasfollows:\nobligations.Thesenoteswereissuedastwoseparateseries\nofseniordebtsecurities,including$750millionof4.25%\n(inmillions)\nnotesmaturinginMay2021and$750millionoffloatingrate Year Amount\nnotes(“2013FloatingRateNotes”),whichwererepaidinMay\n2016 $ 134\n2013atmaturity.Netproceedsofthisoffer ...\n\n[2] convfinqa_ctx_426.pdf p.1\nindebtednesswhichmaturedinthe Notesandrelatedindenture,thatisthegreaterof(a)par\nfourthquarterof2014.Interestispayablesemi-annuallyin valueand(b)thepresentvalueoffuturepaymentsthatwill\narrearsonMarch18andSeptember18ofeachyear,or notbepaidbecauseofanearlyredemption,whichis\napproximately$35millionperyear.The2024Notesmaybe discountedatafixedspreadoveracomparableTreasury\nredeemedpriortomaturityatanytimeinwholeorinpartat security.The2015Notesand2022Noteswereissuedata\ntheoptionoftheCompanyata“make-whole”redemption discountof$5millionthatisbeingamortizedovertheterm\nprice.The2024Noteswereissuedatadiscountof$3million ofthenotes.TheCompanyincurredapproximately$7million\nthatisbeingamortizedoverthetermof ...\n\n[3] convfinqa_ctx_426.pdf p.1\noffloatingrate\n$750millionof1.375%notesmaturinginJune2015(the notes(“2013FloatingRateNotes”),whichwererepaidinMay\n“2015Notes”)and$750millionof3.375%notesmaturingin 2013atmaturity.Netproceedsofthisofferingwereusedto\nJune2022(the“2022Notes”).Netproceedswereusedto fundtherepurchaseofBlackRock’sSeriesBPreferredfrom\nfundtherepurchaseofBlackRock’scommonstockand affiliatesofMerrillLynch&Co.,Inc.(“MerrillLynch”).Interest\nSeriesBPreferredfromBarclaysandaffiliatesandfor\nF-30\n\n[4] convfinqa_ctx_426.pdf p.1\ncreditfacility,whichwasamendedin2013and2012.In investmentopportunities.AtDecember31,2014,the\nMarch2014,theCompany’screditfacilitywasfurther Companyhadnoamountoutstandingunderthe2014credit\namendedtoextendthematuritydatetoMarch2019.The facility.\namountoftheaggregatecommitmentis$3.990billion(the\nCommercialPaperProgram.OnOctober14,2009,BlackRock\n“2014creditfacility”).The2014creditfacilitypermitsthe\nestablishedacommercialpaperprogram(the“CPProgram”)\nCompanytorequestuptoanadditional$1.0billionof\nunderwhichtheCompanycouldissueunsecured\nborrowingcapacity,subjecttolendercreditapproval,\ncommercialpapernotes(the“CPNotes”)onaprivate\nincreasingtheoverallsizeofthe2014creditfacilitytoan\nplacementbasisuptoa ...\n\n[5] convfinqa_ctx_426.pdf p.1\nCPNotesoutstanding.\ncapitalforgeneralcorporatepurposesandfundsvarious\nLong-TermBorrowings\nThecarryingvalueandfairvalueoflong-termborrowingsestimatedusingmarketpricesatDecember31,2014includedthe\nfollowing:\nUnamortized\n(inmillions) MaturityAmount Discount CarryingValue FairValue\n1.375%Notesdue2015 $ 750 $ — $ 750 $ 753\n6.25%Notesdue2017 700 (1) 699 785\n5.00%Notesdue2019 1,000 (2) 998 1,134\n4.25%Notesdue2021 750 (3) 747 825\n3.375%Notesdue2022 750 (3) 747 783\n3.50%Notesdue2024 1,000 (3) 997 1,029\nTotalLong-termBorrowings $4,950 $(12) $4,938 $5,309\nLong-termborrowingsatDecember31,2013hadacarrying generalcorporatepurposes.Interestonthe2015Notesand\nvalueof$4.939billionandafairvalueof$5.284billion t ...\nAnswer:",
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "1538.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/BLK/2014/page_119.pdf | source_page=119 | context_id=convfinqa_ctx_426"
+}

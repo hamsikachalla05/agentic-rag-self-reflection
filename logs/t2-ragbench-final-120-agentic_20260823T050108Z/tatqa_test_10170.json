@@ -1,0 +1,147 @@
+{
+  "question_id": "tatqa_test_10170",
+  "question": "What was the percentage change in interest income for Nextdc-Ltd between the financial years ending 30 June 2018 and 30 June 2019?",
+  "retrieval_query": "Nextdc-Ltd interest income percentage change financial year ending 30 June 2018 to 30 June 2019",
+  "metadata_filters": {
+    "company": "Nextdc-Ltd"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c4::e15f7abdf6",
+      "rank": 1,
+      "dense_score": 0.7402292490005493,
+      "bm25_score": 24.34884873985972,
+      "hybrid_score": 1.0,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "f59bd5ee555e5cc8cf1d5223a0145049"
+    },
+    {
+      "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p1::c2::5497e8deb0",
+      "rank": 2,
+      "dense_score": 0.7192977666854858,
+      "bm25_score": 12.483426951995055,
+      "hybrid_score": 0.6699707709501687,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "f59bd5ee555e5cc8cf1d5223a0145049"
+    },
+    {
+      "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c5::833e085906",
+      "rank": 3,
+      "dense_score": 0.6362327933311462,
+      "bm25_score": 11.763054372464161,
+      "hybrid_score": 0.3091535863928557,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "f59bd5ee555e5cc8cf1d5223a0145049"
+    },
+    {
+      "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p1::c1::abd0eec23f",
+      "rank": 4,
+      "dense_score": 0.6180286407470703,
+      "bm25_score": 10.613247331003576,
+      "hybrid_score": 0.2097788886973012,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "f59bd5ee555e5cc8cf1d5223a0145049"
+    },
+    {
+      "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p1::c0::d5b5ded5cc",
+      "rank": 5,
+      "dense_score": 0.6436111330986023,
+      "bm25_score": 4.802976173044444,
+      "hybrid_score": 0.19745832371047486,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "f59bd5ee555e5cc8cf1d5223a0145049"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 16.825,
+  "input_tokens": 1563,
+  "output_tokens": 42,
+  "total_tokens": 1605,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1339,
+  "llm_latency_seconds": 16.6906,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the percentage change in interest income for Nextdc-Ltd between the financial years ending 30 June 2018 and 30 June 2019?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage change in interest income for Nextdc-Ltd between the financial years ending 30 June 2018 and 30 June 2019?\nRetrieval query:",
+  "query_formulation_raw_output": "Nextdc-Ltd interest income percentage change financial year ending 30 June 2018 to 30 June 2019",
+  "query_formulation_latency_seconds": 4.3987,
+  "query_formulation_input_tokens": 181,
+  "query_formulation_output_tokens": 31,
+  "query_formulation_trace": {
+    "original_question": "What was the percentage change in interest income for Nextdc-Ltd between the financial years ending 30 June 2018 and 30 June 2019?",
+    "retrieval_query": "Nextdc-Ltd interest income percentage change financial year ending 30 June 2018 to 30 June 2019",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage change in interest income for Nextdc-Ltd between the financial years ending 30 June 2018 and 30 June 2019?\nRetrieval query:",
+    "raw_output": "Nextdc-Ltd interest income percentage change financial year ending 30 June 2018 to 30 June 2019",
+    "latency_seconds": 4.398742116001813,
+    "input_tokens": 181,
+    "output_tokens": 31,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 12.2918,
+  "answer_generation_input_tokens": 1382,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the percentage change in interest income for Nextdc-Ltd between the financial years ending 30 June 2018 and 30 June 2019?\nEvidence:\n[1] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nLandholderdutyonacquisitionofAPDCproperties(includedinOfficeand\nadministrativeexpenses) 4(c) (3,498) -\nThe Group applies the practical expedient in the revenue standard and does not disclose information about the\ntransaction price allocated to remaining performance obligations on contracts that are unsatisfied, as the Group\nhas the right to consideration from its customers in an amount that corresponds directly with the value to the (a) Financecosts\ncustomeroftheGroup’sservicestodate.Thisisappliedtoallitsdatacentreservicesrevenue,onthebasisthat\nIncludedinfinancecostsarecostsrelatedtounsecurednotesonissueandinterestexpenseonleaseliabilities.\ntheupfrontprojectfeesarenotasignificantportionofeac ...\n\n[2] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.1\nased losspershare\norincreasedearningspershare.\nNEXTDC Limited and controlled entities | FY19 Annual Report 62 NEXTDC Limited and controlled entities | FY19 Annual Report 63\n\n[TABLE]\n |  | Financial Report\nNotestotheConsolidatedFinancialReport\n30June2019\n(continued)\n2 Earnings/(loss) per share (continued)\n(f) Earnings/(loss)pershare\n(i) Basicearnings/(loss)pershare\n• theprofitattributabletoownersoftheGroup,excludinganycostsofservicingequityotherthanordinary\nshares\n• bytheweightedaveragenumberofordinarysharesoutstandingduringthefinancialyear.\n(ii) Dilutedearnings/(loss)pershare\nDilutedearnings/(loss)pershareadjuststhefiguresusedinthedeterminationofbasicearningspersharetotake\ninto account the w ...\n\n[3] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nfinance cost, until 18 October 2018, when the three leases were derecognised on\nacquisition.\nRevenueismeasuredatthefairvalueoftheconsiderationreceivedorreceivable.\n(c) APDCacquisitioncosts\nTheGroup recognises revenue when the amount of revenue can be reliably measured, it isprobable that future A number of acquisition related costs were incurred as a result of the acquisition of APDC. Refer note 26 for\neconomicbenefitswillflowtotheentityandspecificcriteriahavebeenmetforeachoftheactivitiesasdescribed furtherdetails.\nbelow. The Group bases its estimates on historical results, taking into consideration the type of customer, the\ntypeoftransactionandthespecificsofeacharrangement.\nRevenueisrecogni ...\n\n[4] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.1\n8,969\nDILUTEDEARNINGS/(LOSS)PERSHARE\nProfit/(loss)fromcontinuingoperationsattributabletotheequityholdersofthe\nGroup:\nUsedincalculatingdilutedearnings/(loss)pershare (9,819) 6,639 Totalrevenue 179,260 161,529\nProfit/(loss)attributabletotheequityholdersoftheGroupusedin\ncalculatingdilutedEPS (9,819) 6,639\nGainonextinguishmentofB1lease 1,068 -\n(d) Weightedaveragenumberofsharesusedasthedenominator\nGainonextinguishmentofAPDCleases 1,291 -\n2019 2018 Otheritemsincludedingains 675 284\nNumberof Numberof TotalOtherincome 3,034 284\nshares shares space\n(a) Revenuerecognisedinrelationtocontractliabilities\nWeightedaveragenumberofordinarysharesusedasthedenominatorin\ncalculationbasicearnings/(loss)pershare 3 ...\n\n[5] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.1\nFinancial Report Financial Report\nNotestotheConsolidatedFinancialReport NotestotheConsolidatedFinancialReport\n30June2019 30June2019\n(continued) (continued)\n2 Earnings/(loss) per share 2 Earnings/(loss) per share (continued)\n(f) Earnings/(loss)pershare\n(a) Earnings/(loss)pershare\n(i) Basicearnings/(loss)pershare\n30June 30June\n• theprofitattributabletoownersoftheGroup,excludinganycostsofservicingequityotherthanordinary\n2019 2018\nshares\nCents Cents\n• bytheweightedaveragenumberofordinarysharesoutstandingduringthefinancialyear.\nTotalbasicEPSattributabletotheordinaryequityholdersoftheGroup (2.86) 2.25\n(ii) Dilutedearnings/(loss)pershare\n(b) Dilutedearnings/(loss)pershare Dilutedearnings/(loss)pers ...\nAnswer:",
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "42.26",
+  "gold_evidence_reference": "TAT-DQA | raw/f59bd5ee555e5cc8cf1d5223a0145049.pdf | context_id=f59bd5ee555e5cc8cf1d5223a0145049"
+}

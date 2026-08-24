@@ -1,0 +1,441 @@
+{
+  "question_id": "convfinqa_2407",
+  "question": "What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?",
+  "retrieval_query": "Kellogg's net cash from operations 2012 property additions percentage",
+  "metadata_filters": {
+    "year": 2012
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+      "rank": 1,
+      "dense_score": 0.6512865424156189,
+      "bm25_score": 5.646860398024502,
+      "hybrid_score": 0.7556231848753516,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_476"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+      "rank": 2,
+      "dense_score": 0.6470111012458801,
+      "bm25_score": 5.887011333880687,
+      "hybrid_score": 0.7385208817149529,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_476"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_981::p1::c1::4884531fd6",
+      "rank": 3,
+      "dense_score": 0.6310081481933594,
+      "bm25_score": 6.34185212907234,
+      "hybrid_score": 0.6459837778686577,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_981"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1766::p1::c1::d6faca7d97",
+      "rank": 4,
+      "dense_score": 0.6752734780311584,
+      "bm25_score": null,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1766"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_317::p1::c0::13a2d0412f",
+      "rank": 5,
+      "dense_score": 0.6224237084388733,
+      "bm25_score": 6.610175249924808,
+      "hybrid_score": 0.5979073166823623,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_317"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 70.5642,
+  "input_tokens": 11161,
+  "output_tokens": 71,
+  "total_tokens": 11232,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "IRRELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1678,
+  "llm_latency_seconds": 80.9701,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\n\n[2] convfinqa_ctx_476.pdf p.1\ndo so, CME invests such contributions in assets that equivalents in the consolidated balance sheets. The\nmirrortheassumedinvestmentchoices.Thebalances balances in these plans are subject to the claims of\nin these plans are subject to the claims of general generalcreditorsofCOMEX.\ncreditors of the exchange and totaled $38.7 million\nand $31.8 million at December 31, 2012 and 2011 13.COMMITMENTS\nrespectively. Although the value of the plans is\nOperating Leases. CME Group has entered into\nrecorded as an asset in marketable securities in the\nvarious non-cancellable operating lease agreements,\nconsolidated balance sheets, there is an equal and\nwiththemostsignificantbeingasfollows:\noffsetting liabi\n\n[3] convfinqa_ctx_981.pdf p.1\natJanuary1 .............................................. $102 $107\nAccrualsforwarrantiesissuedduringtheyear ........................ 42 28\nAccrualsrelatedtopre-existingwarranties ........................... 16 8\nSettlementsmade(incashorkind)duringtheyear .................... (38) (38)\nOther,net(includingcurrencytranslation) ........................... (4) (3)\nBalanceatDecember31 ........................................... $118 $102\nInvestments. With respect to the Company’s investments in private equity funds, the Company\nhad, at December 31, 2012, commitments to contribute up to $19 million of additional capital to such\nfunds representing the Company’s aggregate capital commitment to such\n\n[4] convfinqa_ctx_1766.pdf p.1\n,we\nNetcashprovidedbyoperating afloatingrateobligationthroughmaturity. wouldcontinuetohaveaccesstoourFour-YearCredit\nactivities $1,758 $1,595 $1,008 Totaldebtwas$7.9billionatyear-end2012and Agreement,whichexpiresinMarch2015.Thissource\nAdditionstoproperties (533) (594) (474) InApril2010,ourboardofdirectorsapprovedashare ofliquidityisunusedandavailableonanunsecured\n$6.0billionatyear-end2011.\nCashflow $1,225 $1,001 $ 534 repurchaseprogramauthorizingustorepurchase basis,althoughwedonotcurrentlyplantouseit.\nyear-over-yearchange 22.4% 87.5% sharesofourcommonstockamountingto$2.5billion\nInMarch2012,weenteredintointerestrateswapson\nduring2010through2012.Thisthreeyear Capitalandcreditmarkets,including\n\n[5] finqa_test_ctx_317.pdf p.1\nTable of Contents\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.\nPrice Range\nOur common stock trades on the NASDAQ Global Select Market under the symbol “MKTX”. The range of closing price information for\nour common stock, as reported by NASDAQ, was as follows:\n2012: High Low\nJanuary 1, 2012 to March 31, 2012 $3 7.79 $2 9.26\nApril 1, 2012 to June 30, 2012 $3 7.65 $2 6.22\nJuly 1, 2012 to September 30, 2012 $3 4.00 $2 6.88\nOctober 1, 2012 to December 31, 2012 $3 5.30 $2 9.00\n2011: High Low\nJanuary 1, 2011 to March 31, 2011 $2 4.19 $1 9.78\nApril 1, 2011 to June 30, 2011 $2 5.22 $2 1.00\nJuly 1, 2011 to September 30, 20\nLabel:",
+      "input_tokens": 1190,
+      "output_tokens": 5,
+      "latency_seconds": 9.717475420002302
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\n\n[2] convfinqa_ctx_476.pdf p.1\ndo so, CME invests such contributions in assets that equivalents in the consolidated balance sheets. The\nmirrortheassumedinvestmentchoices.Thebalances balances in these plans are subject to the claims of\nin these plans are subject to the claims of general generalcreditorsofCOMEX.\ncreditors of the exchange and totaled $38.7 million\nand $31.8 million at December 31, 2012 and 2011 13.COMMITMENTS\nrespectively. Although the value of the plans is\nOperating Leases. CME Group has entered into\nrecorded as an asset in marketable securities in the\nvarious non-cancellable operating lease agreements,\nconsolidated balance sheets, there is an equal and\nwiththemostsignificantbeingasfollows:\noffsetting liabi\n\n[3] convfinqa_ctx_981.pdf p.1\natJanuary1 .............................................. $102 $107\nAccrualsforwarrantiesissuedduringtheyear ........................ 42 28\nAccrualsrelatedtopre-existingwarranties ........................... 16 8\nSettlementsmade(incashorkind)duringtheyear .................... (38) (38)\nOther,net(includingcurrencytranslation) ........................... (4) (3)\nBalanceatDecember31 ........................................... $118 $102\nInvestments. With respect to the Company’s investments in private equity funds, the Company\nhad, at December 31, 2012, commitments to contribute up to $19 million of additional capital to such\nfunds representing the Company’s aggregate capital commitment to such\n\n[4] convfinqa_ctx_1766.pdf p.1\n,we\nNetcashprovidedbyoperating afloatingrateobligationthroughmaturity. wouldcontinuetohaveaccesstoourFour-YearCredit\nactivities $1,758 $1,595 $1,008 Totaldebtwas$7.9billionatyear-end2012and Agreement,whichexpiresinMarch2015.Thissource\nAdditionstoproperties (533) (594) (474) InApril2010,ourboardofdirectorsapprovedashare ofliquidityisunusedandavailableonanunsecured\n$6.0billionatyear-end2011.\nCashflow $1,225 $1,001 $ 534 repurchaseprogramauthorizingustorepurchase basis,althoughwedonotcurrentlyplantouseit.\nyear-over-yearchange 22.4% 87.5% sharesofourcommonstockamountingto$2.5billion\nInMarch2012,weenteredintointerestrateswapson\nduring2010through2012.Thisthreeyear Capitalandcreditmarkets,including\n\n[5] finqa_test_ctx_317.pdf p.1\nTable of Contents\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.\nPrice Range\nOur common stock trades on the NASDAQ Global Select Market under the symbol “MKTX”. The range of closing price information for\nour common stock, as reported by NASDAQ, was as follows:\n2012: High Low\nJanuary 1, 2012 to March 31, 2012 $3 7.79 $2 9.26\nApril 1, 2012 to June 30, 2012 $3 7.65 $2 6.22\nJuly 1, 2012 to September 30, 2012 $3 4.00 $2 6.88\nOctober 1, 2012 to December 31, 2012 $3 5.30 $2 9.00\n2011: High Low\nJanuary 1, 2011 to March 31, 2011 $2 4.19 $1 9.78\nApril 1, 2011 to June 30, 2011 $2 5.22 $2 1.00\nJuly 1, 2011 to September 30, 20\nLabel:",
+      "input_tokens": 1195,
+      "output_tokens": 3,
+      "latency_seconds": 9.480993491000845
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\n\n[2] convfinqa_ctx_476.pdf p.1\nlity. The investment results of these\n• In April 2012, the company sold two\nplans have no impact on net income as the\nbuildings in Chicago at 141 W. Jackson and\ninvestment results are recorded in equal amounts to\nleased back a portion of the property. The\nboth investment income and compensation and\noperating lease, which has an initial lease\nbenefitsexpense.\nterm ending on April 30, 2027, contains four\nSupplemental Savings Plan. CME maintains a\nconsecutiverenewaloptionsforfiveyears.\nsupplemental plan to provide benefits for\n• InJanuary2011,thecompanyenteredintoan\nemployeeswhohavebeenimpactedbystatutory\noperating lease for office space in London.\nlimits under the provisions of the qualified\nT\n\n[3] convfinqa_ctx_981.pdf p.1\natJanuary1 .............................................. $102 $107\nAccrualsforwarrantiesissuedduringtheyear ........................ 42 28\nAccrualsrelatedtopre-existingwarranties ........................... 16 8\nSettlementsmade(incashorkind)duringtheyear .................... (38) (38)\nOther,net(includingcurrencytranslation) ........................... (4) (3)\nBalanceatDecember31 ........................................... $118 $102\nInvestments. With respect to the Company’s investments in private equity funds, the Company\nhad, at December 31, 2012, commitments to contribute up to $19 million of additional capital to such\nfunds representing the Company’s aggregate capital commitment to such\n\n[4] convfinqa_ctx_1766.pdf p.1\n,we\nNetcashprovidedbyoperating afloatingrateobligationthroughmaturity. wouldcontinuetohaveaccesstoourFour-YearCredit\nactivities $1,758 $1,595 $1,008 Totaldebtwas$7.9billionatyear-end2012and Agreement,whichexpiresinMarch2015.Thissource\nAdditionstoproperties (533) (594) (474) InApril2010,ourboardofdirectorsapprovedashare ofliquidityisunusedandavailableonanunsecured\n$6.0billionatyear-end2011.\nCashflow $1,225 $1,001 $ 534 repurchaseprogramauthorizingustorepurchase basis,althoughwedonotcurrentlyplantouseit.\nyear-over-yearchange 22.4% 87.5% sharesofourcommonstockamountingto$2.5billion\nInMarch2012,weenteredintointerestrateswapson\nduring2010through2012.Thisthreeyear Capitalandcreditmarkets,including\n\n[5] finqa_test_ctx_317.pdf p.1\nTable of Contents\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.\nPrice Range\nOur common stock trades on the NASDAQ Global Select Market under the symbol “MKTX”. The range of closing price information for\nour common stock, as reported by NASDAQ, was as follows:\n2012: High Low\nJanuary 1, 2012 to March 31, 2012 $3 7.79 $2 9.26\nApril 1, 2012 to June 30, 2012 $3 7.65 $2 6.22\nJuly 1, 2012 to September 30, 2012 $3 4.00 $2 6.88\nOctober 1, 2012 to December 31, 2012 $3 5.30 $2 9.00\n2011: High Low\nJanuary 1, 2011 to March 31, 2011 $2 4.19 $1 9.78\nApril 1, 2011 to June 30, 2011 $2 5.22 $2 1.00\nJuly 1, 2011 to September 30, 20\nLabel:",
+      "input_tokens": 1206,
+      "output_tokens": 3,
+      "latency_seconds": 8.113669134996599
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\n\n[2] convfinqa_ctx_476.pdf p.1\nheinitialleaseterm,whichbecameeffective\npension and savings plan. Employees in this\nonJanuary20,2011,terminatesonMarch24,\nplan are subject to the vesting requirements of\n2026, with an option to terminate without\ntheunderlyingqualifiedplans.\npenaltyinJanuary2021.\nDeferred Compensation Plan. A deferred\ncompensation plan is maintained by CME, • In July 2008, the company renegotiated the\nunder which eligible officers and members of operating lease for its headquarters at 20\nthe board of directors may contribute a South Wacker Drive in Chicago. The lease,\npercentage of their compensation and defer which has an initial term ending on\nincome taxes thereon until the time of November30,2022,containst\n\n[3] convfinqa_ctx_981.pdf p.1\natJanuary1 .............................................. $102 $107\nAccrualsforwarrantiesissuedduringtheyear ........................ 42 28\nAccrualsrelatedtopre-existingwarranties ........................... 16 8\nSettlementsmade(incashorkind)duringtheyear .................... (38) (38)\nOther,net(includingcurrencytranslation) ........................... (4) (3)\nBalanceatDecember31 ........................................... $118 $102\nInvestments. With respect to the Company’s investments in private equity funds, the Company\nhad, at December 31, 2012, commitments to contribute up to $19 million of additional capital to such\nfunds representing the Company’s aggregate capital commitment to such\n\n[4] convfinqa_ctx_1766.pdf p.1\n,we\nNetcashprovidedbyoperating afloatingrateobligationthroughmaturity. wouldcontinuetohaveaccesstoourFour-YearCredit\nactivities $1,758 $1,595 $1,008 Totaldebtwas$7.9billionatyear-end2012and Agreement,whichexpiresinMarch2015.Thissource\nAdditionstoproperties (533) (594) (474) InApril2010,ourboardofdirectorsapprovedashare ofliquidityisunusedandavailableonanunsecured\n$6.0billionatyear-end2011.\nCashflow $1,225 $1,001 $ 534 repurchaseprogramauthorizingustorepurchase basis,althoughwedonotcurrentlyplantouseit.\nyear-over-yearchange 22.4% 87.5% sharesofourcommonstockamountingto$2.5billion\nInMarch2012,weenteredintointerestrateswapson\nduring2010through2012.Thisthreeyear Capitalandcreditmarkets,including\n\n[5] finqa_test_ctx_317.pdf p.1\nTable of Contents\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.\nPrice Range\nOur common stock trades on the NASDAQ Global Select Market under the symbol “MKTX”. The range of closing price information for\nour common stock, as reported by NASDAQ, was as follows:\n2012: High Low\nJanuary 1, 2012 to March 31, 2012 $3 7.79 $2 9.26\nApril 1, 2012 to June 30, 2012 $3 7.65 $2 6.22\nJuly 1, 2012 to September 30, 2012 $3 4.00 $2 6.88\nOctober 1, 2012 to December 31, 2012 $3 5.30 $2 9.00\n2011: High Low\nJanuary 1, 2011 to March 31, 2011 $2 4.19 $1 9.78\nApril 1, 2011 to June 30, 2011 $2 5.22 $2 1.00\nJuly 1, 2011 to September 30, 20\nLabel:",
+      "input_tokens": 1197,
+      "output_tokens": 3,
+      "latency_seconds": 8.090462232998107
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\n\n[2] convfinqa_ctx_476.pdf p.1\nheinitialleaseterm,whichbecameeffective\npension and savings plan. Employees in this\nonJanuary20,2011,terminatesonMarch24,\nplan are subject to the vesting requirements of\n2026, with an option to terminate without\ntheunderlyingqualifiedplans.\npenaltyinJanuary2021.\nDeferred Compensation Plan. A deferred\ncompensation plan is maintained by CME, • In July 2008, the company renegotiated the\nunder which eligible officers and members of operating lease for its headquarters at 20\nthe board of directors may contribute a South Wacker Drive in Chicago. The lease,\npercentage of their compensation and defer which has an initial term ending on\nincome taxes thereon until the time of November30,2022,containst\n\n[3] convfinqa_ctx_981.pdf p.1\natJanuary1 .............................................. $102 $107\nAccrualsforwarrantiesissuedduringtheyear ........................ 42 28\nAccrualsrelatedtopre-existingwarranties ........................... 16 8\nSettlementsmade(incashorkind)duringtheyear .................... (38) (38)\nOther,net(includingcurrencytranslation) ........................... (4) (3)\nBalanceatDecember31 ........................................... $118 $102\nInvestments. With respect to the Company’s investments in private equity funds, the Company\nhad, at December 31, 2012, commitments to contribute up to $19 million of additional capital to such\nfunds representing the Company’s aggregate capital commitment to such\n\n[4] convfinqa_ctx_1766.pdf p.1\n,we\nNetcashprovidedbyoperating afloatingrateobligationthroughmaturity. wouldcontinuetohaveaccesstoourFour-YearCredit\nactivities $1,758 $1,595 $1,008 Totaldebtwas$7.9billionatyear-end2012and Agreement,whichexpiresinMarch2015.Thissource\nAdditionstoproperties (533) (594) (474) InApril2010,ourboardofdirectorsapprovedashare ofliquidityisunusedandavailableonanunsecured\n$6.0billionatyear-end2011.\nCashflow $1,225 $1,001 $ 534 repurchaseprogramauthorizingustorepurchase basis,althoughwedonotcurrentlyplantouseit.\nyear-over-yearchange 22.4% 87.5% sharesofourcommonstockamountingto$2.5billion\nInMarch2012,weenteredintointerestrateswapson\nduring2010through2012.Thisthreeyear Capitalandcreditmarkets,including\n\n[5] finqa_test_ctx_317.pdf p.1\nTable of Contents\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.\nPrice Range\nOur common stock trades on the NASDAQ Global Select Market under the symbol “MKTX”. The range of closing price information for\nour common stock, as reported by NASDAQ, was as follows:\n2012: High Low\nJanuary 1, 2012 to March 31, 2012 $3 7.79 $2 9.26\nApril 1, 2012 to June 30, 2012 $3 7.65 $2 6.22\nJuly 1, 2012 to September 30, 2012 $3 4.00 $2 6.88\nOctober 1, 2012 to December 31, 2012 $3 5.30 $2 9.00\n2011: High Low\nJanuary 1, 2011 to March 31, 2011 $2 4.19 $1 9.78\nApril 1, 2011 to June 30, 2011 $2 5.22 $2 1.00\nJuly 1, 2011 to September 30, 20\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1238,
+      "output_tokens": 4,
+      "latency_seconds": 9.937254645003122
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\n\n[2] convfinqa_ctx_476.pdf p.1\nheinitialleaseterm,whichbecameeffective\npension and savings plan. Employees in this\nonJanuary20,2011,terminatesonMarch24,\nplan are subject to the vesting requirements of\n2026, with an option to terminate without\ntheunderlyingqualifiedplans.\npenaltyinJanuary2021.\nDeferred Compensation Plan. A deferred\ncompensation plan is maintained by CME, • In July 2008, the company renegotiated the\nunder which eligible officers and members of operating lease for its headquarters at 20\nthe board of directors may contribute a South Wacker Drive in Chicago. The lease,\npercentage of their compensation and defer which has an initial term ending on\nincome taxes thereon until the time of November30,2022,containst\n\n[3] convfinqa_ctx_981.pdf p.1\natJanuary1 .............................................. $102 $107\nAccrualsforwarrantiesissuedduringtheyear ........................ 42 28\nAccrualsrelatedtopre-existingwarranties ........................... 16 8\nSettlementsmade(incashorkind)duringtheyear .................... (38) (38)\nOther,net(includingcurrencytranslation) ........................... (4) (3)\nBalanceatDecember31 ........................................... $118 $102\nInvestments. With respect to the Company’s investments in private equity funds, the Company\nhad, at December 31, 2012, commitments to contribute up to $19 million of additional capital to such\nfunds representing the Company’s aggregate capital commitment to such\n\n[4] convfinqa_ctx_1766.pdf p.1\n,we\nNetcashprovidedbyoperating afloatingrateobligationthroughmaturity. wouldcontinuetohaveaccesstoourFour-YearCredit\nactivities $1,758 $1,595 $1,008 Totaldebtwas$7.9billionatyear-end2012and Agreement,whichexpiresinMarch2015.Thissource\nAdditionstoproperties (533) (594) (474) InApril2010,ourboardofdirectorsapprovedashare ofliquidityisunusedandavailableonanunsecured\n$6.0billionatyear-end2011.\nCashflow $1,225 $1,001 $ 534 repurchaseprogramauthorizingustorepurchase basis,althoughwedonotcurrentlyplantouseit.\nyear-over-yearchange 22.4% 87.5% sharesofourcommonstockamountingto$2.5billion\nInMarch2012,weenteredintointerestrateswapson\nduring2010through2012.Thisthreeyear Capitalandcreditmarkets,including\n\n[5] finqa_test_ctx_317.pdf p.1\nTable of Contents\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.\nPrice Range\nOur common stock trades on the NASDAQ Global Select Market under the symbol “MKTX”. The range of closing price information for\nour common stock, as reported by NASDAQ, was as follows:\n2012: High Low\nJanuary 1, 2012 to March 31, 2012 $3 7.79 $2 9.26\nApril 1, 2012 to June 30, 2012 $3 7.65 $2 6.22\nJuly 1, 2012 to September 30, 2012 $3 4.00 $2 6.88\nOctober 1, 2012 to December 31, 2012 $3 5.30 $2 9.00\n2011: High Low\nJanuary 1, 2011 to March 31, 2011 $2 4.19 $1 9.78\nApril 1, 2011 to June 30, 2011 $2 5.22 $2 1.00\nJuly 1, 2011 to September 30, 20\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 1221,
+      "output_tokens": 11,
+      "latency_seconds": 10.57966608699644
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nEvidence:\n[1] convfinqa_ctx_476.pdf p.1\n.9\nrespectively.Assetswithafairvalueof$18.4million 2017............................ 29.3\nand $17.7 million have been allocated to this plan at Thereafter ....................... 152.9\nDecember 31, 2012 and 2011, respectively, and are\nTotal ........................... $297.8\nincluded in marketable securities and cash and cash\n90\n\n[2] convfinqa_ctx_476.pdf p.1\nheinitialleaseterm,whichbecameeffective\npension and savings plan. Employees in this\nonJanuary20,2011,terminatesonMarch24,\nplan are subject to the vesting requirements of\n2026, with an option to terminate without\ntheunderlyingqualifiedplans.\npenaltyinJanuary2021.\nDeferred Compensation Plan. A deferred\ncompensation plan is maintained by CME, • In July 2008, the company renegotiated the\nunder which eligible officers and members of operating lease for its headquarters at 20\nthe board of directors may contribute a South Wacker Drive in Chicago. The lease,\npercentage of their compensation and defer which has an initial term ending on\nincome taxes thereon until the time of November30,2022,containst\n\n[3] convfinqa_ctx_981.pdf p.1\natJanuary1 .............................................. $102 $107\nAccrualsforwarrantiesissuedduringtheyear ........................ 42 28\nAccrualsrelatedtopre-existingwarranties ........................... 16 8\nSettlementsmade(incashorkind)duringtheyear .................... (38) (38)\nOther,net(includingcurrencytranslation) ........................... (4) (3)\nBalanceatDecember31 ........................................... $118 $102\nInvestments. With respect to the Company’s investments in private equity funds, the Company\nhad, at December 31, 2012, commitments to contribute up to $19 million of additional capital to such\nfunds representing the Company’s aggregate capital commitment to such\n\n[4] convfinqa_ctx_1766.pdf p.1\n,we\nNetcashprovidedbyoperating afloatingrateobligationthroughmaturity. wouldcontinuetohaveaccesstoourFour-YearCredit\nactivities $1,758 $1,595 $1,008 Totaldebtwas$7.9billionatyear-end2012and Agreement,whichexpiresinMarch2015.Thissource\nAdditionstoproperties (533) (594) (474) InApril2010,ourboardofdirectorsapprovedashare ofliquidityisunusedandavailableonanunsecured\n$6.0billionatyear-end2011.\nCashflow $1,225 $1,001 $ 534 repurchaseprogramauthorizingustorepurchase basis,althoughwedonotcurrentlyplantouseit.\nyear-over-yearchange 22.4% 87.5% sharesofourcommonstockamountingto$2.5billion\nInMarch2012,weenteredintointerestrateswapson\nduring2010through2012.Thisthreeyear Capitalandcreditmarkets,including\n\n[5] finqa_test_ctx_317.pdf p.1\nTable of Contents\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.\nPrice Range\nOur common stock trades on the NASDAQ Global Select Market under the symbol “MKTX”. The range of closing price information for\nour common stock, as reported by NASDAQ, was as follows:\n2012: High Low\nJanuary 1, 2012 to March 31, 2012 $3 7.79 $2 9.26\nApril 1, 2012 to June 30, 2012 $3 7.65 $2 6.22\nJuly 1, 2012 to September 30, 2012 $3 4.00 $2 6.88\nOctober 1, 2012 to December 31, 2012 $3 5.30 $2 9.00\n2011: High Low\nJanuary 1, 2011 to March 31, 2011 $2 4.19 $1 9.78\nApril 1, 2011 to June 30, 2011 $2 5.22 $2 1.00\nJuly 1, 2011 to September 30, 20\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1238,
+      "output_tokens": 4,
+      "latency_seconds": 0.7266897990048165
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Kellogg's net cash from operations 2012 property additions percentage",
+      "filters": {
+        "year": 2012
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+        "convfinqa_ctx_476::p1::c0::0979ba2979",
+        "convfinqa_ctx_981::p1::c1::4884531fd6",
+        "convfinqa_ctx_1766::p1::c1::d6faca7d97",
+        "finqa_test_ctx_317::p1::c0::13a2d0412f"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 329,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_981::p1::c1::4884531fd6",
+          "document_id": "convfinqa_ctx_981",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_981::p1::c1::4884531fd6",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1766::p1::c1::d6faca7d97",
+          "document_id": "convfinqa_ctx_1766",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1766::p1::c1::d6faca7d97",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_317::p1::c0::13a2d0412f",
+          "document_id": "finqa_test_ctx_317",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_317::p1::c0::13a2d0412f",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 329,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_981::p1::c1::4884531fd6",
+          "document_id": "convfinqa_ctx_981",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_981::p1::c1::4884531fd6",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1766::p1::c1::d6faca7d97",
+          "document_id": "convfinqa_ctx_1766",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1766::p1::c1::d6faca7d97",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_317::p1::c0::13a2d0412f",
+          "document_id": "finqa_test_ctx_317",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_317::p1::c0::13a2d0412f",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 329,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c2::6d3b6f3263",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "document_id": "convfinqa_ctx_476",
+          "rank": 2,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "convfinqa_ctx_476::p1::c0::0979ba2979",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_981::p1::c1::4884531fd6",
+          "document_id": "convfinqa_ctx_981",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_981::p1::c1::4884531fd6",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1766::p1::c1::d6faca7d97",
+          "document_id": "convfinqa_ctx_1766",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1766::p1::c1::d6faca7d97",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_317::p1::c0::13a2d0412f",
+          "document_id": "finqa_test_ctx_317",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_317::p1::c0::13a2d0412f",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nRetrieval query:",
+  "query_formulation_raw_output": "Kellogg's net cash from operations 2012 property additions percentage",
+  "query_formulation_latency_seconds": 2.514,
+  "query_formulation_input_tokens": 170,
+  "query_formulation_output_tokens": 16,
+  "query_formulation_trace": {
+    "original_question": "What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?",
+    "retrieval_query": "Kellogg's net cash from operations 2012 property additions percentage",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of Kellogg's net cash from operations in 2012 is retained as cash flow after accounting for property additions?\nRetrieval query:",
+    "raw_output": "Kellogg's net cash from operations 2012 property additions percentage",
+    "latency_seconds": 2.513970969004731,
+    "input_tokens": 170,
+    "output_tokens": 16,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "0.69681",
+  "gold_evidence_reference": "ConvFinQA | pdf/K/2012/page_44.pdf | source_page=44 | context_id=convfinqa_ctx_1766"
+}

@@ -1,0 +1,361 @@
+{
+  "question_id": "tatqa_test_9162",
+  "question": "What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?",
+  "retrieval_query": "Interface and Medical segments net sales average combined fiscal years ended April 28, 2018 and April 29, 2017",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c0::fdaf9de5b3",
+      "rank": 1,
+      "dense_score": 0.8453546762466431,
+      "bm25_score": 48.20530273024311,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac"
+    },
+    {
+      "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+      "rank": 2,
+      "dense_score": 0.7697420120239258,
+      "bm25_score": 36.600982462446396,
+      "hybrid_score": 0.6299658180015376,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac"
+    },
+    {
+      "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+      "rank": 3,
+      "dense_score": 0.7355283498764038,
+      "bm25_score": null,
+      "hybrid_score": 0.25545728229772435,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d9929fa56778e739f071d0d586171994"
+    },
+    {
+      "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+      "rank": 4,
+      "dense_score": 0.718986988067627,
+      "bm25_score": null,
+      "hybrid_score": 0.20356438976046673,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7c1a0fac586f2de1336256cc0bf74e68"
+    },
+    {
+      "chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927",
+      "rank": 5,
+      "dense_score": 0.7015634775161743,
+      "bm25_score": 16.101592693767053,
+      "hybrid_score": 0.1814390861441687,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d80ea6ee60a1b1f11e971791784d7d6c"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 117.0124,
+  "input_tokens": 12686,
+  "output_tokens": 73,
+  "total_tokens": 12759,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 8,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1414,
+  "llm_latency_seconds": 116.8674,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?\nEvidence:\n[1] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nTable of Contents\nInterface Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 73.2 $ 91.5 $ (18.3) (20.0)%\nGross Profit $ 14.3 $ 17.8 $ (3.5) (19.7)%\nIncome from Operations $ 6.0 $ 4.0 $ 2.0 50.0 %\nApril 28, April 29,\nPercent of sales: 2018 2017\nNet Sales 100.0% 100.0%\nGross Profit 19.5% 19.5%\nIncome from Operations 8.2% 4.4%\nNet Sales. Interface segment net sales decreased $18.3 million, or 20.0%, to $73.2 million in fiscal 2018, compared to\n$91.5 million in fiscal 2017. Net sales decreased in North America by $15.1 million to $70.9 million in fiscal 2018, primarily\nd\n\n[2] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nConnectivity\nbusiness, lower legal expenses and lower stock-based compensation expense, partially offset with lower sales volumes and\npricing reductions on certain products.\nMedical Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 0.3 $ 0.2 $ 0.1 50.0 %\nGross Profit $ (3.5) $ (3.1) $ (0.4) (12.9)%\nLoss from Operations $ (11.4) $ (8.5) $ (2.9) (34.1)%\nNet Sales. The Medical segment had minimal net sales in both periods from newly launched products.\nGross Profit. Medical segment gross profit was a loss of $3.5 million in fiscal 2018 compared to a loss of $3.1\nmillion in\n\n[3] d9929fa56778e739f071d0d586171994.pdf p.1\nSummarized financial information by segment for fiscal 2019, 2018, and 2017, based on our internal management system and as\nutilized by our Chief Operating Decision Maker (CODM), is as follows (in millions):\nYears Ended July 27, 2019 July 28, 2018 July 29, 2017\nRevenue:\nAmericas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,927 $ 29,070 $ 28,351\nEMEA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13,100 12,425 12,004\nAPJC. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7,877 7,834 7,650\nTot\n\n[4] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[5] d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\nLiaison in Fiscal 2019, as well as Hightail, Guidance Software Inc. (Guidance), and Covisint Corporation (Covisint), which\nwere acquired during Fiscal 2018.\nOperating Expenses\nYear Ended June 30,\nChange Change\nincrease increase\n(In thousands) 2019 (decrease) 2018 (decrease) 2017\nResearch and development $ 321,836 $ (1,073) $ 322,909 $ 41,694 $ 281,215\nSales and marketing 518,035 (11,106) 529,141 84,687 444,454\nGeneral and administrative 207,909 2,682 205,227 34,874 170,353\nDepreciation 97,716 10,773 86,943 22,625 64,318\nAmortization of acquired customer-based intangible assets 189,827 5,709 184,118 33,276 150,842\nSpecial charges (recoveries) 35,719 6,508 29,211 (34,407) 63,618\nTotal operatin\nLabel:",
+      "input_tokens": 1820,
+      "output_tokens": 4,
+      "latency_seconds": 16.08956997799396
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?\nEvidence:\n[1] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nTable of Contents\nInterface Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 73.2 $ 91.5 $ (18.3) (20.0)%\nGross Profit $ 14.3 $ 17.8 $ (3.5) (19.7)%\nIncome from Operations $ 6.0 $ 4.0 $ 2.0 50.0 %\nApril 28, April 29,\nPercent of sales: 2018 2017\nNet Sales 100.0% 100.0%\nGross Profit 19.5% 19.5%\nIncome from Operations 8.2% 4.4%\nNet Sales. Interface segment net sales decreased $18.3 million, or 20.0%, to $73.2 million in fiscal 2018, compared to\n$91.5 million in fiscal 2017. Net sales decreased in North America by $15.1 million to $70.9 million in fiscal 2018, primarily\nd\n\n[2] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nConnectivity\nbusiness, lower legal expenses and lower stock-based compensation expense, partially offset with lower sales volumes and\npricing reductions on certain products.\nMedical Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 0.3 $ 0.2 $ 0.1 50.0 %\nGross Profit $ (3.5) $ (3.1) $ (0.4) (12.9)%\nLoss from Operations $ (11.4) $ (8.5) $ (2.9) (34.1)%\nNet Sales. The Medical segment had minimal net sales in both periods from newly launched products.\nGross Profit. Medical segment gross profit was a loss of $3.5 million in fiscal 2018 compared to a loss of $3.1\nmillion in\n\n[3] d9929fa56778e739f071d0d586171994.pdf p.1\nSummarized financial information by segment for fiscal 2019, 2018, and 2017, based on our internal management system and as\nutilized by our Chief Operating Decision Maker (CODM), is as follows (in millions):\nYears Ended July 27, 2019 July 28, 2018 July 29, 2017\nRevenue:\nAmericas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,927 $ 29,070 $ 28,351\nEMEA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13,100 12,425 12,004\nAPJC. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7,877 7,834 7,650\nTot\n\n[4] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[5] d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\nLiaison in Fiscal 2019, as well as Hightail, Guidance Software Inc. (Guidance), and Covisint Corporation (Covisint), which\nwere acquired during Fiscal 2018.\nOperating Expenses\nYear Ended June 30,\nChange Change\nincrease increase\n(In thousands) 2019 (decrease) 2018 (decrease) 2017\nResearch and development $ 321,836 $ (1,073) $ 322,909 $ 41,694 $ 281,215\nSales and marketing 518,035 (11,106) 529,141 84,687 444,454\nGeneral and administrative 207,909 2,682 205,227 34,874 170,353\nDepreciation 97,716 10,773 86,943 22,625 64,318\nAmortization of acquired customer-based intangible assets 189,827 5,709 184,118 33,276 150,842\nSpecial charges (recoveries) 35,719 6,508 29,211 (34,407) 63,618\nTotal operatin\nLabel:",
+      "input_tokens": 1825,
+      "output_tokens": 3,
+      "latency_seconds": 15.62758036699961
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?\nEvidence:\n[1] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nTable of Contents\nInterface Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 73.2 $ 91.5 $ (18.3) (20.0)%\nGross Profit $ 14.3 $ 17.8 $ (3.5) (19.7)%\nIncome from Operations $ 6.0 $ 4.0 $ 2.0 50.0 %\nApril 28, April 29,\nPercent of sales: 2018 2017\nNet Sales 100.0% 100.0%\nGross Profit 19.5% 19.5%\nIncome from Operations 8.2% 4.4%\nNet Sales. Interface segment net sales decreased $18.3 million, or 20.0%, to $73.2 million in fiscal 2018, compared to\n$91.5 million in fiscal 2017. Net sales decreased in North America by $15.1 million to $70.9 million in fiscal 2018, primarily\nd\n\n[2] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nConnectivity\nbusiness, lower legal expenses and lower stock-based compensation expense, partially offset with lower sales volumes and\npricing reductions on certain products.\nMedical Segment Results\nBelow is a table summarizing results for the fiscal years ended:\nApril 28, April 29,\n(Dollars in Millions) 2018 2017 Net Change ($) Net Change (%)\nNet Sales $ 0.3 $ 0.2 $ 0.1 50.0 %\nGross Profit $ (3.5) $ (3.1) $ (0.4) (12.9)%\nLoss from Operations $ (11.4) $ (8.5) $ (2.9) (34.1)%\nNet Sales. The Medical segment had minimal net sales in both periods from newly launched products.\nGross Profit. Medical segment gross profit was a loss of $3.5 million in fiscal 2018 compared to a loss of $3.1\nmillion in\n\n[3] d9929fa56778e739f071d0d586171994.pdf p.1\nSummarized financial information by segment for fiscal 2019, 2018, and 2017, based on our internal management system and as\nutilized by our Chief Operating Decision Maker (CODM), is as follows (in millions):\nYears Ended July 27, 2019 July 28, 2018 July 29, 2017\nRevenue:\nAmericas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,927 $ 29,070 $ 28,351\nEMEA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13,100 12,425 12,004\nAPJC. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7,877 7,834 7,650\nTot\n\n[4] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[5] d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\nLiaison in Fiscal 2019, as well as Hightail, Guidance Software Inc. (Guidance), and Covisint Corporation (Covisint), which\nwere acquired during Fiscal 2018.\nOperating Expenses\nYear Ended June 30,\nChange Change\nincrease increase\n(In thousands) 2019 (decrease) 2018 (decrease) 2017\nResearch and development $ 321,836 $ (1,073) $ 322,909 $ 41,694 $ 281,215\nSales and marketing 518,035 (11,106) 529,141 84,687 444,454\nGeneral and administrative 207,909 2,682 205,227 34,874 170,353\nDepreciation 97,716 10,773 86,943 22,625 64,318\nAmortization of acquired customer-based intangible assets 189,827 5,709 184,118 33,276 150,842\nSpecial charges (recoveries) 35,719 6,508 29,211 (34,407) 63,618\nTotal operatin\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1866,
+      "output_tokens": 4,
+      "latency_seconds": 16.040638438003953
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?\nEvidence:\n[1] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nue to the exit of our Connectivity business in fiscal 2017. Net sales in Europe decreased $1.7 million to $0.3 million in fiscal\n2018 due to lower sales volumes and price reductions on certain of our data solutions products. Net sales in Asia decreased\n$1.5 million to $2.0 million in fiscal 2018 primarily due to lower sales volumes of legacy products.\nGross Profit. Interface segment gross profit decreased $3.5 million, or 19.7%, to $14.3 million in fiscal 2018,\ncompared to $17.8 million in fiscal 2017. The decrease was due to lower sales volumes as a result of the exit of our\nConnectivity business in fiscal 2017 and price reductions on certain products.\nIncome from Operations. Interface segm\n\n[2] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nfiscal 2017. The increased loss primarily relates to the vertical manufacturing integration of some key components\nand research efforts to expand the product offerings.\nLoss from Operations. Medical segment loss from operations increased $2.9 million to $11.4 million in fiscal\n2018 compared to $8.5 million in fiscal 2017. The increased loss relates to higher outside professional fees, research and\ndevelopment and marketing expenses in fiscal 2018.\nFinancial Condition, Liquidity and Capital Resources\nWe believe our current world-wide cash balances together with expected future cash flows to be generated from\noperations and our committed credit facility will be sufficient to support current o\n\n[3] d9929fa56778e739f071d0d586171994.pdf p.1\nSummarized financial information by segment for fiscal 2019, 2018, and 2017, based on our internal management system and as\nutilized by our Chief Operating Decision Maker (CODM), is as follows (in millions):\nYears Ended July 27, 2019 July 28, 2018 July 29, 2017\nRevenue:\nAmericas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,927 $ 29,070 $ 28,351\nEMEA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13,100 12,425 12,004\nAPJC. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7,877 7,834 7,650\nTot\n\n[4] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[5] d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\nLiaison in Fiscal 2019, as well as Hightail, Guidance Software Inc. (Guidance), and Covisint Corporation (Covisint), which\nwere acquired during Fiscal 2018.\nOperating Expenses\nYear Ended June 30,\nChange Change\nincrease increase\n(In thousands) 2019 (decrease) 2018 (decrease) 2017\nResearch and development $ 321,836 $ (1,073) $ 322,909 $ 41,694 $ 281,215\nSales and marketing 518,035 (11,106) 529,141 84,687 444,454\nGeneral and administrative 207,909 2,682 205,227 34,874 170,353\nDepreciation 97,716 10,773 86,943 22,625 64,318\nAmortization of acquired customer-based intangible assets 189,827 5,709 184,118 33,276 150,842\nSpecial charges (recoveries) 35,719 6,508 29,211 (34,407) 63,618\nTotal operatin\nLabel:",
+      "input_tokens": 1650,
+      "output_tokens": 3,
+      "latency_seconds": 14.315105758003483
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?\nEvidence:\n[1] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nue to the exit of our Connectivity business in fiscal 2017. Net sales in Europe decreased $1.7 million to $0.3 million in fiscal\n2018 due to lower sales volumes and price reductions on certain of our data solutions products. Net sales in Asia decreased\n$1.5 million to $2.0 million in fiscal 2018 primarily due to lower sales volumes of legacy products.\nGross Profit. Interface segment gross profit decreased $3.5 million, or 19.7%, to $14.3 million in fiscal 2018,\ncompared to $17.8 million in fiscal 2017. The decrease was due to lower sales volumes as a result of the exit of our\nConnectivity business in fiscal 2017 and price reductions on certain products.\nIncome from Operations. Interface segm\n\n[2] 1380a11c3e0c1ebff7c19af6d1c014ac.pdf p.1\nfiscal 2017. The increased loss primarily relates to the vertical manufacturing integration of some key components\nand research efforts to expand the product offerings.\nLoss from Operations. Medical segment loss from operations increased $2.9 million to $11.4 million in fiscal\n2018 compared to $8.5 million in fiscal 2017. The increased loss relates to higher outside professional fees, research and\ndevelopment and marketing expenses in fiscal 2018.\nFinancial Condition, Liquidity and Capital Resources\nWe believe our current world-wide cash balances together with expected future cash flows to be generated from\noperations and our committed credit facility will be sufficient to support current o\n\n[3] d9929fa56778e739f071d0d586171994.pdf p.1\nSummarized financial information by segment for fiscal 2019, 2018, and 2017, based on our internal management system and as\nutilized by our Chief Operating Decision Maker (CODM), is as follows (in millions):\nYears Ended July 27, 2019 July 28, 2018 July 29, 2017\nRevenue:\nAmericas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $ 30,927 $ 29,070 $ 28,351\nEMEA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13,100 12,425 12,004\nAPJC. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7,877 7,834 7,650\nTot\n\n[4] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[5] d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\nLiaison in Fiscal 2019, as well as Hightail, Guidance Software Inc. (Guidance), and Covisint Corporation (Covisint), which\nwere acquired during Fiscal 2018.\nOperating Expenses\nYear Ended June 30,\nChange Change\nincrease increase\n(In thousands) 2019 (decrease) 2018 (decrease) 2017\nResearch and development $ 321,836 $ (1,073) $ 322,909 $ 41,694 $ 281,215\nSales and marketing 518,035 (11,106) 529,141 84,687 444,454\nGeneral and administrative 207,909 2,682 205,227 34,874 170,353\nDepreciation 97,716 10,773 86,943 22,625 64,318\nAmortization of acquired customer-based intangible assets 189,827 5,709 184,118 33,276 150,842\nSpecial charges (recoveries) 35,719 6,508 29,211 (34,407) 63,618\nTotal operatin\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1691,
+      "output_tokens": 4,
+      "latency_seconds": 14.766578299000685
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Interface and Medical segments net sales average combined fiscal years ended April 28, 2018 and April 29, 2017",
+      "filters": {},
+      "chunk_ids": [
+        "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c0::fdaf9de5b3",
+        "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+        "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+        "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+        "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c0::fdaf9de5b3",
+          "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c0::fdaf9de5b3",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+          "document_id": "7c1a0fac586f2de1336256cc0bf74e68",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927",
+          "document_id": "d80ea6ee60a1b1f11e971791784d7d6c",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c0::fdaf9de5b3",
+          "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c0::fdaf9de5b3",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "document_id": "1380a11c3e0c1ebff7c19af6d1c014ac",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "1380a11c3e0c1ebff7c19af6d1c014ac::p1::c1::7a6f44aa1e",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+          "document_id": "d9929fa56778e739f071d0d586171994",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d9929fa56778e739f071d0d586171994::p1::c0::b94e1b04c1",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+          "document_id": "7c1a0fac586f2de1336256cc0bf74e68",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927",
+          "document_id": "d80ea6ee60a1b1f11e971791784d7d6c",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d80ea6ee60a1b1f11e971791784d7d6c::p1::c0::7abae99927",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?\nRetrieval query:",
+  "query_formulation_raw_output": "Interface and Medical segments net sales average combined fiscal years ended April 28, 2018 and April 29, 2017",
+  "query_formulation_latency_seconds": 4.5656,
+  "query_formulation_input_tokens": 183,
+  "query_formulation_output_tokens": 33,
+  "query_formulation_trace": {
+    "original_question": "What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?",
+    "retrieval_query": "Interface and Medical segments net sales average combined fiscal years ended April 28, 2018 and April 29, 2017",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the combined average of net sales for Interface and Medical segments for the fiscal years ended April 28, 2018 and April 29, 2017?\nRetrieval query:",
+    "raw_output": "Interface and Medical segments net sales average combined fiscal years ended April 28, 2018 and April 29, 2017",
+    "latency_seconds": 4.5656001120005385,
+    "input_tokens": 183,
+    "output_tokens": 33,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "0.25",
+  "gold_evidence_reference": "TAT-DQA | raw/1380a11c3e0c1ebff7c19af6d1c014ac.pdf | context_id=1380a11c3e0c1ebff7c19af6d1c014ac"
+}

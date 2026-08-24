@@ -1,0 +1,389 @@
+{
+  "question_id": "convfinqa_2930",
+  "question": "What was the combined total of net revenue for Entergy New Orleans, Inc. in 2009 and 2010, as reported in the 2011 financial discussion and analysis?",
+  "retrieval_query": "Entergy New Orleans, Inc. net revenue 2009 2010 2011 financial discussion and analysis combined total",
+  "metadata_filters": {
+    "company": "Entergy"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_569::p1::c0::43a46d924f",
+      "rank": 1,
+      "dense_score": 0.701897382736206,
+      "bm25_score": 41.10889832202875,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_569"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_569::p1::c1::eff3b74386",
+      "rank": 2,
+      "dense_score": 0.66773521900177,
+      "bm25_score": 30.944772439775747,
+      "hybrid_score": 0.3634644518619093,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_569"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_113::p1::c0::a294e3a68c",
+      "rank": 3,
+      "dense_score": 0.6632179021835327,
+      "bm25_score": 22.172372751705225,
+      "hybrid_score": 0.12238317499064663,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_113"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_113::p1::c1::3613742fd2",
+      "rank": 4,
+      "dense_score": 0.653306782245636,
+      "bm25_score": 24.093572063499078,
+      "hybrid_score": 0.04058187558555452,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_113"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 37.1987,
+  "input_tokens": 4438,
+  "output_tokens": 73,
+  "total_tokens": 4511,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1357,
+  "llm_latency_seconds": 37.0613,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the combined total of net revenue for Entergy New Orleans, Inc. in 2009 and 2010, as reported in the 2011 financial discussion and analysis?\nLabel:",
+      "input_tokens": 109,
+      "output_tokens": 7,
+      "latency_seconds": 1.0028915790026076
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the combined total of net revenue for Entergy New Orleans, Inc. in 2009 and 2010, as reported in the 2011 financial discussion and analysis?\nEvidence:\n[1] convfinqa_ctx_569.pdf p.1\nEntergy New Orleans, Inc.\nManagement’s Financial Discussion and Analysis\nThe volume/weather variance is primarily due to an increase in electricity usage in the residential and\ncommercial sectors due in part to a 4% increase in the average number of residential customers and a 3% increase in\nthe average number of commercial customers, partially offset by the effect of less favorable weather on residential\nsales.\nGross operating revenues\nGross operating revenues decreased primarily due to:\n(cid:120) a decrease of $16.2 million in electric fuel cost recovery revenues due to lower fuel rates;\n(cid:120) a decrease of $15.4 million in gross gas revenues primarily due to lower fuel cost recovery r\n\n[2] convfinqa_ctx_569.pdf p.1\nNew\nOrleans’s rate case, and includes the effects of realigning non-fuel costs associated with the operation of Grand Gulf\nfrom the fuel adjustment clause to electric base rates effective June 2009. See Note 2 to the financial statements for\nfurther discussion of the rate case settlement.\nOther Income Statement Variances\n2011 Compared to 2010\nOther operation and maintenance expenses decreased primarily due to the deferral in 2011 of $13.4 million\nof 2010 Michoud plant maintenance costs pursuant to the settlement of Entergy New Orleans’s 2010 test year\nformula rate plan filing approved by the City Council in September 2011 and a decrease of $8.0 million in fossil-\nfueled generation expenses d\n\n[3] finqa_test_ctx_113.pdf p.1\nEntergy Corporation and Subsidiaries\nNotes to Financial Statements\nrate of 2.04%. Although the principal amount is not due until the date given in the tables above, Entergy Louisiana\nInvestment Recovery Funding expects to make principal payments on the bonds over the next five years in the amounts\nof $21.7 million for 2017, $22.3 million for 2018, $22.7 million for 2019, $23.2 million for 2020, and $11 million for\n2021. With the proceeds, Entergy Louisiana Investment Recovery Funding purchased from Entergy Louisiana the\ninvestment recovery property, which is the right to recover from customers through an investment recovery charge\namounts sufficient to service the bonds. In accordance with t\n\n[4] finqa_test_ctx_113.pdf p.1\ngiven in the tables above, Entergy New Orleans Storm Recovery Funding expects to make principal payments on\nthe bonds over the next five years in the amounts of $10.6 million for 2017, $11 million for 2018, $11.2 million for\n2019, $11.6 million for 2020, and $11.9 million for 2021.\nWith the proceeds, Entergy New Orleans Storm Recovery Funding purchased from Entergy New Orleans the\nstorm recovery property, which is the right to recover from customers through a storm recovery charge amounts\nsufficient to service the securitization bonds. The storm recovery property is reflected as a regulatory asset on the\nconsolidated Entergy New Orleans balance sheet. The creditors of Entergy New Orleans do\nLabel:",
+      "input_tokens": 843,
+      "output_tokens": 5,
+      "latency_seconds": 6.276857144999667
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the combined total of net revenue for Entergy New Orleans, Inc. in 2009 and 2010, as reported in the 2011 financial discussion and analysis?\nEvidence:\n[1] convfinqa_ctx_569.pdf p.1\nevenues as a\nresult of lower fuel rates and the effect of milder weather; and\n(cid:120) formula rate plan decreases effective October 2010 and October 2011, as discussed above.\nThe decrease was partially offset by an increase in gross wholesale revenue due to increased sales to affiliated\ncustomers and more favorable volume/weather, as discussed above.\n2010 Compared to 2009\nNet revenue consists of operating revenues net of: 1) fuel, fuel-related expenses, and gas purchased for\nresale, 2) purchased power expenses, and 3) other regulatory charges (credits). Following is an analysis of the\nchange in net revenue comparing 2010 to 2009.\nAmount\n(In Millions)\n2009 net revenue $243.0\nVolume/weather\n\n[2] convfinqa_ctx_569.pdf p.1\nue to higher plant outage costs in 2010 due to a greater scope of work at the Michoud\nplant. See Note 2 to the financial statements for more discussion of the 2010 test year formula rate plan filing.\n34 5\n\n[3] finqa_test_ctx_113.pdf p.1\nEntergy Corporation and Subsidiaries\nNotes to Financial Statements\nrate of 2.04%. Although the principal amount is not due until the date given in the tables above, Entergy Louisiana\nInvestment Recovery Funding expects to make principal payments on the bonds over the next five years in the amounts\nof $21.7 million for 2017, $22.3 million for 2018, $22.7 million for 2019, $23.2 million for 2020, and $11 million for\n2021. With the proceeds, Entergy Louisiana Investment Recovery Funding purchased from Entergy Louisiana the\ninvestment recovery property, which is the right to recover from customers through an investment recovery charge\namounts sufficient to service the bonds. In accordance with t\n\n[4] finqa_test_ctx_113.pdf p.1\ngiven in the tables above, Entergy New Orleans Storm Recovery Funding expects to make principal payments on\nthe bonds over the next five years in the amounts of $10.6 million for 2017, $11 million for 2018, $11.2 million for\n2019, $11.6 million for 2020, and $11.9 million for 2021.\nWith the proceeds, Entergy New Orleans Storm Recovery Funding purchased from Entergy New Orleans the\nstorm recovery property, which is the right to recover from customers through a storm recovery charge amounts\nsufficient to service the securitization bonds. The storm recovery property is reflected as a regulatory asset on the\nconsolidated Entergy New Orleans balance sheet. The creditors of Entergy New Orleans do\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 804,
+      "output_tokens": 4,
+      "latency_seconds": 6.052559317002306
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the combined total of net revenue for Entergy New Orleans, Inc. in 2009 and 2010, as reported in the 2011 financial discussion and analysis?\nEvidence:\n[1] convfinqa_ctx_569.pdf p.1\n17.0\nNet gas revenue 14.2\nEffect of 2009 rate case settlement (6.6)\nOther 5.3\n2010 net revenue $272.9\nThe volume/weather variance is primarily due to an increase of 348 GWh, or 7%, in billed retail electricity\nusage primarily due to more favorable weather compared to last year.\nThe net gas revenue variance is primarily due to more favorable weather compared to last year, along with the\nrecognition of a gas regulatory asset associated with the settlement of Entergy New Orleans’s electric and gas formula\nrate plans. See Note 2 to the financial statements for further discussion of the formula rate plan settlement.\nThe effect of 2009 rate case settlement variance results from the April 2009 sett\n\n[2] convfinqa_ctx_569.pdf p.1\nue to higher plant outage costs in 2010 due to a greater scope of work at the Michoud\nplant. See Note 2 to the financial statements for more discussion of the 2010 test year formula rate plan filing.\n34 5\n\n[3] finqa_test_ctx_113.pdf p.1\nEntergy Corporation and Subsidiaries\nNotes to Financial Statements\nrate of 2.04%. Although the principal amount is not due until the date given in the tables above, Entergy Louisiana\nInvestment Recovery Funding expects to make principal payments on the bonds over the next five years in the amounts\nof $21.7 million for 2017, $22.3 million for 2018, $22.7 million for 2019, $23.2 million for 2020, and $11 million for\n2021. With the proceeds, Entergy Louisiana Investment Recovery Funding purchased from Entergy Louisiana the\ninvestment recovery property, which is the right to recover from customers through an investment recovery charge\namounts sufficient to service the bonds. In accordance with t\n\n[4] finqa_test_ctx_113.pdf p.1\ngiven in the tables above, Entergy New Orleans Storm Recovery Funding expects to make principal payments on\nthe bonds over the next five years in the amounts of $10.6 million for 2017, $11 million for 2018, $11.2 million for\n2019, $11.6 million for 2020, and $11.9 million for 2021.\nWith the proceeds, Entergy New Orleans Storm Recovery Funding purchased from Entergy New Orleans the\nstorm recovery property, which is the right to recover from customers through a storm recovery charge amounts\nsufficient to service the securitization bonds. The storm recovery property is reflected as a regulatory asset on the\nconsolidated Entergy New Orleans balance sheet. The creditors of Entergy New Orleans do\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 799,
+      "output_tokens": 4,
+      "latency_seconds": 6.077335287001915
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Entergy New Orleans, Inc. net revenue 2009 2010 2011 financial discussion and analysis combined total",
+      "filters": {
+        "company": "Entergy"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_569::p1::c0::43a46d924f",
+        "convfinqa_ctx_569::p1::c1::eff3b74386",
+        "finqa_test_ctx_113::p1::c0::a294e3a68c",
+        "finqa_test_ctx_113::p1::c1::3613742fd2"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_569::p1::c0::43a46d924f",
+          "document_id": "convfinqa_ctx_569",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_569::p1::c0::43a46d924f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_569::p1::c1::eff3b74386",
+          "document_id": "convfinqa_ctx_569",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_569::p1::c1::eff3b74386",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_113::p1::c0::a294e3a68c",
+          "document_id": "finqa_test_ctx_113",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_113::p1::c0::a294e3a68c",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_113::p1::c1::3613742fd2",
+          "document_id": "finqa_test_ctx_113",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_113::p1::c1::3613742fd2",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_569::p1::c0::43a46d924f",
+          "document_id": "convfinqa_ctx_569",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_569::p1::c0::43a46d924f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_569::p1::c1::eff3b74386",
+          "document_id": "convfinqa_ctx_569",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 904,
+          "source_chunk_id": "convfinqa_ctx_569::p1::c1::eff3b74386",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_113::p1::c0::a294e3a68c",
+          "document_id": "finqa_test_ctx_113",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_113::p1::c0::a294e3a68c",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_113::p1::c1::3613742fd2",
+          "document_id": "finqa_test_ctx_113",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_113::p1::c1::3613742fd2",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_569::p1::c0::43a46d924f",
+          "document_id": "convfinqa_ctx_569",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "convfinqa_ctx_569::p1::c0::43a46d924f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_569::p1::c1::eff3b74386",
+          "document_id": "convfinqa_ctx_569",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 904,
+          "source_chunk_id": "convfinqa_ctx_569::p1::c1::eff3b74386",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_113::p1::c0::a294e3a68c",
+          "document_id": "finqa_test_ctx_113",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_113::p1::c0::a294e3a68c",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_113::p1::c1::3613742fd2",
+          "document_id": "finqa_test_ctx_113",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_113::p1::c1::3613742fd2",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_2",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the combined total of net revenue for Entergy New Orleans, Inc. in 2009 and 2010, as reported in the 2011 financial discussion and analysis?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined total of net revenue for Entergy New Orleans, Inc. in 2009 and 2010, as reported in the 2011 financial discussion and analysis?\nRetrieval query:",
+  "query_formulation_raw_output": "Entergy New Orleans, Inc. net revenue 2009 2010 2011 financial discussion and analysis combined total",
+  "query_formulation_latency_seconds": 3.3976,
+  "query_formulation_input_tokens": 186,
+  "query_formulation_output_tokens": 31,
+  "query_formulation_trace": {
+    "original_question": "What was the combined total of net revenue for Entergy New Orleans, Inc. in 2009 and 2010, as reported in the 2011 financial discussion and analysis?",
+    "retrieval_query": "Entergy New Orleans, Inc. net revenue 2009 2010 2011 financial discussion and analysis combined total",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined total of net revenue for Entergy New Orleans, Inc. in 2009 and 2010, as reported in the 2011 financial discussion and analysis?\nRetrieval query:",
+    "raw_output": "Entergy New Orleans, Inc. net revenue 2009 2010 2011 financial discussion and analysis combined total",
+    "latency_seconds": 3.397578035997867,
+    "input_tokens": 186,
+    "output_tokens": 31,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "515.9",
+  "gold_evidence_reference": "ConvFinQA | pdf/ETR/2011/page_359.pdf | source_page=359 | context_id=convfinqa_ctx_569"
+}

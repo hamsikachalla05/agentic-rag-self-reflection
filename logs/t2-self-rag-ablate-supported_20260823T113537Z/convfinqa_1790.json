@@ -1,0 +1,425 @@
+{
+  "question_id": "convfinqa_1790",
+  "question": "What is the ratio of Arconic's valuation allowance balance at the end of 2016 to the balance at the end of 2015?",
+  "retrieval_query": "Arconic valuation allowance balance 2016 2015 ratio",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+      "rank": 1,
+      "dense_score": 0.6630584001541138,
+      "bm25_score": 11.612195900199048,
+      "hybrid_score": 0.7939885471458554,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_622"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_711::p1::c0::64c0db5bfd",
+      "rank": 2,
+      "dense_score": 0.6796446442604065,
+      "bm25_score": null,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_711"
+    },
+    {
+      "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+      "rank": 3,
+      "dense_score": 0.6637654304504395,
+      "bm25_score": 6.227775204868756,
+      "hybrid_score": 0.43881225002572255,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "8c6114af79ce7f7775b24ac57a2c7b64"
+    },
+    {
+      "chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+      "rank": 4,
+      "dense_score": 0.6630655527114868,
+      "bm25_score": null,
+      "hybrid_score": 0.3940773863505965,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "2da56df966a1c15057d2661ce589be1c"
+    },
+    {
+      "chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+      "rank": 5,
+      "dense_score": 0.6628773212432861,
+      "bm25_score": null,
+      "hybrid_score": 0.39173943461249444,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 65.8455,
+  "input_tokens": 7624,
+  "output_tokens": 60,
+  "total_tokens": 7684,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1368,
+  "llm_latency_seconds": 65.7066,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the ratio of Arconic's valuation allowance balance at the end of 2016 to the balance at the end of 2015?\nLabel:",
+      "input_tokens": 100,
+      "output_tokens": 7,
+      "latency_seconds": 1.0245987809976214
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the ratio of Arconic's valuation allowance balance at the end of 2016 to the balance at the end of 2015?\nEvidence:\n[1] convfinqa_ctx_622.pdf p.1\nAs of December 31, 2016 and 2015, the notional amount of these derivativeswas approximately $143 million aaand\n$81 million, respectively, and the fair value was nominal. These derivatives have not been designated as hedges for accounting purposes.\nWe also use currency forward contracts to manage our exposure tofluctuations in costs caused by variations in Indian Rupee (\"IIINR\")\nexchange rates. As of December 31, 2016, the notional amount of these derivatives was approximately $7 million and the fair vallue was\nless than $1 million, which is included in Prepaid Expenses and Other Current Assets in the Consolidated Balance Sheets. TheseINR\nforward contracts are designated as cash flow hedges.\n\n[2] convfinqa_ctx_711.pdf p.1\nIn2016,Arconicalsorecognizeddiscreteincometaxbenefitsrelatedtothereleaseofvaluationallowancesoncertain\nnetdeferredtaxassetsinRussiaandCanadaof$19and$20respectively.Afterweighingallavailableevidence,\nmanagementdeterminedthatitwasmorelikelythannotthatthenetincometaxbenefitsassociatedwiththeunderlying\ndeferredtaxassetswouldberealizablebasedonhistoriccumulativeincomeandprojectedtaxableincome.\nArconicalsorecordedadditionalvaluationallowancesinAustraliaof$93relatedtotheSeparationTransaction,in\nSpainof$163relatedtoataxlawchangeandinLuxembourgof$280relatedtotheSeparationTransactionaswellasa\ntaxlawchange.Thesevaluationallowancesfullyoffsetcurrentyearchangesindeferredtaxassetbalancesofeach\nrespectivej\n\n[3] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nAs of December 31,\n2019 2018 2017 2016 2015\nBalance sheet and other data:\nCash and cash equivalents $ 119,629 $ 146,061 $ 96,329 $ 140,634 $ 128,358\nWorking capital 167,879 152,793 119,433 150,485 131,971\nTotal assets 557,799 440,985 371,641 261,245 226,095\nTotal long-term obligations 115,143 88,126 94,311 30,297 26,885\nTotal stockholders' equity 355,651 277,589 232,827 191,249 170,131\n_____________________\n(1) Excludes amortization and depreciation shown in operating expenses below.\n(2) Includes stock-based compensation expense as follows:\nYear Ended December 31,\n2019 2018 2017 2016 2015\nStock-based compensation expense data:\nSales and marketing $ 2,075 $ 1,196 $ 561 $ 536 $ 372\nGeneral and\n\n[4] 2da56df966a1c15057d2661ce589be1c.pdf p.2\nThe share of net earnings in other affiliates represents our share of equity in Egyptian Company for Gas Services\nS.A.E (\"ECGS\") and Avenir LNG Limited (\"Avenir\"). During the year ended December 31, 2018 we recognized negative\ngoodwill of $3.8 million in equity in net earnings of affiliates to reflect our bargain purchase of Avenir. Refer to note 14\n\"InvestmentinAffiliates\"ofourconsolidatedfinancialstatementsincludedhereinforfurtherdetails.\nFLNGsegment\nDecember 31,\n(in thousands of $) 2018 2017 Change % Change\nTotal operating revenues 127,625 — 127,625 100 %\nVessel operating expenses (26,317) (2) (26,315) 1,315,750 %\nVoyage expenses (1,363) (121) (1,242) 1,026 %\nAdministrative expenses 175 (\n\n[5] 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\nFinancial statements\nNotes to the consolidated financial statements continued\n25. Deferred income\n2019 2018\n$ million $ million\nCurrent 53.2 55.2\nNon-current 13.6 14.4\n66.8 69.6\nThe Group’s deferred income balances relate solely to revenue from contracts with customers.\n26. Lease liabilities\n2019\n$ million\nMaturity analysis – contractual undiscounted cash flows\nLess than one year 9.9\nOne to five years 24.5\nMore than five years 1.9\nTotal undiscounted lease liabilities at 31 December 36.3\nLease liabilities included in the balance sheet at 31 December\nCurrent 8.5\nNon-current 24.5\n33.0\n$2.2 million of the lease liability included in the balance sheet relates to a building the Group subleases; se\nLabel:",
+      "input_tokens": 1401,
+      "output_tokens": 5,
+      "latency_seconds": 11.10072536199732
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the ratio of Arconic's valuation allowance balance at the end of 2016 to the balance at the end of 2015?\nEvidence:\n[1] convfinqa_ctx_622.pdf p.1\nThe fair value of these currency forward contracts is determined using cuuurrency\nexchange market rates, obtained from reliable, independent, third party banks, at the balance sheet date. The fair value of forrrward\ncontracts is subject to changes in currency exchange rates. The Company has no ineffectiveness related to its use of currency ffforward\ncontracts in connection with INR cash flow hedges.\nIn September 2015, the Company entered into treasury lock hedges with a total notional amount of $1.0 billion, reducing the risk of\nchanges in the benchmark index component off the 10-year treasury yield. The Company designated these derivatives as cash flow\nhedges. On October 13, 2015, in conjun\n\n[2] convfinqa_ctx_711.pdf p.1\nIn2016,Arconicalsorecognizeddiscreteincometaxbenefitsrelatedtothereleaseofvaluationallowancesoncertain\nnetdeferredtaxassetsinRussiaandCanadaof$19and$20respectively.Afterweighingallavailableevidence,\nmanagementdeterminedthatitwasmorelikelythannotthatthenetincometaxbenefitsassociatedwiththeunderlying\ndeferredtaxassetswouldberealizablebasedonhistoriccumulativeincomeandprojectedtaxableincome.\nArconicalsorecordedadditionalvaluationallowancesinAustraliaof$93relatedtotheSeparationTransaction,in\nSpainof$163relatedtoataxlawchangeandinLuxembourgof$280relatedtotheSeparationTransactionaswellasa\ntaxlawchange.Thesevaluationallowancesfullyoffsetcurrentyearchangesindeferredtaxassetbalancesofeach\nrespectivej\n\n[3] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nAs of December 31,\n2019 2018 2017 2016 2015\nBalance sheet and other data:\nCash and cash equivalents $ 119,629 $ 146,061 $ 96,329 $ 140,634 $ 128,358\nWorking capital 167,879 152,793 119,433 150,485 131,971\nTotal assets 557,799 440,985 371,641 261,245 226,095\nTotal long-term obligations 115,143 88,126 94,311 30,297 26,885\nTotal stockholders' equity 355,651 277,589 232,827 191,249 170,131\n_____________________\n(1) Excludes amortization and depreciation shown in operating expenses below.\n(2) Includes stock-based compensation expense as follows:\nYear Ended December 31,\n2019 2018 2017 2016 2015\nStock-based compensation expense data:\nSales and marketing $ 2,075 $ 1,196 $ 561 $ 536 $ 372\nGeneral and\n\n[4] 2da56df966a1c15057d2661ce589be1c.pdf p.2\nThe share of net earnings in other affiliates represents our share of equity in Egyptian Company for Gas Services\nS.A.E (\"ECGS\") and Avenir LNG Limited (\"Avenir\"). During the year ended December 31, 2018 we recognized negative\ngoodwill of $3.8 million in equity in net earnings of affiliates to reflect our bargain purchase of Avenir. Refer to note 14\n\"InvestmentinAffiliates\"ofourconsolidatedfinancialstatementsincludedhereinforfurtherdetails.\nFLNGsegment\nDecember 31,\n(in thousands of $) 2018 2017 Change % Change\nTotal operating revenues 127,625 — 127,625 100 %\nVessel operating expenses (26,317) (2) (26,315) 1,315,750 %\nVoyage expenses (1,363) (121) (1,242) 1,026 %\nAdministrative expenses 175 (\n\n[5] 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\nFinancial statements\nNotes to the consolidated financial statements continued\n25. Deferred income\n2019 2018\n$ million $ million\nCurrent 53.2 55.2\nNon-current 13.6 14.4\n66.8 69.6\nThe Group’s deferred income balances relate solely to revenue from contracts with customers.\n26. Lease liabilities\n2019\n$ million\nMaturity analysis – contractual undiscounted cash flows\nLess than one year 9.9\nOne to five years 24.5\nMore than five years 1.9\nTotal undiscounted lease liabilities at 31 December 36.3\nLease liabilities included in the balance sheet at 31 December\nCurrent 8.5\nNon-current 24.5\n33.0\n$2.2 million of the lease liability included in the balance sheet relates to a building the Group subleases; se\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1441,
+      "output_tokens": 4,
+      "latency_seconds": 12.16857061599876
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the ratio of Arconic's valuation allowance balance at the end of 2016 to the balance at the end of 2015?\nEvidence:\n[1] convfinqa_ctx_622.pdf p.1\nction with the pricing of the $4.5 billion seniorr notes, the Companyterminated these treasury\nlock contracts for a cash settlement payment of $16 million, which was recorded as a component of Other Comprehensive Earnings and\nwill be reclassified as an adjustment to interest expense over the ten years during which the related interest payments that were hedged\nwill be recognized in income.\n(e)Trade Receivables\nA summary of trade receivables, net, as of December 31, 2016 and 2015 is as follows (in millions):\n2016 2015\nTrade receivables — billed $ 1,452 $ 1,546\nTrade receivables — unbilled 228 201\nTotal trade receivables 1,680 1,747\nAllowance for doubtful accounts (41) (16)\nTotal trade receiva\n\n[2] convfinqa_ctx_711.pdf p.1\nIn2016,Arconicalsorecognizeddiscreteincometaxbenefitsrelatedtothereleaseofvaluationallowancesoncertain\nnetdeferredtaxassetsinRussiaandCanadaof$19and$20respectively.Afterweighingallavailableevidence,\nmanagementdeterminedthatitwasmorelikelythannotthatthenetincometaxbenefitsassociatedwiththeunderlying\ndeferredtaxassetswouldberealizablebasedonhistoriccumulativeincomeandprojectedtaxableincome.\nArconicalsorecordedadditionalvaluationallowancesinAustraliaof$93relatedtotheSeparationTransaction,in\nSpainof$163relatedtoataxlawchangeandinLuxembourgof$280relatedtotheSeparationTransactionaswellasa\ntaxlawchange.Thesevaluationallowancesfullyoffsetcurrentyearchangesindeferredtaxassetbalancesofeach\nrespectivej\n\n[3] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nAs of December 31,\n2019 2018 2017 2016 2015\nBalance sheet and other data:\nCash and cash equivalents $ 119,629 $ 146,061 $ 96,329 $ 140,634 $ 128,358\nWorking capital 167,879 152,793 119,433 150,485 131,971\nTotal assets 557,799 440,985 371,641 261,245 226,095\nTotal long-term obligations 115,143 88,126 94,311 30,297 26,885\nTotal stockholders' equity 355,651 277,589 232,827 191,249 170,131\n_____________________\n(1) Excludes amortization and depreciation shown in operating expenses below.\n(2) Includes stock-based compensation expense as follows:\nYear Ended December 31,\n2019 2018 2017 2016 2015\nStock-based compensation expense data:\nSales and marketing $ 2,075 $ 1,196 $ 561 $ 536 $ 372\nGeneral and\n\n[4] 2da56df966a1c15057d2661ce589be1c.pdf p.2\nThe share of net earnings in other affiliates represents our share of equity in Egyptian Company for Gas Services\nS.A.E (\"ECGS\") and Avenir LNG Limited (\"Avenir\"). During the year ended December 31, 2018 we recognized negative\ngoodwill of $3.8 million in equity in net earnings of affiliates to reflect our bargain purchase of Avenir. Refer to note 14\n\"InvestmentinAffiliates\"ofourconsolidatedfinancialstatementsincludedhereinforfurtherdetails.\nFLNGsegment\nDecember 31,\n(in thousands of $) 2018 2017 Change % Change\nTotal operating revenues 127,625 — 127,625 100 %\nVessel operating expenses (26,317) (2) (26,315) 1,315,750 %\nVoyage expenses (1,363) (121) (1,242) 1,026 %\nAdministrative expenses 175 (\n\n[5] 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\nFinancial statements\nNotes to the consolidated financial statements continued\n25. Deferred income\n2019 2018\n$ million $ million\nCurrent 53.2 55.2\nNon-current 13.6 14.4\n66.8 69.6\nThe Group’s deferred income balances relate solely to revenue from contracts with customers.\n26. Lease liabilities\n2019\n$ million\nMaturity analysis – contractual undiscounted cash flows\nLess than one year 9.9\nOne to five years 24.5\nMore than five years 1.9\nTotal undiscounted lease liabilities at 31 December 36.3\nLease liabilities included in the balance sheet at 31 December\nCurrent 8.5\nNon-current 24.5\n33.0\n$2.2 million of the lease liability included in the balance sheet relates to a building the Group subleases; se\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1485,
+      "output_tokens": 4,
+      "latency_seconds": 12.3032840129963
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Arconic valuation allowance balance 2016 2015 ratio",
+      "filters": {},
+      "chunk_ids": [
+        "convfinqa_ctx_622::p1::c1::34c1846156",
+        "convfinqa_ctx_711::p1::c0::64c0db5bfd",
+        "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+        "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+        "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "document_id": "convfinqa_ctx_622",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_711::p1::c0::64c0db5bfd",
+          "document_id": "convfinqa_ctx_711",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_711::p1::c0::64c0db5bfd",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "document_id": "8c6114af79ce7f7775b24ac57a2c7b64",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+          "document_id": "2da56df966a1c15057d2661ce589be1c",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+          "document_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "document_id": "convfinqa_ctx_622",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_711::p1::c0::64c0db5bfd",
+          "document_id": "convfinqa_ctx_711",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_711::p1::c0::64c0db5bfd",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "document_id": "8c6114af79ce7f7775b24ac57a2c7b64",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+          "document_id": "2da56df966a1c15057d2661ce589be1c",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+          "document_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "document_id": "convfinqa_ctx_622",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_711::p1::c0::64c0db5bfd",
+          "document_id": "convfinqa_ctx_711",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_711::p1::c0::64c0db5bfd",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "document_id": "8c6114af79ce7f7775b24ac57a2c7b64",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+          "document_id": "2da56df966a1c15057d2661ce589be1c",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+          "document_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_2",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the ratio of Arconic's valuation allowance balance at the end of 2016 to the balance at the end of 2015?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the ratio of Arconic's valuation allowance balance at the end of 2016 to the balance at the end of 2015?\nRetrieval query:",
+  "query_formulation_raw_output": "Arconic valuation allowance balance 2016 2015 ratio",
+  "query_formulation_latency_seconds": 2.2255,
+  "query_formulation_input_tokens": 177,
+  "query_formulation_output_tokens": 18,
+  "query_formulation_trace": {
+    "original_question": "What is the ratio of Arconic's valuation allowance balance at the end of 2016 to the balance at the end of 2015?",
+    "retrieval_query": "Arconic valuation allowance balance 2016 2015 ratio",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the ratio of Arconic's valuation allowance balance at the end of 2016 to the balance at the end of 2015?\nRetrieval query:",
+    "raw_output": "Arconic valuation allowance balance 2016 2015 ratio",
+    "latency_seconds": 2.225500739994459,
+    "input_tokens": 177,
+    "output_tokens": 18,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "1.50271",
+  "gold_evidence_reference": "ConvFinQA | pdf/HWM/2016/page_118.pdf | source_page=118 | context_id=convfinqa_ctx_711"
+}

@@ -1,0 +1,281 @@
+{
+  "question_id": "tatqa_test_10001",
+  "question": "What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?",
+  "retrieval_query": "Advanced-Energy finished goods inventory change December 31, 2018 to December 31, 2019 2019 financial statements",
+  "metadata_filters": {
+    "company": "advanced-energy"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "d96d19db7d772ce4afe421dcda706842::p1::c0::a30626bd9d",
+      "rank": 1,
+      "dense_score": 0.7222892045974731,
+      "bm25_score": 25.51016906109752,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d96d19db7d772ce4afe421dcda706842"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 23.6037,
+  "input_tokens": 3161,
+  "output_tokens": 91,
+  "total_tokens": 3252,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "IRRELEVANT",
+  "evidence_support_decision": "UNSUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.1397,
+  "llm_latency_seconds": 26.8702,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?\nEvidence:\n[1] d96d19db7d772ce4afe421dcda706842.pdf p.1\nADVANCED ENERGY INDUSTRIES, INC.\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS – (continued)\n(in thousands, except per share amounts)\nDuring the first quarter of 2017, we entered into a foreign currency exchange rate forward contract at a cost of\n$3.5 million, to mitigate the exchange rate risk associated with a planned offshore acquisition which was not\nconsummated. The hedge expired upon maturity in the first quarter of 2017. The cost of the forward contract is recorded\nas a component of Other income (expense), net in our Consolidated Statement of Operations.\nNOTE 9. ACCOUNTS AND OTHER RECEIVABLE\nAccounts and other receivable are recorded at net realizable value. Components of accounts and ot\nLabel:",
+      "input_tokens": 309,
+      "output_tokens": 5,
+      "latency_seconds": 2.7111896880014683
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?\nEvidence:\n[1] d96d19db7d772ce4afe421dcda706842.pdf p.1\nADVANCED ENERGY INDUSTRIES, INC.\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS – (continued)\n(in thousands, except per share amounts)\nDuring the first quarter of 2017, we entered into a foreign currency exchange rate forward contract at a cost of\n$3.5 million, to mitigate the exchange rate risk associated with a planned offshore acquisition which was not\nconsummated. The hedge expired upon maturity in the first quarter of 2017. The cost of the forward contract is recorded\nas a component of Other income (expense), net in our Consolidated Statement of Operations.\nNOTE 9. ACCOUNTS AND OTHER RECEIVABLE\nAccounts and other receivable are recorded at net realizable value. Components of accounts and ot\nLabel:",
+      "input_tokens": 314,
+      "output_tokens": 3,
+      "latency_seconds": 2.344622726996022
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?\nEvidence:\n[1] d96d19db7d772ce4afe421dcda706842.pdf p.1\nher\nreceivable, net of reserves, are as follows:\nDe cember 31, De cember 31,\n2019 2018\nAmounts billed, net ............................................................ $ 227,528 $ 80,709\nUnbilled receivables ........................................................... 19,036 19,733\nTotal receivables, net .......................................................... $ 246,564 $ 100,442\nAmounts billed, net consist of amounts that have been invoiced to our customers in accordance with terms and\nconditions, and are shown net of an allowance for doubtful accounts. These receivables are all short term in nature and\ndo not include any financing components.\nUnbilled receivables consist of amounts where\nLabel:",
+      "input_tokens": 336,
+      "output_tokens": 3,
+      "latency_seconds": 1.7066143699994427
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?\nEvidence:\n[1] d96d19db7d772ce4afe421dcda706842.pdf p.1\nwe have satisfied our contractual obligations related to inventory\nstocking contracts with customers. Such amounts are typically invoiced to the customer upon their consumption of the\ninventory managed under the stocking contracts. We anticipate that substantially all unbilled receivables will be invoiced\nand collected over the next twelve months. These contracts do not include any financing components.\nNOTE 10. INVENTORIES\nOur inventories are valued at the lower of cost or net realizable value and computed on a first-in, first-out\n(FIFO) basis. Components of inventories are as follows:\nDecem be r 31,\n2019 2018\nParts and raw materials .........................................................\nLabel:",
+      "input_tokens": 298,
+      "output_tokens": 3,
+      "latency_seconds": 1.488482839995413
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?\nEvidence:\n[1] d96d19db7d772ce4afe421dcda706842.pdf p.1\nwe have satisfied our contractual obligations related to inventory\nstocking contracts with customers. Such amounts are typically invoiced to the customer upon their consumption of the\ninventory managed under the stocking contracts. We anticipate that substantially all unbilled receivables will be invoiced\nand collected over the next twelve months. These contracts do not include any financing components.\nNOTE 10. INVENTORIES\nOur inventories are valued at the lower of cost or net realizable value and computed on a first-in, first-out\n(FIFO) basis. Components of inventories are as follows:\nDecem be r 31,\n2019 2018\nParts and raw materials .........................................................\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 339,
+      "output_tokens": 4,
+      "latency_seconds": 2.8840856149981846
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?\nEvidence:\n[1] d96d19db7d772ce4afe421dcda706842.pdf p.1\nwe have satisfied our contractual obligations related to inventory\nstocking contracts with customers. Such amounts are typically invoiced to the customer upon their consumption of the\ninventory managed under the stocking contracts. We anticipate that substantially all unbilled receivables will be invoiced\nand collected over the next twelve months. These contracts do not include any financing components.\nNOTE 10. INVENTORIES\nOur inventories are valued at the lower of cost or net realizable value and computed on a first-in, first-out\n(FIFO) basis. Components of inventories are as follows:\nDecem be r 31,\n2019 2018\nParts and raw materials .........................................................\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 322,
+      "output_tokens": 11,
+      "latency_seconds": 3.4084663829999045
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?\nEvidence:\n[1] d96d19db7d772ce4afe421dcda706842.pdf p.1\nwe have satisfied our contractual obligations related to inventory\nstocking contracts with customers. Such amounts are typically invoiced to the customer upon their consumption of the\ninventory managed under the stocking contracts. We anticipate that substantially all unbilled receivables will be invoiced\nand collected over the next twelve months. These contracts do not include any financing components.\nNOTE 10. INVENTORIES\nOur inventories are valued at the lower of cost or net realizable value and computed on a first-in, first-out\n(FIFO) basis. Components of inventories are as follows:\nDecem be r 31,\n2019 2018\nParts and raw materials .........................................................\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 339,
+      "output_tokens": 4,
+      "latency_seconds": 0.5451952590010478
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Advanced-Energy finished goods inventory change December 31, 2018 to December 31, 2019 2019 financial statements",
+      "filters": {
+        "company": "advanced-energy"
+      },
+      "chunk_ids": [
+        "d96d19db7d772ce4afe421dcda706842::p1::c0::a30626bd9d"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "d96d19db7d772ce4afe421dcda706842::p1::c0::a30626bd9d",
+          "document_id": "d96d19db7d772ce4afe421dcda706842",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d96d19db7d772ce4afe421dcda706842::p1::c0::a30626bd9d",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "d96d19db7d772ce4afe421dcda706842::p1::c0::a30626bd9d",
+          "document_id": "d96d19db7d772ce4afe421dcda706842",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "d96d19db7d772ce4afe421dcda706842::p1::c0::a30626bd9d",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "d96d19db7d772ce4afe421dcda706842::p1::c0::a30626bd9d",
+          "document_id": "d96d19db7d772ce4afe421dcda706842",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "d96d19db7d772ce4afe421dcda706842::p1::c0::a30626bd9d",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?\nRetrieval query:",
+  "query_formulation_raw_output": "Advanced-Energy finished goods inventory change December 31, 2018 to December 31, 2019 2019 financial statements",
+  "query_formulation_latency_seconds": 4.4725,
+  "query_formulation_input_tokens": 196,
+  "query_formulation_output_tokens": 36,
+  "query_formulation_trace": {
+    "original_question": "What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?",
+    "retrieval_query": "Advanced-Energy finished goods inventory change December 31, 2018 to December 31, 2019 2019 financial statements",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in the value of finished goods inventory for Advanced-Energy between December 31, 2018, and December 31, 2019, as reported in the company's 2019 financial statements?\nRetrieval query:",
+    "raw_output": "Advanced-Energy finished goods inventory change December 31, 2018 to December 31, 2019 2019 financial statements",
+    "latency_seconds": 4.472460869998031,
+    "input_tokens": 196,
+    "output_tokens": 36,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "70238.0",
+  "gold_evidence_reference": "TAT-DQA | raw/d96d19db7d772ce4afe421dcda706842.pdf | context_id=d96d19db7d772ce4afe421dcda706842"
+}

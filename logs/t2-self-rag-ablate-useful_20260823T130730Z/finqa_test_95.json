@@ -1,0 +1,245 @@
+{
+  "question_id": "finqa_test_95",
+  "question": "Considering both direct and indirect holdings, what is the total number of shares of common stock beneficially owned by Arthur D. Levinson in Apple Inc. as of the 2006 report?",
+  "retrieval_query": "Arthur D. Levinson Apple Inc. common stock beneficially owned direct indirect 2006 report",
+  "metadata_filters": {
+    "year": 2006,
+    "company": "Apple Inc."
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+      "rank": 1,
+      "dense_score": 0.6627009510993958,
+      "bm25_score": 24.05929568132656,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c1::333303ca3f",
+      "rank": 2,
+      "dense_score": 0.6284648180007935,
+      "bm25_score": 20.045799220809602,
+      "hybrid_score": 0.24214912074225803,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c2::108bbc8737",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 13.888946350643028,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    }
+  ],
+  "answer": "362,400  \nSource: finqa_test_ctx_286.pdf p.1",
+  "latency_seconds": 24.842,
+  "input_tokens": 2901,
+  "output_tokens": 59,
+  "total_tokens": 2960,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1113,
+  "llm_latency_seconds": 24.7296,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: Considering both direct and indirect holdings, what is the total number of shares of common stock beneficially owned by Arthur D. Levinson in Apple Inc. as of the 2006 report?\nLabel:",
+      "input_tokens": 106,
+      "output_tokens": 7,
+      "latency_seconds": 0.9977200360008283
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: Considering both direct and indirect holdings, what is the total number of shares of common stock beneficially owned by Arthur D. Levinson in Apple Inc. as of the 2006 report?\nEvidence:\n[1] finqa_test_ctx_286.pdf p.1\nSecurity Ownership of 5% Holders, Directors, Nominees and Executive Officers\nShares of Common Stock Percent of Common Stock\nName of Beneficial Owner Beneficially Owned(1) Outstanding\nFidelity Investments.................................. 57,162,311(2) 6.65%\nAllianceBernstein LP ................................ 48,637,731(3) 5.66%\nSteven P. Jobs....................................... 5,546,451(4) *\nWilliam V.Campbell................................. 221,004(5) *\nTimothy D.Cook.................................... 12,597(6) *\nMillard S. Drexler ................................... 220,000(7) *\nAlbertA. Gore, Jr.................................... 60,000(8) *\nRonald B.Johnson.....................\n\n[2] finqa_test_ctx_286.pdf p.1\n. Jobs has the right to acquire by exercise of stock\noptions.\n(5) Includes 220,000 shares of Common Stock that Mr. Campbell has the right to acquire by exercise of\nstock options.\n(6) Excludes 600,000 unvestedrestricted stock units.\n(7) Includes 40,000 shares of Common Stock that Mr. Drexler holds indirectly and 180,000 shares of\nCommon Stockthat Mr. Drexler has the right to acquire by exercise of stockoptions.\n(8) Consists of 60,000 shares of Common Stock that Mr. Gore has the rightto acquire byexercise of stock\noptions.\n(9) Includes 1,900,000 shares of Common Stock that Mr. Johnson has the right to acquire by exercise of\nstock options and excludes 450,000 unvestedrestricted stockunits.\n(10)\n\n[3] finqa_test_ctx_286.pdf p.1\n|  |  |  | 12,597 | (6) |  |  | * | \nMillard S. Drexler ................................... |  |  |  |  | 220,000 | (7) |  |  | * | \nAlbertA. Gore, Jr.................................... |  |  |  |  | 60,000 | (8) |  |  | * | \nRonald B.Johnson................................... |  |  |  |  | 2,049,890 | (9) |  |  | * | \nArthur D. Levinson.................................. |  |  |  |  | 362,400 | (10) |  |  | * | \nPeter Oppenheimer.................................. |  |  |  |  | 149,768 | (11) |  |  | * | \nPhilip W. Schiller.................................... |  |  |  |  | 256 | (12) |  |  | * | \nEric E. Schmidt...................................... |  |  |  |  | 12,284 | (13) |  |  | * | \nJ\nLabel:",
+      "input_tokens": 838,
+      "output_tokens": 4,
+      "latency_seconds": 6.1748979309995775
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: Considering both direct and indirect holdings, what is the total number of shares of common stock beneficially owned by Arthur D. Levinson in Apple Inc. as of the 2006 report?\nEvidence:\n[1] finqa_test_ctx_286.pdf p.1\nSecurity Ownership of 5% Holders, Directors, Nominees and Executive Officers\nShares of Common Stock Percent of Common Stock\nName of Beneficial Owner Beneficially Owned(1) Outstanding\nFidelity Investments.................................. 57,162,311(2) 6.65%\nAllianceBernstein LP ................................ 48,637,731(3) 5.66%\nSteven P. Jobs....................................... 5,546,451(4) *\nWilliam V.Campbell................................. 221,004(5) *\nTimothy D.Cook.................................... 12,597(6) *\nMillard S. Drexler ................................... 220,000(7) *\nAlbertA. Gore, Jr.................................... 60,000(8) *\nRonald B.Johnson.....................\n\n[2] finqa_test_ctx_286.pdf p.1\n. Jobs has the right to acquire by exercise of stock\noptions.\n(5) Includes 220,000 shares of Common Stock that Mr. Campbell has the right to acquire by exercise of\nstock options.\n(6) Excludes 600,000 unvestedrestricted stock units.\n(7) Includes 40,000 shares of Common Stock that Mr. Drexler holds indirectly and 180,000 shares of\nCommon Stockthat Mr. Drexler has the right to acquire by exercise of stockoptions.\n(8) Consists of 60,000 shares of Common Stock that Mr. Gore has the rightto acquire byexercise of stock\noptions.\n(9) Includes 1,900,000 shares of Common Stock that Mr. Johnson has the right to acquire by exercise of\nstock options and excludes 450,000 unvestedrestricted stockunits.\n(10)\n\n[3] finqa_test_ctx_286.pdf p.1\n|  |  |  | 12,597 | (6) |  |  | * | \nMillard S. Drexler ................................... |  |  |  |  | 220,000 | (7) |  |  | * | \nAlbertA. Gore, Jr.................................... |  |  |  |  | 60,000 | (8) |  |  | * | \nRonald B.Johnson................................... |  |  |  |  | 2,049,890 | (9) |  |  | * | \nArthur D. Levinson.................................. |  |  |  |  | 362,400 | (10) |  |  | * | \nPeter Oppenheimer.................................. |  |  |  |  | 149,768 | (11) |  |  | * | \nPhilip W. Schiller.................................... |  |  |  |  | 256 | (12) |  |  | * | \nEric E. Schmidt...................................... |  |  |  |  | 12,284 | (13) |  |  | * | \nJ\nLabel:",
+      "input_tokens": 843,
+      "output_tokens": 3,
+      "latency_seconds": 6.156600590002199
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Arthur D. Levinson Apple Inc. common stock beneficially owned direct indirect 2006 report",
+      "filters": {
+        "year": 2006,
+        "company": "Apple Inc."
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+        "finqa_test_ctx_286::p1::c1::333303ca3f",
+        "finqa_test_ctx_286::p1::c2::108bbc8737"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+          "document_id": "finqa_test_ctx_286",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_286::p1::c1::333303ca3f",
+          "document_id": "finqa_test_ctx_286",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_286::p1::c1::333303ca3f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_286::p1::c2::108bbc8737",
+          "document_id": "finqa_test_ctx_286",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_286::p1::c2::108bbc8737",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "Considering both direct and indirect holdings, what is the total number of shares of common stock beneficially owned by Arthur D. Levinson in Apple Inc. as of the 2006 report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: Considering both direct and indirect holdings, what is the total number of shares of common stock beneficially owned by Arthur D. Levinson in Apple Inc. as of the 2006 report?\nRetrieval query:",
+  "query_formulation_raw_output": "Arthur D. Levinson Apple Inc. common stock beneficially owned direct indirect 2006 report",
+  "query_formulation_latency_seconds": 2.4006,
+  "query_formulation_input_tokens": 183,
+  "query_formulation_output_tokens": 22,
+  "query_formulation_trace": {
+    "original_question": "Considering both direct and indirect holdings, what is the total number of shares of common stock beneficially owned by Arthur D. Levinson in Apple Inc. as of the 2006 report?",
+    "retrieval_query": "Arthur D. Levinson Apple Inc. common stock beneficially owned direct indirect 2006 report",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: Considering both direct and indirect holdings, what is the total number of shares of common stock beneficially owned by Arthur D. Levinson in Apple Inc. as of the 2006 report?\nRetrieval query:",
+    "raw_output": "Arthur D. Levinson Apple Inc. common stock beneficially owned direct indirect 2006 report",
+    "latency_seconds": 2.4006297000014456,
+    "input_tokens": 183,
+    "output_tokens": 22,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "364400.0",
+  "gold_evidence_reference": "FinQA | pdf/AAPL/2006/page_131.pdf | source_page=131 | context_id=finqa_test_ctx_286"
+}

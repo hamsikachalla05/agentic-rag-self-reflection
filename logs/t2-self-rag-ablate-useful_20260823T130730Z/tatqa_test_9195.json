@@ -1,0 +1,221 @@
+{
+  "question_id": "tatqa_test_9195",
+  "question": "What was the percentage point decrease in the projected benefit obligation discount rate used by Jabil Circuit Inc. for its plans from the 2018 fiscal year to the 2019 fiscal year?",
+  "retrieval_query": "Jabil Circuit Inc. projected benefit obligation discount rate percentage point decrease from 2018 to 2019 fiscal year",
+  "metadata_filters": {
+    "company": "jabil-circuit-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c1::aa7543bb0e",
+      "rank": 1,
+      "dense_score": 0.6081911325454712,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1a8874a4f3c3f8044c083509da0746b2"
+    },
+    {
+      "chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761",
+      "rank": 2,
+      "dense_score": 0.5954810976982117,
+      "bm25_score": 2.5764231999851535,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1a8874a4f3c3f8044c083509da0746b2"
+    }
+  ],
+  "answer": "The discount rate in 2018 was 2.2%, and in 2019 it was 2.3%. The change is 2.3% - 2.2% = 0.1%. This is an increase, not a decrease. Therefore, there was no percentage point decrease; instead, there was a 0.1 percentage point increase.\n\nThe retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 27.1193,
+  "input_tokens": 2134,
+  "output_tokens": 133,
+  "total_tokens": 2267,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1459,
+  "llm_latency_seconds": 26.9718,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the percentage point decrease in the projected benefit obligation discount rate used by Jabil Circuit Inc. for its plans from the 2018 fiscal year to the 2019 fiscal year?\nLabel:",
+      "input_tokens": 108,
+      "output_tokens": 7,
+      "latency_seconds": 1.0257766729992
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the percentage point decrease in the projected benefit obligation discount rate used by Jabil Circuit Inc. for its plans from the 2018 fiscal year to the 2019 fiscal year?\nEvidence:\n[1] 1a8874a4f3c3f8044c083509da0746b2.pdf p.1\nreturnonplanassets ...................................... 2.0% 3.6% 4.0%\nRateofcompensationincrease............................................... 4.3% 4.4% 4.4%\nDiscountrate(2) ........................................................... 1.7% 2.2% 2.3%\n(1) Theexpectedreturnonplanassetsassumptionusedincalculatingnetperiodicbenefitcostisbasedon\nhistoricalreturnexperienceandestimatesoffuturelong-termperformancewithconsiderationtothe\nexpectedinvestmentmixoftheplan.\n(2) Thediscountrateisusedtostateexpectedcashflowsrelatingtofuturebenefitsatapresentvalueonthe\nmeasurementdate.Thisraterepresentsthemarketrateforhigh-qualityfixedincomeinvestmentswhose\ntimingwouldmatchthecashoutflowofretirementbenefits\n\n[2] 1a8874a4f3c3f8044c083509da0746b2.pdf p.1\nNetPeriodicBenefitCost\nThefollowingtableprovidesinformationaboutthenetperiodicbenefitcostfortheplansforfiscalyears\n2019,2018and2017(inthousands):\nPension\n2019 2018 2017\nServicecost ........................................................ $ 1,437 $ 1,063 $ 1,068\nInterestcost ........................................................ 3,715 3,807 2,942\nExpectedlong-termreturnonplanassets ................................. (5,291) (5,954) (4,206)\nRecognizedactuarialloss .............................................. 741 1,127 1,929\nAmortizationofpriorservicecredit ...................................... (44) (88) (138)\nNetsettlementloss ................................................... 634 116 1,4\nLabel:",
+      "input_tokens": 581,
+      "output_tokens": 4,
+      "latency_seconds": 4.430612909993215
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the percentage point decrease in the projected benefit obligation discount rate used by Jabil Circuit Inc. for its plans from the 2018 fiscal year to the 2019 fiscal year?\nEvidence:\n[1] 1a8874a4f3c3f8044c083509da0746b2.pdf p.1\nreturnonplanassets ...................................... 2.0% 3.6% 4.0%\nRateofcompensationincrease............................................... 4.3% 4.4% 4.4%\nDiscountrate(2) ........................................................... 1.7% 2.2% 2.3%\n(1) Theexpectedreturnonplanassetsassumptionusedincalculatingnetperiodicbenefitcostisbasedon\nhistoricalreturnexperienceandestimatesoffuturelong-termperformancewithconsiderationtothe\nexpectedinvestmentmixoftheplan.\n(2) Thediscountrateisusedtostateexpectedcashflowsrelatingtofuturebenefitsatapresentvalueonthe\nmeasurementdate.Thisraterepresentsthemarketrateforhigh-qualityfixedincomeinvestmentswhose\ntimingwouldmatchthecashoutflowofretirementbenefits\n\n[2] 1a8874a4f3c3f8044c083509da0746b2.pdf p.1\nNetPeriodicBenefitCost\nThefollowingtableprovidesinformationaboutthenetperiodicbenefitcostfortheplansforfiscalyears\n2019,2018and2017(inthousands):\nPension\n2019 2018 2017\nServicecost ........................................................ $ 1,437 $ 1,063 $ 1,068\nInterestcost ........................................................ 3,715 3,807 2,942\nExpectedlong-termreturnonplanassets ................................. (5,291) (5,954) (4,206)\nRecognizedactuarialloss .............................................. 741 1,127 1,929\nAmortizationofpriorservicecredit ...................................... (44) (88) (138)\nNetsettlementloss ................................................... 634 116 1,4\nLabel:",
+      "input_tokens": 586,
+      "output_tokens": 3,
+      "latency_seconds": 4.424006569999619
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Jabil Circuit Inc. projected benefit obligation discount rate percentage point decrease from 2018 to 2019 fiscal year",
+      "filters": {
+        "company": "jabil-circuit-inc"
+      },
+      "chunk_ids": [
+        "1a8874a4f3c3f8044c083509da0746b2::p1::c1::aa7543bb0e",
+        "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c1::aa7543bb0e",
+          "document_id": "1a8874a4f3c3f8044c083509da0746b2",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c1::aa7543bb0e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761",
+          "document_id": "1a8874a4f3c3f8044c083509da0746b2",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the percentage point decrease in the projected benefit obligation discount rate used by Jabil Circuit Inc. for its plans from the 2018 fiscal year to the 2019 fiscal year?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage point decrease in the projected benefit obligation discount rate used by Jabil Circuit Inc. for its plans from the 2018 fiscal year to the 2019 fiscal year?\nRetrieval query:",
+  "query_formulation_raw_output": "Jabil Circuit Inc. projected benefit obligation discount rate percentage point decrease from 2018 to 2019 fiscal year",
+  "query_formulation_latency_seconds": 3.1516,
+  "query_formulation_input_tokens": 185,
+  "query_formulation_output_tokens": 28,
+  "query_formulation_trace": {
+    "original_question": "What was the percentage point decrease in the projected benefit obligation discount rate used by Jabil Circuit Inc. for its plans from the 2018 fiscal year to the 2019 fiscal year?",
+    "retrieval_query": "Jabil Circuit Inc. projected benefit obligation discount rate percentage point decrease from 2018 to 2019 fiscal year",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage point decrease in the projected benefit obligation discount rate used by Jabil Circuit Inc. for its plans from the 2018 fiscal year to the 2019 fiscal year?\nRetrieval query:",
+    "raw_output": "Jabil Circuit Inc. projected benefit obligation discount rate percentage point decrease from 2018 to 2019 fiscal year",
+    "latency_seconds": 3.1515988780010957,
+    "input_tokens": 185,
+    "output_tokens": 28,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "-0.5",
+  "gold_evidence_reference": "TAT-DQA | raw/1a8874a4f3c3f8044c083509da0746b2.pdf | context_id=1a8874a4f3c3f8044c083509da0746b2"
+}

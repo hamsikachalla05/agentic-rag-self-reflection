@@ -1,0 +1,291 @@
+{
+  "question_id": "tatqa_test_9308",
+  "question": "What is the sum of the total stock-based compensation expense and the unrecognized stock-based compensation expense for both unvested employee stock options and unvested RSUs as of December 31, 2019, for VirnetX Holding Corp?",
+  "retrieval_query": "VirnetX Holding Corp total stock-based compensation expense unrecognized stock-based compensation expense unvested employee stock options unvested RSUs as of December 31 2019",
+  "metadata_filters": {
+    "year": 2019,
+    "company": "virnetx-holding-corp"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c0::3655c422ea",
+      "rank": 1,
+      "dense_score": 0.7615429162979126,
+      "bm25_score": 65.7092931221445,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "36d1468e2be20ccc765f76c712ed5e1e"
+    },
+    {
+      "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c1::357e56e327",
+      "rank": 2,
+      "dense_score": 0.748063325881958,
+      "bm25_score": 37.06082050839126,
+      "hybrid_score": 0.749798283518124,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "36d1468e2be20ccc765f76c712ed5e1e"
+    },
+    {
+      "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c2::0c18d3508e",
+      "rank": 3,
+      "dense_score": 0.6548534035682678,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "36d1468e2be20ccc765f76c712ed5e1e"
+    }
+  ],
+  "answer": "Sum of total stock-based compensation expense and unrecognized stock-based compensation expense for unvested employee stock options and unvested RSUs as of December 31, 2019:\n\nTotal stock-based compensation expense (from evidence): $3,711  \nUnrecognized stock-based compensation expense:  \n- For unvested employee stock options: $4,801  \n- For unvested RSUs: $1,882  \nSum of unrecognized expenses: $4,801 + $1,882 = $6,683  \n\nTotal sum = $3,711 + $6,683 = $10,394\n\nSource: 36d1468e2be20ccc765f76c712ed5e1e.pdf p.1\n\nAnswer: 10394",
+  "latency_seconds": 43.255,
+  "input_tokens": 2681,
+  "output_tokens": 243,
+  "total_tokens": 2924,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1461,
+  "llm_latency_seconds": 43.1073,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the sum of the total stock-based compensation expense and the unrecognized stock-based compensation expense for both unvested employee stock options and unvested RSUs as of December 31, 2019, for VirnetX Holding Corp?\nLabel:",
+      "input_tokens": 118,
+      "output_tokens": 7,
+      "latency_seconds": 1.0877962680024211
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "IRRELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the sum of the total stock-based compensation expense and the unrecognized stock-based compensation expense for both unvested employee stock options and unvested RSUs as of December 31, 2019, for VirnetX Holding Corp?\nEvidence:\n[1] 36d1468e2be20ccc765f76c712ed5e1e.pdf p.1\nTABLE OF CONTENTS\nIntrinsic value is calculated as the difference between the per-share market price of our common stock on the last trading day of\n2019, which was $3.80 and the exercise price of the options. For options exercised, the intrinsic value is the difference between\nmarket price and the exercise price on the date of exercise. We received cash proceeds of $816 and $135 from stock options\nexercised in 2019 and 2018, respectively. The total intrinsic value of options exercised was $2,473 and $46 during the years ended\nDecember 31, 2019 and 2018, respectively.\nStock-based compensation expense is included in general and administrative expense for each period as follows:\nYear Ended Year\n\n[2] 36d1468e2be20ccc765f76c712ed5e1e.pdf p.1\nCompensation - Stock Compensation”.\nExpected volatility of the stock options was based upon historical data and other relevant factors. We have not provided an estimate\nfor forfeitures because we have had nominal forfeited options and RSUs and believed that all outstanding options and RSUs at\nDecember 31, 2019, would vest.\nNote 7 − Earnings Per Share\nBasic earnings per share are based on the weighted average number of shares outstanding for a period. Diluted earnings per share\nare based upon the weighted average number of shares and potentially dilutive common shares outstanding. Potential common\nshares outstanding principally include stock options, under our stock plan and warrants. During\n\n[3] 36d1468e2be20ccc765f76c712ed5e1e.pdf p.1\n26 | %\n[/TABLE]\n\n[TABLE]\nExpected life term | 6.14 years | 6.02 years\n[/TABLE]\n\n[TABLE]\nNet loss | $ | (19,180 | ) |  | (25,406)\n[/TABLE]\n\n[TABLE]\nBasic and diluted loss per share | $ | (0.28 | ) |  | (0.40)\n[/TABLE]\nLabel:",
+      "input_tokens": 631,
+      "output_tokens": 5,
+      "latency_seconds": 4.75045669300016
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the sum of the total stock-based compensation expense and the unrecognized stock-based compensation expense for both unvested employee stock options and unvested RSUs as of December 31, 2019, for VirnetX Holding Corp?\nEvidence:\n[1] 36d1468e2be20ccc765f76c712ed5e1e.pdf p.1\nEnded\nStock-Based Compensation by Type of Award December 31, 2019 December 31, 2018\nStock options $ 2,756 $ 2,926\nRSUs 955 1,129\nTotal stock-based compensation expense $ 3,711 $ 4,055\nAs of December 31, 2019, there was $4,801 of unrecognized stock-based compensation expense related to unvested employee stock\noptions and $1,882 of unrecognized stock-based compensation expense related to unvested RSUs. These costs are expected to be\nrecognized over a weighted-average period of 2.13 and 2.33 years, respectively.\nThe fair value of each option grant was estimated on the date of grant using the Black-Scholes option pricing model using the\nfollowing weighted average assumptions:\nYear Ended Year En\n\n[2] 36d1468e2be20ccc765f76c712ed5e1e.pdf p.1\n2019, and 2018 we incurred losses;\ntherefore, the effect of any common stock equivalent would be anti-dilutive during those periods.\nThe table below sets forth the basic and diluted loss per share calculations:\n2019 2018\nNet loss $ (19,180) (25,406)\nBasic and diluted weighted average number of shares outstanding 68,564 62,986\nBasic and diluted loss per share $ (0.28) (0.40)\nNote 8 − Common Stock\nEach share of common stock has the right to one vote. The holders of common stock are entitled to receive dividends whenever\nfunds are legally available and when declared by our Board of Directors, subject to the prior rights of holders of all classes of stock\noutstanding having priority rights as to\n\n[3] 36d1468e2be20ccc765f76c712ed5e1e.pdf p.1\n26 | %\n[/TABLE]\n\n[TABLE]\nExpected life term | 6.14 years | 6.02 years\n[/TABLE]\n\n[TABLE]\nNet loss | $ | (19,180 | ) |  | (25,406)\n[/TABLE]\n\n[TABLE]\nBasic and diluted loss per share | $ | (0.28 | ) |  | (0.40)\n[/TABLE]\nDraft:\nSum of total stock-based compensation expense and unrecognized stock-based compensation expense for unvested employee stock options and unvested RSUs as of December 31, 2019:\n\nTotal stock-based compensation expense (from evidence): $3,711  \nUnrecognized stock-based compensation expense:  \n- For unvested employee stock options: $4,801  \n- For unvested RSUs: $1,882  \nSum of unrecognized expenses: $4,801 + $1,882 = $6,683  \n\nTotal sum = $3,711 + $6,683 = $10,394\n\nSource: 36d1468e2be20ccc765f76c712ed5e1e.pdf p.1\n\nAnswer: 10394\nLabel:",
+      "input_tokens": 935,
+      "output_tokens": 3,
+      "latency_seconds": 6.9278689910061075
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "VirnetX Holding Corp total stock-based compensation expense unrecognized stock-based compensation expense unvested employee stock options unvested RSUs as of December 31 2019",
+      "filters": {
+        "year": 2019,
+        "company": "virnetx-holding-corp"
+      },
+      "chunk_ids": [
+        "36d1468e2be20ccc765f76c712ed5e1e::p1::c0::3655c422ea",
+        "36d1468e2be20ccc765f76c712ed5e1e::p1::c1::357e56e327",
+        "36d1468e2be20ccc765f76c712ed5e1e::p1::c2::0c18d3508e"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c0::3655c422ea",
+          "document_id": "36d1468e2be20ccc765f76c712ed5e1e",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c0::3655c422ea",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c1::357e56e327",
+          "document_id": "36d1468e2be20ccc765f76c712ed5e1e",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c1::357e56e327",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c2::0c18d3508e",
+          "document_id": "36d1468e2be20ccc765f76c712ed5e1e",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 216,
+          "source_chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c2::0c18d3508e",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c0::3655c422ea",
+          "document_id": "36d1468e2be20ccc765f76c712ed5e1e",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c0::3655c422ea",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c1::357e56e327",
+          "document_id": "36d1468e2be20ccc765f76c712ed5e1e",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c1::357e56e327",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c2::0c18d3508e",
+          "document_id": "36d1468e2be20ccc765f76c712ed5e1e",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 216,
+          "source_chunk_id": "36d1468e2be20ccc765f76c712ed5e1e::p1::c2::0c18d3508e",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the sum of the total stock-based compensation expense and the unrecognized stock-based compensation expense for both unvested employee stock options and unvested RSUs as of December 31, 2019, for VirnetX Holding Corp?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the sum of the total stock-based compensation expense and the unrecognized stock-based compensation expense for both unvested employee stock options and unvested RSUs as of December 31, 2019, for VirnetX Holding Corp?\nRetrieval query:",
+  "query_formulation_raw_output": "VirnetX Holding Corp total stock-based compensation expense unrecognized stock-based compensation expense unvested employee stock options unvested RSUs as of December 31 2019",
+  "query_formulation_latency_seconds": 4.4268,
+  "query_formulation_input_tokens": 195,
+  "query_formulation_output_tokens": 38,
+  "query_formulation_trace": {
+    "original_question": "What is the sum of the total stock-based compensation expense and the unrecognized stock-based compensation expense for both unvested employee stock options and unvested RSUs as of December 31, 2019, for VirnetX Holding Corp?",
+    "retrieval_query": "VirnetX Holding Corp total stock-based compensation expense unrecognized stock-based compensation expense unvested employee stock options unvested RSUs as of December 31 2019",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the sum of the total stock-based compensation expense and the unrecognized stock-based compensation expense for both unvested employee stock options and unvested RSUs as of December 31, 2019, for VirnetX Holding Corp?\nRetrieval query:",
+    "raw_output": "VirnetX Holding Corp total stock-based compensation expense unrecognized stock-based compensation expense unvested employee stock options unvested RSUs as of December 31 2019",
+    "latency_seconds": 4.426802628004225,
+    "input_tokens": 195,
+    "output_tokens": 38,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "10394.0",
+  "gold_evidence_reference": "TAT-DQA | raw/36d1468e2be20ccc765f76c712ed5e1e.pdf | context_id=36d1468e2be20ccc765f76c712ed5e1e"
+}

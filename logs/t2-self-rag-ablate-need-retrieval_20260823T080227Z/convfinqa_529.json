@@ -1,0 +1,334 @@
+{
+  "question_id": "convfinqa_529",
+  "question": "What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?",
+  "retrieval_query": "Apple Inc. price change $100 September 30 2006 September 30 2011 five-year cumulative total shareholder return",
+  "metadata_filters": {
+    "company": "Apple Inc."
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+      "rank": 1,
+      "dense_score": 0.784636914730072,
+      "bm25_score": 57.69520197179817,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_366"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+      "rank": 2,
+      "dense_score": null,
+      "bm25_score": 2.4456961697994557,
+      "hybrid_score": 0.016955976138153948,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c1::333303ca3f",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c2::108bbc8737",
+      "rank": 4,
+      "dense_score": null,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    }
+  ],
+  "answer": "Price change for Apple Inc. from September 30, 2006 ($100) to September 30, 2011 ($495):\n\n$495 - $100 = $395\n\nSource: convfinqa_ctx_366.pdf p.1",
+  "latency_seconds": 78.712,
+  "input_tokens": 8280,
+  "output_tokens": 130,
+  "total_tokens": 8410,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 8,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1592,
+  "llm_latency_seconds": 78.5492,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nEvidence:\n[1] convfinqa_ctx_366.pdf p.1\nCompanyStockPerformance\nThe following graph shows a five-year comparison of cumulative total shareholder return, calculated on a\ndividendreinvestedbasis,fortheCompany,theS&P500CompositeIndex,theS&PComputerHardwareIndex,\nand the Dow Jones U.S. Technology Index. The graph assumes $100 was invested in each of the Company’s\ncommon stock, the S&P 500 Composite Index, the S&P Computer Hardware Index, and the Dow Jones U.S.\nTechnology Index on September 30, 2006. Data points on the graph are annual. Note that historic stock price\nperformanceisnotnecessarilyindicativeoffuturestockpriceperformance.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Apple Inc., The S&P 500 Index,\nthe S&P Computer Har\n\n[2] finqa_test_ctx_286.pdf p.1\nSecurity Ownership of 5% Holders, Directors, Nominees and Executive Officers\nShares of Common Stock Percent of Common Stock\nName of Beneficial Owner Beneficially Owned(1) Outstanding\nFidelity Investments.................................. 57,162,311(2) 6.65%\nAllianceBernstein LP ................................ 48,637,731(3) 5.66%\nSteven P. Jobs....................................... 5,546,451(4) *\nWilliam V.Campbell................................. 221,004(5) *\nTimothy D.Cook.................................... 12,597(6) *\nMillard S. Drexler ................................... 220,000(7) *\nAlbertA. Gore, Jr.................................... 60,000(8) *\nRonald B.Johnson.....................\n\n[3] finqa_test_ctx_286.pdf p.1\n. Jobs has the right to acquire by exercise of stock\noptions.\n(5) Includes 220,000 shares of Common Stock that Mr. Campbell has the right to acquire by exercise of\nstock options.\n(6) Excludes 600,000 unvestedrestricted stock units.\n(7) Includes 40,000 shares of Common Stock that Mr. Drexler holds indirectly and 180,000 shares of\nCommon Stockthat Mr. Drexler has the right to acquire by exercise of stockoptions.\n(8) Consists of 60,000 shares of Common Stock that Mr. Gore has the rightto acquire byexercise of stock\noptions.\n(9) Includes 1,900,000 shares of Common Stock that Mr. Johnson has the right to acquire by exercise of\nstock options and excludes 450,000 unvestedrestricted stockunits.\n(10)\n\n[4] finqa_test_ctx_286.pdf p.1\n|  |  |  | 12,597 | (6) |  |  | * | \nMillard S. Drexler ................................... |  |  |  |  | 220,000 | (7) |  |  | * | \nAlbertA. Gore, Jr.................................... |  |  |  |  | 60,000 | (8) |  |  | * | \nRonald B.Johnson................................... |  |  |  |  | 2,049,890 | (9) |  |  | * | \nArthur D. Levinson.................................. |  |  |  |  | 362,400 | (10) |  |  | * | \nPeter Oppenheimer.................................. |  |  |  |  | 149,768 | (11) |  |  | * | \nPhilip W. Schiller.................................... |  |  |  |  | 256 | (12) |  |  | * | \nEric E. Schmidt...................................... |  |  |  |  | 12,284 | (13) |  |  | * | \nJ\nLabel:",
+      "input_tokens": 1046,
+      "output_tokens": 4,
+      "latency_seconds": 8.109314232002362
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nEvidence:\n[1] convfinqa_ctx_366.pdf p.1\nCompanyStockPerformance\nThe following graph shows a five-year comparison of cumulative total shareholder return, calculated on a\ndividendreinvestedbasis,fortheCompany,theS&P500CompositeIndex,theS&PComputerHardwareIndex,\nand the Dow Jones U.S. Technology Index. The graph assumes $100 was invested in each of the Company’s\ncommon stock, the S&P 500 Composite Index, the S&P Computer Hardware Index, and the Dow Jones U.S.\nTechnology Index on September 30, 2006. Data points on the graph are annual. Note that historic stock price\nperformanceisnotnecessarilyindicativeoffuturestockpriceperformance.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Apple Inc., The S&P 500 Index,\nthe S&P Computer Har\n\n[2] finqa_test_ctx_286.pdf p.1\nSecurity Ownership of 5% Holders, Directors, Nominees and Executive Officers\nShares of Common Stock Percent of Common Stock\nName of Beneficial Owner Beneficially Owned(1) Outstanding\nFidelity Investments.................................. 57,162,311(2) 6.65%\nAllianceBernstein LP ................................ 48,637,731(3) 5.66%\nSteven P. Jobs....................................... 5,546,451(4) *\nWilliam V.Campbell................................. 221,004(5) *\nTimothy D.Cook.................................... 12,597(6) *\nMillard S. Drexler ................................... 220,000(7) *\nAlbertA. Gore, Jr.................................... 60,000(8) *\nRonald B.Johnson.....................\n\n[3] finqa_test_ctx_286.pdf p.1\n. Jobs has the right to acquire by exercise of stock\noptions.\n(5) Includes 220,000 shares of Common Stock that Mr. Campbell has the right to acquire by exercise of\nstock options.\n(6) Excludes 600,000 unvestedrestricted stock units.\n(7) Includes 40,000 shares of Common Stock that Mr. Drexler holds indirectly and 180,000 shares of\nCommon Stockthat Mr. Drexler has the right to acquire by exercise of stockoptions.\n(8) Consists of 60,000 shares of Common Stock that Mr. Gore has the rightto acquire byexercise of stock\noptions.\n(9) Includes 1,900,000 shares of Common Stock that Mr. Johnson has the right to acquire by exercise of\nstock options and excludes 450,000 unvestedrestricted stockunits.\n(10)\n\n[4] finqa_test_ctx_286.pdf p.1\n|  |  |  | 12,597 | (6) |  |  | * | \nMillard S. Drexler ................................... |  |  |  |  | 220,000 | (7) |  |  | * | \nAlbertA. Gore, Jr.................................... |  |  |  |  | 60,000 | (8) |  |  | * | \nRonald B.Johnson................................... |  |  |  |  | 2,049,890 | (9) |  |  | * | \nArthur D. Levinson.................................. |  |  |  |  | 362,400 | (10) |  |  | * | \nPeter Oppenheimer.................................. |  |  |  |  | 149,768 | (11) |  |  | * | \nPhilip W. Schiller.................................... |  |  |  |  | 256 | (12) |  |  | * | \nEric E. Schmidt...................................... |  |  |  |  | 12,284 | (13) |  |  | * | \nJ\nLabel:",
+      "input_tokens": 1051,
+      "output_tokens": 3,
+      "latency_seconds": 8.27142305400048
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nEvidence:\n[1] convfinqa_ctx_366.pdf p.1\nCompanyStockPerformance\nThe following graph shows a five-year comparison of cumulative total shareholder return, calculated on a\ndividendreinvestedbasis,fortheCompany,theS&P500CompositeIndex,theS&PComputerHardwareIndex,\nand the Dow Jones U.S. Technology Index. The graph assumes $100 was invested in each of the Company’s\ncommon stock, the S&P 500 Composite Index, the S&P Computer Hardware Index, and the Dow Jones U.S.\nTechnology Index on September 30, 2006. Data points on the graph are annual. Note that historic stock price\nperformanceisnotnecessarilyindicativeoffuturestockpriceperformance.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Apple Inc., The S&P 500 Index,\nthe S&P Computer Har\n\n[2] finqa_test_ctx_286.pdf p.1\nSecurity Ownership of 5% Holders, Directors, Nominees and Executive Officers\nShares of Common Stock Percent of Common Stock\nName of Beneficial Owner Beneficially Owned(1) Outstanding\nFidelity Investments.................................. 57,162,311(2) 6.65%\nAllianceBernstein LP ................................ 48,637,731(3) 5.66%\nSteven P. Jobs....................................... 5,546,451(4) *\nWilliam V.Campbell................................. 221,004(5) *\nTimothy D.Cook.................................... 12,597(6) *\nMillard S. Drexler ................................... 220,000(7) *\nAlbertA. Gore, Jr.................................... 60,000(8) *\nRonald B.Johnson.....................\n\n[3] finqa_test_ctx_286.pdf p.1\n. Jobs has the right to acquire by exercise of stock\noptions.\n(5) Includes 220,000 shares of Common Stock that Mr. Campbell has the right to acquire by exercise of\nstock options.\n(6) Excludes 600,000 unvestedrestricted stock units.\n(7) Includes 40,000 shares of Common Stock that Mr. Drexler holds indirectly and 180,000 shares of\nCommon Stockthat Mr. Drexler has the right to acquire by exercise of stockoptions.\n(8) Consists of 60,000 shares of Common Stock that Mr. Gore has the rightto acquire byexercise of stock\noptions.\n(9) Includes 1,900,000 shares of Common Stock that Mr. Johnson has the right to acquire by exercise of\nstock options and excludes 450,000 unvestedrestricted stockunits.\n(10)\n\n[4] finqa_test_ctx_286.pdf p.1\n|  |  |  | 12,597 | (6) |  |  | * | \nMillard S. Drexler ................................... |  |  |  |  | 220,000 | (7) |  |  | * | \nAlbertA. Gore, Jr.................................... |  |  |  |  | 60,000 | (8) |  |  | * | \nRonald B.Johnson................................... |  |  |  |  | 2,049,890 | (9) |  |  | * | \nArthur D. Levinson.................................. |  |  |  |  | 362,400 | (10) |  |  | * | \nPeter Oppenheimer.................................. |  |  |  |  | 149,768 | (11) |  |  | * | \nPhilip W. Schiller.................................... |  |  |  |  | 256 | (12) |  |  | * | \nEric E. Schmidt...................................... |  |  |  |  | 12,284 | (13) |  |  | * | \nJ\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1092,
+      "output_tokens": 4,
+      "latency_seconds": 9.754033710996737
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nEvidence:\n[1] convfinqa_ctx_366.pdf p.1\ndware Index and the Dow Jones US Technology Index\n$600\n$500\n$400\n$300\n$200\n$100\n$0\nSep-06 Sep-07 Sep-08 Sep-09 Sep-10 Sep-11\nApple Inc. S&P 500 S&P Computer Hardware Dow Jones US Technology\n*$100 invested on 9/30/06 in stock or index, including reinvestment of dividends.\nFiscal year ending September 30.\nCopyright© 2011 S&P, a division of The McGraw-Hill Companies Inc. All rights reserved.\nCopyright© 2011 Dow Jones & Co. All rights reserved.\nSeptember30, September30, September30, September30, September30, September30,\n2006 2007 2008 2009 2010 2011\nAppleInc. $100 $199 $148 $241 $369 $495\nS&P500 $100 $116 $ 91 $ 85 $ 93 $ 94\nS&PComputerHardware $100 $148 $124 $147 $174 $197\nDowJonesUSTechnology\n\n[2] finqa_test_ctx_286.pdf p.1\nSecurity Ownership of 5% Holders, Directors, Nominees and Executive Officers\nShares of Common Stock Percent of Common Stock\nName of Beneficial Owner Beneficially Owned(1) Outstanding\nFidelity Investments.................................. 57,162,311(2) 6.65%\nAllianceBernstein LP ................................ 48,637,731(3) 5.66%\nSteven P. Jobs....................................... 5,546,451(4) *\nWilliam V.Campbell................................. 221,004(5) *\nTimothy D.Cook.................................... 12,597(6) *\nMillard S. Drexler ................................... 220,000(7) *\nAlbertA. Gore, Jr.................................... 60,000(8) *\nRonald B.Johnson.....................\n\n[3] finqa_test_ctx_286.pdf p.1\n. Jobs has the right to acquire by exercise of stock\noptions.\n(5) Includes 220,000 shares of Common Stock that Mr. Campbell has the right to acquire by exercise of\nstock options.\n(6) Excludes 600,000 unvestedrestricted stock units.\n(7) Includes 40,000 shares of Common Stock that Mr. Drexler holds indirectly and 180,000 shares of\nCommon Stockthat Mr. Drexler has the right to acquire by exercise of stockoptions.\n(8) Consists of 60,000 shares of Common Stock that Mr. Gore has the rightto acquire byexercise of stock\noptions.\n(9) Includes 1,900,000 shares of Common Stock that Mr. Johnson has the right to acquire by exercise of\nstock options and excludes 450,000 unvestedrestricted stockunits.\n(10)\n\n[4] finqa_test_ctx_286.pdf p.1\n|  |  |  | 12,597 | (6) |  |  | * | \nMillard S. Drexler ................................... |  |  |  |  | 220,000 | (7) |  |  | * | \nAlbertA. Gore, Jr.................................... |  |  |  |  | 60,000 | (8) |  |  | * | \nRonald B.Johnson................................... |  |  |  |  | 2,049,890 | (9) |  |  | * | \nArthur D. Levinson.................................. |  |  |  |  | 362,400 | (10) |  |  | * | \nPeter Oppenheimer.................................. |  |  |  |  | 149,768 | (11) |  |  | * | \nPhilip W. Schiller.................................... |  |  |  |  | 256 | (12) |  |  | * | \nEric E. Schmidt...................................... |  |  |  |  | 12,284 | (13) |  |  | * | \nJ\nLabel:",
+      "input_tokens": 1188,
+      "output_tokens": 3,
+      "latency_seconds": 9.181043003001832
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nEvidence:\n[1] convfinqa_ctx_366.pdf p.1\ndware Index and the Dow Jones US Technology Index\n$600\n$500\n$400\n$300\n$200\n$100\n$0\nSep-06 Sep-07 Sep-08 Sep-09 Sep-10 Sep-11\nApple Inc. S&P 500 S&P Computer Hardware Dow Jones US Technology\n*$100 invested on 9/30/06 in stock or index, including reinvestment of dividends.\nFiscal year ending September 30.\nCopyright© 2011 S&P, a division of The McGraw-Hill Companies Inc. All rights reserved.\nCopyright© 2011 Dow Jones & Co. All rights reserved.\nSeptember30, September30, September30, September30, September30, September30,\n2006 2007 2008 2009 2010 2011\nAppleInc. $100 $199 $148 $241 $369 $495\nS&P500 $100 $116 $ 91 $ 85 $ 93 $ 94\nS&PComputerHardware $100 $148 $124 $147 $174 $197\nDowJonesUSTechnology\n\n[2] finqa_test_ctx_286.pdf p.1\nSecurity Ownership of 5% Holders, Directors, Nominees and Executive Officers\nShares of Common Stock Percent of Common Stock\nName of Beneficial Owner Beneficially Owned(1) Outstanding\nFidelity Investments.................................. 57,162,311(2) 6.65%\nAllianceBernstein LP ................................ 48,637,731(3) 5.66%\nSteven P. Jobs....................................... 5,546,451(4) *\nWilliam V.Campbell................................. 221,004(5) *\nTimothy D.Cook.................................... 12,597(6) *\nMillard S. Drexler ................................... 220,000(7) *\nAlbertA. Gore, Jr.................................... 60,000(8) *\nRonald B.Johnson.....................\n\n[3] finqa_test_ctx_286.pdf p.1\n. Jobs has the right to acquire by exercise of stock\noptions.\n(5) Includes 220,000 shares of Common Stock that Mr. Campbell has the right to acquire by exercise of\nstock options.\n(6) Excludes 600,000 unvestedrestricted stock units.\n(7) Includes 40,000 shares of Common Stock that Mr. Drexler holds indirectly and 180,000 shares of\nCommon Stockthat Mr. Drexler has the right to acquire by exercise of stockoptions.\n(8) Consists of 60,000 shares of Common Stock that Mr. Gore has the rightto acquire byexercise of stock\noptions.\n(9) Includes 1,900,000 shares of Common Stock that Mr. Johnson has the right to acquire by exercise of\nstock options and excludes 450,000 unvestedrestricted stockunits.\n(10)\n\n[4] finqa_test_ctx_286.pdf p.1\n|  |  |  | 12,597 | (6) |  |  | * | \nMillard S. Drexler ................................... |  |  |  |  | 220,000 | (7) |  |  | * | \nAlbertA. Gore, Jr.................................... |  |  |  |  | 60,000 | (8) |  |  | * | \nRonald B.Johnson................................... |  |  |  |  | 2,049,890 | (9) |  |  | * | \nArthur D. Levinson.................................. |  |  |  |  | 362,400 | (10) |  |  | * | \nPeter Oppenheimer.................................. |  |  |  |  | 149,768 | (11) |  |  | * | \nPhilip W. Schiller.................................... |  |  |  |  | 256 | (12) |  |  | * | \nEric E. Schmidt...................................... |  |  |  |  | 12,284 | (13) |  |  | * | \nJ\nDraft:\nPrice change for Apple Inc. from September 30, 2006 ($100) to September 30, 2011 ($495):\n\n$495 - $100 = $395\n\nSource: convfinqa_ctx_366.pdf p.1\nLabel:",
+      "input_tokens": 1287,
+      "output_tokens": 3,
+      "latency_seconds": 9.846126768999966
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Apple Inc. price change $100 September 30 2006 September 30 2011 five-year cumulative total shareholder return",
+      "filters": {
+        "company": "Apple Inc."
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_366::p1::c0::64d06d47d6",
+        "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+        "finqa_test_ctx_286::p1::c1::333303ca3f",
+        "finqa_test_ctx_286::p1::c2::108bbc8737"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "document_id": "convfinqa_ctx_366",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+          "document_id": "finqa_test_ctx_286",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_286::p1::c1::333303ca3f",
+          "document_id": "finqa_test_ctx_286",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_286::p1::c1::333303ca3f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_286::p1::c2::108bbc8737",
+          "document_id": "finqa_test_ctx_286",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_286::p1::c2::108bbc8737",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "document_id": "convfinqa_ctx_366",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+          "document_id": "finqa_test_ctx_286",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_286::p1::c1::333303ca3f",
+          "document_id": "finqa_test_ctx_286",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_286::p1::c1::333303ca3f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_286::p1::c2::108bbc8737",
+          "document_id": "finqa_test_ctx_286",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_286::p1::c2::108bbc8737",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "evidence_window_refinement_after_not_useful_1",
+    "evidence_support_after_not_useful",
+    "answer_generation_after_refinement",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nRetrieval query:",
+  "query_formulation_raw_output": "Apple Inc. price change $100 September 30 2006 September 30 2011 five-year cumulative total shareholder return",
+  "query_formulation_latency_seconds": 5.1941,
+  "query_formulation_input_tokens": 201,
+  "query_formulation_output_tokens": 34,
+  "query_formulation_trace": {
+    "original_question": "What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?",
+    "retrieval_query": "Apple Inc. price change $100 September 30 2006 September 30 2011 five-year cumulative total shareholder return",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nRetrieval query:",
+    "raw_output": "Apple Inc. price change $100 September 30 2006 September 30 2011 five-year cumulative total shareholder return",
+    "latency_seconds": 5.194070448000275,
+    "input_tokens": 201,
+    "output_tokens": 34,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "395.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/AAPL/2011/page_24.pdf | source_page=24 | context_id=convfinqa_ctx_366"
+}

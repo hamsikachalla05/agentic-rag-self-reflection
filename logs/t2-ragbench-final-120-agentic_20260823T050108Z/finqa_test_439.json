@@ -1,0 +1,145 @@
+{
+  "question_id": "finqa_test_439",
+  "question": "What was the approximate total number of employees in State Street Corporation's global workforce before the implementation of the business operations and information technology transformation program that led to the involuntary termination of 1400 employees in 2010?",
+  "retrieval_query": "State Street Corporation global workforce employees 2010 1400 involuntary termination approximate total number",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1334::p1::c0::695c7dbdd8",
+      "rank": 1,
+      "dense_score": 0.6138949394226074,
+      "bm25_score": 8.304161096716092,
+      "hybrid_score": 0.6522631212063265,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1334"
+    },
+    {
+      "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p1::c1::abd0eec23f",
+      "rank": 2,
+      "dense_score": 0.6238802671432495,
+      "bm25_score": null,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "f59bd5ee555e5cc8cf1d5223a0145049"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_235::p1::c0::69bd8f0a41",
+      "rank": 3,
+      "dense_score": 0.6200230121612549,
+      "bm25_score": null,
+      "hybrid_score": 0.5292569211008171,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_235"
+    },
+    {
+      "chunk_id": "dc105a860fbe0bfd73a477bda3945171::p1::c0::f19749d444",
+      "rank": 4,
+      "dense_score": 0.6144452691078186,
+      "bm25_score": null,
+      "hybrid_score": 0.42695963488289473,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "dc105a860fbe0bfd73a477bda3945171"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+      "rank": 5,
+      "dense_score": null,
+      "bm25_score": 10.581786774584007,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 15.8845,
+  "input_tokens": 1555,
+  "output_tokens": 33,
+  "total_tokens": 1588,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.1522,
+  "llm_latency_seconds": 15.7319,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the approximate total number of employees in State Street Corporation's global workforce before the implementation of the business operations and information technology transformation program that led to the involuntary termination of 1400 employees in 2010?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the approximate total number of employees in State Street Corporation's global workforce before the implementation of the business operations and information technology transformation program that led to the involuntary termination of 1400 employees in 2010?\nRetrieval query:",
+  "query_formulation_raw_output": "State Street Corporation global workforce employees 2010 1400 involuntary termination approximate total number",
+  "query_formulation_latency_seconds": 3.2831,
+  "query_formulation_input_tokens": 190,
+  "query_formulation_output_tokens": 22,
+  "query_formulation_trace": {
+    "original_question": "What was the approximate total number of employees in State Street Corporation's global workforce before the implementation of the business operations and information technology transformation program that led to the involuntary termination of 1400 employees in 2010?",
+    "retrieval_query": "State Street Corporation global workforce employees 2010 1400 involuntary termination approximate total number",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the approximate total number of employees in State Street Corporation's global workforce before the implementation of the business operations and information technology transformation program that led to the involuntary termination of 1400 employees in 2010?\nRetrieval query:",
+    "raw_output": "State Street Corporation global workforce employees 2010 1400 involuntary termination approximate total number",
+    "latency_seconds": 3.2831235169978754,
+    "input_tokens": 190,
+    "output_tokens": 22,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 12.4487,
+  "answer_generation_input_tokens": 1365,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the approximate total number of employees in State Street Corporation's global workforce before the implementation of the business operations and information technology transformation program that led to the involuntary termination of 1400 employees in 2010?\nEvidence:\n[1] convfinqa_ctx_1334.pdf p.1\nremitted to the U.S. due to foreign tax credits and exclusions that may become available at the time of\nremittance.\nAt December 31, 2010, Aon had domestic federal operating loss carryforwards of $56 million that\nwill expire at various dates from 2011 to 2024, state operating loss carryforwards of $610 million that\nwill expire at various dates from 2011 to 2031, and foreign operating and capital loss carryforwards of\n$720 million and $251 million, respectively, nearly all of which are subject to indefinite carryforward.\nUnrecognized Tax Provisions\nThe following is a reconciliation of the Company’s beginning and ending amount of unrecognized\ntax benefits (in millions):\n2010 2009\nBalance at Jan ...\n\n[2] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.1\n8,969\nDILUTEDEARNINGS/(LOSS)PERSHARE\nProfit/(loss)fromcontinuingoperationsattributabletotheequityholdersofthe\nGroup:\nUsedincalculatingdilutedearnings/(loss)pershare (9,819) 6,639 Totalrevenue 179,260 161,529\nProfit/(loss)attributabletotheequityholdersoftheGroupusedin\ncalculatingdilutedEPS (9,819) 6,639\nGainonextinguishmentofB1lease 1,068 -\n(d) Weightedaveragenumberofsharesusedasthedenominator\nGainonextinguishmentofAPDCleases 1,291 -\n2019 2018 Otheritemsincludedingains 675 284\nNumberof Numberof TotalOtherincome 3,034 284\nshares shares space\n(a) Revenuerecognisedinrelationtocontractliabilities\nWeightedaveragenumberofordinarysharesusedasthedenominatorin\ncalculationbasicearnings/(loss)pershare 3 ...\n\n[3] convfinqa_ctx_235.pdf p.1\nAMERICANTOWERCORPORATIONANDSUBSIDIARIES\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS\nLossonRetirementofLong-TermObligations—Lossonretirementoflong-termobligationsprimarilyincludes\ncashpaidtoretiredebtinexcessofitscarryingvalue,cashpaidtoholdersofconvertiblenotesinconnection\nwithnoteconversionsandnon-cashchargesrelatedtothewrite-offofdeferredfinancingfees.Lossonretirement\noflong-termobligationsalsoincludesgainsfromrepurchasingorrefinancingcertainoftheCompany’sdebt\nobligations.\nEarningsPerCommonShare—BasicandDiluted—Basicincomefromcontinuingoperationspercommonshare\nfortheyearsendedDecember31,2012,2011and2010representsincomefromcontinuingoperations\nattributabletoAmericanTowerCorporationdividedbythewe ...\n\n[4] dc105a860fbe0bfd73a477bda3945171.pdf p.1\nstnemetatS\nlaicnaniF\n5.2 Employee share plans (continued) FY2018 Performance Rights Plan\nThe following table illustrates the number of, and\nShares issued under the FY2019, FY2018 and\nmovements in, shares issued during the year:\nFY2017 Performance Rights plans\n2019 2018 For the purposes of Sections 200B and 200E of the\nNUMBER NUMBER\nCorporations Act, iSelect shareholders have approved the\ngiving of any potential benefits under the Performance Outstanding at the 547,949 -\nRights Plan provided in connection with any future beginning of the period\nretirement of a participant who holds a ‘managerial\nor Executive office’ such that for the purposes of the Granted during the - 772,303\nprovisions, th ...\n\n[5] finqa_test_ctx_286.pdf p.1\nSecurity Ownership of 5% Holders, Directors, Nominees and Executive Officers\nShares of Common Stock Percent of Common Stock\nName of Beneficial Owner Beneficially Owned(1) Outstanding\nFidelity Investments.................................. 57,162,311(2) 6.65%\nAllianceBernstein LP ................................ 48,637,731(3) 5.66%\nSteven P. Jobs....................................... 5,546,451(4) *\nWilliam V.Campbell................................. 221,004(5) *\nTimothy D.Cook.................................... 12,597(6) *\nMillard S. Drexler ................................... 220,000(7) *\nAlbertA. Gore, Jr.................................... 60,000(8) *\nRonald B.Johnson..................... ...\nAnswer:",
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "28000.0",
+  "gold_evidence_reference": "FinQA | pdf/STT/2011/page_69.pdf | source_page=69 | context_id=finqa_test_ctx_373"
+}

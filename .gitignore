@@ -1,1 +1,36 @@
-..
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+
+# Generated indexes and experiment artifacts
+data/indexes/
+data/t2_ragbench/documents/
+data/t2_ragbench/raw/
+logs/baseline_*/
+logs/t2-ragbench-small_*/
+logs/t2-self-rag-small_*/
+logs/t2-ragbench-final-120_*/
+data/t2_ragbench/documents_final120/
+logs/*.json
+logs/*.jsonl
+!logs/.gitkeep
+!logs/examples/
+# Frozen 120-Q evaluation runs (Lumer, Full Self-RAG V2, four ablations)
+!logs/t2-ragbench-final-120-agentic_*/
+!logs/t2-self-rag-final-120-agentic_*/
+!logs/t2-self-rag-ablate-*/
+
+# Model caches if stored locally
+models/
+*.bin
+*.gguf
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

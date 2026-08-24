@@ -1,0 +1,243 @@
+{
+  "question_id": "convfinqa_888",
+  "question": "What is the sum of the average operating lease rental expenses for 2011 and 2010 at Huntington Ingalls Industries?",
+  "retrieval_query": "average operating lease rental expenses SUM 2011 2010 Huntington Ingalls Industries",
+  "metadata_filters": {
+    "company": "Huntington Ingalls Industries"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1574::p1::c2::4ef83e4731",
+      "rank": 1,
+      "dense_score": 0.6823852062225342,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1574"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1574::p1::c0::4de12a7b99",
+      "rank": 2,
+      "dense_score": null,
+      "bm25_score": 3.0694136538190393,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1574"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1574::p1::c1::a5f63b2a13",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 3.0694136538190393,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1574"
+    }
+  ],
+  "answer": "$44 million (2011) + $44 million (2010) = $88 million\n\nSource: convfinqa_ctx_1574.pdf p.1",
+  "latency_seconds": 27.7589,
+  "input_tokens": 2560,
+  "output_tokens": 78,
+  "total_tokens": 2638,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1549,
+  "llm_latency_seconds": 27.6019,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "/workspace",
+    "data_dir": "/workspace/data",
+    "pdf_dir": "data/t2_ragbench/documents_final120",
+    "questions_path": "/workspace/data/questions/sample_questions.json",
+    "index_dir": "data/indexes/t2_ragbench_final120",
+    "logs_dir": "/workspace/logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 1,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 8,
+    "reflection_max_tokens": 16
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the sum of the average operating lease rental expenses for 2011 and 2010 at Huntington Ingalls Industries?\nLabel:",
+      "input_tokens": 95,
+      "output_tokens": 7,
+      "latency_seconds": 1.4590537769981893
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Reply with exactly one label. No explanation.\nRELEVANT if any retrieved chunk could help answer the question.\nIRRELEVANT if none of the chunks are about the question.\nQuestion: What is the sum of the average operating lease rental expenses for 2011 and 2010 at Huntington Ingalls Industries?\nEvidence:\n[1] convfinqa_ctx_1574.pdf p.1\n.\nCollectivebargainingagreementsgenerallyexpireafterthreetofiveyearsandaresubjecttorenegotiationatthattime.Itis\nnotexpectedthattheresultsofthesenegotiations,eitherindividuallyorintheaggregate,willhaveamaterialeffectonthe\nCompany’sconsolidatedresultsofoperations.\nOperatingLeases—Rentalexpenseforoperatingleaseswas$44millionin2011,$44millionin2010,and$48millionin\n2009.Theseamountsarenetofimmaterialamountsofsubleaserentalincome.Minimumrentalcommitmentsunderlong-\ntermnon-cancellableoperatingleasesforthenextfiveyearsandthereafterare:\n($inmillions)\n2012 $ 21\n2013 17\n2014 15\n2015 13\n2016 10\nThereafter 48\nTotal $124\n85\n\n[2] convfinqa_ctx_1574.pdf p.1\nTheCompanyhasalsoencounteredvariousqualityissuesonitsaircraftcarrierconstructionandoverhaulprogramsandits\nVirginia-classsubmarineconstructionprogramatitsNewportNewslocation.Theseprimarilyinvolvemattersrelatedtofiller\nmetalusedinpipeweldsidentifiedin2007,andissuesassociatedwithnon-nuclearweldinspectionandtheinstallationof\nweaponshandlingequipmentoncertainsubmarines,andcertainpurchasedmaterialqualityissuesidentifiedin2009.The\nCompanydoesnotbelievethatresolutionoftheseissueswillhaveamaterialeffectuponitsconsolidatedfinancialposition,\nresultsofoperationsorcashflows.\nEnvironmentalMatters—Theestimatedcosttocompleteenvironmentalremediationhasbeenaccruedwhereitisprobablethatthe\nCompanywillincursuchc\n\n[3] convfinqa_ctx_1574.pdf p.1\nies,discoveryofmoreextensive\ncontaminationthananticipated,changesinlawsandregulationsaffectingremediationrequirements,andimprovementsin\nremediationtechnology.ShouldotherPRPsnotpaytheirallocableshareofremediationcosts,theCompanymayhavetoincur\ncostsexceedingthosealreadyestimatedandaccrued.Inaddition,therearecertainpotentialremediationsiteswherethecostsof\nremediationcannotbereasonablyestimated.Althoughmanagementcannotpredictwhethernewinformationgainedasprojects\nprogresswillmateriallyaffecttheestimatedliabilityaccrued,managementdoesnotbelievethatfutureremediationexpenditures\nwillhaveamaterialeffectontheCompany’sconsolidatedfinancialposition,resultsofoperationsorcashflows.\nFinancialArrangements—I\nLabel:",
+      "input_tokens": 707,
+      "output_tokens": 4,
+      "latency_seconds": 5.980191685004684
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the sum of the average operating lease rental expenses for 2011 and 2010 at Huntington Ingalls Industries?\nEvidence:\n[1] convfinqa_ctx_1574.pdf p.1\n.\nCollectivebargainingagreementsgenerallyexpireafterthreetofiveyearsandaresubjecttorenegotiationatthattime.Itis\nnotexpectedthattheresultsofthesenegotiations,eitherindividuallyorintheaggregate,willhaveamaterialeffectonthe\nCompany’sconsolidatedresultsofoperations.\nOperatingLeases—Rentalexpenseforoperatingleaseswas$44millionin2011,$44millionin2010,and$48millionin\n2009.Theseamountsarenetofimmaterialamountsofsubleaserentalincome.Minimumrentalcommitmentsunderlong-\ntermnon-cancellableoperatingleasesforthenextfiveyearsandthereafterare:\n($inmillions)\n2012 $ 21\n2013 17\n2014 15\n2015 13\n2016 10\nThereafter 48\nTotal $124\n85\n\n[2] convfinqa_ctx_1574.pdf p.1\nTheCompanyhasalsoencounteredvariousqualityissuesonitsaircraftcarrierconstructionandoverhaulprogramsandits\nVirginia-classsubmarineconstructionprogramatitsNewportNewslocation.Theseprimarilyinvolvemattersrelatedtofiller\nmetalusedinpipeweldsidentifiedin2007,andissuesassociatedwithnon-nuclearweldinspectionandtheinstallationof\nweaponshandlingequipmentoncertainsubmarines,andcertainpurchasedmaterialqualityissuesidentifiedin2009.The\nCompanydoesnotbelievethatresolutionoftheseissueswillhaveamaterialeffectuponitsconsolidatedfinancialposition,\nresultsofoperationsorcashflows.\nEnvironmentalMatters—Theestimatedcosttocompleteenvironmentalremediationhasbeenaccruedwhereitisprobablethatthe\nCompanywillincursuchc\n\n[3] convfinqa_ctx_1574.pdf p.1\nies,discoveryofmoreextensive\ncontaminationthananticipated,changesinlawsandregulationsaffectingremediationrequirements,andimprovementsin\nremediationtechnology.ShouldotherPRPsnotpaytheirallocableshareofremediationcosts,theCompanymayhavetoincur\ncostsexceedingthosealreadyestimatedandaccrued.Inaddition,therearecertainpotentialremediationsiteswherethecostsof\nremediationcannotbereasonablyestimated.Althoughmanagementcannotpredictwhethernewinformationgainedasprojects\nprogresswillmateriallyaffecttheestimatedliabilityaccrued,managementdoesnotbelievethatfutureremediationexpenditures\nwillhaveamaterialeffectontheCompany’sconsolidatedfinancialposition,resultsofoperationsorcashflows.\nFinancialArrangements—I\nDraft:\n$44 million (2011) + $44 million (2010) = $88 million\n\nSource: convfinqa_ctx_1574.pdf p.1\nLabel:",
+      "input_tokens": 786,
+      "output_tokens": 3,
+      "latency_seconds": 6.009159117995296
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "average operating lease rental expenses SUM 2011 2010 Huntington Ingalls Industries",
+      "filters": {
+        "company": "Huntington Ingalls Industries"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_1574::p1::c2::4ef83e4731",
+        "convfinqa_ctx_1574::p1::c0::4de12a7b99",
+        "convfinqa_ctx_1574::p1::c1::a5f63b2a13"
+      ],
+      "reason": "baseline_retrieve"
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1574::p1::c2::4ef83e4731",
+          "document_id": "convfinqa_ctx_1574",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 617,
+          "source_chunk_id": "convfinqa_ctx_1574::p1::c2::4ef83e4731",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1574::p1::c0::4de12a7b99",
+          "document_id": "convfinqa_ctx_1574",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1574::p1::c0::4de12a7b99",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1574::p1::c1::a5f63b2a13",
+          "document_id": "convfinqa_ctx_1574",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1574::p1::c1::a5f63b2a13",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "query_formulation",
+    "retrieval_decision",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the sum of the average operating lease rental expenses for 2011 and 2010 at Huntington Ingalls Industries?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the sum of the average operating lease rental expenses for 2011 and 2010 at Huntington Ingalls Industries?\nRetrieval query:",
+  "query_formulation_raw_output": "average operating lease rental expenses SUM 2011 2010 Huntington Ingalls Industries",
+  "query_formulation_latency_seconds": 2.5977,
+  "query_formulation_input_tokens": 172,
+  "query_formulation_output_tokens": 21,
+  "query_formulation_trace": {
+    "original_question": "What is the sum of the average operating lease rental expenses for 2011 and 2010 at Huntington Ingalls Industries?",
+    "retrieval_query": "average operating lease rental expenses SUM 2011 2010 Huntington Ingalls Industries",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the sum of the average operating lease rental expenses for 2011 and 2010 at Huntington Ingalls Industries?\nRetrieval query:",
+    "raw_output": "average operating lease rental expenses SUM 2011 2010 Huntington Ingalls Industries",
+    "latency_seconds": 2.59768245700252,
+    "input_tokens": 172,
+    "output_tokens": 21,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "88.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/HII/2011/page_103.pdf | source_page=103 | context_id=convfinqa_ctx_1574"
+}
