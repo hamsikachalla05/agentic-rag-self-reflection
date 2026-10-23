@@ -1,0 +1,314 @@
+{
+  "question_id": "convfinqa_2757",
+  "question": "What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?",
+  "retrieval_query": "Royal Caribbean Group debt maturity ratio 2010 to 2006 based on schedule of annual maturities on long-term debt as of December 31, 2005",
+  "metadata_filters": {
+    "company": "Royal Caribbean Group"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_479::p1::c0::d302d11737",
+      "rank": 1,
+      "dense_score": 0.801152765750885,
+      "bm25_score": 43.111821498313994,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_479"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_268::p1::c0::aac7eb07c0",
+      "rank": 2,
+      "dense_score": 0.66443932056427,
+      "bm25_score": 17.101284953911247,
+      "hybrid_score": 0.20640023759371967,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_268"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_479::p1::c1::f9f6d243b7",
+      "rank": 3,
+      "dense_score": 0.6119572520256042,
+      "bm25_score": 22.512513153426944,
+      "hybrid_score": 0.11486478313275968,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_479"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_479::p1::c2::a98b3f7102",
+      "rank": 4,
+      "dense_score": 0.6305092573165894,
+      "bm25_score": 17.799305661930504,
+      "hybrid_score": 0.10845905149346154,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_479"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_479::p1::c3::7c4e1348d8",
+      "rank": 5,
+      "dense_score": 0.6445627808570862,
+      "bm25_score": 14.214221866518052,
+      "hybrid_score": 0.10340264900411886,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_479"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 122.0976,
+  "input_tokens": 7211,
+  "output_tokens": 79,
+  "total_tokens": 7290,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.0837,
+  "llm_latency_seconds": 121.9683,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?\nEvidence:\n[1] convfinqa_ctx_479.pdf p.1\n38 Royal Caribbean Cruises Ltd.\nNotes to the Consolidated\nFinancial Statements (continued)\nDuring 2005, we amended our $1.0 billion unsecured revolving Under certain ofour agreements, the contractualinterestrate and\ncredit facility to extend its maturity date from March 27, 2008 to commitmentfee varywith our debtrating.\nMarch 27, 2010, and reduce the effective interestrate to LIBOR plus\nThe unsecured senior notes and senior debentures are not\n1.0% and the commitmentfee to 0.2% ofthe undrawn portion ofthe\nredeemable prior to maturity.\nfacilityatDecember 31, 2005. In addition, in 2005, we entered into\ntwo $100.0 million unsecured term loans, due 2010, atan effective Our debt agreements contain\n\n[2] finqa_test_ctx_268.pdf p.1\nrates are still low and that a significant portion of cruise guests carried are first-time cruisers. We believe this presents\nan opportunity for long-term growth and a potential for increased profitability.\nThe following table details industry market penetration rates for North America, Europe and Asia/Pacific\ncomputed based on the number of annual cruise guests as a percentage of the total population:\nYear North America(1)(2) Europe(1)(3) Asia/Pacific(1)(4)\n2012 3.33% 1.21% 0.04%\n2013 3.32% 1.24% 0.05%\n2014 3.46% 1.23% 0.06%\n2015 3.36% 1.25% 0.08%\n2016 3.49% 1.24% 0.09%\n(1) Source: Our estimates are based on a combination of data obtained from publicly available sources including the Intern\n\n[3] convfinqa_ctx_479.pdf p.1\n1,000. Each Liquid Yield Option™ Note and 2010 687,376\nzero coupon convertible note is convertible at the option of the\nholder into 11.7152 and 15.6675 sharesofcommon stock, respec-\n1The $137.9 million accreted value ofthe zero coupon convertible notesatDecember\ntively, ifthe marketprice ofour common stockreachescertain lev-\n31, 2005 isincluded in year 2009. The holdersofour zero coupon convertible notes\nels. These conditionswere metatDecember 31, 2005 and 2004 for mayrequire usto purchase anynotesoutstanding atan accreted value of$161.7 mil-\nthe zero coupon convertible notesand atDecember 31, 2004 for the lion on May18, 2009. Thisaccreted value wascalculated based on the number of\nnotesouts\n\n[4] convfinqa_ctx_479.pdf p.1\nincluding commissions and other fees, was approxi-\nstockor a combination thereof.\nmately$249.1 million and wasrecorded in shareholders’ equityasa\nDuring 2005, holdersofour Liquid Yield Option™ Notesand zero componentoftreasurystock.\ncoupon convertible notes converted approximately $10.4 million\nThe forward sale contract matured in February 2006. During the\nand $285.0 million, respectively, of the accreted value of these\nterm ofthe forward sale contract, the investmentbankpurchased\nnotesinto approximately0.3 million and 9.4 million shares, respec-\nsharesofour common stockin the open marketto settle itsobliga-\ntively, ofour common stockand cash for fractionalshares. In addi-\ntion related to th\n\n[5] convfinqa_ctx_479.pdf p.1\nlease to finance Legend of the Seas. During 2005, we paid the New YorkStockExchange on the firstbusinessdayofthe pur-\n$335.8 million in connection with the exercise ofpurchase options chase period and the lastbusinessdayofeach month ofthe pur-\non these capitallease obligations. chase period. Sharesofcommon stockof14,476, 13,281 and 21,280\nDecision:",
+      "input_tokens": 1207,
+      "output_tokens": 4,
+      "latency_seconds": 22.30919139999969
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?\nEvidence:\n[1] convfinqa_ctx_479.pdf p.1\n38 Royal Caribbean Cruises Ltd.\nNotes to the Consolidated\nFinancial Statements (continued)\nDuring 2005, we amended our $1.0 billion unsecured revolving Under certain ofour agreements, the contractualinterestrate and\ncredit facility to extend its maturity date from March 27, 2008 to commitmentfee varywith our debtrating.\nMarch 27, 2010, and reduce the effective interestrate to LIBOR plus\nThe unsecured senior notes and senior debentures are not\n1.0% and the commitmentfee to 0.2% ofthe undrawn portion ofthe\nredeemable prior to maturity.\nfacilityatDecember 31, 2005. In addition, in 2005, we entered into\ntwo $100.0 million unsecured term loans, due 2010, atan effective Our debt agreements contain\n\n[2] finqa_test_ctx_268.pdf p.1\nrates are still low and that a significant portion of cruise guests carried are first-time cruisers. We believe this presents\nan opportunity for long-term growth and a potential for increased profitability.\nThe following table details industry market penetration rates for North America, Europe and Asia/Pacific\ncomputed based on the number of annual cruise guests as a percentage of the total population:\nYear North America(1)(2) Europe(1)(3) Asia/Pacific(1)(4)\n2012 3.33% 1.21% 0.04%\n2013 3.32% 1.24% 0.05%\n2014 3.46% 1.23% 0.06%\n2015 3.36% 1.25% 0.08%\n2016 3.49% 1.24% 0.09%\n(1) Source: Our estimates are based on a combination of data obtained from publicly available sources including the Intern\n\n[3] convfinqa_ctx_479.pdf p.1\n1,000. Each Liquid Yield Option™ Note and 2010 687,376\nzero coupon convertible note is convertible at the option of the\nholder into 11.7152 and 15.6675 sharesofcommon stock, respec-\n1The $137.9 million accreted value ofthe zero coupon convertible notesatDecember\ntively, ifthe marketprice ofour common stockreachescertain lev-\n31, 2005 isincluded in year 2009. The holdersofour zero coupon convertible notes\nels. These conditionswere metatDecember 31, 2005 and 2004 for mayrequire usto purchase anynotesoutstanding atan accreted value of$161.7 mil-\nthe zero coupon convertible notesand atDecember 31, 2004 for the lion on May18, 2009. Thisaccreted value wascalculated based on the number of\nnotesouts\n\n[4] convfinqa_ctx_479.pdf p.1\nincluding commissions and other fees, was approxi-\nstockor a combination thereof.\nmately$249.1 million and wasrecorded in shareholders’ equityasa\nDuring 2005, holdersofour Liquid Yield Option™ Notesand zero componentoftreasurystock.\ncoupon convertible notes converted approximately $10.4 million\nThe forward sale contract matured in February 2006. During the\nand $285.0 million, respectively, of the accreted value of these\nterm ofthe forward sale contract, the investmentbankpurchased\nnotesinto approximately0.3 million and 9.4 million shares, respec-\nsharesofour common stockin the open marketto settle itsobliga-\ntively, ofour common stockand cash for fractionalshares. In addi-\ntion related to th\n\n[5] convfinqa_ctx_479.pdf p.1\nlease to finance Legend of the Seas. During 2005, we paid the New YorkStockExchange on the firstbusinessdayofthe pur-\n$335.8 million in connection with the exercise ofpurchase options chase period and the lastbusinessdayofeach month ofthe pur-\non these capitallease obligations. chase period. Sharesofcommon stockof14,476, 13,281 and 21,280\nLabel:",
+      "input_tokens": 1123,
+      "output_tokens": 3,
+      "latency_seconds": 21.3244308000003
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?\nEvidence:\n[1] convfinqa_ctx_479.pdf p.1\n38 Royal Caribbean Cruises Ltd.\nNotes to the Consolidated\nFinancial Statements (continued)\nDuring 2005, we amended our $1.0 billion unsecured revolving Under certain ofour agreements, the contractualinterestrate and\ncredit facility to extend its maturity date from March 27, 2008 to commitmentfee varywith our debtrating.\nMarch 27, 2010, and reduce the effective interestrate to LIBOR plus\nThe unsecured senior notes and senior debentures are not\n1.0% and the commitmentfee to 0.2% ofthe undrawn portion ofthe\nredeemable prior to maturity.\nfacilityatDecember 31, 2005. In addition, in 2005, we entered into\ntwo $100.0 million unsecured term loans, due 2010, atan effective Our debt agreements contain\n\n[2] finqa_test_ctx_268.pdf p.1\nrates are still low and that a significant portion of cruise guests carried are first-time cruisers. We believe this presents\nan opportunity for long-term growth and a potential for increased profitability.\nThe following table details industry market penetration rates for North America, Europe and Asia/Pacific\ncomputed based on the number of annual cruise guests as a percentage of the total population:\nYear North America(1)(2) Europe(1)(3) Asia/Pacific(1)(4)\n2012 3.33% 1.21% 0.04%\n2013 3.32% 1.24% 0.05%\n2014 3.46% 1.23% 0.06%\n2015 3.36% 1.25% 0.08%\n2016 3.49% 1.24% 0.09%\n(1) Source: Our estimates are based on a combination of data obtained from publicly available sources including the Intern\n\n[3] convfinqa_ctx_479.pdf p.1\n1,000. Each Liquid Yield Option™ Note and 2010 687,376\nzero coupon convertible note is convertible at the option of the\nholder into 11.7152 and 15.6675 sharesofcommon stock, respec-\n1The $137.9 million accreted value ofthe zero coupon convertible notesatDecember\ntively, ifthe marketprice ofour common stockreachescertain lev-\n31, 2005 isincluded in year 2009. The holdersofour zero coupon convertible notes\nels. These conditionswere metatDecember 31, 2005 and 2004 for mayrequire usto purchase anynotesoutstanding atan accreted value of$161.7 mil-\nthe zero coupon convertible notesand atDecember 31, 2004 for the lion on May18, 2009. Thisaccreted value wascalculated based on the number of\nnotesouts\n\n[4] convfinqa_ctx_479.pdf p.1\nincluding commissions and other fees, was approxi-\nstockor a combination thereof.\nmately$249.1 million and wasrecorded in shareholders’ equityasa\nDuring 2005, holdersofour Liquid Yield Option™ Notesand zero componentoftreasurystock.\ncoupon convertible notes converted approximately $10.4 million\nThe forward sale contract matured in February 2006. During the\nand $285.0 million, respectively, of the accreted value of these\nterm ofthe forward sale contract, the investmentbankpurchased\nnotesinto approximately0.3 million and 9.4 million shares, respec-\nsharesofour common stockin the open marketto settle itsobliga-\ntively, ofour common stockand cash for fractionalshares. In addi-\ntion related to th\n\n[5] convfinqa_ctx_479.pdf p.1\nlease to finance Legend of the Seas. During 2005, we paid the New YorkStockExchange on the firstbusinessdayofthe pur-\n$335.8 million in connection with the exercise ofpurchase options chase period and the lastbusinessdayofeach month ofthe pur-\non these capitallease obligations. chase period. Sharesofcommon stockof14,476, 13,281 and 21,280\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1164,
+      "output_tokens": 4,
+      "latency_seconds": 21.553679900000134
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?\nEvidence:\n[1] convfinqa_ctx_479.pdf p.1\n38 Royal Caribbean Cruises Ltd.\nNotes to the Consolidated\nFinancial Statements (continued)\nDuring 2005, we amended our $1.0 billion unsecured revolving Under certain ofour agreements, the contractualinterestrate and\ncredit facility to extend its maturity date from March 27, 2008 to commitmentfee varywith our debtrating.\nMarch 27, 2010, and reduce the effective interestrate to LIBOR plus\nThe unsecured senior notes and senior debentures are not\n1.0% and the commitmentfee to 0.2% ofthe undrawn portion ofthe\nredeemable prior to maturity.\nfacilityatDecember 31, 2005. In addition, in 2005, we entered into\ntwo $100.0 million unsecured term loans, due 2010, atan effective Our debt agreements contain\n\n[2] finqa_test_ctx_268.pdf p.1\nrates are still low and that a significant portion of cruise guests carried are first-time cruisers. We believe this presents\nan opportunity for long-term growth and a potential for increased profitability.\nThe following table details industry market penetration rates for North America, Europe and Asia/Pacific\ncomputed based on the number of annual cruise guests as a percentage of the total population:\nYear North America(1)(2) Europe(1)(3) Asia/Pacific(1)(4)\n2012 3.33% 1.21% 0.04%\n2013 3.32% 1.24% 0.05%\n2014 3.46% 1.23% 0.06%\n2015 3.36% 1.25% 0.08%\n2016 3.49% 1.24% 0.09%\n(1) Source: Our estimates are based on a combination of data obtained from publicly available sources including the Intern\n\n[3] convfinqa_ctx_479.pdf p.1\n1,000. Each Liquid Yield Option™ Note and 2010 687,376\nzero coupon convertible note is convertible at the option of the\nholder into 11.7152 and 15.6675 sharesofcommon stock, respec-\n1The $137.9 million accreted value ofthe zero coupon convertible notesatDecember\ntively, ifthe marketprice ofour common stockreachescertain lev-\n31, 2005 isincluded in year 2009. The holdersofour zero coupon convertible notes\nels. These conditionswere metatDecember 31, 2005 and 2004 for mayrequire usto purchase anynotesoutstanding atan accreted value of$161.7 mil-\nthe zero coupon convertible notesand atDecember 31, 2004 for the lion on May18, 2009. Thisaccreted value wascalculated based on the number of\nnotesouts\n\n[4] convfinqa_ctx_479.pdf p.1\nincluding commissions and other fees, was approxi-\nstockor a combination thereof.\nmately$249.1 million and wasrecorded in shareholders’ equityasa\nDuring 2005, holdersofour Liquid Yield Option™ Notesand zero componentoftreasurystock.\ncoupon convertible notes converted approximately $10.4 million\nThe forward sale contract matured in February 2006. During the\nand $285.0 million, respectively, of the accreted value of these\nterm ofthe forward sale contract, the investmentbankpurchased\nnotesinto approximately0.3 million and 9.4 million shares, respec-\nsharesofour common stockin the open marketto settle itsobliga-\ntively, ofour common stockand cash for fractionalshares. In addi-\ntion related to th\n\n[5] convfinqa_ctx_479.pdf p.1\nlease to finance Legend of the Seas. During 2005, we paid the New YorkStockExchange on the firstbusinessdayofthe pur-\n$335.8 million in connection with the exercise ofpurchase options chase period and the lastbusinessdayofeach month ofthe pur-\non these capitallease obligations. chase period. Sharesofcommon stockof14,476, 13,281 and 21,280\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 1147,
+      "output_tokens": 11,
+      "latency_seconds": 22.459241900000052
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?\nEvidence:\n[1] convfinqa_ctx_479.pdf p.1\n38 Royal Caribbean Cruises Ltd.\nNotes to the Consolidated\nFinancial Statements (continued)\nDuring 2005, we amended our $1.0 billion unsecured revolving Under certain ofour agreements, the contractualinterestrate and\ncredit facility to extend its maturity date from March 27, 2008 to commitmentfee varywith our debtrating.\nMarch 27, 2010, and reduce the effective interestrate to LIBOR plus\nThe unsecured senior notes and senior debentures are not\n1.0% and the commitmentfee to 0.2% ofthe undrawn portion ofthe\nredeemable prior to maturity.\nfacilityatDecember 31, 2005. In addition, in 2005, we entered into\ntwo $100.0 million unsecured term loans, due 2010, atan effective Our debt agreements contain\n\n[2] finqa_test_ctx_268.pdf p.1\nrates are still low and that a significant portion of cruise guests carried are first-time cruisers. We believe this presents\nan opportunity for long-term growth and a potential for increased profitability.\nThe following table details industry market penetration rates for North America, Europe and Asia/Pacific\ncomputed based on the number of annual cruise guests as a percentage of the total population:\nYear North America(1)(2) Europe(1)(3) Asia/Pacific(1)(4)\n2012 3.33% 1.21% 0.04%\n2013 3.32% 1.24% 0.05%\n2014 3.46% 1.23% 0.06%\n2015 3.36% 1.25% 0.08%\n2016 3.49% 1.24% 0.09%\n(1) Source: Our estimates are based on a combination of data obtained from publicly available sources including the Intern\n\n[3] convfinqa_ctx_479.pdf p.1\n1,000. Each Liquid Yield Option™ Note and 2010 687,376\nzero coupon convertible note is convertible at the option of the\nholder into 11.7152 and 15.6675 sharesofcommon stock, respec-\n1The $137.9 million accreted value ofthe zero coupon convertible notesatDecember\ntively, ifthe marketprice ofour common stockreachescertain lev-\n31, 2005 isincluded in year 2009. The holdersofour zero coupon convertible notes\nels. These conditionswere metatDecember 31, 2005 and 2004 for mayrequire usto purchase anynotesoutstanding atan accreted value of$161.7 mil-\nthe zero coupon convertible notesand atDecember 31, 2004 for the lion on May18, 2009. Thisaccreted value wascalculated based on the number of\nnotesouts\n\n[4] convfinqa_ctx_479.pdf p.1\nincluding commissions and other fees, was approxi-\nstockor a combination thereof.\nmately$249.1 million and wasrecorded in shareholders’ equityasa\nDuring 2005, holdersofour Liquid Yield Option™ Notesand zero componentoftreasurystock.\ncoupon convertible notes converted approximately $10.4 million\nThe forward sale contract matured in February 2006. During the\nand $285.0 million, respectively, of the accreted value of these\nterm ofthe forward sale contract, the investmentbankpurchased\nnotesinto approximately0.3 million and 9.4 million shares, respec-\nsharesofour common stockin the open marketto settle itsobliga-\ntively, ofour common stockand cash for fractionalshares. In addi-\ntion related to th\n\n[5] convfinqa_ctx_479.pdf p.1\nlease to finance Legend of the Seas. During 2005, we paid the New YorkStockExchange on the firstbusinessdayofthe pur-\n$335.8 million in connection with the exercise ofpurchase options chase period and the lastbusinessdayofeach month ofthe pur-\non these capitallease obligations. chase period. Sharesofcommon stockof14,476, 13,281 and 21,280\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1164,
+      "output_tokens": 4,
+      "latency_seconds": 3.334227800000008
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Royal Caribbean Group debt maturity ratio 2010 to 2006 based on schedule of annual maturities on long-term debt as of December 31, 2005",
+      "filters": {
+        "company": "Royal Caribbean Group"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_479::p1::c0::d302d11737",
+        "finqa_test_ctx_268::p1::c0::aac7eb07c0",
+        "convfinqa_ctx_479::p1::c1::f9f6d243b7",
+        "convfinqa_ctx_479::p1::c2::a98b3f7102",
+        "convfinqa_ctx_479::p1::c3::7c4e1348d8"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_479::p1::c0::d302d11737",
+          "document_id": "convfinqa_ctx_479",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_479::p1::c0::d302d11737",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_268::p1::c0::aac7eb07c0",
+          "document_id": "finqa_test_ctx_268",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_268::p1::c0::aac7eb07c0",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_479::p1::c1::f9f6d243b7",
+          "document_id": "convfinqa_ctx_479",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_479::p1::c1::f9f6d243b7",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_479::p1::c2::a98b3f7102",
+          "document_id": "convfinqa_ctx_479",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_479::p1::c2::a98b3f7102",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_479::p1::c3::7c4e1348d8",
+          "document_id": "convfinqa_ctx_479",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 340,
+          "source_chunk_id": "convfinqa_ctx_479::p1::c3::7c4e1348d8",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?\nRetrieval query:",
+  "query_formulation_raw_output": "Royal Caribbean Group debt maturity ratio 2010 to 2006 based on schedule of annual maturities on long-term debt as of December 31, 2005",
+  "query_formulation_latency_seconds": 7.608,
+  "query_formulation_input_tokens": 195,
+  "query_formulation_output_tokens": 42,
+  "query_formulation_trace": {
+    "original_question": "What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?",
+    "retrieval_query": "Royal Caribbean Group debt maturity ratio 2010 to 2006 based on schedule of annual maturities on long-term debt as of December 31, 2005",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the ratio of Royal Caribbean Group's debt maturity in 2010 to that in 2006, based on the schedule of annual maturities on long-term debt as of December 31, 2005?\nRetrieval query:",
+    "raw_output": "Royal Caribbean Group debt maturity ratio 2010 to 2006 based on schedule of annual maturities on long-term debt as of December 31, 2005",
+    "latency_seconds": 7.607955499999662,
+    "input_tokens": 195,
+    "output_tokens": 42,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "1.14394",
+  "gold_evidence_reference": "ConvFinQA | pdf/RCL/2005/page_40.pdf | source_page=40 | context_id=convfinqa_ctx_479"
+}

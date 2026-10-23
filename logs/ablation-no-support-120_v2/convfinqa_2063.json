@@ -1,0 +1,246 @@
+{
+  "question_id": "convfinqa_2063",
+  "question": "What was the cost of sales for Analog Devices in 2019, as reflected in the total stock-based compensation expense?",
+  "retrieval_query": "cost of sales, Analog Devices, 2019, total stock-based compensation expense",
+  "metadata_filters": {
+    "year": 2019,
+    "company": "Analog Devices"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_602::p1::c1::44df70e6fe",
+      "rank": 1,
+      "dense_score": 0.7298060655593872,
+      "bm25_score": 9.923242521702843,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_602"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_602::p1::c2::d536647560",
+      "rank": 2,
+      "dense_score": 0.6632525324821472,
+      "bm25_score": 9.571094158008666,
+      "hybrid_score": 0.43769518125131224,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_602"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_602::p1::c0::758a7d5d0b",
+      "rank": 3,
+      "dense_score": 0.6563944816589355,
+      "bm25_score": 2.2496325492218263,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_602"
+    }
+  ],
+  "answer": "20,628\n\nSource: convfinqa_ctx_602.pdf p.1 (Cost of sales for 2019)",
+  "latency_seconds": 61.1552,
+  "input_tokens": 2833,
+  "output_tokens": 66,
+  "total_tokens": 2899,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0778,
+  "llm_latency_seconds": 61.0758,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the cost of sales for Analog Devices in 2019, as reflected in the total stock-based compensation expense?\nLabel:",
+      "input_tokens": 92,
+      "output_tokens": 7,
+      "latency_seconds": 4.7865429999997104
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the cost of sales for Analog Devices in 2019, as reflected in the total stock-based compensation expense?\nEvidence:\n[1] convfinqa_ctx_602.pdf p.1\n%toallunvestedstock-basedawardsasofNovember2,2019.This\nanalysiswillbere-evaluatedquarterlyandtheforfeitureratewillbeadjustedasnecessary.Ultimately,theactualexpense\nrecognizedoverthevestingperiodwillonlybeforthoseawardsthatvest.\nTotalstock-basedcompensationexpenserecognizedisasfollows:\n2019 2018 2017\nCostofsales $ 20,628 $ 18,733 $ 12,569\nResearchanddevelopment 75,305 81,444 51,258\nSelling,marketing,generalandadministrative 51,829 50,988 40,361\nSpecialcharges 2,538 — —\nTotalstock-basedcompensationexpense $ 150,300 $ 151,165 $ 104,188\nAsofNovember2,2019andNovember3,2018,theCompanycapitalized$6.8millionand$7.1million,respectively,of\nstock-basedcompensationininventory.\nAdditionalppaid-in-cappita\n\n[2] convfinqa_ctx_602.pdf p.1\nnotaffectitsresultsof\noperations.\n71\n\n[TABLE]\nCost | of | sales\n[/TABLE]\n\n[TABLE]\n$ 2 | 0,628\n[/TABLE]\n\n[TABLE]\n$ 1 | 8,733\n[/TABLE]\n\n[TABLE]\n$ 1 | 2,569\n[/TABLE]\n\n[TABLE]\nSelling, | market | ing,\n[/TABLE]\n\n[TABLE]\nand | adm | in | is | tr | ative\n[/TABLE]\n\n[TABLE]\ncom | pensation | expense\n[/TABLE]\n\n[TABLE]\n$ 1 | 50,300\n[/TABLE]\n\n[TABLE]\n$ 1 | 51,165\n[/TABLE]\n\n[TABLE]\n$ 1 | 04,188\n[/TABLE]\n\n[3] convfinqa_ctx_602.pdf p.1\nANALOGDEVICES,INC.\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS—(Continued)\nExpectedterm—TheCompanyuseshistoricalemployeeexerciseandoptionexpirationdatatoestimatetheexpected\ntermassumptionfortheBlack-Scholesgrant-datevaluation.TheCompanybelievesthatthishistoricaldataiscurrentlythebest\nestimateoftheexpectedtermofanewoption,andthatgenerallyitsemployeesexhibitsimilarexercisebehavior.\nRisk-freeinterestrate—Theyieldonzero-couponU.S.Treasurysecuritiesforaperiodthatiscommensuratewiththe\nexpectedtermassumptionisusedastherisk-freeinterestrate.\nExpecteddividendyield—Expecteddividendyieldiscalculatedbyannualizingthecashdividenddeclaredbythe\nCompany’sBoardofDirectorsforthecurrentquarteranddividingthatresultby\nDecision:",
+      "input_tokens": 863,
+      "output_tokens": 4,
+      "latency_seconds": 17.24957859999995
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the cost of sales for Analog Devices in 2019, as reflected in the total stock-based compensation expense?\nEvidence:\n[1] convfinqa_ctx_602.pdf p.1\n%toallunvestedstock-basedawardsasofNovember2,2019.This\nanalysiswillbere-evaluatedquarterlyandtheforfeitureratewillbeadjustedasnecessary.Ultimately,theactualexpense\nrecognizedoverthevestingperiodwillonlybeforthoseawardsthatvest.\nTotalstock-basedcompensationexpenserecognizedisasfollows:\n2019 2018 2017\nCostofsales $ 20,628 $ 18,733 $ 12,569\nResearchanddevelopment 75,305 81,444 51,258\nSelling,marketing,generalandadministrative 51,829 50,988 40,361\nSpecialcharges 2,538 — —\nTotalstock-basedcompensationexpense $ 150,300 $ 151,165 $ 104,188\nAsofNovember2,2019andNovember3,2018,theCompanycapitalized$6.8millionand$7.1million,respectively,of\nstock-basedcompensationininventory.\nAdditionalppaid-in-cappita\n\n[2] convfinqa_ctx_602.pdf p.1\nnotaffectitsresultsof\noperations.\n71\n\n[TABLE]\nCost | of | sales\n[/TABLE]\n\n[TABLE]\n$ 2 | 0,628\n[/TABLE]\n\n[TABLE]\n$ 1 | 8,733\n[/TABLE]\n\n[TABLE]\n$ 1 | 2,569\n[/TABLE]\n\n[TABLE]\nSelling, | market | ing,\n[/TABLE]\n\n[TABLE]\nand | adm | in | is | tr | ative\n[/TABLE]\n\n[TABLE]\ncom | pensation | expense\n[/TABLE]\n\n[TABLE]\n$ 1 | 50,300\n[/TABLE]\n\n[TABLE]\n$ 1 | 51,165\n[/TABLE]\n\n[TABLE]\n$ 1 | 04,188\n[/TABLE]\n\n[3] convfinqa_ctx_602.pdf p.1\nANALOGDEVICES,INC.\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS—(Continued)\nExpectedterm—TheCompanyuseshistoricalemployeeexerciseandoptionexpirationdatatoestimatetheexpected\ntermassumptionfortheBlack-Scholesgrant-datevaluation.TheCompanybelievesthatthishistoricaldataiscurrentlythebest\nestimateoftheexpectedtermofanewoption,andthatgenerallyitsemployeesexhibitsimilarexercisebehavior.\nRisk-freeinterestrate—Theyieldonzero-couponU.S.Treasurysecuritiesforaperiodthatiscommensuratewiththe\nexpectedtermassumptionisusedastherisk-freeinterestrate.\nExpecteddividendyield—Expecteddividendyieldiscalculatedbyannualizingthecashdividenddeclaredbythe\nCompany’sBoardofDirectorsforthecurrentquarteranddividingthatresultby\nDraft:\n20,628\n\nSource: convfinqa_ctx_602.pdf p.1 (Cost of sales for 2019)\nLabel:",
+      "input_tokens": 842,
+      "output_tokens": 3,
+      "latency_seconds": 15.485524199999873
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "cost of sales, Analog Devices, 2019, total stock-based compensation expense",
+      "filters": {
+        "year": 2019,
+        "company": "Analog Devices"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_602::p1::c1::44df70e6fe",
+        "convfinqa_ctx_602::p1::c2::d536647560",
+        "convfinqa_ctx_602::p1::c0::758a7d5d0b"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_602::p1::c1::44df70e6fe",
+          "document_id": "convfinqa_ctx_602",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_602::p1::c1::44df70e6fe",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_602::p1::c2::d536647560",
+          "document_id": "convfinqa_ctx_602",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 393,
+          "source_chunk_id": "convfinqa_ctx_602::p1::c2::d536647560",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_602::p1::c0::758a7d5d0b",
+          "document_id": "convfinqa_ctx_602",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_602::p1::c0::758a7d5d0b",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the cost of sales for Analog Devices in 2019, as reflected in the total stock-based compensation expense?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the cost of sales for Analog Devices in 2019, as reflected in the total stock-based compensation expense?\nRetrieval query:",
+  "query_formulation_raw_output": "cost of sales, Analog Devices, 2019, total stock-based compensation expense",
+  "query_formulation_latency_seconds": 4.2541,
+  "query_formulation_input_tokens": 169,
+  "query_formulation_output_tokens": 19,
+  "query_formulation_trace": {
+    "original_question": "What was the cost of sales for Analog Devices in 2019, as reflected in the total stock-based compensation expense?",
+    "retrieval_query": "cost of sales, Analog Devices, 2019, total stock-based compensation expense",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the cost of sales for Analog Devices in 2019, as reflected in the total stock-based compensation expense?\nRetrieval query:",
+    "raw_output": "cost of sales, Analog Devices, 2019, total stock-based compensation expense",
+    "latency_seconds": 4.254066800000146,
+    "input_tokens": 169,
+    "output_tokens": 19,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "20628.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/ADI/2019/page_77.pdf | source_page=77 | context_id=convfinqa_ctx_602"
+}

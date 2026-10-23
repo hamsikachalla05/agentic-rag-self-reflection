@@ -1,0 +1,348 @@
+{
+  "question_id": "convfinqa_3338",
+  "question": "What was the change in the estimated future net amortization expense of the present value of future profits between 2013 and 2014 for The Hartford Financial Services Group, Inc.?",
+  "retrieval_query": "The Hartford Financial Services Group, Inc. estimated future net amortization expense present value of future profits 2013 2014",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1659::p1::c0::1e1ed94d5a",
+      "rank": 1,
+      "dense_score": 0.7778153419494629,
+      "bm25_score": 36.122543506222016,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1659"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1659::p1::c1::af7ece9a95",
+      "rank": 2,
+      "dense_score": 0.7269757390022278,
+      "bm25_score": 35.80799997338794,
+      "hybrid_score": 0.7245630705140372,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1659"
+    },
+    {
+      "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+      "rank": 3,
+      "dense_score": 0.7012096047401428,
+      "bm25_score": null,
+      "hybrid_score": 0.19399569112574078,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "f59bd5ee555e5cc8cf1d5223a0145049"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_26::p1::c0::68a6d27224",
+      "rank": 4,
+      "dense_score": null,
+      "bm25_score": 21.755626252301717,
+      "hybrid_score": 0.12635468032789238,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_26"
+    },
+    {
+      "chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761",
+      "rank": 5,
+      "dense_score": 0.685487687587738,
+      "bm25_score": null,
+      "hybrid_score": 0.11067078178900415,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1a8874a4f3c3f8044c083509da0746b2"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 100.7648,
+  "input_tokens": 5137,
+  "output_tokens": 58,
+  "total_tokens": 5195,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.077,
+  "llm_latency_seconds": 100.643,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the change in the estimated future net amortization expense of the present value of future profits between 2013 and 2014 for The Hartford Financial Services Group, Inc.?\nLabel:",
+      "input_tokens": 107,
+      "output_tokens": 7,
+      "latency_seconds": 4.1556573000016215
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the change in the estimated future net amortization expense of the present value of future profits between 2013 and 2014 for The Hartford Financial Services Group, Inc.?\nEvidence:\n[1] convfinqa_ctx_1659.pdf p.1\nTHE HARTFORD FINANCIAL SERVICES GROUP, INC.\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (continued)\n7. Deferred Policy Acquisition Costs and Present Value of Future Profits (continued)\nResults\nChanges in the DAC balance are as follows:\n2011 2010 2009\nBalance, January 1 $ 9,857 $ 10,686 $ 13,248\nDeferred Costs 2,608 2,648 2,853\nAmortization – DAC (2,920) (2,665) (3,247)\nAmortization – DAC from discontinued operations — (17) (10)\nAmortization – Unlock benefit (charge), pre-tax [1] (507) 138 (1,010)\nAdjustments to unrealized gains and losses on securities available-for-sale and other [2] (377) (1,159) (1,031)\nEffect of currency translation 83 215 (39)\nCumulative effect of accounting change, pre-\n\n[2] convfinqa_ctx_1659.pdf p.1\n2] The most significant contributor to the adjustments was the effect of declining interest rates, resulting in unrealized gains on securities classified\nin AOCI. Other includes a $34 decrease as a result of the disposition of DAC from the sale of the Hartford Investment Canadian Canada in 2010.\n[3] For the year ended December 31, 2010 the effect of adopting new accounting guidance for embedded credit derivatives resulted in a decrease to\nretained earnings and, as a result, a DAC benefit. In addition, an offsetting amount was recorded in unrealized losses as unrealized losses\ndecreased upon adoption of the new accounting guidance.\nFor the year ended December 31, 2009 the effect of adopting n\n\n[3] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nFinancial Report Financial Report\nNotestotheConsolidatedFinancialReport NotestotheConsolidatedFinancialReport\n30June2019 30June2019\n(continued) (continued)\n3 Revenue and other income (continued) 3 Revenue and other income (continued)\n(b) Revenuerecognition (b) Revenuerecognition(continued)\nAASB 15 establishes principles for reporting the nature, amount, timing, and uncertainty of revenue and cash (vi) Distributionsfrominvestments\nflows arising from an entity’s contracts with customers and requires application of a five-step process to identify\nDistributionsfrominvestmentsarerecognisedasrevenuewhentherighttoreceivepaymentisestablished.\nthe contract with the customer, identify performance obli\n\n[4] convfinqa_ctx_26.pdf p.1\nPerformance Stock Units: In January 2017, Altria Group, Note 12. Earnings per Share\nInc. granted an aggregate of 187,886 performance stock units to\nBasic and diluted EPS were calculated using the following:\neligible employees. The payout of the performance stock units\nrequires the achievement of certain performance measures, which For the Years Ended December 31,\nwere predetermined at the time of grant, over a three-year\n(in millions) 2017 2016 2015\nperformance cycle. These performance measures consist of Altria\nNet earnings attributable to\nGroup, Inc.’s adjusted diluted earnings per share (“EPS”)\nAltria Group, Inc. $ 10,222 $ 14,239 $ 5,241\ncompounded annual growth rate and Altria Group, In\n\n[5] 1a8874a4f3c3f8044c083509da0746b2.pdf p.1\nNetPeriodicBenefitCost\nThefollowingtableprovidesinformationaboutthenetperiodicbenefitcostfortheplansforfiscalyears\n2019,2018and2017(inthousands):\nPension\n2019 2018 2017\nServicecost ........................................................ $ 1,437 $ 1,063 $ 1,068\nInterestcost ........................................................ 3,715 3,807 2,942\nExpectedlong-termreturnonplanassets ................................. (5,291) (5,954) (4,206)\nRecognizedactuarialloss .............................................. 741 1,127 1,929\nAmortizationofpriorservicecredit ...................................... (44) (88) (138)\nNetsettlementloss ................................................... 634 116 1,4\nDecision:",
+      "input_tokens": 1304,
+      "output_tokens": 4,
+      "latency_seconds": 24.293744099999458
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the change in the estimated future net amortization expense of the present value of future profits between 2013 and 2014 for The Hartford Financial Services Group, Inc.?\nEvidence:\n[1] convfinqa_ctx_1659.pdf p.1\nTHE HARTFORD FINANCIAL SERVICES GROUP, INC.\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (continued)\n7. Deferred Policy Acquisition Costs and Present Value of Future Profits (continued)\nResults\nChanges in the DAC balance are as follows:\n2011 2010 2009\nBalance, January 1 $ 9,857 $ 10,686 $ 13,248\nDeferred Costs 2,608 2,648 2,853\nAmortization – DAC (2,920) (2,665) (3,247)\nAmortization – DAC from discontinued operations — (17) (10)\nAmortization – Unlock benefit (charge), pre-tax [1] (507) 138 (1,010)\nAdjustments to unrealized gains and losses on securities available-for-sale and other [2] (377) (1,159) (1,031)\nEffect of currency translation 83 215 (39)\nCumulative effect of accounting change, pre-\n\n[2] convfinqa_ctx_1659.pdf p.1\n2] The most significant contributor to the adjustments was the effect of declining interest rates, resulting in unrealized gains on securities classified\nin AOCI. Other includes a $34 decrease as a result of the disposition of DAC from the sale of the Hartford Investment Canadian Canada in 2010.\n[3] For the year ended December 31, 2010 the effect of adopting new accounting guidance for embedded credit derivatives resulted in a decrease to\nretained earnings and, as a result, a DAC benefit. In addition, an offsetting amount was recorded in unrealized losses as unrealized losses\ndecreased upon adoption of the new accounting guidance.\nFor the year ended December 31, 2009 the effect of adopting n\n\n[3] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nFinancial Report Financial Report\nNotestotheConsolidatedFinancialReport NotestotheConsolidatedFinancialReport\n30June2019 30June2019\n(continued) (continued)\n3 Revenue and other income (continued) 3 Revenue and other income (continued)\n(b) Revenuerecognition (b) Revenuerecognition(continued)\nAASB 15 establishes principles for reporting the nature, amount, timing, and uncertainty of revenue and cash (vi) Distributionsfrominvestments\nflows arising from an entity’s contracts with customers and requires application of a five-step process to identify\nDistributionsfrominvestmentsarerecognisedasrevenuewhentherighttoreceivepaymentisestablished.\nthe contract with the customer, identify performance obli\n\n[4] convfinqa_ctx_26.pdf p.1\nPerformance Stock Units: In January 2017, Altria Group, Note 12. Earnings per Share\nInc. granted an aggregate of 187,886 performance stock units to\nBasic and diluted EPS were calculated using the following:\neligible employees. The payout of the performance stock units\nrequires the achievement of certain performance measures, which For the Years Ended December 31,\nwere predetermined at the time of grant, over a three-year\n(in millions) 2017 2016 2015\nperformance cycle. These performance measures consist of Altria\nNet earnings attributable to\nGroup, Inc.’s adjusted diluted earnings per share (“EPS”)\nAltria Group, Inc. $ 10,222 $ 14,239 $ 5,241\ncompounded annual growth rate and Altria Group, In\n\n[5] 1a8874a4f3c3f8044c083509da0746b2.pdf p.1\nNetPeriodicBenefitCost\nThefollowingtableprovidesinformationaboutthenetperiodicbenefitcostfortheplansforfiscalyears\n2019,2018and2017(inthousands):\nPension\n2019 2018 2017\nServicecost ........................................................ $ 1,437 $ 1,063 $ 1,068\nInterestcost ........................................................ 3,715 3,807 2,942\nExpectedlong-termreturnonplanassets ................................. (5,291) (5,954) (4,206)\nRecognizedactuarialloss .............................................. 741 1,127 1,929\nAmortizationofpriorservicecredit ...................................... (44) (88) (138)\nNetsettlementloss ................................................... 634 116 1,4\nLabel:",
+      "input_tokens": 1220,
+      "output_tokens": 3,
+      "latency_seconds": 22.74316099999851
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the change in the estimated future net amortization expense of the present value of future profits between 2013 and 2014 for The Hartford Financial Services Group, Inc.?\nEvidence:\n[1] convfinqa_ctx_1659.pdf p.1\ntax [3] — 11 (78)\nBalance, December 31 $ 8,744 $ 9,857 $ 10,686\n[1] The most significant contributors to the Unlock charge recorded during the year ended December 31, 2011 were assumption changes which\nreduced expected future gross profits including additional costs associated with implementing the Japan hedging strategy and the U.S. variable\nannuity macro hedge program, as well as actual separate account returns below our aggregated estimated return.\nThe most significant contributors to the Unlock benefit recorded during the year ended December 31, 2010 were actual separate account returns\nbeing above our aggregated estimated return. Also included in the benefit are assumption updates relat\n\n[2] convfinqa_ctx_1659.pdf p.1\new accounting guidance for investments other- than- temporarily impaired resulted\nin an increase to retained earnings and, as a result, a DAC charge. In addition, an offsetting amount was recorded in unrealized losses as\nunrealized losses increased upon adoption of the new accounting guidance.\nAs of December 31, 2011, estimated future net amortization expense of present value of future profits for the succeeding five years is\n$39, $58, $24, $23 and $22 in 2012, 2013, 2014, 2015 and 2016, respectively.\nF-53\n\n[3] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nFinancial Report Financial Report\nNotestotheConsolidatedFinancialReport NotestotheConsolidatedFinancialReport\n30June2019 30June2019\n(continued) (continued)\n3 Revenue and other income (continued) 3 Revenue and other income (continued)\n(b) Revenuerecognition (b) Revenuerecognition(continued)\nAASB 15 establishes principles for reporting the nature, amount, timing, and uncertainty of revenue and cash (vi) Distributionsfrominvestments\nflows arising from an entity’s contracts with customers and requires application of a five-step process to identify\nDistributionsfrominvestmentsarerecognisedasrevenuewhentherighttoreceivepaymentisestablished.\nthe contract with the customer, identify performance obli\n\n[4] convfinqa_ctx_26.pdf p.1\nPerformance Stock Units: In January 2017, Altria Group, Note 12. Earnings per Share\nInc. granted an aggregate of 187,886 performance stock units to\nBasic and diluted EPS were calculated using the following:\neligible employees. The payout of the performance stock units\nrequires the achievement of certain performance measures, which For the Years Ended December 31,\nwere predetermined at the time of grant, over a three-year\n(in millions) 2017 2016 2015\nperformance cycle. These performance measures consist of Altria\nNet earnings attributable to\nGroup, Inc.’s adjusted diluted earnings per share (“EPS”)\nAltria Group, Inc. $ 10,222 $ 14,239 $ 5,241\ncompounded annual growth rate and Altria Group, In\n\n[5] 1a8874a4f3c3f8044c083509da0746b2.pdf p.1\nNetPeriodicBenefitCost\nThefollowingtableprovidesinformationaboutthenetperiodicbenefitcostfortheplansforfiscalyears\n2019,2018and2017(inthousands):\nPension\n2019 2018 2017\nServicecost ........................................................ $ 1,437 $ 1,063 $ 1,068\nInterestcost ........................................................ 3,715 3,807 2,942\nExpectedlong-termreturnonplanassets ................................. (5,291) (5,954) (4,206)\nRecognizedactuarialloss .............................................. 741 1,127 1,929\nAmortizationofpriorservicecredit ...................................... (44) (88) (138)\nNetsettlementloss ................................................... 634 116 1,4\nLabel:",
+      "input_tokens": 1117,
+      "output_tokens": 3,
+      "latency_seconds": 19.106659000000946
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "The Hartford Financial Services Group, Inc. estimated future net amortization expense present value of future profits 2013 2014",
+      "filters": {},
+      "chunk_ids": [
+        "convfinqa_ctx_1659::p1::c0::1e1ed94d5a",
+        "convfinqa_ctx_1659::p1::c1::af7ece9a95",
+        "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+        "convfinqa_ctx_26::p1::c0::68a6d27224",
+        "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1659::p1::c0::1e1ed94d5a",
+          "document_id": "convfinqa_ctx_1659",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1659::p1::c0::1e1ed94d5a",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1659::p1::c1::af7ece9a95",
+          "document_id": "convfinqa_ctx_1659",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1659::p1::c1::af7ece9a95",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+          "document_id": "f59bd5ee555e5cc8cf1d5223a0145049",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_26::p1::c0::68a6d27224",
+          "document_id": "convfinqa_ctx_26",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_26::p1::c0::68a6d27224",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761",
+          "document_id": "1a8874a4f3c3f8044c083509da0746b2",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1659::p1::c0::1e1ed94d5a",
+          "document_id": "convfinqa_ctx_1659",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_1659::p1::c0::1e1ed94d5a",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1659::p1::c1::af7ece9a95",
+          "document_id": "convfinqa_ctx_1659",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1211,
+          "source_chunk_id": "convfinqa_ctx_1659::p1::c1::af7ece9a95",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+          "document_id": "f59bd5ee555e5cc8cf1d5223a0145049",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_26::p1::c0::68a6d27224",
+          "document_id": "convfinqa_ctx_26",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_26::p1::c0::68a6d27224",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761",
+          "document_id": "1a8874a4f3c3f8044c083509da0746b2",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1a8874a4f3c3f8044c083509da0746b2::p1::c0::9d71c62761",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the change in the estimated future net amortization expense of the present value of future profits between 2013 and 2014 for The Hartford Financial Services Group, Inc.?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in the estimated future net amortization expense of the present value of future profits between 2013 and 2014 for The Hartford Financial Services Group, Inc.?\nRetrieval query:",
+  "query_formulation_raw_output": "The Hartford Financial Services Group, Inc. estimated future net amortization expense present value of future profits 2013 2014",
+  "query_formulation_latency_seconds": 6.706,
+  "query_formulation_input_tokens": 184,
+  "query_formulation_output_tokens": 30,
+  "query_formulation_trace": {
+    "original_question": "What was the change in the estimated future net amortization expense of the present value of future profits between 2013 and 2014 for The Hartford Financial Services Group, Inc.?",
+    "retrieval_query": "The Hartford Financial Services Group, Inc. estimated future net amortization expense present value of future profits 2013 2014",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in the estimated future net amortization expense of the present value of future profits between 2013 and 2014 for The Hartford Financial Services Group, Inc.?\nRetrieval query:",
+    "raw_output": "The Hartford Financial Services Group, Inc. estimated future net amortization expense present value of future profits 2013 2014",
+    "latency_seconds": 6.70598500000051,
+    "input_tokens": 184,
+    "output_tokens": 30,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "-34.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/HIG/2011/page_188.pdf | source_page=188 | context_id=convfinqa_ctx_1659"
+}

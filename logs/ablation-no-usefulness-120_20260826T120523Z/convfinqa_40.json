@@ -1,0 +1,290 @@
+{
+  "question_id": "convfinqa_40",
+  "question": "What is the total long-term debt of Norwegian Cruise Line Holdings as of December 31, 2017?",
+  "retrieval_query": "long-term debt Norwegian Cruise Line Holdings as of December 31, 2017",
+  "metadata_filters": {
+    "year": 2017,
+    "company": "Norwegian Cruise Line Holdings"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+      "rank": 1,
+      "dense_score": 0.7736635208129883,
+      "bm25_score": 13.491480026729802,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1156"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1156::p1::c3::ef556be7c4",
+      "rank": 2,
+      "dense_score": 0.7381656169891357,
+      "bm25_score": 11.086538432501486,
+      "hybrid_score": 0.538619196437295,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1156"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1156::p1::c2::b6aed3c0ff",
+      "rank": 3,
+      "dense_score": 0.7428030967712402,
+      "bm25_score": 8.186171236483055,
+      "hybrid_score": 0.3767830866319819,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1156"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1156::p1::c1::4a213c13ad",
+      "rank": 4,
+      "dense_score": 0.7015157341957092,
+      "bm25_score": 12.078470360571563,
+      "hybrid_score": 0.30236724846626917,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1156"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1156::p1::c4::34601638cb",
+      "rank": 5,
+      "dense_score": 0.7257453799247742,
+      "bm25_score": 7.702399440713285,
+      "hybrid_score": 0.20150011689973638,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1156"
+    }
+  ],
+  "answer": "$6,424,582  \nSource: convfinqa_ctx_1156.pdf p.1 (Long-term debt(1) under \"Contractual Obligations\" as of December 31, 2017)",
+  "latency_seconds": 102.0905,
+  "input_tokens": 4877,
+  "output_tokens": 89,
+  "total_tokens": 4966,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0774,
+  "llm_latency_seconds": 102.0116,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the total long-term debt of Norwegian Cruise Line Holdings as of December 31, 2017?\nLabel:",
+      "input_tokens": 91,
+      "output_tokens": 7,
+      "latency_seconds": 3.825785499997437
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the total long-term debt of Norwegian Cruise Line Holdings as of December 31, 2017?\nEvidence:\n[1] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949\n\n[2] convfinqa_ctx_1156.pdf p.1\n|  |  | $ | 1,954,928 |  |  | $ | 3,134,258 |  |  | $ | 4,420,932 |  |  | $ | 4,439,427 | \n(1) Includes discount and premiums aggregating $0.5 million. Also includes capital leases. The amount excludes deferred financing fees\nwhich are included in the consolidated balance sheets as an offset to long-term debt.\n(2) Primarily for offices, motor vehicles and office equipment.\n(3) For our newbuild ships based on the euro/U.S. dollar exchange rate as of December 31, 2017. Export credit financing is in place from\nsyndicates of banks.\n(4) Primarily for our usage of certain port facilities.\n(5) Includes fixed and variable rates with LIBOR held constant as of December 31, 2017.\n(6) Future commitments\n\n[3] convfinqa_ctx_1156.pdf p.1\ndebt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | \nLong-term debt(1) |  | $ | 6,424,582 |  |  | $ | 619,373 |  |  | $ | 1,248,463 |  |  | $ | 3,002,931 |  |  | $ | 1,553,815 | \nOperating leases(2) | 131,791 |  |  | 15,204 |  |  |  | 28,973 |  |  |  | 26,504 |  |  |  | 61,110 |  |  |  | \nShip construction contracts(3) | 6,138,219 |  |  | 1,016,892 |  |  |  | 1,363,215 |  |  |  | 1,141,212 |  |  |  | 2,616,900 |  |  |  | \nPort facilities(4) | 138,308 |  |  | 30,509 |  |  |  | 43,388 |  |  |  | 23,316 |  |  |  | 41,095 |  |  |  | \nInterest(5) | 947,967 |  |  | 218,150 |  |  |\n\n[4] convfinqa_ctx_1156.pdf p.1\nbenefits (we refer you to the Notes to the Consolidated Financial\nStatements Note—10 “Income Tax”).\nOther\nCertain service providers may require collateral in the normal course of our business. The amount of collateral may change based on certain\nterms and conditions.\nAs a routine part of our business, depending on market conditions, exchange rates, pricing and our strategy for growth, we regularly consider\nopportunities to enter into contracts for the building of additional ships. We may also consider the sale of ships, potential acquisitions and\nstrategic alliances. If any of these transactions were to occur, they may be financed through the incurrence of additional permitted\nindebtedness,\n\n[5] convfinqa_ctx_1156.pdf p.1\nthese covenants as\nof December 31, 2017.\nThe impact of changes in world economies and especially the global credit markets can create a challenging environment and may reduce\nfuture consumer demand for cruises and adversely affect our counterparty credit risks. In the event this environment deteriorates, our business,\nfinancial condition and results of operations could be adversely impacted.\nWe believe our cash on hand, expected future operating cash inflows, additional available borrowings under our New Revolving Loan Facility\nand our ability to issue debt securities or additional equity securities, will be sufficient to fund operations, debt payment requirements, capital\nexpenditures and m\nDecision:",
+      "input_tokens": 1566,
+      "output_tokens": 4,
+      "latency_seconds": 30.160058900000877
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the total long-term debt of Norwegian Cruise Line Holdings as of December 31, 2017?\nEvidence:\n[1] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949\n\n[2] convfinqa_ctx_1156.pdf p.1\n|  |  | $ | 1,954,928 |  |  | $ | 3,134,258 |  |  | $ | 4,420,932 |  |  | $ | 4,439,427 | \n(1) Includes discount and premiums aggregating $0.5 million. Also includes capital leases. The amount excludes deferred financing fees\nwhich are included in the consolidated balance sheets as an offset to long-term debt.\n(2) Primarily for offices, motor vehicles and office equipment.\n(3) For our newbuild ships based on the euro/U.S. dollar exchange rate as of December 31, 2017. Export credit financing is in place from\nsyndicates of banks.\n(4) Primarily for our usage of certain port facilities.\n(5) Includes fixed and variable rates with LIBOR held constant as of December 31, 2017.\n(6) Future commitments\n\n[3] convfinqa_ctx_1156.pdf p.1\ndebt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | \nLong-term debt(1) |  | $ | 6,424,582 |  |  | $ | 619,373 |  |  | $ | 1,248,463 |  |  | $ | 3,002,931 |  |  | $ | 1,553,815 | \nOperating leases(2) | 131,791 |  |  | 15,204 |  |  |  | 28,973 |  |  |  | 26,504 |  |  |  | 61,110 |  |  |  | \nShip construction contracts(3) | 6,138,219 |  |  | 1,016,892 |  |  |  | 1,363,215 |  |  |  | 1,141,212 |  |  |  | 2,616,900 |  |  |  | \nPort facilities(4) | 138,308 |  |  | 30,509 |  |  |  | 43,388 |  |  |  | 23,316 |  |  |  | 41,095 |  |  |  | \nInterest(5) | 947,967 |  |  | 218,150 |  |  |\n\n[4] convfinqa_ctx_1156.pdf p.1\nbenefits (we refer you to the Notes to the Consolidated Financial\nStatements Note—10 “Income Tax”).\nOther\nCertain service providers may require collateral in the normal course of our business. The amount of collateral may change based on certain\nterms and conditions.\nAs a routine part of our business, depending on market conditions, exchange rates, pricing and our strategy for growth, we regularly consider\nopportunities to enter into contracts for the building of additional ships. We may also consider the sale of ships, potential acquisitions and\nstrategic alliances. If any of these transactions were to occur, they may be financed through the incurrence of additional permitted\nindebtedness,\n\n[5] convfinqa_ctx_1156.pdf p.1\nthese covenants as\nof December 31, 2017.\nThe impact of changes in world economies and especially the global credit markets can create a challenging environment and may reduce\nfuture consumer demand for cruises and adversely affect our counterparty credit risks. In the event this environment deteriorates, our business,\nfinancial condition and results of operations could be adversely impacted.\nWe believe our cash on hand, expected future operating cash inflows, additional available borrowings under our New Revolving Loan Facility\nand our ability to issue debt securities or additional equity securities, will be sufficient to fund operations, debt payment requirements, capital\nexpenditures and m\nLabel:",
+      "input_tokens": 1482,
+      "output_tokens": 3,
+      "latency_seconds": 27.718291700002737
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "long-term debt Norwegian Cruise Line Holdings as of December 31, 2017",
+      "filters": {
+        "year": 2017,
+        "company": "Norwegian Cruise Line Holdings"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+        "convfinqa_ctx_1156::p1::c3::ef556be7c4",
+        "convfinqa_ctx_1156::p1::c2::b6aed3c0ff",
+        "convfinqa_ctx_1156::p1::c1::4a213c13ad",
+        "convfinqa_ctx_1156::p1::c4::34601638cb"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+          "document_id": "convfinqa_ctx_1156",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1156::p1::c3::ef556be7c4",
+          "document_id": "convfinqa_ctx_1156",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1156::p1::c3::ef556be7c4",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1156::p1::c2::b6aed3c0ff",
+          "document_id": "convfinqa_ctx_1156",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1156::p1::c2::b6aed3c0ff",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1156::p1::c1::4a213c13ad",
+          "document_id": "convfinqa_ctx_1156",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1156::p1::c1::4a213c13ad",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1156::p1::c4::34601638cb",
+          "document_id": "convfinqa_ctx_1156",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1156::p1::c4::34601638cb",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the total long-term debt of Norwegian Cruise Line Holdings as of December 31, 2017?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total long-term debt of Norwegian Cruise Line Holdings as of December 31, 2017?\nRetrieval query:",
+  "query_formulation_raw_output": "long-term debt Norwegian Cruise Line Holdings as of December 31, 2017",
+  "query_formulation_latency_seconds": 4.2288,
+  "query_formulation_input_tokens": 168,
+  "query_formulation_output_tokens": 20,
+  "query_formulation_trace": {
+    "original_question": "What is the total long-term debt of Norwegian Cruise Line Holdings as of December 31, 2017?",
+    "retrieval_query": "long-term debt Norwegian Cruise Line Holdings as of December 31, 2017",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total long-term debt of Norwegian Cruise Line Holdings as of December 31, 2017?\nRetrieval query:",
+    "raw_output": "long-term debt Norwegian Cruise Line Holdings as of December 31, 2017",
+    "latency_seconds": 4.228776299998572,
+    "input_tokens": 168,
+    "output_tokens": 20,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "6424582.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/NCLH/2017/page_57.pdf | source_page=57 | context_id=convfinqa_ctx_1156"
+}

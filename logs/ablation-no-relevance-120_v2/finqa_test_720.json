@@ -1,0 +1,352 @@
+{
+  "question_id": "finqa_test_720",
+  "question": "What percentage of the total contingent acquisition payments, as detailed in the table for the year 2017, is accounted for by the deferred acquisition payments?",
+  "retrieval_query": "entity: contingent acquisition payments, deferred acquisition payments, year: 2017, financial concept: percentage of total contingent acquisition payments accounted for by deferred acquisition payments",
+  "metadata_filters": {
+    "year": 2017
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_209::p1::c0::e84dd1d316",
+      "rank": 1,
+      "dense_score": 0.7146224975585938,
+      "bm25_score": 26.601299585249848,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_209"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_209::p1::c1::a97668cdbb",
+      "rank": 2,
+      "dense_score": 0.7074713706970215,
+      "bm25_score": 24.186995327582455,
+      "hybrid_score": 0.9202856139104945,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_209"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+      "rank": 3,
+      "dense_score": 0.6597298383712769,
+      "bm25_score": 17.71596116448298,
+      "hybrid_score": 0.5443204715307408,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1156"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+      "rank": 4,
+      "dense_score": 0.6220676898956299,
+      "bm25_score": 26.02855464324937,
+      "hybrid_score": 0.4649990707241684,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_145"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+      "rank": 5,
+      "dense_score": 0.6391836404800415,
+      "bm25_score": 15.868029112738142,
+      "hybrid_score": 0.3976911485856288,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1046"
+    }
+  ],
+  "answer": "From the evidence:\n\n- Deferred acquisition payments total: $121.0  \n- Total contingent acquisition payments total: $268.4  \n\nPercentage of total contingent acquisition payments accounted for by deferred acquisition payments:\n\n(121.0 / 268.4) × 100 = 44.73%\n\nSource: finqa_test_ctx_209.pdf p.1\n\nAnswer: 44.73%",
+  "latency_seconds": 115.8629,
+  "input_tokens": 5471,
+  "output_tokens": 146,
+  "total_tokens": 5617,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0798,
+  "llm_latency_seconds": 115.7789,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What percentage of the total contingent acquisition payments, as detailed in the table for the year 2017, is accounted for by the deferred acquisition payments?\nLabel:",
+      "input_tokens": 98,
+      "output_tokens": 7,
+      "latency_seconds": 3.330019599998195
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What percentage of the total contingent acquisition payments, as detailed in the table for the year 2017, is accounted for by the deferred acquisition payments?\nEvidence:\n[1] finqa_test_ctx_209.pdf p.1\nNotestoConsolidatedFinancialStatements–(continued)\n(AmountsinMillions,ExceptPerShareAmounts)\nGuarantees\nWe have guaranteed certain obligations of our subsidiaries relating principally to operating leases and uncommitted\nlinesofcreditofcertainsubsidiaries.Theamountofparentcompanyguaranteesonleaseobligationswas$829.2and$857.3\nas of December 31, 2017 and 2016, respectively, and the amount of parent company guarantees primarily relating to\nuncommitted lines of credit was $491.0 and $395.6 as of December 31, 2017 and 2016, respectively. In the event of\nnon-payment by the applicable subsidiary of the obligations covered by a guarantee, we would be obligated to pay the\namounts covered by that guara\n\n[2] finqa_test_ctx_209.pdf p.1\n,2017.Theseestimatedpaymentsof$24.8areincludedwithin\nthetotalpaymentsexpectedtobemadein2018,andwillcontinuetobecarriedforwardinto2019orbeyonduntilexercisedorexpired.Redeemable\nnoncontrollinginterestsareincludedinthetableatcurrentexercisepricepayableincash,notatapplicableredemptionvalue,inaccordancewiththe\nauthoritativeguidanceforclassificationandmeasurementofredeemablesecurities.\nThe majority of these payments are contingent upon achieving projected operating performance targets and satisfying\notherconditionsspecifiedintherelatedagreementsandaresubjecttorevisioninaccordancewiththetermsoftherespective\nagreements.SeeNote4forfurtherinformationrelatingtothepaymentstructureofouracquisitions.\nLega\n\n[3] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949\n\n[4] finqa_test_ctx_145.pdf p.1\nare subject to continued technical guidance which may change the provisional amounts recorded in the financial\nstatements, and will be evaluated throughout the measurement period, as permitted by SAB 118.\nAs of December 31, 2015, the Company had deferred tax liabilities of $25.8 million on foreign earnings of the legacy Nalco entities and\nlegacy Champion entities that the Company intended to repatriate. The deferred tax liabilities originated based on purchase accounting\ndecisions made in connection with the Nalco merger and Champion acquisition and were the result of extensive studies required to\ncalculate the impact at the purchase date. The remaining foreign earnings were repatriated in 2\n\n[5] convfinqa_ctx_1046.pdf p.1\nNOTE 18 – EARNINGS PER SHARE (EPS)\nBasic EPS is calculated by dividing Net earnings attributable to Allegion plc by the weighted-average number of ordinary shares\noutstanding for the applicable period. Diluted EPS is calculated after adjusting the denominator of the basic EPS calculation for\nthe effect of all potentially dilutive ordinary shares, which in the Company’s case, includes shares issuable under share-based\ncompensation plans.\nThe following table summarizes the weighted-average number of ordinary shares outstanding for basic and diluted earnings per\nshare calculations.\nIn millions 2017 2016 2015\nWeighted-average number of basic shares 95.1 95.8 95.9\nShares issuable under incentive\nLabel:",
+      "input_tokens": 1231,
+      "output_tokens": 3,
+      "latency_seconds": 23.045485499998904
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What percentage of the total contingent acquisition payments, as detailed in the table for the year 2017, is accounted for by the deferred acquisition payments?\nEvidence:\n[1] finqa_test_ctx_209.pdf p.1\nntee. As of December 31, 2017, there were no material assets pledged as security for such\nparentcompanyguarantees.\nContingentAcquisitionObligations\nThe following table details the estimated future contingent acquisition obligations payable in cash as of December 31,\n2017.\n2018 2019 2020 2021 2022 Thereafter Total\nDeferredacquisitionpayments............................... $41.9 $27.5 $16.1 $24.4 $ 4.8 $ 6.3 $121.0\nRedeemablenoncontrollinginterestsandcalloptionswith\naffiliates1 ............................................. 37.1 26.4 62.9 10.3 6.6 4.1 147.4\nTotalcontingentacquisitionpayments .................... $79.0 $53.9 $79.0 $34.7 $11.4 $10.4 $268.4\n1 Wehaveenteredintocertainacquisitionsth\n\n[2] finqa_test_ctx_209.pdf p.1\nlMatters\nIn the normal course of business, we are involved in various legal proceedings, and subject to investigations,\ninspections, audits, inquiries and similar actions by governmental authorities. The types of allegations that arise in\nconnection with such legal proceedings vary in nature, but can include claims related to contract, employment, tax and\nintellectual property matters. We evaluate all cases each reporting period and record liabilities for losses from legal\nproceedings when we determine that it is probable that the outcome in a legal proceeding will be unfavorable and the\namount,orpotentialrange,oflosscanbereasonablyestimated.Incertaincases,wecannotreasonablyestimatethepotent\n\n[3] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949\n\n[4] finqa_test_ctx_145.pdf p.1\nare subject to continued technical guidance which may change the provisional amounts recorded in the financial\nstatements, and will be evaluated throughout the measurement period, as permitted by SAB 118.\nAs of December 31, 2015, the Company had deferred tax liabilities of $25.8 million on foreign earnings of the legacy Nalco entities and\nlegacy Champion entities that the Company intended to repatriate. The deferred tax liabilities originated based on purchase accounting\ndecisions made in connection with the Nalco merger and Champion acquisition and were the result of extensive studies required to\ncalculate the impact at the purchase date. The remaining foreign earnings were repatriated in 2\n\n[5] convfinqa_ctx_1046.pdf p.1\nNOTE 18 – EARNINGS PER SHARE (EPS)\nBasic EPS is calculated by dividing Net earnings attributable to Allegion plc by the weighted-average number of ordinary shares\noutstanding for the applicable period. Diluted EPS is calculated after adjusting the denominator of the basic EPS calculation for\nthe effect of all potentially dilutive ordinary shares, which in the Company’s case, includes shares issuable under share-based\ncompensation plans.\nThe following table summarizes the weighted-average number of ordinary shares outstanding for basic and diluted earnings per\nshare calculations.\nIn millions 2017 2016 2015\nWeighted-average number of basic shares 95.1 95.8 95.9\nShares issuable under incentive\nLabel:",
+      "input_tokens": 1251,
+      "output_tokens": 3,
+      "latency_seconds": 22.035906500001147
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What percentage of the total contingent acquisition payments, as detailed in the table for the year 2017, is accounted for by the deferred acquisition payments?\nEvidence:\n[1] finqa_test_ctx_209.pdf p.1\nntee. As of December 31, 2017, there were no material assets pledged as security for such\nparentcompanyguarantees.\nContingentAcquisitionObligations\nThe following table details the estimated future contingent acquisition obligations payable in cash as of December 31,\n2017.\n2018 2019 2020 2021 2022 Thereafter Total\nDeferredacquisitionpayments............................... $41.9 $27.5 $16.1 $24.4 $ 4.8 $ 6.3 $121.0\nRedeemablenoncontrollinginterestsandcalloptionswith\naffiliates1 ............................................. 37.1 26.4 62.9 10.3 6.6 4.1 147.4\nTotalcontingentacquisitionpayments .................... $79.0 $53.9 $79.0 $34.7 $11.4 $10.4 $268.4\n1 Wehaveenteredintocertainacquisitionsth\n\n[2] finqa_test_ctx_209.pdf p.1\nlMatters\nIn the normal course of business, we are involved in various legal proceedings, and subject to investigations,\ninspections, audits, inquiries and similar actions by governmental authorities. The types of allegations that arise in\nconnection with such legal proceedings vary in nature, but can include claims related to contract, employment, tax and\nintellectual property matters. We evaluate all cases each reporting period and record liabilities for losses from legal\nproceedings when we determine that it is probable that the outcome in a legal proceeding will be unfavorable and the\namount,orpotentialrange,oflosscanbereasonablyestimated.Incertaincases,wecannotreasonablyestimatethepotent\n\n[3] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949\n\n[4] finqa_test_ctx_145.pdf p.1\nare subject to continued technical guidance which may change the provisional amounts recorded in the financial\nstatements, and will be evaluated throughout the measurement period, as permitted by SAB 118.\nAs of December 31, 2015, the Company had deferred tax liabilities of $25.8 million on foreign earnings of the legacy Nalco entities and\nlegacy Champion entities that the Company intended to repatriate. The deferred tax liabilities originated based on purchase accounting\ndecisions made in connection with the Nalco merger and Champion acquisition and were the result of extensive studies required to\ncalculate the impact at the purchase date. The remaining foreign earnings were repatriated in 2\n\n[5] convfinqa_ctx_1046.pdf p.1\nNOTE 18 – EARNINGS PER SHARE (EPS)\nBasic EPS is calculated by dividing Net earnings attributable to Allegion plc by the weighted-average number of ordinary shares\noutstanding for the applicable period. Diluted EPS is calculated after adjusting the denominator of the basic EPS calculation for\nthe effect of all potentially dilutive ordinary shares, which in the Company’s case, includes shares issuable under share-based\ncompensation plans.\nThe following table summarizes the weighted-average number of ordinary shares outstanding for basic and diluted earnings per\nshare calculations.\nIn millions 2017 2016 2015\nWeighted-average number of basic shares 95.1 95.8 95.9\nShares issuable under incentive\nDraft:\nFrom the evidence:\n\n- Deferred acquisition payments total: $121.0  \n- Total contingent acquisition payments total: $268.4  \n\nPercentage of total contingent acquisition payments accounted for by deferred acquisition payments:\n\n(121.0 / 268.4) × 100 = 44.73%\n\nSource: finqa_test_ctx_209.pdf p.1\n\nAnswer: 44.73%\nLabel:",
+      "input_tokens": 1377,
+      "output_tokens": 3,
+      "latency_seconds": 25.60558409999794
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "entity: contingent acquisition payments, deferred acquisition payments, year: 2017, financial concept: percentage of total contingent acquisition payments accounted for by deferred acquisition payments",
+      "filters": {
+        "year": 2017
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_209::p1::c0::e84dd1d316",
+        "finqa_test_ctx_209::p1::c1::a97668cdbb",
+        "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+        "finqa_test_ctx_145::p1::c2::c77c4e483c",
+        "convfinqa_ctx_1046::p1::c0::c242753d55"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_209::p1::c0::e84dd1d316",
+          "document_id": "finqa_test_ctx_209",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_209::p1::c0::e84dd1d316",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_209::p1::c1::a97668cdbb",
+          "document_id": "finqa_test_ctx_209",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_209::p1::c1::a97668cdbb",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+          "document_id": "convfinqa_ctx_1156",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "document_id": "finqa_test_ctx_145",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+          "document_id": "convfinqa_ctx_1046",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_209::p1::c0::e84dd1d316",
+          "document_id": "finqa_test_ctx_209",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_209::p1::c0::e84dd1d316",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_209::p1::c1::a97668cdbb",
+          "document_id": "finqa_test_ctx_209",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_209::p1::c1::a97668cdbb",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+          "document_id": "convfinqa_ctx_1156",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "document_id": "finqa_test_ctx_145",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+          "document_id": "convfinqa_ctx_1046",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What percentage of the total contingent acquisition payments, as detailed in the table for the year 2017, is accounted for by the deferred acquisition payments?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of the total contingent acquisition payments, as detailed in the table for the year 2017, is accounted for by the deferred acquisition payments?\nRetrieval query:",
+  "query_formulation_raw_output": "entity: contingent acquisition payments, deferred acquisition payments, year: 2017, financial concept: percentage of total contingent acquisition payments accounted for by deferred acquisition payments",
+  "query_formulation_latency_seconds": 6.3841,
+  "query_formulation_input_tokens": 175,
+  "query_formulation_output_tokens": 34,
+  "query_formulation_trace": {
+    "original_question": "What percentage of the total contingent acquisition payments, as detailed in the table for the year 2017, is accounted for by the deferred acquisition payments?",
+    "retrieval_query": "entity: contingent acquisition payments, deferred acquisition payments, year: 2017, financial concept: percentage of total contingent acquisition payments accounted for by deferred acquisition payments",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of the total contingent acquisition payments, as detailed in the table for the year 2017, is accounted for by the deferred acquisition payments?\nRetrieval query:",
+    "raw_output": "entity: contingent acquisition payments, deferred acquisition payments, year: 2017, financial concept: percentage of total contingent acquisition payments accounted for by deferred acquisition payments",
+    "latency_seconds": 6.384093799999391,
+    "input_tokens": 175,
+    "output_tokens": 34,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "0.4508196721311476",
+  "gold_evidence_reference": "FinQA | pdf/IPG/2017/page_92.pdf | source_page=92 | context_id=finqa_test_ctx_209"
+}

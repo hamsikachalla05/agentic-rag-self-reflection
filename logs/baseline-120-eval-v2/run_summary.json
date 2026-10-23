@@ -1,0 +1,101 @@
+{
+  "n_questions": 120,
+  "log_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs\\baseline-120-eval-v2_20260825T123024Z",
+  "evaluation": {
+    "n": 120,
+    "mrr": 0.9263888888888889,
+    "recall_at_k": {
+      "1": 0.9,
+      "3": 0.9583333333333334,
+      "5": 0.9583333333333334,
+      "10": 0.9583333333333334
+    },
+    "hit_rate": 0.9583333333333334
+  },
+  "answer_correctness": {
+    "accuracy": 0.3333333333333333,
+    "n_correct": 40,
+    "n": 120,
+    "gold_field": "program_answer (canonical); original_answer accepted as equivalent surface form"
+  },
+  "by_dataset": {
+    "ConvFinQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.8958333333333334,
+        "recall_at_k": {
+          "1": 0.85,
+          "3": 0.95,
+          "5": 0.95,
+          "10": 0.95
+        },
+        "hit_rate": 0.95
+      },
+      "answer_correctness": {
+        "accuracy": 0.4,
+        "n": 40,
+        "n_correct": 16
+      },
+      "latency": {
+        "mean_seconds": 24.588495
+      },
+      "tokens": {
+        "mean_total": 1226.325
+      }
+    },
+    "FinQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.9083333333333332,
+        "recall_at_k": {
+          "1": 0.875,
+          "3": 0.95,
+          "5": 0.95,
+          "10": 0.95
+        },
+        "hit_rate": 0.95
+      },
+      "answer_correctness": {
+        "accuracy": 0.175,
+        "n": 40,
+        "n_correct": 7
+      },
+      "latency": {
+        "mean_seconds": 23.355517499999998
+      },
+      "tokens": {
+        "mean_total": 1195.3
+      }
+    },
+    "TAT-DQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.975,
+        "recall_at_k": {
+          "1": 0.975,
+          "3": 0.975,
+          "5": 0.975,
+          "10": 0.975
+        },
+        "hit_rate": 0.975
+      },
+      "answer_correctness": {
+        "accuracy": 0.425,
+        "n": 40,
+        "n_correct": 17
+      },
+      "latency": {
+        "mean_seconds": 27.703657500000002
+      },
+      "tokens": {
+        "mean_total": 1363.25
+      }
+    }
+  },
+  "rate_limit": {
+    "retries": 0,
+    "waits": 0,
+    "wait_seconds": 0.0,
+    "note": "llm_latency_seconds is generate_content time only and excludes rate-limit waits. latency_seconds is end-to-end agent.answer() wall time and includes pacing/429 waits."
+  }
+}

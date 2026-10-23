@@ -1,0 +1,295 @@
+{
+  "question_id": "convfinqa_3034",
+  "question": "What is the total of allowance for other funds used during construction and allowance for borrowed funds used during construction for American Water Works in 2016?",
+  "retrieval_query": "American Water Works allowance for other funds used during construction allowance for borrowed funds used during construction 2016",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1006::p1::c1::82f433d851",
+      "rank": 1,
+      "dense_score": 0.6742193698883057,
+      "bm25_score": 14.580789207485818,
+      "hybrid_score": 0.6636760132434842,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1006"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_745::p1::c1::d82a203659",
+      "rank": 2,
+      "dense_score": 0.6927671432495117,
+      "bm25_score": null,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_745"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1046::p1::c1::a30e58a57e",
+      "rank": 3,
+      "dense_score": 0.6867504715919495,
+      "bm25_score": null,
+      "hybrid_score": 0.5362503512947118,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1046"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+      "rank": 4,
+      "dense_score": 0.678263247013092,
+      "bm25_score": null,
+      "hybrid_score": 0.44632395740466096,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_29"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_745::p1::c0::05b40a1879",
+      "rank": 5,
+      "dense_score": 0.6778989434242249,
+      "bm25_score": null,
+      "hybrid_score": 0.44246397847708085,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_745"
+    }
+  ],
+  "answer": "From evidence [2] convfinqa_ctx_745.pdf p.1:\n\n- Allowance for other funds used during construction in 2016: $15  \n- Allowance for borrowed funds used during construction in 2016: $6  \n\nTotal = $15 + $6 = $21\n\nAnswer: 21",
+  "latency_seconds": 87.0634,
+  "input_tokens": 4658,
+  "output_tokens": 142,
+  "total_tokens": 4800,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0892,
+  "llm_latency_seconds": 86.9716,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the total of allowance for other funds used during construction and allowance for borrowed funds used during construction for American Water Works in 2016?\nLabel:",
+      "input_tokens": 97,
+      "output_tokens": 7,
+      "latency_seconds": 3.053218699998979
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": "allowance for other funds used during construction and allowance for borrowed funds used during construction American Water Works 2016",
+      "raw_output": "RELEVANT\n\nQUERY: allowance for other funds used during construction and allowance for borrowed funds used during construction American Water Works 2016",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the total of allowance for other funds used during construction and allowance for borrowed funds used during construction for American Water Works in 2016?\nEvidence:\n[1] convfinqa_ctx_1006.pdf p.1\nthese funds that the Company forms primarily for\nclient investment, except that the Company may waive or lower applicable fees and charges for its\nemployees. The Company has contractual capital commitments, guarantees, lending facilities and counterparty\narrangementswithrespecttotheseinvestmentfunds.\nPremisesandEquipment. TheCompanyhasnon-cancelableoperatingleasescoveringpremisesandequipment\n(excluding commodities operating leases, shown separately). At December 31, 2013, future minimum rental\ncommitments under such leases (net of subleases, principally on office rentals) were as follows\n(dollarsinmillions):\nOperating\nPremises\nYearEnded Leases\n2014 ...........................................\n\n[2] convfinqa_ctx_745.pdf p.1\nsofOperations.AFUDCissummarizedinthefollowingtableforthe\nyearsendedDecember31:\n2017 2016 2015\nAllowanceforotherfundsusedduringconstruction ..................... $ 19 $ 15 $ 13\nAllowanceforborrowedfundsusedduringconstruction ................. 8 6 8\nEnvironmentalCosts\nTheCompany’swaterandwastewateroperationsandtheoperationsofitsMarket-BasedBusinessesare\nsubjecttoU.S.federal,state,localandforeignrequirementsrelatingtoenvironmentalprotection,andassuch,the\nCompanyperiodicallybecomessubjecttoenvironmentalclaimsinthenormalcourseofbusiness.Environmental\nexpendituresthatrelatetocurrentoperationsorprovideafuturebenefitareexpensedorcapitalizedas\nappropriate.Remediationcoststhatrelatetoanexistingconditi\n\n[3] convfinqa_ctx_1046.pdf p.1\niation programs may result in increased expenses and increased environmental reserves.\nThe Company is sometimes a party to environmental lawsuits and claims and has received notices of potential violations of\nenvironmental laws and regulations from the U.S. Environmental Protection Agency and similar state authorities. It has also been\nidentified as a potentially responsible party (\"PRP\") for cleanup costs associated with off-site waste disposal at federal Superfund\nand state remediation sites. For all such sites, there are other PRPs and, in most instances, the Company’s involvement is minimal.\nIn estimating its liability, the Company has assumed it will not bear the entire cost of remediat\n\n[4] finqa_test_ctx_29.pdf p.1\nLIQUIDITY AND CAPITAL RESOURCES\nOur objective in financing our business is to maintain sufficient liquidity, adequate financial resources and\nfinancial flexibility in order to fund the requirements of our business. At December 31, 2017, we had cash and\nequivalents of $7.0 billion compared to $981 million of cash and equivalents at December 31, 2016. Cash and\nequivalents includes $997 million of cash held on behalf of GE at December 31, 2017.\nAt December 31, 2017, approximately $3.2 billion of our cash and equivalents was held by foreign subsidiaries\ncompared to approximately $878 million at December 31, 2016. A substantial portion of the cash held by foreign\nsubsidiaries at December 31, 2017\n\n[5] convfinqa_ctx_745.pdf p.1\nIncomeTaxes\nAmericanWateranditssubsidiariesparticipateinaconsolidatedfederalincometaxreturnforU.S.tax\npurposes.Membersoftheconsolidatedgrouparechargedwiththeamountoffederalincometaxexpense\ndeterminedasiftheyfiledseparatereturns.\nCertainincomeandexpenseitemsareaccountedforindifferenttimeperiodsforfinancialreportingthanfor\nincometaxreportingpurposes.TheCompanyprovidesdeferredincometaxesonthedifferencebetweenthetax\nbasisofassetsandliabilitiesandtheamountsatwhichtheyarecarriedinthefinancialstatements.Thesedeferred\nincometaxesarebasedontheenactedtaxratesexpectedtobeineffectwhenthesetemporarydifferencesare\nprojectedtoreverse.Inaddition,theregulatedutilitysubsidiariesrecognizeregulatoryassetsandlia\nDecision:",
+      "input_tokens": 1111,
+      "output_tokens": 30,
+      "latency_seconds": 20.436906499999168
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the total of allowance for other funds used during construction and allowance for borrowed funds used during construction for American Water Works in 2016?\nEvidence:\n[1] convfinqa_ctx_1006.pdf p.1\nthese funds that the Company forms primarily for\nclient investment, except that the Company may waive or lower applicable fees and charges for its\nemployees. The Company has contractual capital commitments, guarantees, lending facilities and counterparty\narrangementswithrespecttotheseinvestmentfunds.\nPremisesandEquipment. TheCompanyhasnon-cancelableoperatingleasescoveringpremisesandequipment\n(excluding commodities operating leases, shown separately). At December 31, 2013, future minimum rental\ncommitments under such leases (net of subleases, principally on office rentals) were as follows\n(dollarsinmillions):\nOperating\nPremises\nYearEnded Leases\n2014 ...........................................\n\n[2] convfinqa_ctx_745.pdf p.1\nsofOperations.AFUDCissummarizedinthefollowingtableforthe\nyearsendedDecember31:\n2017 2016 2015\nAllowanceforotherfundsusedduringconstruction ..................... $ 19 $ 15 $ 13\nAllowanceforborrowedfundsusedduringconstruction ................. 8 6 8\nEnvironmentalCosts\nTheCompany’swaterandwastewateroperationsandtheoperationsofitsMarket-BasedBusinessesare\nsubjecttoU.S.federal,state,localandforeignrequirementsrelatingtoenvironmentalprotection,andassuch,the\nCompanyperiodicallybecomessubjecttoenvironmentalclaimsinthenormalcourseofbusiness.Environmental\nexpendituresthatrelatetocurrentoperationsorprovideafuturebenefitareexpensedorcapitalizedas\nappropriate.Remediationcoststhatrelatetoanexistingconditi\n\n[3] convfinqa_ctx_1046.pdf p.1\niation programs may result in increased expenses and increased environmental reserves.\nThe Company is sometimes a party to environmental lawsuits and claims and has received notices of potential violations of\nenvironmental laws and regulations from the U.S. Environmental Protection Agency and similar state authorities. It has also been\nidentified as a potentially responsible party (\"PRP\") for cleanup costs associated with off-site waste disposal at federal Superfund\nand state remediation sites. For all such sites, there are other PRPs and, in most instances, the Company’s involvement is minimal.\nIn estimating its liability, the Company has assumed it will not bear the entire cost of remediat\n\n[4] finqa_test_ctx_29.pdf p.1\nLIQUIDITY AND CAPITAL RESOURCES\nOur objective in financing our business is to maintain sufficient liquidity, adequate financial resources and\nfinancial flexibility in order to fund the requirements of our business. At December 31, 2017, we had cash and\nequivalents of $7.0 billion compared to $981 million of cash and equivalents at December 31, 2016. Cash and\nequivalents includes $997 million of cash held on behalf of GE at December 31, 2017.\nAt December 31, 2017, approximately $3.2 billion of our cash and equivalents was held by foreign subsidiaries\ncompared to approximately $878 million at December 31, 2016. A substantial portion of the cash held by foreign\nsubsidiaries at December 31, 2017\n\n[5] convfinqa_ctx_745.pdf p.1\nIncomeTaxes\nAmericanWateranditssubsidiariesparticipateinaconsolidatedfederalincometaxreturnforU.S.tax\npurposes.Membersoftheconsolidatedgrouparechargedwiththeamountoffederalincometaxexpense\ndeterminedasiftheyfiledseparatereturns.\nCertainincomeandexpenseitemsareaccountedforindifferenttimeperiodsforfinancialreportingthanfor\nincometaxreportingpurposes.TheCompanyprovidesdeferredincometaxesonthedifferencebetweenthetax\nbasisofassetsandliabilitiesandtheamountsatwhichtheyarecarriedinthefinancialstatements.Thesedeferred\nincometaxesarebasedontheenactedtaxratesexpectedtobeineffectwhenthesetemporarydifferencesare\nprojectedtoreverse.Inaddition,theregulatedutilitysubsidiariesrecognizeregulatoryassetsandlia\nLabel:",
+      "input_tokens": 1027,
+      "output_tokens": 3,
+      "latency_seconds": 16.892762800001947
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the total of allowance for other funds used during construction and allowance for borrowed funds used during construction for American Water Works in 2016?\nEvidence:\n[1] convfinqa_ctx_1006.pdf p.1\nthese funds that the Company forms primarily for\nclient investment, except that the Company may waive or lower applicable fees and charges for its\nemployees. The Company has contractual capital commitments, guarantees, lending facilities and counterparty\narrangementswithrespecttotheseinvestmentfunds.\nPremisesandEquipment. TheCompanyhasnon-cancelableoperatingleasescoveringpremisesandequipment\n(excluding commodities operating leases, shown separately). At December 31, 2013, future minimum rental\ncommitments under such leases (net of subleases, principally on office rentals) were as follows\n(dollarsinmillions):\nOperating\nPremises\nYearEnded Leases\n2014 ...........................................\n\n[2] convfinqa_ctx_745.pdf p.1\nsofOperations.AFUDCissummarizedinthefollowingtableforthe\nyearsendedDecember31:\n2017 2016 2015\nAllowanceforotherfundsusedduringconstruction ..................... $ 19 $ 15 $ 13\nAllowanceforborrowedfundsusedduringconstruction ................. 8 6 8\nEnvironmentalCosts\nTheCompany’swaterandwastewateroperationsandtheoperationsofitsMarket-BasedBusinessesare\nsubjecttoU.S.federal,state,localandforeignrequirementsrelatingtoenvironmentalprotection,andassuch,the\nCompanyperiodicallybecomessubjecttoenvironmentalclaimsinthenormalcourseofbusiness.Environmental\nexpendituresthatrelatetocurrentoperationsorprovideafuturebenefitareexpensedorcapitalizedas\nappropriate.Remediationcoststhatrelatetoanexistingconditi\n\n[3] convfinqa_ctx_1046.pdf p.1\niation programs may result in increased expenses and increased environmental reserves.\nThe Company is sometimes a party to environmental lawsuits and claims and has received notices of potential violations of\nenvironmental laws and regulations from the U.S. Environmental Protection Agency and similar state authorities. It has also been\nidentified as a potentially responsible party (\"PRP\") for cleanup costs associated with off-site waste disposal at federal Superfund\nand state remediation sites. For all such sites, there are other PRPs and, in most instances, the Company’s involvement is minimal.\nIn estimating its liability, the Company has assumed it will not bear the entire cost of remediat\n\n[4] finqa_test_ctx_29.pdf p.1\nLIQUIDITY AND CAPITAL RESOURCES\nOur objective in financing our business is to maintain sufficient liquidity, adequate financial resources and\nfinancial flexibility in order to fund the requirements of our business. At December 31, 2017, we had cash and\nequivalents of $7.0 billion compared to $981 million of cash and equivalents at December 31, 2016. Cash and\nequivalents includes $997 million of cash held on behalf of GE at December 31, 2017.\nAt December 31, 2017, approximately $3.2 billion of our cash and equivalents was held by foreign subsidiaries\ncompared to approximately $878 million at December 31, 2016. A substantial portion of the cash held by foreign\nsubsidiaries at December 31, 2017\n\n[5] convfinqa_ctx_745.pdf p.1\nIncomeTaxes\nAmericanWateranditssubsidiariesparticipateinaconsolidatedfederalincometaxreturnforU.S.tax\npurposes.Membersoftheconsolidatedgrouparechargedwiththeamountoffederalincometaxexpense\ndeterminedasiftheyfiledseparatereturns.\nCertainincomeandexpenseitemsareaccountedforindifferenttimeperiodsforfinancialreportingthanfor\nincometaxreportingpurposes.TheCompanyprovidesdeferredincometaxesonthedifferencebetweenthetax\nbasisofassetsandliabilitiesandtheamountsatwhichtheyarecarriedinthefinancialstatements.Thesedeferred\nincometaxesarebasedontheenactedtaxratesexpectedtobeineffectwhenthesetemporarydifferencesare\nprojectedtoreverse.Inaddition,theregulatedutilitysubsidiariesrecognizeregulatoryassetsandlia\nDraft:\nFrom evidence [2] convfinqa_ctx_745.pdf p.1:\n\n- Allowance for other funds used during construction in 2016: $15  \n- Allowance for borrowed funds used during construction in 2016: $6  \n\nTotal = $15 + $6 = $21\n\nAnswer: 21\nLabel:",
+      "input_tokens": 1134,
+      "output_tokens": 3,
+      "latency_seconds": 18.677872400003253
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "American Water Works allowance for other funds used during construction allowance for borrowed funds used during construction 2016",
+      "filters": {
+        "year": 2016,
+        "company": "American Water Works"
+      },
+      "chunk_ids": [],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    },
+    {
+      "iteration": 1,
+      "query": "American Water Works allowance for other funds used during construction allowance for borrowed funds used during construction 2016",
+      "filters": {},
+      "chunk_ids": [
+        "convfinqa_ctx_1006::p1::c1::82f433d851",
+        "convfinqa_ctx_745::p1::c1::d82a203659",
+        "convfinqa_ctx_1046::p1::c1::a30e58a57e",
+        "finqa_test_ctx_29::p1::c0::6dda82a985",
+        "convfinqa_ctx_745::p1::c0::05b40a1879"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 2
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1006::p1::c1::82f433d851",
+          "document_id": "convfinqa_ctx_1006",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1006::p1::c1::82f433d851",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_745::p1::c1::d82a203659",
+          "document_id": "convfinqa_ctx_745",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_745::p1::c1::d82a203659",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1046::p1::c1::a30e58a57e",
+          "document_id": "convfinqa_ctx_1046",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1046::p1::c1::a30e58a57e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+          "document_id": "finqa_test_ctx_29",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_29::p1::c0::6dda82a985",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_745::p1::c0::05b40a1879",
+          "document_id": "convfinqa_ctx_745",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_745::p1::c0::05b40a1879",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the total of allowance for other funds used during construction and allowance for borrowed funds used during construction for American Water Works in 2016?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total of allowance for other funds used during construction and allowance for borrowed funds used during construction for American Water Works in 2016?\nRetrieval query:",
+  "query_formulation_raw_output": "American Water Works allowance for other funds used during construction allowance for borrowed funds used during construction 2016",
+  "query_formulation_latency_seconds": 4.0985,
+  "query_formulation_input_tokens": 174,
+  "query_formulation_output_tokens": 23,
+  "query_formulation_trace": {
+    "original_question": "What is the total of allowance for other funds used during construction and allowance for borrowed funds used during construction for American Water Works in 2016?",
+    "retrieval_query": "American Water Works allowance for other funds used during construction allowance for borrowed funds used during construction 2016",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total of allowance for other funds used during construction and allowance for borrowed funds used during construction for American Water Works in 2016?\nRetrieval query:",
+    "raw_output": "American Water Works allowance for other funds used during construction allowance for borrowed funds used during construction 2016",
+    "latency_seconds": 4.0985058000005665,
+    "input_tokens": 174,
+    "output_tokens": 23,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "21.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/AWK/2017/page_128.pdf | source_page=128 | context_id=convfinqa_ctx_745"
+}

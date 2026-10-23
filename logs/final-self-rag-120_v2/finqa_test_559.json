@@ -1,0 +1,318 @@
+{
+  "question_id": "finqa_test_559",
+  "question": "In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?",
+  "retrieval_query": "Altria 2014 financial report operating companies income increase NPM adjustment items percentage",
+  "metadata_filters": {
+    "year": 2014,
+    "company": "Altria"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_44::p1::c2::9bb9c16551",
+      "rank": 1,
+      "dense_score": 0.6128458380699158,
+      "bm25_score": 21.519729357039317,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_44"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_44::p1::c1::e705f872e6",
+      "rank": 2,
+      "dense_score": 0.609805703163147,
+      "bm25_score": 11.003506973742919,
+      "hybrid_score": 0.1616954584275894,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_44"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_44::p1::c0::23e0c0789c",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 3.86799294629875,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_44"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 82.3062,
+  "input_tokens": 5250,
+  "output_tokens": 67,
+  "total_tokens": 5317,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 9,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.0385,
+  "llm_latency_seconds": 82.2653,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?\nLabel:",
+      "input_tokens": 100,
+      "output_tokens": 7,
+      "latency_seconds": 3.151798400002008
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?\nEvidence:\n[1] finqa_test_ctx_44.pdf p.1\n5\n2014, Middleton announced the national expansion of Black &\nSkoal 269.6 283.8 288.4\nMild Casino, a dark tobacco blend, in the tipped segment.\nCopenhagen and Skoal 718.2 709.9 680.9\nThe following discussion compares operating results for\nOther 75.1 77.6 82.4\nthe smokeable products segment for the year ended December\nTotal smokeless products 793.3 787.5 763.3\n31, 2013 with the year ended December 31, 2012.\nNet revenues, which include excise taxes billed to Smokeless products shipment volume includes cans and\ncustomers, decreased $348 million (1.6%), due primarily to packs sold, as well as promotional units, but excludes\nlower shipment volume ($1,046 million), partially offset by internationa\n\n[2] finqa_test_ctx_44.pdf p.1\n3 share points versus\nfactors, PM USA estimates that its 2014 domestic cigarettes 2012, due to retail share gains by Marlboro, as well as L&M in\nshipment volume decreased approximately 3%, and that total Discount, partially offset by share losses on other portfolio\nindustry cigarette volumes declined approximately 3.5%. brands. In 2013, L&M continued to gain retail share as the total\nPM USA’s shipments of premium cigarettes accounted discount segment was flat to declining versus 2012.\nfor 91.8% of its reported domestic cigarettes shipment In the machine-made large cigars category, Black & Mild’s\nvolume for 2014, versus 92.1% for 2013. retail share for 2013 decreased 1.0 share point, driven b\n\n[3] finqa_test_ctx_44.pdf p.1\nadministering and litigating product liability claims. Litigation volume decreased 4.1% versus 2012. PM USA’s 2013\ndefense costs are influenced by a number of factors, including reported domestic cigarettes shipment volume decreased\nthe number and types of cases filed, the number of cases tried 4.1%, due primarily to the industry’s rate of decline, changes\nannually, the results of trials and appeals, the development of in trade inventories and other factors, partially offset by retail\nthe law controlling relevant legal issues, and litigation strategy share gains. When adjusted for trade inventories and other\nand tactics. For further discussion on these matters, see Note 18 factors, PM USA es\nDecision:",
+      "input_tokens": 789,
+      "output_tokens": 4,
+      "latency_seconds": 13.284673599999223
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?\nEvidence:\n[1] finqa_test_ctx_44.pdf p.1\n5\n2014, Middleton announced the national expansion of Black &\nSkoal 269.6 283.8 288.4\nMild Casino, a dark tobacco blend, in the tipped segment.\nCopenhagen and Skoal 718.2 709.9 680.9\nThe following discussion compares operating results for\nOther 75.1 77.6 82.4\nthe smokeable products segment for the year ended December\nTotal smokeless products 793.3 787.5 763.3\n31, 2013 with the year ended December 31, 2012.\nNet revenues, which include excise taxes billed to Smokeless products shipment volume includes cans and\ncustomers, decreased $348 million (1.6%), due primarily to packs sold, as well as promotional units, but excludes\nlower shipment volume ($1,046 million), partially offset by internationa\n\n[2] finqa_test_ctx_44.pdf p.1\n3 share points versus\nfactors, PM USA estimates that its 2014 domestic cigarettes 2012, due to retail share gains by Marlboro, as well as L&M in\nshipment volume decreased approximately 3%, and that total Discount, partially offset by share losses on other portfolio\nindustry cigarette volumes declined approximately 3.5%. brands. In 2013, L&M continued to gain retail share as the total\nPM USA’s shipments of premium cigarettes accounted discount segment was flat to declining versus 2012.\nfor 91.8% of its reported domestic cigarettes shipment In the machine-made large cigars category, Black & Mild’s\nvolume for 2014, versus 92.1% for 2013. retail share for 2013 decreased 1.0 share point, driven b\n\n[3] finqa_test_ctx_44.pdf p.1\nadministering and litigating product liability claims. Litigation volume decreased 4.1% versus 2012. PM USA’s 2013\ndefense costs are influenced by a number of factors, including reported domestic cigarettes shipment volume decreased\nthe number and types of cases filed, the number of cases tried 4.1%, due primarily to the industry’s rate of decline, changes\nannually, the results of trials and appeals, the development of in trade inventories and other factors, partially offset by retail\nthe law controlling relevant legal issues, and litigation strategy share gains. When adjusted for trade inventories and other\nand tactics. For further discussion on these matters, see Note 18 factors, PM USA es\nLabel:",
+      "input_tokens": 705,
+      "output_tokens": 3,
+      "latency_seconds": 11.933694300001662
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?\nEvidence:\n[1] finqa_test_ctx_44.pdf p.1\nl volume, which is not material to the smokeless\nhigher pricing. products segment. Other includes certain USSTC and PM USA\nOperating companies income increased $824 million smokeless products. New types of smokeless products, as well\n(13.2%), due primarily to higher pricing ($765 million), NPM as new packaging configurations of existing smokeless\nAdjustment Items ($664 million) and lower marketing, products, may or may not be equivalent to existing MST\nadministration and research costs, partially offset by lower products on a can-for-can basis. To calculate volumes of cans\nshipment volume ($512 million), and higher per unit settlement and packs shipped, one pack of snus, irrespective of the\n\n[2] finqa_test_ctx_44.pdf p.1\ny\nMiddleton’s reported cigars shipment volume for 2014 heightened competitive activity from low-priced cigar brands.\nincreased 6.1%, driven by Black & Mild’s performance in the\ntipped cigars segment, including Black & Mild Jazz. Smokeless Products Segment\nMarlboro’s retail share for 2014 increased 0.1 share point During 2014, the smokeless products segment grew operating\nversus 2013. companies income and expanded operating companies income\nPM USA grew its total retail share for 2014 by 0.2 share margins. USSTC also increased Copenhagen and Skoal’s\npoints versus 2013, driven by Marlboro, and L&M in Discount, combined retail share versus 2013.\npartially offset by share losses on other portfoli\n\n[3] finqa_test_ctx_44.pdf p.1\ntimated that its 2013 domestic cigarettes\nand Item 3. For the years ended December 31, 2014, 2013 and shipment volume was down approximately 4%, which was\n2012, product liability defense costs for PM USA were $230 consistent with the estimated category decline.\nmillion, $247 million and $228 million, respectively. The PM USA’s shipments of premium cigarettes accounted\nfactors that have influenced past product liability defense costs for 92.1% of its reported domestic cigarettes shipment\nare expected to continue to influence future costs. PM USA volume for 2013, versus 92.7% for 2012.\ndoes not expect future product liability defense costs to be Middleton’s reported cigars shipment volume for\nLabel:",
+      "input_tokens": 657,
+      "output_tokens": 3,
+      "latency_seconds": 10.14750720000302
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?\nEvidence:\n[1] finqa_test_ctx_44.pdf p.1\nl volume, which is not material to the smokeless\nhigher pricing. products segment. Other includes certain USSTC and PM USA\nOperating companies income increased $824 million smokeless products. New types of smokeless products, as well\n(13.2%), due primarily to higher pricing ($765 million), NPM as new packaging configurations of existing smokeless\nAdjustment Items ($664 million) and lower marketing, products, may or may not be equivalent to existing MST\nadministration and research costs, partially offset by lower products on a can-for-can basis. To calculate volumes of cans\nshipment volume ($512 million), and higher per unit settlement and packs shipped, one pack of snus, irrespective of the\n\n[2] finqa_test_ctx_44.pdf p.1\ny\nMiddleton’s reported cigars shipment volume for 2014 heightened competitive activity from low-priced cigar brands.\nincreased 6.1%, driven by Black & Mild’s performance in the\ntipped cigars segment, including Black & Mild Jazz. Smokeless Products Segment\nMarlboro’s retail share for 2014 increased 0.1 share point During 2014, the smokeless products segment grew operating\nversus 2013. companies income and expanded operating companies income\nPM USA grew its total retail share for 2014 by 0.2 share margins. USSTC also increased Copenhagen and Skoal’s\npoints versus 2013, driven by Marlboro, and L&M in Discount, combined retail share versus 2013.\npartially offset by share losses on other portfoli\n\n[3] finqa_test_ctx_44.pdf p.1\ntimated that its 2013 domestic cigarettes\nand Item 3. For the years ended December 31, 2014, 2013 and shipment volume was down approximately 4%, which was\n2012, product liability defense costs for PM USA were $230 consistent with the estimated category decline.\nmillion, $247 million and $228 million, respectively. The PM USA’s shipments of premium cigarettes accounted\nfactors that have influenced past product liability defense costs for 92.1% of its reported domestic cigarettes shipment\nare expected to continue to influence future costs. PM USA volume for 2013, versus 92.7% for 2012.\ndoes not expect future product liability defense costs to be Middleton’s reported cigars shipment volume for\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 698,
+      "output_tokens": 4,
+      "latency_seconds": 11.956556400000409
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?\nEvidence:\n[1] finqa_test_ctx_44.pdf p.1\nl volume, which is not material to the smokeless\nhigher pricing. products segment. Other includes certain USSTC and PM USA\nOperating companies income increased $824 million smokeless products. New types of smokeless products, as well\n(13.2%), due primarily to higher pricing ($765 million), NPM as new packaging configurations of existing smokeless\nAdjustment Items ($664 million) and lower marketing, products, may or may not be equivalent to existing MST\nadministration and research costs, partially offset by lower products on a can-for-can basis. To calculate volumes of cans\nshipment volume ($512 million), and higher per unit settlement and packs shipped, one pack of snus, irrespective of the\n\n[2] finqa_test_ctx_44.pdf p.1\ny\nMiddleton’s reported cigars shipment volume for 2014 heightened competitive activity from low-priced cigar brands.\nincreased 6.1%, driven by Black & Mild’s performance in the\ntipped cigars segment, including Black & Mild Jazz. Smokeless Products Segment\nMarlboro’s retail share for 2014 increased 0.1 share point During 2014, the smokeless products segment grew operating\nversus 2013. companies income and expanded operating companies income\nPM USA grew its total retail share for 2014 by 0.2 share margins. USSTC also increased Copenhagen and Skoal’s\npoints versus 2013, driven by Marlboro, and L&M in Discount, combined retail share versus 2013.\npartially offset by share losses on other portfoli\n\n[3] finqa_test_ctx_44.pdf p.1\ntimated that its 2013 domestic cigarettes\nand Item 3. For the years ended December 31, 2014, 2013 and shipment volume was down approximately 4%, which was\n2012, product liability defense costs for PM USA were $230 consistent with the estimated category decline.\nmillion, $247 million and $228 million, respectively. The PM USA’s shipments of premium cigarettes accounted\nfactors that have influenced past product liability defense costs for 92.1% of its reported domestic cigarettes shipment\nare expected to continue to influence future costs. PM USA volume for 2013, versus 92.7% for 2012.\ndoes not expect future product liability defense costs to be Middleton’s reported cigars shipment volume for\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 681,
+      "output_tokens": 11,
+      "latency_seconds": 12.1818889999995
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?\nEvidence:\n[1] finqa_test_ctx_44.pdf p.1\nl volume, which is not material to the smokeless\nhigher pricing. products segment. Other includes certain USSTC and PM USA\nOperating companies income increased $824 million smokeless products. New types of smokeless products, as well\n(13.2%), due primarily to higher pricing ($765 million), NPM as new packaging configurations of existing smokeless\nAdjustment Items ($664 million) and lower marketing, products, may or may not be equivalent to existing MST\nadministration and research costs, partially offset by lower products on a can-for-can basis. To calculate volumes of cans\nshipment volume ($512 million), and higher per unit settlement and packs shipped, one pack of snus, irrespective of the\n\n[2] finqa_test_ctx_44.pdf p.1\ny\nMiddleton’s reported cigars shipment volume for 2014 heightened competitive activity from low-priced cigar brands.\nincreased 6.1%, driven by Black & Mild’s performance in the\ntipped cigars segment, including Black & Mild Jazz. Smokeless Products Segment\nMarlboro’s retail share for 2014 increased 0.1 share point During 2014, the smokeless products segment grew operating\nversus 2013. companies income and expanded operating companies income\nPM USA grew its total retail share for 2014 by 0.2 share margins. USSTC also increased Copenhagen and Skoal’s\npoints versus 2013, driven by Marlboro, and L&M in Discount, combined retail share versus 2013.\npartially offset by share losses on other portfoli\n\n[3] finqa_test_ctx_44.pdf p.1\ntimated that its 2013 domestic cigarettes\nand Item 3. For the years ended December 31, 2014, 2013 and shipment volume was down approximately 4%, which was\n2012, product liability defense costs for PM USA were $230 consistent with the estimated category decline.\nmillion, $247 million and $228 million, respectively. The PM USA’s shipments of premium cigarettes accounted\nfactors that have influenced past product liability defense costs for 92.1% of its reported domestic cigarettes shipment\nare expected to continue to influence future costs. PM USA volume for 2013, versus 92.7% for 2012.\ndoes not expect future product liability defense costs to be Middleton’s reported cigars shipment volume for\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 698,
+      "output_tokens": 4,
+      "latency_seconds": 2.427515700001095
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Altria 2014 financial report operating companies income increase NPM adjustment items percentage",
+      "filters": {
+        "year": 2014,
+        "company": "Altria"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_44::p1::c2::9bb9c16551",
+        "finqa_test_ctx_44::p1::c1::e705f872e6",
+        "finqa_test_ctx_44::p1::c0::23e0c0789c"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_44::p1::c2::9bb9c16551",
+          "document_id": "finqa_test_ctx_44",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_44::p1::c2::9bb9c16551",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_44::p1::c1::e705f872e6",
+          "document_id": "finqa_test_ctx_44",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_44::p1::c1::e705f872e6",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_44::p1::c0::23e0c0789c",
+          "document_id": "finqa_test_ctx_44",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_44::p1::c0::23e0c0789c",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_44::p1::c2::9bb9c16551",
+          "document_id": "finqa_test_ctx_44",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_44::p1::c2::9bb9c16551",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_44::p1::c1::e705f872e6",
+          "document_id": "finqa_test_ctx_44",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_44::p1::c1::e705f872e6",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_44::p1::c0::23e0c0789c",
+          "document_id": "finqa_test_ctx_44",
+          "rank": 3,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_44::p1::c0::23e0c0789c",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?\nRetrieval query:",
+  "query_formulation_raw_output": "Altria 2014 financial report operating companies income increase NPM adjustment items percentage",
+  "query_formulation_latency_seconds": 3.9791,
+  "query_formulation_input_tokens": 177,
+  "query_formulation_output_tokens": 20,
+  "query_formulation_trace": {
+    "original_question": "In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?",
+    "retrieval_query": "Altria 2014 financial report operating companies income increase NPM adjustment items percentage",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the context of Altria's 2014 financial report, what percentage of the operating companies' income increase can be attributed to NPM adjustment items?\nRetrieval query:",
+    "raw_output": "Altria 2014 financial report operating companies income increase NPM adjustment items percentage",
+    "latency_seconds": 3.979100799995649,
+    "input_tokens": 177,
+    "output_tokens": 20,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "0.8058252427184466",
+  "gold_evidence_reference": "FinQA | pdf/MO/2014/page_39.pdf | source_page=39 | context_id=finqa_test_ctx_44"
+}

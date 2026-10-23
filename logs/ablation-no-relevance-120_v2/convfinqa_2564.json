@@ -1,0 +1,314 @@
+{
+  "question_id": "convfinqa_2564",
+  "question": "According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?",
+  "retrieval_query": "PNC Financial Services pension plan assumptions 2007 long-term return on assets 0.5% decrease pension expense 2008 compensation rate 0.5% increase impact",
+  "metadata_filters": {
+    "company": "PNC Financial Services"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1321::p1::c2::c313a90e6a",
+      "rank": 1,
+      "dense_score": 0.6846138834953308,
+      "bm25_score": 15.222508757211802,
+      "hybrid_score": 0.9990524797667643,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1321"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1321::p1::c0::f61e278716",
+      "rank": 2,
+      "dense_score": 0.6847231388092041,
+      "bm25_score": 3.7939660849342505,
+      "hybrid_score": 0.6996935825873465,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1321"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1321::p1::c1::eb32da9198",
+      "rank": 3,
+      "dense_score": 0.6800937652587891,
+      "bm25_score": 2.599168838267169,
+      "hybrid_score": 0.6281496501099103,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1321"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+      "rank": 4,
+      "dense_score": 0.6477415561676025,
+      "bm25_score": 8.048538159803506,
+      "hybrid_score": 0.4907664842346495,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_141"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+      "rank": 5,
+      "dense_score": 0.6155391931533813,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_141"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 96.9154,
+  "input_tokens": 6701,
+  "output_tokens": 80,
+  "total_tokens": 6781,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.0463,
+  "llm_latency_seconds": 96.8577,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?\nLabel:",
+      "input_tokens": 125,
+      "output_tokens": 7,
+      "latency_seconds": 3.4271032999968156
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?\nEvidence:\n[1] convfinqa_ctx_1321.pdf p.1\nationofFASBStatement estimatedexpenseasabaseline.\nNo.109”\nEstimated\n• FSPFAS13-2,“AccountingforaChangeor\nIncreaseto2008\nProjectedChangeintheTimingofCashFlows Pension\nRelatingtoIncomeTaxesGeneratedbyaLeveraged Expense\nChangeinAssumption (Inmillions)\nLeaseTransaction”\n• SFAS156,“AccountingforServicingofFinancial .5%decreaseindiscountrate $1\nAssets–anamendmentofFASBStatementNo.140” .5%decreaseinexpectedlong-termreturnon\n• SFAS155,“AccountingforCertainHybridFinancial assets $10\nInstruments–anamendmentofFASBStatements .5%increaseincompensationrate $2\nNo.133and140”\n• TheEmergingIssuesTaskForce(“EITF”)ofthe Wecurrentlyestimateapretaxpensionbenefitof$26million\nFASBissuedEITFIssue06-4,“Accountingfor\n\n[2] convfinqa_ctx_1321.pdf p.1\nR A DeferredCompensationandPostretirementBenefit\nECENT CCOUNTING\nAspectsofEndorsementSplit-DollarLifeInsurance\nP\nRONOUNCEMENTS Arrangements”\nSeeNote1AccountingPoliciesintheNotesToConsolidated\nS O D B\nTATUS F EFINED ENEFIT\nFinancialStatementsinItem8ofthisReportforadditional\nP P\ninformationonthefollowingrecentaccountingpronouncements ENSION LAN\nthatarerelevanttoourbusiness,includingadescriptionofeach Wehaveanoncontributory,qualifieddefinedbenefitpension\nnewpronouncement,therequireddateofadoption,ourplanned plan(“plan”or“pensionplan”)coveringeligibleemployees.\ndateofadoption,andtheexpectedimpactonourconsolidated Benefitsarederivedfromacashbalanceformulabasedon\nfinancialstatements.Allofthefollow\n\n[3] convfinqa_ctx_1321.pdf p.1\ntrustassetsattheirfairmarketvalue.On\nandEquityMethodInvestorsforInvestmentsin anannualbasis,wereviewtheactuarialassumptionsrelatedto\nInvestmentCompanies.”TheFASBissuedafinal thepensionplan,includingthediscountrate,therateof\nFSPinFebruary2008whichindefinitelydelaysthe compensationincreaseandtheexpectedreturnonplanassets.\neffectivedateofAICPASOP07-1. Neitherthediscountratenorthecompensationincrease\n• FASBStaffPositionNo.(“FSP”)FIN46(R)7, assumptionssignificantlyaffectspensionexpense.\n“ApplicationofFASBInterpretationNo.46(R)to\nInvestmentCompanies” Theexpectedlong-termreturnonassetsassumptiondoes\n• FSPFIN48-1,“DefinitionofSettlementinFASB significantlyaffectpensionexpense.Theexpectedlong-term\nIn\n\n[4] finqa_test_ctx_141.pdf p.1\nHomeEquityRepurchaseObligations beencured,andtheeffectofsuchbreachisdeemedtohave\nPNC’srepurchaseobligationsincludeobligationswithrespect hadamaterialandadverseeffectonthevalueofthe\ntocertainbrokeredhomeequityloans/linesthatweresoldtoa transferredloan.Dependingonthesaleagreementandupon\nlimitednumberofprivateinvestorsinthefinancialservices propernoticefromtheinvestor,wetypicallyrespondtohome\nindustrybyNationalCitypriortoouracquisitionofNational equityindemnificationandrepurchaserequestswithin60\nCity.PNCisnolongerengagedinthebrokeredhomeequity days,althoughfinalresolutionoftheclaimmaytakealonger\nlendingbusiness,andourexposureundertheseloan periodoftime.Mosthomeequitysaleagreementsdonot\nrepurcha\n\n[5] finqa_test_ctx_141.pdf p.1\naction,includingunderwritingstandards,delivery\nofallrequiredloandocumentstotheinvestororitsdesignated\nparty,sufficientcollateralvaluation,andthevalidityofthe Thefollowingtabledetailstheunpaidprincipalbalanceofour\nliensecuringtheloan.Asaresultofallegedbreachesofthese unresolvedhomeequityindemnificationandrepurchase\ncontractualobligations,investorsmayrequestPNCto claimsatDecember31,2012andDecember31,2011,\nindemnifythemagainstlossesoncertainloansorto respectively.\nrepurchaseloans.\nTable31:AnalysisofHomeEquityUnresolvedAsserted\nWeinvestigateeveryinvestorclaimonaloanbyloanbasisto IndemnificationandRepurchaseClaims\ndeterminetheexistenceofalegitimateclaim,andthatall\notherconditionsforindemnificatio\nLabel:",
+      "input_tokens": 1236,
+      "output_tokens": 3,
+      "latency_seconds": 20.474697000005108
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?\nEvidence:\n[1] convfinqa_ctx_1321.pdf p.1\nationofFASBStatement estimatedexpenseasabaseline.\nNo.109”\nEstimated\n• FSPFAS13-2,“AccountingforaChangeor\nIncreaseto2008\nProjectedChangeintheTimingofCashFlows Pension\nRelatingtoIncomeTaxesGeneratedbyaLeveraged Expense\nChangeinAssumption (Inmillions)\nLeaseTransaction”\n• SFAS156,“AccountingforServicingofFinancial .5%decreaseindiscountrate $1\nAssets–anamendmentofFASBStatementNo.140” .5%decreaseinexpectedlong-termreturnon\n• SFAS155,“AccountingforCertainHybridFinancial assets $10\nInstruments–anamendmentofFASBStatements .5%increaseincompensationrate $2\nNo.133and140”\n• TheEmergingIssuesTaskForce(“EITF”)ofthe Wecurrentlyestimateapretaxpensionbenefitof$26million\nFASBissuedEITFIssue06-4,“Accountingfor\n\n[2] convfinqa_ctx_1321.pdf p.1\nR A DeferredCompensationandPostretirementBenefit\nECENT CCOUNTING\nAspectsofEndorsementSplit-DollarLifeInsurance\nP\nRONOUNCEMENTS Arrangements”\nSeeNote1AccountingPoliciesintheNotesToConsolidated\nS O D B\nTATUS F EFINED ENEFIT\nFinancialStatementsinItem8ofthisReportforadditional\nP P\ninformationonthefollowingrecentaccountingpronouncements ENSION LAN\nthatarerelevanttoourbusiness,includingadescriptionofeach Wehaveanoncontributory,qualifieddefinedbenefitpension\nnewpronouncement,therequireddateofadoption,ourplanned plan(“plan”or“pensionplan”)coveringeligibleemployees.\ndateofadoption,andtheexpectedimpactonourconsolidated Benefitsarederivedfromacashbalanceformulabasedon\nfinancialstatements.Allofthefollow\n\n[3] convfinqa_ctx_1321.pdf p.1\ntrustassetsattheirfairmarketvalue.On\nandEquityMethodInvestorsforInvestmentsin anannualbasis,wereviewtheactuarialassumptionsrelatedto\nInvestmentCompanies.”TheFASBissuedafinal thepensionplan,includingthediscountrate,therateof\nFSPinFebruary2008whichindefinitelydelaysthe compensationincreaseandtheexpectedreturnonplanassets.\neffectivedateofAICPASOP07-1. Neitherthediscountratenorthecompensationincrease\n• FASBStaffPositionNo.(“FSP”)FIN46(R)7, assumptionssignificantlyaffectspensionexpense.\n“ApplicationofFASBInterpretationNo.46(R)to\nInvestmentCompanies” Theexpectedlong-termreturnonassetsassumptiondoes\n• FSPFIN48-1,“DefinitionofSettlementinFASB significantlyaffectpensionexpense.Theexpectedlong-term\nIn\n\n[4] finqa_test_ctx_141.pdf p.1\nHomeEquityRepurchaseObligations beencured,andtheeffectofsuchbreachisdeemedtohave\nPNC’srepurchaseobligationsincludeobligationswithrespect hadamaterialandadverseeffectonthevalueofthe\ntocertainbrokeredhomeequityloans/linesthatweresoldtoa transferredloan.Dependingonthesaleagreementandupon\nlimitednumberofprivateinvestorsinthefinancialservices propernoticefromtheinvestor,wetypicallyrespondtohome\nindustrybyNationalCitypriortoouracquisitionofNational equityindemnificationandrepurchaserequestswithin60\nCity.PNCisnolongerengagedinthebrokeredhomeequity days,althoughfinalresolutionoftheclaimmaytakealonger\nlendingbusiness,andourexposureundertheseloan periodoftime.Mosthomeequitysaleagreementsdonot\nrepurcha\n\n[5] finqa_test_ctx_141.pdf p.1\naction,includingunderwritingstandards,delivery\nofallrequiredloandocumentstotheinvestororitsdesignated\nparty,sufficientcollateralvaluation,andthevalidityofthe Thefollowingtabledetailstheunpaidprincipalbalanceofour\nliensecuringtheloan.Asaresultofallegedbreachesofthese unresolvedhomeequityindemnificationandrepurchase\ncontractualobligations,investorsmayrequestPNCto claimsatDecember31,2012andDecember31,2011,\nindemnifythemagainstlossesoncertainloansorto respectively.\nrepurchaseloans.\nTable31:AnalysisofHomeEquityUnresolvedAsserted\nWeinvestigateeveryinvestorclaimonaloanbyloanbasisto IndemnificationandRepurchaseClaims\ndeterminetheexistenceofalegitimateclaim,andthatall\notherconditionsforindemnificatio\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1277,
+      "output_tokens": 4,
+      "latency_seconds": 21.057472000000416
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?\nEvidence:\n[1] convfinqa_ctx_1321.pdf p.1\nationofFASBStatement estimatedexpenseasabaseline.\nNo.109”\nEstimated\n• FSPFAS13-2,“AccountingforaChangeor\nIncreaseto2008\nProjectedChangeintheTimingofCashFlows Pension\nRelatingtoIncomeTaxesGeneratedbyaLeveraged Expense\nChangeinAssumption (Inmillions)\nLeaseTransaction”\n• SFAS156,“AccountingforServicingofFinancial .5%decreaseindiscountrate $1\nAssets–anamendmentofFASBStatementNo.140” .5%decreaseinexpectedlong-termreturnon\n• SFAS155,“AccountingforCertainHybridFinancial assets $10\nInstruments–anamendmentofFASBStatements .5%increaseincompensationrate $2\nNo.133and140”\n• TheEmergingIssuesTaskForce(“EITF”)ofthe Wecurrentlyestimateapretaxpensionbenefitof$26million\nFASBissuedEITFIssue06-4,“Accountingfor\n\n[2] convfinqa_ctx_1321.pdf p.1\nR A DeferredCompensationandPostretirementBenefit\nECENT CCOUNTING\nAspectsofEndorsementSplit-DollarLifeInsurance\nP\nRONOUNCEMENTS Arrangements”\nSeeNote1AccountingPoliciesintheNotesToConsolidated\nS O D B\nTATUS F EFINED ENEFIT\nFinancialStatementsinItem8ofthisReportforadditional\nP P\ninformationonthefollowingrecentaccountingpronouncements ENSION LAN\nthatarerelevanttoourbusiness,includingadescriptionofeach Wehaveanoncontributory,qualifieddefinedbenefitpension\nnewpronouncement,therequireddateofadoption,ourplanned plan(“plan”or“pensionplan”)coveringeligibleemployees.\ndateofadoption,andtheexpectedimpactonourconsolidated Benefitsarederivedfromacashbalanceformulabasedon\nfinancialstatements.Allofthefollow\n\n[3] convfinqa_ctx_1321.pdf p.1\ntrustassetsattheirfairmarketvalue.On\nandEquityMethodInvestorsforInvestmentsin anannualbasis,wereviewtheactuarialassumptionsrelatedto\nInvestmentCompanies.”TheFASBissuedafinal thepensionplan,includingthediscountrate,therateof\nFSPinFebruary2008whichindefinitelydelaysthe compensationincreaseandtheexpectedreturnonplanassets.\neffectivedateofAICPASOP07-1. Neitherthediscountratenorthecompensationincrease\n• FASBStaffPositionNo.(“FSP”)FIN46(R)7, assumptionssignificantlyaffectspensionexpense.\n“ApplicationofFASBInterpretationNo.46(R)to\nInvestmentCompanies” Theexpectedlong-termreturnonassetsassumptiondoes\n• FSPFIN48-1,“DefinitionofSettlementinFASB significantlyaffectpensionexpense.Theexpectedlong-term\nIn\n\n[4] finqa_test_ctx_141.pdf p.1\nHomeEquityRepurchaseObligations beencured,andtheeffectofsuchbreachisdeemedtohave\nPNC’srepurchaseobligationsincludeobligationswithrespect hadamaterialandadverseeffectonthevalueofthe\ntocertainbrokeredhomeequityloans/linesthatweresoldtoa transferredloan.Dependingonthesaleagreementandupon\nlimitednumberofprivateinvestorsinthefinancialservices propernoticefromtheinvestor,wetypicallyrespondtohome\nindustrybyNationalCitypriortoouracquisitionofNational equityindemnificationandrepurchaserequestswithin60\nCity.PNCisnolongerengagedinthebrokeredhomeequity days,althoughfinalresolutionoftheclaimmaytakealonger\nlendingbusiness,andourexposureundertheseloan periodoftime.Mosthomeequitysaleagreementsdonot\nrepurcha\n\n[5] finqa_test_ctx_141.pdf p.1\naction,includingunderwritingstandards,delivery\nofallrequiredloandocumentstotheinvestororitsdesignated\nparty,sufficientcollateralvaluation,andthevalidityofthe Thefollowingtabledetailstheunpaidprincipalbalanceofour\nliensecuringtheloan.Asaresultofallegedbreachesofthese unresolvedhomeequityindemnificationandrepurchase\ncontractualobligations,investorsmayrequestPNCto claimsatDecember31,2012andDecember31,2011,\nindemnifythemagainstlossesoncertainloansorto respectively.\nrepurchaseloans.\nTable31:AnalysisofHomeEquityUnresolvedAsserted\nWeinvestigateeveryinvestorclaimonaloanbyloanbasisto IndemnificationandRepurchaseClaims\ndeterminetheexistenceofalegitimateclaim,andthatall\notherconditionsforindemnificatio\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 1260,
+      "output_tokens": 11,
+      "latency_seconds": 21.35070429999905
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?\nEvidence:\n[1] convfinqa_ctx_1321.pdf p.1\nationofFASBStatement estimatedexpenseasabaseline.\nNo.109”\nEstimated\n• FSPFAS13-2,“AccountingforaChangeor\nIncreaseto2008\nProjectedChangeintheTimingofCashFlows Pension\nRelatingtoIncomeTaxesGeneratedbyaLeveraged Expense\nChangeinAssumption (Inmillions)\nLeaseTransaction”\n• SFAS156,“AccountingforServicingofFinancial .5%decreaseindiscountrate $1\nAssets–anamendmentofFASBStatementNo.140” .5%decreaseinexpectedlong-termreturnon\n• SFAS155,“AccountingforCertainHybridFinancial assets $10\nInstruments–anamendmentofFASBStatements .5%increaseincompensationrate $2\nNo.133and140”\n• TheEmergingIssuesTaskForce(“EITF”)ofthe Wecurrentlyestimateapretaxpensionbenefitof$26million\nFASBissuedEITFIssue06-4,“Accountingfor\n\n[2] convfinqa_ctx_1321.pdf p.1\nR A DeferredCompensationandPostretirementBenefit\nECENT CCOUNTING\nAspectsofEndorsementSplit-DollarLifeInsurance\nP\nRONOUNCEMENTS Arrangements”\nSeeNote1AccountingPoliciesintheNotesToConsolidated\nS O D B\nTATUS F EFINED ENEFIT\nFinancialStatementsinItem8ofthisReportforadditional\nP P\ninformationonthefollowingrecentaccountingpronouncements ENSION LAN\nthatarerelevanttoourbusiness,includingadescriptionofeach Wehaveanoncontributory,qualifieddefinedbenefitpension\nnewpronouncement,therequireddateofadoption,ourplanned plan(“plan”or“pensionplan”)coveringeligibleemployees.\ndateofadoption,andtheexpectedimpactonourconsolidated Benefitsarederivedfromacashbalanceformulabasedon\nfinancialstatements.Allofthefollow\n\n[3] convfinqa_ctx_1321.pdf p.1\ntrustassetsattheirfairmarketvalue.On\nandEquityMethodInvestorsforInvestmentsin anannualbasis,wereviewtheactuarialassumptionsrelatedto\nInvestmentCompanies.”TheFASBissuedafinal thepensionplan,includingthediscountrate,therateof\nFSPinFebruary2008whichindefinitelydelaysthe compensationincreaseandtheexpectedreturnonplanassets.\neffectivedateofAICPASOP07-1. Neitherthediscountratenorthecompensationincrease\n• FASBStaffPositionNo.(“FSP”)FIN46(R)7, assumptionssignificantlyaffectspensionexpense.\n“ApplicationofFASBInterpretationNo.46(R)to\nInvestmentCompanies” Theexpectedlong-termreturnonassetsassumptiondoes\n• FSPFIN48-1,“DefinitionofSettlementinFASB significantlyaffectpensionexpense.Theexpectedlong-term\nIn\n\n[4] finqa_test_ctx_141.pdf p.1\nHomeEquityRepurchaseObligations beencured,andtheeffectofsuchbreachisdeemedtohave\nPNC’srepurchaseobligationsincludeobligationswithrespect hadamaterialandadverseeffectonthevalueofthe\ntocertainbrokeredhomeequityloans/linesthatweresoldtoa transferredloan.Dependingonthesaleagreementandupon\nlimitednumberofprivateinvestorsinthefinancialservices propernoticefromtheinvestor,wetypicallyrespondtohome\nindustrybyNationalCitypriortoouracquisitionofNational equityindemnificationandrepurchaserequestswithin60\nCity.PNCisnolongerengagedinthebrokeredhomeequity days,althoughfinalresolutionoftheclaimmaytakealonger\nlendingbusiness,andourexposureundertheseloan periodoftime.Mosthomeequitysaleagreementsdonot\nrepurcha\n\n[5] finqa_test_ctx_141.pdf p.1\naction,includingunderwritingstandards,delivery\nofallrequiredloandocumentstotheinvestororitsdesignated\nparty,sufficientcollateralvaluation,andthevalidityofthe Thefollowingtabledetailstheunpaidprincipalbalanceofour\nliensecuringtheloan.Asaresultofallegedbreachesofthese unresolvedhomeequityindemnificationandrepurchase\ncontractualobligations,investorsmayrequestPNCto claimsatDecember31,2012andDecember31,2011,\nindemnifythemagainstlossesoncertainloansorto respectively.\nrepurchaseloans.\nTable31:AnalysisofHomeEquityUnresolvedAsserted\nWeinvestigateeveryinvestorclaimonaloanbyloanbasisto IndemnificationandRepurchaseClaims\ndeterminetheexistenceofalegitimateclaim,andthatall\notherconditionsforindemnificatio\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1277,
+      "output_tokens": 4,
+      "latency_seconds": 2.5323470000003
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "PNC Financial Services pension plan assumptions 2007 long-term return on assets 0.5% decrease pension expense 2008 compensation rate 0.5% increase impact",
+      "filters": {
+        "company": "PNC Financial Services"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_1321::p1::c2::c313a90e6a",
+        "convfinqa_ctx_1321::p1::c0::f61e278716",
+        "convfinqa_ctx_1321::p1::c1::eb32da9198",
+        "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+        "finqa_test_ctx_141::p1::c1::0ddf8a26bb"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1321::p1::c2::c313a90e6a",
+          "document_id": "convfinqa_ctx_1321",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1321::p1::c2::c313a90e6a",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1321::p1::c0::f61e278716",
+          "document_id": "convfinqa_ctx_1321",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1321::p1::c0::f61e278716",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1321::p1::c1::eb32da9198",
+          "document_id": "convfinqa_ctx_1321",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1321::p1::c1::eb32da9198",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+          "document_id": "finqa_test_ctx_141",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_141::p1::c0::f8a4fa93c7",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+          "document_id": "finqa_test_ctx_141",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_141::p1::c1::0ddf8a26bb",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?\nRetrieval query:",
+  "query_formulation_raw_output": "PNC Financial Services pension plan assumptions 2007 long-term return on assets 0.5% decrease pension expense 2008 compensation rate 0.5% increase impact",
+  "query_formulation_latency_seconds": 5.517,
+  "query_formulation_input_tokens": 202,
+  "query_formulation_output_tokens": 40,
+  "query_formulation_trace": {
+    "original_question": "According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?",
+    "retrieval_query": "PNC Financial Services pension plan assumptions 2007 long-term return on assets 0.5% decrease pension expense 2008 compensation rate 0.5% increase impact",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: According to the pension plan assumptions for PNC Financial Services in 2007, would a 0.5% decrease in the expected long-term return on assets have a greater impact on 2008 pension expense than a 0.5% increase in the compensation rate?\nRetrieval query:",
+    "raw_output": "PNC Financial Services pension plan assumptions 2007 long-term return on assets 0.5% decrease pension expense 2008 compensation rate 0.5% increase impact",
+    "latency_seconds": 5.517006399997626,
+    "input_tokens": 202,
+    "output_tokens": 40,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "yes",
+  "gold_evidence_reference": "ConvFinQA | pdf/PNC/2007/page_50.pdf | source_page=50 | context_id=convfinqa_ctx_1321"
+}

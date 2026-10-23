@@ -1,0 +1,244 @@
+{
+  "question_id": "tatqa_test_9904",
+  "question": "What was the change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019?",
+  "retrieval_query": "TORM Net profit/(loss) 2018 2019 excluding impairment",
+  "metadata_filters": {
+    "company": "torm"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c0::f03eb2dc29",
+      "rank": 1,
+      "dense_score": 0.8323521614074707,
+      "bm25_score": 31.868742558792146,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "bf323df09be1d8b4fbc8cc4df2936c92"
+    },
+    {
+      "chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c1::11e55cda5f",
+      "rank": 2,
+      "dense_score": 0.7563156485557556,
+      "bm25_score": 25.093910310452678,
+      "hybrid_score": 0.10391979666450475,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "bf323df09be1d8b4fbc8cc4df2936c92"
+    },
+    {
+      "chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c2::7d689fd5ef",
+      "rank": 3,
+      "dense_score": 0.7684899568557739,
+      "bm25_score": 22.716043834571465,
+      "hybrid_score": 0.09606680667031961,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "bf323df09be1d8b4fbc8cc4df2936c92"
+    }
+  ],
+  "answer": "Change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019:\n\nFrom the table on page 1:\n- Net profit/(loss) for the year excluding impairment in 2019: 46.0 USDm\n- Net profit/(loss) for the year excluding impairment in 2018: -34.8 USDm\n\nChange = 46.0 - (-34.8) = 80.8 USDm\n\nAnswer: 80.8",
+  "latency_seconds": 81.7602,
+  "input_tokens": 3620,
+  "output_tokens": 149,
+  "total_tokens": 3769,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0606,
+  "llm_latency_seconds": 81.6926,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019?\nEvidence:\n[1] bf323df09be1d8b4fbc8cc4df2936c92.pdf p.1\nGLOSSARY\nALTERNATIVE PERFORMANCE MEASURES\nNet profit/(loss) for the year excluding impairment: Net profit excluding impairment is net Gross profit: TORM defines Gross profit, a performance measure, as revenue less port expenses,\nprofit less impairment and reversals of impairment generated from impairment testing during bunkers and commissions, charter hire and operating expenses. The Company reports Gross\nthe year (Please refer to Note 8). The Company reports Net profit excluding impairment profit because we believe it provides additional meaningful information to investors, as Gross\nbecause we believe it provides additional meaningful information to investors regarding the profit measures t\n\n[2] bf323df09be1d8b4fbc8cc4df2936c92.pdf p.1\nrate risk and which, together with equity, are used to finance the Company’s\nperiod-to-period changes in a shipping company’s performance irrespective of changes in the\ninvestments. As such, TORM believes that net interest-bearing debt is a relevant measure which\nmix of charter types (i.e. spot charters, time charters and bareboat charters) under which the\nManagement uses to measure the overall development of the use of financing, other than\nvessels may be employed between the periods. Below is presented a reconciliation from\nequity. Such measure may not be comparable to similarly titled measures of other companies.\nRevenue to TCE earnings:\nNet interest-bearing debt is calculated as follows:\n\n[3] bf323df09be1d8b4fbc8cc4df2936c92.pdf p.1\nprofit/(loss) for the year | 166.0 | -34.8 | 2.4\nReversal of impairment losses on tangible assets | -120.0 | - | -\nNet profit/(loss) for the year excluding impairment | 46.0 | -34.8 | 2.4\n[/TABLE]\n\n[TABLE]\nUSDm | 2019 | 2018 | 2017\nReconciliation to revenue |  |  | \nRevenue | 692.6 | 635.4 | 657.0\nPort expenses, bunkers and commissions | -267.7 | -283.0 | -259.9\nTCE earnings | 424.9 | 352.4 | 397.1\n[/TABLE]\n\n[TABLE]\nUSDm | 2019 | 2018 | 2017\nBorrowings | 863.4 | 754.7 | 753.9\nLoans receivables | -4.6 | - | -\nCash and cash equivalents, including restricted cash | -72.5 | -127.4 | -134.2\nNet interest-bearing debt | 786.3 | 627.3 | 619.7\n[/TABLE]\nDecision:",
+      "input_tokens": 865,
+      "output_tokens": 4,
+      "latency_seconds": 17.24508810000043
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019?\nEvidence:\n[1] bf323df09be1d8b4fbc8cc4df2936c92.pdf p.1\nGLOSSARY\nALTERNATIVE PERFORMANCE MEASURES\nNet profit/(loss) for the year excluding impairment: Net profit excluding impairment is net Gross profit: TORM defines Gross profit, a performance measure, as revenue less port expenses,\nprofit less impairment and reversals of impairment generated from impairment testing during bunkers and commissions, charter hire and operating expenses. The Company reports Gross\nthe year (Please refer to Note 8). The Company reports Net profit excluding impairment profit because we believe it provides additional meaningful information to investors, as Gross\nbecause we believe it provides additional meaningful information to investors regarding the profit measures t\n\n[2] bf323df09be1d8b4fbc8cc4df2936c92.pdf p.1\nrate risk and which, together with equity, are used to finance the Company’s\nperiod-to-period changes in a shipping company’s performance irrespective of changes in the\ninvestments. As such, TORM believes that net interest-bearing debt is a relevant measure which\nmix of charter types (i.e. spot charters, time charters and bareboat charters) under which the\nManagement uses to measure the overall development of the use of financing, other than\nvessels may be employed between the periods. Below is presented a reconciliation from\nequity. Such measure may not be comparable to similarly titled measures of other companies.\nRevenue to TCE earnings:\nNet interest-bearing debt is calculated as follows:\n\n[3] bf323df09be1d8b4fbc8cc4df2936c92.pdf p.1\nprofit/(loss) for the year | 166.0 | -34.8 | 2.4\nReversal of impairment losses on tangible assets | -120.0 | - | -\nNet profit/(loss) for the year excluding impairment | 46.0 | -34.8 | 2.4\n[/TABLE]\n\n[TABLE]\nUSDm | 2019 | 2018 | 2017\nReconciliation to revenue |  |  | \nRevenue | 692.6 | 635.4 | 657.0\nPort expenses, bunkers and commissions | -267.7 | -283.0 | -259.9\nTCE earnings | 424.9 | 352.4 | 397.1\n[/TABLE]\n\n[TABLE]\nUSDm | 2019 | 2018 | 2017\nBorrowings | 863.4 | 754.7 | 753.9\nLoans receivables | -4.6 | - | -\nCash and cash equivalents, including restricted cash | -72.5 | -127.4 | -134.2\nNet interest-bearing debt | 786.3 | 627.3 | 619.7\n[/TABLE]\nLabel:",
+      "input_tokens": 781,
+      "output_tokens": 3,
+      "latency_seconds": 15.356160999999702
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019?\nEvidence:\n[1] bf323df09be1d8b4fbc8cc4df2936c92.pdf p.1\nGLOSSARY\nALTERNATIVE PERFORMANCE MEASURES\nNet profit/(loss) for the year excluding impairment: Net profit excluding impairment is net Gross profit: TORM defines Gross profit, a performance measure, as revenue less port expenses,\nprofit less impairment and reversals of impairment generated from impairment testing during bunkers and commissions, charter hire and operating expenses. The Company reports Gross\nthe year (Please refer to Note 8). The Company reports Net profit excluding impairment profit because we believe it provides additional meaningful information to investors, as Gross\nbecause we believe it provides additional meaningful information to investors regarding the profit measures t\n\n[2] bf323df09be1d8b4fbc8cc4df2936c92.pdf p.1\nrate risk and which, together with equity, are used to finance the Company’s\nperiod-to-period changes in a shipping company’s performance irrespective of changes in the\ninvestments. As such, TORM believes that net interest-bearing debt is a relevant measure which\nmix of charter types (i.e. spot charters, time charters and bareboat charters) under which the\nManagement uses to measure the overall development of the use of financing, other than\nvessels may be employed between the periods. Below is presented a reconciliation from\nequity. Such measure may not be comparable to similarly titled measures of other companies.\nRevenue to TCE earnings:\nNet interest-bearing debt is calculated as follows:\n\n[3] bf323df09be1d8b4fbc8cc4df2936c92.pdf p.1\nprofit/(loss) for the year | 166.0 | -34.8 | 2.4\nReversal of impairment losses on tangible assets | -120.0 | - | -\nNet profit/(loss) for the year excluding impairment | 46.0 | -34.8 | 2.4\n[/TABLE]\n\n[TABLE]\nUSDm | 2019 | 2018 | 2017\nReconciliation to revenue |  |  | \nRevenue | 692.6 | 635.4 | 657.0\nPort expenses, bunkers and commissions | -267.7 | -283.0 | -259.9\nTCE earnings | 424.9 | 352.4 | 397.1\n[/TABLE]\n\n[TABLE]\nUSDm | 2019 | 2018 | 2017\nBorrowings | 863.4 | 754.7 | 753.9\nLoans receivables | -4.6 | - | -\nCash and cash equivalents, including restricted cash | -72.5 | -127.4 | -134.2\nNet interest-bearing debt | 786.3 | 627.3 | 619.7\n[/TABLE]\nDraft:\nChange in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019:\n\nFrom the table on page 1:\n- Net profit/(loss) for the year excluding impairment in 2019: 46.0 USDm\n- Net profit/(loss) for the year excluding impairment in 2018: -34.8 USDm\n\nChange = 46.0 - (-34.8) = 80.8 USDm\n\nAnswer: 80.8\nLabel:",
+      "input_tokens": 931,
+      "output_tokens": 3,
+      "latency_seconds": 18.514497899999697
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "TORM Net profit/(loss) 2018 2019 excluding impairment",
+      "filters": {
+        "company": "torm"
+      },
+      "chunk_ids": [
+        "bf323df09be1d8b4fbc8cc4df2936c92::p1::c0::f03eb2dc29",
+        "bf323df09be1d8b4fbc8cc4df2936c92::p1::c1::11e55cda5f",
+        "bf323df09be1d8b4fbc8cc4df2936c92::p1::c2::7d689fd5ef"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c0::f03eb2dc29",
+          "document_id": "bf323df09be1d8b4fbc8cc4df2936c92",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c0::f03eb2dc29",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c1::11e55cda5f",
+          "document_id": "bf323df09be1d8b4fbc8cc4df2936c92",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c1::11e55cda5f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c2::7d689fd5ef",
+          "document_id": "bf323df09be1d8b4fbc8cc4df2936c92",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 651,
+          "source_chunk_id": "bf323df09be1d8b4fbc8cc4df2936c92::p1::c2::7d689fd5ef",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019?\nRetrieval query:",
+  "query_formulation_raw_output": "TORM Net profit/(loss) 2018 2019 excluding impairment",
+  "query_formulation_latency_seconds": 4.1039,
+  "query_formulation_input_tokens": 174,
+  "query_formulation_output_tokens": 20,
+  "query_formulation_trace": {
+    "original_question": "What was the change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019?",
+    "retrieval_query": "TORM Net profit/(loss) 2018 2019 excluding impairment",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019?\nRetrieval query:",
+    "raw_output": "TORM Net profit/(loss) 2018 2019 excluding impairment",
+    "latency_seconds": 4.103870700000698,
+    "input_tokens": 174,
+    "output_tokens": 20,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "80.8",
+  "gold_evidence_reference": "TAT-DQA | raw/bf323df09be1d8b4fbc8cc4df2936c92.pdf | context_id=bf323df09be1d8b4fbc8cc4df2936c92"
+}

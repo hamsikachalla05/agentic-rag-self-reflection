@@ -1,0 +1,226 @@
+{
+  "question_id": "finqa_test_527",
+  "question": "What is the basic net income per common share for Duke Realty Corporation in 2008, as calculated by dividing the net income available for common shareholders by the weighted average number of common shares outstanding for that year, according to the company's annual report?",
+  "retrieval_query": "basic net income per common share Duke Realty Corporation 2008 annual report net income available for common shareholders weighted average number of common shares outstanding",
+  "metadata_filters": {
+    "year": 2008,
+    "company": "Duke Realty Corporation",
+    "filing_type": "annual report"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_107::p1::c1::c3540dd6f7",
+      "rank": 1,
+      "dense_score": 0.8619353175163269,
+      "bm25_score": 72.86662857715001,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_107"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_107::p1::c0::fc0c2f6931",
+      "rank": 2,
+      "dense_score": 0.7414645552635193,
+      "bm25_score": 46.95920480009016,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_107"
+    }
+  ],
+  "answer": "$56,616\n\nSource: finqa_test_ctx_107.pdf p.1",
+  "latency_seconds": 45.1609,
+  "input_tokens": 2315,
+  "output_tokens": 70,
+  "total_tokens": 2385,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0584,
+  "llm_latency_seconds": 45.1008,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the basic net income per common share for Duke Realty Corporation in 2008, as calculated by dividing the net income available for common shareholders by the weighted average number of common shares outstanding for that year, according to the company's annual report?\nLabel:",
+      "input_tokens": 118,
+      "output_tokens": 7,
+      "latency_seconds": 3.361219300000812
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the basic net income per common share for Duke Realty Corporation in 2008, as calculated by dividing the net income available for common shareholders by the weighted average number of common shares outstanding for that year, according to the company's annual report?\nEvidence:\n[1] finqa_test_ctx_107.pdf p.1\nby the sum of the weighted\nmet, we defer gain recognition and account for the average number of common shares outstanding\ncontinued operations of the property by applying and minority Units outstanding, including any\nthe finance, installment or cost recovery methods, potential dilutive securities for the period.\nas appropriate, until the full accrual sales criteria\nare met. Estimated future costs to be incurred The following table reconciles the components\nafter completion of each sale are included in the of basic and diluted net income per common\ndetermination of the gain on sales. share (in thousands):\n2008 2007 2006\nBasic net income available for common shareholders $ 56,616 $ 217,692 $ 1\n\n[2] finqa_test_ctx_107.pdf p.1\nestimated with reasonable accuracy. The Gains from sales of depreciated property are\npercentage of completion estimates are based included in discontinued operations and the\non a comparison of the contract expenditures proceeds from the sale of these held-for-rental\nincurred to the estimated final costs. Changes in properties are classified in the investing activities\njob performance, job conditions and estimated section of the Consolidated Statements of Cash\nprofitability may result in revisions to costs and Flows.\nincome and are recognized in the period in which\nthe revisions are determined. Gains or losses from our sale of properties that\nwere developed or repositioned with the intent\nUnb\nDecision:",
+      "input_tokens": 528,
+      "output_tokens": 4,
+      "latency_seconds": 9.356475300002785
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the basic net income per common share for Duke Realty Corporation in 2008, as calculated by dividing the net income available for common shareholders by the weighted average number of common shares outstanding for that year, according to the company's annual report?\nEvidence:\n[1] finqa_test_ctx_107.pdf p.1\nby the sum of the weighted\nmet, we defer gain recognition and account for the average number of common shares outstanding\ncontinued operations of the property by applying and minority Units outstanding, including any\nthe finance, installment or cost recovery methods, potential dilutive securities for the period.\nas appropriate, until the full accrual sales criteria\nare met. Estimated future costs to be incurred The following table reconciles the components\nafter completion of each sale are included in the of basic and diluted net income per common\ndetermination of the gain on sales. share (in thousands):\n2008 2007 2006\nBasic net income available for common shareholders $ 56,616 $ 217,692 $ 1\n\n[2] finqa_test_ctx_107.pdf p.1\nestimated with reasonable accuracy. The Gains from sales of depreciated property are\npercentage of completion estimates are based included in discontinued operations and the\non a comparison of the contract expenditures proceeds from the sale of these held-for-rental\nincurred to the estimated final costs. Changes in properties are classified in the investing activities\njob performance, job conditions and estimated section of the Consolidated Statements of Cash\nprofitability may result in revisions to costs and Flows.\nincome and are recognized in the period in which\nthe revisions are determined. Gains or losses from our sale of properties that\nwere developed or repositioned with the intent\nUnb\nLabel:",
+      "input_tokens": 444,
+      "output_tokens": 3,
+      "latency_seconds": 8.049545499998203
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the basic net income per common share for Duke Realty Corporation in 2008, as calculated by dividing the net income available for common shareholders by the weighted average number of common shares outstanding for that year, according to the company's annual report?\nEvidence:\n[1] finqa_test_ctx_107.pdf p.1\nby the sum of the weighted\nmet, we defer gain recognition and account for the average number of common shares outstanding\ncontinued operations of the property by applying and minority Units outstanding, including any\nthe finance, installment or cost recovery methods, potential dilutive securities for the period.\nas appropriate, until the full accrual sales criteria\nare met. Estimated future costs to be incurred The following table reconciles the components\nafter completion of each sale are included in the of basic and diluted net income per common\ndetermination of the gain on sales. share (in thousands):\n2008 2007 2006\nBasic net income available for common shareholders $ 56,616 $ 217,692 $ 1\n\n[2] finqa_test_ctx_107.pdf p.1\nestimated with reasonable accuracy. The Gains from sales of depreciated property are\npercentage of completion estimates are based included in discontinued operations and the\non a comparison of the contract expenditures proceeds from the sale of these held-for-rental\nincurred to the estimated final costs. Changes in properties are classified in the investing activities\njob performance, job conditions and estimated section of the Consolidated Statements of Cash\nprofitability may result in revisions to costs and Flows.\nincome and are recognized in the period in which\nthe revisions are determined. Gains or losses from our sale of properties that\nwere developed or repositioned with the intent\nUnb\nDraft:\n$56,616\n\nSource: finqa_test_ctx_107.pdf p.1\nLabel:",
+      "input_tokens": 498,
+      "output_tokens": 3,
+      "latency_seconds": 8.799278299993603
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "basic net income per common share Duke Realty Corporation 2008 annual report net income available for common shareholders weighted average number of common shares outstanding",
+      "filters": {
+        "year": 2008,
+        "company": "Duke Realty Corporation",
+        "filing_type": "annual report"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_107::p1::c1::c3540dd6f7",
+        "finqa_test_ctx_107::p1::c0::fc0c2f6931"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_107::p1::c1::c3540dd6f7",
+          "document_id": "finqa_test_ctx_107",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_107::p1::c1::c3540dd6f7",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_107::p1::c0::fc0c2f6931",
+          "document_id": "finqa_test_ctx_107",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_107::p1::c0::fc0c2f6931",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the basic net income per common share for Duke Realty Corporation in 2008, as calculated by dividing the net income available for common shareholders by the weighted average number of common shares outstanding for that year, according to the company's annual report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the basic net income per common share for Duke Realty Corporation in 2008, as calculated by dividing the net income available for common shareholders by the weighted average number of common shares outstanding for that year, according to the company's annual report?\nRetrieval query:",
+  "query_formulation_raw_output": "basic net income per common share Duke Realty Corporation 2008 annual report net income available for common shareholders weighted average number of common shares outstanding",
+  "query_formulation_latency_seconds": 4.8292,
+  "query_formulation_input_tokens": 195,
+  "query_formulation_output_tokens": 30,
+  "query_formulation_trace": {
+    "original_question": "What is the basic net income per common share for Duke Realty Corporation in 2008, as calculated by dividing the net income available for common shareholders by the weighted average number of common shares outstanding for that year, according to the company's annual report?",
+    "retrieval_query": "basic net income per common share Duke Realty Corporation 2008 annual report net income available for common shareholders weighted average number of common shares outstanding",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the basic net income per common share for Duke Realty Corporation in 2008, as calculated by dividing the net income available for common shareholders by the weighted average number of common shares outstanding for that year, according to the company's annual report?\nRetrieval query:",
+    "raw_output": "basic net income per common share Duke Realty Corporation 2008 annual report net income available for common shareholders weighted average number of common shares outstanding",
+    "latency_seconds": 4.829158100001223,
+    "input_tokens": 195,
+    "output_tokens": 30,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "0.3853656876425144",
+  "gold_evidence_reference": "FinQA | pdf/DRE/2008/page_46.pdf | source_page=46 | context_id=finqa_test_ctx_107"
+}

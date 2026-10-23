@@ -1,0 +1,147 @@
+{
+  "question_id": "finqa_test_6",
+  "question": "What percentage of the total recourse debt of $4,612 million, as disclosed in the AES Corporation's Notes to Consolidated Financial Statements for 2010, is scheduled to be paid in 2011, which is $463 million?",
+  "retrieval_query": "AES Corporation Notes to Consolidated Financial Statements 2010 total recourse debt $4,612 million scheduled payment 2011 $463 million percentage",
+  "metadata_filters": {
+    "company": "AES Corporation"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_321::p1::c0::4ab59ce26e",
+      "rank": 1,
+      "dense_score": 0.6786856651306152,
+      "bm25_score": 19.888328414435318,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_321"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_150::p1::c0::f173fa7025",
+      "rank": 2,
+      "dense_score": 0.6745402216911316,
+      "bm25_score": 14.94864190418507,
+      "hybrid_score": 0.868068707580137,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_150"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_321::p1::c1::dc2a60ed9f",
+      "rank": 3,
+      "dense_score": 0.6380658149719238,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.2807313403351404,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_321"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_150::p1::c1::c1c407d22d",
+      "rank": 4,
+      "dense_score": 0.6023489832878113,
+      "bm25_score": 7.604080576022258,
+      "hybrid_score": 0.15293553922818523,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_150"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_150::p1::c2::0d685333bf",
+      "rank": 5,
+      "dense_score": 0.603225588798523,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.006890046747251735,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_150"
+    }
+  ],
+  "answer": "Percentage = (463 / 4612) × 100 = 10.04%\n\nSource: finqa_test_ctx_321.pdf p.1",
+  "latency_seconds": 27.5118,
+  "input_tokens": 1476,
+  "output_tokens": 78,
+  "total_tokens": 1554,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.0688,
+  "llm_latency_seconds": 27.4424,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What percentage of the total recourse debt of $4,612 million, as disclosed in the AES Corporation's Notes to Consolidated Financial Statements for 2010, is scheduled to be paid in 2011, which is $463 million?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of the total recourse debt of $4,612 million, as disclosed in the AES Corporation's Notes to Consolidated Financial Statements for 2010, is scheduled to be paid in 2011, which is $463 million?\nRetrieval query:",
+  "query_formulation_raw_output": "AES Corporation Notes to Consolidated Financial Statements 2010 total recourse debt $4,612 million scheduled payment 2011 $463 million percentage",
+  "query_formulation_latency_seconds": 5.2661,
+  "query_formulation_input_tokens": 199,
+  "query_formulation_output_tokens": 37,
+  "query_formulation_trace": {
+    "original_question": "What percentage of the total recourse debt of $4,612 million, as disclosed in the AES Corporation's Notes to Consolidated Financial Statements for 2010, is scheduled to be paid in 2011, which is $463 million?",
+    "retrieval_query": "AES Corporation Notes to Consolidated Financial Statements 2010 total recourse debt $4,612 million scheduled payment 2011 $463 million percentage",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of the total recourse debt of $4,612 million, as disclosed in the AES Corporation's Notes to Consolidated Financial Statements for 2010, is scheduled to be paid in 2011, which is $463 million?\nRetrieval query:",
+    "raw_output": "AES Corporation Notes to Consolidated Financial Statements 2010 total recourse debt $4,612 million scheduled payment 2011 $463 million percentage",
+    "latency_seconds": 5.266146000001754,
+    "input_tokens": 199,
+    "output_tokens": 37,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 22.1762,
+  "answer_generation_input_tokens": 1277,
+  "answer_generation_output_tokens": 41,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What percentage of the total recourse debt of $4,612 million, as disclosed in the AES Corporation's Notes to Consolidated Financial Statements for 2010, is scheduled to be paid in 2011, which is $463 million?\nEvidence:\n[1] finqa_test_ctx_321.pdf p.1\nTHEAESCORPORATION\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS—(Continued)\nDECEMBER31,2010,2009,AND2008\nRecoursedebtasofDecember31,2010isscheduledtoreachmaturityassetforthinthetablebelow:\nDecember31, AnnualMaturities\n(inmillions)\n2011 ....................................................... $ 463\n2012 ....................................................... —\n2013 ....................................................... —\n2014 ....................................................... 497\n2015 ....................................................... 500\nThereafter ................................................... 3,152\nTotalrecoursedebt............................................ $4,612\nRecourseDebtTra ...\n\n[2] convfinqa_ctx_150.pdf p.1\nAES 2000 FINANCIAL REVIEW\nIn May 2000, a subsidiary of the company acquired In December 2000, a subsidiary of the Company\nan additional 5% of the preferred, non-voting shares of entered into an agreement with EDF to jointly acquire an\nEletropaulo for approximately $90 million. In January additional 9.2% interest in Light, which is held by a sub-\n2000, 59% of the preferred non-voting shares were sidiary of Companhia Siderurgica Nacional (“CSN”).\nacquired for approximately $1 billion at auction from Pursuant to this transaction, the Company acquired an\nBNDES, the National Development Bank of Brazil. The additional 2.75% interest in Light for $114.6 million.\nprice established at auction was app ...\n\n[3] finqa_test_ctx_321.pdf p.1\n• theinterestratemarginapplicabletotherevolvingcreditloanfacilityisnowbasedonthecreditrating\nassignedtotheloansunderthecreditagreement,withpricingcurrentlyatLIBOR+3.00%;\n• thereisanundrawnfeeof0.625%perannum;\n• theCompanymayincuracombinationofadditionaltermloanandrevolvercommitmentssolongas\ntotaltermloanandrevolvercommitments(includingthosecurrentlyoutstanding)donotexceed$1.4\nbillion;and\n• thenegativepledge(i.e.,acaponfirstliendebt)of$3.0billion.\nRecourseDebtCovenantsandGuarantees\nCertainoftheCompany’sobligationsundertheseniorsecuredcreditfacilityareguaranteedbyitsdirect\nsubsidiariesthroughwhichtheCompanyownsitsinterestsintheAESShadyPoint,AESHawaii,AESWarrior\nRunandAESEasternEnergybusinesses ...\n\n[4] convfinqa_ctx_150.pdf p.1\nfor approxi- sole controlling shareholder of Eletropaulo and EDF\nmately $40 million. Songas Limited owns the Songo would become the sole controlling shareholder of Light.\nSongo Gas-to-Electricity Project in Tanzania. Under the Upon consummation of the transaction, AES will begin\nterms of a project management agreement, the Company consolidating Eletropaulo’s operating results. The struc-\nhas assumed overall project management responsibility. ture and process by which this rationalization may be\nThe project consists of the refurbishment and operation of effected, and the resulting timing, have yet to be deter-\nfive natural gas wells in coastal Tanzania, the construction mined and will likely ...\n\n[5] convfinqa_ctx_150.pdf p.1\nfor the Company’s investments in\n30% of the shares while EDF acquired the remainder. 50% or less owned investments accounted for using the\nWith the completion of this transaction, the Company equity method:\nowns approximately 21.14% of Light.\nAS OF AND FOR THE YEARS ENDED DECEMBER 31, 2000 1999 1998\nRevenues $6,241 $5,960 $8,091\nOperating income 1,989 1,839 2,079\nNet income 859 62 1,146\nCurrent assets 2,423 2,259 2,712\nNoncurrent assets 13,080 15,359 19,025\nCurrent liabilities 3,370 3,637 4,809\nNoncurrent liabilities 5,927 7,536 7,356\nStockholders’ equity 6,206 6,445 9,572\n110\nAnswer:",
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "0.10039028620988726",
+  "gold_evidence_reference": "FinQA | pdf/AES/2010/page_227.pdf | source_page=227 | context_id=finqa_test_ctx_321"
+}

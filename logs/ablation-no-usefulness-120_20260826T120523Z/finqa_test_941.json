@@ -1,0 +1,292 @@
+{
+  "question_id": "finqa_test_941",
+  "question": "what is the difference between the carrying amount and the fair value of notes and other long-term assets in 2004 for Marriott International?",
+  "retrieval_query": "carrying amount fair value notes other long-term assets Marriott International 2004",
+  "metadata_filters": {
+    "year": 2004,
+    "company": "Marriott International"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+      "rank": 1,
+      "dense_score": 0.8280746936798096,
+      "bm25_score": 30.887552102618784,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_11"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_11::p1::c2::6a1789e412",
+      "rank": 2,
+      "dense_score": 0.7963989973068237,
+      "bm25_score": 27.045047916521035,
+      "hybrid_score": 0.6426167120316475,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_11"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_11::p1::c1::ca7846f070",
+      "rank": 3,
+      "dense_score": 0.7442565560340881,
+      "bm25_score": 19.12214921706954,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_11"
+    }
+  ],
+  "answer": "Carrying amount of notes and other long-term assets in 2004: $1,702 million  \nFair value of notes and other long-term assets in 2004: $1,770 million  \n\nDifference = $1,770 - $1,702 = $68 million  \n\nSource: finqa_test_ctx_11.pdf p.1",
+  "latency_seconds": 66.0228,
+  "input_tokens": 3121,
+  "output_tokens": 119,
+  "total_tokens": 3240,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0684,
+  "llm_latency_seconds": 65.9527,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: what is the difference between the carrying amount and the fair value of notes and other long-term assets in 2004 for Marriott International?\nLabel:",
+      "input_tokens": 95,
+      "output_tokens": 7,
+      "latency_seconds": 3.2028909000000567
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: what is the difference between the carrying amount and the fair value of notes and other long-term assets in 2004 for Marriott International?\nEvidence:\n[1] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[2] finqa_test_ctx_11.pdf p.1\n31,2004,and January 2,2004. the fiscal years 2004 and 2003.As ofDecember 31,2004,there were no deferred gains\nAt December 31,2004,we had six outstanding interest rate swap agreements to or losses accumulated in other comprehensive income that we expect to reclassify into\nmanage interest rate risk associated with the residual interests we retain in conjunction earnings over the next 12 months.\nwith our timeshare note sales.We are required by purchasers and/or rating agencies to\n18\nutilize interest rate swaps to protect the excess spread within our sold note pools.The CONTINGENCIES\naggregate notional amount ofthe swaps is $535 million,and they expire through 2022.\nGuarantees\nThese swaps are no\n\n[3] finqa_test_ctx_11.pdf p.1\nfor both years were offset by income\ncounted at risk-adjusted rates.We determine valuations for long-term debt and other recorded from translating the related monetary assets denominated in pounds sterling\nlong-term liabilities based on quoted market prices or expected future payments dis- into U.S.dollars.\ncounted at risk-adjusted rates. During fiscal years 2004 and 2003,we entered into foreign exchange option and\nforward contracts to hedge the potential volatility ofearnings and cash flows associated\n17\nDERIVATIVE INSTRUMENTS with variations in foreign exchange rates.The aggregate dollar equivalent ofthe\nDuring the year ended January 2,2004,we entered into an interest rate swap agreement n\nDecision:",
+      "input_tokens": 732,
+      "output_tokens": 4,
+      "latency_seconds": 12.61902569999802
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: what is the difference between the carrying amount and the fair value of notes and other long-term assets in 2004 for Marriott International?\nEvidence:\n[1] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[2] finqa_test_ctx_11.pdf p.1\n31,2004,and January 2,2004. the fiscal years 2004 and 2003.As ofDecember 31,2004,there were no deferred gains\nAt December 31,2004,we had six outstanding interest rate swap agreements to or losses accumulated in other comprehensive income that we expect to reclassify into\nmanage interest rate risk associated with the residual interests we retain in conjunction earnings over the next 12 months.\nwith our timeshare note sales.We are required by purchasers and/or rating agencies to\n18\nutilize interest rate swaps to protect the excess spread within our sold note pools.The CONTINGENCIES\naggregate notional amount ofthe swaps is $535 million,and they expire through 2022.\nGuarantees\nThese swaps are no\n\n[3] finqa_test_ctx_11.pdf p.1\nfor both years were offset by income\ncounted at risk-adjusted rates.We determine valuations for long-term debt and other recorded from translating the related monetary assets denominated in pounds sterling\nlong-term liabilities based on quoted market prices or expected future payments dis- into U.S.dollars.\ncounted at risk-adjusted rates. During fiscal years 2004 and 2003,we entered into foreign exchange option and\nforward contracts to hedge the potential volatility ofearnings and cash flows associated\n17\nDERIVATIVE INSTRUMENTS with variations in foreign exchange rates.The aggregate dollar equivalent ofthe\nDuring the year ended January 2,2004,we entered into an interest rate swap agreement n\nLabel:",
+      "input_tokens": 648,
+      "output_tokens": 3,
+      "latency_seconds": 12.591177500002232
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: what is the difference between the carrying amount and the fair value of notes and other long-term assets in 2004 for Marriott International?\nEvidence:\n[1] finqa_test_ctx_11.pdf p.1\net by changes in the note sale\n2004 2003\ngains and losses.\nCarrying Fair Carrying Fair\nDuring the years ended December 31,2004,and January 2,2004,we entered into\n($ in millions) Amount Value Amount Value\nforward foreign exchange contracts to manage the foreign currency exposure related to\nNotes and other long-term assets . . . . . $1,702 $1,770 $1,740 $1,778\ncertain monetary assets denominated in pounds sterling.The aggregate dollar equiva-\nLong-term debt and other lent ofthe notional amount ofthe contracts is $36 million at December 31,2004.The\nlong-term liabilities . . . . . . . . . . . . . $ 848 $ 875 $1,373 $1,487 forward exchange contracts are not accounted for as hedges in accordance w\n\n[2] finqa_test_ctx_11.pdf p.1\nt accounted for as hedges under FAS No.133,“Accounting for\nWe issue guarantees to certain lenders and hotel owners primarily to obtain long-term\nDerivative Instruments and Hedging Activities.”The fair value ofthe swaps is a net\nmanagement contracts.The guarantees generally have a stated maximum amount of\nasset ofapproximately $3 million at December 31,2004,a net asset ofapproximately\nfunding and a term offive years or less.The terms ofguarantees to lenders generally\n$1 million at January 2,2004,and a net liability of$2 million at January 3,2003.We\nrequire us to fund ifcash flows from hotel operations are inadequate to cover annual\nrecorded a $2 million net gain,$3 million net gain and $21 mi\n\n[3] finqa_test_ctx_11.pdf p.1\notional amounts ofthe contracts is $36 million at December 31,2004.These contracts\nunder which we receive a floating rate ofinterest and pay a fixed rate ofinterest.The have terms ofless than a year and are classified as cash flow hedges.Changes in their\nswap modifies our interest rate exposure by effectively converting a note receivable with fair values are recorded as a component ofother comprehensive income.The fair value\na fixed rate to a floating rate.The aggregate notional amount ofthe swap is $92 mil- ofthe forward contracts is approximately zero and $1 million at December 31,2004,\nlion,and it matures in 2010.The swap is classified as a fair value hedge,and the change and January 2,20\nLabel:",
+      "input_tokens": 693,
+      "output_tokens": 3,
+      "latency_seconds": 12.123509000000922
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "carrying amount fair value notes other long-term assets Marriott International 2004",
+      "filters": {
+        "year": 2004,
+        "company": "Marriott International"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_11::p1::c0::ade25e9594",
+        "finqa_test_ctx_11::p1::c2::6a1789e412",
+        "finqa_test_ctx_11::p1::c1::ca7846f070"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "document_id": "finqa_test_ctx_11",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_11::p1::c2::6a1789e412",
+          "document_id": "finqa_test_ctx_11",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_11::p1::c2::6a1789e412",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_11::p1::c1::ca7846f070",
+          "document_id": "finqa_test_ctx_11",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_11::p1::c1::ca7846f070",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "document_id": "finqa_test_ctx_11",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_11::p1::c2::6a1789e412",
+          "document_id": "finqa_test_ctx_11",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_11::p1::c2::6a1789e412",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_11::p1::c1::ca7846f070",
+          "document_id": "finqa_test_ctx_11",
+          "rank": 3,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_11::p1::c1::ca7846f070",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "what is the difference between the carrying amount and the fair value of notes and other long-term assets in 2004 for Marriott International?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: what is the difference between the carrying amount and the fair value of notes and other long-term assets in 2004 for Marriott International?\nRetrieval query:",
+  "query_formulation_raw_output": "carrying amount fair value notes other long-term assets Marriott International 2004",
+  "query_formulation_latency_seconds": 4.6702,
+  "query_formulation_input_tokens": 172,
+  "query_formulation_output_tokens": 18,
+  "query_formulation_trace": {
+    "original_question": "what is the difference between the carrying amount and the fair value of notes and other long-term assets in 2004 for Marriott International?",
+    "retrieval_query": "carrying amount fair value notes other long-term assets Marriott International 2004",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: what is the difference between the carrying amount and the fair value of notes and other long-term assets in 2004 for Marriott International?\nRetrieval query:",
+    "raw_output": "carrying amount fair value notes other long-term assets Marriott International 2004",
+    "latency_seconds": 4.670226400001411,
+    "input_tokens": 172,
+    "output_tokens": 18,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "68.0",
+  "gold_evidence_reference": "FinQA | pdf/MAR/2004/page_45.pdf | source_page=45 | context_id=finqa_test_ctx_11"
+}

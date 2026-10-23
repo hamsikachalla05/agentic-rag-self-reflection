@@ -1,0 +1,292 @@
+{
+  "question_id": "convfinqa_1873",
+  "question": "What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?",
+  "retrieval_query": "International Paper annual sales printing papers graphic arts supplies and equipment 2012 billions dollars",
+  "metadata_filters": {
+    "year": 2012,
+    "company": "International Paper"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_639::p1::c2::21eccfa28f",
+      "rank": 1,
+      "dense_score": 0.666854739189148,
+      "bm25_score": 17.339970392109514,
+      "hybrid_score": 0.7069648913499865,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_639"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+      "rank": 2,
+      "dense_score": 0.6606252193450928,
+      "bm25_score": 9.301897074000923,
+      "hybrid_score": 0.44052713091553647,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_639"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+      "rank": 3,
+      "dense_score": 0.6434168219566345,
+      "bm25_score": 39.36063210999777,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_639"
+    }
+  ],
+  "answer": "$3.5 billion\n\nSource: convfinqa_ctx_639.pdf p.1",
+  "latency_seconds": 66.6962,
+  "input_tokens": 3810,
+  "output_tokens": 60,
+  "total_tokens": 3870,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0251,
+  "llm_latency_seconds": 66.6694,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?\nLabel:",
+      "input_tokens": 96,
+      "output_tokens": 7,
+      "latency_seconds": 2.96787420000328
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?\nEvidence:\n[1] convfinqa_ctx_639.pdf p.1\nand 2010. Revenue from packaging prod-\n$830 million in 2012 compared with $855 million in uctswasflatat$1.6billioninboth2012and2011and\n2011 and $705 million in 2010. Operating profits in up slightly compared to $1.5 billion in 2010. Pack-\n2012 were $4 million compared with $35 million in agingmarginsincreasedin2012fromboth2011and\n2011 and $34 million in 2010. Sales volumes 2010, reflecting the successful execution of strategic\nincreased in 2012 compared with 2011 partially due sourcing initiatives. Facility supplies annual revenue\ntothestart-upofanewcoatedpaperboardmachine. was$0.9billionin2012,downcomparedto$1.0bil-\nAverage sales price realizations were significantly lionin2011and2010.\nlowe\n\n[2] convfinqa_ctx_639.pdf p.1\nFoodservice sales volumes increased in 2012 In the first quarter of 2013, sales volumes are\ncompared with 2011. Average sales margins were expected to increase slightly. Average sales price\nrealizations for folding carton board and bristols\nhigher reflecting the realization of sales price\nboard are expected to be lower reflecting increased\nincreases for the pass-through of earlier cost\ncompetitivepressuresandseasonallyweakermarket\nincreases. Raw material costs for board and resins\ndemand. Input costs should be higher for pulp and\nwere lower. Operating costs and distribution costs\nchemicals.However,costsrelatedtotheramp-upof\nwerebothhigher.\nthe new coated paperboard machine should be\nTheU.S.S\n\n[3] convfinqa_ctx_639.pdf p.1\nAddition-\ndecreases effective with our January contract open-\nally, efficient customer service, cost-effective logis-\ners. Input costs for board and resin are expected to\ntics and focused working capital management are\nbe lower and operating costs are also expected to\nkeyfactorsinthissegment’sprofitability.\ndecrease.\nEuropean Consumer Packaging net sales in Distribution\n2012 were $380 million compared with $375 million Inmillions 2012 2011 2010\nin2011and$345millionin2010.Operatingprofitsin Sales $6,040 $6,630 $6,735\n2012 were $99 million compared with $93 million in OperatingProfit 22 34 78\n2011and$76millionin2010.Salesvolumesin2012\nincreasedfrom2011.Averagesalespricerealizations\nDistributio\nDecision:",
+      "input_tokens": 856,
+      "output_tokens": 4,
+      "latency_seconds": 14.36139290000574
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?\nEvidence:\n[1] convfinqa_ctx_639.pdf p.1\nand 2010. Revenue from packaging prod-\n$830 million in 2012 compared with $855 million in uctswasflatat$1.6billioninboth2012and2011and\n2011 and $705 million in 2010. Operating profits in up slightly compared to $1.5 billion in 2010. Pack-\n2012 were $4 million compared with $35 million in agingmarginsincreasedin2012fromboth2011and\n2011 and $34 million in 2010. Sales volumes 2010, reflecting the successful execution of strategic\nincreased in 2012 compared with 2011 partially due sourcing initiatives. Facility supplies annual revenue\ntothestart-upofanewcoatedpaperboardmachine. was$0.9billionin2012,downcomparedto$1.0bil-\nAverage sales price realizations were significantly lionin2011and2010.\nlowe\n\n[2] convfinqa_ctx_639.pdf p.1\nFoodservice sales volumes increased in 2012 In the first quarter of 2013, sales volumes are\ncompared with 2011. Average sales margins were expected to increase slightly. Average sales price\nrealizations for folding carton board and bristols\nhigher reflecting the realization of sales price\nboard are expected to be lower reflecting increased\nincreases for the pass-through of earlier cost\ncompetitivepressuresandseasonallyweakermarket\nincreases. Raw material costs for board and resins\ndemand. Input costs should be higher for pulp and\nwere lower. Operating costs and distribution costs\nchemicals.However,costsrelatedtotheramp-upof\nwerebothhigher.\nthe new coated paperboard machine should be\nTheU.S.S\n\n[3] convfinqa_ctx_639.pdf p.1\nAddition-\ndecreases effective with our January contract open-\nally, efficient customer service, cost-effective logis-\ners. Input costs for board and resin are expected to\ntics and focused working capital management are\nbe lower and operating costs are also expected to\nkeyfactorsinthissegment’sprofitability.\ndecrease.\nEuropean Consumer Packaging net sales in Distribution\n2012 were $380 million compared with $375 million Inmillions 2012 2011 2010\nin2011and$345millionin2010.Operatingprofitsin Sales $6,040 $6,630 $6,735\n2012 were $99 million compared with $93 million in OperatingProfit 22 34 78\n2011and$76millionin2010.Salesvolumesin2012\nincreasedfrom2011.Averagesalespricerealizations\nDistributio\nLabel:",
+      "input_tokens": 772,
+      "output_tokens": 3,
+      "latency_seconds": 12.734925000004296
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?\nEvidence:\n[1] convfinqa_ctx_639.pdf p.1\nr, but were partially offset by lower input costs\nfor purchased pulp. Start-up costs for a new coated Operating profits in 2012 included $49 million of\npaperboard machine adversely impacted operating reorganization costs for severance, professional\nprofitsin2012. services and asset write-downs compared with $52\n31\n\n[2] convfinqa_ctx_639.pdf p.1\nhorewoodbusinesswassoldDecember31, lower.\n2011 and the non-U.S. business was sold in January\nDistribution\n2012.\nLooking ahead to the first quarter of 2013, Coated\nxpedx, our distribution business, is one of North\nPaperboard sales volumes are expected to increase\nAmerica’s leading business-to-business distributors\nslightly from the fourth quarter of 2012. Average\nto manufacturers, facility managers and printers,\nsales price realizations are expected to be slightly\nproviding customized solutions that are designed to\nlower, but margins should benefit from a more\nimprove efficiency, reduce costs and deliver results.\nfavorableproductmix.Inputcostsareexpectedtobe\nCustomer demand is generally sensi\n\n[3] convfinqa_ctx_639.pdf p.1\nn’s 2012 annual sales decreased 9%\nwere higher in Russian markets, but were lower in\nfrom2011,anddecreased10%from2010.Operating\nEuropean markets. Input costs decreased, primarily\nprofits in 2012 were $22 million ($71 million exclud-\nforwood,andplannedmaintenancedowntimecosts\ning reorganization costs) compared with $34 million\nwerelowerin2012thanin2011.\n($86 million excluding reorganization costs) in 2011\nLooking forward to the first quarter of 2013, sales and$78millionin2010.\nvolumesareexpectedtodecreaseinbothEuropeand\nRussia. Average sales price realizations are expected Annual sales of printing papers and graphic arts\nsupplies and equipment totaled $3.5 billion in 2012\nto be higher in Russ\nLabel:",
+      "input_tokens": 591,
+      "output_tokens": 3,
+      "latency_seconds": 9.01222129999951
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?\nEvidence:\n[1] convfinqa_ctx_639.pdf p.1\nr, but were partially offset by lower input costs\nfor purchased pulp. Start-up costs for a new coated Operating profits in 2012 included $49 million of\npaperboard machine adversely impacted operating reorganization costs for severance, professional\nprofitsin2012. services and asset write-downs compared with $52\n31\n\n[2] convfinqa_ctx_639.pdf p.1\nhorewoodbusinesswassoldDecember31, lower.\n2011 and the non-U.S. business was sold in January\nDistribution\n2012.\nLooking ahead to the first quarter of 2013, Coated\nxpedx, our distribution business, is one of North\nPaperboard sales volumes are expected to increase\nAmerica’s leading business-to-business distributors\nslightly from the fourth quarter of 2012. Average\nto manufacturers, facility managers and printers,\nsales price realizations are expected to be slightly\nproviding customized solutions that are designed to\nlower, but margins should benefit from a more\nimprove efficiency, reduce costs and deliver results.\nfavorableproductmix.Inputcostsareexpectedtobe\nCustomer demand is generally sensi\n\n[3] convfinqa_ctx_639.pdf p.1\nn’s 2012 annual sales decreased 9%\nwere higher in Russian markets, but were lower in\nfrom2011,anddecreased10%from2010.Operating\nEuropean markets. Input costs decreased, primarily\nprofits in 2012 were $22 million ($71 million exclud-\nforwood,andplannedmaintenancedowntimecosts\ning reorganization costs) compared with $34 million\nwerelowerin2012thanin2011.\n($86 million excluding reorganization costs) in 2011\nLooking forward to the first quarter of 2013, sales and$78millionin2010.\nvolumesareexpectedtodecreaseinbothEuropeand\nRussia. Average sales price realizations are expected Annual sales of printing papers and graphic arts\nsupplies and equipment totaled $3.5 billion in 2012\nto be higher in Russ\nDraft:\n$3.5 billion\n\nSource: convfinqa_ctx_639.pdf p.1\nLabel:",
+      "input_tokens": 643,
+      "output_tokens": 3,
+      "latency_seconds": 10.970244099997217
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "International Paper annual sales printing papers graphic arts supplies and equipment 2012 billions dollars",
+      "filters": {
+        "year": 2012,
+        "company": "International Paper"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_639::p1::c2::21eccfa28f",
+        "convfinqa_ctx_639::p1::c0::e40d3cd393",
+        "convfinqa_ctx_639::p1::c1::f178761af9"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c2::21eccfa28f",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c2::21eccfa28f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c2::21eccfa28f",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1015,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c2::21eccfa28f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c0::e40d3cd393",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+          "document_id": "convfinqa_ctx_639",
+          "rank": 3,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "convfinqa_ctx_639::p1::c1::f178761af9",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?\nRetrieval query:",
+  "query_formulation_raw_output": "International Paper annual sales printing papers graphic arts supplies and equipment 2012 billions dollars",
+  "query_formulation_latency_seconds": 3.8592,
+  "query_formulation_input_tokens": 173,
+  "query_formulation_output_tokens": 19,
+  "query_formulation_trace": {
+    "original_question": "What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?",
+    "retrieval_query": "International Paper annual sales printing papers graphic arts supplies and equipment 2012 billions dollars",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What were the combined annual sales of printing papers and graphic arts supplies and equipment for International Paper in 2012, in billions of dollars?\nRetrieval query:",
+    "raw_output": "International Paper annual sales printing papers graphic arts supplies and equipment 2012 billions dollars",
+    "latency_seconds": 3.859160299994983,
+    "input_tokens": 173,
+    "output_tokens": 19,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "3.5",
+  "gold_evidence_reference": "ConvFinQA | pdf/IP/2012/page_58.pdf | source_page=58 | context_id=convfinqa_ctx_639"
+}

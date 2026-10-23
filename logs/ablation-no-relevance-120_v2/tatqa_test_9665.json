@@ -1,0 +1,378 @@
+{
+  "question_id": "tatqa_test_9665",
+  "question": "What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?",
+  "retrieval_query": "sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt",
+  "metadata_filters": {
+    "year": 2018
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+      "rank": 1,
+      "dense_score": 0.6283040046691895,
+      "bm25_score": 40.52272688341373,
+      "hybrid_score": 0.7273268079892319,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_92"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+      "rank": 2,
+      "dense_score": 0.6376314163208008,
+      "bm25_score": 26.10225150533244,
+      "hybrid_score": 0.656263106469259,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_357"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_994::p1::c2::e95c87c270",
+      "rank": 3,
+      "dense_score": 0.663984477519989,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_994"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_92::p1::c1::8622580990",
+      "rank": 4,
+      "dense_score": 0.6239912509918213,
+      "bm25_score": 29.366219345940006,
+      "hybrid_score": 0.5842424487773606,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_92"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_994::p1::c0::4327507037",
+      "rank": 5,
+      "dense_score": 0.6473861336708069,
+      "bm25_score": 10.292772413762597,
+      "hybrid_score": 0.5747540500047335,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_994"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 125.3852,
+  "input_tokens": 8598,
+  "output_tokens": 93,
+  "total_tokens": 8691,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 8,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.0459,
+  "llm_latency_seconds": 125.315,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?\nLabel:",
+      "input_tokens": 119,
+      "output_tokens": 7,
+      "latency_seconds": 3.673074900005304
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?\nEvidence:\n[1] finqa_test_ctx_92.pdf p.1\nDebt Issuance Costs:\nDebt issuance costs are reflected as a direct deduction of our long-term debt balance on the consolidated balance sheets. We incurred debt issuance costs of\n$15 million in 2018 and $53 million in 2016. Debt issuance costs in 2017 were insignificant. Unamortized debt issuance costs were $115 million at\nDecember 29, 2018, $114 million at December 30, 2017, and $124 million at December 31, 2016. Amortization of debt issuance costs was $16 million in\n2018, $16 million in 2017, and $14 million in 2016.\nDebt Premium:\nUnamortized debt premiums are presented on the consolidated balance sheets as a direct addition to the carrying amount of debt. Unamortized debt premium,\nnet, was\n\n[2] finqa_test_ctx_357.pdf p.1\nUncertain Tax Positions\nThe following is a reconciliation of the Company’s beginning and ending amount of uncertain tax positions (in millions):\n2018 2017\nBalance at January 1 $ 280 $ 278\nAdditions based on tax positions related to the current year 18 25\nAdditions for tax positions of prior years 10 12\nReductions for tax positions of prior years (24) (26)\nSettlements — (6)\nBusiness combinations 1 —\nLapse of statute of limitations (6) (7)\nForeign currency translation — 4\nBalance at December 31 $ 279 $ 280\nThe Company’s liability for uncertain tax positions as of December 31, 2018, 2017, and 2016, includes $228 million, $219 million,\nand $240 million, respectively, related to amounts that woul\n\n[3] convfinqa_ctx_994.pdf p.1\nmillionintheaggregateundertheRevolvingCreditFacility.\nOutstandinglettersofcreditundertheRevolvingCreditFacilityreducetheamountofborrowingsavailabletous.\nBorrowingsavailabletousundertheRevolvingCreditFacilityarefurtherlimitedbythecovenantsdescribed\nbelowunder“CompliancewithCovenants.”ThetotalavailablecommitmentsundertheRevolvingCreditFacility\natDecember31,2018were$783.6million.\nGLOBALPAYMENTSINC.|2018Form10-KAnnualReport–85\n\n[TABLE]\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\n[/TABLE]\n\n[4] finqa_test_ctx_92.pdf p.1\ndetermined the fair value of our long-term debt using\nLevel 2 inputs. Fair values are generally estimated based on quoted market prices for identical or similar instruments.\nNote 20. Capital Stock\nPreferred Stock\nOur Second Amended and Restated Certificate of Incorporation authorizes the issuance of up to 920,000 shares of preferred stock.\nOn June 7, 2016, we redeemed all 80,000 outstanding shares of our Series A Preferred Stock for $8.3 billion. We funded this redemption primarily through the\nissuance of long-term debt in May 2016, as well as other sources of liquidity, including our U.S. commercial paper program, U.S. securitization program, and\ncash on hand. In connection with the redempt\n\n[5] convfinqa_ctx_994.pdf p.1\nMaturityrequirementsonlong-termdebtasofDecember31,2018byyearareasfollows(inthousands):\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\nCreditFacility\nWearepartytoacreditfacilityagreementwithBankofAmerica,N.A.,asadministrativeagent,andasyndicate\noffinancialinstitutionsaslendersandotheragents(asamendedfromtimetotime,the“CreditFacility”).Asof\nDecember31,2018,theCreditFacilityprovidedforsecuredfinancingcomprisedof(i)a$1.5billionrevolving\ncreditfacility(the“RevolvingCreditFacility”);(ii)a$1.5billiontermloan(the“TermALoan”),(iii)a$1.37billion\ntermloan(the“TermA-2Loan”),(iv)a$1.14billiontermloanfacility(the“TermB\nLabel:",
+      "input_tokens": 1319,
+      "output_tokens": 3,
+      "latency_seconds": 21.678710399995907
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?\nEvidence:\n[1] finqa_test_ctx_92.pdf p.1\n$430 million at December 29, 2018 and $505 million at December 30, 2017. Amortization of our debt premium, net, was $65 million in 2018, $81\nmillion in 2017, and $88 million in 2016.\nDebt Repayments:\nIn July and August 2018, we repaid $2.7 billion aggregate principal amount of senior notes that matured in the period. We funded these long-term debt\nrepayments primarily with proceeds from the New Notes issued in June 2018.\nAdditionally, in June 2017, we repaid $2.0 billion aggregate principal amount of senior notes that matured in the period. We funded these long-term debt\nrepayments primarily with cash on hand and our commercial paper programs.\nFair Value of Debt:\nAt December 29, 2018, the a\n\n[2] finqa_test_ctx_357.pdf p.1\nUncertain Tax Positions\nThe following is a reconciliation of the Company’s beginning and ending amount of uncertain tax positions (in millions):\n2018 2017\nBalance at January 1 $ 280 $ 278\nAdditions based on tax positions related to the current year 18 25\nAdditions for tax positions of prior years 10 12\nReductions for tax positions of prior years (24) (26)\nSettlements — (6)\nBusiness combinations 1 —\nLapse of statute of limitations (6) (7)\nForeign currency translation — 4\nBalance at December 31 $ 279 $ 280\nThe Company’s liability for uncertain tax positions as of December 31, 2018, 2017, and 2016, includes $228 million, $219 million,\nand $240 million, respectively, related to amounts that woul\n\n[3] convfinqa_ctx_994.pdf p.1\nmillionintheaggregateundertheRevolvingCreditFacility.\nOutstandinglettersofcreditundertheRevolvingCreditFacilityreducetheamountofborrowingsavailabletous.\nBorrowingsavailabletousundertheRevolvingCreditFacilityarefurtherlimitedbythecovenantsdescribed\nbelowunder“CompliancewithCovenants.”ThetotalavailablecommitmentsundertheRevolvingCreditFacility\natDecember31,2018were$783.6million.\nGLOBALPAYMENTSINC.|2018Form10-KAnnualReport–85\n\n[TABLE]\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\n[/TABLE]\n\n[4] finqa_test_ctx_92.pdf p.1\nion, all Series A Preferred Stock was canceled and automatically retired.\nCommon Stock\nOur Second Amended and Restated Certificate of Incorporation authorizes the issuance of up to 5.0 billion shares of common stock.\nShares of common stock issued, in treasury, and outstanding were (in millions of shares):\nShares\nShares Issued Treasury Shares Outstanding\nBalance at January 3, 2016 1,214 — 1,214\nExercise of stock options, issuance of other stock awards, and other 5 (2) 3\nBalance at December 31, 2016 1,219 (2) 1,217\nExercise of stock options, issuance of other stock awards, and other 2 — 2\nBalance at December 30, 2017 1,221 (2) 1,219\nExercise of stock options, issuance of other stock awards, an\n\n[5] convfinqa_ctx_994.pdf p.1\nMaturityrequirementsonlong-termdebtasofDecember31,2018byyearareasfollows(inthousands):\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\nCreditFacility\nWearepartytoacreditfacilityagreementwithBankofAmerica,N.A.,asadministrativeagent,andasyndicate\noffinancialinstitutionsaslendersandotheragents(asamendedfromtimetotime,the“CreditFacility”).Asof\nDecember31,2018,theCreditFacilityprovidedforsecuredfinancingcomprisedof(i)a$1.5billionrevolving\ncreditfacility(the“RevolvingCreditFacility”);(ii)a$1.5billiontermloan(the“TermALoan”),(iii)a$1.37billion\ntermloan(the“TermA-2Loan”),(iv)a$1.14billiontermloanfacility(the“TermB\nLabel:",
+      "input_tokens": 1354,
+      "output_tokens": 3,
+      "latency_seconds": 20.708223499997985
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?\nEvidence:\n[1] finqa_test_ctx_92.pdf p.1\n$430 million at December 29, 2018 and $505 million at December 30, 2017. Amortization of our debt premium, net, was $65 million in 2018, $81\nmillion in 2017, and $88 million in 2016.\nDebt Repayments:\nIn July and August 2018, we repaid $2.7 billion aggregate principal amount of senior notes that matured in the period. We funded these long-term debt\nrepayments primarily with proceeds from the New Notes issued in June 2018.\nAdditionally, in June 2017, we repaid $2.0 billion aggregate principal amount of senior notes that matured in the period. We funded these long-term debt\nrepayments primarily with cash on hand and our commercial paper programs.\nFair Value of Debt:\nAt December 29, 2018, the a\n\n[2] finqa_test_ctx_357.pdf p.1\nUncertain Tax Positions\nThe following is a reconciliation of the Company’s beginning and ending amount of uncertain tax positions (in millions):\n2018 2017\nBalance at January 1 $ 280 $ 278\nAdditions based on tax positions related to the current year 18 25\nAdditions for tax positions of prior years 10 12\nReductions for tax positions of prior years (24) (26)\nSettlements — (6)\nBusiness combinations 1 —\nLapse of statute of limitations (6) (7)\nForeign currency translation — 4\nBalance at December 31 $ 279 $ 280\nThe Company’s liability for uncertain tax positions as of December 31, 2018, 2017, and 2016, includes $228 million, $219 million,\nand $240 million, respectively, related to amounts that woul\n\n[3] convfinqa_ctx_994.pdf p.1\nmillionintheaggregateundertheRevolvingCreditFacility.\nOutstandinglettersofcreditundertheRevolvingCreditFacilityreducetheamountofborrowingsavailabletous.\nBorrowingsavailabletousundertheRevolvingCreditFacilityarefurtherlimitedbythecovenantsdescribed\nbelowunder“CompliancewithCovenants.”ThetotalavailablecommitmentsundertheRevolvingCreditFacility\natDecember31,2018were$783.6million.\nGLOBALPAYMENTSINC.|2018Form10-KAnnualReport–85\n\n[TABLE]\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\n[/TABLE]\n\n[4] finqa_test_ctx_92.pdf p.1\nion, all Series A Preferred Stock was canceled and automatically retired.\nCommon Stock\nOur Second Amended and Restated Certificate of Incorporation authorizes the issuance of up to 5.0 billion shares of common stock.\nShares of common stock issued, in treasury, and outstanding were (in millions of shares):\nShares\nShares Issued Treasury Shares Outstanding\nBalance at January 3, 2016 1,214 — 1,214\nExercise of stock options, issuance of other stock awards, and other 5 (2) 3\nBalance at December 31, 2016 1,219 (2) 1,217\nExercise of stock options, issuance of other stock awards, and other 2 — 2\nBalance at December 30, 2017 1,221 (2) 1,219\nExercise of stock options, issuance of other stock awards, an\n\n[5] convfinqa_ctx_994.pdf p.1\nMaturityrequirementsonlong-termdebtasofDecember31,2018byyearareasfollows(inthousands):\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\nCreditFacility\nWearepartytoacreditfacilityagreementwithBankofAmerica,N.A.,asadministrativeagent,andasyndicate\noffinancialinstitutionsaslendersandotheragents(asamendedfromtimetotime,the“CreditFacility”).Asof\nDecember31,2018,theCreditFacilityprovidedforsecuredfinancingcomprisedof(i)a$1.5billionrevolving\ncreditfacility(the“RevolvingCreditFacility”);(ii)a$1.5billiontermloan(the“TermALoan”),(iii)a$1.37billion\ntermloan(the“TermA-2Loan”),(iv)a$1.14billiontermloanfacility(the“TermB\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1395,
+      "output_tokens": 4,
+      "latency_seconds": 23.077164000002085
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?\nEvidence:\n[1] finqa_test_ctx_92.pdf p.1\n$430 million at December 29, 2018 and $505 million at December 30, 2017. Amortization of our debt premium, net, was $65 million in 2018, $81\nmillion in 2017, and $88 million in 2016.\nDebt Repayments:\nIn July and August 2018, we repaid $2.7 billion aggregate principal amount of senior notes that matured in the period. We funded these long-term debt\nrepayments primarily with proceeds from the New Notes issued in June 2018.\nAdditionally, in June 2017, we repaid $2.0 billion aggregate principal amount of senior notes that matured in the period. We funded these long-term debt\nrepayments primarily with cash on hand and our commercial paper programs.\nFair Value of Debt:\nAt December 29, 2018, the a\n\n[2] finqa_test_ctx_357.pdf p.1\nUncertain Tax Positions\nThe following is a reconciliation of the Company’s beginning and ending amount of uncertain tax positions (in millions):\n2018 2017\nBalance at January 1 $ 280 $ 278\nAdditions based on tax positions related to the current year 18 25\nAdditions for tax positions of prior years 10 12\nReductions for tax positions of prior years (24) (26)\nSettlements — (6)\nBusiness combinations 1 —\nLapse of statute of limitations (6) (7)\nForeign currency translation — 4\nBalance at December 31 $ 279 $ 280\nThe Company’s liability for uncertain tax positions as of December 31, 2018, 2017, and 2016, includes $228 million, $219 million,\nand $240 million, respectively, related to amounts that woul\n\n[3] convfinqa_ctx_994.pdf p.1\nmillionintheaggregateundertheRevolvingCreditFacility.\nOutstandinglettersofcreditundertheRevolvingCreditFacilityreducetheamountofborrowingsavailabletous.\nBorrowingsavailabletousundertheRevolvingCreditFacilityarefurtherlimitedbythecovenantsdescribed\nbelowunder“CompliancewithCovenants.”ThetotalavailablecommitmentsundertheRevolvingCreditFacility\natDecember31,2018were$783.6million.\nGLOBALPAYMENTSINC.|2018Form10-KAnnualReport–85\n\n[TABLE]\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\n[/TABLE]\n\n[4] finqa_test_ctx_92.pdf p.1\nion, all Series A Preferred Stock was canceled and automatically retired.\nCommon Stock\nOur Second Amended and Restated Certificate of Incorporation authorizes the issuance of up to 5.0 billion shares of common stock.\nShares of common stock issued, in treasury, and outstanding were (in millions of shares):\nShares\nShares Issued Treasury Shares Outstanding\nBalance at January 3, 2016 1,214 — 1,214\nExercise of stock options, issuance of other stock awards, and other 5 (2) 3\nBalance at December 31, 2016 1,219 (2) 1,217\nExercise of stock options, issuance of other stock awards, and other 2 — 2\nBalance at December 30, 2017 1,221 (2) 1,219\nExercise of stock options, issuance of other stock awards, an\n\n[5] convfinqa_ctx_994.pdf p.1\nMaturityrequirementsonlong-termdebtasofDecember31,2018byyearareasfollows(inthousands):\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\nCreditFacility\nWearepartytoacreditfacilityagreementwithBankofAmerica,N.A.,asadministrativeagent,andasyndicate\noffinancialinstitutionsaslendersandotheragents(asamendedfromtimetotime,the“CreditFacility”).Asof\nDecember31,2018,theCreditFacilityprovidedforsecuredfinancingcomprisedof(i)a$1.5billionrevolving\ncreditfacility(the“RevolvingCreditFacility”);(ii)a$1.5billiontermloan(the“TermALoan”),(iii)a$1.37billion\ntermloan(the“TermA-2Loan”),(iv)a$1.14billiontermloanfacility(the“TermB\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 1378,
+      "output_tokens": 11,
+      "latency_seconds": 23.289424399998097
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?\nEvidence:\n[1] finqa_test_ctx_92.pdf p.1\n$430 million at December 29, 2018 and $505 million at December 30, 2017. Amortization of our debt premium, net, was $65 million in 2018, $81\nmillion in 2017, and $88 million in 2016.\nDebt Repayments:\nIn July and August 2018, we repaid $2.7 billion aggregate principal amount of senior notes that matured in the period. We funded these long-term debt\nrepayments primarily with proceeds from the New Notes issued in June 2018.\nAdditionally, in June 2017, we repaid $2.0 billion aggregate principal amount of senior notes that matured in the period. We funded these long-term debt\nrepayments primarily with cash on hand and our commercial paper programs.\nFair Value of Debt:\nAt December 29, 2018, the a\n\n[2] finqa_test_ctx_357.pdf p.1\nUncertain Tax Positions\nThe following is a reconciliation of the Company’s beginning and ending amount of uncertain tax positions (in millions):\n2018 2017\nBalance at January 1 $ 280 $ 278\nAdditions based on tax positions related to the current year 18 25\nAdditions for tax positions of prior years 10 12\nReductions for tax positions of prior years (24) (26)\nSettlements — (6)\nBusiness combinations 1 —\nLapse of statute of limitations (6) (7)\nForeign currency translation — 4\nBalance at December 31 $ 279 $ 280\nThe Company’s liability for uncertain tax positions as of December 31, 2018, 2017, and 2016, includes $228 million, $219 million,\nand $240 million, respectively, related to amounts that woul\n\n[3] convfinqa_ctx_994.pdf p.1\nmillionintheaggregateundertheRevolvingCreditFacility.\nOutstandinglettersofcreditundertheRevolvingCreditFacilityreducetheamountofborrowingsavailabletous.\nBorrowingsavailabletousundertheRevolvingCreditFacilityarefurtherlimitedbythecovenantsdescribed\nbelowunder“CompliancewithCovenants.”ThetotalavailablecommitmentsundertheRevolvingCreditFacility\natDecember31,2018were$783.6million.\nGLOBALPAYMENTSINC.|2018Form10-KAnnualReport–85\n\n[TABLE]\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\n[/TABLE]\n\n[4] finqa_test_ctx_92.pdf p.1\nion, all Series A Preferred Stock was canceled and automatically retired.\nCommon Stock\nOur Second Amended and Restated Certificate of Incorporation authorizes the issuance of up to 5.0 billion shares of common stock.\nShares of common stock issued, in treasury, and outstanding were (in millions of shares):\nShares\nShares Issued Treasury Shares Outstanding\nBalance at January 3, 2016 1,214 — 1,214\nExercise of stock options, issuance of other stock awards, and other 5 (2) 3\nBalance at December 31, 2016 1,219 (2) 1,217\nExercise of stock options, issuance of other stock awards, and other 2 — 2\nBalance at December 30, 2017 1,221 (2) 1,219\nExercise of stock options, issuance of other stock awards, an\n\n[5] convfinqa_ctx_994.pdf p.1\nMaturityrequirementsonlong-termdebtasofDecember31,2018byyearareasfollows(inthousands):\nYearsendingDecember31,\n2019 $ 124,176\n2020 159,979\n2021 195,848\n2022 267,587\n2023 3,945,053\n2024andthereafter 475,000\nTotal $5,167,643\nCreditFacility\nWearepartytoacreditfacilityagreementwithBankofAmerica,N.A.,asadministrativeagent,andasyndicate\noffinancialinstitutionsaslendersandotheragents(asamendedfromtimetotime,the“CreditFacility”).Asof\nDecember31,2018,theCreditFacilityprovidedforsecuredfinancingcomprisedof(i)a$1.5billionrevolving\ncreditfacility(the“RevolvingCreditFacility”);(ii)a$1.5billiontermloan(the“TermALoan”),(iii)a$1.37billion\ntermloan(the“TermA-2Loan”),(iv)a$1.14billiontermloanfacility(the“TermB\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1395,
+      "output_tokens": 4,
+      "latency_seconds": 2.50814199999877
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt",
+      "filters": {
+        "year": 2018
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+        "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+        "convfinqa_ctx_994::p1::c2::e95c87c270",
+        "finqa_test_ctx_92::p1::c1::8622580990",
+        "convfinqa_ctx_994::p1::c0::4327507037"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+          "document_id": "finqa_test_ctx_92",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "document_id": "finqa_test_ctx_357",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_994::p1::c2::e95c87c270",
+          "document_id": "convfinqa_ctx_994",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 579,
+          "source_chunk_id": "convfinqa_ctx_994::p1::c2::e95c87c270",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_92::p1::c1::8622580990",
+          "document_id": "finqa_test_ctx_92",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_92::p1::c1::8622580990",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_994::p1::c0::4327507037",
+          "document_id": "convfinqa_ctx_994",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_994::p1::c0::4327507037",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+          "document_id": "finqa_test_ctx_92",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "document_id": "finqa_test_ctx_357",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_357::p1::c0::ecd9bc4a5b",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_994::p1::c2::e95c87c270",
+          "document_id": "convfinqa_ctx_994",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 579,
+          "source_chunk_id": "convfinqa_ctx_994::p1::c2::e95c87c270",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_92::p1::c1::8622580990",
+          "document_id": "finqa_test_ctx_92",
+          "rank": 4,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "finqa_test_ctx_92::p1::c1::8622580990",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_994::p1::c0::4327507037",
+          "document_id": "convfinqa_ctx_994",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_994::p1::c0::4327507037",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?\nRetrieval query:",
+  "query_formulation_raw_output": "sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt",
+  "query_formulation_latency_seconds": 6.0578,
+  "query_formulation_input_tokens": 196,
+  "query_formulation_output_tokens": 50,
+  "query_formulation_trace": {
+    "original_question": "What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?",
+    "retrieval_query": "sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt?\nRetrieval query:",
+    "raw_output": "sum of the three highest carrying values in USD for the Company's debt facilities in 2018, considering the South African Credit Facility, Colombian Credit Facility, Brazil Credit Facility, Kenya Debt, and U.S. Subsidiary Debt",
+    "latency_seconds": 6.05779540000367,
+    "input_tokens": 196,
+    "output_tokens": 50,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "125.6",
+  "gold_evidence_reference": "TAT-DQA | raw/8904a4eb6ba20505519dbbd57dd120bf.pdf | context_id=8904a4eb6ba20505519dbbd57dd120bf"
+}

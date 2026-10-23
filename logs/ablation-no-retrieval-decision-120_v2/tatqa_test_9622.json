@@ -1,0 +1,224 @@
+{
+  "question_id": "tatqa_test_9622",
+  "question": "What was the change in Current deferred income for Spirent Communications Plc in 2019?",
+  "retrieval_query": "Spirent Communications Plc Current deferred income change 2019",
+  "metadata_filters": {
+    "year": 2019,
+    "company": "spirent-communications-plc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+      "rank": 1,
+      "dense_score": 0.7493635416030884,
+      "bm25_score": 19.426251808287084,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1"
+    },
+    {
+      "chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c1::a947597b10",
+      "rank": 2,
+      "dense_score": 0.7238382697105408,
+      "bm25_score": 20.009789584797026,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1"
+    }
+  ],
+  "answer": "Change in Current deferred income for Spirent Communications Plc in 2019 = 2019 value - 2018 value = 53.2 - 55.2 = -2.0 million\n\nSource: 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\n\n-2.0",
+  "latency_seconds": 64.5586,
+  "input_tokens": 2781,
+  "output_tokens": 119,
+  "total_tokens": 2900,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0329,
+  "llm_latency_seconds": 64.4385,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the change in Current deferred income for Spirent Communications Plc in 2019?\nEvidence:\n[1] 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\nFinancial statements\nNotes to the consolidated financial statements continued\n25. Deferred income\n2019 2018\n$ million $ million\nCurrent 53.2 55.2\nNon-current 13.6 14.4\n66.8 69.6\nThe Group’s deferred income balances relate solely to revenue from contracts with customers.\n26. Lease liabilities\n2019\n$ million\nMaturity analysis – contractual undiscounted cash flows\nLess than one year 9.9\nOne to five years 24.5\nMore than five years 1.9\nTotal undiscounted lease liabilities at 31 December 36.3\nLease liabilities included in the balance sheet at 31 December\nCurrent 8.5\nNon-current 24.5\n33.0\n$2.2 million of the lease liability included in the balance sheet relates to a building the Group subleases; se\n\n[2] 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\nised in lease liabilities\n(discounted) (discounted)\n$ million $ million\nBuildings 5.7 19.2\n150 Spirent Communications plc Annual Report 2019\n\n[TABLE]\n2019\n$ million\n53.2\n13.6\n66.8\n[/TABLE]\n\n[TABLE]\n2019\n$ million\n9.9\n24.5\n1.9\n36.3\n8.5\n24.5\n33.0\n[/TABLE]\n\n[TABLE]\n2019\n$ million\n1.7\n0.1\n0.2\n10.3\n[/TABLE]\n\n[TABLE]\n | Potential future lease\nLease liabilities | payments not included\nrecognised | in lease liabilities\n(discounted) | (discounted)\n$ million | $ million\n5.7 | 19.2\n[/TABLE]\nDecision:",
+      "input_tokens": 664,
+      "output_tokens": 4,
+      "latency_seconds": 12.819778499999302
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the change in Current deferred income for Spirent Communications Plc in 2019?\nEvidence:\n[1] 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\nFinancial statements\nNotes to the consolidated financial statements continued\n25. Deferred income\n2019 2018\n$ million $ million\nCurrent 53.2 55.2\nNon-current 13.6 14.4\n66.8 69.6\nThe Group’s deferred income balances relate solely to revenue from contracts with customers.\n26. Lease liabilities\n2019\n$ million\nMaturity analysis – contractual undiscounted cash flows\nLess than one year 9.9\nOne to five years 24.5\nMore than five years 1.9\nTotal undiscounted lease liabilities at 31 December 36.3\nLease liabilities included in the balance sheet at 31 December\nCurrent 8.5\nNon-current 24.5\n33.0\n$2.2 million of the lease liability included in the balance sheet relates to a building the Group subleases; se\n\n[2] 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\nised in lease liabilities\n(discounted) (discounted)\n$ million $ million\nBuildings 5.7 19.2\n150 Spirent Communications plc Annual Report 2019\n\n[TABLE]\n2019\n$ million\n53.2\n13.6\n66.8\n[/TABLE]\n\n[TABLE]\n2019\n$ million\n9.9\n24.5\n1.9\n36.3\n8.5\n24.5\n33.0\n[/TABLE]\n\n[TABLE]\n2019\n$ million\n1.7\n0.1\n0.2\n10.3\n[/TABLE]\n\n[TABLE]\n | Potential future lease\nLease liabilities | payments not included\nrecognised | in lease liabilities\n(discounted) | (discounted)\n$ million | $ million\n5.7 | 19.2\n[/TABLE]\nLabel:",
+      "input_tokens": 580,
+      "output_tokens": 3,
+      "latency_seconds": 11.670844899999793
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the change in Current deferred income for Spirent Communications Plc in 2019?\nEvidence:\n[1] 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\nFinancial statements\nNotes to the consolidated financial statements continued\n25. Deferred income\n2019 2018\n$ million $ million\nCurrent 53.2 55.2\nNon-current 13.6 14.4\n66.8 69.6\nThe Group’s deferred income balances relate solely to revenue from contracts with customers.\n26. Lease liabilities\n2019\n$ million\nMaturity analysis – contractual undiscounted cash flows\nLess than one year 9.9\nOne to five years 24.5\nMore than five years 1.9\nTotal undiscounted lease liabilities at 31 December 36.3\nLease liabilities included in the balance sheet at 31 December\nCurrent 8.5\nNon-current 24.5\n33.0\n$2.2 million of the lease liability included in the balance sheet relates to a building the Group subleases; se\n\n[2] 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\nised in lease liabilities\n(discounted) (discounted)\n$ million $ million\nBuildings 5.7 19.2\n150 Spirent Communications plc Annual Report 2019\n\n[TABLE]\n2019\n$ million\n53.2\n13.6\n66.8\n[/TABLE]\n\n[TABLE]\n2019\n$ million\n9.9\n24.5\n1.9\n36.3\n8.5\n24.5\n33.0\n[/TABLE]\n\n[TABLE]\n2019\n$ million\n1.7\n0.1\n0.2\n10.3\n[/TABLE]\n\n[TABLE]\n | Potential future lease\nLease liabilities | payments not included\nrecognised | in lease liabilities\n(discounted) | (discounted)\n$ million | $ million\n5.7 | 19.2\n[/TABLE]\nDraft:\nChange in Current deferred income for Spirent Communications Plc in 2019 = 2019 value - 2018 value = 53.2 - 55.2 = -2.0 million\n\nSource: 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\n\n-2.0\nLabel:",
+      "input_tokens": 704,
+      "output_tokens": 3,
+      "latency_seconds": 13.420834200000172
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Spirent Communications Plc Current deferred income change 2019",
+      "filters": {
+        "year": 2019,
+        "company": "spirent-communications-plc"
+      },
+      "chunk_ids": [
+        "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+        "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c1::a947597b10"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+          "document_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c0::00bf2c4775",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c1::a947597b10",
+          "document_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 484,
+          "source_chunk_id": "7cacb4529b5137a61f1e8fc7a7f6c6a1::p1::c1::a947597b10",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the change in Current deferred income for Spirent Communications Plc in 2019?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in Current deferred income for Spirent Communications Plc in 2019?\nRetrieval query:",
+  "query_formulation_raw_output": "Spirent Communications Plc Current deferred income change 2019",
+  "query_formulation_latency_seconds": 5.2946,
+  "query_formulation_input_tokens": 165,
+  "query_formulation_output_tokens": 16,
+  "query_formulation_trace": {
+    "original_question": "What was the change in Current deferred income for Spirent Communications Plc in 2019?",
+    "retrieval_query": "Spirent Communications Plc Current deferred income change 2019",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in Current deferred income for Spirent Communications Plc in 2019?\nRetrieval query:",
+    "raw_output": "Spirent Communications Plc Current deferred income change 2019",
+    "latency_seconds": 5.294592599999305,
+    "input_tokens": 165,
+    "output_tokens": 16,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "-2.0",
+  "gold_evidence_reference": "TAT-DQA | raw/7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf | context_id=7cacb4529b5137a61f1e8fc7a7f6c6a1"
+}

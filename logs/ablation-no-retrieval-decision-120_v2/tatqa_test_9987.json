@@ -1,0 +1,298 @@
+{
+  "question_id": "tatqa_test_9987",
+  "question": "What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?",
+  "retrieval_query": "Nielsen-NV cash and cash equivalents December 31 2019 percentage outside United States",
+  "metadata_filters": {
+    "year": 2019,
+    "company": "nielsen-nv"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+      "rank": 1,
+      "dense_score": 0.7265985012054443,
+      "bm25_score": 18.518849405044875,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d69f61835b35ec05879669dc41ff57aa"
+    },
+    {
+      "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c1::da1702e07c",
+      "rank": 2,
+      "dense_score": 0.6646341681480408,
+      "bm25_score": 8.100588213944151,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d69f61835b35ec05879669dc41ff57aa"
+    }
+  ],
+  "answer": "383 / 454 = 0.844 = 84.4%\n\nSource: d69f61835b35ec05879669dc41ff57aa.pdf p.1",
+  "latency_seconds": 70.117,
+  "input_tokens": 3297,
+  "output_tokens": 95,
+  "total_tokens": 3392,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0681,
+  "llm_latency_seconds": 70.0466,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?\nEvidence:\n[1] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nMedia Segment Profitability\nOperating income was $998 million for the year ended December 31, 2018 as compared to $1,021 million for the year ended December 31, 2017. The\ndecrease was driven by higher restructuring costs, higher depreciation and amortization expense and investments in our services, partially offset by the revenue\nperformance discussed above. Non-GAAP business segment income increased 0.5% on a constant currency basis.\nCorporate Expenses and Eliminations\nOperating expenses were $144 million for the year ended December 31, 2018 as compared to $143 million for the year ended December 31, 2017, primarily\ndue to an increase in transaction related costs and business optimization c\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nand their growth initiatives and amounts needed to service our U.S. indebtedness and related obligations.\nThe below table illustrates our weighted average interest rate and cash paid for interest over the last three years.\n2019 2018 2017\nWeighted average interest rate 4.40% 4.67% 4.32%\nCash paid for interest, net of amounts capitalized (in millions) $ 386 $ 380 $ 352\nOur contractual obligations, commitments and debt service requirements over the next several years are significant. We believe we will have available\nresources to meet both our short-term and long-term liquidity requirements, including our senior secured debt service. We expect the cash flow from our\noperations, combined with ex\nDecision:",
+      "input_tokens": 589,
+      "output_tokens": 4,
+      "latency_seconds": 12.279308099998161
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?\nEvidence:\n[1] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nMedia Segment Profitability\nOperating income was $998 million for the year ended December 31, 2018 as compared to $1,021 million for the year ended December 31, 2017. The\ndecrease was driven by higher restructuring costs, higher depreciation and amortization expense and investments in our services, partially offset by the revenue\nperformance discussed above. Non-GAAP business segment income increased 0.5% on a constant currency basis.\nCorporate Expenses and Eliminations\nOperating expenses were $144 million for the year ended December 31, 2018 as compared to $143 million for the year ended December 31, 2017, primarily\ndue to an increase in transaction related costs and business optimization c\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nand their growth initiatives and amounts needed to service our U.S. indebtedness and related obligations.\nThe below table illustrates our weighted average interest rate and cash paid for interest over the last three years.\n2019 2018 2017\nWeighted average interest rate 4.40% 4.67% 4.32%\nCash paid for interest, net of amounts capitalized (in millions) $ 386 $ 380 $ 352\nOur contractual obligations, commitments and debt service requirements over the next several years are significant. We believe we will have available\nresources to meet both our short-term and long-term liquidity requirements, including our senior secured debt service. We expect the cash flow from our\noperations, combined with ex\nLabel:",
+      "input_tokens": 505,
+      "output_tokens": 3,
+      "latency_seconds": 10.380752900000516
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?\nEvidence:\n[1] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nosts and depreciation and amortization expense partially offset by lower share-based\ncompensation expense and lower restructuring charges.\nLiquidity and Capital Resources\nCash flows from operations provided a source of funds of $1,066 million, $1,058 million and $1,310 million during the years ended December 31, 2019,\n2018 and 2017, respectively. This increase was driven primarily by lower employee annual incentive payments, lower retailer investments and lower restructuring\npayments, partially offset by working capital timing and higher interest and tax payments during the year ended December 31, 2019.\nWe provide for additional liquidity through several sources, including maintaining an ade\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nisting cash and amounts available under the revolving credit facility, will provide sufficient liquidity to fund our current obligations,\nprojected working capital requirements, restructuring obligations, dividend payments and capital spending over the next year. In addition, we may, from time to\ntime, purchase, repay, redeem or retire any of our outstanding debt securities (including any publicly issued debt securities) in privately negotiated or open market\ntransactions, by tender offer or otherwise.\n53\nLabel:",
+      "input_tokens": 416,
+      "output_tokens": 3,
+      "latency_seconds": 7.195702200002415
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?\nEvidence:\n[1] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nquate cash balance, access to global funding sources and a\ncommitted revolving credit facility. The following table provides a summary of the major sources of liquidity for the years ended December 31, 2019, 2018 and\n2017:\n(IN MILLIONS) 2019 2018 2017\nNet cash from operating activities $ 1,066 $ 1,058 $ 1,310\nCash and short-term marketable securities\n$ 454 $ 524 $ 656\nRevolving credit facility $ 850 $ 850 $ 575\nOf the $454 million in cash and cash equivalents at December 31, 2019, approximately $383 million was held in jurisdictions outside the U.S. We regularly\nreview the amount of cash and cash equivalents held outside of the U.S. to determine the amounts necessary to fund the current oper\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nisting cash and amounts available under the revolving credit facility, will provide sufficient liquidity to fund our current obligations,\nprojected working capital requirements, restructuring obligations, dividend payments and capital spending over the next year. In addition, we may, from time to\ntime, purchase, repay, redeem or retire any of our outstanding debt securities (including any publicly issued debt securities) in privately negotiated or open market\ntransactions, by tender offer or otherwise.\n53\nLabel:",
+      "input_tokens": 479,
+      "output_tokens": 3,
+      "latency_seconds": 8.185756400001992
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?\nEvidence:\n[1] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nquate cash balance, access to global funding sources and a\ncommitted revolving credit facility. The following table provides a summary of the major sources of liquidity for the years ended December 31, 2019, 2018 and\n2017:\n(IN MILLIONS) 2019 2018 2017\nNet cash from operating activities $ 1,066 $ 1,058 $ 1,310\nCash and short-term marketable securities\n$ 454 $ 524 $ 656\nRevolving credit facility $ 850 $ 850 $ 575\nOf the $454 million in cash and cash equivalents at December 31, 2019, approximately $383 million was held in jurisdictions outside the U.S. We regularly\nreview the amount of cash and cash equivalents held outside of the U.S. to determine the amounts necessary to fund the current oper\n\n[2] d69f61835b35ec05879669dc41ff57aa.pdf p.1\nisting cash and amounts available under the revolving credit facility, will provide sufficient liquidity to fund our current obligations,\nprojected working capital requirements, restructuring obligations, dividend payments and capital spending over the next year. In addition, we may, from time to\ntime, purchase, repay, redeem or retire any of our outstanding debt securities (including any publicly issued debt securities) in privately negotiated or open market\ntransactions, by tender offer or otherwise.\n53\nDraft:\n383 / 454 = 0.844 = 84.4%\n\nSource: d69f61835b35ec05879669dc41ff57aa.pdf p.1\nLabel:",
+      "input_tokens": 567,
+      "output_tokens": 3,
+      "latency_seconds": 11.806812200000422
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Nielsen-NV cash and cash equivalents December 31 2019 percentage outside United States",
+      "filters": {
+        "year": 2019,
+        "company": "nielsen-nv"
+      },
+      "chunk_ids": [
+        "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+        "d69f61835b35ec05879669dc41ff57aa::p1::c1::da1702e07c"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "document_id": "d69f61835b35ec05879669dc41ff57aa",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c1::da1702e07c",
+          "document_id": "d69f61835b35ec05879669dc41ff57aa",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c1::da1702e07c",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "document_id": "d69f61835b35ec05879669dc41ff57aa",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c1::da1702e07c",
+          "document_id": "d69f61835b35ec05879669dc41ff57aa",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1210,
+          "source_chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c1::da1702e07c",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "document_id": "d69f61835b35ec05879669dc41ff57aa",
+          "rank": 1,
+          "char_start": 1400,
+          "char_end": 2100,
+          "source_chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c0::5a8d6412e5",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c1::da1702e07c",
+          "document_id": "d69f61835b35ec05879669dc41ff57aa",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1210,
+          "source_chunk_id": "d69f61835b35ec05879669dc41ff57aa::p1::c1::da1702e07c",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?\nRetrieval query:",
+  "query_formulation_raw_output": "Nielsen-NV cash and cash equivalents December 31 2019 percentage outside United States",
+  "query_formulation_latency_seconds": 4.3186,
+  "query_formulation_input_tokens": 174,
+  "query_formulation_output_tokens": 22,
+  "query_formulation_trace": {
+    "original_question": "What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?",
+    "retrieval_query": "Nielsen-NV cash and cash equivalents December 31 2019 percentage outside United States",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What percentage of Nielsen-NV's cash and cash equivalents held at December 31, 2019, was located outside the United States?\nRetrieval query:",
+    "raw_output": "Nielsen-NV cash and cash equivalents December 31 2019 percentage outside United States",
+    "latency_seconds": 4.318556300000637,
+    "input_tokens": 174,
+    "output_tokens": 22,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "84.36",
+  "gold_evidence_reference": "TAT-DQA | raw/d69f61835b35ec05879669dc41ff57aa.pdf | context_id=d69f61835b35ec05879669dc41ff57aa"
+}

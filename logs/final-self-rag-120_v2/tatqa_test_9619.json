@@ -1,0 +1,272 @@
+{
+  "question_id": "tatqa_test_9619",
+  "question": "What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?",
+  "retrieval_query": "csp-inc revenue difference Customer A Customer B billions of dollars fiscal year ended September 30 2019 2019 financial report",
+  "metadata_filters": {
+    "year": 2019,
+    "company": "csp-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c1::7acf72840d",
+      "rank": 1,
+      "dense_score": 0.7101345062255859,
+      "bm25_score": 28.710374777841338,
+      "hybrid_score": 0.9998662221638128,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7c1a0fac586f2de1336256cc0bf74e68"
+    },
+    {
+      "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+      "rank": 2,
+      "dense_score": 0.6984500885009766,
+      "bm25_score": 28.716839178535974,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7c1a0fac586f2de1336256cc0bf74e68"
+    },
+    {
+      "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c2::dbf0062280",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 9.388074776652607,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7c1a0fac586f2de1336256cc0bf74e68"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 91.9411,
+  "input_tokens": 6069,
+  "output_tokens": 76,
+  "total_tokens": 6145,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 8,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.0321,
+  "llm_latency_seconds": 91.9016,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?\nLabel:",
+      "input_tokens": 115,
+      "output_tokens": 7,
+      "latency_seconds": 3.247134199998982
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?\nEvidence:\n[1] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n30, 2018\n% of % of\nAmount Revenues Amount Revenues\n(Amounts in millions)\nCustomer A $ 3.8 5% $ 7.5 10%\nCustomer B $ 10.2 13% $ 1.1 3%\nIn addition, accounts receivable from Customer A totaled approximately $0.3 million, or 1%, and approximately $1.1\nmillion, or 9%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nAccounts receivable and long term receivable from Customer B totaled approximately $7.4 million, or 36%, and approximately\n$0.2 million, or 2%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nWe believe that the Company is not exposed to any significant credit risk with re\n\n[2] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[3] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n844\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,273 |  | $ | 847\n[/TABLE]\n\n[TABLE]\nNorth America |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nCustomer A |  | $ | 3.8 |  | 5 | % | $ | 7.5 |  | 10 | %\n[/TABLE]\nDecision:",
+      "input_tokens": 998,
+      "output_tokens": 4,
+      "latency_seconds": 16.703957699995954
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?\nEvidence:\n[1] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n30, 2018\n% of % of\nAmount Revenues Amount Revenues\n(Amounts in millions)\nCustomer A $ 3.8 5% $ 7.5 10%\nCustomer B $ 10.2 13% $ 1.1 3%\nIn addition, accounts receivable from Customer A totaled approximately $0.3 million, or 1%, and approximately $1.1\nmillion, or 9%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nAccounts receivable and long term receivable from Customer B totaled approximately $7.4 million, or 36%, and approximately\n$0.2 million, or 2%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nWe believe that the Company is not exposed to any significant credit risk with re\n\n[2] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[3] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n844\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,273 |  | $ | 847\n[/TABLE]\n\n[TABLE]\nNorth America |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nCustomer A |  | $ | 3.8 |  | 5 | % | $ | 7.5 |  | 10 | %\n[/TABLE]\nLabel:",
+      "input_tokens": 914,
+      "output_tokens": 3,
+      "latency_seconds": 15.295041899997159
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?\nEvidence:\n[1] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n30, 2018\n% of % of\nAmount Revenues Amount Revenues\n(Amounts in millions)\nCustomer A $ 3.8 5% $ 7.5 10%\nCustomer B $ 10.2 13% $ 1.1 3%\nIn addition, accounts receivable from Customer A totaled approximately $0.3 million, or 1%, and approximately $1.1\nmillion, or 9%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nAccounts receivable and long term receivable from Customer B totaled approximately $7.4 million, or 36%, and approximately\n$0.2 million, or 2%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nWe believe that the Company is not exposed to any significant credit risk with re\n\n[2] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[3] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n844\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,273 |  | $ | 847\n[/TABLE]\n\n[TABLE]\nNorth America |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nCustomer A |  | $ | 3.8 |  | 5 | % | $ | 7.5 |  | 10 | %\n[/TABLE]\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 955,
+      "output_tokens": 4,
+      "latency_seconds": 15.910927200005972
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?\nEvidence:\n[1] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n30, 2018\n% of % of\nAmount Revenues Amount Revenues\n(Amounts in millions)\nCustomer A $ 3.8 5% $ 7.5 10%\nCustomer B $ 10.2 13% $ 1.1 3%\nIn addition, accounts receivable from Customer A totaled approximately $0.3 million, or 1%, and approximately $1.1\nmillion, or 9%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nAccounts receivable and long term receivable from Customer B totaled approximately $7.4 million, or 36%, and approximately\n$0.2 million, or 2%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nWe believe that the Company is not exposed to any significant credit risk with re\n\n[2] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[3] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n844\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,273 |  | $ | 847\n[/TABLE]\n\n[TABLE]\nNorth America |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nCustomer A |  | $ | 3.8 |  | 5 | % | $ | 7.5 |  | 10 | %\n[/TABLE]\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 938,
+      "output_tokens": 11,
+      "latency_seconds": 16.18325950000144
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?\nEvidence:\n[1] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n30, 2018\n% of % of\nAmount Revenues Amount Revenues\n(Amounts in millions)\nCustomer A $ 3.8 5% $ 7.5 10%\nCustomer B $ 10.2 13% $ 1.1 3%\nIn addition, accounts receivable from Customer A totaled approximately $0.3 million, or 1%, and approximately $1.1\nmillion, or 9%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nAccounts receivable and long term receivable from Customer B totaled approximately $7.4 million, or 36%, and approximately\n$0.2 million, or 2%, of total consolidated accounts receivable as of September 30, 2019 and September 30, 2018, respectively.\nWe believe that the Company is not exposed to any significant credit risk with re\n\n[2] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\nTable of Contents\nThe following table details the Company’s sales by operating segment for fiscal years ended September 30, 2019 and\n2018. The Company’s sales by geographic area based on the location of where the products were shipped or services rendered are\nas follows:\n% of\n2019 Americas Europe Asia Total Total\n(Amounts in thousands)\nTS $ 67,228 $ 3,285 $ 646 $ 71,159 90%\nHPP 5,294 771 1,837 7,902 10%\nTotal $ 72,522 $ 4,056 $ 2,483 $ 79,061 100%\n% of Total 92% 5% 3% 100%\n2018\nTS $ 52,034 $ 9,059 $ 1,344 $ 62,437 86%\nHPP 8,424 1,266 789 10,479 14%\nTotal $ 60,458 $ 10,325 $ 2,133 $ 72,916 100%\n% of Total 83% 14% 3% 100%\nSubstantially all Americas amounts are United States.\nLong-lived assets\n\n[3] 7c1a0fac586f2de1336256cc0bf74e68.pdf p.1\n844\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,273 |  | $ | 847\n[/TABLE]\n\n[TABLE]\nNorth America |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nTotals |  | $ | 1,946 |  | $ | 1,895\n[/TABLE]\n\n[TABLE]\nCustomer A |  | $ | 3.8 |  | 5 | % | $ | 7.5 |  | 10 | %\n[/TABLE]\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 955,
+      "output_tokens": 4,
+      "latency_seconds": 2.487863100002869
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "csp-inc revenue difference Customer A Customer B billions of dollars fiscal year ended September 30 2019 2019 financial report",
+      "filters": {
+        "year": 2019,
+        "company": "csp-inc"
+      },
+      "chunk_ids": [
+        "7c1a0fac586f2de1336256cc0bf74e68::p1::c1::7acf72840d",
+        "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+        "7c1a0fac586f2de1336256cc0bf74e68::p1::c2::dbf0062280"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c1::7acf72840d",
+          "document_id": "7c1a0fac586f2de1336256cc0bf74e68",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c1::7acf72840d",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+          "document_id": "7c1a0fac586f2de1336256cc0bf74e68",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c0::2fcc9b655b",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c2::dbf0062280",
+          "document_id": "7c1a0fac586f2de1336256cc0bf74e68",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 257,
+          "source_chunk_id": "7c1a0fac586f2de1336256cc0bf74e68::p1::c2::dbf0062280",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?\nRetrieval query:",
+  "query_formulation_raw_output": "csp-inc revenue difference Customer A Customer B billions of dollars fiscal year ended September 30 2019 2019 financial report",
+  "query_formulation_latency_seconds": 4.9033,
+  "query_formulation_input_tokens": 192,
+  "query_formulation_output_tokens": 32,
+  "query_formulation_trace": {
+    "original_question": "What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?",
+    "retrieval_query": "csp-inc revenue difference Customer A Customer B billions of dollars fiscal year ended September 30 2019 2019 financial report",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the difference in billions of dollars of revenue earned from Customer A and Customer B for the fiscal year ended September 30, 2019, as reported by csp-inc in its 2019 financial report?\nRetrieval query:",
+    "raw_output": "csp-inc revenue difference Customer A Customer B billions of dollars fiscal year ended September 30 2019 2019 financial report",
+    "latency_seconds": 4.903342900004645,
+    "input_tokens": 192,
+    "output_tokens": 32,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "6.4",
+  "gold_evidence_reference": "TAT-DQA | raw/7c1a0fac586f2de1336256cc0bf74e68.pdf | context_id=7c1a0fac586f2de1336256cc0bf74e68"
+}

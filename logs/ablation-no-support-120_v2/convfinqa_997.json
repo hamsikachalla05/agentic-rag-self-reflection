@@ -1,0 +1,246 @@
+{
+  "question_id": "convfinqa_997",
+  "question": "What was the combined total of Marathon Oil's proved bitumen reserves at the beginning and end of 2008?",
+  "retrieval_query": "Marathon Oil proved bitumen reserves beginning end 2008",
+  "metadata_filters": {
+    "year": 2008,
+    "company": "Marathon Oil"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1309::p1::c0::9c4b11ba93",
+      "rank": 1,
+      "dense_score": 0.7061604857444763,
+      "bm25_score": 28.210004906241,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1309"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1309::p1::c2::c8293d7d1f",
+      "rank": 2,
+      "dense_score": 0.6876083612442017,
+      "bm25_score": 4.730366370620082,
+      "hybrid_score": 0.4758277736184269,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1309"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1309::p1::c1::1c427a72a5",
+      "rank": 3,
+      "dense_score": 0.616516649723053,
+      "bm25_score": 7.091974615509253,
+      "hybrid_score": 0.04023244636081393,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1309"
+    }
+  ],
+  "answer": "Beginning of year: 421 million barrels  \nEnd of year: 388 million barrels  \n\nCombined total = 421 + 388 = 809 million barrels  \n\nSource: convfinqa_ctx_1309.pdf p.1",
+  "latency_seconds": 56.8166,
+  "input_tokens": 2389,
+  "output_tokens": 87,
+  "total_tokens": 2476,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0783,
+  "llm_latency_seconds": 56.7361,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the combined total of Marathon Oil's proved bitumen reserves at the beginning and end of 2008?\nLabel:",
+      "input_tokens": 91,
+      "output_tokens": 7,
+      "latency_seconds": 4.376155099999778
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the combined total of Marathon Oil's proved bitumen reserves at the beginning and end of 2008?\nEvidence:\n[1] convfinqa_ctx_1309.pdf p.1\nProvedreservescanbeaddedasexpansionsarepermitted,fundingisapprovedandcertainstipulationsofthe\njointventureagreementaresatisfied.Thefollowing tablesetsforthchangesinestimatedquantitiesofnetproved\nbitumenreservesfortheyear2008.\nEstimatedQuantitiesofProvedBitumenReserves\n(Millionsofbarrels) 2008\nBeginningofyear 421\nRevisions(a) (30)\nExtensions,discoveriesandadditions 6\nProduction (9)\nEndofyear 388\n(a) Revisionsweredrivenprimarilybypriceandtheimpactofthenewroyaltyregimediscussedbelow.\nTheaboveestimatedquantityofnetprovedbitumenreservesisaforward-lookingstatementandisbasedona\nnumber of assumptions, including (among others) commodity prices, volumes in-place, presently known physical\ndata, recover\n\n[2] convfinqa_ctx_1309.pdf p.1\nweatherconditions,delays\ninobtainingorconditionsimposedbynecessarygovernmentandthird-partyapprovalsandotherriskscustomarily\nassociatedwithconstructionprojects.\nRefining,MarketingandTransportation\nRefining\nWeownandoperatesevenrefineriesintheGulfCoast,MidwestandupperGreatPlainsregionsoftheUnited\nStates with an aggregate refining capacity of 1.016 million barrels per day (“mmbpd”) of crude oil. During 2008,\n12\n\n[3] convfinqa_ctx_1309.pdf p.1\n’s Discussion and Analysis of Financial Condition and Results of Operations – Accounting\nStandardsNotYetAdoptedforadditionalinformation.\nPrior to our acquisition of Western, the first fully-integrated expansion of the existing AOSP facilities was\napproved in 2006. Expansion 1, which includes construction of mining and extraction facilities at the Jackpine\nmine,expansionoftreatmentfacilitiesattheexistingMuskegRivermine,expansionoftheScotfordupgraderand\ndevelopmentofrelatedinfrastructure,isanticipatedtobeginoperationsinlate2010or2011.WhenExpansion1is\ncomplete,wewillhavemorethan50,000bpdofnetproductionandupgradingcapacityintheCanadianoilsands.\nThetimingandscopeoffutureexpansionsanddebottlenecki\nDecision:",
+      "input_tokens": 707,
+      "output_tokens": 4,
+      "latency_seconds": 14.288728000000447
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the combined total of Marathon Oil's proved bitumen reserves at the beginning and end of 2008?\nEvidence:\n[1] convfinqa_ctx_1309.pdf p.1\nProvedreservescanbeaddedasexpansionsarepermitted,fundingisapprovedandcertainstipulationsofthe\njointventureagreementaresatisfied.Thefollowing tablesetsforthchangesinestimatedquantitiesofnetproved\nbitumenreservesfortheyear2008.\nEstimatedQuantitiesofProvedBitumenReserves\n(Millionsofbarrels) 2008\nBeginningofyear 421\nRevisions(a) (30)\nExtensions,discoveriesandadditions 6\nProduction (9)\nEndofyear 388\n(a) Revisionsweredrivenprimarilybypriceandtheimpactofthenewroyaltyregimediscussedbelow.\nTheaboveestimatedquantityofnetprovedbitumenreservesisaforward-lookingstatementandisbasedona\nnumber of assumptions, including (among others) commodity prices, volumes in-place, presently known physical\ndata, recover\n\n[2] convfinqa_ctx_1309.pdf p.1\nweatherconditions,delays\ninobtainingorconditionsimposedbynecessarygovernmentandthird-partyapprovalsandotherriskscustomarily\nassociatedwithconstructionprojects.\nRefining,MarketingandTransportation\nRefining\nWeownandoperatesevenrefineriesintheGulfCoast,MidwestandupperGreatPlainsregionsoftheUnited\nStates with an aggregate refining capacity of 1.016 million barrels per day (“mmbpd”) of crude oil. During 2008,\n12\n\n[3] convfinqa_ctx_1309.pdf p.1\n’s Discussion and Analysis of Financial Condition and Results of Operations – Accounting\nStandardsNotYetAdoptedforadditionalinformation.\nPrior to our acquisition of Western, the first fully-integrated expansion of the existing AOSP facilities was\napproved in 2006. Expansion 1, which includes construction of mining and extraction facilities at the Jackpine\nmine,expansionoftreatmentfacilitiesattheexistingMuskegRivermine,expansionoftheScotfordupgraderand\ndevelopmentofrelatedinfrastructure,isanticipatedtobeginoperationsinlate2010or2011.WhenExpansion1is\ncomplete,wewillhavemorethan50,000bpdofnetproductionandupgradingcapacityintheCanadianoilsands.\nThetimingandscopeoffutureexpansionsanddebottlenecki\nDraft:\nBeginning of year: 421 million barrels  \nEnd of year: 388 million barrels  \n\nCombined total = 421 + 388 = 809 million barrels  \n\nSource: convfinqa_ctx_1309.pdf p.1\nLabel:",
+      "input_tokens": 712,
+      "output_tokens": 3,
+      "latency_seconds": 13.815710200000467
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Marathon Oil proved bitumen reserves beginning end 2008",
+      "filters": {
+        "year": 2008,
+        "company": "Marathon Oil"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_1309::p1::c0::9c4b11ba93",
+        "convfinqa_ctx_1309::p1::c2::c8293d7d1f",
+        "convfinqa_ctx_1309::p1::c1::1c427a72a5"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1309::p1::c0::9c4b11ba93",
+          "document_id": "convfinqa_ctx_1309",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1309::p1::c0::9c4b11ba93",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1309::p1::c2::c8293d7d1f",
+          "document_id": "convfinqa_ctx_1309",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 410,
+          "source_chunk_id": "convfinqa_ctx_1309::p1::c2::c8293d7d1f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1309::p1::c1::1c427a72a5",
+          "document_id": "convfinqa_ctx_1309",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1309::p1::c1::1c427a72a5",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the combined total of Marathon Oil's proved bitumen reserves at the beginning and end of 2008?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined total of Marathon Oil's proved bitumen reserves at the beginning and end of 2008?\nRetrieval query:",
+  "query_formulation_raw_output": "Marathon Oil proved bitumen reserves beginning end 2008",
+  "query_formulation_latency_seconds": 4.9045,
+  "query_formulation_input_tokens": 168,
+  "query_formulation_output_tokens": 15,
+  "query_formulation_trace": {
+    "original_question": "What was the combined total of Marathon Oil's proved bitumen reserves at the beginning and end of 2008?",
+    "retrieval_query": "Marathon Oil proved bitumen reserves beginning end 2008",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined total of Marathon Oil's proved bitumen reserves at the beginning and end of 2008?\nRetrieval query:",
+    "raw_output": "Marathon Oil proved bitumen reserves beginning end 2008",
+    "latency_seconds": 4.904458500000146,
+    "input_tokens": 168,
+    "output_tokens": 15,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "809.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/MRO/2008/page_41.pdf | source_page=41 | context_id=convfinqa_ctx_1309"
+}

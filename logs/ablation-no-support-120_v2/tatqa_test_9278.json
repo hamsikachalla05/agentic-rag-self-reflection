@@ -1,0 +1,288 @@
+{
+  "question_id": "tatqa_test_9278",
+  "question": "What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?",
+  "retrieval_query": "Golar LNG Ltd 2019 report percentage change net earnings share other affiliates 2018 2017",
+  "metadata_filters": {
+    "company": "golar-lng-ltd"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "2da56df966a1c15057d2661ce589be1c::p1::c1::f9df070dec",
+      "rank": 1,
+      "dense_score": 0.7901900410652161,
+      "bm25_score": 26.845874755398466,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "2da56df966a1c15057d2661ce589be1c"
+    },
+    {
+      "chunk_id": "2da56df966a1c15057d2661ce589be1c::p1::c2::cb135e8b8b",
+      "rank": 2,
+      "dense_score": 0.7369469404220581,
+      "bm25_score": 26.455075281163904,
+      "hybrid_score": 0.7917764281065144,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "2da56df966a1c15057d2661ce589be1c"
+    },
+    {
+      "chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+      "rank": 3,
+      "dense_score": 0.7335993647575378,
+      "bm25_score": 19.812425031273214,
+      "hybrid_score": 0.6470312323315367,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "2da56df966a1c15057d2661ce589be1c"
+    },
+    {
+      "chunk_id": "2da56df966a1c15057d2661ce589be1c::p1::c0::f14d6e1100",
+      "rank": 4,
+      "dense_score": 0.6737106442451477,
+      "bm25_score": 9.867848984278274,
+      "hybrid_score": 0.22373495909676552,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "2da56df966a1c15057d2661ce589be1c"
+    },
+    {
+      "chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c4::69b1ee29ec",
+      "rank": 5,
+      "dense_score": 0.6735060214996338,
+      "bm25_score": 7.794474316958634,
+      "hybrid_score": 0.18171894905910374,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "2da56df966a1c15057d2661ce589be1c"
+    }
+  ],
+  "answer": "368%\n\nSource: [2] 2da56df966a1c15057d2661ce589be1c.pdf p.1, TABLE: \"Share of net earnings in other affiliates\" shows $3,711 (2018) and $793 (2017).  \nChange = 3,711 - 793 = 2,918  \n% Change = (2,918 / 793) × 100 ≈ 368%",
+  "latency_seconds": 96.6924,
+  "input_tokens": 4842,
+  "output_tokens": 214,
+  "total_tokens": 5056,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0535,
+  "llm_latency_seconds": 96.6371,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?\nLabel:",
+      "input_tokens": 107,
+      "output_tokens": 7,
+      "latency_seconds": 3.186931399999594
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": "What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?",
+      "raw_output": "RELEVANT\n\nQUERY: What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?\nEvidence:\n[1] 2da56df966a1c15057d2661ce589be1c.pdf p.1\nprofessionalandconsultancycosts.\nDepreciationandamortization:Depreciationandamortizationdecreasedby$11.0millionto$65.5millionfortheyearended\nDecember 31,2018comparedto$76.5millionforthesameperiodin2017,principallyduetoadecreaseof:\n• $7.8 million in Golar Tundra depreciation as a result of a $9.7 million catch-up charge recognized upon the vessel\nceasingtobeclassifiedasheld-for-saleinMarch2017;and\n• $3.3millionintheGandriadepreciationasshereachedtheendofherusefuleconomiclifeatDecember 31,2017,and\naccordingly,nofurtherdepreciationexpensewasrecognizedin2018.\nOtheroperatinggains:Thisrepresentsinitialamountsrecoveredinconnectionwiththeongoingarbitrationproceedingsarising\nfromthedelaysandthetermin\n\n[2] 2da56df966a1c15057d2661ce589be1c.pdf p.1\nasaresultofadilutioninour\nholding in Golar Partners due to further issuances of common units by Golar Partners in February 2017. As of December 31,\n2018, we held a 32.0% (2017: 31.8%) ownership interest in Golar Partners (including our 2% general partner interest) and\n100%ofIDRs.\n62\n\n[TABLE]\n | Decem | ber 31, |  | \n(in thousands of $) | 2018 2017 |  | Change | % Change\nShare of net earnings in Golar Partners | 7,001 | 17,702 | (10,701) | (60)%\nImpairment of investment in Golar Partners | (149,389) | — | (149,389) | 100 %\nNet loss on deemed disposal of investments in Golar\nPartners | — | (16,992) | 16,992 | 100 %\nShare of net earnings in other affiliates | 3,711 | 793 | 2,918 | 368 %\n[/TABLE\n\n[3] 2da56df966a1c15057d2661ce589be1c.pdf p.2\nThe share of net earnings in other affiliates represents our share of equity in Egyptian Company for Gas Services\nS.A.E (\"ECGS\") and Avenir LNG Limited (\"Avenir\"). During the year ended December 31, 2018 we recognized negative\ngoodwill of $3.8 million in equity in net earnings of affiliates to reflect our bargain purchase of Avenir. Refer to note 14\n\"InvestmentinAffiliates\"ofourconsolidatedfinancialstatementsincludedhereinforfurtherdetails.\nFLNGsegment\nDecember 31,\n(in thousands of $) 2018 2017 Change % Change\nTotal operating revenues 127,625 — 127,625 100 %\nVessel operating expenses (26,317) (2) (26,315) 1,315,750 %\nVoyage expenses (1,363) (121) (1,242) 1,026 %\nAdministrative expenses 175 (\n\n[4] 2da56df966a1c15057d2661ce589be1c.pdf p.1\n• $6.2 million in operating costs in relation to our vessels operating within the Cool Pool; and\n• $7.8 million of reactivation and operating costs of the Golar Viking as she was taken out of lay-up in January 2018.\nVoyage, charterhire and commission expenses: Largely relate to charterhire expenses, fuel costs associated with commercial\nwaiting time and vessel positioning costs. While a vessel is on-hire, fuel costs are typically paid by the charterer, whereas\nduring periods of commercial waiting time, fuel costs are paid by us. The increase in voyage, charterhire and commission\nexpenses of $43.3 million to $104.5 million for the year ended December 31, 2018 compared to $61.2 million for the\n\n[5] 2da56df966a1c15057d2661ce589be1c.pdf p.2\niation: Subsequent to the Customer's acceptance of the Hilli, we determined her to be operational and, therefore,\ndepreciationcommencedduringthesecondquarterof2018.\nOther operating gains: Includes the realized and unrealized gain on the oil derivative instrument. In 2018, we recognized a\nrealizedgainof $26.7 million,andanunrealizedfairvaluelossof $10.0 million,relatingtotheLTAoilderivativeinstrument\nasaresultoftheincreasedpriceofBrentCrudeduringtheyear.ThederivativeassetwasrecognizedupontheLTAbecoming\neffectiveinDecember2017.In2017,werecognizedanunrealizedfairvaluegainof$15.1million.\nFor the year ended December 31, 2018, this is partially offset by a $1.3 million write off of capitalized con\nDecision:",
+      "input_tokens": 1491,
+      "output_tokens": 48,
+      "latency_seconds": 28.673370799999248
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?\nEvidence:\n[1] 2da56df966a1c15057d2661ce589be1c.pdf p.1\nprofessionalandconsultancycosts.\nDepreciationandamortization:Depreciationandamortizationdecreasedby$11.0millionto$65.5millionfortheyearended\nDecember 31,2018comparedto$76.5millionforthesameperiodin2017,principallyduetoadecreaseof:\n• $7.8 million in Golar Tundra depreciation as a result of a $9.7 million catch-up charge recognized upon the vessel\nceasingtobeclassifiedasheld-for-saleinMarch2017;and\n• $3.3millionintheGandriadepreciationasshereachedtheendofherusefuleconomiclifeatDecember 31,2017,and\naccordingly,nofurtherdepreciationexpensewasrecognizedin2018.\nOtheroperatinggains:Thisrepresentsinitialamountsrecoveredinconnectionwiththeongoingarbitrationproceedingsarising\nfromthedelaysandthetermin\n\n[2] 2da56df966a1c15057d2661ce589be1c.pdf p.1\nasaresultofadilutioninour\nholding in Golar Partners due to further issuances of common units by Golar Partners in February 2017. As of December 31,\n2018, we held a 32.0% (2017: 31.8%) ownership interest in Golar Partners (including our 2% general partner interest) and\n100%ofIDRs.\n62\n\n[TABLE]\n | Decem | ber 31, |  | \n(in thousands of $) | 2018 2017 |  | Change | % Change\nShare of net earnings in Golar Partners | 7,001 | 17,702 | (10,701) | (60)%\nImpairment of investment in Golar Partners | (149,389) | — | (149,389) | 100 %\nNet loss on deemed disposal of investments in Golar\nPartners | — | (16,992) | 16,992 | 100 %\nShare of net earnings in other affiliates | 3,711 | 793 | 2,918 | 368 %\n[/TABLE\n\n[3] 2da56df966a1c15057d2661ce589be1c.pdf p.2\nThe share of net earnings in other affiliates represents our share of equity in Egyptian Company for Gas Services\nS.A.E (\"ECGS\") and Avenir LNG Limited (\"Avenir\"). During the year ended December 31, 2018 we recognized negative\ngoodwill of $3.8 million in equity in net earnings of affiliates to reflect our bargain purchase of Avenir. Refer to note 14\n\"InvestmentinAffiliates\"ofourconsolidatedfinancialstatementsincludedhereinforfurtherdetails.\nFLNGsegment\nDecember 31,\n(in thousands of $) 2018 2017 Change % Change\nTotal operating revenues 127,625 — 127,625 100 %\nVessel operating expenses (26,317) (2) (26,315) 1,315,750 %\nVoyage expenses (1,363) (121) (1,242) 1,026 %\nAdministrative expenses 175 (\n\n[4] 2da56df966a1c15057d2661ce589be1c.pdf p.1\n• $6.2 million in operating costs in relation to our vessels operating within the Cool Pool; and\n• $7.8 million of reactivation and operating costs of the Golar Viking as she was taken out of lay-up in January 2018.\nVoyage, charterhire and commission expenses: Largely relate to charterhire expenses, fuel costs associated with commercial\nwaiting time and vessel positioning costs. While a vessel is on-hire, fuel costs are typically paid by the charterer, whereas\nduring periods of commercial waiting time, fuel costs are paid by us. The increase in voyage, charterhire and commission\nexpenses of $43.3 million to $104.5 million for the year ended December 31, 2018 compared to $61.2 million for the\n\n[5] 2da56df966a1c15057d2661ce589be1c.pdf p.2\niation: Subsequent to the Customer's acceptance of the Hilli, we determined her to be operational and, therefore,\ndepreciationcommencedduringthesecondquarterof2018.\nOther operating gains: Includes the realized and unrealized gain on the oil derivative instrument. In 2018, we recognized a\nrealizedgainof $26.7 million,andanunrealizedfairvaluelossof $10.0 million,relatingtotheLTAoilderivativeinstrument\nasaresultoftheincreasedpriceofBrentCrudeduringtheyear.ThederivativeassetwasrecognizedupontheLTAbecoming\neffectiveinDecember2017.In2017,werecognizedanunrealizedfairvaluegainof$15.1million.\nFor the year ended December 31, 2018, this is partially offset by a $1.3 million write off of capitalized con\nDraft:\n368%\n\nSource: [2] 2da56df966a1c15057d2661ce589be1c.pdf p.1, TABLE: \"Share of net earnings in other affiliates\" shows $3,711 (2018) and $793 (2017).  \nChange = 3,711 - 793 = 2,918  \n% Change = (2,918 / 793) × 100 ≈ 368%\nLabel:",
+      "input_tokens": 1565,
+      "output_tokens": 3,
+      "latency_seconds": 25.755516700000953
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Golar LNG Ltd 2019 report percentage change net earnings share other affiliates 2018 2017",
+      "filters": {
+        "company": "golar-lng-ltd"
+      },
+      "chunk_ids": [
+        "2da56df966a1c15057d2661ce589be1c::p1::c1::f9df070dec",
+        "2da56df966a1c15057d2661ce589be1c::p1::c2::cb135e8b8b",
+        "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+        "2da56df966a1c15057d2661ce589be1c::p1::c0::f14d6e1100",
+        "2da56df966a1c15057d2661ce589be1c::p2::c4::69b1ee29ec"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "2da56df966a1c15057d2661ce589be1c::p1::c1::f9df070dec",
+          "document_id": "2da56df966a1c15057d2661ce589be1c",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "2da56df966a1c15057d2661ce589be1c::p1::c1::f9df070dec",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "2da56df966a1c15057d2661ce589be1c::p1::c2::cb135e8b8b",
+          "document_id": "2da56df966a1c15057d2661ce589be1c",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "2da56df966a1c15057d2661ce589be1c::p1::c2::cb135e8b8b",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+          "document_id": "2da56df966a1c15057d2661ce589be1c",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c3::4ddcede659",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "2da56df966a1c15057d2661ce589be1c::p1::c0::f14d6e1100",
+          "document_id": "2da56df966a1c15057d2661ce589be1c",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "2da56df966a1c15057d2661ce589be1c::p1::c0::f14d6e1100",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c4::69b1ee29ec",
+          "document_id": "2da56df966a1c15057d2661ce589be1c",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "2da56df966a1c15057d2661ce589be1c::p2::c4::69b1ee29ec",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?\nRetrieval query:",
+  "query_formulation_raw_output": "Golar LNG Ltd 2019 report percentage change net earnings share other affiliates 2018 2017",
+  "query_formulation_latency_seconds": 4.574,
+  "query_formulation_input_tokens": 184,
+  "query_formulation_output_tokens": 28,
+  "query_formulation_trace": {
+    "original_question": "What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?",
+    "retrieval_query": "Golar LNG Ltd 2019 report percentage change net earnings share other affiliates 2018 2017",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage change in the share of net earnings in other affiliates between 2018 and 2017, according to Golar LNG Ltd's 2019 report?\nRetrieval query:",
+    "raw_output": "Golar LNG Ltd 2019 report percentage change net earnings share other affiliates 2018 2017",
+    "latency_seconds": 4.573956800000815,
+    "input_tokens": 184,
+    "output_tokens": 28,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "367.97",
+  "gold_evidence_reference": "TAT-DQA | raw/2da56df966a1c15057d2661ce589be1c.pdf | context_id=2da56df966a1c15057d2661ce589be1c"
+}

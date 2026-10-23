@@ -1,0 +1,288 @@
+{
+  "question_id": "tatqa_test_9447",
+  "question": "What is the percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019, as reported in the company's 2019 financial statement?",
+  "retrieval_query": "percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019 in the company's 2019 financial statement",
+  "metadata_filters": {
+    "company": "consolidated-communications-holdings-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "52e6a43255d7a284a287057e708a426d::p2::c2::8a40fff1ff",
+      "rank": 1,
+      "dense_score": 0.7311245799064636,
+      "bm25_score": 39.78891776022079,
+      "hybrid_score": 1.0,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "52e6a43255d7a284a287057e708a426d"
+    },
+    {
+      "chunk_id": "52e6a43255d7a284a287057e708a426d::p2::c3::4283a2fe38",
+      "rank": 2,
+      "dense_score": 0.6577306389808655,
+      "bm25_score": 28.438656299618685,
+      "hybrid_score": 0.39228051910319783,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "52e6a43255d7a284a287057e708a426d"
+    },
+    {
+      "chunk_id": "52e6a43255d7a284a287057e708a426d::p2::c4::fcec4d17f4",
+      "rank": 3,
+      "dense_score": 0.6864821314811707,
+      "bm25_score": 4.439027368685626,
+      "hybrid_score": 0.30847039361650364,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "52e6a43255d7a284a287057e708a426d"
+    },
+    {
+      "chunk_id": "52e6a43255d7a284a287057e708a426d::p1::c0::ce786ce492",
+      "rank": 4,
+      "dense_score": null,
+      "bm25_score": 29.308297176856406,
+      "hybrid_score": 0.2814070372803865,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "52e6a43255d7a284a287057e708a426d"
+    },
+    {
+      "chunk_id": "52e6a43255d7a284a287057e708a426d::p1::c1::a1e4592e4f",
+      "rank": 5,
+      "dense_score": 0.6392455101013184,
+      "bm25_score": 16.148356742794466,
+      "hybrid_score": 0.1324963584827719,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "52e6a43255d7a284a287057e708a426d"
+    }
+  ],
+  "answer": "The earnings allocated to participating securities in 2018 were $810 (thousands), and in 2019 were $462 (thousands).  \n\nPercentage decrease = [(810 - 462) / 810] × 100 = (348 / 810) × 100 ≈ 42.96%  \n\nSource: 52e6a43255d7a284a287057e708a426d.pdf p.2  \n\nAnswer: 42.96%",
+  "latency_seconds": 114.9235,
+  "input_tokens": 5205,
+  "output_tokens": 188,
+  "total_tokens": 5393,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0998,
+  "llm_latency_seconds": 114.8218,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019, as reported in the company's 2019 financial statement?\nEvidence:\n[1] 52e6a43255d7a284a287057e708a426d.pdf p.2\nTable of Contents\nThe computation of basic and diluted EPS attributable to common shareholders computed using the two-class method is as\nfollows:\n(In thousands, except per share amounts) 2019 2018 2017\nNet income (loss) $ (19,931) $ (50,571) $ 65,299\nLess: net income attributable to noncontrolling interest 452 263 354\nIncome (loss) attributable to common shareholders before allocation of earnings to\nparticipating securities (20,383) (50,834) 64,945\nLess: earnings allocated to participating securities 462 810 362\nNet income (loss) attributable to common shareholders, after earnings allocated to\nparticipating securities $ (20,845) $ (51,644) $ 64,583\nWeighted-average number of common shares ou\n\n[2] 52e6a43255d7a284a287057e708a426d.pdf p.2\nThe results of operations of FairPoint have been reported in our consolidated financial statements as of the effective date of\nthe acquisition. For the year ended December 31, 2017, FairPoint contributed operating revenues of $389.5 million and net\nincome of $22.7 million, which included $12.3 million in acquisition related costs.\nUnaudited Pro Forma Results\nThe following unaudited pro forma information presents our results of operations as if the acquisition of FairPoint occurred\non January 1, 2016. The adjustments to arrive at the pro forma information below included adjustments for depreciation and\namortization on the acquired tangible and intangible assets acquired, interest expense on t\n\n[3] 52e6a43255d7a284a287057e708a426d.pdf p.2\n70,837 |  |  | 70,613 |  |  | 60,373 | \n[/TABLE]\n\n[TABLE]\nNet income (loss) per common share attributable to common shareholders - basic\nand diluted |  | $ | (0.29) |  | $ | (0.73) |  | $ | 1.07 | \n[/TABLE]\n\n[TABLE]\nOperating revenues |  | $ | 1,460,620\n[/TABLE]\n\n[TABLE]\nNet income |  | $ | 91,131\n[/TABLE]\n\n[TABLE]\nNet income attributable to common stockholders |  | $ | 90,777\n[/TABLE]\n\n[TABLE]\nNet income per common share-basic and diluted |  | $ | 1.29\n[/TABLE]\n\n[4] 52e6a43255d7a284a287057e708a426d.pdf p.1\nTable of Contents\ncustomer life as the option to renew without paying an upfront fee provides the customer with a material right. During the\nyears ended December 31, 2019 and 2018, the Company deferred and recognized revenues of $397.5 million and $354.2\nmillion, respectively.\nA receivable is recognized in the period the Company provides goods or services when the Company’s right to consideration\nis unconditional. Payment terms on invoiced amounts are generally 30 to 60 days.\nPerformance Obligations\nASC 606, Revenue from Contracts with Customers (“ASC 606”), requires that the Company disclose the aggregate amount of\nthe transaction price that is allocated to remaining performance obligations\n\n[5] 52e6a43255d7a284a287057e708a426d.pdf p.1\ning term.\nThe potentially dilutive impact of the Company’s restricted stock awards is determined using the treasury stock method.\nUnder the treasury stock method, if the average market price during the period exceeds the exercise price, these instruments\nare treated as if they had been exercised with the proceeds of exercise used to repurchase common stock at the average\nmarket price during the period. Any incremental difference between the assumed number of shares issued and repurchased is\nincluded in the diluted share computation.\nDiluted EPS includes securities that could potentially dilute basic EPS during a reporting period. Dilutive securities are not\nincluded in the computation of los\nDecision:",
+      "input_tokens": 1253,
+      "output_tokens": 4,
+      "latency_seconds": 23.424502899999425
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019, as reported in the company's 2019 financial statement?\nEvidence:\n[1] 52e6a43255d7a284a287057e708a426d.pdf p.2\nTable of Contents\nThe computation of basic and diluted EPS attributable to common shareholders computed using the two-class method is as\nfollows:\n(In thousands, except per share amounts) 2019 2018 2017\nNet income (loss) $ (19,931) $ (50,571) $ 65,299\nLess: net income attributable to noncontrolling interest 452 263 354\nIncome (loss) attributable to common shareholders before allocation of earnings to\nparticipating securities (20,383) (50,834) 64,945\nLess: earnings allocated to participating securities 462 810 362\nNet income (loss) attributable to common shareholders, after earnings allocated to\nparticipating securities $ (20,845) $ (51,644) $ 64,583\nWeighted-average number of common shares ou\n\n[2] 52e6a43255d7a284a287057e708a426d.pdf p.2\nThe results of operations of FairPoint have been reported in our consolidated financial statements as of the effective date of\nthe acquisition. For the year ended December 31, 2017, FairPoint contributed operating revenues of $389.5 million and net\nincome of $22.7 million, which included $12.3 million in acquisition related costs.\nUnaudited Pro Forma Results\nThe following unaudited pro forma information presents our results of operations as if the acquisition of FairPoint occurred\non January 1, 2016. The adjustments to arrive at the pro forma information below included adjustments for depreciation and\namortization on the acquired tangible and intangible assets acquired, interest expense on t\n\n[3] 52e6a43255d7a284a287057e708a426d.pdf p.2\n70,837 |  |  | 70,613 |  |  | 60,373 | \n[/TABLE]\n\n[TABLE]\nNet income (loss) per common share attributable to common shareholders - basic\nand diluted |  | $ | (0.29) |  | $ | (0.73) |  | $ | 1.07 | \n[/TABLE]\n\n[TABLE]\nOperating revenues |  | $ | 1,460,620\n[/TABLE]\n\n[TABLE]\nNet income |  | $ | 91,131\n[/TABLE]\n\n[TABLE]\nNet income attributable to common stockholders |  | $ | 90,777\n[/TABLE]\n\n[TABLE]\nNet income per common share-basic and diluted |  | $ | 1.29\n[/TABLE]\n\n[4] 52e6a43255d7a284a287057e708a426d.pdf p.1\nTable of Contents\ncustomer life as the option to renew without paying an upfront fee provides the customer with a material right. During the\nyears ended December 31, 2019 and 2018, the Company deferred and recognized revenues of $397.5 million and $354.2\nmillion, respectively.\nA receivable is recognized in the period the Company provides goods or services when the Company’s right to consideration\nis unconditional. Payment terms on invoiced amounts are generally 30 to 60 days.\nPerformance Obligations\nASC 606, Revenue from Contracts with Customers (“ASC 606”), requires that the Company disclose the aggregate amount of\nthe transaction price that is allocated to remaining performance obligations\n\n[5] 52e6a43255d7a284a287057e708a426d.pdf p.1\ning term.\nThe potentially dilutive impact of the Company’s restricted stock awards is determined using the treasury stock method.\nUnder the treasury stock method, if the average market price during the period exceeds the exercise price, these instruments\nare treated as if they had been exercised with the proceeds of exercise used to repurchase common stock at the average\nmarket price during the period. Any incremental difference between the assumed number of shares issued and repurchased is\nincluded in the diluted share computation.\nDiluted EPS includes securities that could potentially dilute basic EPS during a reporting period. Dilutive securities are not\nincluded in the computation of los\nLabel:",
+      "input_tokens": 1169,
+      "output_tokens": 3,
+      "latency_seconds": 21.42652629999975
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019, as reported in the company's 2019 financial statement?\nEvidence:\n[1] 52e6a43255d7a284a287057e708a426d.pdf p.2\nTable of Contents\nThe computation of basic and diluted EPS attributable to common shareholders computed using the two-class method is as\nfollows:\n(In thousands, except per share amounts) 2019 2018 2017\nNet income (loss) $ (19,931) $ (50,571) $ 65,299\nLess: net income attributable to noncontrolling interest 452 263 354\nIncome (loss) attributable to common shareholders before allocation of earnings to\nparticipating securities (20,383) (50,834) 64,945\nLess: earnings allocated to participating securities 462 810 362\nNet income (loss) attributable to common shareholders, after earnings allocated to\nparticipating securities $ (20,845) $ (51,644) $ 64,583\nWeighted-average number of common shares ou\n\n[2] 52e6a43255d7a284a287057e708a426d.pdf p.2\nThe results of operations of FairPoint have been reported in our consolidated financial statements as of the effective date of\nthe acquisition. For the year ended December 31, 2017, FairPoint contributed operating revenues of $389.5 million and net\nincome of $22.7 million, which included $12.3 million in acquisition related costs.\nUnaudited Pro Forma Results\nThe following unaudited pro forma information presents our results of operations as if the acquisition of FairPoint occurred\non January 1, 2016. The adjustments to arrive at the pro forma information below included adjustments for depreciation and\namortization on the acquired tangible and intangible assets acquired, interest expense on t\n\n[3] 52e6a43255d7a284a287057e708a426d.pdf p.2\n70,837 |  |  | 70,613 |  |  | 60,373 | \n[/TABLE]\n\n[TABLE]\nNet income (loss) per common share attributable to common shareholders - basic\nand diluted |  | $ | (0.29) |  | $ | (0.73) |  | $ | 1.07 | \n[/TABLE]\n\n[TABLE]\nOperating revenues |  | $ | 1,460,620\n[/TABLE]\n\n[TABLE]\nNet income |  | $ | 91,131\n[/TABLE]\n\n[TABLE]\nNet income attributable to common stockholders |  | $ | 90,777\n[/TABLE]\n\n[TABLE]\nNet income per common share-basic and diluted |  | $ | 1.29\n[/TABLE]\n\n[4] 52e6a43255d7a284a287057e708a426d.pdf p.1\nTable of Contents\ncustomer life as the option to renew without paying an upfront fee provides the customer with a material right. During the\nyears ended December 31, 2019 and 2018, the Company deferred and recognized revenues of $397.5 million and $354.2\nmillion, respectively.\nA receivable is recognized in the period the Company provides goods or services when the Company’s right to consideration\nis unconditional. Payment terms on invoiced amounts are generally 30 to 60 days.\nPerformance Obligations\nASC 606, Revenue from Contracts with Customers (“ASC 606”), requires that the Company disclose the aggregate amount of\nthe transaction price that is allocated to remaining performance obligations\n\n[5] 52e6a43255d7a284a287057e708a426d.pdf p.1\ning term.\nThe potentially dilutive impact of the Company’s restricted stock awards is determined using the treasury stock method.\nUnder the treasury stock method, if the average market price during the period exceeds the exercise price, these instruments\nare treated as if they had been exercised with the proceeds of exercise used to repurchase common stock at the average\nmarket price during the period. Any incremental difference between the assumed number of shares issued and repurchased is\nincluded in the diluted share computation.\nDiluted EPS includes securities that could potentially dilute basic EPS during a reporting period. Dilutive securities are not\nincluded in the computation of los\nDraft:\nThe earnings allocated to participating securities in 2018 were $810 (thousands), and in 2019 were $462 (thousands).  \n\nPercentage decrease = [(810 - 462) / 810] × 100 = (348 / 810) × 100 ≈ 42.96%  \n\nSource: 52e6a43255d7a284a287057e708a426d.pdf p.2  \n\nAnswer: 42.96%\nLabel:",
+      "input_tokens": 1337,
+      "output_tokens": 3,
+      "latency_seconds": 24.805376199999955
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019 in the company's 2019 financial statement",
+      "filters": {
+        "company": "consolidated-communications-holdings-inc"
+      },
+      "chunk_ids": [
+        "52e6a43255d7a284a287057e708a426d::p2::c2::8a40fff1ff",
+        "52e6a43255d7a284a287057e708a426d::p2::c3::4283a2fe38",
+        "52e6a43255d7a284a287057e708a426d::p2::c4::fcec4d17f4",
+        "52e6a43255d7a284a287057e708a426d::p1::c0::ce786ce492",
+        "52e6a43255d7a284a287057e708a426d::p1::c1::a1e4592e4f"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "52e6a43255d7a284a287057e708a426d::p2::c2::8a40fff1ff",
+          "document_id": "52e6a43255d7a284a287057e708a426d",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "52e6a43255d7a284a287057e708a426d::p2::c2::8a40fff1ff",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "52e6a43255d7a284a287057e708a426d::p2::c3::4283a2fe38",
+          "document_id": "52e6a43255d7a284a287057e708a426d",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "52e6a43255d7a284a287057e708a426d::p2::c3::4283a2fe38",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "52e6a43255d7a284a287057e708a426d::p2::c4::fcec4d17f4",
+          "document_id": "52e6a43255d7a284a287057e708a426d",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 466,
+          "source_chunk_id": "52e6a43255d7a284a287057e708a426d::p2::c4::fcec4d17f4",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "52e6a43255d7a284a287057e708a426d::p1::c0::ce786ce492",
+          "document_id": "52e6a43255d7a284a287057e708a426d",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "52e6a43255d7a284a287057e708a426d::p1::c0::ce786ce492",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "52e6a43255d7a284a287057e708a426d::p1::c1::a1e4592e4f",
+          "document_id": "52e6a43255d7a284a287057e708a426d",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "52e6a43255d7a284a287057e708a426d::p1::c1::a1e4592e4f",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019, as reported in the company's 2019 financial statement?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019, as reported in the company's 2019 financial statement?\nRetrieval query:",
+  "query_formulation_raw_output": "percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019 in the company's 2019 financial statement",
+  "query_formulation_latency_seconds": 7.4598,
+  "query_formulation_input_tokens": 189,
+  "query_formulation_output_tokens": 40,
+  "query_formulation_trace": {
+    "original_question": "What is the percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019, as reported in the company's 2019 financial statement?",
+    "retrieval_query": "percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019 in the company's 2019 financial statement",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019, as reported in the company's 2019 financial statement?\nRetrieval query:",
+    "raw_output": "percentage decrease in earnings allocated to participating securities for Consolidated Communications Holdings, Inc. from 2018 to 2019 in the company's 2019 financial statement",
+    "latency_seconds": 7.459794799999145,
+    "input_tokens": 189,
+    "output_tokens": 40,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "-42.96",
+  "gold_evidence_reference": "TAT-DQA | raw/52e6a43255d7a284a287057e708a426d.pdf | context_id=52e6a43255d7a284a287057e708a426d"
+}

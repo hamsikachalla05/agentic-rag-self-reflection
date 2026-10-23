@@ -1,0 +1,388 @@
+{
+  "question_id": "convfinqa_2440",
+  "question": "What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?",
+  "retrieval_query": "What was the balance of Stockholders' Equity derivative instruments as of December 31, 2006?",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1595::p1::c0::b4038c2e10",
+      "rank": 1,
+      "dense_score": 0.7418593168258667,
+      "bm25_score": 36.184861612251844,
+      "hybrid_score": 0.9675803049223584,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1595"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+      "rank": 2,
+      "dense_score": 0.7445982694625854,
+      "bm25_score": null,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_11"
+    },
+    {
+      "chunk_id": "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87",
+      "rank": 3,
+      "dense_score": 0.7322274446487427,
+      "bm25_score": null,
+      "hybrid_score": 0.4535723608553629,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "9d473b9c09cabed1386df42ab20f4869"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_622::p1::c0::42086026f7",
+      "rank": 4,
+      "dense_score": 0.7153513431549072,
+      "bm25_score": 23.816031370238925,
+      "hybrid_score": 0.42191192674562533,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_622"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+      "rank": 5,
+      "dense_score": 0.7251046895980835,
+      "bm25_score": 15.082522636782434,
+      "hybrid_score": 0.3736112046961507,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_622"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 125.3018,
+  "input_tokens": 7254,
+  "output_tokens": 121,
+  "total_tokens": 7375,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 8,
+  "number_of_retrieval_iterations": 2,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "IRRELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.0581,
+  "llm_latency_seconds": 125.2407,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nLabel:",
+      "input_tokens": 95,
+      "output_tokens": 7,
+      "latency_seconds": 4.631870499999877
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": "What was the balance of Stockholders' Equity derivative instruments as of December 31, 2006?",
+      "raw_output": "IRRELEVANT\nQUERY: What was the balance of Stockholders' Equity derivative instruments as of December 31, 2006?",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nEvidence:\n[1] convfinqa_ctx_1595.pdf p.1\n94\nThe fair value of the Interest Agreements at December 31, 2007 and December 31, 2006 was $3 million and\n$1 million, respectively.\nThe Company is exposed to credit loss in the event of nonperformance by the counterparties to its swap\ncontracts. The Company minimizes its credit risk on these transactions by only dealing with leading, creditworthy\nfinancial institutions and does not anticipate nonperformance. In addition, the contracts are distributed among\nseveral financial institutions, all of whom presently have investment grade credit ratings, thus minimizing credit\nrisk concentration.\nStockholders’ Equity\nDerivative instruments activity, net of tax, included in Non-owner changes to equi\n\n[2] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[3] convfinqa_ctx_622.pdf p.1\nFIDELITY NATIONAL INFORMATION SERVICES, INC.\nAND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS - (Continued)\nContingent consideration liabilities recorded in connection with business acquisitions must also be adjusted for changes in fair value\nuntil settled. See Note 3 for discussion of The Capital Markets Company BVBA (\"Capco\") contingent consideration liability.\n(d)Derivative Financial Instruments\nThe Company accounts for derivative financial instruments in accordance with Financial Accounting Standards Board Accounting\nStandards Codification (“FASB ASC”) Topic 815, Derivatives and Hedgingg . During 2016, 2015 and 2014, the Company engaged in\nhedging activities relating to its va\n\n[4] finqa_test_ctx_92.pdf p.1\ndetermined the fair value of our long-term debt using\nLevel 2 inputs. Fair values are generally estimated based on quoted market prices for identical or similar instruments.\nNote 20. Capital Stock\nPreferred Stock\nOur Second Amended and Restated Certificate of Incorporation authorizes the issuance of up to 920,000 shares of preferred stock.\nOn June 7, 2016, we redeemed all 80,000 outstanding shares of our Series A Preferred Stock for $8.3 billion. We funded this redemption primarily through the\nissuance of long-term debt in May 2016, as well as other sources of liquidity, including our U.S. commercial paper program, U.S. securitization program, and\ncash on hand. In connection with the redempt\n\n[5] 9d473b9c09cabed1386df42ab20f4869.pdf p.1\nThe following table summarizes nonvested common stock activity as of December 31, 2019 and for the year then\nended:\nWeighted\nAverage\nGrant-Date\nNonvestedCommonStock Shares(000s) FairValue\nBalanceatthebeginningoftheperiod 8 $ 29.01\nGranted 16 $ 29.10\nVested (11) $ 28.89\nForfeitedorexpired (2) $ 29.16\nBalanceattheendoftheperiod 11 $ 29.24\nThe following table summarizes information regarding shares of common stock granted and vested (in thousands,\nexceptpercommonstockamounts):\nYearsEndedDecember31,\n2019 2018 2017\nNumberofsharesofcommonstockgranted 16 16 13\nWeightedaveragegrant-datefairvaluepercommonstock $ 29.10 $ 28.48 $ 30.49\nFairvalueofcommonstockvested $ 320 $ 315 $ 334\nCashusedtosettletheo\nDecision:",
+      "input_tokens": 1194,
+      "output_tokens": 32,
+      "latency_seconds": 25.05802360000007
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "IRRELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": "What was the balance of Stockholders' Equity derivative instruments as of December 31, 2006?",
+      "raw_output": "IRRELEVANT\nQUERY: What was the balance of Stockholders' Equity derivative instruments as of December 31, 2006?",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nEvidence:\n[1] convfinqa_ctx_1595.pdf p.1\n94\nThe fair value of the Interest Agreements at December 31, 2007 and December 31, 2006 was $3 million and\n$1 million, respectively.\nThe Company is exposed to credit loss in the event of nonperformance by the counterparties to its swap\ncontracts. The Company minimizes its credit risk on these transactions by only dealing with leading, creditworthy\nfinancial institutions and does not anticipate nonperformance. In addition, the contracts are distributed among\nseveral financial institutions, all of whom presently have investment grade credit ratings, thus minimizing credit\nrisk concentration.\nStockholders’ Equity\nDerivative instruments activity, net of tax, included in Non-owner changes to equi\n\n[2] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[3] 9d473b9c09cabed1386df42ab20f4869.pdf p.1\nThe following table summarizes nonvested common stock activity as of December 31, 2019 and for the year then\nended:\nWeighted\nAverage\nGrant-Date\nNonvestedCommonStock Shares(000s) FairValue\nBalanceatthebeginningoftheperiod 8 $ 29.01\nGranted 16 $ 29.10\nVested (11) $ 28.89\nForfeitedorexpired (2) $ 29.16\nBalanceattheendoftheperiod 11 $ 29.24\nThe following table summarizes information regarding shares of common stock granted and vested (in thousands,\nexceptpercommonstockamounts):\nYearsEndedDecember31,\n2019 2018 2017\nNumberofsharesofcommonstockgranted 16 16 13\nWeightedaveragegrant-datefairvaluepercommonstock $ 29.10 $ 28.48 $ 30.49\nFairvalueofcommonstockvested $ 320 $ 315 $ 334\nCashusedtosettletheo\n\n[4] convfinqa_ctx_622.pdf p.1\nFIDELITY NATIONAL INFORMATION SERVICES, INC.\nAND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS - (Continued)\nContingent consideration liabilities recorded in connection with business acquisitions must also be adjusted for changes in fair value\nuntil settled. See Note 3 for discussion of The Capital Markets Company BVBA (\"Capco\") contingent consideration liability.\n(d)Derivative Financial Instruments\nThe Company accounts for derivative financial instruments in accordance with Financial Accounting Standards Board Accounting\nStandards Codification (“FASB ASC”) Topic 815, Derivatives and Hedgingg . During 2016, 2015 and 2014, the Company engaged in\nhedging activities relating to its va\n\n[5] convfinqa_ctx_622.pdf p.1\nAs of December 31, 2016 and 2015, the notional amount of these derivativeswas approximately $143 million aaand\n$81 million, respectively, and the fair value was nominal. These derivatives have not been designated as hedges for accounting purposes.\nWe also use currency forward contracts to manage our exposure tofluctuations in costs caused by variations in Indian Rupee (\"IIINR\")\nexchange rates. As of December 31, 2016, the notional amount of these derivatives was approximately $7 million and the fair vallue was\nless than $1 million, which is included in Prepaid Expenses and Other Current Assets in the Consolidated Balance Sheets. TheseINR\nforward contracts are designated as cash flow hedges.\nDecision:",
+      "input_tokens": 1187,
+      "output_tokens": 32,
+      "latency_seconds": 17.48526300000003
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nEvidence:\n[1] convfinqa_ctx_1595.pdf p.1\n94\nThe fair value of the Interest Agreements at December 31, 2007 and December 31, 2006 was $3 million and\n$1 million, respectively.\nThe Company is exposed to credit loss in the event of nonperformance by the counterparties to its swap\ncontracts. The Company minimizes its credit risk on these transactions by only dealing with leading, creditworthy\nfinancial institutions and does not anticipate nonperformance. In addition, the contracts are distributed among\nseveral financial institutions, all of whom presently have investment grade credit ratings, thus minimizing credit\nrisk concentration.\nStockholders’ Equity\nDerivative instruments activity, net of tax, included in Non-owner changes to equi\n\n[2] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[3] 9d473b9c09cabed1386df42ab20f4869.pdf p.1\nThe following table summarizes nonvested common stock activity as of December 31, 2019 and for the year then\nended:\nWeighted\nAverage\nGrant-Date\nNonvestedCommonStock Shares(000s) FairValue\nBalanceatthebeginningoftheperiod 8 $ 29.01\nGranted 16 $ 29.10\nVested (11) $ 28.89\nForfeitedorexpired (2) $ 29.16\nBalanceattheendoftheperiod 11 $ 29.24\nThe following table summarizes information regarding shares of common stock granted and vested (in thousands,\nexceptpercommonstockamounts):\nYearsEndedDecember31,\n2019 2018 2017\nNumberofsharesofcommonstockgranted 16 16 13\nWeightedaveragegrant-datefairvaluepercommonstock $ 29.10 $ 28.48 $ 30.49\nFairvalueofcommonstockvested $ 320 $ 315 $ 334\nCashusedtosettletheo\n\n[4] convfinqa_ctx_622.pdf p.1\nFIDELITY NATIONAL INFORMATION SERVICES, INC.\nAND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS - (Continued)\nContingent consideration liabilities recorded in connection with business acquisitions must also be adjusted for changes in fair value\nuntil settled. See Note 3 for discussion of The Capital Markets Company BVBA (\"Capco\") contingent consideration liability.\n(d)Derivative Financial Instruments\nThe Company accounts for derivative financial instruments in accordance with Financial Accounting Standards Board Accounting\nStandards Codification (“FASB ASC”) Topic 815, Derivatives and Hedgingg . During 2016, 2015 and 2014, the Company engaged in\nhedging activities relating to its va\n\n[5] convfinqa_ctx_622.pdf p.1\nAs of December 31, 2016 and 2015, the notional amount of these derivativeswas approximately $143 million aaand\n$81 million, respectively, and the fair value was nominal. These derivatives have not been designated as hedges for accounting purposes.\nWe also use currency forward contracts to manage our exposure tofluctuations in costs caused by variations in Indian Rupee (\"IIINR\")\nexchange rates. As of December 31, 2016, the notional amount of these derivatives was approximately $7 million and the fair vallue was\nless than $1 million, which is included in Prepaid Expenses and Other Current Assets in the Consolidated Balance Sheets. TheseINR\nforward contracts are designated as cash flow hedges.\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1144,
+      "output_tokens": 4,
+      "latency_seconds": 22.19065929999988
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nEvidence:\n[1] convfinqa_ctx_1595.pdf p.1\n94\nThe fair value of the Interest Agreements at December 31, 2007 and December 31, 2006 was $3 million and\n$1 million, respectively.\nThe Company is exposed to credit loss in the event of nonperformance by the counterparties to its swap\ncontracts. The Company minimizes its credit risk on these transactions by only dealing with leading, creditworthy\nfinancial institutions and does not anticipate nonperformance. In addition, the contracts are distributed among\nseveral financial institutions, all of whom presently have investment grade credit ratings, thus minimizing credit\nrisk concentration.\nStockholders’ Equity\nDerivative instruments activity, net of tax, included in Non-owner changes to equi\n\n[2] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[3] 9d473b9c09cabed1386df42ab20f4869.pdf p.1\nThe following table summarizes nonvested common stock activity as of December 31, 2019 and for the year then\nended:\nWeighted\nAverage\nGrant-Date\nNonvestedCommonStock Shares(000s) FairValue\nBalanceatthebeginningoftheperiod 8 $ 29.01\nGranted 16 $ 29.10\nVested (11) $ 28.89\nForfeitedorexpired (2) $ 29.16\nBalanceattheendoftheperiod 11 $ 29.24\nThe following table summarizes information regarding shares of common stock granted and vested (in thousands,\nexceptpercommonstockamounts):\nYearsEndedDecember31,\n2019 2018 2017\nNumberofsharesofcommonstockgranted 16 16 13\nWeightedaveragegrant-datefairvaluepercommonstock $ 29.10 $ 28.48 $ 30.49\nFairvalueofcommonstockvested $ 320 $ 315 $ 334\nCashusedtosettletheo\n\n[4] convfinqa_ctx_622.pdf p.1\nFIDELITY NATIONAL INFORMATION SERVICES, INC.\nAND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS - (Continued)\nContingent consideration liabilities recorded in connection with business acquisitions must also be adjusted for changes in fair value\nuntil settled. See Note 3 for discussion of The Capital Markets Company BVBA (\"Capco\") contingent consideration liability.\n(d)Derivative Financial Instruments\nThe Company accounts for derivative financial instruments in accordance with Financial Accounting Standards Board Accounting\nStandards Codification (“FASB ASC”) Topic 815, Derivatives and Hedgingg . During 2016, 2015 and 2014, the Company engaged in\nhedging activities relating to its va\n\n[5] convfinqa_ctx_622.pdf p.1\nAs of December 31, 2016 and 2015, the notional amount of these derivativeswas approximately $143 million aaand\n$81 million, respectively, and the fair value was nominal. These derivatives have not been designated as hedges for accounting purposes.\nWe also use currency forward contracts to manage our exposure tofluctuations in costs caused by variations in Indian Rupee (\"IIINR\")\nexchange rates. As of December 31, 2016, the notional amount of these derivatives was approximately $7 million and the fair vallue was\nless than $1 million, which is included in Prepaid Expenses and Other Current Assets in the Consolidated Balance Sheets. TheseINR\nforward contracts are designated as cash flow hedges.\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 1127,
+      "output_tokens": 11,
+      "latency_seconds": 22.472985899999912
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nEvidence:\n[1] convfinqa_ctx_1595.pdf p.1\n94\nThe fair value of the Interest Agreements at December 31, 2007 and December 31, 2006 was $3 million and\n$1 million, respectively.\nThe Company is exposed to credit loss in the event of nonperformance by the counterparties to its swap\ncontracts. The Company minimizes its credit risk on these transactions by only dealing with leading, creditworthy\nfinancial institutions and does not anticipate nonperformance. In addition, the contracts are distributed among\nseveral financial institutions, all of whom presently have investment grade credit ratings, thus minimizing credit\nrisk concentration.\nStockholders’ Equity\nDerivative instruments activity, net of tax, included in Non-owner changes to equi\n\n[2] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[3] 9d473b9c09cabed1386df42ab20f4869.pdf p.1\nThe following table summarizes nonvested common stock activity as of December 31, 2019 and for the year then\nended:\nWeighted\nAverage\nGrant-Date\nNonvestedCommonStock Shares(000s) FairValue\nBalanceatthebeginningoftheperiod 8 $ 29.01\nGranted 16 $ 29.10\nVested (11) $ 28.89\nForfeitedorexpired (2) $ 29.16\nBalanceattheendoftheperiod 11 $ 29.24\nThe following table summarizes information regarding shares of common stock granted and vested (in thousands,\nexceptpercommonstockamounts):\nYearsEndedDecember31,\n2019 2018 2017\nNumberofsharesofcommonstockgranted 16 16 13\nWeightedaveragegrant-datefairvaluepercommonstock $ 29.10 $ 28.48 $ 30.49\nFairvalueofcommonstockvested $ 320 $ 315 $ 334\nCashusedtosettletheo\n\n[4] convfinqa_ctx_622.pdf p.1\nFIDELITY NATIONAL INFORMATION SERVICES, INC.\nAND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS - (Continued)\nContingent consideration liabilities recorded in connection with business acquisitions must also be adjusted for changes in fair value\nuntil settled. See Note 3 for discussion of The Capital Markets Company BVBA (\"Capco\") contingent consideration liability.\n(d)Derivative Financial Instruments\nThe Company accounts for derivative financial instruments in accordance with Financial Accounting Standards Board Accounting\nStandards Codification (“FASB ASC”) Topic 815, Derivatives and Hedgingg . During 2016, 2015 and 2014, the Company engaged in\nhedging activities relating to its va\n\n[5] convfinqa_ctx_622.pdf p.1\nAs of December 31, 2016 and 2015, the notional amount of these derivativeswas approximately $143 million aaand\n$81 million, respectively, and the fair value was nominal. These derivatives have not been designated as hedges for accounting purposes.\nWe also use currency forward contracts to manage our exposure tofluctuations in costs caused by variations in Indian Rupee (\"IIINR\")\nexchange rates. As of December 31, 2016, the notional amount of these derivatives was approximately $7 million and the fair vallue was\nless than $1 million, which is included in Prepaid Expenses and Other Current Assets in the Consolidated Balance Sheets. TheseINR\nforward contracts are designated as cash flow hedges.\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1144,
+      "output_tokens": 4,
+      "latency_seconds": 3.5519100999999864
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Stockholders' equity derivative instruments balance as of December 31, 2006",
+      "filters": {},
+      "chunk_ids": [
+        "convfinqa_ctx_1595::p1::c0::b4038c2e10",
+        "finqa_test_ctx_11::p1::c0::ade25e9594",
+        "convfinqa_ctx_622::p1::c0::42086026f7",
+        "finqa_test_ctx_92::p1::c1::8622580990",
+        "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    },
+    {
+      "iteration": 2,
+      "query": "What was the balance of Stockholders' Equity derivative instruments as of December 31, 2006?",
+      "filters": {},
+      "chunk_ids": [
+        "convfinqa_ctx_1595::p1::c0::b4038c2e10",
+        "finqa_test_ctx_11::p1::c0::ade25e9594",
+        "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87",
+        "convfinqa_ctx_622::p1::c0::42086026f7",
+        "convfinqa_ctx_622::p1::c1::34c1846156"
+      ],
+      "reason": "corrective_retrieval_after_irrelevant",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1595::p1::c0::b4038c2e10",
+          "document_id": "convfinqa_ctx_1595",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1595::p1::c0::b4038c2e10",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "document_id": "finqa_test_ctx_11",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_622::p1::c0::42086026f7",
+          "document_id": "convfinqa_ctx_622",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_622::p1::c0::42086026f7",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_92::p1::c1::8622580990",
+          "document_id": "finqa_test_ctx_92",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_92::p1::c1::8622580990",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87",
+          "document_id": "9d473b9c09cabed1386df42ab20f4869",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1595::p1::c0::b4038c2e10",
+          "document_id": "convfinqa_ctx_1595",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1595::p1::c0::b4038c2e10",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "document_id": "finqa_test_ctx_11",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87",
+          "document_id": "9d473b9c09cabed1386df42ab20f4869",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_622::p1::c0::42086026f7",
+          "document_id": "convfinqa_ctx_622",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_622::p1::c0::42086026f7",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "document_id": "convfinqa_ctx_622",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_622::p1::c1::34c1846156",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "corrective_retrieval_after_irrelevant",
+    "retrieval_relevance_after_correction",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nRetrieval query:",
+  "query_formulation_raw_output": "Stockholders' equity derivative instruments balance as of December 31, 2006",
+  "query_formulation_latency_seconds": 5.8745,
+  "query_formulation_input_tokens": 172,
+  "query_formulation_output_tokens": 20,
+  "query_formulation_trace": {
+    "original_question": "What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?",
+    "retrieval_query": "Stockholders' equity derivative instruments balance as of December 31, 2006",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the balance of Stockholders' 2019 equity derivative instruments as of December 31, 2006?\nRetrieval query:",
+    "raw_output": "Stockholders' equity derivative instruments balance as of December 31, 2006",
+    "latency_seconds": 5.874516200000016,
+    "input_tokens": 172,
+    "output_tokens": 20,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "16.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/MSI/2007/page_102.pdf | source_page=102 | context_id=convfinqa_ctx_1595"
+}

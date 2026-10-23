@@ -1,0 +1,1071 @@
+{
+  "n_questions": 120,
+  "log_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs\\ablation-no-support-120_20260826T053236Z",
+  "evaluation": {
+    "n": 120,
+    "mrr": 0.8701388888888889,
+    "recall_at_k": {
+      "1": 0.8416666666666667,
+      "3": 0.9,
+      "5": 0.9083333333333333,
+      "10": 0.9083333333333333
+    },
+    "hit_rate": 0.9083333333333333
+  },
+  "answer_correctness": {
+    "accuracy": 0.31666666666666665,
+    "n_correct": 38,
+    "n": 120,
+    "gold_field": "program_answer (canonical); original_answer accepted as equivalent surface form",
+    "per_question": [
+      {
+        "question_id": "convfinqa_1190",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "-0.25",
+        "original_answer": "-0.25"
+      },
+      {
+        "question_id": "convfinqa_1311",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Step 1: Identify the estimated future benefit payments for 2016 and for 2021\u20132025 from the table in the evidence.\n\nFrom [1] convfinqa_ctx_409.pdf p.1:\n- 2016: $2,160 million (for qualified defined benefit pension plans)\n- 2021\u20132025: $13,670 million (for qualified defined benefit pension plans)\n\nStep 2: Compute the proportion of the 2016 payment compared to the 2021\u20132025 payment.\n\nProportion = (Payment in 2016) / (Payment 2021\u20132025)\n= 2,160 / 13,670\n\nStep 3: Perform the division.\n\n2,160 \u00f7 13,670 \u2248 0.1580\n\nFinal answer: 0.158\n\nSource: convfinqa_ctx_409.pdf p.1",
+        "program_answer": "0.15801",
+        "original_answer": "0.15801"
+      },
+      {
+        "question_id": "convfinqa_1529",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "138.0",
+        "original_answer": "138.0"
+      },
+      {
+        "question_id": "convfinqa_1598",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "7600.0",
+        "original_answer": "7600.0"
+      },
+      {
+        "question_id": "convfinqa_1621",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "112660.0",
+        "original_answer": "112660.0"
+      },
+      {
+        "question_id": "convfinqa_1650",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "26.5",
+        "original_answer": "26.5"
+      },
+      {
+        "question_id": "convfinqa_1790",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1.50271",
+        "original_answer": "1.50271"
+      },
+      {
+        "question_id": "convfinqa_1873",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "3.5",
+        "original_answer": "3.5"
+      },
+      {
+        "question_id": "convfinqa_1895",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "The net change in the balance of cash and cash equivalents for Snap-on from 2012 to 2013 was $3.1 million.\n\nSource: convfinqa_ctx_928.pdf p.1  \nCalculation: $217.6 million (2013) - $214.5 million (2012) = $3.1 million.",
+        "program_answer": "3.1",
+        "original_answer": "3.1"
+      },
+      {
+        "question_id": "convfinqa_2063",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "20,628\n\nSource: convfinqa_ctx_602.pdf p.1 (Cost of sales for 2019)",
+        "program_answer": "20628.0",
+        "original_answer": "20628.0"
+      },
+      {
+        "question_id": "convfinqa_2136",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "17.74",
+        "original_answer": "17.74"
+      },
+      {
+        "question_id": "convfinqa_2219",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2353.0",
+        "original_answer": "2353.0"
+      },
+      {
+        "question_id": "convfinqa_2239",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$118  \nCalculation: Balance at December 31 = $102 (beginning balance) + $42 (accruals for warranties issued during the year) + $16 (accruals for pre-existing warranties) - $38 (settlements made) - $4 (other, net) = $118  \nSource: convfinqa_ctx_981.pdf p.1",
+        "program_answer": "118.0",
+        "original_answer": "118.0"
+      },
+      {
+        "question_id": "convfinqa_23",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "475,000\n\nSource: convfinqa_ctx_994.pdf p.1, TABLE (row for \"2024 and thereafter\")",
+        "program_answer": "475000.0",
+        "original_answer": "475000.0"
+      },
+      {
+        "question_id": "convfinqa_2407",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.69681",
+        "original_answer": "0.69681"
+      },
+      {
+        "question_id": "convfinqa_2440",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "16.0",
+        "original_answer": "16.0"
+      },
+      {
+        "question_id": "convfinqa_2467",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Net change in revenue from 1998 to 1999 = Revenue in 1999 - Revenue in 1998  \n= $5,960 - $8,091 = -$2,131  \n\nSource: convfinqa_ctx_150.pdf p.1  \n\nAnswer: -2131",
+        "program_answer": "-2131.0",
+        "original_answer": "-2131.0"
+      },
+      {
+        "question_id": "convfinqa_2564",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "yes",
+        "original_answer": "yes"
+      },
+      {
+        "question_id": "convfinqa_2565",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.36415",
+        "original_answer": "0.36415"
+      },
+      {
+        "question_id": "convfinqa_2650",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "122.3",
+        "original_answer": "122.3"
+      },
+      {
+        "question_id": "convfinqa_2757",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1.14394",
+        "original_answer": "1.14394"
+      },
+      {
+        "question_id": "convfinqa_2800",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "145.0",
+        "original_answer": "145.0"
+      },
+      {
+        "question_id": "convfinqa_2887",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$1.29 billion  \nSource: convfinqa_ctx_1119.pdf p.1  \nNote: The evidence states \"the aggregate amounts include losses of approximately $1.29 billion and $324 million reported in 'Marketmaking' and 'Other principal transactions,' respectively.\" The $1.29 billion loss is specifically attributed to \"Marketmaking\" in the context of level 3 derivative assets and liabilities.",
+        "program_answer": "1.29",
+        "original_answer": "1.29"
+      },
+      {
+        "question_id": "convfinqa_2930",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "515.9",
+        "original_answer": "515.9"
+      },
+      {
+        "question_id": "convfinqa_3034",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "From evidence [2] convfinqa_ctx_745.pdf p.1:\n\n- Allowance for other funds used during construction in 2016: $15  \n- Allowance for borrowed funds used during construction in 2016: $6  \n\nTotal = $15 + $6 = $21\n\nAnswer: 21",
+        "program_answer": "21.0",
+        "original_answer": "21.0"
+      },
+      {
+        "question_id": "convfinqa_332",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.09637",
+        "original_answer": "0.09637"
+      },
+      {
+        "question_id": "convfinqa_3338",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "-34.0",
+        "original_answer": "-34.0"
+      },
+      {
+        "question_id": "convfinqa_3341",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1538.0",
+        "original_answer": "1538.0"
+      },
+      {
+        "question_id": "convfinqa_34",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2.8",
+        "original_answer": "2.8"
+      },
+      {
+        "question_id": "convfinqa_363",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "The recorded value of vehicles under capital lease decreased from $86 million in 2014 to $74 million in 2015.  \nDecrease = $86 - $74 = $12 million.  \n\nSource: convfinqa_ctx_1727.pdf p.1",
+        "program_answer": "-12.0",
+        "original_answer": "-12.0"
+      },
+      {
+        "question_id": "convfinqa_386",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Net earnings attributable to Altria Group, Inc. in 2017: $10,222 million  \nNet earnings attributable to Altria Group, Inc. in 2016: $14,239 million  \n\nChange = 2017 - 2016 = 10,222 - 14,239 = -4,017 million\n\nAnswer: -4017 (in millions)  \nSource: convfinqa_ctx_26.pdf p.1",
+        "program_answer": "-4017.0",
+        "original_answer": "-4017.0"
+      },
+      {
+        "question_id": "convfinqa_40",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$6,424,582  \nSource: convfinqa_ctx_1156.pdf p.1 (Long-term debt(1) under \"Contractual Obligations\" as of December 31, 2017)",
+        "program_answer": "6424582.0",
+        "original_answer": "6424582.0"
+      },
+      {
+        "question_id": "convfinqa_529",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "395.0",
+        "original_answer": "395.0"
+      },
+      {
+        "question_id": "convfinqa_652",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "-92.0",
+        "original_answer": "-92.0"
+      },
+      {
+        "question_id": "convfinqa_79",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "To find the percentage increase in rental expense from 2007 to 2008:\n\nPercentage increase = [(New value - Old value) / Old value] \u00d7 100  \n= [($49.0 million - $26.6 million) / $26.6 million] \u00d7 100  \n= ($22.4 million / $26.6 million) \u00d7 100  \n= 0.8429 \u00d7 100  \n\u2248 84.29%\n\nAnswer: 84.29%",
+        "program_answer": "22.4",
+        "original_answer": "22.4"
+      },
+      {
+        "question_id": "convfinqa_815",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1328.0",
+        "original_answer": "1328.0"
+      },
+      {
+        "question_id": "convfinqa_864",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "23.0",
+        "original_answer": "23.0"
+      },
+      {
+        "question_id": "convfinqa_888",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "$44 million (2011) + $44 million (2010) = $88 million\n\nSource: convfinqa_ctx_1574.pdf p.1",
+        "program_answer": "88.0",
+        "original_answer": "88.0"
+      },
+      {
+        "question_id": "convfinqa_996",
+        "dataset": "ConvFinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "122.8",
+        "original_answer": "122.8"
+      },
+      {
+        "question_id": "convfinqa_997",
+        "dataset": "ConvFinQA",
+        "correct": true,
+        "prediction": "Beginning of year: 421 million barrels  \nEnd of year: 388 million barrels  \n\nCombined total = 421 + 388 = 809 million barrels  \n\nSource: convfinqa_ctx_1309.pdf p.1",
+        "program_answer": "809.0",
+        "original_answer": "809.0"
+      },
+      {
+        "question_id": "finqa_test_1023",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "The percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited is calculated as follows:\n\nFrom the table on page 1 of finqa_test_ctx_330.pdf:\n- Treasury market value in 2009: $2,068 million\n- Treasury market value in 2010: $2,075 million\n\nPercentage change = [(2010 - 2009) / 2009] \u00d7 100  \n= [(2075 - 2068) / 2068] \u00d7 100  \n= (7 / 2068) \u00d7 100  \n\u2248 0.338%\n\nAnswer: 0.338%",
+        "program_answer": "0.0033849129593810446",
+        "original_answer": "0.3%"
+      },
+      {
+        "question_id": "finqa_test_1070",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.17706013363028952",
+        "original_answer": "18%"
+      },
+      {
+        "question_id": "finqa_test_1081",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "296.0",
+        "original_answer": "296"
+      },
+      {
+        "question_id": "finqa_test_1146",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "4.4",
+        "original_answer": "4.4"
+      },
+      {
+        "question_id": "finqa_test_182",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Total cost = Average price per share \u00d7 Number of shares repurchased  \nTotal cost = $37.73 \u00d7 45,686  \nTotal cost = $1,724,388.18\n\nAnswer: $1,724,388.18",
+        "program_answer": "1723732.7799999998",
+        "original_answer": "$ 1723732.78"
+      },
+      {
+        "question_id": "finqa_test_191",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "16.430000000000007",
+        "original_answer": "16.43"
+      },
+      {
+        "question_id": "finqa_test_244",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The return on investment (ROI) for Applied Materials, Inc. is calculated using the performance graph data from the 2018 report. The graph shows that if $100 was invested on October 27, 2013, and held until October 28, 2018, the value of the investment grew to $171.11.\n\nROI is calculated as:\n\n(Ending Value - Beginning Value) / Beginning Value  \n= (171.11 - 100) / 100  \n= 71.11 / 100  \n= 0.7111 or 71.11%\n\nSource: finqa_test_ctx_7.pdf p.1",
+        "program_answer": "-0.03329999999999998",
+        "original_answer": "-3.3%"
+      },
+      {
+        "question_id": "finqa_test_247",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Average number of berths per ship = Total berths \u00f7 Number of ships  \n= 503,000 \u00f7 298  \n\u2248 1,688.59\n\nFinal answer: Approximately 1,689 berths per ship.",
+        "program_answer": "1687.9194630872482",
+        "original_answer": "1687.92"
+      },
+      {
+        "question_id": "finqa_test_273",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The total return to Ball Corporation stockholders, assuming a $100 investment on December 31, 2007, and reinvested dividends, by the end of 2012 is $207.62.\n\nSource: finqa_test_ctx_289.pdf p.1, \"TOTAL RETURNTOSTOCKHOLDERS (Assumes $100 investment on 12/31/07)\" table, showing $207.62 on 12/31/2012.",
+        "program_answer": "1.0762",
+        "original_answer": "107.6%"
+      },
+      {
+        "question_id": "finqa_test_28",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "5.800000000000001",
+        "original_answer": "5.8"
+      },
+      {
+        "question_id": "finqa_test_283",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "6.0",
+        "original_answer": "6"
+      },
+      {
+        "question_id": "finqa_test_400",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.10599999999999998",
+        "original_answer": "10.6%"
+      },
+      {
+        "question_id": "finqa_test_41",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.12160000000000015",
+        "original_answer": "12.16%"
+      },
+      {
+        "question_id": "finqa_test_428",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "4331309.0",
+        "original_answer": "4331309"
+      },
+      {
+        "question_id": "finqa_test_439",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "28000.0",
+        "original_answer": "28000"
+      },
+      {
+        "question_id": "finqa_test_444",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "92.0",
+        "original_answer": "92"
+      },
+      {
+        "question_id": "finqa_test_491",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Percentage growth rate = [(Cash dividends in 2013 - Cash dividends in 2012) / Cash dividends in 2012] \u00d7 100  \n= [($92 million - $83 million) / $83 million] \u00d7 100  \n= ($9 million / $83 million) \u00d7 100  \n= 0.1084 \u00d7 100  \n= 10.84%\n\nAnswer: 10.84%",
+        "program_answer": "0.10843373493975904",
+        "original_answer": "10.8%"
+      },
+      {
+        "question_id": "finqa_test_527",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "$56,616\n\nSource: finqa_test_ctx_107.pdf p.1",
+        "program_answer": "0.3853656876425144",
+        "original_answer": ".385"
+      },
+      {
+        "question_id": "finqa_test_529",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "2006 purchase commitment: $2,408  \nTotal purchase commitments (2006 + 2007): $3,772  \n\nPercentage allocated for 2006 = (2,408 / 3,772) \u00d7 100 \u2248 63.7%  \n\nSource: finqa_test_ctx_242.pdf p.1",
+        "program_answer": "0.6383881230116649",
+        "original_answer": "64%"
+      },
+      {
+        "question_id": "finqa_test_555",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "6.59",
+        "original_answer": "6.59"
+      },
+      {
+        "question_id": "finqa_test_559",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.8058252427184466",
+        "original_answer": "80.6%"
+      },
+      {
+        "question_id": "finqa_test_579",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.18181818181818177",
+        "original_answer": "18.2%"
+      },
+      {
+        "question_id": "finqa_test_6",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "To find the percentage of the total recourse debt scheduled to be paid in 2011:\n\n(Amount scheduled to be paid in 2011 / Total recourse debt) \u00d7 100  \n= (463 / 4,612) \u00d7 100  \n\u2248 10.04%\n\nAnswer: 10.04%",
+        "program_answer": "0.10039028620988726",
+        "original_answer": "10%"
+      },
+      {
+        "question_id": "finqa_test_628",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "471.0",
+        "original_answer": "no"
+      },
+      {
+        "question_id": "finqa_test_631",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.020999999999999963",
+        "original_answer": "2.1%"
+      },
+      {
+        "question_id": "finqa_test_65",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1",
+        "original_answer": "yes"
+      },
+      {
+        "question_id": "finqa_test_66",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.5370370370370371",
+        "original_answer": "54%"
+      },
+      {
+        "question_id": "finqa_test_720",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.4508196721311476",
+        "original_answer": "45.1%"
+      },
+      {
+        "question_id": "finqa_test_725",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The average share price at which the 2.2 million shares were purchased by employees in the 2011 employee stock purchase plan at Motorola Solutions is $35.61.\n\nSource: finqa_test_ctx_97.pdf p.1\n\nCalculation: The evidence states that for the years ended December 31, 2011, employees purchased 2.2 million shares at a purchase price of $35.61. Since the question asks for the average share price for the 2.2 million shares purchased in 2011, and only one price is provided for that year, that price is the average.\n\nAnswer: 35.61",
+        "program_answer": "33.085",
+        "original_answer": "33.085"
+      },
+      {
+        "question_id": "finqa_test_760",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "70000000.0",
+        "original_answer": "70000000"
+      },
+      {
+        "question_id": "finqa_test_832",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "Decrease in additions for tax positions of prior years in 2018 = Additions for tax positions of prior years in 2017 - Additions for tax positions of prior years in 2018  \n= 12 - 10 = 2\n\nSource: finqa_test_ctx_357.pdf p.1\n\nAnswer: 2",
+        "program_answer": "2.0",
+        "original_answer": "2"
+      },
+      {
+        "question_id": "finqa_test_861",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "405.0",
+        "original_answer": "405"
+      },
+      {
+        "question_id": "finqa_test_872",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "$10.6 million (2017) + $11 million (2018) + $11.2 million (2019) = $32.8 million\n\nSource: finqa_test_ctx_113.pdf p.1",
+        "program_answer": "21.6",
+        "original_answer": "44.4"
+      },
+      {
+        "question_id": "finqa_test_911",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "29.600000000000023",
+        "original_answer": "29.6"
+      },
+      {
+        "question_id": "finqa_test_92",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "822.0666666666666",
+        "original_answer": "822.06"
+      },
+      {
+        "question_id": "finqa_test_927",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "57.207027839999995",
+        "original_answer": "57.2"
+      },
+      {
+        "question_id": "finqa_test_94",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.37900000000000006",
+        "original_answer": "37.9%"
+      },
+      {
+        "question_id": "finqa_test_941",
+        "dataset": "FinQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "68.0",
+        "original_answer": "68"
+      },
+      {
+        "question_id": "finqa_test_95",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "362,400  \nSource: finqa_test_ctx_286.pdf p.1",
+        "program_answer": "364400.0",
+        "original_answer": "364400"
+      },
+      {
+        "question_id": "finqa_test_990",
+        "dataset": "FinQA",
+        "correct": true,
+        "prediction": "The ratio of The Priceline Group Inc. to the NASDAQ Composite Index at December 31, 2016, is 313.45 / 216.54 = 1.447.\n\nSource: finqa_test_ctx_192.pdf p.1",
+        "program_answer": "1.4475385610048952",
+        "original_answer": "1.44"
+      },
+      {
+        "question_id": "tatqa_test_10001",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "70238.0",
+        "original_answer": "70238"
+      },
+      {
+        "question_id": "tatqa_test_10006",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "1325.0",
+        "original_answer": "1325"
+      },
+      {
+        "question_id": "tatqa_test_10037",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2018.0",
+        "original_answer": "['2018']"
+      },
+      {
+        "question_id": "tatqa_test_10059",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The change in the Valuation allowance from fiscal 2018 to fiscal 2019 is calculated as follows:\n\nValuation allowance in fiscal 2019: $7,925  \nValuation allowance in fiscal 2018: $4,263  \n\nChange = $7,925 - $4,263 = $3,662\n\nSource: debfaf15530ee227395897df205fa19f.pdf p.1",
+        "program_answer": "3662.0",
+        "original_answer": "3662"
+      },
+      {
+        "question_id": "tatqa_test_10134",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The total amount of contractual obligations due within the next fiscal year (less than 1 year) as of September 29, 2019, is $1,128,447 (from the \"Total contractual obligations\" row and \"Less than 1 year\" column in the table on page 1 of f1075884f3ae99a0c74074f82c97d74f.pdf).\n\nCalculation:  \nFrom the table:  \n- Long-term debt obligations (less than 1 year): $65,087  \n- Capital lease obligations (less than 1 year): $879  \n- Operating lease obligations (less than 1 year): $193,313  \n- Purchase commitments (less than 1 year): $854,100  \n- Benefit obligations (less than 1 year): $15,068  \n\nSum:  \n65,087 + 879 + 193,313 + 854,100 + 15,068 = $1,128,447\n\nAnswer: 1128447",
+        "program_answer": "1128447.0",
+        "original_answer": "['$1,128,447']"
+      },
+      {
+        "question_id": "tatqa_test_10167",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2017.0",
+        "original_answer": "['2017']"
+      },
+      {
+        "question_id": "tatqa_test_10170",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "42.26",
+        "original_answer": "42.26"
+      },
+      {
+        "question_id": "tatqa_test_9133",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "163.0",
+        "original_answer": "['163']"
+      },
+      {
+        "question_id": "tatqa_test_9162",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "0.25",
+        "original_answer": "0.25"
+      },
+      {
+        "question_id": "tatqa_test_9180",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "70.84",
+        "original_answer": "70.84"
+      },
+      {
+        "question_id": "tatqa_test_9195",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The discount rate in 2018 was 2.2%, and in 2019 it was 2.3%. The change is 2.3% - 2.2% = 0.1%. This is an increase, not a decrease. Therefore, there was no percentage point decrease; instead, there was a 0.1 percentage point increase.",
+        "program_answer": "-0.5",
+        "original_answer": "-0.5"
+      },
+      {
+        "question_id": "tatqa_test_9252",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Change in 'United States' 'Property and equipment, net' from March 31, 2018 to March 31, 2019:  \n$62,455 (2019) - $62,064 (2018) = $391  \n\nSource: 270bd8844a1df7adb9e0877771195f85.pdf p.1  \nAnswer: 391",
+        "program_answer": "391.0",
+        "original_answer": "391"
+      },
+      {
+        "question_id": "tatqa_test_9278",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "368%\n\nSource: [2] 2da56df966a1c15057d2661ce589be1c.pdf p.1, TABLE: \"Share of net earnings in other affiliates\" shows $3,711 (2018) and $793 (2017).  \nChange = 3,711 - 793 = 2,918  \n% Change = (2,918 / 793) \u00d7 100 \u2248 368%",
+        "program_answer": "367.97",
+        "original_answer": "367.97"
+      },
+      {
+        "question_id": "tatqa_test_9308",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "10394.0",
+        "original_answer": "10394"
+      },
+      {
+        "question_id": "tatqa_test_9345",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2.0",
+        "original_answer": "2"
+      },
+      {
+        "question_id": "tatqa_test_9367",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "500000.0",
+        "original_answer": "['$0.5 million']"
+      },
+      {
+        "question_id": "tatqa_test_9388",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "15500000.0",
+        "original_answer": "['$15.5 million']"
+      },
+      {
+        "question_id": "tatqa_test_9447",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The earnings allocated to participating securities in 2018 were $810 (thousands), and in 2019 were $462 (thousands).  \n\nPercentage decrease = [(810 - 462) / 810] \u00d7 100 = (348 / 810) \u00d7 100 \u2248 42.96%  \n\nSource: 52e6a43255d7a284a287057e708a426d.pdf p.2  \n\nAnswer: 42.96%",
+        "program_answer": "-42.96",
+        "original_answer": "-42.96"
+      },
+      {
+        "question_id": "tatqa_test_9564",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The total net deferred taxes for assets and liabilities for Conagra Brands, Inc. for the fiscal year ended May 26, 2019, is $325.0 million. This is derived from the \"Net deferred taxes\" row in the table for May 26, 2019, which is $325.0 million (after subtracting valuation allowance of $738.1 million from the total deferred tax assets and liabilities).\n\nSource: 6c509acf4599f1a22272abbe9a37a1ec.pdf p.1\n\nAnswer: 325.0",
+        "program_answer": "2942.3",
+        "original_answer": "2942.3"
+      },
+      {
+        "question_id": "tatqa_test_9579",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The 'Other' category in non-current assets was 1 \u20ac million in both FY2018 and FY2019.  \nPercentage change = ((1 - 1) / 1) \u00d7 100 = 0%.  \nSource: 7399b5db48b8dc118aa8f0c7336fffa3.pdf p.1",
+        "program_answer": "0.0",
+        "original_answer": "0"
+      },
+      {
+        "question_id": "tatqa_test_9581",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "The combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018, is calculated as follows:\n\nFrom evidence [1] p.1, Table \"Total Revenues by Business\" (Year Ended May 31, 2018):\n\n- Cloud and license: $31,994 million  \n- Hardware: $3,994 million  \n\nSum = $31,994 + $3,994 = $35,988 million\n\nSource: [1] p.1\n\nAnswer: 35988",
+        "program_answer": "35988.0",
+        "original_answer": "35988"
+      },
+      {
+        "question_id": "tatqa_test_9594",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "2496185.0",
+        "original_answer": "2496185"
+      },
+      {
+        "question_id": "tatqa_test_9619",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "6.4",
+        "original_answer": "6.4"
+      },
+      {
+        "question_id": "tatqa_test_9622",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Change in Current deferred income for Spirent Communications Plc in 2019 = 2019 value - 2018 value = 53.2 - 55.2 = -2.0 million\n\nSource: 7cacb4529b5137a61f1e8fc7a7f6c6a1.pdf p.1\n\n-2.0",
+        "program_answer": "-2.0",
+        "original_answer": "-2"
+      },
+      {
+        "question_id": "tatqa_test_9634",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Change in constant currency revenue between 2018 and 2019 = 583,600 - 532,600 = 51,000 (in thousands)\n\nSource: [1] p.1 [TABLE] Constant currency revenue\n\nAnswer: 51,000",
+        "program_answer": "51000.0",
+        "original_answer": "51000"
+      },
+      {
+        "question_id": "tatqa_test_9642",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "3600000000.0",
+        "original_answer": "['$3.6 billion']"
+      },
+      {
+        "question_id": "tatqa_test_9650",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "279.0",
+        "original_answer": "279"
+      },
+      {
+        "question_id": "tatqa_test_9665",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "125.6",
+        "original_answer": "125.6"
+      },
+      {
+        "question_id": "tatqa_test_9693",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "To calculate the percentage change in Alarm.com's adjusted EBITDA from 2018 to 2019:\n\nPercentage change = [(New Value - Old Value) / Old Value] \u00d7 100\n\nOld Value (2018) = $93,081 thousand  \nNew Value (2019) = $108,307 thousand\n\nChange = (108,307 - 93,081) / 93,081  \n= 15,226 / 93,081  \n\u2248 0.1636\n\nMultiply by 100:  \n0.1636 \u00d7 100 \u2248 16.36%\n\nAnswer: 16.36%",
+        "program_answer": "16.36",
+        "original_answer": "16.36"
+      },
+      {
+        "question_id": "tatqa_test_9707",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "$5.7 million\n\nSource: [1] 8f88cc6a1780582fa50c0b8318c2fb38.pdf p.1",
+        "program_answer": "5.7",
+        "original_answer": "['5.7']"
+      },
+      {
+        "question_id": "tatqa_test_9726",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "High price per share in second quarter fiscal 2018: $45.14  \nHigh price per share in second quarter fiscal 2019: $88.08  \n\nPercentage change = ((88.08 - 45.14) / 45.14) \u00d7 100 = (42.94 / 45.14) \u00d7 100 \u2248 95.06%\n\nSource: 9082b05b2e0e2600d7f405f82795f041.pdf p.1\n\n95.06",
+        "program_answer": "95.13",
+        "original_answer": "95.13"
+      },
+      {
+        "question_id": "tatqa_test_9758",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "23%  \nSource: 9b048dfc08e40405ae69dc2e057dd41a.pdf p.1 (Total Product Sales: 177,216 vs. 144,541, 23% increase)",
+        "program_answer": "23.0",
+        "original_answer": "['23%']"
+      },
+      {
+        "question_id": "tatqa_test_9761",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "16 (from the table showing \"Number of shares of common stock granted\" for 2018 as 16, in thousands)\n\nSource: 9d473b9c09cabed1386df42ab20f4869.pdf p.1",
+        "program_answer": "16.0",
+        "original_answer": "['16']"
+      },
+      {
+        "question_id": "tatqa_test_9799",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "5.8",
+        "original_answer": "5.8"
+      },
+      {
+        "question_id": "tatqa_test_9852",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Sum of operating accruals for 2018 and 2019:  \n2019: $23,695 thousand  \n2018: $24,020 thousand  \nSum = 23,695 + 24,020 = 47,715 thousand  \n\nSource: b0f915f83dc1cd1850aec59abadb7dda.pdf p.1  \nAnswer: 47715",
+        "program_answer": "47715.0",
+        "original_answer": "47715"
+      },
+      {
+        "question_id": "tatqa_test_9904",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Change in TORM's Net profit/(loss) for the year excluding impairment from 2018 to 2019:\n\nFrom the table on page 1:\n- Net profit/(loss) for the year excluding impairment in 2019: 46.0 USDm\n- Net profit/(loss) for the year excluding impairment in 2018: -34.8 USDm\n\nChange = 46.0 - (-34.8) = 80.8 USDm\n\nAnswer: 80.8",
+        "program_answer": "80.8",
+        "original_answer": "80.8"
+      },
+      {
+        "question_id": "tatqa_test_9976",
+        "dataset": "TAT-DQA",
+        "correct": true,
+        "prediction": "Sum of capitalized interest for 2018 and 2019: 51 + 45 = 96\n\nSource: d35878bbfd434409ed509a53c9af591a.pdf p.1 (Note 6 Interest expense)",
+        "program_answer": "96.0",
+        "original_answer": "96"
+      },
+      {
+        "question_id": "tatqa_test_9979",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "380391.0",
+        "original_answer": "380391"
+      },
+      {
+        "question_id": "tatqa_test_9987",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "The retrieved evidence is insufficient to answer this question.",
+        "program_answer": "84.36",
+        "original_answer": "84.36"
+      },
+      {
+        "question_id": "tatqa_test_9990",
+        "dataset": "TAT-DQA",
+        "correct": false,
+        "prediction": "Research and development expenses for Opentext Corporation as of June 30, 2019, were $321,836 thousand (or $321.836 million).\n\nSource: d80ea6ee60a1b1f11e971791784d7d6c.pdf p.1\n\nCalculation: The table shows \"Research and development\" at $321,836 (in thousands) for the year ended June 30, 2019. This value is directly provided in the evidence.\n\nAnswer: 321836",
+        "program_answer": "3667.0",
+        "original_answer": "['3,667']"
+      }
+    ]
+  },
+  "by_dataset": {
+    "ConvFinQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.86875,
+        "recall_at_k": {
+          "1": 0.825,
+          "3": 0.9,
+          "5": 0.925,
+          "10": 0.925
+        },
+        "hit_rate": 0.925
+      },
+      "answer_correctness": {
+        "accuracy": 0.325,
+        "n": 40,
+        "n_correct": 13
+      },
+      "latency": {
+        "mean_seconds": 85.47652250000002
+      },
+      "tokens": {
+        "mean_total": 4607.0
+      }
+    },
+    "FinQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.7916666666666667,
+        "recall_at_k": {
+          "1": 0.75,
+          "3": 0.85,
+          "5": 0.85,
+          "10": 0.85
+        },
+        "hit_rate": 0.85
+      },
+      "answer_correctness": {
+        "accuracy": 0.225,
+        "n": 40,
+        "n_correct": 9
+      },
+      "latency": {
+        "mean_seconds": 82.2509725
+      },
+      "tokens": {
+        "mean_total": 4216.775
+      }
+    },
+    "TAT-DQA": {
+      "retrieval": {
+        "n": 40,
+        "mrr": 0.95,
+        "recall_at_k": {
+          "1": 0.95,
+          "3": 0.95,
+          "5": 0.95,
+          "10": 0.95
+        },
+        "hit_rate": 0.95
+      },
+      "answer_correctness": {
+        "accuracy": 0.4,
+        "n": 40,
+        "n_correct": 16
+      },
+      "latency": {
+        "mean_seconds": 84.5692875
+      },
+      "tokens": {
+        "mean_total": 4725.675
+      }
+    }
+  },
+  "mean_llm_calls": 6.125,
+  "mean_retrieval_iterations": 1.0083333333333333,
+  "mean_evidence_refinements": 0.0,
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  }
+}

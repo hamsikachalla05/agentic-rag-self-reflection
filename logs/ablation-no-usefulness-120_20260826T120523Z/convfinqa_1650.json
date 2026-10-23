@@ -1,0 +1,244 @@
+{
+  "question_id": "convfinqa_1650",
+  "question": "What were the total expenses for environmental remediation at sites owned or leased by Allegion in 2016 and 2017, in millions?",
+  "retrieval_query": "Allegion environmental remediation expenses 2016 2017 millions",
+  "metadata_filters": {
+    "company": "Allegion"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_1046::p1::c1::a30e58a57e",
+      "rank": 1,
+      "dense_score": 0.7565233707427979,
+      "bm25_score": 23.63964133716923,
+      "hybrid_score": 0.9851216327841008,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1046"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+      "rank": 2,
+      "dense_score": 0.7452234029769897,
+      "bm25_score": 24.048863518562435,
+      "hybrid_score": 0.880147175035877,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1046"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1046::p1::c2::690b1d6985",
+      "rank": 3,
+      "dense_score": 0.6999541521072388,
+      "bm25_score": 13.047060015395681,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1046"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 47.7613,
+  "input_tokens": 2262,
+  "output_tokens": 44,
+  "total_tokens": 2306,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0687,
+  "llm_latency_seconds": 47.6909,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": false,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What were the total expenses for environmental remediation at sites owned or leased by Allegion in 2016 and 2017, in millions?\nLabel:",
+      "input_tokens": 99,
+      "output_tokens": 7,
+      "latency_seconds": 3.8024503999986337
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What were the total expenses for environmental remediation at sites owned or leased by Allegion in 2016 and 2017, in millions?\nEvidence:\n[1] convfinqa_ctx_1046.pdf p.1\niation programs may result in increased expenses and increased environmental reserves.\nThe Company is sometimes a party to environmental lawsuits and claims and has received notices of potential violations of\nenvironmental laws and regulations from the U.S. Environmental Protection Agency and similar state authorities. It has also been\nidentified as a potentially responsible party (\"PRP\") for cleanup costs associated with off-site waste disposal at federal Superfund\nand state remediation sites. For all such sites, there are other PRPs and, in most instances, the Company’s involvement is minimal.\nIn estimating its liability, the Company has assumed it will not bear the entire cost of remediat\n\n[2] convfinqa_ctx_1046.pdf p.1\nNOTE 18 – EARNINGS PER SHARE (EPS)\nBasic EPS is calculated by dividing Net earnings attributable to Allegion plc by the weighted-average number of ordinary shares\noutstanding for the applicable period. Diluted EPS is calculated after adjusting the denominator of the basic EPS calculation for\nthe effect of all potentially dilutive ordinary shares, which in the Company’s case, includes shares issuable under share-based\ncompensation plans.\nThe following table summarizes the weighted-average number of ordinary shares outstanding for basic and diluted earnings per\nshare calculations.\nIn millions 2017 2016 2015\nWeighted-average number of basic shares 95.1 95.8 95.9\nShares issuable under incentive\n\n[3] convfinqa_ctx_1046.pdf p.1\nrued expenses and other current liabilities or\nOther noncurrent liabilities based on their expected term. The Company's total current environmental reserve at December 31,\n2017 and 2016 was $12.6 million and $6.1 million and the remainder is classified as noncurrent. Given the evolving nature of\nenvironmental laws, regulations and technology, the ultimate cost of future compliance is uncertain.\nF-41\n\n[TABLE]\nWeighted-average number of basic shares |  | 95.1 |  | 95.8 |  | 95.9\n[/TABLE]\n\n[TABLE]\nWeighted-average number of diluted shares |  | 96.0 |  | 96.9 |  | 96.9\n[/TABLE]\nDecision:",
+      "input_tokens": 689,
+      "output_tokens": 4,
+      "latency_seconds": 13.14556189999712
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What were the total expenses for environmental remediation at sites owned or leased by Allegion in 2016 and 2017, in millions?\nEvidence:\n[1] convfinqa_ctx_1046.pdf p.1\niation programs may result in increased expenses and increased environmental reserves.\nThe Company is sometimes a party to environmental lawsuits and claims and has received notices of potential violations of\nenvironmental laws and regulations from the U.S. Environmental Protection Agency and similar state authorities. It has also been\nidentified as a potentially responsible party (\"PRP\") for cleanup costs associated with off-site waste disposal at federal Superfund\nand state remediation sites. For all such sites, there are other PRPs and, in most instances, the Company’s involvement is minimal.\nIn estimating its liability, the Company has assumed it will not bear the entire cost of remediat\n\n[2] convfinqa_ctx_1046.pdf p.1\nNOTE 18 – EARNINGS PER SHARE (EPS)\nBasic EPS is calculated by dividing Net earnings attributable to Allegion plc by the weighted-average number of ordinary shares\noutstanding for the applicable period. Diluted EPS is calculated after adjusting the denominator of the basic EPS calculation for\nthe effect of all potentially dilutive ordinary shares, which in the Company’s case, includes shares issuable under share-based\ncompensation plans.\nThe following table summarizes the weighted-average number of ordinary shares outstanding for basic and diluted earnings per\nshare calculations.\nIn millions 2017 2016 2015\nWeighted-average number of basic shares 95.1 95.8 95.9\nShares issuable under incentive\n\n[3] convfinqa_ctx_1046.pdf p.1\nrued expenses and other current liabilities or\nOther noncurrent liabilities based on their expected term. The Company's total current environmental reserve at December 31,\n2017 and 2016 was $12.6 million and $6.1 million and the remainder is classified as noncurrent. Given the evolving nature of\nenvironmental laws, regulations and technology, the ultimate cost of future compliance is uncertain.\nF-41\n\n[TABLE]\nWeighted-average number of basic shares |  | 95.1 |  | 95.8 |  | 95.9\n[/TABLE]\n\n[TABLE]\nWeighted-average number of diluted shares |  | 96.0 |  | 96.9 |  | 96.9\n[/TABLE]\nLabel:",
+      "input_tokens": 605,
+      "output_tokens": 3,
+      "latency_seconds": 11.748945299998013
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Allegion environmental remediation expenses 2016 2017 millions",
+      "filters": {
+        "company": "Allegion"
+      },
+      "chunk_ids": [
+        "convfinqa_ctx_1046::p1::c1::a30e58a57e",
+        "convfinqa_ctx_1046::p1::c0::c242753d55",
+        "convfinqa_ctx_1046::p1::c2::690b1d6985"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "convfinqa_ctx_1046::p1::c1::a30e58a57e",
+          "document_id": "convfinqa_ctx_1046",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1046::p1::c1::a30e58a57e",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+          "document_id": "convfinqa_ctx_1046",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1046::p1::c0::c242753d55",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1046::p1::c2::690b1d6985",
+          "document_id": "convfinqa_ctx_1046",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 580,
+          "source_chunk_id": "convfinqa_ctx_1046::p1::c2::690b1d6985",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What were the total expenses for environmental remediation at sites owned or leased by Allegion in 2016 and 2017, in millions?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What were the total expenses for environmental remediation at sites owned or leased by Allegion in 2016 and 2017, in millions?\nRetrieval query:",
+  "query_formulation_raw_output": "Allegion environmental remediation expenses 2016 2017 millions",
+  "query_formulation_latency_seconds": 5.0952,
+  "query_formulation_input_tokens": 176,
+  "query_formulation_output_tokens": 19,
+  "query_formulation_trace": {
+    "original_question": "What were the total expenses for environmental remediation at sites owned or leased by Allegion in 2016 and 2017, in millions?",
+    "retrieval_query": "Allegion environmental remediation expenses 2016 2017 millions",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What were the total expenses for environmental remediation at sites owned or leased by Allegion in 2016 and 2017, in millions?\nRetrieval query:",
+    "raw_output": "Allegion environmental remediation expenses 2016 2017 millions",
+    "latency_seconds": 5.095208399998228,
+    "input_tokens": 176,
+    "output_tokens": 19,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "26.5",
+  "gold_evidence_reference": "ConvFinQA | pdf/ALLE/2017/page_118.pdf | source_page=118 | context_id=convfinqa_ctx_1046"
+}

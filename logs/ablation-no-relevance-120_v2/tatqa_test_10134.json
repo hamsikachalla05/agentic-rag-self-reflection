@@ -1,0 +1,246 @@
+{
+  "question_id": "tatqa_test_10134",
+  "question": "What is the total amount of contractual obligations that Jack in the Box Inc. has due for payment within the next fiscal year, as of September 29, 2019?",
+  "retrieval_query": "Jack in the Box Inc. contractual obligations due for payment within next fiscal year as of September 29, 2019",
+  "metadata_filters": {
+    "year": 2019,
+    "company": "jack-in-the-box-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c1::7e153f4be3",
+      "rank": 1,
+      "dense_score": 0.6670952439308167,
+      "bm25_score": 27.607566871269952,
+      "hybrid_score": 0.8981775515086623,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "f1075884f3ae99a0c74074f82c97d74f"
+    },
+    {
+      "chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c0::9481fa4f08",
+      "rank": 2,
+      "dense_score": 0.6382706165313721,
+      "bm25_score": 31.188006620759015,
+      "hybrid_score": 0.8176586180654576,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "f1075884f3ae99a0c74074f82c97d74f"
+    },
+    {
+      "chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c2::e41eb9513a",
+      "rank": 3,
+      "dense_score": 0.5722469091415405,
+      "bm25_score": 17.122582728330567,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "f1075884f3ae99a0c74074f82c97d74f"
+    }
+  ],
+  "answer": "The total amount of contractual obligations due within the next fiscal year (less than 1 year) as of September 29, 2019, is $1,128,447 (from the \"Total contractual obligations\" row and \"Less than 1 year\" column in the table on page 1 of f1075884f3ae99a0c74074f82c97d74f.pdf).\n\nCalculation:  \nFrom the table:  \n- Long-term debt obligations (less than 1 year): $65,087  \n- Capital lease obligations (less than 1 year): $879  \n- Operating lease obligations (less than 1 year): $193,313  \n- Purchase commitments (less than 1 year): $854,100  \n- Benefit obligations (less than 1 year): $15,068  \n\nSum:  \n65,087 + 879 + 193,313 + 854,100 + 15,068 = $1,128,447\n\nAnswer: 1128447",
+  "latency_seconds": 102.0844,
+  "input_tokens": 3653,
+  "output_tokens": 308,
+  "total_tokens": 3961,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0759,
+  "llm_latency_seconds": 102.0071,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the total amount of contractual obligations that Jack in the Box Inc. has due for payment within the next fiscal year, as of September 29, 2019?\nLabel:",
+      "input_tokens": 104,
+      "output_tokens": 7,
+      "latency_seconds": 3.949640200000431
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the total amount of contractual obligations that Jack in the Box Inc. has due for payment within the next fiscal year, as of September 29, 2019?\nEvidence:\n[1] f1075884f3ae99a0c74074f82c97d74f.pdf p.1\nObligations and Commitments\nThe following is a summary of our contractual obligations and commercial commitments as of September 29, 2019 (in thousands):\nPayments Due by Fiscal Year\nLess than\nTotal 1 year 1-3 years 3-5 years After 5 years\nContractual Obligations:\nLong-term debt obligations (1) 1,708,916 65,087 115,141 667,245 861,443\nCapital lease obligations 3,937 879 1,758 1,260 40\nOperating lease obligations 1,094,011 193,313 332,020 205,173 363,505\nPurchase commitments (2) 1,906,900 854,100 722,900 308,400 21,500\nBenefit obligations (3) 74,714 15,068 13,499 13,533 32,614\nTotal contractual obligations $ 4,788,478 $ 1,128,447 $ 1,185,318 $ 1,195,611 $ 1,279,102\nOther Commercial Commitments\n\n[2] f1075884f3ae99a0c74074f82c97d74f.pdf p.1\nAmended credit facility — On May 1, 2019, we entered into the Fifth Amendment to the Credit Agreement (the “Fifth Amendment”). The Fifth Amendment\nextended the maturity date of both our term loan and revolving credit facility from March 19, 2020 to March 19, 2021. Fees of $1.3 million were paid to third\nparties in connection with the Fifth Amendment.\nRepurchases of Common Stock — During fiscal 2019, we repurchased 1.4 million shares at an aggregate cost of $125.3 million. As of September 29, 2019,\nthere was approximately $175.7 million remaining under a stock buyback program, which expires in November 2020.\nRepurchases of common stock included in our consolidated statement of cash flows for\n\n[3] f1075884f3ae99a0c74074f82c97d74f.pdf p.1\ndepend on pension asset performance, future interest rates, future tax law\nchanges, and future changes in regulatory funding requirements. Based on the funding status of our Qualified Plan as of our last measurement date, there was no\nminimum contribution required in 2019. For additional information related to our pension plans, refer to Note 12,R etirement Plans, of the notes to the\nconsolidated financial statements.\n37\n\n[TABLE]\nContractual Obligations: |  |  |  |  |  |  |  |  |  | \n[/TABLE]\n\n[TABLE]\nCapital lease obligations |  | 3,937 |  |  | 879 |  |  | 1,758 |  |  | 1,260 |  |  | 40 | \n[/TABLE]\n\n[TABLE]\nPurchase commitments (2) |  | 1,906,900 |  |  | 854,100 |  |  | 722,900 |  |  | 308,\nLabel:",
+      "input_tokens": 994,
+      "output_tokens": 3,
+      "latency_seconds": 18.49874479999562
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the total amount of contractual obligations that Jack in the Box Inc. has due for payment within the next fiscal year, as of September 29, 2019?\nEvidence:\n[1] f1075884f3ae99a0c74074f82c97d74f.pdf p.1\nObligations and Commitments\nThe following is a summary of our contractual obligations and commercial commitments as of September 29, 2019 (in thousands):\nPayments Due by Fiscal Year\nLess than\nTotal 1 year 1-3 years 3-5 years After 5 years\nContractual Obligations:\nLong-term debt obligations (1) 1,708,916 65,087 115,141 667,245 861,443\nCapital lease obligations 3,937 879 1,758 1,260 40\nOperating lease obligations 1,094,011 193,313 332,020 205,173 363,505\nPurchase commitments (2) 1,906,900 854,100 722,900 308,400 21,500\nBenefit obligations (3) 74,714 15,068 13,499 13,533 32,614\nTotal contractual obligations $ 4,788,478 $ 1,128,447 $ 1,185,318 $ 1,195,611 $ 1,279,102\nOther Commercial Commitments\n\n[2] f1075884f3ae99a0c74074f82c97d74f.pdf p.1\nAmended credit facility — On May 1, 2019, we entered into the Fifth Amendment to the Credit Agreement (the “Fifth Amendment”). The Fifth Amendment\nextended the maturity date of both our term loan and revolving credit facility from March 19, 2020 to March 19, 2021. Fees of $1.3 million were paid to third\nparties in connection with the Fifth Amendment.\nRepurchases of Common Stock — During fiscal 2019, we repurchased 1.4 million shares at an aggregate cost of $125.3 million. As of September 29, 2019,\nthere was approximately $175.7 million remaining under a stock buyback program, which expires in November 2020.\nRepurchases of common stock included in our consolidated statement of cash flows for\n\n[3] f1075884f3ae99a0c74074f82c97d74f.pdf p.1\ndepend on pension asset performance, future interest rates, future tax law\nchanges, and future changes in regulatory funding requirements. Based on the funding status of our Qualified Plan as of our last measurement date, there was no\nminimum contribution required in 2019. For additional information related to our pension plans, refer to Note 12,R etirement Plans, of the notes to the\nconsolidated financial statements.\n37\n\n[TABLE]\nContractual Obligations: |  |  |  |  |  |  |  |  |  | \n[/TABLE]\n\n[TABLE]\nCapital lease obligations |  | 3,937 |  |  | 879 |  |  | 1,758 |  |  | 1,260 |  |  | 40 | \n[/TABLE]\n\n[TABLE]\nPurchase commitments (2) |  | 1,906,900 |  |  | 854,100 |  |  | 722,900 |  |  | 308,\nDraft:\nThe total amount of contractual obligations due within the next fiscal year (less than 1 year) as of September 29, 2019, is $1,128,447 (from the \"Total contractual obligations\" row and \"Less than 1 year\" column in the table on page 1 of f1075884f3ae99a0c74074f82c97d74f.pdf).\n\nCalculation:  \nFrom the table:  \n- Long-term debt obligations (less than 1 year): $65,087  \n- Capital lease obligations (less than 1 year): $879  \n- Operating lease obligations (less than 1 year): $193,313  \n- Purchase commitments (less than 1 year): $854,100  \n- Benefit obligations (less than 1 year): $15,068  \n\nSum:  \n65,087 + 879 + 193,313 + 854,100 + 15,068 = $1,128,447\n\nAnswer: 1128447\nLabel:",
+      "input_tokens": 1292,
+      "output_tokens": 3,
+      "latency_seconds": 24.662012399996456
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Jack in the Box Inc. contractual obligations due for payment within next fiscal year as of September 29, 2019",
+      "filters": {
+        "year": 2019,
+        "company": "jack-in-the-box-inc"
+      },
+      "chunk_ids": [
+        "f1075884f3ae99a0c74074f82c97d74f::p1::c1::7e153f4be3",
+        "f1075884f3ae99a0c74074f82c97d74f::p1::c0::9481fa4f08",
+        "f1075884f3ae99a0c74074f82c97d74f::p1::c2::e41eb9513a"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c1::7e153f4be3",
+          "document_id": "f1075884f3ae99a0c74074f82c97d74f",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c1::7e153f4be3",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c0::9481fa4f08",
+          "document_id": "f1075884f3ae99a0c74074f82c97d74f",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c0::9481fa4f08",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c2::e41eb9513a",
+          "document_id": "f1075884f3ae99a0c74074f82c97d74f",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "f1075884f3ae99a0c74074f82c97d74f::p1::c2::e41eb9513a",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the total amount of contractual obligations that Jack in the Box Inc. has due for payment within the next fiscal year, as of September 29, 2019?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total amount of contractual obligations that Jack in the Box Inc. has due for payment within the next fiscal year, as of September 29, 2019?\nRetrieval query:",
+  "query_formulation_raw_output": "Jack in the Box Inc. contractual obligations due for payment within next fiscal year as of September 29, 2019",
+  "query_formulation_latency_seconds": 6.5326,
+  "query_formulation_input_tokens": 181,
+  "query_formulation_output_tokens": 28,
+  "query_formulation_trace": {
+    "original_question": "What is the total amount of contractual obligations that Jack in the Box Inc. has due for payment within the next fiscal year, as of September 29, 2019?",
+    "retrieval_query": "Jack in the Box Inc. contractual obligations due for payment within next fiscal year as of September 29, 2019",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the total amount of contractual obligations that Jack in the Box Inc. has due for payment within the next fiscal year, as of September 29, 2019?\nRetrieval query:",
+    "raw_output": "Jack in the Box Inc. contractual obligations due for payment within next fiscal year as of September 29, 2019",
+    "latency_seconds": 6.5326290000011795,
+    "input_tokens": 181,
+    "output_tokens": 28,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "1128447.0",
+  "gold_evidence_reference": "TAT-DQA | raw/f1075884f3ae99a0c74074f82c97d74f.pdf | context_id=f1075884f3ae99a0c74074f82c97d74f"
+}

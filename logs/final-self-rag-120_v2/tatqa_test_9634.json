@@ -1,0 +1,244 @@
+{
+  "question_id": "tatqa_test_9634",
+  "question": "What was the change in Constant currency revenue between 2018 and 2019 for Cornerstone OnDemand Inc. in its 2019 report?",
+  "retrieval_query": "Cornerstone OnDemand Inc. Constant currency revenue change 2018 2019 2019 report",
+  "metadata_filters": {
+    "company": "cornerstone-ondemand-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c0::8242027699",
+      "rank": 1,
+      "dense_score": 0.7041193246841431,
+      "bm25_score": 17.142364592899053,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7e8a46437303bd16e1b748161210ecdc"
+    },
+    {
+      "chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c2::e2caabd9f8",
+      "rank": 2,
+      "dense_score": 0.6706840991973877,
+      "bm25_score": 15.261238923929842,
+      "hybrid_score": 0.33929915880466605,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7e8a46437303bd16e1b748161210ecdc"
+    },
+    {
+      "chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c1::60d12d8441",
+      "rank": 3,
+      "dense_score": 0.6271685361862183,
+      "bm25_score": 16.15179350724617,
+      "hybrid_score": 0.1893663135869744,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "7e8a46437303bd16e1b748161210ecdc"
+    }
+  ],
+  "answer": "Change in constant currency revenue between 2018 and 2019 = 583,600 - 532,600 = 51,000 (in thousands)\n\nSource: [1] p.1 [TABLE] Constant currency revenue\n\nAnswer: 51,000",
+  "latency_seconds": 85.4805,
+  "input_tokens": 4636,
+  "output_tokens": 116,
+  "total_tokens": 4752,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 6,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0341,
+  "llm_latency_seconds": 85.445,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the change in Constant currency revenue between 2018 and 2019 for Cornerstone OnDemand Inc. in its 2019 report?\nLabel:",
+      "input_tokens": 102,
+      "output_tokens": 7,
+      "latency_seconds": 3.448042299998633
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the change in Constant currency revenue between 2018 and 2019 for Cornerstone OnDemand Inc. in its 2019 report?\nEvidence:\n[1] 7e8a46437303bd16e1b748161210ecdc.pdf p.1\nMetrics\nThe following table sets forth our key metrics that we use to evaluate our business, measure our performance, identify trends affecting our business,\nformulate financial projections, and make strategic decisions (in thousands, except annual dollar retention rate and number of customers):\nYear Ended December 31,\n2019 2018 2017\nRevenue $ 576,523 $ 537,891 $ 481,985\nSubscription revenue $ 542,968 $ 473,052 $ 396,764\nAnnual recurring revenue $ 575,000 $ 510,000 $ 439,000\nFree cash flow $ 72,847 $ 49,843 $ 39,839\nAnnual dollar retention rate 90.3% 92.8% 93.5%\nNumber of customers 3,698 3,535 3,250\nThe following table presents a reconciliation of revenue to constant currency revenue (in tho\n\n[2] 7e8a46437303bd16e1b748161210ecdc.pdf p.1\n[/TABLE]\n\n[TABLE]\nRevenue | $ | 576,523 |  |  | $ | 537,891 |  |  | $ | 481,985 | \n[/TABLE]\n\n[TABLE]\nConstant currency revenue | $ | 583,600 |  |  | $ | 532,600 |  |  | $ | 487,850 | \n[/TABLE]\n\n[TABLE]\nConstant currency revenue growth | 8.5 | % |  | 10.5 | % |  | 15.3 | %\n[/TABLE]\n\n[TABLE]\nSubscription revenue | $ | 542,968 |  |  | $ | 473,052 |  |  | $ | 396,764 | \n[/TABLE]\n\n[TABLE]\nProfessional services revenue | $ | 33,555 |  |  | $ | 64,839 |  |  | $ | 85,221 | \n[/TABLE]\n\n[TABLE]\nTotal revenue | $ | 576,523 |  |  | $ | 537,891 |  |  | $ | 481,985 | \n[/TABLE]\n\n[3] 7e8a46437303bd16e1b748161210ecdc.pdf p.1\nin thousands, except for percentages):\nYear Ended December 31,\n2019 2018 2017\nSubscription revenue $ 542,968 $ 473,052 $ 396,764\nPercentage of subscription revenue to total revenue 94.2% 87.9% 82.3%\nProfessional services revenue $ 33,555 $ 64,839 $ 85,221\nPercentage of professional services to total revenue 5.8% 12.1% 17.7%\nTotal revenue $ 576,523 $ 537,891 $ 481,985\nSubscription revenue increased by $69.9 million, or 15%, in 2019 when compared to 2018. Subscription revenue growth on a constant currency basis\nincreased 16% in 2019 when compared to 2018. The increase was attributable to new business, which includes new customers, upsells, cross-sells, and renewals\nfrom existing customers.\nPro\nDecision:",
+      "input_tokens": 1104,
+      "output_tokens": 4,
+      "latency_seconds": 18.845974099996965
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What was the change in Constant currency revenue between 2018 and 2019 for Cornerstone OnDemand Inc. in its 2019 report?\nEvidence:\n[1] 7e8a46437303bd16e1b748161210ecdc.pdf p.1\nMetrics\nThe following table sets forth our key metrics that we use to evaluate our business, measure our performance, identify trends affecting our business,\nformulate financial projections, and make strategic decisions (in thousands, except annual dollar retention rate and number of customers):\nYear Ended December 31,\n2019 2018 2017\nRevenue $ 576,523 $ 537,891 $ 481,985\nSubscription revenue $ 542,968 $ 473,052 $ 396,764\nAnnual recurring revenue $ 575,000 $ 510,000 $ 439,000\nFree cash flow $ 72,847 $ 49,843 $ 39,839\nAnnual dollar retention rate 90.3% 92.8% 93.5%\nNumber of customers 3,698 3,535 3,250\nThe following table presents a reconciliation of revenue to constant currency revenue (in tho\n\n[2] 7e8a46437303bd16e1b748161210ecdc.pdf p.1\n[/TABLE]\n\n[TABLE]\nRevenue | $ | 576,523 |  |  | $ | 537,891 |  |  | $ | 481,985 | \n[/TABLE]\n\n[TABLE]\nConstant currency revenue | $ | 583,600 |  |  | $ | 532,600 |  |  | $ | 487,850 | \n[/TABLE]\n\n[TABLE]\nConstant currency revenue growth | 8.5 | % |  | 10.5 | % |  | 15.3 | %\n[/TABLE]\n\n[TABLE]\nSubscription revenue | $ | 542,968 |  |  | $ | 473,052 |  |  | $ | 396,764 | \n[/TABLE]\n\n[TABLE]\nProfessional services revenue | $ | 33,555 |  |  | $ | 64,839 |  |  | $ | 85,221 | \n[/TABLE]\n\n[TABLE]\nTotal revenue | $ | 576,523 |  |  | $ | 537,891 |  |  | $ | 481,985 | \n[/TABLE]\n\n[3] 7e8a46437303bd16e1b748161210ecdc.pdf p.1\nin thousands, except for percentages):\nYear Ended December 31,\n2019 2018 2017\nSubscription revenue $ 542,968 $ 473,052 $ 396,764\nPercentage of subscription revenue to total revenue 94.2% 87.9% 82.3%\nProfessional services revenue $ 33,555 $ 64,839 $ 85,221\nPercentage of professional services to total revenue 5.8% 12.1% 17.7%\nTotal revenue $ 576,523 $ 537,891 $ 481,985\nSubscription revenue increased by $69.9 million, or 15%, in 2019 when compared to 2018. Subscription revenue growth on a constant currency basis\nincreased 16% in 2019 when compared to 2018. The increase was attributable to new business, which includes new customers, upsells, cross-sells, and renewals\nfrom existing customers.\nPro\nLabel:",
+      "input_tokens": 1020,
+      "output_tokens": 3,
+      "latency_seconds": 16.807892400000128
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the change in Constant currency revenue between 2018 and 2019 for Cornerstone OnDemand Inc. in its 2019 report?\nEvidence:\n[1] 7e8a46437303bd16e1b748161210ecdc.pdf p.1\nMetrics\nThe following table sets forth our key metrics that we use to evaluate our business, measure our performance, identify trends affecting our business,\nformulate financial projections, and make strategic decisions (in thousands, except annual dollar retention rate and number of customers):\nYear Ended December 31,\n2019 2018 2017\nRevenue $ 576,523 $ 537,891 $ 481,985\nSubscription revenue $ 542,968 $ 473,052 $ 396,764\nAnnual recurring revenue $ 575,000 $ 510,000 $ 439,000\nFree cash flow $ 72,847 $ 49,843 $ 39,839\nAnnual dollar retention rate 90.3% 92.8% 93.5%\nNumber of customers 3,698 3,535 3,250\nThe following table presents a reconciliation of revenue to constant currency revenue (in tho\n\n[2] 7e8a46437303bd16e1b748161210ecdc.pdf p.1\n[/TABLE]\n\n[TABLE]\nRevenue | $ | 576,523 |  |  | $ | 537,891 |  |  | $ | 481,985 | \n[/TABLE]\n\n[TABLE]\nConstant currency revenue | $ | 583,600 |  |  | $ | 532,600 |  |  | $ | 487,850 | \n[/TABLE]\n\n[TABLE]\nConstant currency revenue growth | 8.5 | % |  | 10.5 | % |  | 15.3 | %\n[/TABLE]\n\n[TABLE]\nSubscription revenue | $ | 542,968 |  |  | $ | 473,052 |  |  | $ | 396,764 | \n[/TABLE]\n\n[TABLE]\nProfessional services revenue | $ | 33,555 |  |  | $ | 64,839 |  |  | $ | 85,221 | \n[/TABLE]\n\n[TABLE]\nTotal revenue | $ | 576,523 |  |  | $ | 537,891 |  |  | $ | 481,985 | \n[/TABLE]\n\n[3] 7e8a46437303bd16e1b748161210ecdc.pdf p.1\nin thousands, except for percentages):\nYear Ended December 31,\n2019 2018 2017\nSubscription revenue $ 542,968 $ 473,052 $ 396,764\nPercentage of subscription revenue to total revenue 94.2% 87.9% 82.3%\nProfessional services revenue $ 33,555 $ 64,839 $ 85,221\nPercentage of professional services to total revenue 5.8% 12.1% 17.7%\nTotal revenue $ 576,523 $ 537,891 $ 481,985\nSubscription revenue increased by $69.9 million, or 15%, in 2019 when compared to 2018. Subscription revenue growth on a constant currency basis\nincreased 16% in 2019 when compared to 2018. The increase was attributable to new business, which includes new customers, upsells, cross-sells, and renewals\nfrom existing customers.\nPro\nDraft:\nChange in constant currency revenue between 2018 and 2019 = 583,600 - 532,600 = 51,000 (in thousands)\n\nSource: [1] p.1 [TABLE] Constant currency revenue\n\nAnswer: 51,000\nLabel:",
+      "input_tokens": 1123,
+      "output_tokens": 3,
+      "latency_seconds": 18.415259099994728
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Cornerstone OnDemand Inc. Constant currency revenue change 2018 2019 2019 report",
+      "filters": {
+        "company": "cornerstone-ondemand-inc"
+      },
+      "chunk_ids": [
+        "7e8a46437303bd16e1b748161210ecdc::p1::c0::8242027699",
+        "7e8a46437303bd16e1b748161210ecdc::p1::c2::e2caabd9f8",
+        "7e8a46437303bd16e1b748161210ecdc::p1::c1::60d12d8441"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c0::8242027699",
+          "document_id": "7e8a46437303bd16e1b748161210ecdc",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c0::8242027699",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c2::e2caabd9f8",
+          "document_id": "7e8a46437303bd16e1b748161210ecdc",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 568,
+          "source_chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c2::e2caabd9f8",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c1::60d12d8441",
+          "document_id": "7e8a46437303bd16e1b748161210ecdc",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "7e8a46437303bd16e1b748161210ecdc::p1::c1::60d12d8441",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the change in Constant currency revenue between 2018 and 2019 for Cornerstone OnDemand Inc. in its 2019 report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in Constant currency revenue between 2018 and 2019 for Cornerstone OnDemand Inc. in its 2019 report?\nRetrieval query:",
+  "query_formulation_raw_output": "Cornerstone OnDemand Inc. Constant currency revenue change 2018 2019 2019 report",
+  "query_formulation_latency_seconds": 4.373,
+  "query_formulation_input_tokens": 179,
+  "query_formulation_output_tokens": 27,
+  "query_formulation_trace": {
+    "original_question": "What was the change in Constant currency revenue between 2018 and 2019 for Cornerstone OnDemand Inc. in its 2019 report?",
+    "retrieval_query": "Cornerstone OnDemand Inc. Constant currency revenue change 2018 2019 2019 report",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the change in Constant currency revenue between 2018 and 2019 for Cornerstone OnDemand Inc. in its 2019 report?\nRetrieval query:",
+    "raw_output": "Cornerstone OnDemand Inc. Constant currency revenue change 2018 2019 2019 report",
+    "latency_seconds": 4.372953100006271,
+    "input_tokens": 179,
+    "output_tokens": 27,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "51000.0",
+  "gold_evidence_reference": "TAT-DQA | raw/7e8a46437303bd16e1b748161210ecdc.pdf | context_id=7e8a46437303bd16e1b748161210ecdc"
+}

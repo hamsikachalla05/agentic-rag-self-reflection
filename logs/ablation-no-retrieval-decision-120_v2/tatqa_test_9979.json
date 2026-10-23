@@ -1,0 +1,298 @@
+{
+  "question_id": "tatqa_test_9979",
+  "question": "What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?",
+  "retrieval_query": "Adtran Inc. total revenue 2019 Network Solutions Services & Support difference",
+  "metadata_filters": {
+    "year": 2019,
+    "company": "adtran-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c1::186185405f",
+      "rank": 1,
+      "dense_score": 0.7217115163803101,
+      "bm25_score": 18.77375188149321,
+      "hybrid_score": 0.6,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d44e4b853cdde28b616e66c5d6573cd0"
+    },
+    {
+      "chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c0::31414ed2d4",
+      "rank": 2,
+      "dense_score": 0.6394902467727661,
+      "bm25_score": 19.741555698687858,
+      "hybrid_score": 0.4,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "d44e4b853cdde28b616e66c5d6573cd0"
+    }
+  ],
+  "answer": "Difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in 2019:\n\nTotal revenue for Network Solutions (Access & Aggregation + Subscriber Solutions & Experience + Traditional & Other Products) = $289,980 + $144,651 + $20,595 = $455,226  \nTotal revenue for Services & Support = $58,894 + $8,269 + $7,672 = $74,835  \n\nDifference = $455,226 - $74,835 = $380,391\n\nSource: d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\n\n380391",
+  "latency_seconds": 88.6435,
+  "input_tokens": 4025,
+  "output_tokens": 222,
+  "total_tokens": 4247,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 2,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0304,
+  "llm_latency_seconds": 88.6108,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": false,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?\nEvidence:\n[1] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\n) 144,651 8,269 152,920\nTraditional & Other Products 20,595 7,672 28,267\nTotal $455,226 $74,835 $530,061\n(1) Subscriber Solutions & Experience was formerly reported as Customer Devices. With the increasing focus on\nenhancing the customer experience for both our business and consumer broadband customers and the addition\nof SmartRG during the fourth quarter of 2018, Subscriber Solutions & Experience more accurately represents this\nrevenue category.\n54 ADTRAN 2019 Annual Report\n\n[TABLE]\nRevenue | $9,186\nNet Loss | $(1,297)\n[/TABLE]\n\n[TABLE]\nCustomer relationships | $15,190 | 3 – 12\nDeveloped technology | 7,400 | 7\nLicensed technology | 5,900 | 9\nSupplier relationship | 2,800 | 2\nLicensing agree\n\n[2] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\nOur Consolidated Statements of Income include the following revenue and net loss attributable to SmartRG and\nSumitomo since the date of acquisition:\nMarch 19, 2018 to\n(In thousands) December 31, 2018\nRevenue $9,186\nNet Loss $(1,297)\nThe details of the acquired intangible assets from the SmartRG and Sumitomo acquisitions are as follows:\n(In thousands) Value Life (in years)\nCustomer relationships $15,190 3 – 12\nDeveloped technology 7,400 7\nLicensed technology 5,900 9\nSupplier relationship 2,800 2\nLicensing agreements 560 5 – 10\nTrade name 210 3\nTotal $32,060\nThe following unaudited supplemental pro forma information presents the financial results as if the acquisition\nof SmartRG and Sumitomo h\nDecision:",
+      "input_tokens": 705,
+      "output_tokens": 4,
+      "latency_seconds": 14.175045500000124
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?\nEvidence:\n[1] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\n) 144,651 8,269 152,920\nTraditional & Other Products 20,595 7,672 28,267\nTotal $455,226 $74,835 $530,061\n(1) Subscriber Solutions & Experience was formerly reported as Customer Devices. With the increasing focus on\nenhancing the customer experience for both our business and consumer broadband customers and the addition\nof SmartRG during the fourth quarter of 2018, Subscriber Solutions & Experience more accurately represents this\nrevenue category.\n54 ADTRAN 2019 Annual Report\n\n[TABLE]\nRevenue | $9,186\nNet Loss | $(1,297)\n[/TABLE]\n\n[TABLE]\nCustomer relationships | $15,190 | 3 – 12\nDeveloped technology | 7,400 | 7\nLicensed technology | 5,900 | 9\nSupplier relationship | 2,800 | 2\nLicensing agree\n\n[2] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\nOur Consolidated Statements of Income include the following revenue and net loss attributable to SmartRG and\nSumitomo since the date of acquisition:\nMarch 19, 2018 to\n(In thousands) December 31, 2018\nRevenue $9,186\nNet Loss $(1,297)\nThe details of the acquired intangible assets from the SmartRG and Sumitomo acquisitions are as follows:\n(In thousands) Value Life (in years)\nCustomer relationships $15,190 3 – 12\nDeveloped technology 7,400 7\nLicensed technology 5,900 9\nSupplier relationship 2,800 2\nLicensing agreements 560 5 – 10\nTrade name 210 3\nTotal $32,060\nThe following unaudited supplemental pro forma information presents the financial results as if the acquisition\nof SmartRG and Sumitomo h\nLabel:",
+      "input_tokens": 621,
+      "output_tokens": 3,
+      "latency_seconds": 12.470248100002209
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?\nEvidence:\n[1] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\nments | 560 | 5 – 10\nTrade name | 210 | 3\n[/TABLE]\n\n[TABLE]\nPro forma revenue | $559,050 | $702,573\nPro forma net income (loss) | $(33,862) | $33,206\n[/TABLE]\n\n[TABLE]\nAccess & Aggregation | $289,980 | $58,894 | $348,874\nSubscriber Solutions & Experience (1) | 144,651 | 8,269 | 152,920\nTraditional & Other Products | 20,595 | 7,672 | 28,267\n[/TABLE]\n\n[2] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\nad occurred on January 1, 2017. This unaudited supplemental pro forma information\ndoes not purport to be indicative of what would have occurred had the acquisition been completed on January 1,\n2017, nor is it indicative of any future results. Aside from revising the 2017 net income for the effect of the bargain\npurchase gains, there were no material, non-recurring adjustments to this unaudited pro-forma information.\n(In thousands) 2018 2017\nPro forma revenue $559,050 $702,573\nPro forma net income (loss) $(33,862) $33,206\nFor the years ended December 31, 2019 and 2018, we incurred acquisition and integration related expenses\nand amortization of acquired intangibles of $5.0 million and $2.9 mi\nLabel:",
+      "input_tokens": 556,
+      "output_tokens": 3,
+      "latency_seconds": 9.629979100001947
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?\nEvidence:\n[1] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\nments | 560 | 5 – 10\nTrade name | 210 | 3\n[/TABLE]\n\n[TABLE]\nPro forma revenue | $559,050 | $702,573\nPro forma net income (loss) | $(33,862) | $33,206\n[/TABLE]\n\n[TABLE]\nAccess & Aggregation | $289,980 | $58,894 | $348,874\nSubscriber Solutions & Experience (1) | 144,651 | 8,269 | 152,920\nTraditional & Other Products | 20,595 | 7,672 | 28,267\n[/TABLE]\n\n[2] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\nllion, respectively, related to the SmartRG\nand Sumitomo acquisitions. No acquisition expenses related to the SmartRG and Sumitomo acquisitions were\nrecorded during the year ended December 31, 2017.\nNote 3 – Revenue\nThe following table disaggregates our revenue by major source for the year ended December 31, 2019:\nNetwork Services &\n(In thousands) Solutions Support Total\nAccess & Aggregation $289,980 $58,894 $348,874\nSubscriber Solutions & Experience (1) 144,651 8,269 152,920\nTraditional & Other Products 20,595 7,672 28,267\nTotal $455,226 $74,835 $530,061\n(1) Subscriber Solutions\nLabel:",
+      "input_tokens": 555,
+      "output_tokens": 3,
+      "latency_seconds": 5.842445000002044
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?\nEvidence:\n[1] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\nments | 560 | 5 – 10\nTrade name | 210 | 3\n[/TABLE]\n\n[TABLE]\nPro forma revenue | $559,050 | $702,573\nPro forma net income (loss) | $(33,862) | $33,206\n[/TABLE]\n\n[TABLE]\nAccess & Aggregation | $289,980 | $58,894 | $348,874\nSubscriber Solutions & Experience (1) | 144,651 | 8,269 | 152,920\nTraditional & Other Products | 20,595 | 7,672 | 28,267\n[/TABLE]\n\n[2] d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\nllion, respectively, related to the SmartRG\nand Sumitomo acquisitions. No acquisition expenses related to the SmartRG and Sumitomo acquisitions were\nrecorded during the year ended December 31, 2017.\nNote 3 – Revenue\nThe following table disaggregates our revenue by major source for the year ended December 31, 2019:\nNetwork Services &\n(In thousands) Solutions Support Total\nAccess & Aggregation $289,980 $58,894 $348,874\nSubscriber Solutions & Experience (1) 144,651 8,269 152,920\nTraditional & Other Products 20,595 7,672 28,267\nTotal $455,226 $74,835 $530,061\n(1) Subscriber Solutions\nDraft:\nDifference in total revenue between Network Solutions and Services & Support for Adtran Inc. in 2019:\n\nTotal revenue for Network Solutions (Access & Aggregation + Subscriber Solutions & Experience + Traditional & Other Products) = $289,980 + $144,651 + $20,595 = $455,226  \nTotal revenue for Services & Support = $58,894 + $8,269 + $7,672 = $74,835  \n\nDifference = $455,226 - $74,835 = $380,391\n\nSource: d44e4b853cdde28b616e66c5d6573cd0.pdf p.1\n\n380391\nLabel:",
+      "input_tokens": 774,
+      "output_tokens": 3,
+      "latency_seconds": 15.354773199996998
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Adtran Inc. total revenue 2019 Network Solutions Services & Support difference",
+      "filters": {
+        "year": 2019,
+        "company": "adtran-inc"
+      },
+      "chunk_ids": [
+        "d44e4b853cdde28b616e66c5d6573cd0::p1::c1::186185405f",
+        "d44e4b853cdde28b616e66c5d6573cd0::p1::c0::31414ed2d4"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c1::186185405f",
+          "document_id": "d44e4b853cdde28b616e66c5d6573cd0",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c1::186185405f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c0::31414ed2d4",
+          "document_id": "d44e4b853cdde28b616e66c5d6573cd0",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c0::31414ed2d4",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c1::186185405f",
+          "document_id": "d44e4b853cdde28b616e66c5d6573cd0",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1050,
+          "source_chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c1::186185405f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c0::31414ed2d4",
+          "document_id": "d44e4b853cdde28b616e66c5d6573cd0",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c0::31414ed2d4",
+          "reason": "slide_later_chars"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c1::186185405f",
+          "document_id": "d44e4b853cdde28b616e66c5d6573cd0",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1050,
+          "source_chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c1::186185405f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c0::31414ed2d4",
+          "document_id": "d44e4b853cdde28b616e66c5d6573cd0",
+          "rank": 2,
+          "char_start": 1400,
+          "char_end": 1986,
+          "source_chunk_id": "d44e4b853cdde28b616e66c5d6573cd0::p1::c0::31414ed2d4",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "evidence_window_refinement_2",
+    "evidence_support_after_refinement_2",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?\nRetrieval query:",
+  "query_formulation_raw_output": "Adtran Inc. total revenue 2019 Network Solutions Services & Support difference",
+  "query_formulation_latency_seconds": 3.9167,
+  "query_formulation_input_tokens": 171,
+  "query_formulation_output_tokens": 18,
+  "query_formulation_trace": {
+    "original_question": "What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?",
+    "retrieval_query": "Adtran Inc. total revenue 2019 Network Solutions Services & Support difference",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the difference in total revenue between Network Solutions and Services & Support for Adtran Inc. in the year 2019?\nRetrieval query:",
+    "raw_output": "Adtran Inc. total revenue 2019 Network Solutions Services & Support difference",
+    "latency_seconds": 3.9167357000005723,
+    "input_tokens": 171,
+    "output_tokens": 18,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "380391.0",
+  "gold_evidence_reference": "TAT-DQA | raw/d44e4b853cdde28b616e66c5d6573cd0.pdf | context_id=d44e4b853cdde28b616e66c5d6573cd0"
+}

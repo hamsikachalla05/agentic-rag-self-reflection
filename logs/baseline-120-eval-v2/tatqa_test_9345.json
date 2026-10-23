@@ -1,0 +1,145 @@
+{
+  "question_id": "tatqa_test_9345",
+  "question": "In the 2018 financial report of Singapore Telecommunications Ltd, how many distinct factors contributed to the Deferred tax assets as at 31 March 2018?",
+  "retrieval_query": "Singapore Telecommunications Ltd 2018 financial report deferred tax assets distinct factors as at 31 March 2018",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "3c70a27ee159768e51821887c914a814::p1::c0::4fe4848c98",
+      "rank": 1,
+      "dense_score": 0.8075723648071289,
+      "bm25_score": 23.50663936570814,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "3c70a27ee159768e51821887c914a814"
+    },
+    {
+      "chunk_id": "3c70a27ee159768e51821887c914a814::p1::c1::032be96d29",
+      "rank": 2,
+      "dense_score": 0.789905309677124,
+      "bm25_score": 18.972534431993655,
+      "hybrid_score": 0.7883184331497594,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "3c70a27ee159768e51821887c914a814"
+    },
+    {
+      "chunk_id": "270bd8844a1df7adb9e0877771195f85::p1::c0::0c5635a256",
+      "rank": 3,
+      "dense_score": 0.7139664888381958,
+      "bm25_score": 16.34479343611444,
+      "hybrid_score": 0.34008282854707617,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "270bd8844a1df7adb9e0877771195f85"
+    },
+    {
+      "chunk_id": "4ab898d6877c171a1e67f9be919c5e68::p1::c1::e29b03db9e",
+      "rank": 4,
+      "dense_score": 0.7348373532295227,
+      "bm25_score": 12.320705930423555,
+      "hybrid_score": 0.3333276819112999,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "4ab898d6877c171a1e67f9be919c5e68"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_145::p1::c2::c77c4e483c",
+      "rank": 5,
+      "dense_score": 0.7149298191070557,
+      "bm25_score": 12.003725945688489,
+      "hybrid_score": 0.22600352001412838,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_145"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 29.1547,
+  "input_tokens": 1642,
+  "output_tokens": 39,
+  "total_tokens": 1681,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.0546,
+  "llm_latency_seconds": 29.0964,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "In the 2018 financial report of Singapore Telecommunications Ltd, how many distinct factors contributed to the Deferred tax assets as at 31 March 2018?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the 2018 financial report of Singapore Telecommunications Ltd, how many distinct factors contributed to the Deferred tax assets as at 31 March 2018?\nRetrieval query:",
+  "query_formulation_raw_output": "Singapore Telecommunications Ltd 2018 financial report deferred tax assets distinct factors as at 31 March 2018",
+  "query_formulation_latency_seconds": 4.4708,
+  "query_formulation_input_tokens": 180,
+  "query_formulation_output_tokens": 28,
+  "query_formulation_trace": {
+    "original_question": "In the 2018 financial report of Singapore Telecommunications Ltd, how many distinct factors contributed to the Deferred tax assets as at 31 March 2018?",
+    "retrieval_query": "Singapore Telecommunications Ltd 2018 financial report deferred tax assets distinct factors as at 31 March 2018",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: In the 2018 financial report of Singapore Telecommunications Ltd, how many distinct factors contributed to the Deferred tax assets as at 31 March 2018?\nRetrieval query:",
+    "raw_output": "Singapore Telecommunications Ltd 2018 financial report deferred tax assets distinct factors as at 31 March 2018",
+    "latency_seconds": 4.470804800002952,
+    "input_tokens": 180,
+    "output_tokens": 28,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 24.6256,
+  "answer_generation_input_tokens": 1462,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: In the 2018 financial report of Singapore Telecommunications Ltd, how many distinct factors contributed to the Deferred tax assets as at 31 March 2018?\nEvidence:\n[1] 3c70a27ee159768e51821887c914a814.pdf p.1\nNotes to the Financial Statements\nFor the financial year ended 31 March 2019\n12.2 Deferred Taxes (Cont’d)\nCompany - 2018 Provisions Others Total\nDeferred tax assets S$ Mil S$ Mil S$ Mil\nBalance as at 1 April 2017 0.3 2.8 3.1\nEffects of adoption of SFRS(I) 15 - (1.0) (1.0)\nBalance as at 1 April 2017, restated 0.3 1.8 2.1\nCredited to income statement 0.2 9.0 9.2\nBalance as at 31 March 2018 0.5 10.8 11.3\nAccelerated tax\nCompany - 2018 depreciation Total\nDeferred tax liabilities S$ Mil S$ Mil\nBalance as at 1 April 2017 (285.3) (285.3)\nEffects of adoption of SFRS(I) 1 10.2 10.2\nBalance as at 1 April 2017, restated (275.1) (275.1)\nCharged to income statement (4.4) (4.4)\nBalance as at 31 March 2018 ...\n\n[2] 3c70a27ee159768e51821887c914a814.pdf p.1\n.2) (273.0)\n(238.5) (182.6) 62.1 (274.5) (268.2) (273.0)\nDeferred tax assets are recognised to the extent that realisation of the related tax benefits through future taxable\nprofits is probable.\nAs at 31 March 2019, the subsidiaries of the Group had estimated unutilised income tax losses of approximately\nS$1.65 billion (31 March 2018: $1.35 billion), of which S$25 million (31 March 2018: S$16 million) will expire in the next\nfive years and S$960 million (31 March 2018: S$700 million) will expire from 2024 to 2037.\n185\n\n[3] 270bd8844a1df7adb9e0877771195f85.pdf p.1\nProperty and equipment, net by geographic location consists of the following:\nAs of March 31,\n2019 2018\nUnited States (1) $ 62,455 $ 62,064\nUnited Kingdom (2) 17,402 46,664\nSouth Africa 6,170 6,512\nAustralia 3,481 3,953\nOther 4,694 4,629\nTotal $ 94,202 $ 123,822\n(1) Includes amounts capitalized related to the Company’s U.S. build-to-suit facility of $41.8 million and $39.4 million as of March 31, 2019 and 2018,\nrespectively.\n(2) Includes amounts capitalized related to the Company’s U.K. build-to-suit facility of $31.2 million as of March 31, 2018. In March 2019, the Company\nderecognized the U.K. build-to-suit facility upon substantial completion of construction. See Note 12 for further detai ...\n\n[4] 4ab898d6877c171a1e67f9be919c5e68.pdf p.1\nTax Act reduced the U.S. federal corporate income tax rate from 35% to 21%, effective January 1, 2018. During the year ended\nDecember 31, 2017, the Company remeasured certain deferred tax assets and liabilities and recorded a $15.0 million provisional tax\ncharge. During the year ended December 31, 2018, the Company reduced the initial provisional tax charge by recording a $4.9\nmillion benefit related to accelerated tax deductions claimed on the 2018 U.S. Federal Income Tax Return.\nThe Tax Act required U.S. companies to pay a one-time transition tax on certain unremitted foreign earnings. During the year ended\nDecember 31, 2017, the Company recorded a $20.9 million provisional tax charge base ...\n\n[5] finqa_test_ctx_145.pdf p.1\nare subject to continued technical guidance which may change the provisional amounts recorded in the financial\nstatements, and will be evaluated throughout the measurement period, as permitted by SAB 118.\nAs of December 31, 2015, the Company had deferred tax liabilities of $25.8 million on foreign earnings of the legacy Nalco entities and\nlegacy Champion entities that the Company intended to repatriate. The deferred tax liabilities originated based on purchase accounting\ndecisions made in connection with the Nalco merger and Champion acquisition and were the result of extensive studies required to\ncalculate the impact at the purchase date. The remaining foreign earnings were repatriated in 2 ...\nAnswer:",
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "2.0",
+  "gold_evidence_reference": "TAT-DQA | raw/3c70a27ee159768e51821887c914a814.pdf | context_id=3c70a27ee159768e51821887c914a814"
+}

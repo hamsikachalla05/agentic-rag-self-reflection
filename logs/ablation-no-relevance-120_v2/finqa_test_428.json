@@ -1,0 +1,321 @@
+{
+  "question_id": "finqa_test_428",
+  "question": "What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?",
+  "retrieval_query": "American Tower aggregate carrying value long-term debt projected balance as of December 31, 2009 considering maturities of debt obligations",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "8904a4eb6ba20505519dbbd57dd120bf::p1::c0::ef976e9029",
+      "rank": 1,
+      "dense_score": 0.7599981427192688,
+      "bm25_score": 26.29016168615413,
+      "hybrid_score": 0.7799450426131209,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "8904a4eb6ba20505519dbbd57dd120bf"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+      "rank": 2,
+      "dense_score": 0.7204554080963135,
+      "bm25_score": 23.461470772767285,
+      "hybrid_score": 0.4392269740017908,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_11"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+      "rank": 3,
+      "dense_score": 0.6807370781898499,
+      "bm25_score": 36.83707630621953,
+      "hybrid_score": 0.4353507667549166,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_92"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_235::p1::c0::69bd8f0a41",
+      "rank": 4,
+      "dense_score": 0.7311673164367676,
+      "bm25_score": null,
+      "hybrid_score": 0.3946115908121041,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_235"
+    },
+    {
+      "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+      "rank": 5,
+      "dense_score": 0.6952087879180908,
+      "bm25_score": 22.77892841942974,
+      "hybrid_score": 0.245131320097046,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_1156"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 135.4984,
+  "input_tokens": 8093,
+  "output_tokens": 70,
+  "total_tokens": 8163,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.0735,
+  "llm_latency_seconds": 135.4227,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?\nLabel:",
+      "input_tokens": 106,
+      "output_tokens": 7,
+      "latency_seconds": 3.422826599999098
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?\nEvidence:\n[1] 8904a4eb6ba20505519dbbd57dd120bf.pdf p.1\nAMERICAN TOWER CORPORATION AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS\n(Tabular amounts in millions, unless otherwise disclosed)\nCarrying Value Carrying Value\n(Denominated Currency) (1) (USD) (1) Interest Rate Maturity Date\n2019 2018 2019 2018\nSouth African Credit Facility (2) 288.7 577.4 $ 20.6 $ 40.2 8.75% December 17, 2020\nColombian Credit Facility (3) 79,647.3 109,193.8 $ 24.3 $ 33.6 8.13% April 24, 2021\nBrazil Credit Facility (4) 65.4 9944..77 $ 16.2 $ 24.4 Various January 15, 2022\nKenya Debt (5) 29.6 51.8 $ 29.6 $ 51.8 8.00% October 1, 2021\nU.S. Subsidiary Debt (6) 1.9 2.5 $ 1.9 $ 2.5 —% January 1, 2022\nEaton Towers Debt (7):\nUSD Denominated (8) 238.8 — $ 238.8 $ — Vari\n\n[2] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[3] finqa_test_ctx_92.pdf p.1\nDebt Issuance Costs:\nDebt issuance costs are reflected as a direct deduction of our long-term debt balance on the consolidated balance sheets. We incurred debt issuance costs of\n$15 million in 2018 and $53 million in 2016. Debt issuance costs in 2017 were insignificant. Unamortized debt issuance costs were $115 million at\nDecember 29, 2018, $114 million at December 30, 2017, and $124 million at December 31, 2016. Amortization of debt issuance costs was $16 million in\n2018, $16 million in 2017, and $14 million in 2016.\nDebt Premium:\nUnamortized debt premiums are presented on the consolidated balance sheets as a direct addition to the carrying amount of debt. Unamortized debt premium,\nnet, was\n\n[4] convfinqa_ctx_235.pdf p.1\nAMERICANTOWERCORPORATIONANDSUBSIDIARIES\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS\nLossonRetirementofLong-TermObligations—Lossonretirementoflong-termobligationsprimarilyincludes\ncashpaidtoretiredebtinexcessofitscarryingvalue,cashpaidtoholdersofconvertiblenotesinconnection\nwithnoteconversionsandnon-cashchargesrelatedtothewrite-offofdeferredfinancingfees.Lossonretirement\noflong-termobligationsalsoincludesgainsfromrepurchasingorrefinancingcertainoftheCompany’sdebt\nobligations.\nEarningsPerCommonShare—BasicandDiluted—Basicincomefromcontinuingoperationspercommonshare\nfortheyearsendedDecember31,2012,2011and2010representsincomefromcontinuingoperations\nattributabletoAmericanTowerCorporationdividedbythewe\n\n[5] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949\nLabel:",
+      "input_tokens": 1522,
+      "output_tokens": 3,
+      "latency_seconds": 28.065640799999528
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?\nEvidence:\n[1] 8904a4eb6ba20505519dbbd57dd120bf.pdf p.1\nAMERICAN TOWER CORPORATION AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS\n(Tabular amounts in millions, unless otherwise disclosed)\nCarrying Value Carrying Value\n(Denominated Currency) (1) (USD) (1) Interest Rate Maturity Date\n2019 2018 2019 2018\nSouth African Credit Facility (2) 288.7 577.4 $ 20.6 $ 40.2 8.75% December 17, 2020\nColombian Credit Facility (3) 79,647.3 109,193.8 $ 24.3 $ 33.6 8.13% April 24, 2021\nBrazil Credit Facility (4) 65.4 9944..77 $ 16.2 $ 24.4 Various January 15, 2022\nKenya Debt (5) 29.6 51.8 $ 29.6 $ 51.8 8.00% October 1, 2021\nU.S. Subsidiary Debt (6) 1.9 2.5 $ 1.9 $ 2.5 —% January 1, 2022\nEaton Towers Debt (7):\nUSD Denominated (8) 238.8 — $ 238.8 $ — Vari\n\n[2] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[3] finqa_test_ctx_92.pdf p.1\nDebt Issuance Costs:\nDebt issuance costs are reflected as a direct deduction of our long-term debt balance on the consolidated balance sheets. We incurred debt issuance costs of\n$15 million in 2018 and $53 million in 2016. Debt issuance costs in 2017 were insignificant. Unamortized debt issuance costs were $115 million at\nDecember 29, 2018, $114 million at December 30, 2017, and $124 million at December 31, 2016. Amortization of debt issuance costs was $16 million in\n2018, $16 million in 2017, and $14 million in 2016.\nDebt Premium:\nUnamortized debt premiums are presented on the consolidated balance sheets as a direct addition to the carrying amount of debt. Unamortized debt premium,\nnet, was\n\n[4] convfinqa_ctx_235.pdf p.1\nAMERICANTOWERCORPORATIONANDSUBSIDIARIES\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS\nLossonRetirementofLong-TermObligations—Lossonretirementoflong-termobligationsprimarilyincludes\ncashpaidtoretiredebtinexcessofitscarryingvalue,cashpaidtoholdersofconvertiblenotesinconnection\nwithnoteconversionsandnon-cashchargesrelatedtothewrite-offofdeferredfinancingfees.Lossonretirement\noflong-termobligationsalsoincludesgainsfromrepurchasingorrefinancingcertainoftheCompany’sdebt\nobligations.\nEarningsPerCommonShare—BasicandDiluted—Basicincomefromcontinuingoperationspercommonshare\nfortheyearsendedDecember31,2012,2011and2010representsincomefromcontinuingoperations\nattributabletoAmericanTowerCorporationdividedbythewe\n\n[5] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1563,
+      "output_tokens": 4,
+      "latency_seconds": 29.878669600002468
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?\nEvidence:\n[1] 8904a4eb6ba20505519dbbd57dd120bf.pdf p.1\nAMERICAN TOWER CORPORATION AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS\n(Tabular amounts in millions, unless otherwise disclosed)\nCarrying Value Carrying Value\n(Denominated Currency) (1) (USD) (1) Interest Rate Maturity Date\n2019 2018 2019 2018\nSouth African Credit Facility (2) 288.7 577.4 $ 20.6 $ 40.2 8.75% December 17, 2020\nColombian Credit Facility (3) 79,647.3 109,193.8 $ 24.3 $ 33.6 8.13% April 24, 2021\nBrazil Credit Facility (4) 65.4 9944..77 $ 16.2 $ 24.4 Various January 15, 2022\nKenya Debt (5) 29.6 51.8 $ 29.6 $ 51.8 8.00% October 1, 2021\nU.S. Subsidiary Debt (6) 1.9 2.5 $ 1.9 $ 2.5 —% January 1, 2022\nEaton Towers Debt (7):\nUSD Denominated (8) 238.8 — $ 238.8 $ — Vari\n\n[2] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[3] finqa_test_ctx_92.pdf p.1\nDebt Issuance Costs:\nDebt issuance costs are reflected as a direct deduction of our long-term debt balance on the consolidated balance sheets. We incurred debt issuance costs of\n$15 million in 2018 and $53 million in 2016. Debt issuance costs in 2017 were insignificant. Unamortized debt issuance costs were $115 million at\nDecember 29, 2018, $114 million at December 30, 2017, and $124 million at December 31, 2016. Amortization of debt issuance costs was $16 million in\n2018, $16 million in 2017, and $14 million in 2016.\nDebt Premium:\nUnamortized debt premiums are presented on the consolidated balance sheets as a direct addition to the carrying amount of debt. Unamortized debt premium,\nnet, was\n\n[4] convfinqa_ctx_235.pdf p.1\nAMERICANTOWERCORPORATIONANDSUBSIDIARIES\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS\nLossonRetirementofLong-TermObligations—Lossonretirementoflong-termobligationsprimarilyincludes\ncashpaidtoretiredebtinexcessofitscarryingvalue,cashpaidtoholdersofconvertiblenotesinconnection\nwithnoteconversionsandnon-cashchargesrelatedtothewrite-offofdeferredfinancingfees.Lossonretirement\noflong-termobligationsalsoincludesgainsfromrepurchasingorrefinancingcertainoftheCompany’sdebt\nobligations.\nEarningsPerCommonShare—BasicandDiluted—Basicincomefromcontinuingoperationspercommonshare\nfortheyearsendedDecember31,2012,2011and2010representsincomefromcontinuingoperations\nattributabletoAmericanTowerCorporationdividedbythewe\n\n[5] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 1546,
+      "output_tokens": 11,
+      "latency_seconds": 30.10111390000384
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?\nEvidence:\n[1] 8904a4eb6ba20505519dbbd57dd120bf.pdf p.1\nAMERICAN TOWER CORPORATION AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS\n(Tabular amounts in millions, unless otherwise disclosed)\nCarrying Value Carrying Value\n(Denominated Currency) (1) (USD) (1) Interest Rate Maturity Date\n2019 2018 2019 2018\nSouth African Credit Facility (2) 288.7 577.4 $ 20.6 $ 40.2 8.75% December 17, 2020\nColombian Credit Facility (3) 79,647.3 109,193.8 $ 24.3 $ 33.6 8.13% April 24, 2021\nBrazil Credit Facility (4) 65.4 9944..77 $ 16.2 $ 24.4 Various January 15, 2022\nKenya Debt (5) 29.6 51.8 $ 29.6 $ 51.8 8.00% October 1, 2021\nU.S. Subsidiary Debt (6) 1.9 2.5 $ 1.9 $ 2.5 —% January 1, 2022\nEaton Towers Debt (7):\nUSD Denominated (8) 238.8 — $ 238.8 $ — Vari\n\n[2] finqa_test_ctx_11.pdf p.1\n16 During the years ended December 31,2004,and January 2,2004,we entered into\nFAIR VALUE OF FINANCIAL INSTRUMENTS\ninterest rate swaps to manage interest rate risk associated with forecasted timeshare\nWe believe that the fair values ofcurrent assets and current liabilities approximate their\nnote sales.These swaps were not accounted for as hedges under FAS No.133.The\nreported carrying amounts.The fair values ofnoncurrent financial assets,liabilities and\nswaps were terminated upon the sale ofthe notes and resulted in a gain of$2 million\nderivatives are shown below.\nduring the year ended December 31,2004,and a loss of$4 million during the year\nended January 2,2004.These amounts were largely offs\n\n[3] finqa_test_ctx_92.pdf p.1\nDebt Issuance Costs:\nDebt issuance costs are reflected as a direct deduction of our long-term debt balance on the consolidated balance sheets. We incurred debt issuance costs of\n$15 million in 2018 and $53 million in 2016. Debt issuance costs in 2017 were insignificant. Unamortized debt issuance costs were $115 million at\nDecember 29, 2018, $114 million at December 30, 2017, and $124 million at December 31, 2016. Amortization of debt issuance costs was $16 million in\n2018, $16 million in 2017, and $14 million in 2016.\nDebt Premium:\nUnamortized debt premiums are presented on the consolidated balance sheets as a direct addition to the carrying amount of debt. Unamortized debt premium,\nnet, was\n\n[4] convfinqa_ctx_235.pdf p.1\nAMERICANTOWERCORPORATIONANDSUBSIDIARIES\nNOTESTOCONSOLIDATEDFINANCIALSTATEMENTS\nLossonRetirementofLong-TermObligations—Lossonretirementoflong-termobligationsprimarilyincludes\ncashpaidtoretiredebtinexcessofitscarryingvalue,cashpaidtoholdersofconvertiblenotesinconnection\nwithnoteconversionsandnon-cashchargesrelatedtothewrite-offofdeferredfinancingfees.Lossonretirement\noflong-termobligationsalsoincludesgainsfromrepurchasingorrefinancingcertainoftheCompany’sdebt\nobligations.\nEarningsPerCommonShare—BasicandDiluted—Basicincomefromcontinuingoperationspercommonshare\nfortheyearsendedDecember31,2012,2011and2010representsincomefromcontinuingoperations\nattributabletoAmericanTowerCorporationdividedbythewe\n\n[5] convfinqa_ctx_1156.pdf p.1\nOff-Balance Sheet Transactions\nNone.\nContractual Obligations\nAs of December 31, 2017, our contractual obligations with initial or remaining terms in excess of one year, including interest payments on\nlong-term debt obligations, were as follows (in thousands):\nLess than More than\nTotal 1 year 1-3 years 3-5 years 5 years\nLong-term debt(1) $ 6,424,582 $ 619,373 $ 1,248,463 $ 3,002,931 $ 1,553,815\nOperating leases(2) 131,791 15,204 28,973 26,504 61,110\nShip construction contracts(3) 6,138,219 1,016,892 1,363,215 1,141,212 2,616,900\nPort facilities(4) 138,308 30,509 43,388 23,316 41,095\nInterest(5) 947,967 218,150 376,566 203,099 150,152\nOther(6) 168,678 54,800 73,653 23,870 16,355\nTotal $ 13,949\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1563,
+      "output_tokens": 4,
+      "latency_seconds": 3.473943100005272
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "American Tower aggregate carrying value long-term debt projected balance as of December 31, 2009 considering maturities of debt obligations",
+      "filters": {
+        "year": 2009,
+        "company": "American Tower"
+      },
+      "chunk_ids": [],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    },
+    {
+      "iteration": 1,
+      "query": "American Tower aggregate carrying value long-term debt projected balance as of December 31, 2009 considering maturities of debt obligations",
+      "filters": {},
+      "chunk_ids": [
+        "8904a4eb6ba20505519dbbd57dd120bf::p1::c0::ef976e9029",
+        "finqa_test_ctx_11::p1::c0::ade25e9594",
+        "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+        "convfinqa_ctx_235::p1::c0::69bd8f0a41",
+        "convfinqa_ctx_1156::p1::c0::6e23d1ea8e"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 2
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "8904a4eb6ba20505519dbbd57dd120bf::p1::c0::ef976e9029",
+          "document_id": "8904a4eb6ba20505519dbbd57dd120bf",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8904a4eb6ba20505519dbbd57dd120bf::p1::c0::ef976e9029",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "document_id": "finqa_test_ctx_11",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_11::p1::c0::ade25e9594",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+          "document_id": "finqa_test_ctx_92",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_92::p1::c0::0eb5e746b8",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_235::p1::c0::69bd8f0a41",
+          "document_id": "convfinqa_ctx_235",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_235::p1::c0::69bd8f0a41",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+          "document_id": "convfinqa_ctx_1156",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "convfinqa_ctx_1156::p1::c0::6e23d1ea8e",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?\nRetrieval query:",
+  "query_formulation_raw_output": "American Tower aggregate carrying value long-term debt projected balance as of December 31, 2009 considering maturities of debt obligations",
+  "query_formulation_latency_seconds": 6.6057,
+  "query_formulation_input_tokens": 183,
+  "query_formulation_output_tokens": 30,
+  "query_formulation_trace": {
+    "original_question": "What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?",
+    "retrieval_query": "American Tower aggregate carrying value long-term debt projected balance as of December 31, 2009 considering maturities of debt obligations",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the projected balance of the aggregate carrying value of long-term debt for American Tower as of December 31, 2009, considering the maturities of its debt obligations?\nRetrieval query:",
+    "raw_output": "American Tower aggregate carrying value long-term debt projected balance as of December 31, 2009 considering maturities of debt obligations",
+    "latency_seconds": 6.605744799999229,
+    "input_tokens": 183,
+    "output_tokens": 30,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "4331309.0",
+  "gold_evidence_reference": "FinQA | pdf/AMT/2008/page_94.pdf | source_page=94 | context_id=finqa_test_ctx_55"
+}

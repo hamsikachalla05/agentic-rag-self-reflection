@@ -1,0 +1,202 @@
+{
+  "question_id": "finqa_test_990",
+  "question": "What was the ratio of Booking Holdings, formerly known as The Priceline Group Inc., to the NASDAQ Composite Index at the measurement point of December 31, 2016?",
+  "retrieval_query": "Booking Holdings formerly known as The Priceline Group Inc. NASDAQ Composite Index December 31 2016 ratio",
+  "metadata_filters": {
+    "year": 2016,
+    "company": "Booking Holdings"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_192::p1::c0::21e453a8f5",
+      "rank": 1,
+      "dense_score": 0.7607604265213013,
+      "bm25_score": 38.24389182659187,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_192"
+    }
+  ],
+  "answer": "The ratio of The Priceline Group Inc. to the NASDAQ Composite Index at December 31, 2016, is 313.45 / 216.54 = 1.447.\n\nSource: finqa_test_ctx_192.pdf p.1",
+  "latency_seconds": 49.0411,
+  "input_tokens": 2086,
+  "output_tokens": 108,
+  "total_tokens": 2194,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.04,
+  "llm_latency_seconds": 48.9946,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the ratio of Booking Holdings, formerly known as The Priceline Group Inc., to the NASDAQ Composite Index at the measurement point of December 31, 2016?\nLabel:",
+      "input_tokens": 106,
+      "output_tokens": 7,
+      "latency_seconds": 3.3542622000004485
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the ratio of Booking Holdings, formerly known as The Priceline Group Inc., to the NASDAQ Composite Index at the measurement point of December 31, 2016?\nEvidence:\n[1] finqa_test_ctx_192.pdf p.1\nMeasurement Point The Priceline Group NASDAQ S&P 500 RDG Internet\nDecember 31 Inc. Composite Index Index Composite\n2011 100.00 100.00 100.00 100.00\n2012 132.64 116.41 116.00 119.34\n2013 248.53 165.47 153.58 195.83\n2014 243.79 188.69 174.60 192.42\n2015 272.59 200.32 177.01 264.96\n2016 313.45 216.54 198.18 277.56\n31\n\n[TABLE]\n2011 |  | 100.00 |  | 100.00 |  | 100.00 |  | 100.00\n[/TABLE]\n\n[TABLE]\n2013 |  | 248.53 |  | 165.47 |  | 153.58 |  | 195.83\n[/TABLE]\n\n[TABLE]\n2015 |  | 272.59 |  | 200.32 |  | 177.01 |  | 264.96\n[/TABLE]\nDecision:",
+      "input_tokens": 593,
+      "output_tokens": 4,
+      "latency_seconds": 11.669406200000594
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the ratio of Booking Holdings, formerly known as The Priceline Group Inc., to the NASDAQ Composite Index at the measurement point of December 31, 2016?\nEvidence:\n[1] finqa_test_ctx_192.pdf p.1\nMeasurement Point The Priceline Group NASDAQ S&P 500 RDG Internet\nDecember 31 Inc. Composite Index Index Composite\n2011 100.00 100.00 100.00 100.00\n2012 132.64 116.41 116.00 119.34\n2013 248.53 165.47 153.58 195.83\n2014 243.79 188.69 174.60 192.42\n2015 272.59 200.32 177.01 264.96\n2016 313.45 216.54 198.18 277.56\n31\n\n[TABLE]\n2011 |  | 100.00 |  | 100.00 |  | 100.00 |  | 100.00\n[/TABLE]\n\n[TABLE]\n2013 |  | 248.53 |  | 165.47 |  | 153.58 |  | 195.83\n[/TABLE]\n\n[TABLE]\n2015 |  | 272.59 |  | 200.32 |  | 177.01 |  | 264.96\n[/TABLE]\nDraft:\nThe ratio of The Priceline Group Inc. to the NASDAQ Composite Index at December 31, 2016, is 313.45 / 216.54 = 1.447.\n\nSource: finqa_test_ctx_192.pdf p.1\nLabel:",
+      "input_tokens": 607,
+      "output_tokens": 3,
+      "latency_seconds": 12.297119999999268
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Booking Holdings formerly known as The Priceline Group Inc. NASDAQ Composite Index December 31 2016 ratio",
+      "filters": {
+        "year": 2016,
+        "company": "Booking Holdings"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_192::p1::c0::21e453a8f5"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_192::p1::c0::21e453a8f5",
+          "document_id": "finqa_test_ctx_192",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 528,
+          "source_chunk_id": "finqa_test_ctx_192::p1::c0::21e453a8f5",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the ratio of Booking Holdings, formerly known as The Priceline Group Inc., to the NASDAQ Composite Index at the measurement point of December 31, 2016?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the ratio of Booking Holdings, formerly known as The Priceline Group Inc., to the NASDAQ Composite Index at the measurement point of December 31, 2016?\nRetrieval query:",
+  "query_formulation_raw_output": "Booking Holdings formerly known as The Priceline Group Inc. NASDAQ Composite Index December 31 2016 ratio",
+  "query_formulation_latency_seconds": 4.7168,
+  "query_formulation_input_tokens": 183,
+  "query_formulation_output_tokens": 27,
+  "query_formulation_trace": {
+    "original_question": "What was the ratio of Booking Holdings, formerly known as The Priceline Group Inc., to the NASDAQ Composite Index at the measurement point of December 31, 2016?",
+    "retrieval_query": "Booking Holdings formerly known as The Priceline Group Inc. NASDAQ Composite Index December 31 2016 ratio",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the ratio of Booking Holdings, formerly known as The Priceline Group Inc., to the NASDAQ Composite Index at the measurement point of December 31, 2016?\nRetrieval query:",
+    "raw_output": "Booking Holdings formerly known as The Priceline Group Inc. NASDAQ Composite Index December 31 2016 ratio",
+    "latency_seconds": 4.716829299999517,
+    "input_tokens": 183,
+    "output_tokens": 27,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "1.4475385610048952",
+  "gold_evidence_reference": "FinQA | pdf/BKNG/2016/page_33.pdf | source_page=33 | context_id=finqa_test_ctx_192"
+}

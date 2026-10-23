@@ -1,0 +1,123 @@
+{
+  "question_id": "tatqa_test_9133",
+  "question": "What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?",
+  "retrieval_query": "amortization expense twelve months ended December 31 2018 cts-corporation debt issuance costs long-term debt 2019 report",
+  "metadata_filters": {
+    "company": "cts-corporation"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c1::b031d57da3",
+      "rank": 1,
+      "dense_score": 0.7547125816345215,
+      "bm25_score": 32.17699983924249,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0"
+    },
+    {
+      "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c0::ff2a19fec1",
+      "rank": 2,
+      "dense_score": 0.6837295293807983,
+      "bm25_score": 10.356143201476366,
+      "hybrid_score": 0.12873969920397862,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0"
+    },
+    {
+      "chunk_id": "0dfb4455ae2e1b2066e99d9a3a05baf0::p1::c2::16de485e4a",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "0dfb4455ae2e1b2066e99d9a3a05baf0"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 18.6729,
+  "input_tokens": 965,
+  "output_tokens": 45,
+  "total_tokens": 1010,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.0402,
+  "llm_latency_seconds": 18.6321,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nRetrieval query:",
+  "query_formulation_raw_output": "amortization expense twelve months ended December 31 2018 cts-corporation debt issuance costs long-term debt 2019 report",
+  "query_formulation_latency_seconds": 5.0513,
+  "query_formulation_input_tokens": 191,
+  "query_formulation_output_tokens": 34,
+  "query_formulation_trace": {
+    "original_question": "What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?",
+    "retrieval_query": "amortization expense twelve months ended December 31 2018 cts-corporation debt issuance costs long-term debt 2019 report",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nRetrieval query:",
+    "raw_output": "amortization expense twelve months ended December 31 2018 cts-corporation debt issuance costs long-term debt 2019 report",
+    "latency_seconds": 5.051335200001631,
+    "input_tokens": 191,
+    "output_tokens": 34,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 13.5807,
+  "answer_generation_input_tokens": 774,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the amortization expense for the twelve months ended December 31, 2018, as per the debt issuance costs related to long-term debt of cts-corporation in its 2019 report?\nEvidence:\n[1] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nThe Revolving Credit Facility requires, among other things, that we comply with a maximum total leverage ratio and a minimum\nfixed charge coverage ratio. Failure to comply with these covenants could reduce the borrowing availability under the Revolving\nCredit Facility. We were in compliance with all debt covenants at December 31, 2019. The Revolving Credit Facility requires that\nwe deliver quarterly financial statements, annual financial statements, auditor certifications, and compliance certificates within a\nspecified number of days after the end of a quarter and year. Additionally, the Revolving Credit Facility contains restrictions\nlimiting our ability to: dispose of assets; incur certain ...\n\n[2] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nTable of Contents\nBalance Sheet Classification:\nOperating lease obligations $ 2,787\nLong-term operating lease obligations 24,926\nTotal lease liabilities $ 27,713\nWeighted-average remaining lease terms (years) 9.04\nWeighted-average discount rate 6.54%\nSupplemental cash flow information related to leases:\nCash paid for amounts included in the measurement of lease liabilities $ 3,957\nLeased assets obtained in exchange for new operating lease liabilities $ 5,000\nNOTE 12 — Debt\nLong-term debt was comprised of the following:\nAs of December 31\n2019 2018\nTotal credit facility $ 300,000 $ 300,000\nBalance outstanding $ 99,700 $ 50,000\nStandby letters of credit $ 1,800 $ 1,940\nAmount available $ 198,50 ...\n\n[3] 0dfb4455ae2e1b2066e99d9a3a05baf0.pdf p.1\nlease liabilities | $ 5,000\n[/TABLE]\n\n[TABLE]\nTotal credit facility | $ 300,000 | $ 300,000\n[/TABLE]\n\n[TABLE]\nStandby letters of credit | $ 1,800 | $ 1,940\n[/TABLE]\n\n[TABLE]\nWeighted-average interest rate | 3.25% | 3.10%\n[/TABLE]\nAnswer:",
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "163.0",
+  "gold_evidence_reference": "TAT-DQA | raw/0dfb4455ae2e1b2066e99d9a3a05baf0.pdf | context_id=0dfb4455ae2e1b2066e99d9a3a05baf0"
+}

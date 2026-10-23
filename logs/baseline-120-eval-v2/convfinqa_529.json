@@ -1,0 +1,135 @@
+{
+  "question_id": "convfinqa_529",
+  "question": "What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?",
+  "retrieval_query": "Apple Inc. price change from $100 on September 30, 2006, to September 30, 2011, cumulative total shareholder return five-year comparison",
+  "metadata_filters": {
+    "company": "Apple Inc."
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "convfinqa_ctx_366::p1::c0::64d06d47d6",
+      "rank": 1,
+      "dense_score": 0.7826839685440063,
+      "bm25_score": 65.48299053820044,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "convfinqa_ctx_366"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c0::dd40b2cb5e",
+      "rank": 2,
+      "dense_score": null,
+      "bm25_score": 5.89789284342076,
+      "hybrid_score": 0.03602702194842577,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c1::333303ca3f",
+      "rank": 3,
+      "dense_score": null,
+      "bm25_score": 2.1811435182637045,
+      "hybrid_score": 0.013323420328467152,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_286::p1::c2::108bbc8737",
+      "rank": 4,
+      "dense_score": null,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_286"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 25.3172,
+  "input_tokens": 1342,
+  "output_tokens": 53,
+  "total_tokens": 1395,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.045,
+  "llm_latency_seconds": 25.2715,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nRetrieval query:",
+  "query_formulation_raw_output": "Apple Inc. price change from $100 on September 30, 2006, to September 30, 2011, cumulative total shareholder return five-year comparison",
+  "query_formulation_latency_seconds": 5.8052,
+  "query_formulation_input_tokens": 201,
+  "query_formulation_output_tokens": 42,
+  "query_formulation_trace": {
+    "original_question": "What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?",
+    "retrieval_query": "Apple Inc. price change from $100 on September 30, 2006, to September 30, 2011, cumulative total shareholder return five-year comparison",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nRetrieval query:",
+    "raw_output": "Apple Inc. price change from $100 on September 30, 2006, to September 30, 2011, cumulative total shareholder return five-year comparison",
+    "latency_seconds": 5.805198699999892,
+    "input_tokens": 201,
+    "output_tokens": 42,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 19.4663,
+  "answer_generation_input_tokens": 1141,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the price change for Apple Inc. between the starting point of $100 on September 30, 2006, and the final value on September 30, 2011, according to the five-year comparison of cumulative total shareholder return?\nEvidence:\n[1] convfinqa_ctx_366.pdf p.1\nCompanyStockPerformance\nThe following graph shows a five-year comparison of cumulative total shareholder return, calculated on a\ndividendreinvestedbasis,fortheCompany,theS&P500CompositeIndex,theS&PComputerHardwareIndex,\nand the Dow Jones U.S. Technology Index. The graph assumes $100 was invested in each of the Company’s\ncommon stock, the S&P 500 Composite Index, the S&P Computer Hardware Index, and the Dow Jones U.S.\nTechnology Index on September 30, 2006. Data points on the graph are annual. Note that historic stock price\nperformanceisnotnecessarilyindicativeoffuturestockpriceperformance.\nCOMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN*\nAmong Apple Inc., The S&P 500 Index,\nthe S&P Computer Har ...\n\n[2] finqa_test_ctx_286.pdf p.1\nSecurity Ownership of 5% Holders, Directors, Nominees and Executive Officers\nShares of Common Stock Percent of Common Stock\nName of Beneficial Owner Beneficially Owned(1) Outstanding\nFidelity Investments.................................. 57,162,311(2) 6.65%\nAllianceBernstein LP ................................ 48,637,731(3) 5.66%\nSteven P. Jobs....................................... 5,546,451(4) *\nWilliam V.Campbell................................. 221,004(5) *\nTimothy D.Cook.................................... 12,597(6) *\nMillard S. Drexler ................................... 220,000(7) *\nAlbertA. Gore, Jr.................................... 60,000(8) *\nRonald B.Johnson..................... ...\n\n[3] finqa_test_ctx_286.pdf p.1\n. Jobs has the right to acquire by exercise of stock\noptions.\n(5) Includes 220,000 shares of Common Stock that Mr. Campbell has the right to acquire by exercise of\nstock options.\n(6) Excludes 600,000 unvestedrestricted stock units.\n(7) Includes 40,000 shares of Common Stock that Mr. Drexler holds indirectly and 180,000 shares of\nCommon Stockthat Mr. Drexler has the right to acquire by exercise of stockoptions.\n(8) Consists of 60,000 shares of Common Stock that Mr. Gore has the rightto acquire byexercise of stock\noptions.\n(9) Includes 1,900,000 shares of Common Stock that Mr. Johnson has the right to acquire by exercise of\nstock options and excludes 450,000 unvestedrestricted stockunits.\n(10) ...\n\n[4] finqa_test_ctx_286.pdf p.1\n|  |  |  | 12,597 | (6) |  |  | * | \nMillard S. Drexler ................................... |  |  |  |  | 220,000 | (7) |  |  | * | \nAlbertA. Gore, Jr.................................... |  |  |  |  | 60,000 | (8) |  |  | * | \nRonald B.Johnson................................... |  |  |  |  | 2,049,890 | (9) |  |  | * | \nArthur D. Levinson.................................. |  |  |  |  | 362,400 | (10) |  |  | * | \nPeter Oppenheimer.................................. |  |  |  |  | 149,768 | (11) |  |  | * | \nPhilip W. Schiller.................................... |  |  |  |  | 256 | (12) |  |  | * | \nEric E. Schmidt...................................... |  |  |  |  | 12,284 | (13) |  |  | * | \nJ ...\nAnswer:",
+  "dataset": "ConvFinQA",
+  "task_type": "ConvFinQA",
+  "gold_answer": "395.0",
+  "gold_evidence_reference": "ConvFinQA | pdf/AAPL/2011/page_24.pdf | source_page=24 | context_id=convfinqa_ctx_366"
+}

@@ -1,0 +1,136 @@
+{
+  "question_id": "tatqa_test_9367",
+  "question": "What was the decrease in depreciation in 2019 for Marin Software Inc.?",
+  "retrieval_query": "Marin Software Inc. depreciation decrease 2019",
+  "metadata_filters": {
+    "year": 2019,
+    "company": "marin-software-inc"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "434b94166389d203839e681526978a7d::p1::c0::06c2863d3c",
+      "rank": 1,
+      "dense_score": 0.6726597547531128,
+      "bm25_score": 8.261233142949136,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "434b94166389d203839e681526978a7d"
+    },
+    {
+      "chunk_id": "434b94166389d203839e681526978a7d::p1::c1::f556386faf",
+      "rank": 2,
+      "dense_score": 0.6443673372268677,
+      "bm25_score": 5.95248045952251,
+      "hybrid_score": 0.6652973066931518,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "434b94166389d203839e681526978a7d"
+    },
+    {
+      "chunk_id": "434b94166389d203839e681526978a7d::p1::c3::47299fbd33",
+      "rank": 3,
+      "dense_score": 0.592074990272522,
+      "bm25_score": 1.593682604050456,
+      "hybrid_score": 0.04120829362440262,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "434b94166389d203839e681526978a7d"
+    },
+    {
+      "chunk_id": "434b94166389d203839e681526978a7d::p1::c2::e5accece60",
+      "rank": 4,
+      "dense_score": 0.5864624381065369,
+      "bm25_score": 1.5578094150366655,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "434b94166389d203839e681526978a7d"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 29.345,
+  "input_tokens": 1702,
+  "output_tokens": 24,
+  "total_tokens": 1726,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.0382,
+  "llm_latency_seconds": 29.3056,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the decrease in depreciation in 2019 for Marin Software Inc.?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the decrease in depreciation in 2019 for Marin Software Inc.?\nRetrieval query:",
+  "query_formulation_raw_output": "Marin Software Inc. depreciation decrease 2019",
+  "query_formulation_latency_seconds": 3.3196,
+  "query_formulation_input_tokens": 161,
+  "query_formulation_output_tokens": 13,
+  "query_formulation_trace": {
+    "original_question": "What was the decrease in depreciation in 2019 for Marin Software Inc.?",
+    "retrieval_query": "Marin Software Inc. depreciation decrease 2019",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the decrease in depreciation in 2019 for Marin Software Inc.?\nRetrieval query:",
+    "raw_output": "Marin Software Inc. depreciation decrease 2019",
+    "latency_seconds": 3.3195936999982223,
+    "input_tokens": 161,
+    "output_tokens": 13,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 25.986,
+  "answer_generation_input_tokens": 1541,
+  "answer_generation_output_tokens": 11,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the decrease in depreciation in 2019 for Marin Software Inc.?\nEvidence:\n[1] 434b94166389d203839e681526978a7d.pdf p.1\nCost of Revenues and Gross Margin\nYears Ended December 31, Change\n2019 2018 $ %\n(dollars in thousands)\nCost of revenues $ 22,843 $ 27,154 $ (4,311) (16)%\nGross profit 26,193 31,477 (5,284) (17)\nGross margin 53 % 54 %\nCost of revenues in 2019 decreased by $4.3 million, or 16%, as compared to 2018. The decrease was primarily driven by a reduction in the number of global\nservices and cloud infrastructure personnel, which led to a decrease of $2.2 million in compensation and benefits expense, including stock-based compensation\nexpense, as compared to 2018. This reduction in headcount also contributed to a decrease in allocated facilities and information technology costs of $0.5 million in\n2019. ...\n\n[2] 434b94166389d203839e681526978a7d.pdf p.1\nfacilities and information\ntechnology costs as compared to 2018. Restructuring costs in 2019 decreased $0.4 million, as there were additional restructuring activities in 2018, including a\nheadcount reduction of approximately 13% of our workforce and the closure of certain leased facilities. The remaining decrease during 2019 was primarily the\nresult of lower marketing costs of $0.6 million, as we eliminated or shifted the timing of certain of our marketing activities.\nResearch and Development\nYears Ended December 31, Change\n2019 2018 $ %\n(dollars in thousands)\nResearch and development $ 17,845 $ 22,450 $ (4,605) (21)%\nPercent of revenues, net 36 % 38 %\nResearch and development expenses in 20 ...\n\n[3] 434b94166389d203839e681526978a7d.pdf p.1\n| Change |  |  |  |  |  |  | \n |  | 2019 |  |  |  |  | 2018 |  |  |  |  | $ |  |  |  | % |  |  | \n |  | (dollars in thousands) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | \nResearch and development |  | $ | 17,845 |  |  |  | $ | 22,450 |  |  |  | $ | (4,605 | ) |  |  | (21 | ) | %\nPercent of revenues, net |  |  | 36 |  | % |  |  | 38 |  | % |  |  |  |  |  |  |  |  | \n[/TABLE]\n\n[TABLE]\n |  | Years Ended December 31, |  |  |  |  |  |  |  |  |  | Change |  |  |  |  |  |  | \n |  | 2019 |  |  |  |  | 2018 |  |  |  |  | $ |  |  |  | % |  |  | \n |  | (dollars in thousands) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | \nGeneral and administrative |  | $ | 10,446 |  |  |  | $ | 13,113 |  | ...\n\n[4] 434b94166389d203839e681526978a7d.pdf p.1\n|  | % |  |  | \n |  | (dollars in thousands) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | \nCost of revenues |  | $ | 22,843 |  |  |  | $ | 27,154 |  |  |  | $ | (4,311 | ) |  |  | (16 | ) | %\nGross profit |  |  | 26,193 |  |  |  |  | 31,477 |  |  |  |  | (5,284 | ) |  |  | (17 | ) | \nGross margin |  |  | 53 |  | % |  |  | 54 |  | % |  |  |  |  |  |  |  |  | \n[/TABLE]\n\n[TABLE]\n |  | Years Ended December 31, |  |  |  |  |  |  |  |  |  | Change |  |  |  |  |  |  | \n |  | 2019 |  |  |  |  | 2018 |  |  |  |  | $ |  |  |  | % |  |  | \n |  | (dollars in thousands) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | \nSales and marketing |  | $ | 15,836 |  |  |  | $ | 23,425 |  |  |  | $ | (7,589 ...\nAnswer:",
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "500000.0",
+  "gold_evidence_reference": "TAT-DQA | raw/434b94166389d203839e681526978a7d.pdf | context_id=434b94166389d203839e681526978a7d"
+}

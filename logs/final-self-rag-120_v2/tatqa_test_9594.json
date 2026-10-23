@@ -1,0 +1,314 @@
+{
+  "question_id": "tatqa_test_9594",
+  "question": "What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?",
+  "retrieval_query": "entities: Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, Manoj Shetty; year: 2019; financial concept: sum of non-equity incentive target amounts",
+  "metadata_filters": {
+    "year": 2019
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "771fd661a72d5018797f3ea240571013::p1::c0::8780f0b417",
+      "rank": 1,
+      "dense_score": 0.7176587581634521,
+      "bm25_score": 79.10190862506863,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "771fd661a72d5018797f3ea240571013"
+    },
+    {
+      "chunk_id": "771fd661a72d5018797f3ea240571013::p1::c2::c4d968d272",
+      "rank": 2,
+      "dense_score": 0.7091647982597351,
+      "bm25_score": 44.10492656804478,
+      "hybrid_score": 0.762312043734433,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "771fd661a72d5018797f3ea240571013"
+    },
+    {
+      "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+      "rank": 3,
+      "dense_score": 0.6499243974685669,
+      "bm25_score": null,
+      "hybrid_score": 0.26125737451219544,
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "document_id": "f59bd5ee555e5cc8cf1d5223a0145049"
+    },
+    {
+      "chunk_id": "771fd661a72d5018797f3ea240571013::p1::c1::e4f36177b0",
+      "rank": 4,
+      "dense_score": 0.6129407286643982,
+      "bm25_score": 34.33059461061552,
+      "hybrid_score": 0.2265709482119436,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "771fd661a72d5018797f3ea240571013"
+    },
+    {
+      "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c1::b8d9ab438f",
+      "rank": 5,
+      "dense_score": 0.6392435431480408,
+      "bm25_score": null,
+      "hybrid_score": 0.2078419351713619,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "8c6114af79ce7f7775b24ac57a2c7b64"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 113.8894,
+  "input_tokens": 7627,
+  "output_tokens": 86,
+  "total_tokens": 7713,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 8,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.0477,
+  "llm_latency_seconds": 113.8392,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?\nLabel:",
+      "input_tokens": 105,
+      "output_tokens": 7,
+      "latency_seconds": 3.6202745999980834
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?\nEvidence:\n[1] 771fd661a72d5018797f3ea240571013.pdf p.1\nUnder the 2019 Plan, the Compensation Committee set the following non-equity incentive target amounts, non-equity incentive\ncompensation cap percentages and relative percentages weights for each plan component for each of our NEOs in 2019 who\nare participating in our incentive compensation plans.\nAs noted above, Messrs Richard, Robert and Bruce Leeds no longer participate in incentive compensation. In addition, as\nMr. Reinhold left Systemax as the Chief Executive Officer in January 2019, he did not participate in the 2019 NEO Plan.\nBusiness\nAdjusted Unit /\nOperating Strategic Corporate Individual\nTarget Cap Net Sales Income Objectives Governance Objectives\nName ($) (%) (%) (%) (%) (%) (%)\nBa\n\n[2] 771fd661a72d5018797f3ea240571013.pdf p.1\nTABLE]\n\n[TABLE]\nName | Net Sales\n(%) |  | Adjusted\nOperating\nIncome\n(%) |  | Strategic\nObjectives\n(%) |  | Corporate\nGovernance\n(%) |  | Business Unit/\nIndividual\nObjectives\n(%) |  | Weighted\nAverage Eligible\nNon-Equity\nIncentive\nCompensation\n(%)\n | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | \nBarry Litwin | 93 | 65 | 90 | 80 | 99 | 99 | 100 | 100 | N/A | N/A | 81\n[/TABLE]\n\n[TABLE]\nRobert Dooley | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 87 | 69 | 69\n[/TABLE]\n\n[TABLE]\nManoj Shetty | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 98 | 76 | 76\n[/TABLE]\n\n[3] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nFinancial Report Financial Report\nNotestotheConsolidatedFinancialReport NotestotheConsolidatedFinancialReport\n30June2019 30June2019\n(continued) (continued)\n3 Revenue and other income (continued) 3 Revenue and other income (continued)\n(b) Revenuerecognition (b) Revenuerecognition(continued)\nAASB 15 establishes principles for reporting the nature, amount, timing, and uncertainty of revenue and cash (vi) Distributionsfrominvestments\nflows arising from an entity’s contracts with customers and requires application of a five-step process to identify\nDistributionsfrominvestmentsarerecognisedasrevenuewhentherighttoreceivepaymentisestablished.\nthe contract with the customer, identify performance obli\n\n[4] 771fd661a72d5018797f3ea240571013.pdf p.1\n/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nManoj Shetty N/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nLawrence Reinhold Not Applicable due to Separation Agreement entered into in October 2018\nIn determining the compensation of our CEO for fiscal 2019 and approving the compensation of our other NEOs, the\nCompensation Committee considered that management had performed well in addressing a challenging international trade\nand tariffs environment. The Compensation Committee further considered that management had executed well in onboarding\nand integrating new senior executive management team leaders, opening a new distribution center in Texas, implementing\nour ACE (Accelerate the Customer experience) str\n\n[5] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nhave three\nto five-year service contracts with our subscribers. Our SaaS and license revenue renewal rate is calculated across our entire\nsubscriber base on the Alarm.com platform, including subscribers whose contract with their service provider reached the end of its\ncontractual term during the measurement period, as well as subscribers whose contract with their service provider has not reached\nthe end of its contractual term during the measurement period, and is not intended to estimate the rate at which our subscribers\nrenew their contracts with our service provider partners. We believe that our SaaS and license revenue renewal rate allows us to\nmeasure our ability to retain and grow our\nDecision:",
+      "input_tokens": 1261,
+      "output_tokens": 4,
+      "latency_seconds": 21.031518199997663
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?\nEvidence:\n[1] 771fd661a72d5018797f3ea240571013.pdf p.1\nUnder the 2019 Plan, the Compensation Committee set the following non-equity incentive target amounts, non-equity incentive\ncompensation cap percentages and relative percentages weights for each plan component for each of our NEOs in 2019 who\nare participating in our incentive compensation plans.\nAs noted above, Messrs Richard, Robert and Bruce Leeds no longer participate in incentive compensation. In addition, as\nMr. Reinhold left Systemax as the Chief Executive Officer in January 2019, he did not participate in the 2019 NEO Plan.\nBusiness\nAdjusted Unit /\nOperating Strategic Corporate Individual\nTarget Cap Net Sales Income Objectives Governance Objectives\nName ($) (%) (%) (%) (%) (%) (%)\nBa\n\n[2] 771fd661a72d5018797f3ea240571013.pdf p.1\nTABLE]\n\n[TABLE]\nName | Net Sales\n(%) |  | Adjusted\nOperating\nIncome\n(%) |  | Strategic\nObjectives\n(%) |  | Corporate\nGovernance\n(%) |  | Business Unit/\nIndividual\nObjectives\n(%) |  | Weighted\nAverage Eligible\nNon-Equity\nIncentive\nCompensation\n(%)\n | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | \nBarry Litwin | 93 | 65 | 90 | 80 | 99 | 99 | 100 | 100 | N/A | N/A | 81\n[/TABLE]\n\n[TABLE]\nRobert Dooley | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 87 | 69 | 69\n[/TABLE]\n\n[TABLE]\nManoj Shetty | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 98 | 76 | 76\n[/TABLE]\n\n[3] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nFinancial Report Financial Report\nNotestotheConsolidatedFinancialReport NotestotheConsolidatedFinancialReport\n30June2019 30June2019\n(continued) (continued)\n3 Revenue and other income (continued) 3 Revenue and other income (continued)\n(b) Revenuerecognition (b) Revenuerecognition(continued)\nAASB 15 establishes principles for reporting the nature, amount, timing, and uncertainty of revenue and cash (vi) Distributionsfrominvestments\nflows arising from an entity’s contracts with customers and requires application of a five-step process to identify\nDistributionsfrominvestmentsarerecognisedasrevenuewhentherighttoreceivepaymentisestablished.\nthe contract with the customer, identify performance obli\n\n[4] 771fd661a72d5018797f3ea240571013.pdf p.1\n/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nManoj Shetty N/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nLawrence Reinhold Not Applicable due to Separation Agreement entered into in October 2018\nIn determining the compensation of our CEO for fiscal 2019 and approving the compensation of our other NEOs, the\nCompensation Committee considered that management had performed well in addressing a challenging international trade\nand tariffs environment. The Compensation Committee further considered that management had executed well in onboarding\nand integrating new senior executive management team leaders, opening a new distribution center in Texas, implementing\nour ACE (Accelerate the Customer experience) str\n\n[5] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nhave three\nto five-year service contracts with our subscribers. Our SaaS and license revenue renewal rate is calculated across our entire\nsubscriber base on the Alarm.com platform, including subscribers whose contract with their service provider reached the end of its\ncontractual term during the measurement period, as well as subscribers whose contract with their service provider has not reached\nthe end of its contractual term during the measurement period, and is not intended to estimate the rate at which our subscribers\nrenew their contracts with our service provider partners. We believe that our SaaS and license revenue renewal rate allows us to\nmeasure our ability to retain and grow our\nLabel:",
+      "input_tokens": 1177,
+      "output_tokens": 3,
+      "latency_seconds": 19.405220000000554
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?\nEvidence:\n[1] 771fd661a72d5018797f3ea240571013.pdf p.1\nUnder the 2019 Plan, the Compensation Committee set the following non-equity incentive target amounts, non-equity incentive\ncompensation cap percentages and relative percentages weights for each plan component for each of our NEOs in 2019 who\nare participating in our incentive compensation plans.\nAs noted above, Messrs Richard, Robert and Bruce Leeds no longer participate in incentive compensation. In addition, as\nMr. Reinhold left Systemax as the Chief Executive Officer in January 2019, he did not participate in the 2019 NEO Plan.\nBusiness\nAdjusted Unit /\nOperating Strategic Corporate Individual\nTarget Cap Net Sales Income Objectives Governance Objectives\nName ($) (%) (%) (%) (%) (%) (%)\nBa\n\n[2] 771fd661a72d5018797f3ea240571013.pdf p.1\nTABLE]\n\n[TABLE]\nName | Net Sales\n(%) |  | Adjusted\nOperating\nIncome\n(%) |  | Strategic\nObjectives\n(%) |  | Corporate\nGovernance\n(%) |  | Business Unit/\nIndividual\nObjectives\n(%) |  | Weighted\nAverage Eligible\nNon-Equity\nIncentive\nCompensation\n(%)\n | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | \nBarry Litwin | 93 | 65 | 90 | 80 | 99 | 99 | 100 | 100 | N/A | N/A | 81\n[/TABLE]\n\n[TABLE]\nRobert Dooley | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 87 | 69 | 69\n[/TABLE]\n\n[TABLE]\nManoj Shetty | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 98 | 76 | 76\n[/TABLE]\n\n[3] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nFinancial Report Financial Report\nNotestotheConsolidatedFinancialReport NotestotheConsolidatedFinancialReport\n30June2019 30June2019\n(continued) (continued)\n3 Revenue and other income (continued) 3 Revenue and other income (continued)\n(b) Revenuerecognition (b) Revenuerecognition(continued)\nAASB 15 establishes principles for reporting the nature, amount, timing, and uncertainty of revenue and cash (vi) Distributionsfrominvestments\nflows arising from an entity’s contracts with customers and requires application of a five-step process to identify\nDistributionsfrominvestmentsarerecognisedasrevenuewhentherighttoreceivepaymentisestablished.\nthe contract with the customer, identify performance obli\n\n[4] 771fd661a72d5018797f3ea240571013.pdf p.1\n/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nManoj Shetty N/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nLawrence Reinhold Not Applicable due to Separation Agreement entered into in October 2018\nIn determining the compensation of our CEO for fiscal 2019 and approving the compensation of our other NEOs, the\nCompensation Committee considered that management had performed well in addressing a challenging international trade\nand tariffs environment. The Compensation Committee further considered that management had executed well in onboarding\nand integrating new senior executive management team leaders, opening a new distribution center in Texas, implementing\nour ACE (Accelerate the Customer experience) str\n\n[5] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nhave three\nto five-year service contracts with our subscribers. Our SaaS and license revenue renewal rate is calculated across our entire\nsubscriber base on the Alarm.com platform, including subscribers whose contract with their service provider reached the end of its\ncontractual term during the measurement period, as well as subscribers whose contract with their service provider has not reached\nthe end of its contractual term during the measurement period, and is not intended to estimate the rate at which our subscribers\nrenew their contracts with our service provider partners. We believe that our SaaS and license revenue renewal rate allows us to\nmeasure our ability to retain and grow our\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1218,
+      "output_tokens": 4,
+      "latency_seconds": 20.119661999997334
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?\nEvidence:\n[1] 771fd661a72d5018797f3ea240571013.pdf p.1\nUnder the 2019 Plan, the Compensation Committee set the following non-equity incentive target amounts, non-equity incentive\ncompensation cap percentages and relative percentages weights for each plan component for each of our NEOs in 2019 who\nare participating in our incentive compensation plans.\nAs noted above, Messrs Richard, Robert and Bruce Leeds no longer participate in incentive compensation. In addition, as\nMr. Reinhold left Systemax as the Chief Executive Officer in January 2019, he did not participate in the 2019 NEO Plan.\nBusiness\nAdjusted Unit /\nOperating Strategic Corporate Individual\nTarget Cap Net Sales Income Objectives Governance Objectives\nName ($) (%) (%) (%) (%) (%) (%)\nBa\n\n[2] 771fd661a72d5018797f3ea240571013.pdf p.1\nTABLE]\n\n[TABLE]\nName | Net Sales\n(%) |  | Adjusted\nOperating\nIncome\n(%) |  | Strategic\nObjectives\n(%) |  | Corporate\nGovernance\n(%) |  | Business Unit/\nIndividual\nObjectives\n(%) |  | Weighted\nAverage Eligible\nNon-Equity\nIncentive\nCompensation\n(%)\n | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | \nBarry Litwin | 93 | 65 | 90 | 80 | 99 | 99 | 100 | 100 | N/A | N/A | 81\n[/TABLE]\n\n[TABLE]\nRobert Dooley | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 87 | 69 | 69\n[/TABLE]\n\n[TABLE]\nManoj Shetty | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 98 | 76 | 76\n[/TABLE]\n\n[3] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nFinancial Report Financial Report\nNotestotheConsolidatedFinancialReport NotestotheConsolidatedFinancialReport\n30June2019 30June2019\n(continued) (continued)\n3 Revenue and other income (continued) 3 Revenue and other income (continued)\n(b) Revenuerecognition (b) Revenuerecognition(continued)\nAASB 15 establishes principles for reporting the nature, amount, timing, and uncertainty of revenue and cash (vi) Distributionsfrominvestments\nflows arising from an entity’s contracts with customers and requires application of a five-step process to identify\nDistributionsfrominvestmentsarerecognisedasrevenuewhentherighttoreceivepaymentisestablished.\nthe contract with the customer, identify performance obli\n\n[4] 771fd661a72d5018797f3ea240571013.pdf p.1\n/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nManoj Shetty N/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nLawrence Reinhold Not Applicable due to Separation Agreement entered into in October 2018\nIn determining the compensation of our CEO for fiscal 2019 and approving the compensation of our other NEOs, the\nCompensation Committee considered that management had performed well in addressing a challenging international trade\nand tariffs environment. The Compensation Committee further considered that management had executed well in onboarding\nand integrating new senior executive management team leaders, opening a new distribution center in Texas, implementing\nour ACE (Accelerate the Customer experience) str\n\n[5] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nhave three\nto five-year service contracts with our subscribers. Our SaaS and license revenue renewal rate is calculated across our entire\nsubscriber base on the Alarm.com platform, including subscribers whose contract with their service provider reached the end of its\ncontractual term during the measurement period, as well as subscribers whose contract with their service provider has not reached\nthe end of its contractual term during the measurement period, and is not intended to estimate the rate at which our subscribers\nrenew their contracts with our service provider partners. We believe that our SaaS and license revenue renewal rate allows us to\nmeasure our ability to retain and grow our\nPrevious draft: The retrieved evidence is insufficient to answer this question.\nAnswer:",
+      "input_tokens": 1201,
+      "output_tokens": 11,
+      "latency_seconds": 20.36274379999668
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?\nEvidence:\n[1] 771fd661a72d5018797f3ea240571013.pdf p.1\nUnder the 2019 Plan, the Compensation Committee set the following non-equity incentive target amounts, non-equity incentive\ncompensation cap percentages and relative percentages weights for each plan component for each of our NEOs in 2019 who\nare participating in our incentive compensation plans.\nAs noted above, Messrs Richard, Robert and Bruce Leeds no longer participate in incentive compensation. In addition, as\nMr. Reinhold left Systemax as the Chief Executive Officer in January 2019, he did not participate in the 2019 NEO Plan.\nBusiness\nAdjusted Unit /\nOperating Strategic Corporate Individual\nTarget Cap Net Sales Income Objectives Governance Objectives\nName ($) (%) (%) (%) (%) (%) (%)\nBa\n\n[2] 771fd661a72d5018797f3ea240571013.pdf p.1\nTABLE]\n\n[TABLE]\nName | Net Sales\n(%) |  | Adjusted\nOperating\nIncome\n(%) |  | Strategic\nObjectives\n(%) |  | Corporate\nGovernance\n(%) |  | Business Unit/\nIndividual\nObjectives\n(%) |  | Weighted\nAverage Eligible\nNon-Equity\nIncentive\nCompensation\n(%)\n | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | Actual | Payout\nRatio | \nBarry Litwin | 93 | 65 | 90 | 80 | 99 | 99 | 100 | 100 | N/A | N/A | 81\n[/TABLE]\n\n[TABLE]\nRobert Dooley | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 87 | 69 | 69\n[/TABLE]\n\n[TABLE]\nManoj Shetty | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 98 | 76 | 76\n[/TABLE]\n\n[3] f59bd5ee555e5cc8cf1d5223a0145049.pdf p.2\nFinancial Report Financial Report\nNotestotheConsolidatedFinancialReport NotestotheConsolidatedFinancialReport\n30June2019 30June2019\n(continued) (continued)\n3 Revenue and other income (continued) 3 Revenue and other income (continued)\n(b) Revenuerecognition (b) Revenuerecognition(continued)\nAASB 15 establishes principles for reporting the nature, amount, timing, and uncertainty of revenue and cash (vi) Distributionsfrominvestments\nflows arising from an entity’s contracts with customers and requires application of a five-step process to identify\nDistributionsfrominvestmentsarerecognisedasrevenuewhentherighttoreceivepaymentisestablished.\nthe contract with the customer, identify performance obli\n\n[4] 771fd661a72d5018797f3ea240571013.pdf p.1\n/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nManoj Shetty N/A N/A N/A N/A N/A N/A N/A N/A 98 76 76\nLawrence Reinhold Not Applicable due to Separation Agreement entered into in October 2018\nIn determining the compensation of our CEO for fiscal 2019 and approving the compensation of our other NEOs, the\nCompensation Committee considered that management had performed well in addressing a challenging international trade\nand tariffs environment. The Compensation Committee further considered that management had executed well in onboarding\nand integrating new senior executive management team leaders, opening a new distribution center in Texas, implementing\nour ACE (Accelerate the Customer experience) str\n\n[5] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nhave three\nto five-year service contracts with our subscribers. Our SaaS and license revenue renewal rate is calculated across our entire\nsubscriber base on the Alarm.com platform, including subscribers whose contract with their service provider reached the end of its\ncontractual term during the measurement period, as well as subscribers whose contract with their service provider has not reached\nthe end of its contractual term during the measurement period, and is not intended to estimate the rate at which our subscribers\nrenew their contracts with our service provider partners. We believe that our SaaS and license revenue renewal rate allows us to\nmeasure our ability to retain and grow our\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1218,
+      "output_tokens": 4,
+      "latency_seconds": 2.5164989000040805
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "entities: Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, Manoj Shetty; year: 2019; financial concept: sum of non-equity incentive target amounts",
+      "filters": {
+        "year": 2019
+      },
+      "chunk_ids": [
+        "771fd661a72d5018797f3ea240571013::p1::c0::8780f0b417",
+        "771fd661a72d5018797f3ea240571013::p1::c2::c4d968d272",
+        "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+        "771fd661a72d5018797f3ea240571013::p1::c1::e4f36177b0",
+        "8c6114af79ce7f7775b24ac57a2c7b64::p1::c1::b8d9ab438f"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "771fd661a72d5018797f3ea240571013::p1::c0::8780f0b417",
+          "document_id": "771fd661a72d5018797f3ea240571013",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "771fd661a72d5018797f3ea240571013::p1::c0::8780f0b417",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "771fd661a72d5018797f3ea240571013::p1::c2::c4d968d272",
+          "document_id": "771fd661a72d5018797f3ea240571013",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 640,
+          "source_chunk_id": "771fd661a72d5018797f3ea240571013::p1::c2::c4d968d272",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+          "document_id": "f59bd5ee555e5cc8cf1d5223a0145049",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "f59bd5ee555e5cc8cf1d5223a0145049::p2::c3::c5f13c81a6",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "771fd661a72d5018797f3ea240571013::p1::c1::e4f36177b0",
+          "document_id": "771fd661a72d5018797f3ea240571013",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "771fd661a72d5018797f3ea240571013::p1::c1::e4f36177b0",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c1::b8d9ab438f",
+          "document_id": "8c6114af79ce7f7775b24ac57a2c7b64",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c1::b8d9ab438f",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?\nRetrieval query:",
+  "query_formulation_raw_output": "entities: Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, Manoj Shetty; year: 2019; financial concept: sum of non-equity incentive target amounts",
+  "query_formulation_latency_seconds": 5.3658,
+  "query_formulation_input_tokens": 182,
+  "query_formulation_output_tokens": 42,
+  "query_formulation_trace": {
+    "original_question": "What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?",
+    "retrieval_query": "entities: Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, Manoj Shetty; year: 2019; financial concept: sum of non-equity incentive target amounts",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the sum of non-equity incentive target amounts for Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, and Manoj Shetty in 2019?\nRetrieval query:",
+    "raw_output": "entities: Barry Litwin, Thomas Clark, Robert Dooley, Eric Lerner, Manoj Shetty; year: 2019; financial concept: sum of non-equity incentive target amounts",
+    "latency_seconds": 5.365785099995264,
+    "input_tokens": 182,
+    "output_tokens": 42,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "2496185.0",
+  "gold_evidence_reference": "TAT-DQA | raw/771fd661a72d5018797f3ea240571013.pdf | context_id=771fd661a72d5018797f3ea240571013"
+}

@@ -1,0 +1,290 @@
+{
+  "question_id": "tatqa_test_9180",
+  "question": "What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?",
+  "retrieval_query": "percentage change in non-controlling interest share of loss from 2018 to 2019 for Intu-Properties",
+  "metadata_filters": {
+    "company": "Intu-Properties"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c1::dbcad089c7",
+      "rank": 1,
+      "dense_score": 0.7662878036499023,
+      "bm25_score": 34.74357985950623,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1614d46700363e699110c89aaf7e5ba5"
+    },
+    {
+      "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c0::c0978e1f8f",
+      "rank": 2,
+      "dense_score": 0.6937757730484009,
+      "bm25_score": 32.73319149577891,
+      "hybrid_score": 0.6138849430198452,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1614d46700363e699110c89aaf7e5ba5"
+    },
+    {
+      "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c2::ae0e7a5287",
+      "rank": 3,
+      "dense_score": 0.6440858840942383,
+      "bm25_score": 8.016592449797702,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "1614d46700363e699110c89aaf7e5ba5"
+    }
+  ],
+  "answer": "Percentage change in non-controlling interest share of loss from 2018 to 2019:\n\n2018: £12.7 million  \n2019: £70.9 million  \n\nChange = 70.9 - 12.7 = £58.2 million  \nPercentage change = (58.2 / 12.7) × 100 ≈ 458.3%\n\nSource: 1614d46700363e699110c89aaf7e5ba5.pdf p.1\n\n458.3",
+  "latency_seconds": 79.907,
+  "input_tokens": 4060,
+  "output_tokens": 189,
+  "total_tokens": 4249,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 1,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0364,
+  "llm_latency_seconds": 79.8644,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nLabel:",
+      "input_tokens": 98,
+      "output_tokens": 7,
+      "latency_seconds": 3.044099600003392
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nEvidence:\n[1] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\n.125% bonds 2023 (480.5) (479.5)\nBorrowings – compound financial instrument (488.5) (473.8)\nOther net liabilities (27.7) (31.2)\nNet liabilities (319.9) (142.7)\nThe balance sheet includes a non-controlling interest recoverable amount of £58.2 million (2018: £12.7 million attributable to non-\ncontrolling interest). This amount is considered to be recoverable in view of the £195.4 million owed to the non-controlling interest\n(which is included in the Group’s borrowings in note 23).\n35 Related party transactions\nKey management1 compensation\n£m 2019 2018\nSalaries and short-term employee benefits 4.7 4.9\nPensions and other post-employment benefits 0.3 0.8\nShare-based payments 1.5 1.7\n6.5 7.4\n1 Key\n\n[2] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nSSttrraatteeggiicc rreeppoorrtt\nGGoovveerrnnaannccee\nFFiinnaanncciiaall ssttaatteemmeennttss\nOO tthheerr iinnffoorrmmaattiioonn\n34 Subsidiaries, joint ventures and associates (continued)\nOther entities\nIntu (SGS) Finance plc and Intu Metrocentre Finance plc are consolidated as subsidiaries in these financial statements but are not listed in\nthe table above as the Group does not own the shares in these companies. These companies are vehicles set up on behalf of the Group for\nthe sole purpose of issuing some of the Group’s listed debt. The Group’s obligations in respect of this debt via a back-to-back intercompany\nloan agreement between these companies and other Group companies, and security o\n\n[3] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nshareholdings in January 2020 and February 2020 respectively. All outstanding loans in respect of the above arrangements have\nbeen repaid to the Company in full or in part. For those loans which have been partially repaid, the outstanding balance has been written off\nby the Company.\nintiun tpur opproepretiretsie ps lpc lcA Annnnuuaall rreeppoorrtt 22001199 115555\nDecision:",
+      "input_tokens": 826,
+      "output_tokens": 4,
+      "latency_seconds": 13.81518959999812
+    },
+    {
+      "component": "evidence_support",
+      "decision": "UNSUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "UNSUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nEvidence:\n[1] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\n.125% bonds 2023 (480.5) (479.5)\nBorrowings – compound financial instrument (488.5) (473.8)\nOther net liabilities (27.7) (31.2)\nNet liabilities (319.9) (142.7)\nThe balance sheet includes a non-controlling interest recoverable amount of £58.2 million (2018: £12.7 million attributable to non-\ncontrolling interest). This amount is considered to be recoverable in view of the £195.4 million owed to the non-controlling interest\n(which is included in the Group’s borrowings in note 23).\n35 Related party transactions\nKey management1 compensation\n£m 2019 2018\nSalaries and short-term employee benefits 4.7 4.9\nPensions and other post-employment benefits 0.3 0.8\nShare-based payments 1.5 1.7\n6.5 7.4\n1 Key\n\n[2] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nSSttrraatteeggiicc rreeppoorrtt\nGGoovveerrnnaannccee\nFFiinnaanncciiaall ssttaatteemmeennttss\nOO tthheerr iinnffoorrmmaattiioonn\n34 Subsidiaries, joint ventures and associates (continued)\nOther entities\nIntu (SGS) Finance plc and Intu Metrocentre Finance plc are consolidated as subsidiaries in these financial statements but are not listed in\nthe table above as the Group does not own the shares in these companies. These companies are vehicles set up on behalf of the Group for\nthe sole purpose of issuing some of the Group’s listed debt. The Group’s obligations in respect of this debt via a back-to-back intercompany\nloan agreement between these companies and other Group companies, and security o\n\n[3] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nshareholdings in January 2020 and February 2020 respectively. All outstanding loans in respect of the above arrangements have\nbeen repaid to the Company in full or in part. For those loans which have been partially repaid, the outstanding balance has been written off\nby the Company.\nintiun tpur opproepretiretsie ps lpc lcA Annnnuuaall rreeppoorrtt 22001199 115555\nLabel:",
+      "input_tokens": 742,
+      "output_tokens": 3,
+      "latency_seconds": 12.424587800000154
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nEvidence:\n[1] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nmanagement comprises the directors of intu properties plc and the Executive Committee who have been designated as persons discharging managerial responsibility (PDMR).\nDuring 2017 the Group’s joint ventures in intu Puerto Venecia and intu Asturias sold shares in subsidiaries, previously wholly owned by the\nrespective joint ventures, listed on the Spanish MaB to PDMRs of the Group. The total value of the shares at 31 December 2019 is €1.0 million\nfor each joint venture, representing 1 per cent of the respective outstanding share capital. The sale of shares in these entities was required to\ncomply with Spanish MaB free float listing requirements. The Group provided an interest-free loan to PD\n\n[2] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nver investment property via a deed of charge\nbetween the security trustees and other Group companies, mean that the Group is deemed to have control of these companies.\nNon-controlling interests\nBy virtue of their 40 per cent interest in The Metrocentre Partnership, GIC Real Estate is entitled to appoint 40 per cent of the directors\nof Metrocentre (GP) Limited. GIC Real Estate through an intermediate entity also owns a 40 per cent interest in the capital of Metrocentre\nLancaster LLP. £58.2 million of the non-controlling interest losses shown in the balance sheet at 31 December 2019 (2018: £12.7 million\nearnings) and £70.9 million of the non-controlling interest share of loss shown in the inco\n\n[3] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nshareholdings in January 2020 and February 2020 respectively. All outstanding loans in respect of the above arrangements have\nbeen repaid to the Company in full or in part. For those loans which have been partially repaid, the outstanding balance has been written off\nby the Company.\nintiun tpur opproepretiretsie ps lpc lcA Annnnuuaall rreeppoorrtt 22001199 115555\nLabel:",
+      "input_tokens": 653,
+      "output_tokens": 3,
+      "latency_seconds": 9.646586399998341
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nEvidence:\n[1] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nmanagement comprises the directors of intu properties plc and the Executive Committee who have been designated as persons discharging managerial responsibility (PDMR).\nDuring 2017 the Group’s joint ventures in intu Puerto Venecia and intu Asturias sold shares in subsidiaries, previously wholly owned by the\nrespective joint ventures, listed on the Spanish MaB to PDMRs of the Group. The total value of the shares at 31 December 2019 is €1.0 million\nfor each joint venture, representing 1 per cent of the respective outstanding share capital. The sale of shares in these entities was required to\ncomply with Spanish MaB free float listing requirements. The Group provided an interest-free loan to PD\n\n[2] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nver investment property via a deed of charge\nbetween the security trustees and other Group companies, mean that the Group is deemed to have control of these companies.\nNon-controlling interests\nBy virtue of their 40 per cent interest in The Metrocentre Partnership, GIC Real Estate is entitled to appoint 40 per cent of the directors\nof Metrocentre (GP) Limited. GIC Real Estate through an intermediate entity also owns a 40 per cent interest in the capital of Metrocentre\nLancaster LLP. £58.2 million of the non-controlling interest losses shown in the balance sheet at 31 December 2019 (2018: £12.7 million\nearnings) and £70.9 million of the non-controlling interest share of loss shown in the inco\n\n[3] 1614d46700363e699110c89aaf7e5ba5.pdf p.1\nshareholdings in January 2020 and February 2020 respectively. All outstanding loans in respect of the above arrangements have\nbeen repaid to the Company in full or in part. For those loans which have been partially repaid, the outstanding balance has been written off\nby the Company.\nintiun tpur opproepretiretsie ps lpc lcA Annnnuuaall rreeppoorrtt 22001199 115555\nDraft:\nPercentage change in non-controlling interest share of loss from 2018 to 2019:\n\n2018: £12.7 million  \n2019: £70.9 million  \n\nChange = 70.9 - 12.7 = £58.2 million  \nPercentage change = (58.2 / 12.7) × 100 ≈ 458.3%\n\nSource: 1614d46700363e699110c89aaf7e5ba5.pdf p.1\n\n458.3\nLabel:",
+      "input_tokens": 825,
+      "output_tokens": 3,
+      "latency_seconds": 13.693378299998585
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "percentage change in non-controlling interest share of loss from 2018 to 2019 for Intu-Properties",
+      "filters": {
+        "company": "Intu-Properties"
+      },
+      "chunk_ids": [
+        "1614d46700363e699110c89aaf7e5ba5::p1::c1::dbcad089c7",
+        "1614d46700363e699110c89aaf7e5ba5::p1::c0::c0978e1f8f",
+        "1614d46700363e699110c89aaf7e5ba5::p1::c2::ae0e7a5287"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c1::dbcad089c7",
+          "document_id": "1614d46700363e699110c89aaf7e5ba5",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c1::dbcad089c7",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c0::c0978e1f8f",
+          "document_id": "1614d46700363e699110c89aaf7e5ba5",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c0::c0978e1f8f",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c2::ae0e7a5287",
+          "document_id": "1614d46700363e699110c89aaf7e5ba5",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 365,
+          "source_chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c2::ae0e7a5287",
+          "reason": "initial"
+        }
+      ]
+    },
+    {
+      "reason": "slide_later_chars",
+      "windows": [
+        {
+          "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c1::dbcad089c7",
+          "document_id": "1614d46700363e699110c89aaf7e5ba5",
+          "rank": 1,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c1::dbcad089c7",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c0::c0978e1f8f",
+          "document_id": "1614d46700363e699110c89aaf7e5ba5",
+          "rank": 2,
+          "char_start": 700,
+          "char_end": 1400,
+          "source_chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c0::c0978e1f8f",
+          "reason": "slide_later_chars"
+        },
+        {
+          "chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c2::ae0e7a5287",
+          "document_id": "1614d46700363e699110c89aaf7e5ba5",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 365,
+          "source_chunk_id": "1614d46700363e699110c89aaf7e5ba5::p1::c2::ae0e7a5287",
+          "reason": "slide_later_chars"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "evidence_window_refinement_1",
+    "evidence_support_after_refinement_1",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nRetrieval query:",
+  "query_formulation_raw_output": "percentage change in non-controlling interest share of loss from 2018 to 2019 for Intu-Properties",
+  "query_formulation_latency_seconds": 4.4376,
+  "query_formulation_input_tokens": 175,
+  "query_formulation_output_tokens": 28,
+  "query_formulation_trace": {
+    "original_question": "What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?",
+    "retrieval_query": "percentage change in non-controlling interest share of loss from 2018 to 2019 for Intu-Properties",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the percentage change in the non-controlling interest share of loss from 2018 to 2019 for Intu-Properties?\nRetrieval query:",
+    "raw_output": "percentage change in non-controlling interest share of loss from 2018 to 2019 for Intu-Properties",
+    "latency_seconds": 4.4376199999969685,
+    "input_tokens": 175,
+    "output_tokens": 28,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "70.84",
+  "gold_evidence_reference": "TAT-DQA | raw/1614d46700363e699110c89aaf7e5ba5.pdf | context_id=1614d46700363e699110c89aaf7e5ba5"
+}

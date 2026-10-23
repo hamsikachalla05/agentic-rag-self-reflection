@@ -1,0 +1,295 @@
+{
+  "question_id": "tatqa_test_9581",
+  "question": "What was the combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018?",
+  "retrieval_query": "Oracle Corporation hardware and cloud and license businesses revenue year ended May 31 2018",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c0::ba7705c4f0",
+      "rank": 1,
+      "dense_score": 0.7585136890411377,
+      "bm25_score": 32.546459508031994,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "75fec3ba291d21ab7ffca720542f1780"
+    },
+    {
+      "chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c1::296034cafb",
+      "rank": 2,
+      "dense_score": 0.7161925435066223,
+      "bm25_score": 28.2528660328873,
+      "hybrid_score": 0.6752997414151536,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "75fec3ba291d21ab7ffca720542f1780"
+    },
+    {
+      "chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c3::0d4778cfc3",
+      "rank": 3,
+      "dense_score": 0.7016143202781677,
+      "bm25_score": 23.686363156392545,
+      "hybrid_score": 0.5073353173452186,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "75fec3ba291d21ab7ffca720542f1780"
+    },
+    {
+      "chunk_id": "434b94166389d203839e681526978a7d::p1::c0::06c2863d3c",
+      "rank": 4,
+      "dense_score": 0.693652868270874,
+      "bm25_score": 11.382780217830422,
+      "hybrid_score": 0.2373128396000016,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "434b94166389d203839e681526978a7d"
+    },
+    {
+      "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+      "rank": 5,
+      "dense_score": 0.6703780293464661,
+      "bm25_score": 18.66377614626841,
+      "hybrid_score": 0.2339920845964813,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "8c6114af79ce7f7775b24ac57a2c7b64"
+    }
+  ],
+  "answer": "The combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018, is calculated as follows:\n\nFrom evidence [1] p.1, Table \"Total Revenues by Business\" (Year Ended May 31, 2018):\n\n- Cloud and license: $31,994 million  \n- Hardware: $3,994 million  \n\nSum = $31,994 + $3,994 = $35,988 million\n\nSource: [1] p.1\n\nAnswer: 35988",
+  "latency_seconds": 108.9638,
+  "input_tokens": 5144,
+  "output_tokens": 168,
+  "total_tokens": 5312,
+  "number_of_retrieval_calls": 2,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.1223,
+  "llm_latency_seconds": 108.8396,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What was the combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018?\nLabel:",
+      "input_tokens": 96,
+      "output_tokens": 7,
+      "latency_seconds": 3.462585199999012
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What was the combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018?\nEvidence:\n[1] 75fec3ba291d21ab7ffca720542f1780.pdf p.1\nTable of Contents\nIndex to Financial Statements\nTotal Revenues and Operating Expenses\nYear Ended May 31,\nPercent Change\n(Dollars in millions) 2019 Actual Constant 2018\nTotal Revenues by Geography:\nAmericas $ 21,856 1% 2% $ 21,648\nEMEA (1) 11,270 -1% 3% 11,409\nAsia Pacific 6,380 1% 5% 6,326\nTotal revenues 39,506 0% 3% 39,383\nTotal Operating Expenses 25,971 -1% 2% 26,119\nTotal Operating Margin $ 13,535 2% 5% $ 13,264\nTotal Operating Margin % 34% 34%\n% Revenues by Geography:\nAmericas 55% 55%\nEMEA 29% 29%\nAsia Pacific 16% 16%\nTotal Revenues by Business:\nCloud and license $ 32,562 2% 4% $ 31,994\nHardware 3,704 -7% -5% 3,994\nServices 3,240 -5% -2% 3,395\nTotal revenues $ 39,506 0% 3% $ 39,383\n% Rev\n\n[2] 75fec3ba291d21ab7ffca720542f1780.pdf p.1\ndecreases in our hardware revenues during fiscal 2019 relative to fiscal 2018 were due to a reduction in our hardware products revenues\nand hardware support revenues primarily due to the emphasis we placed on the marketing and sale of our cloud-based infrastructure technologies, which\nresulted in reduced sales volumes of certain of our hardware product lines and also impacted the volume of customers that purchased hardware support\ncontracts. The constant currency decrease in our services revenues during fiscal 2019 relative to fiscal 2018 was attributable to declines in our consulting and\neducation services revenues. In constant currency, the Americas, EMEA and Asia Pacific regions contribut\n\n[3] 75fec3ba291d21ab7ffca720542f1780.pdf p.1\nTotal revenues |  | $ | 39,506 |  |  | 0% |  | 3% |  | $ | 39,383 | \n% Revenues by Business: |  |  |  |  |  |  |  |  |  |  |  | \nCloud and license |  | 83% |  |  |  |  |  |  |  | 81% |  | \nHardware |  | 9% |  |  |  |  |  |  |  | 10% |  | \nServices |  | 8% |  |  |  |  |  |  |  | 9% |  | \n[/TABLE]\n\n[4] 434b94166389d203839e681526978a7d.pdf p.1\nCost of Revenues and Gross Margin\nYears Ended December 31, Change\n2019 2018 $ %\n(dollars in thousands)\nCost of revenues $ 22,843 $ 27,154 $ (4,311) (16)%\nGross profit 26,193 31,477 (5,284) (17)\nGross margin 53 % 54 %\nCost of revenues in 2019 decreased by $4.3 million, or 16%, as compared to 2018. The decrease was primarily driven by a reduction in the number of global\nservices and cloud infrastructure personnel, which led to a decrease of $2.2 million in compensation and benefits expense, including stock-based compensation\nexpense, as compared to 2018. This reduction in headcount also contributed to a decrease in allocated facilities and information technology costs of $0.5 million in\n2019.\n\n[5] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nAs of December 31,\n2019 2018 2017 2016 2015\nBalance sheet and other data:\nCash and cash equivalents $ 119,629 $ 146,061 $ 96,329 $ 140,634 $ 128,358\nWorking capital 167,879 152,793 119,433 150,485 131,971\nTotal assets 557,799 440,985 371,641 261,245 226,095\nTotal long-term obligations 115,143 88,126 94,311 30,297 26,885\nTotal stockholders' equity 355,651 277,589 232,827 191,249 170,131\n_____________________\n(1) Excludes amortization and depreciation shown in operating expenses below.\n(2) Includes stock-based compensation expense as follows:\nYear Ended December 31,\n2019 2018 2017 2016 2015\nStock-based compensation expense data:\nSales and marketing $ 2,075 $ 1,196 $ 561 $ 536 $ 372\nGeneral and\nDecision:",
+      "input_tokens": 1597,
+      "output_tokens": 4,
+      "latency_seconds": 26.858739700001024
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What was the combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018?\nEvidence:\n[1] 75fec3ba291d21ab7ffca720542f1780.pdf p.1\nTable of Contents\nIndex to Financial Statements\nTotal Revenues and Operating Expenses\nYear Ended May 31,\nPercent Change\n(Dollars in millions) 2019 Actual Constant 2018\nTotal Revenues by Geography:\nAmericas $ 21,856 1% 2% $ 21,648\nEMEA (1) 11,270 -1% 3% 11,409\nAsia Pacific 6,380 1% 5% 6,326\nTotal revenues 39,506 0% 3% 39,383\nTotal Operating Expenses 25,971 -1% 2% 26,119\nTotal Operating Margin $ 13,535 2% 5% $ 13,264\nTotal Operating Margin % 34% 34%\n% Revenues by Geography:\nAmericas 55% 55%\nEMEA 29% 29%\nAsia Pacific 16% 16%\nTotal Revenues by Business:\nCloud and license $ 32,562 2% 4% $ 31,994\nHardware 3,704 -7% -5% 3,994\nServices 3,240 -5% -2% 3,395\nTotal revenues $ 39,506 0% 3% $ 39,383\n% Rev\n\n[2] 75fec3ba291d21ab7ffca720542f1780.pdf p.1\ndecreases in our hardware revenues during fiscal 2019 relative to fiscal 2018 were due to a reduction in our hardware products revenues\nand hardware support revenues primarily due to the emphasis we placed on the marketing and sale of our cloud-based infrastructure technologies, which\nresulted in reduced sales volumes of certain of our hardware product lines and also impacted the volume of customers that purchased hardware support\ncontracts. The constant currency decrease in our services revenues during fiscal 2019 relative to fiscal 2018 was attributable to declines in our consulting and\neducation services revenues. In constant currency, the Americas, EMEA and Asia Pacific regions contribut\n\n[3] 75fec3ba291d21ab7ffca720542f1780.pdf p.1\nTotal revenues |  | $ | 39,506 |  |  | 0% |  | 3% |  | $ | 39,383 | \n% Revenues by Business: |  |  |  |  |  |  |  |  |  |  |  | \nCloud and license |  | 83% |  |  |  |  |  |  |  | 81% |  | \nHardware |  | 9% |  |  |  |  |  |  |  | 10% |  | \nServices |  | 8% |  |  |  |  |  |  |  | 9% |  | \n[/TABLE]\n\n[4] 434b94166389d203839e681526978a7d.pdf p.1\nCost of Revenues and Gross Margin\nYears Ended December 31, Change\n2019 2018 $ %\n(dollars in thousands)\nCost of revenues $ 22,843 $ 27,154 $ (4,311) (16)%\nGross profit 26,193 31,477 (5,284) (17)\nGross margin 53 % 54 %\nCost of revenues in 2019 decreased by $4.3 million, or 16%, as compared to 2018. The decrease was primarily driven by a reduction in the number of global\nservices and cloud infrastructure personnel, which led to a decrease of $2.2 million in compensation and benefits expense, including stock-based compensation\nexpense, as compared to 2018. This reduction in headcount also contributed to a decrease in allocated facilities and information technology costs of $0.5 million in\n2019.\n\n[5] 8c6114af79ce7f7775b24ac57a2c7b64.pdf p.1\nAs of December 31,\n2019 2018 2017 2016 2015\nBalance sheet and other data:\nCash and cash equivalents $ 119,629 $ 146,061 $ 96,329 $ 140,634 $ 128,358\nWorking capital 167,879 152,793 119,433 150,485 131,971\nTotal assets 557,799 440,985 371,641 261,245 226,095\nTotal long-term obligations 115,143 88,126 94,311 30,297 26,885\nTotal stockholders' equity 355,651 277,589 232,827 191,249 170,131\n_____________________\n(1) Excludes amortization and depreciation shown in operating expenses below.\n(2) Includes stock-based compensation expense as follows:\nYear Ended December 31,\n2019 2018 2017 2016 2015\nStock-based compensation expense data:\nSales and marketing $ 2,075 $ 1,196 $ 561 $ 536 $ 372\nGeneral and\nDraft:\nThe combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018, is calculated as follows:\n\nFrom evidence [1] p.1, Table \"Total Revenues by Business\" (Year Ended May 31, 2018):\n\n- Cloud and license: $31,994 million  \n- Hardware: $3,994 million  \n\nSum = $31,994 + $3,994 = $35,988 million\n\nSource: [1] p.1\n\nAnswer: 35988\nLabel:",
+      "input_tokens": 1677,
+      "output_tokens": 3,
+      "latency_seconds": 29.811861599999247
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Oracle Corporation hardware and cloud and license businesses revenue year ended May 31 2018",
+      "filters": {
+        "year": 2018,
+        "company": "oracle-corporation"
+      },
+      "chunk_ids": [],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    },
+    {
+      "iteration": 1,
+      "query": "Oracle Corporation hardware and cloud and license businesses revenue year ended May 31 2018",
+      "filters": {},
+      "chunk_ids": [
+        "75fec3ba291d21ab7ffca720542f1780::p1::c0::ba7705c4f0",
+        "75fec3ba291d21ab7ffca720542f1780::p1::c1::296034cafb",
+        "75fec3ba291d21ab7ffca720542f1780::p1::c3::0d4778cfc3",
+        "434b94166389d203839e681526978a7d::p1::c0::06c2863d3c",
+        "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 2
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c0::ba7705c4f0",
+          "document_id": "75fec3ba291d21ab7ffca720542f1780",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c0::ba7705c4f0",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c1::296034cafb",
+          "document_id": "75fec3ba291d21ab7ffca720542f1780",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c1::296034cafb",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c3::0d4778cfc3",
+          "document_id": "75fec3ba291d21ab7ffca720542f1780",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 296,
+          "source_chunk_id": "75fec3ba291d21ab7ffca720542f1780::p1::c3::0d4778cfc3",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "434b94166389d203839e681526978a7d::p1::c0::06c2863d3c",
+          "document_id": "434b94166389d203839e681526978a7d",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "434b94166389d203839e681526978a7d::p1::c0::06c2863d3c",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "document_id": "8c6114af79ce7f7775b24ac57a2c7b64",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "8c6114af79ce7f7775b24ac57a2c7b64::p1::c0::01c0e86b4d",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What was the combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018?\nRetrieval query:",
+  "query_formulation_raw_output": "Oracle Corporation hardware and cloud and license businesses revenue year ended May 31 2018",
+  "query_formulation_latency_seconds": 3.9728,
+  "query_formulation_input_tokens": 173,
+  "query_formulation_output_tokens": 21,
+  "query_formulation_trace": {
+    "original_question": "What was the combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018?",
+    "retrieval_query": "Oracle Corporation hardware and cloud and license businesses revenue year ended May 31 2018",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the combined revenue from Oracle Corporation's hardware and cloud and license businesses for the year ended May 31, 2018?\nRetrieval query:",
+    "raw_output": "Oracle Corporation hardware and cloud and license businesses revenue year ended May 31 2018",
+    "latency_seconds": 3.9728195000006963,
+    "input_tokens": 173,
+    "output_tokens": 21,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "35988.0",
+  "gold_evidence_reference": "TAT-DQA | raw/75fec3ba291d21ab7ffca720542f1780.pdf | context_id=75fec3ba291d21ab7ffca720542f1780"
+}

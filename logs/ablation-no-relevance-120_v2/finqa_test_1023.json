@@ -1,0 +1,222 @@
+{
+  "question_id": "finqa_test_1023",
+  "question": "What is the percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited?",
+  "retrieval_query": "Chubb Limited percentage change balance treasury 2009 2010",
+  "metadata_filters": {
+    "company": "Chubb Limited"
+  },
+  "retrieved_chunks": [
+    {
+      "chunk_id": "finqa_test_ctx_330::p1::c0::72b8b2a9db",
+      "rank": 1,
+      "dense_score": 0.6413169503211975,
+      "bm25_score": 15.278691043979519,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_330"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_330::p1::c1::ce59b17fa7",
+      "rank": 2,
+      "dense_score": null,
+      "bm25_score": 0.0,
+      "hybrid_score": 0.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_330"
+    }
+  ],
+  "answer": "The percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited is calculated as follows:\n\nFrom the table on page 1 of finqa_test_ctx_330.pdf:\n- Treasury market value in 2009: $2,068 million\n- Treasury market value in 2010: $2,075 million\n\nPercentage change = [(2010 - 2009) / 2009] × 100  \n= [(2075 - 2068) / 2068] × 100  \n= (7 / 2068) × 100  \n≈ 0.338%\n\nAnswer: 0.338%",
+  "latency_seconds": 75.9494,
+  "input_tokens": 2924,
+  "output_tokens": 204,
+  "total_tokens": 3128,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 5,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "USEFUL",
+  "retrieval_latency_seconds": 0.0678,
+  "llm_latency_seconds": 75.8801,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": false,
+    "evidence_support": true,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited?\nLabel:",
+      "input_tokens": 93,
+      "output_tokens": 7,
+      "latency_seconds": 3.7359345000004396
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "SUPPORTED",
+      "prompt": "Reply with exactly one label. No explanation.\nSUPPORTED if the evidence contains the values needed to answer (including values that must be computed from a table).\nUNSUPPORTED if the evidence is missing those values.\nQuestion: What is the percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited?\nEvidence:\n[1] finqa_test_ctx_330.pdf p.1\nThefairvalueofourtotalinvestmentsincreased$4.8billionduring2010,primarilyduetounrealizedappreciation,theinves-\ntingofoperatingcashflows,andtheportfoliosacquiredinthe2010corporateacquisitions.\nThefollowingtablesshowthemarketvalueofourfixedmaturitiesandshort-terminvestmentsatDecember31,2010\nand2009.ThefirsttablelistsinvestmentsaccordingtotypeandthesecondaccordingtoS&Pcreditrating.\n2010 2009\nPercentage Percentage\n(inmillionsofU.S.dollars,exceptforpercentages) MarketValue ofTotal MarketValue ofTotal\nTreasury $ 2,075 4% $ 2,068 5%\nAgency 2,015 4% 2,698 6%\nCorporateandasset-backedsecurities 15,900 33% 13,537 30%\nMortgage-backedsecurities 12,362 25% 11,311 25%\nMunicipal 2,449 5% 2,300 5%\nNon-U.S. 1\n\n[2] finqa_test_ctx_330.pdf p.1\n| 13,537 |  | 30%\n12,362 |  | 25% |  | 11,311 |  | 25%\n2,449 |  | 5% |  | 2,300 |  | 5%\n12,199 |  | 25% |  | 11,172 |  | 25%\n1,983 |  | 4% |  | 1,667 |  | 4%\n$48,983 |  | 100% |  | $44,753 |  | 100%\n$23,718 |  | 48% |  | $22,884 |  | 51%\n4,714 |  | 10% |  | 4,021 |  | 9%\n8,482 |  | 17% |  | 7,461 |  | 17%\n5,487 |  | 11% |  | 4,910 |  | 11%\n3,357 |  | 7% |  | 2,866 |  | 6%\n2,393 |  | 5% |  | 2,029 |  | 5%\n832 |  | 2% |  | 582 |  | 1%\n$48,983 |  | 100% |  | $44,753 |  | 100%\n[/TABLE]\nLabel:",
+      "input_tokens": 790,
+      "output_tokens": 3,
+      "latency_seconds": 14.839498100001947
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited?\nEvidence:\n[1] finqa_test_ctx_330.pdf p.1\nThefairvalueofourtotalinvestmentsincreased$4.8billionduring2010,primarilyduetounrealizedappreciation,theinves-\ntingofoperatingcashflows,andtheportfoliosacquiredinthe2010corporateacquisitions.\nThefollowingtablesshowthemarketvalueofourfixedmaturitiesandshort-terminvestmentsatDecember31,2010\nand2009.ThefirsttablelistsinvestmentsaccordingtotypeandthesecondaccordingtoS&Pcreditrating.\n2010 2009\nPercentage Percentage\n(inmillionsofU.S.dollars,exceptforpercentages) MarketValue ofTotal MarketValue ofTotal\nTreasury $ 2,075 4% $ 2,068 5%\nAgency 2,015 4% 2,698 6%\nCorporateandasset-backedsecurities 15,900 33% 13,537 30%\nMortgage-backedsecurities 12,362 25% 11,311 25%\nMunicipal 2,449 5% 2,300 5%\nNon-U.S. 1\n\n[2] finqa_test_ctx_330.pdf p.1\n| 13,537 |  | 30%\n12,362 |  | 25% |  | 11,311 |  | 25%\n2,449 |  | 5% |  | 2,300 |  | 5%\n12,199 |  | 25% |  | 11,172 |  | 25%\n1,983 |  | 4% |  | 1,667 |  | 4%\n$48,983 |  | 100% |  | $44,753 |  | 100%\n$23,718 |  | 48% |  | $22,884 |  | 51%\n4,714 |  | 10% |  | 4,021 |  | 9%\n8,482 |  | 17% |  | 7,461 |  | 17%\n5,487 |  | 11% |  | 4,910 |  | 11%\n3,357 |  | 7% |  | 2,866 |  | 6%\n2,393 |  | 5% |  | 2,029 |  | 5%\n832 |  | 2% |  | 582 |  | 1%\n$48,983 |  | 100% |  | $44,753 |  | 100%\n[/TABLE]\nDraft:\nThe percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited is calculated as follows:\n\nFrom the table on page 1 of finqa_test_ctx_330.pdf:\n- Treasury market value in 2009: $2,068 million\n- Treasury market value in 2010: $2,075 million\n\nPercentage change = [(2010 - 2009) / 2009] × 100  \n= [(2075 - 2068) / 2068] × 100  \n= (7 / 2068) × 100  \n≈ 0.338%\n\nAnswer: 0.338%\nLabel:",
+      "input_tokens": 993,
+      "output_tokens": 3,
+      "latency_seconds": 18.462478599998576
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "Chubb Limited percentage change balance treasury 2009 2010",
+      "filters": {
+        "company": "Chubb Limited"
+      },
+      "chunk_ids": [
+        "finqa_test_ctx_330::p1::c0::72b8b2a9db",
+        "finqa_test_ctx_330::p1::c1::ce59b17fa7"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "finqa_test_ctx_330::p1::c0::72b8b2a9db",
+          "document_id": "finqa_test_ctx_330",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "finqa_test_ctx_330::p1::c0::72b8b2a9db",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "finqa_test_ctx_330::p1::c1::ce59b17fa7",
+          "document_id": "finqa_test_ctx_330",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 486,
+          "source_chunk_id": "finqa_test_ctx_330::p1::c1::ce59b17fa7",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness"
+  ],
+  "original_question": "What is the percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited?\nRetrieval query:",
+  "query_formulation_raw_output": "Chubb Limited percentage change balance treasury 2009 2010",
+  "query_formulation_latency_seconds": 5.4982,
+  "query_formulation_input_tokens": 170,
+  "query_formulation_output_tokens": 18,
+  "query_formulation_trace": {
+    "original_question": "What is the percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited?",
+    "retrieval_query": "Chubb Limited percentage change balance treasury 2009 2010",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the percentage change in the balance of treasury from 2009 to 2010 for Chubb Limited?\nRetrieval query:",
+    "raw_output": "Chubb Limited percentage change balance treasury 2009 2010",
+    "latency_seconds": 5.49817880000046,
+    "input_tokens": 170,
+    "output_tokens": 18,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "FinQA",
+  "task_type": "FinQA",
+  "gold_answer": "0.0033849129593810446",
+  "gold_evidence_reference": "FinQA | pdf/CB/2010/page_103.pdf | source_page=103 | context_id=finqa_test_ctx_330"
+}

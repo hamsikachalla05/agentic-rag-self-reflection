@@ -1,0 +1,145 @@
+{
+  "question_id": "tatqa_test_9726",
+  "question": "What was the percentage change in the high price per share of NetApp's common stock on NASDAQ during the second quarter between fiscal 2018 and fiscal 2019?",
+  "retrieval_query": "NetApp common stock high price per share percentage change NASDAQ second quarter fiscal 2018 fiscal 2019",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "9082b05b2e0e2600d7f405f82795f041::p1::c0::62a5153ebb",
+      "rank": 1,
+      "dense_score": 0.729742705821991,
+      "bm25_score": 45.95964544759109,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "9082b05b2e0e2600d7f405f82795f041"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_317::p1::c0::13a2d0412f",
+      "rank": 2,
+      "dense_score": 0.6901212334632874,
+      "bm25_score": 25.712557121823153,
+      "hybrid_score": 0.38816671312147377,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_317"
+    },
+    {
+      "chunk_id": "a38d13377f754ca4beb5ed5cc9b5c1ec::p1::c0::849a7e3f28",
+      "rank": 3,
+      "dense_score": 0.6906113624572754,
+      "bm25_score": 23.62569888220299,
+      "hybrid_score": 0.36803702150416195,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "a38d13377f754ca4beb5ed5cc9b5c1ec"
+    },
+    {
+      "chunk_id": "9d473b9c09cabed1386df42ab20f4869::p1::c0::2ee5379a87",
+      "rank": 4,
+      "dense_score": 0.6976580619812012,
+      "bm25_score": null,
+      "hybrid_score": 0.2988458267751777,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "9d473b9c09cabed1386df42ab20f4869"
+    },
+    {
+      "chunk_id": "finqa_test_ctx_7::p1::c0::d1405b4a4c",
+      "rank": 5,
+      "dense_score": 0.6881682276725769,
+      "bm25_score": null,
+      "hybrid_score": 0.2097719626725945,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "finqa_test_ctx_7"
+    }
+  ],
+  "answer": "High price per share in second quarter:\n- Fiscal 2019: $88.08\n- Fiscal 2018: $45.14\n\nPercentage change = [(88.08 - 45.14) / 45.14] × 100 = (42.94 / 45.14) × 100 ≈ 95.06%\n\nSource: 9082b05b2e0e2600d7f405f82795f041.pdf p.1\n\n95.06",
+  "latency_seconds": 40.5053,
+  "input_tokens": 1665,
+  "output_tokens": 170,
+  "total_tokens": 1835,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 2,
+  "retrieval_latency_seconds": 0.0349,
+  "llm_latency_seconds": 40.4681,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "original_question": "What was the percentage change in the high price per share of NetApp's common stock on NASDAQ during the second quarter between fiscal 2018 and fiscal 2019?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage change in the high price per share of NetApp's common stock on NASDAQ during the second quarter between fiscal 2018 and fiscal 2019?\nRetrieval query:",
+  "query_formulation_raw_output": "NetApp common stock high price per share percentage change NASDAQ second quarter fiscal 2018 fiscal 2019",
+  "query_formulation_latency_seconds": 4.4179,
+  "query_formulation_input_tokens": 182,
+  "query_formulation_output_tokens": 27,
+  "query_formulation_trace": {
+    "original_question": "What was the percentage change in the high price per share of NetApp's common stock on NASDAQ during the second quarter between fiscal 2018 and fiscal 2019?",
+    "retrieval_query": "NetApp common stock high price per share percentage change NASDAQ second quarter fiscal 2018 fiscal 2019",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What was the percentage change in the high price per share of NetApp's common stock on NASDAQ during the second quarter between fiscal 2018 and fiscal 2019?\nRetrieval query:",
+    "raw_output": "NetApp common stock high price per share percentage change NASDAQ second quarter fiscal 2018 fiscal 2019",
+    "latency_seconds": 4.417921100000967,
+    "input_tokens": 182,
+    "output_tokens": 27,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "answer_generation_latency_seconds": 36.0502,
+  "answer_generation_input_tokens": 1483,
+  "answer_generation_output_tokens": 143,
+  "answer_generation_prompt": "Use ONLY the retrieved evidence. Do not use outside knowledge. Do not invent figures.\n\nIf the evidence contains the needed values, you MUST answer. Extract numbers from prose and from tables. When the question asks for a change, difference, sum, ratio, or percentage, compute it yourself from those values. The final answer does not need to appear as a written sentence in the evidence.\n\nGive a concise final answer (the number or short phrase). You may show a brief calculation. Cite source filename and page when possible.\n\nSay exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the retrieved chunks truly lack the required information.\nQuestion: What was the percentage change in the high price per share of NetApp's common stock on NASDAQ during the second quarter between fiscal 2018 and fiscal 2019?\nEvidence:\n[1] 9082b05b2e0e2600d7f405f82795f041.pdf p.1\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\nThe Company’s common stock is traded on the NASDAQ Stock Market LLC (“NASDAQ”) under the symbol NTAP.\nPrice Range of Common Stock\nThe price range per share of common stock presented below represents the highest and lowest intraday sales prices for the\nCompany’s common stock on the NASDAQ during each quarter of our two most recent fiscal years.\nFiscal 2019 Fiscal 2018\nHigh Low High Low\nFirst Quarter $ 83.14 $ 63.81 $ 45.24 $ 37.43\nSecond Quarter $ 88.08 $ 70.26 $ 45.14 $ 37.55\nThird Quarter $ 83.95 $ 54.50 $ 64.06 $ 43.24\nFourth Quarter $ 78.35 $ 61.00 $ 69.75 $ 52.00\nH ...\n\n[2] finqa_test_ctx_317.pdf p.1\nTable of Contents\nPART II\nItem 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.\nPrice Range\nOur common stock trades on the NASDAQ Global Select Market under the symbol “MKTX”. The range of closing price information for\nour common stock, as reported by NASDAQ, was as follows:\n2012: High Low\nJanuary 1, 2012 to March 31, 2012 $3 7.79 $2 9.26\nApril 1, 2012 to June 30, 2012 $3 7.65 $2 6.22\nJuly 1, 2012 to September 30, 2012 $3 4.00 $2 6.88\nOctober 1, 2012 to December 31, 2012 $3 5.30 $2 9.00\n2011: High Low\nJanuary 1, 2011 to March 31, 2011 $2 4.19 $1 9.78\nApril 1, 2011 to June 30, 2011 $2 5.22 $2 1.00\nJuly 1, 2011 to September 30, 20 ...\n\n[3] a38d13377f754ca4beb5ed5cc9b5c1ec.pdf p.1\nPART II\nItem 5. Market for the Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of\nEquity Securities.\nThe Company’s common stock is traded on the NASDAQ Stock Market LLC under the symbol SAFM.\nThe number of stockholders of record as of December 12, 2019, was 2,742. The number of beneficial owners of our\nstock is greater than the number of holders of record, and the exact number is unknown.\nThe amount of future common stock dividends will depend on our earnings, financial condition, capital requirements,\nthe effect a dividend would have on the Company's compliance with financial covenants and other factors, which will be\nconsidered by the Board of Directors on a qu ...\n\n[4] 9d473b9c09cabed1386df42ab20f4869.pdf p.1\nThe following table summarizes nonvested common stock activity as of December 31, 2019 and for the year then\nended:\nWeighted\nAverage\nGrant-Date\nNonvestedCommonStock Shares(000s) FairValue\nBalanceatthebeginningoftheperiod 8 $ 29.01\nGranted 16 $ 29.10\nVested (11) $ 28.89\nForfeitedorexpired (2) $ 29.16\nBalanceattheendoftheperiod 11 $ 29.24\nThe following table summarizes information regarding shares of common stock granted and vested (in thousands,\nexceptpercommonstockamounts):\nYearsEndedDecember31,\n2019 2018 2017\nNumberofsharesofcommonstockgranted 16 16 13\nWeightedaveragegrant-datefairvaluepercommonstock $ 29.10 $ 28.48 $ 30.49\nFairvalueofcommonstockvested $ 320 $ 315 $ 334\nCashusedtosettletheo ...\n\n[5] finqa_test_ctx_7.pdf p.1\nPART II\nItem 5: Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\nMarket Information\nApplied’s common stock is traded on the NASDAQ Global Select Market under the symbol AMAT. As of December 7,\n2018, there were 2,854 registered holders of Applied common stock.\nPerformance Graph\nThe performance graph below shows the five-year cumulative total stockholder return on Applied common stock during the\nperiod from October 27, 2013 through October 28, 2018. This is compared with the cumulative total return of the Standard &\nPoor’s 500 Stock Index and the RDG Semiconductor Composite Index over the same period. The comparison assumes $100 was\ni ...\nAnswer:",
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "95.13",
+  "gold_evidence_reference": "TAT-DQA | raw/9082b05b2e0e2600d7f405f82795f041.pdf | context_id=9082b05b2e0e2600d7f405f82795f041"
+}

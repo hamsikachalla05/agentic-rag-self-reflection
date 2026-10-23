@@ -1,0 +1,310 @@
+{
+  "question_id": "tatqa_test_9650",
+  "question": "What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?",
+  "retrieval_query": "nominal difference in sales between 2019 and 2018 for New Zealand Food",
+  "metadata_filters": {},
+  "retrieved_chunks": [
+    {
+      "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c3::a6d264a154",
+      "rank": 1,
+      "dense_score": 0.7974575757980347,
+      "bm25_score": 29.04501301984295,
+      "hybrid_score": 1.0,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "83924a3098a43b0ff8f25791decd0151"
+    },
+    {
+      "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c0::04d29dc6c7",
+      "rank": 2,
+      "dense_score": 0.7796615362167358,
+      "bm25_score": 24.184924667282562,
+      "hybrid_score": 0.8326246314625172,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "83924a3098a43b0ff8f25791decd0151"
+    },
+    {
+      "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c2::41d2eecfbb",
+      "rank": 3,
+      "dense_score": 0.7345209121704102,
+      "bm25_score": 19.34370408367621,
+      "hybrid_score": 0.5750098766857903,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "83924a3098a43b0ff8f25791decd0151"
+    },
+    {
+      "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c1::78fceedafe",
+      "rank": 4,
+      "dense_score": 0.7172683477401733,
+      "bm25_score": 16.434796096408775,
+      "hybrid_score": 0.4529449702454368,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "83924a3098a43b0ff8f25791decd0151"
+    },
+    {
+      "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c5::d87c68e006",
+      "rank": 5,
+      "dense_score": 0.7072921395301819,
+      "bm25_score": 12.25454073368785,
+      "hybrid_score": 0.3266553298339586,
+      "page": 1,
+      "pages": [
+        1
+      ],
+      "document_id": "83924a3098a43b0ff8f25791decd0151"
+    }
+  ],
+  "answer": "The retrieved evidence is insufficient to answer this question.",
+  "latency_seconds": 207.9709,
+  "input_tokens": 8710,
+  "output_tokens": 564,
+  "total_tokens": 9274,
+  "number_of_retrieval_calls": 1,
+  "number_of_llm_calls": 7,
+  "number_of_retrieval_iterations": 1,
+  "number_of_evidence_refinements": 0,
+  "retrieval_decision": "NEED_RETRIEVAL",
+  "retrieval_relevance_decision": "RELEVANT",
+  "evidence_support_decision": "SUPPORTED",
+  "answer_usefulness_decision": "NOT_USEFUL",
+  "retrieval_latency_seconds": 0.0706,
+  "llm_latency_seconds": 207.855,
+  "rate_limit_retries": 0,
+  "rate_limit_waits": 0,
+  "rate_limit_wait_seconds": 0.0,
+  "config_snapshot": {
+    "project_root": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection",
+    "data_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data",
+    "pdf_dir": "data\\t2_ragbench\\documents_final120",
+    "questions_path": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\data\\questions\\sample_questions.json",
+    "index_dir": "data\\indexes\\t2_final120",
+    "logs_dir": "C:\\Users\\Shravya S\\OneDrive\\Desktop\\nlp project\\agentic-rag-self-reflection\\logs",
+    "chunk_size_tokens": 512,
+    "chunk_overlap_tokens": 50,
+    "chunk_tokenizer": "cl100k_base",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "embedding_passage_prefix": "",
+    "embedding_batch_size": 32,
+    "embedding_device": "cpu",
+    "embedding_normalize": true,
+    "dense_top_k": 20,
+    "bm25_top_k": 20,
+    "final_top_k": 5,
+    "hybrid_dense_weight": 0.6,
+    "hybrid_bm25_weight": 0.4,
+    "rrf_k": 60,
+    "hybrid_method": "weighted_minmax",
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen3:4b-instruct-2507-q4_K_M",
+    "llm_temperature": 0.0,
+    "llm_max_new_tokens": 512,
+    "llm_max_input_tokens": 512,
+    "llm_device": "cpu",
+    "llm_base_url": "http://localhost:11434/v1",
+    "llm_api_key_env": "LLM_API_KEY",
+    "llm_num_ctx": 2048,
+    "llm_think": false,
+    "max_retrieval_calls": 2,
+    "retry_without_filters_if_empty": true,
+    "max_evidence_chunks": 5,
+    "max_chars_per_chunk_in_prompt": 700
+  },
+  "self_rag_config": {
+    "retrieval_decision": true,
+    "retrieval_relevance": true,
+    "evidence_support": false,
+    "answer_usefulness": true,
+    "max_retrieval_iterations": 2,
+    "max_evidence_refinements": 2,
+    "max_answer_attempts": 2,
+    "max_llm_calls": 10,
+    "reflection_max_tokens": 64
+  },
+  "reflection_trace": [
+    {
+      "component": "retrieval_decision",
+      "decision": "NEED_RETRIEVAL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NEED_RETRIEVAL",
+      "prompt": "Reply with exactly one label. No explanation.\nNEED_RETRIEVAL if answering requires documents, tables, or figures.\nNO_RETRIEVAL if the question can be answered without retrieved evidence.\nQuestion: What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?\nLabel:",
+      "input_tokens": 93,
+      "output_tokens": 7,
+      "latency_seconds": 4.1530657000002975
+    },
+    {
+      "component": "retrieval_relevance",
+      "decision": "RELEVANT",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "RELEVANT",
+      "prompt": "Evaluate whether the retrieved evidence is relevant to the question.\n\nReply using exactly one of these formats:\n\nRELEVANT\n\nor\n\nIRRELEVANT\nQUERY: <a concise improved retrieval query>\n\nUse RELEVANT if any retrieved chunk could help answer the question.\nUse IRRELEVANT only if none of the chunks address the requested subject, values, company, period, or financial concept.\n\nWhen replying IRRELEVANT, the QUERY line is mandatory. Construct a search query containing the key company, reporting period, financial concept, and requested values when they are available in the question.\n\nDo not provide an explanation.\n\nQuestion: What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?\nEvidence:\n[1] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n,\nSales per square metre ($) 16,626 15,621 6.4% 4.5% at more affordable prices. 2\nhighlighting seasonal fruit and veg. M\nFunds employed 3,210 2,998 7.1%\nROFE (%) 9.6 9.5 15 bps 5 bps\n3 During the period, the management of the New Zealand Wine Cellars business transferred\n1 Growth for New Zealand Food quoted in New Zealand Dollars.\nfrom Endeavour Drinks to New Zealand Food. The prior period has been re‑presented\n2 Normalised for the 53rd week.\nto conform with the current period presentation.\nHIGHLIGHTS\nREVIEW\nREPORT\nREPORT\nINFORMATION\nPERFORMANCE\nBUSINESS\nDIRECTORS'\nFINANCIAL\nOTHER\n25\nANNUAL\nREPORT\n2019\nWOOLWORTHS\nGROUP\n\n[TABLE]\n2244\nNew Zealand\nFood 1\nNew Zealand Food had\na strong second hal\n\n[2] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n2244\nNew Zealand\nTRADING PERFORMANCE\nFood 1\nNew Zealand Food’s sales for growth post Christmas. Sales\nthe year were NZ$6.7 billion, per square metre increased\nan increase of 4.3% on the prior by 6.4% (normalised 4.5%)\nyear (6.0% increase in AUD) due to strong sales growth and\nNew Zealand Food had\nor 2.4% on a normalised basis. a 2.0% reduction in trading space CountdownX, established\na strong second half following store closures. During in June 2018, brings together\nComparable sales increased eCom, loyalty, digital and\nthe year, three stores were closed\nwith improved customer 3.4% for the year, driven by data capabilities to further\nand two stores were opened with\npositive core offer momentu\n\n[3] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n712 intention to go reusable, Countdown\n$ Currently, 99% of eligible\nled the charge for major New Zealand\nOwn Brand products\nretailers and played a significant\nhave a Health Star Rating\nrole in helping to change customer\nwith almost half having\n 2.4% 2 from F18 behaviours ahead of the national ban.\n3.5 or above rating. Over\nthe last two years, 82\ntonnes of sugar and 25 5\nF19 Online penetration\ntonnes of salt has been\nremoved from Own Brand 6.8\nEBIT (NZ$M) products. A number of %\nnew product lines that\n$ 296 have a clear health focus\nwere introduced in the\nyear, including kombucha,\nkefir, kimchi and switchel,\n 1.0% 2 from F18 as well as products for\nF19 F18 3 CHANGE customers wanting to Pic\n\n[4] 83924a3098a43b0ff8f25791decd0151.pdf p.1\nbut with a lower rate of deflation been strong to date, with Store VOC NPS improving by over 10 points since opening. 2\nof single‑use plastic bags in the for the second half.\nfirst half. CODB as a percentage of sales\nincreased 25 bps (normalised)\nDigital momentum remained\ndriven primarily by strategic\nstrong throughout the year,\ninvestment into digital, F19 Online sales growth\nwith F19 sales growth of 40%\n(normalised) driven by Pick up, IT and data capabilities. Bidding goodbye to Healthier 40 % 2\n3\nSame day delivery, and capacity EBIT increased 3.9% for the year\nthe single‑use bag choices\nexpansion. Customer advocacy (1.0% normalised), with H2 EBIT\nfor Online also remains strong growth of 4\n\n[5] 83924a3098a43b0ff8f25791decd0151.pdf p.1\nto sales (%) 4.4 4.4 (2) bps (6) bps\nSales per square metre ($) 16,626 15,621 6.4% 4.5%\nFunds employed 3,210 2,998 7.1%\nROFE (%) 9.6 9.5 15 bps 5 bps\n3 During the period, the management of the New Zealand Wine Cellars business transferred\nfrom Endeavour Drinks to New Zealand Food. The prior period has been re‑presented\nto conform with the current period presentation.\n[/TABLE]\n\n[TABLE]\nF19\n53 WEEKS |  | CHANGE\n6,712 | 6,433\n411\n(127)\n284 | 4.3%\n425 |  | 3.0%\n(129) |  | 1.0%\n296 |  | 3.9%\n24.4 | 24.2\n19.8\n4.4 | 18 bps\n20.0 |  | 20 bps\n4.4 |  | (2) bps\n16,626 | 15,621 | 6.4%\n3,210 | 2,998\n9.5 | 7.1%\n9.6 |  | 15 bps\n[/TABLE]\nDecision:",
+      "input_tokens": 1517,
+      "output_tokens": 4,
+      "latency_seconds": 27.60881429999972
+    },
+    {
+      "component": "evidence_support",
+      "decision": "SUPPORTED",
+      "parsed_ok": true,
+      "skipped": true,
+      "followup_query": null,
+      "raw_output": "",
+      "prompt": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_seconds": 0.0
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?\nEvidence:\n[1] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n,\nSales per square metre ($) 16,626 15,621 6.4% 4.5% at more affordable prices. 2\nhighlighting seasonal fruit and veg. M\nFunds employed 3,210 2,998 7.1%\nROFE (%) 9.6 9.5 15 bps 5 bps\n3 During the period, the management of the New Zealand Wine Cellars business transferred\n1 Growth for New Zealand Food quoted in New Zealand Dollars.\nfrom Endeavour Drinks to New Zealand Food. The prior period has been re‑presented\n2 Normalised for the 53rd week.\nto conform with the current period presentation.\nHIGHLIGHTS\nREVIEW\nREPORT\nREPORT\nINFORMATION\nPERFORMANCE\nBUSINESS\nDIRECTORS'\nFINANCIAL\nOTHER\n25\nANNUAL\nREPORT\n2019\nWOOLWORTHS\nGROUP\n\n[TABLE]\n2244\nNew Zealand\nFood 1\nNew Zealand Food had\na strong second hal\n\n[2] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n2244\nNew Zealand\nTRADING PERFORMANCE\nFood 1\nNew Zealand Food’s sales for growth post Christmas. Sales\nthe year were NZ$6.7 billion, per square metre increased\nan increase of 4.3% on the prior by 6.4% (normalised 4.5%)\nyear (6.0% increase in AUD) due to strong sales growth and\nNew Zealand Food had\nor 2.4% on a normalised basis. a 2.0% reduction in trading space CountdownX, established\na strong second half following store closures. During in June 2018, brings together\nComparable sales increased eCom, loyalty, digital and\nthe year, three stores were closed\nwith improved customer 3.4% for the year, driven by data capabilities to further\nand two stores were opened with\npositive core offer momentu\n\n[3] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n712 intention to go reusable, Countdown\n$ Currently, 99% of eligible\nled the charge for major New Zealand\nOwn Brand products\nretailers and played a significant\nhave a Health Star Rating\nrole in helping to change customer\nwith almost half having\n 2.4% 2 from F18 behaviours ahead of the national ban.\n3.5 or above rating. Over\nthe last two years, 82\ntonnes of sugar and 25 5\nF19 Online penetration\ntonnes of salt has been\nremoved from Own Brand 6.8\nEBIT (NZ$M) products. A number of %\nnew product lines that\n$ 296 have a clear health focus\nwere introduced in the\nyear, including kombucha,\nkefir, kimchi and switchel,\n 1.0% 2 from F18 as well as products for\nF19 F18 3 CHANGE customers wanting to Pic\n\n[4] 83924a3098a43b0ff8f25791decd0151.pdf p.1\nbut with a lower rate of deflation been strong to date, with Store VOC NPS improving by over 10 points since opening. 2\nof single‑use plastic bags in the for the second half.\nfirst half. CODB as a percentage of sales\nincreased 25 bps (normalised)\nDigital momentum remained\ndriven primarily by strategic\nstrong throughout the year,\ninvestment into digital, F19 Online sales growth\nwith F19 sales growth of 40%\n(normalised) driven by Pick up, IT and data capabilities. Bidding goodbye to Healthier 40 % 2\n3\nSame day delivery, and capacity EBIT increased 3.9% for the year\nthe single‑use bag choices\nexpansion. Customer advocacy (1.0% normalised), with H2 EBIT\nfor Online also remains strong growth of 4\n\n[5] 83924a3098a43b0ff8f25791decd0151.pdf p.1\nto sales (%) 4.4 4.4 (2) bps (6) bps\nSales per square metre ($) 16,626 15,621 6.4% 4.5%\nFunds employed 3,210 2,998 7.1%\nROFE (%) 9.6 9.5 15 bps 5 bps\n3 During the period, the management of the New Zealand Wine Cellars business transferred\nfrom Endeavour Drinks to New Zealand Food. The prior period has been re‑presented\nto conform with the current period presentation.\n[/TABLE]\n\n[TABLE]\nF19\n53 WEEKS |  | CHANGE\n6,712 | 6,433\n411\n(127)\n284 | 4.3%\n425 |  | 3.0%\n(129) |  | 1.0%\n296 |  | 3.9%\n24.4 | 24.2\n19.8\n4.4 | 18 bps\n20.0 |  | 20 bps\n4.4 |  | (2) bps\n16,626 | 15,621 | 6.4%\n3,210 | 2,998\n9.5 | 7.1%\n9.6 |  | 15 bps\n[/TABLE]\nDraft:\nThe nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food is $411 million.\n\nSource: [1] 83924a3098a43b0ff8f25791decd0151.pdf p.1, Table: F19 53 WEEKS | CHANGE, where sales are listed as 6,712 and 6,433 (in NZ$ million), and the difference is 6,712 - 6,433 = 279. However, this does not match the table entry of 411.\n\nWait: The table shows:\nF19: 6,712\nF18: 6,433\nChange: 411\n\nThus, 6,712 - 6,433 = 279, not 411.\n\nBut the table says \"6,712 | 6,433\" and \"411\" below — this may be a misalignment.\n\nHowever, in the text: \"New Zealand Food’s sales for the year were NZ$6.7 billion\" — this is likely the total sales.\n\nBut in the table, the values are 6,712 and 6,433 (in millions), so 6,712 million = $6.712 billion, and 6,433 million = $6.433 billion.\n\nDifference: 6,712 - 6,433 = 279 million.\n\nBut the table shows \"411\" under the sales column — this may be a typo or misalignment.\n\nLooking at the table: \nSales: 6,712 | 6,433 | 411 (change)\n\n6,712 - 6,433 = 279, not 411.\n\nThus, the stated change of 411 is inconsistent with the numbers.\n\nBut in the text: \"Sales the year were NZ$6.7 billion\" — this is likely rounded.\n\nThe table shows 6,712 and 6,433 — difference is 279 million.\n\nNo other sales figure is provided.\n\nTherefore, the only consistent numerical difference from the table is\nLabel:",
+      "input_tokens": 1976,
+      "output_tokens": 4,
+      "latency_seconds": 37.048364699998274
+    },
+    {
+      "component": "answer_revision",
+      "decision": "REVISED",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "The retrieved evidence is insufficient to answer this question.",
+      "prompt": "A previous draft was judged NOT_USEFUL. Using ONLY the evidence, give a concise corrected final answer. Extract table numbers and compute if needed. Say exactly \"The retrieved evidence is insufficient to answer this question\" ONLY if the chunks truly lack the required information.\nQuestion: What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?\nEvidence:\n[1] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n,\nSales per square metre ($) 16,626 15,621 6.4% 4.5% at more affordable prices. 2\nhighlighting seasonal fruit and veg. M\nFunds employed 3,210 2,998 7.1%\nROFE (%) 9.6 9.5 15 bps 5 bps\n3 During the period, the management of the New Zealand Wine Cellars business transferred\n1 Growth for New Zealand Food quoted in New Zealand Dollars.\nfrom Endeavour Drinks to New Zealand Food. The prior period has been re‑presented\n2 Normalised for the 53rd week.\nto conform with the current period presentation.\nHIGHLIGHTS\nREVIEW\nREPORT\nREPORT\nINFORMATION\nPERFORMANCE\nBUSINESS\nDIRECTORS'\nFINANCIAL\nOTHER\n25\nANNUAL\nREPORT\n2019\nWOOLWORTHS\nGROUP\n\n[TABLE]\n2244\nNew Zealand\nFood 1\nNew Zealand Food had\na strong second hal\n\n[2] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n2244\nNew Zealand\nTRADING PERFORMANCE\nFood 1\nNew Zealand Food’s sales for growth post Christmas. Sales\nthe year were NZ$6.7 billion, per square metre increased\nan increase of 4.3% on the prior by 6.4% (normalised 4.5%)\nyear (6.0% increase in AUD) due to strong sales growth and\nNew Zealand Food had\nor 2.4% on a normalised basis. a 2.0% reduction in trading space CountdownX, established\na strong second half following store closures. During in June 2018, brings together\nComparable sales increased eCom, loyalty, digital and\nthe year, three stores were closed\nwith improved customer 3.4% for the year, driven by data capabilities to further\nand two stores were opened with\npositive core offer momentu\n\n[3] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n712 intention to go reusable, Countdown\n$ Currently, 99% of eligible\nled the charge for major New Zealand\nOwn Brand products\nretailers and played a significant\nhave a Health Star Rating\nrole in helping to change customer\nwith almost half having\n 2.4% 2 from F18 behaviours ahead of the national ban.\n3.5 or above rating. Over\nthe last two years, 82\ntonnes of sugar and 25 5\nF19 Online penetration\ntonnes of salt has been\nremoved from Own Brand 6.8\nEBIT (NZ$M) products. A number of %\nnew product lines that\n$ 296 have a clear health focus\nwere introduced in the\nyear, including kombucha,\nkefir, kimchi and switchel,\n 1.0% 2 from F18 as well as products for\nF19 F18 3 CHANGE customers wanting to Pic\n\n[4] 83924a3098a43b0ff8f25791decd0151.pdf p.1\nbut with a lower rate of deflation been strong to date, with Store VOC NPS improving by over 10 points since opening. 2\nof single‑use plastic bags in the for the second half.\nfirst half. CODB as a percentage of sales\nincreased 25 bps (normalised)\nDigital momentum remained\ndriven primarily by strategic\nstrong throughout the year,\ninvestment into digital, F19 Online sales growth\nwith F19 sales growth of 40%\n(normalised) driven by Pick up, IT and data capabilities. Bidding goodbye to Healthier 40 % 2\n3\nSame day delivery, and capacity EBIT increased 3.9% for the year\nthe single‑use bag choices\nexpansion. Customer advocacy (1.0% normalised), with H2 EBIT\nfor Online also remains strong growth of 4\n\n[5] 83924a3098a43b0ff8f25791decd0151.pdf p.1\nto sales (%) 4.4 4.4 (2) bps (6) bps\nSales per square metre ($) 16,626 15,621 6.4% 4.5%\nFunds employed 3,210 2,998 7.1%\nROFE (%) 9.6 9.5 15 bps 5 bps\n3 During the period, the management of the New Zealand Wine Cellars business transferred\nfrom Endeavour Drinks to New Zealand Food. The prior period has been re‑presented\nto conform with the current period presentation.\n[/TABLE]\n\n[TABLE]\nF19\n53 WEEKS |  | CHANGE\n6,712 | 6,433\n411\n(127)\n284 | 4.3%\n425 |  | 3.0%\n(129) |  | 1.0%\n296 |  | 3.9%\n24.4 | 24.2\n19.8\n4.4 | 18 bps\n20.0 |  | 20 bps\n4.4 |  | (2) bps\n16,626 | 15,621 | 6.4%\n3,210 | 2,998\n9.5 | 7.1%\n9.6 |  | 15 bps\n[/TABLE]\nPrevious draft: The nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food is $411 million.\n\nSource: [1] 83924a3098a43b0ff8f25791decd0151.pdf p.1, Table: F19 53 WEEKS | CHANGE, where sales are listed as 6,712 and 6,433 (in NZ$ million), and the difference is 6,712 - 6,433 = 279. However, this does not match the table entry of 411.\n\nWait: The table shows:\nF19: 6,712\nF18: 6,433\nChange: 411\n\nThus, 6,712 - 6,433 = 279, not 411.\n\nBut the table says \"6,712 | 6,433\" and \"411\" below — this may be a misalignment.\n\nHowever, in the text: \"New Zealand Food’s sales for the year were NZ$6.7 billion\" — this is likely the total sales.\n\nBut in the table, the values are 6,712 and 6,433 (in millions), so 6,712 million = $6.712 billion, and 6,433 million = $6.433 billion.\n\nDifference: 6,712 - 6,433 = 279 million.\n\nBut the table shows \"411\" under the sales column — this may be a typo or misalignment.\n\nLooking at the table: \nSales: 6,712 | 6,433 | 411 (change)\n\n6,712 - 6,433 = 279, not 411.\n\nThus, the stated change of 411 is inconsistent with the numbers.\n\nBut in the text: \"Sales the year were NZ$6.7 billion\" — this is likely rounded.\n\nThe table shows 6,712 and 6,433 — difference is 279 million.\n\nNo other sales figure is provided.\n\nTherefore, the only consistent numerical difference from the table is\nAnswer:",
+      "input_tokens": 1959,
+      "output_tokens": 11,
+      "latency_seconds": 36.91498690000117
+    },
+    {
+      "component": "answer_usefulness",
+      "decision": "NOT_USEFUL",
+      "parsed_ok": true,
+      "skipped": false,
+      "followup_query": null,
+      "raw_output": "NOT_USEFUL",
+      "prompt": "Reply with exactly one label. No explanation.\nUSEFUL if the draft answers the question using the evidence (a number, short phrase, or a justified insufficient-evidence statement when the evidence truly lacks the values).\nNOT_USEFUL if the draft is empty, off-topic, contradicts the evidence, or says insufficient when the evidence actually contains the values.\nQuestion: What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?\nEvidence:\n[1] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n,\nSales per square metre ($) 16,626 15,621 6.4% 4.5% at more affordable prices. 2\nhighlighting seasonal fruit and veg. M\nFunds employed 3,210 2,998 7.1%\nROFE (%) 9.6 9.5 15 bps 5 bps\n3 During the period, the management of the New Zealand Wine Cellars business transferred\n1 Growth for New Zealand Food quoted in New Zealand Dollars.\nfrom Endeavour Drinks to New Zealand Food. The prior period has been re‑presented\n2 Normalised for the 53rd week.\nto conform with the current period presentation.\nHIGHLIGHTS\nREVIEW\nREPORT\nREPORT\nINFORMATION\nPERFORMANCE\nBUSINESS\nDIRECTORS'\nFINANCIAL\nOTHER\n25\nANNUAL\nREPORT\n2019\nWOOLWORTHS\nGROUP\n\n[TABLE]\n2244\nNew Zealand\nFood 1\nNew Zealand Food had\na strong second hal\n\n[2] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n2244\nNew Zealand\nTRADING PERFORMANCE\nFood 1\nNew Zealand Food’s sales for growth post Christmas. Sales\nthe year were NZ$6.7 billion, per square metre increased\nan increase of 4.3% on the prior by 6.4% (normalised 4.5%)\nyear (6.0% increase in AUD) due to strong sales growth and\nNew Zealand Food had\nor 2.4% on a normalised basis. a 2.0% reduction in trading space CountdownX, established\na strong second half following store closures. During in June 2018, brings together\nComparable sales increased eCom, loyalty, digital and\nthe year, three stores were closed\nwith improved customer 3.4% for the year, driven by data capabilities to further\nand two stores were opened with\npositive core offer momentu\n\n[3] 83924a3098a43b0ff8f25791decd0151.pdf p.1\n712 intention to go reusable, Countdown\n$ Currently, 99% of eligible\nled the charge for major New Zealand\nOwn Brand products\nretailers and played a significant\nhave a Health Star Rating\nrole in helping to change customer\nwith almost half having\n 2.4% 2 from F18 behaviours ahead of the national ban.\n3.5 or above rating. Over\nthe last two years, 82\ntonnes of sugar and 25 5\nF19 Online penetration\ntonnes of salt has been\nremoved from Own Brand 6.8\nEBIT (NZ$M) products. A number of %\nnew product lines that\n$ 296 have a clear health focus\nwere introduced in the\nyear, including kombucha,\nkefir, kimchi and switchel,\n 1.0% 2 from F18 as well as products for\nF19 F18 3 CHANGE customers wanting to Pic\n\n[4] 83924a3098a43b0ff8f25791decd0151.pdf p.1\nbut with a lower rate of deflation been strong to date, with Store VOC NPS improving by over 10 points since opening. 2\nof single‑use plastic bags in the for the second half.\nfirst half. CODB as a percentage of sales\nincreased 25 bps (normalised)\nDigital momentum remained\ndriven primarily by strategic\nstrong throughout the year,\ninvestment into digital, F19 Online sales growth\nwith F19 sales growth of 40%\n(normalised) driven by Pick up, IT and data capabilities. Bidding goodbye to Healthier 40 % 2\n3\nSame day delivery, and capacity EBIT increased 3.9% for the year\nthe single‑use bag choices\nexpansion. Customer advocacy (1.0% normalised), with H2 EBIT\nfor Online also remains strong growth of 4\n\n[5] 83924a3098a43b0ff8f25791decd0151.pdf p.1\nto sales (%) 4.4 4.4 (2) bps (6) bps\nSales per square metre ($) 16,626 15,621 6.4% 4.5%\nFunds employed 3,210 2,998 7.1%\nROFE (%) 9.6 9.5 15 bps 5 bps\n3 During the period, the management of the New Zealand Wine Cellars business transferred\nfrom Endeavour Drinks to New Zealand Food. The prior period has been re‑presented\nto conform with the current period presentation.\n[/TABLE]\n\n[TABLE]\nF19\n53 WEEKS |  | CHANGE\n6,712 | 6,433\n411\n(127)\n284 | 4.3%\n425 |  | 3.0%\n(129) |  | 1.0%\n296 |  | 3.9%\n24.4 | 24.2\n19.8\n4.4 | 18 bps\n20.0 |  | 20 bps\n4.4 |  | (2) bps\n16,626 | 15,621 | 6.4%\n3,210 | 2,998\n9.5 | 7.1%\n9.6 |  | 15 bps\n[/TABLE]\nDraft:\nThe retrieved evidence is insufficient to answer this question.\nLabel:",
+      "input_tokens": 1474,
+      "output_tokens": 4,
+      "latency_seconds": 4.0722809999988385
+    }
+  ],
+  "retrieval_history": [
+    {
+      "iteration": 1,
+      "query": "nominal difference in sales between 2019 and 2018 for New Zealand Food",
+      "filters": {},
+      "chunk_ids": [
+        "83924a3098a43b0ff8f25791decd0151::p1::c3::a6d264a154",
+        "83924a3098a43b0ff8f25791decd0151::p1::c0::04d29dc6c7",
+        "83924a3098a43b0ff8f25791decd0151::p1::c2::41d2eecfbb",
+        "83924a3098a43b0ff8f25791decd0151::p1::c1::78fceedafe",
+        "83924a3098a43b0ff8f25791decd0151::p1::c5::d87c68e006"
+      ],
+      "reason": "initial_retrieval",
+      "retrieval_call_within_iteration": 1
+    }
+  ],
+  "evidence_windows": [
+    {
+      "reason": "initial",
+      "windows": [
+        {
+          "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c3::a6d264a154",
+          "document_id": "83924a3098a43b0ff8f25791decd0151",
+          "rank": 1,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c3::a6d264a154",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c0::04d29dc6c7",
+          "document_id": "83924a3098a43b0ff8f25791decd0151",
+          "rank": 2,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c0::04d29dc6c7",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c2::41d2eecfbb",
+          "document_id": "83924a3098a43b0ff8f25791decd0151",
+          "rank": 3,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c2::41d2eecfbb",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c1::78fceedafe",
+          "document_id": "83924a3098a43b0ff8f25791decd0151",
+          "rank": 4,
+          "char_start": 0,
+          "char_end": 700,
+          "source_chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c1::78fceedafe",
+          "reason": "initial"
+        },
+        {
+          "chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c5::d87c68e006",
+          "document_id": "83924a3098a43b0ff8f25791decd0151",
+          "rank": 5,
+          "char_start": 0,
+          "char_end": 628,
+          "source_chunk_id": "83924a3098a43b0ff8f25791decd0151::p1::c5::d87c68e006",
+          "reason": "initial"
+        }
+      ]
+    }
+  ],
+  "extra_llm_call_reasons": [
+    "retrieval_decision",
+    "query_formulation",
+    "retrieval_relevance",
+    "evidence_support",
+    "answer_generation",
+    "answer_usefulness",
+    "answer_revision",
+    "answer_usefulness_after_revision"
+  ],
+  "original_question": "What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?",
+  "query_formulation_prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?\nRetrieval query:",
+  "query_formulation_raw_output": "nominal difference in sales between 2019 and 2018 for New Zealand Food",
+  "query_formulation_latency_seconds": 5.8616,
+  "query_formulation_input_tokens": 170,
+  "query_formulation_output_tokens": 22,
+  "query_formulation_trace": {
+    "original_question": "What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?",
+    "retrieval_query": "nominal difference in sales between 2019 and 2018 for New Zealand Food",
+    "prompt": "You formulate a retrieval query for hybrid search (dense embeddings + BM25) over financial filings.\n\nDo NOT answer the question.\nDo NOT invent companies, years, figures, or facts that are not in the question.\nDo NOT include explanations, labels, quotes, or markdown.\n\nFrom the question, identify:\n- key entities (company / organization names)\n- year or other time information\n- the financial concept being asked about\n- important numerical or unit information\n\nPreserve those terms. Produce one concise search query.\n\nOutput ONLY the retrieval query on a single line.\n\nQuestion: What is the nominal difference in sales between the financial years 2019 and 2018 for New Zealand Food?\nRetrieval query:",
+    "raw_output": "nominal difference in sales between 2019 and 2018 for New Zealand Food",
+    "latency_seconds": 5.861619300001621,
+    "input_tokens": 170,
+    "output_tokens": 22,
+    "llm_calls": 1,
+    "rate_limit_retries": 0,
+    "rate_limit_waits": 0,
+    "rate_limit_wait_seconds": 0.0
+  },
+  "dataset": "TAT-DQA",
+  "task_type": "TAT-DQA",
+  "gold_answer": "279.0",
+  "gold_evidence_reference": "TAT-DQA | raw/83924a3098a43b0ff8f25791decd0151.pdf | context_id=83924a3098a43b0ff8f25791decd0151"
+}
